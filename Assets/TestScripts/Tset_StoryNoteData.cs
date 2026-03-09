@@ -2,73 +2,47 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AVGGame.Editor
+namespace AVGGame.Runtime
 {
     /// <summary>
-    /// 节点类型枚举，方便编辑器区分渲染不同颜色的节点
+    /// 这对应了 UGF 数据表 (DataTable) 里的【一行数据】
+    /// 你的 UGF 解析脚本需要按列读取这些字段
     /// </summary>
-    public enum StoryNodeType
+    public class StoryRowData
     {
-        Dialogue,   // 普通对话节点 (包含文字、立绘、背景切换)
-        Choice,     // 分支选项节点
-        Event       // 纯事件节点 (比如纯粹为了加减属性，不显示文字)
-    }
+        public int Id;                  // 行号 (主键，例如 10001)
+        public int NextId;              // 下一行剧情的 ID。如果是 0 代表结束，如果有选项则跳转由选项决定
 
-    /// <summary>
-    /// 选项数据结构
-    /// </summary>
-    [Serializable]
-    public class StoryChoiceData
-    {
-        public string ChoiceText;       // 选项显示的文字
-        public string NextNodeGUID;     // 玩家点击该选项后，连接到的下一个节点ID
-        public string Condition;        // 【进阶】显示条件，例如 "Intelligence>50" (可先留空)
-    }
-
-    /// <summary>
-    /// 核心：单个剧情节点的数据结构
-    /// </summary>
-    [Serializable]
-    public class StoryNodeData
-    {
-        // ================== 编辑器专属数据 ==================
-        public string GUID;             // 节点的唯一标识符 (非常重要！连线全靠它)
-        public Rect Position;           // 节点在编辑器视图里的位置 (x, y)
-        public StoryNodeType NodeType;  // 节点类型
-
-        // ================== 核心视觉小说数据 (P0) ==================
         public string SpeakerName;      // 说话人
-        [TextArea(3, 5)]
-        public string DialogText;       // 台词内容
+        public string DialogText;       // 台词
 
-        // 视听表现 (如果为空，表示延续上一个节点的状态)
-        public string BgPath;           // 背景图路径
-        public string SpritePath;       // 立绘路径
-        public string BgmPath;          // 背景音乐路径
-        public string SfxPath;          // 特殊音效路径
+        // 将 xNode 中的 List<CharacterDisplayData> 转成 JSON 字符串存入表格
+        // 游戏运行时读取这行字符串，用 JsonUtility 解析回 List 即可执行角色动作
+        public string CharacterActionsJson; 
+        
+        // 分支选项数据，也可以存为 JSON 字符串
+        // 例如: [{"Text":"去开门", "NextId":10005}, {"Text":"不开门", "NextId":10008}]
+        public string ChoicesJson;
 
-        // ================== 扩展玩法数据 (P1/P2) ==================
-        // 比如："Intelligence|+5", "Clue|A001"
-        public List<string> AttributeChanges = new List<string>(); 
-
-        // ================== 连线关系 ==================
-        // 普通对话只会连接到一个节点
-        public string NextNodeGUID;     
-
-        // 如果是 Choice 节点，使用这个列表来存储多个分支选项
-        public List<StoryChoiceData> Choices = new List<StoryChoiceData>(); 
+        // 其他多媒体配置 (通常可以沿用上文的设计)
+        public string BgPath;
+        public string BgmPath;
     }
 
-    /// <summary>
-    /// 整个剧本图的数据容器 (继承 ScriptableObject 方便在 Unity 项目中保存为资产文件)
-    /// </summary>
-    [CreateAssetMenu(fileName = "NewStoryGraph", menuName = "AVG Tool/Story Graph")]
-    public class StoryGraphData : ScriptableObject
+    // --- 以下为辅助反序列化的类 (和编辑器里的类保持一致) ---
+    [Serializable]
+    public class RuntimeCharacterAction
     {
-        // 保存当前剧本的所有节点
-        public List<StoryNodeData> Nodes = new List<StoryNodeData>();
-        
-        // 记录剧本的起始节点 ID
-        public string EntryNodeGUID;
+        public string CharacterName;
+        public int ActionType; // 0:Enter, 1:Leave, 2:ChangeSprite
+        public int Position;   // 0:Left, 1:Center, 2:Right
+        public string SpritePath;
+    }
+
+    [Serializable]
+    public class RuntimeChoice
+    {
+        public string ChoiceText;
+        public int NextId;
     }
 }
