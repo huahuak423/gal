@@ -10,7 +10,7 @@ namespace AVGGame.Editor
     // ---------------------------------------------------------
     public enum CharacterActionType { Enter, Leave, ChangeSprite }
     public enum CharacterPosition { Left, Center, Right }
-
+    
     [Serializable]
     public class CharacterDisplayData
     {
@@ -57,7 +57,7 @@ namespace AVGGame.Editor
         [Header("对话内容")]
         public string SpeakerName;
         
-        [TextArea(3, 5)] // 让输入框大一点，方便写多行台词
+        [TextArea(4, 6)] // 让输入框大一点，方便写多行台词
         public string DialogText;
 
         [Header("角色表现指令")]
@@ -78,6 +78,8 @@ namespace AVGGame.Editor
         [HideInInspector] // 隐藏起来，只通过代码控制
         public bool NeedsAttention = false;
         
+        [Header("备注")]
+        [TextArea(6, 2)]
         public string EditorNote; // 给策划写的备忘录或标记
 
         //TODO:重写颜色方法：如果带有策划标记，让节点在图里变成醒目的橙色
