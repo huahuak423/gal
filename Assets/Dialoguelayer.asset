@@ -1,5 +1,212 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8531065736233265868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e38d4cd63bea5a48803c7bc1938d758, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -216, y: -168}
+  ports:
+    keys:
+    - Entry
+    - Exit
+    values:
+    - _fieldName: Entry
+      _node: {fileID: -8531065736233265868}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Choices 0
+        node: {fileID: 7678193324399615226}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Exit
+      _node: {fileID: -8531065736233265868}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Entry: 0
+  Exit: 0
+  SpeakerName: 
+  DialogText: 
+  CharacterDisplays: []
+  Choices: []
+  BackgroundImage: {fileID: 0}
+  BgmAudio: {fileID: 0}
+  NeedsAttention: 0
+  EditorNote: 
+--- !u!114 &-8166976986169168488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2f2b7d58ec13174e971e9fd45ff7ea6, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -648, y: 88}
+  ports:
+    keys:
+    - Entry
+    - Exit
+    values:
+    - _fieldName: Entry
+      _node: {fileID: -8166976986169168488}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Exit
+      _node: {fileID: -8166976986169168488}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Entry: 0
+  Exit: 0
+  SpeakerName: 
+  DialogText: 
+  CharacterDisplays: []
+  Choices: []
+  BackgroundImage: {fileID: 0}
+  BgmAudio: {fileID: 0}
+  NeedsAttention: 0
+  EditorNote: 
+--- !u!114 &-4945406233169756185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e38d4cd63bea5a48803c7bc1938d758, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1096, y: -248}
+  ports:
+    keys:
+    - Entry
+    - Exit
+    values:
+    - _fieldName: Entry
+      _node: {fileID: -4945406233169756185}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Exit
+      _node: {fileID: -4945406233169756185}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entry
+        node: {fileID: 7678193324399615226}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Entry: 0
+  Exit: 0
+  SpeakerName: 
+  DialogText: 
+  CharacterDisplays: []
+  Choices: []
+  BackgroundImage: {fileID: 0}
+  BgmAudio: {fileID: 0}
+  NeedsAttention: 0
+  EditorNote: 
+--- !u!114 &-1022411777217626033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a55ed3678a587643826509d545fe009, type: 3}
+  m_Name: Choice
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -296, y: 216}
+  ports:
+    keys:
+    - Entry
+    - Choices
+    - Choices 0
+    values:
+    - _fieldName: Entry
+      _node: {fileID: -1022411777217626033}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Choices
+      _node: {fileID: -1022411777217626033}
+      _typeQualifiedName: System.Collections.Generic.List`1[[AVGGame.Editor.ChoiceItemData,
+        Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Choices 0
+      _node: {fileID: -1022411777217626033}
+      _typeQualifiedName: AVGGame.Editor.ChoiceItemData, Assembly-CSharp-Editor,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  Entry: 0
+  Choices:
+  - ChoiceText: 
+    Conditions:
+    - Type: 0
+      AttributeType: 0
+      NpcId: 
+      Operator: 0
+      Value: 0
+      ItemId: 
+      RequireItem: 0
+    Rewards: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9,7 +216,155 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: c6cefdd09dd94781a28b93cebc89f405, type: 3}
   m_Name: Dialoguelayer
-  m_EditorClassIdentifier: Assembly-CSharp:AVGGame.Editor:MazeLayerGraph
-  nodes: []
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -8166976986169168488}
+  - {fileID: -1022411777217626033}
+--- !u!114 &33303824479649882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44507010b6ca47ee93b559b5d1343dfc, type: 3}
+  m_Name: Choice
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 200, y: 88}
+  ports:
+    keys:
+    - Entry
+    - Choices
+    values:
+    - _fieldName: Entry
+      _node: {fileID: 33303824479649882}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Choices
+      _node: {fileID: 33303824479649882}
+      _typeQualifiedName: System.Collections.Generic.List`1[[AVGGame.Editor.ChoiceItemData,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Entry: 0
+  Choices: []
+--- !u!114 &7678193324399615226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44507010b6ca47ee93b559b5d1343dfc, type: 3}
+  m_Name: Choice
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -744, y: -104}
+  ports:
+    keys:
+    - Entry
+    - Choices
+    - Choices 0
+    values:
+    - _fieldName: Entry
+      _node: {fileID: 7678193324399615226}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Exit
+        node: {fileID: -4945406233169756185}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Choices
+      _node: {fileID: 7678193324399615226}
+      _typeQualifiedName: System.Collections.Generic.List`1[[AVGGame.Editor.ChoiceItemData,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Choices 0
+      _node: {fileID: 7678193324399615226}
+      _typeQualifiedName: AVGGame.Editor.ChoiceItemData, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Entry
+        node: {fileID: -8531065736233265868}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  Entry: 0
+  Choices:
+  - ChoiceText: 
+    Conditions:
+    - AttributeType: 0
+      NpcId: 
+      Operator: 0
+      Value: 0
+    Rewards:
+    - AttributeType: 0
+      NpcId: 
+      Value: 0
+--- !u!114 &8418439282058550815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44507010b6ca47ee93b559b5d1343dfc, type: 3}
+  m_Name: Choice
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 195.92001, y: -56.939964}
+  ports:
+    keys:
+    - Entry
+    - Choices
+    values:
+    - _fieldName: Entry
+      _node: {fileID: 8418439282058550815}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Choices
+      _node: {fileID: 8418439282058550815}
+      _typeQualifiedName: System.Collections.Generic.List`1[[AVGGame.Editor.ChoiceItemData,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Entry: 0
+  Choices: []
