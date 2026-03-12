@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityGameFramework.Editor",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XNode", "XNode.csproj", "{27d54cd2-45ce-257d-06e5-c576c4fcb81a}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{a656f79d-4473-3967-d668-40705267e5f6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{70f0181c-c7ca-d1ef-757a-c4aa5d09ab65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{a656f79d-4473-3967-d668-40705267e5f6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +26,10 @@ Global
 		{c2024845-202b-933c-591e-f3198f83abf2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27d54cd2-45ce-257d-06e5-c576c4fcb81a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{27d54cd2-45ce-257d-06e5-c576c4fcb81a}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{a656f79d-4473-3967-d668-40705267e5f6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{a656f79d-4473-3967-d668-40705267e5f6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70f0181c-c7ca-d1ef-757a-c4aa5d09ab65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{70f0181c-c7ca-d1ef-757a-c4aa5d09ab65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{a656f79d-4473-3967-d668-40705267e5f6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{a656f79d-4473-3967-d668-40705267e5f6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

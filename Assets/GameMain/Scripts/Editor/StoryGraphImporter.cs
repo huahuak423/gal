@@ -7,25 +7,31 @@ using XNode;
 
 namespace AVGGame.Editor
 {
+    /// <summary>
+    /// 策划专用：将 CSV 配置表一键导入为 xNode 连线图，并自动映射角色名称
+    /// </summary>
     public class StoryGraphImporter : EditorWindow
     {
         [MenuItem("AVG Tools/1. 从 CSV 导入剧本到 xNode")]
         public static void ImportCSVToGraph()
         {
+            // 1. 确保当前选中了一个 Graph
             NodeGraph targetGraph = Selection.activeObject as NodeGraph;
             if (targetGraph == null)
             {
-                EditorUtility.DisplayDialog("提示", "请先在 Project 窗口选中图文件！", "确定");
+                EditorUtility.DisplayDialog("提示", "请先在 Project 窗口选中或创建一个 xNode 的 Graph 文件！", "确定");
                 return;
             }
 
-            string filePath = EditorUtility.OpenFilePanel("选择策划配置表(CSV)", "", "csv");
+            // 2. 选择策划导出的 CSV 文件
+            string filePath = EditorUtility.OpenFilePanel("选择策划配置表", "", "csv");
             if (string.IsNullOrEmpty(filePath)) return;
 
             string[] lines = File.ReadAllLines(filePath);
             DialogueNode previousNode = null;
             Vector2 spawnPosition = new Vector2(0, 0);
 
+            // 3. 开始解析并生成 (从第2行开始，跳过表头)
             for (int i = 1; i < lines.Length; i++)
             {
                 string line = lines[i];
@@ -38,13 +44,19 @@ namespace AVGGame.Editor
                     DialogueNode newNode = targetGraph.AddNode<DialogueNode>();
                     newNode.name = "对话节点";
                     
-                    newNode.SpeakerName = parts[0].Trim(); // 第1列：角色编号
-                    newNode.DialogText = parts[2].Trim();  // 第3列：文本
-
+                    // --- 核心修改：通过角色编号映射角色名称 ---
+                    string roleID = parts[0].Trim();
+                    newNode.SpeakerName = GetCharacterName(roleID);
+                    
+                    // 第3列 (索引2)：节点文本
+                    newNode.DialogText = parts[2].Trim();
+                    
+                    // 第4列 (索引3)：策划特殊标记
                     if (parts.Length >= 4 && !string.IsNullOrWhiteSpace(parts[3]))
                     {
+                        string marker = parts[3].Trim();
                         newNode.NeedsAttention = true;
-                        newNode.EditorNote = "【立绘标记】: " + parts[3].Trim();
+                        newNode.EditorNote = "【立绘/演出标记】: " + marker;
                         
                         newNode.CharacterDisplays.Add(new CharacterDisplayData 
                         { 
@@ -62,13 +74,36 @@ namespace AVGGame.Editor
                         NodePort inPort = newNode.GetPort("Entry");
                         if (outPort != null && inPort != null) outPort.Connect(inPort);
                     }
+                    
                     previousNode = newNode;
                 }
             }
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
-            EditorUtility.DisplayDialog("成功", "剧本导入完毕！", "确定");
+            EditorUtility.DisplayDialog("成功", $"剧本导入完毕！角色名已根据编号自动转换。", "确定");
+        }
+
+        /// <summary>
+        /// 根据角色编号获取对应的角色名称
+        /// </summary>
+        private static string GetCharacterName(string id)
+        {
+            switch (id)
+            {
+                case "00": return "";          // 旁白：返回空字符串
+                case "01": return "女主名";
+                case "02": return "许映月";
+                case "03": return "周杉";
+                case "04": return "陈予宁";
+                case "05": return "陈予荣";
+                case "06": return "温叙";
+                case "07": return "何行舟";
+                case "08": return "群众";
+                default:
+                    // 如果出现了未定义的 ID，暂时保留 ID 以便排查，也可以返回空
+                    return id; 
+            }
         }
 
         private static string[] ParseCSVLine(string line)
