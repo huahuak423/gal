@@ -18,7 +18,7 @@ namespace AVGGame.Editor
     }
 
     [CreateNodeMenu("AVG/对话节点 (Dialogue)")]
-    [NodeWidth(300)] 
+    [NodeWidth(350)] 
     public class DialogueNode : Node
     {
         [Input] public int Entry;

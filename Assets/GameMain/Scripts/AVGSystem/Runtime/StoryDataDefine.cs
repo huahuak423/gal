@@ -19,10 +19,13 @@ namespace AVGGame.Runtime
     {
         [Tooltip("条件类型：属性 / 好感度 / 特殊物品")]
         public ConditionType Type = ConditionType.PlayerAttribute;
-
+        
+        [Tooltip("玩家属性类型")]
         public PlayerAttributeType AttributeType = PlayerAttributeType.None;
         public string NpcId;
+        [Tooltip("数值逻辑符合（大于等于、小于等于、等于）")]
         public ConditionOperator Operator = ConditionOperator.GreaterThanOrEqual;
+        [Tooltip("数值")]
         public int Value; 
 
         [Tooltip("填入特殊物品的ID或名称")]
