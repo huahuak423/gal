@@ -662,10 +662,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 959bca2b68d03954897f38b1dbb00303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AvailableProcedureTypeNames: []
-  m_EntranceProcedureTypeName: 
+  m_Name:
+  m_EditorClassIdentifier:
+  m_AvailableProcedureTypeNames:
+  - AVGGame.Procedure.ProcedurePreload
+  - AVGGame.Procedure.ProcedureSplash
+  - AVGGame.Procedure.ProcedureMainMenu
+  - AVGGame.Procedure.ProcedureGame
+  m_EntranceProcedureTypeName: AVGGame.Procedure.ProcedurePreload 
 --- !u!114 &11413340
 MonoBehaviour:
   m_ObjectHideFlags: 1

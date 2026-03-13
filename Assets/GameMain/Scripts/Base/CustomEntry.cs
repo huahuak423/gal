@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
-namespace AVGGame.Entry
+namespace GameMain.Scripts.Base
 {
     /// <summary>
     /// 自定义组件入口

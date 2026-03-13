@@ -6,7 +6,7 @@
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
-namespace AVGGame.Entry
+namespace GameMain.Scripts.Base
 {
     /// <summary>
     /// 游戏启动入口
