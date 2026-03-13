@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "com.github.siccity.xnode": {
-      "version": "file:D:/project/xNode-master",
+      "version": "file:xNode-master",
       "depth": 0,
-      "source": "local",
+      "source": "embedded",
       "dependencies": {}
     },
     "com.unity.2d.animation": {
