@@ -4,6 +4,7 @@ using UnityEditor;
 using System.IO;
 using System.Text.RegularExpressions;
 using XNode;
+using AVGGame.Runtime; // 引用运行时里的数据定义
 
 namespace AVGGame.Editor
 {

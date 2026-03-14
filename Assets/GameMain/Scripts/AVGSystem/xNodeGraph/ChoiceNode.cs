@@ -5,6 +5,8 @@ using AVGGame.Runtime; // 引用运行时里的数据定义
 
 namespace AVGGame.Editor
 {
+    
+    
     [CreateNodeMenu("AVG/分支选项节点 (Choice)")]
     [NodeWidth(380)]
     [NodeTint("#5271FF")]

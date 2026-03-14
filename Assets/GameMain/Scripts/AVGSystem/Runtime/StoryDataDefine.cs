@@ -10,7 +10,11 @@ namespace AVGGame.Runtime
     public enum PlayerAttributeType { None = 0, Charm, Inspiration, Sanity }
     public enum ConditionOperator { GreaterThanOrEqual, LessThanOrEqual, Equal }
     public enum ConditionType { PlayerAttribute, NpcFavorability, SpecialItem }
+    // 角色表现指令结构
+    public enum CharacterActionType { Enter, Leave, ChangeSprite }
+    public enum CharacterPosition { Left, Center, Right }
 
+    
     // ==========================================
     // 2. 选择条件与奖励结构
     // ==========================================
@@ -46,14 +50,4 @@ namespace AVGGame.Runtime
         public string ItemId;
     }
 
-    // ==========================================
-    // 3. 选项的包装结构
-    // ==========================================
-    [Serializable]
-    public class ChoiceItemData
-    {
-        public string ChoiceText; 
-        public List<ChoiceCondition> Conditions = new List<ChoiceCondition>();
-        public List<ChoiceReward> Rewards = new List<ChoiceReward>();
-    }
 }

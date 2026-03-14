@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityGameFramework.Runtime; // 【关键】引入 UGF 的数据表命名空间
 
+
 namespace AVGGame.Runtime
 {
     public enum StoryNodeType
     {
         Dialogue = 0,
         Choice = 1,
-        ChangeGraph = 2
+        ChangeGraph = 2,
+        Reward = 3 // 【新增】奖励节点类型
     }
 
     /// <summary>
@@ -36,7 +38,8 @@ namespace AVGGame.Runtime
         public string CharacterActionsJson; 
         public string ChoicesJson;      
         public string TargetGraphName;  
-
+        public string RewardsJson;
+        
         /// <summary>
         /// 【核心魔法】UGF 引擎在加载 txt 数据表时，每读一行都会自动调用这个方法
         /// dataRowString 就是 txt 里的一行文本（比如："10000\t10001\t0\t主角\t你好\t\t\t"）
@@ -66,7 +69,7 @@ namespace AVGGame.Runtime
             CharacterActionsJson = columnTexts[index++];        // 第6列：立绘JSON
             ChoicesJson = columnTexts[index++];                 // 第7列：选项JSON
             TargetGraphName = columnTexts[index++];             // 第8列：目标图名
-
+            RewardsJson = columnTexts[index++];                 // 【新增】第9列：奖励JSON
             return true;
         }
 
@@ -82,9 +85,23 @@ namespace AVGGame.Runtime
         }
     }
 
-    // ==========================================
-    // 运行时的 JSON 包装结构 (保持不变)
-    // ==========================================
+    [System.Serializable]
+    public class CharacterDisplayData
+    {
+        public string CharacterName;
+        public CharacterActionType ActionType;
+        public CharacterPosition Position;
+        public string SpritePath;
+    }
+    
+    [System.Serializable]
+    public class ChoiceItemData
+    {
+        public string ChoiceText; 
+        public List<ChoiceCondition> Conditions = new List<ChoiceCondition>();
+        public List<ChoiceReward> Rewards = new List<ChoiceReward>();
+    }
+    
 
     [Serializable]
     public class RuntimeChoiceData
@@ -94,10 +111,22 @@ namespace AVGGame.Runtime
         public List<ChoiceCondition> Conditions;
         public List<ChoiceReward> Rewards;
     }
-
+ 
+    [Serializable]
+    public class RuntimeActionListWrapper { public List<CharacterDisplayData> actions; }
+        
     [Serializable]
     public class RuntimeChoiceListWrapper
     {
         public List<RuntimeChoiceData> Choices;
     }
+    
+    [Serializable]
+    public class RuntimeRewardListWrapper
+    {
+        public string RewardTitle; 
+        public List<ChoiceReward> Rewards;
+    }
+   
+    
 }
