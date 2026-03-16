@@ -20,7 +20,7 @@ namespace GameMain.Scripts.UI.Extension
         public static string GetUIFormAsset(int uiFormId)
         {
             string formName = GetUIFormName(uiFormId);
-            return $"{UIFormPath}{formName}/{formName}.prefab";
+            return $"{UIFormPath}{formName}.prefab";
         }
 
         /// <summary>
@@ -35,8 +35,8 @@ namespace GameMain.Scripts.UI.Extension
                 case UIFormId.MessageBox: return "MessageBoxPanel";
 
                 // 主菜单
-                case UIFormId.MainMenu: return "MainMenuPanel";
-                case UIFormId.Settings: return "SettingsPanel";
+                case UIFormId.MainMenu: return "MainMenu";
+                case UIFormId.Settings: return "Settings";
 
                 // 游戏内UI
                 case UIFormId.Dialogue: return "DialoguePanel";

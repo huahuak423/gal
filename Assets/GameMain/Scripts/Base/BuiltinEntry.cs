@@ -69,8 +69,6 @@ namespace GameMain.Scripts.Base
                 return;
             }
 
-            Log.Info("[BuiltinEntry] Initializing builtin components...");
-
             // 核心组件
             Base = UnityGameFramework.Runtime.GameEntry.GetComponent<BaseComponent>();
             Event = UnityGameFramework.Runtime.GameEntry.GetComponent<EventComponent>();
@@ -109,13 +107,11 @@ namespace GameMain.Scripts.Base
             if (Procedure == null) Log.Error("[BuiltinEntry] ProcedureComponent is null!");
 
             IsInitialized = true;
-            Log.Info("[BuiltinEntry] Builtin components initialized!");
+            Log.Info("[BuiltinEntry] Initialized");
         }
 
         public static void Shutdown()
         {
-            Log.Info("[BuiltinEntry] Shutting down...");
-
             Base = null;
             Event = null;
             Fsm = null;
@@ -139,37 +135,7 @@ namespace GameMain.Scripts.Base
             Procedure = null;
 
             IsInitialized = false;
-            Log.Info("[BuiltinEntry] Shutdown complete.");
-        }
-
-        #endregion
-
-        #region 调试
-
-        public static void LogComponentsStatus()
-        {
-            Log.Info("=== Builtin Components ===");
-            Log.Info($"Base: {(Base != null ? "OK" : "NULL")}");
-            Log.Info($"Event: {(Event != null ? "OK" : "NULL")}");
-            Log.Info($"Fsm: {(Fsm != null ? "OK" : "NULL")}");
-            Log.Info($"ObjectPool: {(ObjectPool != null ? "OK" : "NULL")}");
-            Log.Info($"ReferencePool: {(ReferencePool != null ? "OK" : "NULL")}");
-            Log.Info($"DataNode: {(DataNode != null ? "OK" : "NULL")}");
-            Log.Info($"DataTable: {(DataTable != null ? "OK" : "NULL")}");
-            Log.Info($"Config: {(Config != null ? "OK" : "NULL")}");
-            Log.Info($"Resource: {(Resource != null ? "OK" : "NULL")}");
-            Log.Info($"Entity: {(Entity != null ? "OK" : "NULL")}");
-            Log.Info($"UI: {(UI != null ? "OK" : "NULL")}");
-            Log.Info($"Sound: {(Sound != null ? "OK" : "NULL")}");
-            Log.Info($"Scene: {(Scene != null ? "OK" : "NULL")}");
-            Log.Info($"Localization: {(Localization != null ? "OK" : "NULL")}");
-            Log.Info($"Setting: {(Setting != null ? "OK" : "NULL")}");
-            Log.Info($"Download: {(Download != null ? "OK" : "NULL")}");
-            Log.Info($"Network: {(Network != null ? "OK" : "NULL")}");
-            Log.Info($"FileSystem: {(FileSystem != null ? "OK" : "NULL")}");
-            Log.Info($"WebRequest: {(WebRequest != null ? "OK" : "NULL")}");
-            Log.Info($"Debugger: {(Debugger != null ? "OK" : "NULL")}");
-            Log.Info($"Procedure: {(Procedure != null ? "OK" : "NULL")}");
+            Log.Info("[BuiltinEntry] Shutdown");
         }
 
         #endregion

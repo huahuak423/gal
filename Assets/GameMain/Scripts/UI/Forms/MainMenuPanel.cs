@@ -5,9 +5,10 @@
 
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using UnityGameFramework.Runtime;
 using GameMain.Scripts.UI.Base;
+using GameFramework.Fsm;
+using GameFramework.Procedure;
 
 namespace GameMain.Scripts.UI.Forms
 {
@@ -18,18 +19,18 @@ namespace GameMain.Scripts.UI.Forms
     {
         #region 序列化字段
 
-        [Header("按钮")]
-        [SerializeField] private Button m_NewGameButton;
-        [SerializeField] private Button m_ContinueButton;
-        [SerializeField] private Button m_SettingsButton;
-        [SerializeField] private Button m_QuitButton;
+        [Header("按钮 - ButtonPlate 下")]
+        [SerializeField] private Button m_ButtonNewGame;
+        [SerializeField] private Button m_ButtonContine;
+        [SerializeField] private Button m_ButtonCgShows;
+        [SerializeField] private Button m_ButtonSetting;
+        [SerializeField] private Button m_ButtonExit;
 
-        [Header("标题")]
-        [SerializeField] private TextMeshProUGUI m_TitleText;
-        [SerializeField] private Image m_LogoImage;
+        #endregion
 
-        [Header("版本")]
-        [SerializeField] private TextMeshProUGUI m_VersionText;
+        #region 私有字段
+
+        private IFsm<IProcedureManager> m_ProcedureFsm;
 
         #endregion
 
@@ -40,74 +41,96 @@ namespace GameMain.Scripts.UI.Forms
             base.OnInit(userData);
 
             // 绑定按钮事件
-            if (m_NewGameButton != null)
-            {
-                m_NewGameButton.onClick.AddListener(OnNewGameButtonClick);
-            }
+            if (m_ButtonNewGame != null)
+                m_ButtonNewGame.onClick.AddListener(OnNewGameClick);
 
-            if (m_ContinueButton != null)
-            {
-                m_ContinueButton.onClick.AddListener(OnContinueButtonClick);
-            }
+            if (m_ButtonContine != null)
+                m_ButtonContine.onClick.AddListener(OnContinueClick);
 
-            if (m_SettingsButton != null)
-            {
-                m_SettingsButton.onClick.AddListener(OnSettingsButtonClick);
-            }
+            if (m_ButtonCgShows != null)
+                m_ButtonCgShows.onClick.AddListener(OnCgShowsClick);
 
-            if (m_QuitButton != null)
-            {
-                m_QuitButton.onClick.AddListener(OnQuitButtonClick);
-            }
+            if (m_ButtonSetting != null)
+                m_ButtonSetting.onClick.AddListener(OnSettingClick);
 
-            // 设置版本号
-            if (m_VersionText != null)
-            {
-                m_VersionText.text = $"Version {Application.version}";
-            }
+            if (m_ButtonExit != null)
+                m_ButtonExit.onClick.AddListener(OnExitClick);
         }
 
         protected override void OnOpen(object userData)
         {
             base.OnOpen(userData);
 
+            // 保存流程引用
+            m_ProcedureFsm = userData as IFsm<IProcedureManager>;
+
             // 检查是否有存档
             bool hasSave = CheckHasSave();
-            if (m_ContinueButton != null)
+            if (m_ButtonContine != null)
             {
-                m_ContinueButton.interactable = hasSave;
+                m_ButtonContine.interactable = hasSave;
             }
+
+            Log.Info("[MainMenuPanel] Opened");
+        }
+
+        protected override void OnClose(bool isShutdown, object userData)
+        {
+            base.OnClose(isShutdown, userData);
+            m_ProcedureFsm = null;
         }
 
         #endregion
 
         #region 按钮事件
 
-        private void OnNewGameButtonClick()
+        /// <summary>
+        /// 新游戏
+        /// </summary>
+        private void OnNewGameClick()
         {
-            Log.Info("[MainMenu] New Game clicked");
+            Log.Info("[MainMenuPanel] New Game clicked");
             CloseSelf();
 
-            // TODO: 开始新游戏
+            // 通知流程开始新游戏
+            // m_ProcedureFsm?.SetData("StartNewGame", true);
         }
 
-        private void OnContinueButtonClick()
+        /// <summary>
+        /// 继续游戏
+        /// </summary>
+        private void OnContinueClick()
         {
-            Log.Info("[MainMenu] Continue clicked");
+            Log.Info("[MainMenuPanel] Continue clicked");
             CloseSelf();
 
-            // TODO: 继续游戏
+            // TODO: 打开存档选择界面
         }
 
-        private void OnSettingsButtonClick()
+        /// <summary>
+        /// 画廊
+        /// </summary>
+        private void OnCgShowsClick()
         {
-            Log.Info("[MainMenu] Settings clicked");
-            // TODO: 打开设置面板
+            Log.Info("[MainMenuPanel] CG Gallery clicked");
+            // TODO: 打开画廊界面
         }
 
-        private void OnQuitButtonClick()
+        /// <summary>
+        /// 设置
+        /// </summary>
+        private void OnSettingClick()
         {
-            Log.Info("[MainMenu] Quit clicked");
+            Log.Info("[MainMenuPanel] Settings clicked");
+            // TODO: 打开设置界面
+        }
+
+        /// <summary>
+        /// 退出
+        /// </summary>
+        private void OnExitClick()
+        {
+            Log.Info("[MainMenuPanel] Exit clicked");
 
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
