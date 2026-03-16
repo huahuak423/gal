@@ -19,7 +19,13 @@ namespace AVGGame.Editor
         public string DialogText;
 
         public List<CharacterDisplayData> CharacterDisplays = new List<CharacterDisplayData>();
-
+        
+        [Header("音频设置 (Audio)")]
+        [Tooltip("填入 BGM 的资源路径或名称，留空代表不切换（延续前面）")]
+        public string BgmPath; 
+        [Tooltip("填入 临时音效 的资源路径或名称，留空代表无音效")]
+        public string SePath;
+        
         [HideInInspector] 
         public bool NeedsAttention = false; 
         public string EditorNote;

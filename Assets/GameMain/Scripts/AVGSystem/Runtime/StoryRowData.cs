@@ -22,7 +22,7 @@ namespace AVGGame.Runtime
     {
         private int m_Id = 0;
         
-        /// <summary>
+        /// <summary>     
         /// 重写基类的 Id 属性 (UGF 强制要求)
         /// </summary>
         public override int Id
@@ -39,6 +39,8 @@ namespace AVGGame.Runtime
         public string ChoicesJson;      
         public string TargetGraphName;  
         public string RewardsJson;
+        public string BgmPath;          
+        public string SePath;
         
         /// <summary>
         /// 【核心魔法】UGF 引擎在加载 txt 数据表时，每读一行都会自动调用这个方法
@@ -50,7 +52,7 @@ namespace AVGGame.Runtime
             string[] columnTexts = dataRowString.Split('\t');
 
             // 2. 防御性编程：检查列数是否对得上我们导出的 8 列
-            if (columnTexts.Length < 8)
+            if (columnTexts.Length < 11)
             {
                 Debug.LogError($"解析剧情数据表失败！行文本列数不足: {dataRowString}");
                 return false;
@@ -70,6 +72,8 @@ namespace AVGGame.Runtime
             ChoicesJson = columnTexts[index++];                 // 第7列：选项JSON
             TargetGraphName = columnTexts[index++];             // 第8列：目标图名
             RewardsJson = columnTexts[index++];                 // 【新增】第9列：奖励JSON
+            BgmPath = columnTexts[index++];                     // 【新增】第10列：BGM
+            SePath = columnTexts[index++];                      // 【新增】第11列：SE
             return true;
         }
 
