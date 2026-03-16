@@ -10,9 +10,10 @@ namespace AVGGame.Editor
     [NodeTint("#FFB300")] // 显眼的金色，代表奖励
     public class RewardNode : Node
     {
-        // 只有输入口，没有输出口，天然形成 Exit (退出大地图)
+        
         [Input] public int Entry;
-
+        [Output] public int Exit;
+        
         [Header("结算 UI 表现")]
         [Tooltip("结算时可能会用到的文本（可空）")]
         public string RewardTitle;
