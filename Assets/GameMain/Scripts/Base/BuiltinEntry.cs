@@ -6,7 +6,7 @@
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
-namespace GameMain.Scripts.Base
+namespace AVGGame
 {
     /// <summary>
     /// 框架内置组件入口

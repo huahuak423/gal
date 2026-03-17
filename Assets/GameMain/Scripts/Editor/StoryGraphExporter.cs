@@ -5,7 +5,7 @@ using System.IO;
 using System.Text;
 using System.Collections.Generic;
 using XNode;
-using AVGGame.Runtime; 
+using AVGGame; 
 
 namespace AVGGame.Editor
 {

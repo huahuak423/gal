@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using XNode;
 using System.Collections.Generic;
-using AVGGame.Runtime; // 引用运行时里的数据定义
+using AVGGame; // 引用运行时里的数据定义
 
 namespace AVGGame.Editor
 {

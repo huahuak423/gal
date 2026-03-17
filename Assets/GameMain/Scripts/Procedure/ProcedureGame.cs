@@ -6,14 +6,14 @@
 using GameFramework.Fsm;
 using GameFramework.Procedure;
 using UnityGameFramework.Runtime;
-using GameEntry = GameMain.Scripts.Base.GameEntry;
+using GameEntry = AVGGame.GameEntry;
 
-namespace AVGGame.Procedure
+namespace AVGGame
 {
     /// <summary>
     /// 游戏主流程 - AVG 游戏的核心流程，处理对话、剧情等
     /// </summary>
-    public class ProcedureGame : ProcedureBase
+    public class ProcedureGame : ProcedureBase  
     {
         #region 字段
 

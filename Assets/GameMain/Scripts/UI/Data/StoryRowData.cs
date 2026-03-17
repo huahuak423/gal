@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityGameFramework.Runtime; // 【关键】引入 UGF 的数据表命名空间
 
 
-namespace AVGGame.Runtime
+namespace AVGGame
 {
     public enum StoryNodeType
     {

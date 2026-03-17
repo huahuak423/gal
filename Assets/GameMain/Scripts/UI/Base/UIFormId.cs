@@ -21,5 +21,14 @@ namespace GameMain.Scripts.UI.Base
         // 游戏内UI
         public const int Dialogue = 3000;
         public const int Choice = 3001;
+
+        // 大地图
+        public const int Map = 4000;
+
+        // 地点
+        public const int Location = 4001;
+
+        // 周目结束
+        public const int RoundEnd = 4002;
     }
 }

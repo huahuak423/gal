@@ -7,12 +7,12 @@ using GameFramework.Fsm;
 using GameFramework.Procedure;
 using UnityEngine;
 using UnityGameFramework.Runtime;
-using GameMain.Scripts.Base;
+using AVGGame;
 using GameMain.Scripts.UI.Base;
 using GameMain.Scripts.UI.Extension;
-using GameEntry = GameMain.Scripts.Base.GameEntry;
+using GameEntry = AVGGame.GameEntry;
 
-namespace AVGGame.Procedure
+namespace AVGGame
 {
     /// <summary>
     /// 主菜单流程 - 显示游戏主界面、开始游戏按钮等

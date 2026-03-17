@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
 
-namespace AVGGame.Procedure
+namespace AVGGame
 {
     /// <summary>
     /// 预加载流程 - 游戏启动后的第一个流程

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
-namespace GameMain.Scripts.Base
+namespace AVGGame
 {
     /// <summary>
     /// 自定义组件入口
@@ -39,6 +39,15 @@ namespace GameMain.Scripts.Base
         /// </summary>
         public static int ComponentCount => s_CustomComponents.Count;
 
+        // ========================================
+        // 自定义组件属性（仿照BuiltinEntry）
+        // ========================================
+
+        /// <summary>
+        /// 玩家数据组件
+        /// </summary>
+        public static PlayerDataComponent PlayerData { get; private set; }
+
         #endregion
 
         #region 初始化
@@ -62,11 +71,8 @@ namespace GameMain.Scripts.Base
 
             // ========================================
             // 在这里添加你的自定义组件
-            // 示例：
-            // AddCustomComponent<StoryManager>();
-            // AddCustomComponent<SaveManager>();
-            // AddCustomComponent<AudioManager>();
             // ========================================
+            PlayerData = AddCustomComponent<PlayerDataComponent>();
 
             IsInitialized = true;
             Log.Info($"[CustomEntry] Custom components initialized! Count: {s_CustomComponents.Count}");
@@ -89,6 +95,10 @@ namespace GameMain.Scripts.Base
             s_CustomComponentList.Clear();
             s_CustomComponents.Clear();
             s_RootObject = null;
+
+            // 清空自定义组件属性
+            PlayerData = null;
+
             IsInitialized = false;
 
             Log.Info("[CustomEntry] Shutdown complete.");

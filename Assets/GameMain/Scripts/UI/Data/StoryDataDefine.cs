@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AVGGame.Runtime
+namespace AVGGame
 {
     // ==========================================
     // 1. 基础枚举定义

@@ -6,7 +6,7 @@
 using UnityGameFramework.Runtime;
 using GameMain.Scripts.UI.Base;
 using GameMain.Scripts.UI.Extension;
-using GameEntry = GameMain.Scripts.Base.GameEntry;
+using GameEntry = AVGGame.GameEntry;
 
 namespace GameMain.Scripts.UI
 {

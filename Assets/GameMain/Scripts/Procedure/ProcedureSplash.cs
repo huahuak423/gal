@@ -8,7 +8,7 @@ using GameFramework.Procedure;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
-namespace AVGGame.Procedure
+namespace AVGGame
 {
     /// <summary>
     /// 启动画面流程 - 显示游戏 Logo、加载提示等
