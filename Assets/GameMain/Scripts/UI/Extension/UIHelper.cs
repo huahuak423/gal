@@ -24,12 +24,23 @@ namespace GameMain.Scripts.UI
             get { return GameEntry.UI; }
         }
 
+        #region 主菜单相关
+
         /// <summary>
         /// 打开主菜单
         /// </summary>
         public static void OpenMainMenu()
         {
             UIComponent.OpenUIFormById(UIFormId.MainMenu, UIGroupDefinition.Main);
+        }
+
+        /// <summary>
+        /// 打开存档选择界面
+        /// </summary>
+        /// <param name="isNewGame">是否是新游戏模式（true=新游戏，false=继续游戏）</param>
+        public static void OpenArchive(bool isNewGame = false)
+        {
+            UIComponent.OpenUIFormById(UIFormId.Archive, UIGroupDefinition.Main, isNewGame);
         }
 
         /// <summary>
@@ -40,6 +51,10 @@ namespace GameMain.Scripts.UI
             UIComponent.OpenUIFormById(UIFormId.Settings, UIGroupDefinition.Popup);
         }
 
+        #endregion
+
+        #region 游戏内UI
+
         /// <summary>
         /// 打开对话面板
         /// </summary>
@@ -49,12 +64,45 @@ namespace GameMain.Scripts.UI
         }
 
         /// <summary>
+        /// 打开对话面板（带存档数据）
+        /// </summary>
+        /// <param name="saveData">存档数据</param>
+        public static void OpenDialogue(object saveData)
+        {
+            UIComponent.OpenUIFormById(UIFormId.Dialogue, UIGroupDefinition.Scene, saveData);
+        }
+
+        /// <summary>
+        /// 打开游戏内菜单
+        /// </summary>
+        public static void OpenMenu()
+        {
+            UIComponent.OpenUIFormById(UIFormId.Menu, UIGroupDefinition.Popup);
+        }
+
+        /// <summary>
+        /// 打开地图界面
+        /// </summary>
+        public static void OpenMap()
+        {
+            UIComponent.OpenUIFormById(UIFormId.Map, UIGroupDefinition.Main);
+        }
+
+        #endregion
+
+        #region 系统UI
+
+        /// <summary>
         /// 打开加载面板
         /// </summary>
         public static void OpenLoading()
         {
             UIComponent.OpenUIFormById(UIFormId.Loading, UIGroupDefinition.Top);
         }
+
+        #endregion
+
+        #region 关闭UI
 
         /// <summary>
         /// 关闭所有 UI
@@ -71,5 +119,7 @@ namespace GameMain.Scripts.UI
         {
             UIComponent.CloseUIFormsByGroup(groupName);
         }
+
+        #endregion
     }
 }

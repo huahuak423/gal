@@ -10,7 +10,7 @@ using UnityGameFramework.Runtime;
 using GameMain.Scripts.UI.Base;
 using System.Collections;
 
-namespace GameMain.Scripts.UI.Forms
+namespace AVGGame
 {
     /// <summary>
     /// 对话面板 - AVG 游戏核心 UI

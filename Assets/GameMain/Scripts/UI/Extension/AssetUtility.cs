@@ -30,18 +30,20 @@ namespace GameMain.Scripts.UI.Extension
         {
             switch (uiFormId)
             {
-                // 系统UI
-                case UIFormId.Loading: return "LoadingPanel";
+                // 系统UI (1000-1999)
+                case UIFormId.Loading: return "Loading";
                 case UIFormId.MessageBox: return "MessageBoxPanel";
 
-                // 主菜单
+                // 主菜单 (2000-2999)
                 case UIFormId.MainMenu: return "MainMenu";
                 case UIFormId.Settings: return "Settings";
+                case UIFormId.Archive: return "Archive";
 
-                // 游戏内UI
-                case UIFormId.Dialogue: return "DialoguePanel";
+                // 游戏内UI (3000-3999)
+                case UIFormId.Dialogue: return "Dialogue";
                 case UIFormId.Choice: return "ChoicePanel";
-                
+                case UIFormId.Menu: return "Menu";
+                case UIFormId.Map: return "Map";
 
                 default:
                     UnityEngine.Debug.LogWarning($"[AssetUtility] Unknown UIFormId: {uiFormId}");
