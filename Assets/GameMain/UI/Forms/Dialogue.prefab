@@ -401,6 +401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4932097857183559663}
+  - component: {fileID: 4232992919859234077}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -424,6 +425,24 @@ Transform:
   - {fileID: 7716992732492692461}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4232992919859234077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3090354893638962882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d19df65653ed7844a24979e2d883c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CharacterPortrait: {fileID: 0}
+  m_CharacterNameText: {fileID: 0}
+  m_DialogueText: {fileID: 0}
+  m_ContinueIndicator: {fileID: 0}
+  m_BackgroundImage: {fileID: 2033000749014796811}
+  m_ButtonMenu: {fileID: 7606750739628798284}
 --- !u!1 &3674176121748860301
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,7 +760,7 @@ GameObject:
   - component: {fileID: 8213080169273781980}
   - component: {fileID: 7606750739628798284}
   m_Layer: 0
-  m_Name: ButtonSystem
+  m_Name: ButtonMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

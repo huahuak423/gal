@@ -10,6 +10,7 @@ using GameMain.Scripts.UI.Base;
 using GameMain.Scripts.UI.Extension;
 using GameFramework.Fsm;
 using GameFramework.Procedure;
+using GameFramework.Procedure;
 
 namespace AVGGame
 {
@@ -132,7 +133,13 @@ namespace AVGGame
         private void OnSettingClick()
         {
             Log.Info("[MainMenuPanel] Settings clicked");
-            // TODO: 打开设置界面
+            CloseSelf();
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.Settings),
+                UIGroupDefinition.Popup,
+                Constant.AssetPriority.UIAsset,
+                null
+            );
         }
 
         /// <summary>
