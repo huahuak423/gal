@@ -36,7 +36,7 @@ namespace GameMain.Scripts.UI.Extension
 
                 // 主菜单 (2000-2999)
                 case UIFormId.MainMenu: return "MainMenu";
-                case UIFormId.Settings: return "Settings";
+                case UIFormId.Settings: return "GameSetting";
                 case UIFormId.Archive: return "Archive";
 
                 // 游戏内UI (3000-3999)

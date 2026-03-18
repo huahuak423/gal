@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityGameFramework.Runtime;
 using GameMain.Scripts.UI.Base;
+using GameMain.Scripts.UI.Extension;
 using System.Collections;
 
 namespace AVGGame
@@ -29,6 +30,9 @@ namespace AVGGame
 
         [Header("背景")]
         [SerializeField] private Image m_BackgroundImage;
+
+        [Header("菜单按钮")]
+        [SerializeField] private Button m_ButtonMenu;
 
         #endregion
 
@@ -58,6 +62,26 @@ namespace AVGGame
             {
                 m_ContinueIndicator.SetActive(false);
             }
+
+            // 绑定菜单按钮事件
+            if (m_ButtonMenu != null)
+            {
+                m_ButtonMenu.onClick.AddListener(OnMenuClick);
+            }
+        }
+
+        /// <summary>
+        /// 打开游戏内菜单
+        /// </summary>
+        private void OnMenuClick()
+        {
+            Log.Info("[DialoguePanel] Menu clicked");
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.Menu),
+                UIGroupDefinition.Popup,
+                Constant.AssetPriority.UIAsset,
+                null
+            );
         }
 
         protected override void OnOpen(object userData)
