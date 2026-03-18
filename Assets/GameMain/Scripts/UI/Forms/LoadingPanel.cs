@@ -9,7 +9,7 @@ using TMPro;
 using UnityGameFramework.Runtime;
 using GameMain.Scripts.UI.Base;
 
-namespace GameMain.Scripts.UI.Forms
+namespace AVGGame
 {
     /// <summary>
     /// 加载面板

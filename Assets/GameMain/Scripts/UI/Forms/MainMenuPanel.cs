@@ -7,10 +7,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
 using GameMain.Scripts.UI.Base;
+using GameMain.Scripts.UI.Extension;
 using GameFramework.Fsm;
 using GameFramework.Procedure;
 
-namespace GameMain.Scripts.UI.Forms
+namespace AVGGame
 {
     /// <summary>
     /// 主菜单面板
@@ -85,26 +86,35 @@ namespace GameMain.Scripts.UI.Forms
         #region 按钮事件
 
         /// <summary>
-        /// 新游戏
+        /// 新游戏 - 打开存档选择界面（新游戏模式）
         /// </summary>
         private void OnNewGameClick()
         {
             Log.Info("[MainMenuPanel] New Game clicked");
             CloseSelf();
-
-            // 通知流程开始新游戏
-            // m_ProcedureFsm?.SetData("StartNewGame", true);
+            // 打开存档选择界面，传入 true 表示新游戏模式
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.Archive),
+                UIGroupDefinition.Main,
+                Constant.AssetPriority.UIAsset,
+                true
+            );
         }
 
         /// <summary>
-        /// 继续游戏
+        /// 继续游戏 - 打开存档选择界面（继续游戏模式）
         /// </summary>
         private void OnContinueClick()
         {
             Log.Info("[MainMenuPanel] Continue clicked");
             CloseSelf();
-
-            // TODO: 打开存档选择界面
+            // 打开存档选择界面，传入 false 表示继续游戏模式
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.Archive),
+                UIGroupDefinition.Main,
+                Constant.AssetPriority.UIAsset,
+                false
+            );
         }
 
         /// <summary>
@@ -146,7 +156,7 @@ namespace GameMain.Scripts.UI.Forms
         private bool CheckHasSave()
         {
             // TODO: 检查是否有存档
-            return false;
+            return true; // 暂时返回 true 方便测试
         }
 
         #endregion
