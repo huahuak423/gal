@@ -174,7 +174,7 @@ MonoBehaviour:
       _dynamic: 0
     - _fieldName: Choices
       _node: {fileID: -4699907874871234357}
-      _typeQualifiedName: System.Collections.Generic.List`1[[AVGGame.Runtime.ChoiceItemData,
+      _typeQualifiedName: System.Collections.Generic.List`1[[AVGGame.ChoiceItemData,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -184,7 +184,7 @@ MonoBehaviour:
       _dynamic: 0
     - _fieldName: Choices 0
       _node: {fileID: -4699907874871234357}
-      _typeQualifiedName: AVGGame.Runtime.ChoiceItemData, Assembly-CSharp, Version=0.0.0.0,
+      _typeQualifiedName: AVGGame.ChoiceItemData, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Entry
@@ -196,7 +196,7 @@ MonoBehaviour:
       _dynamic: 1
     - _fieldName: Choices 1
       _node: {fileID: -4699907874871234357}
-      _typeQualifiedName: AVGGame.Runtime.ChoiceItemData, Assembly-CSharp, Version=0.0.0.0,
+      _typeQualifiedName: AVGGame.ChoiceItemData, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Entry
@@ -208,7 +208,7 @@ MonoBehaviour:
       _dynamic: 1
     - _fieldName: Choices 2
       _node: {fileID: -4699907874871234357}
-      _typeQualifiedName: AVGGame.Runtime.ChoiceItemData, Assembly-CSharp, Version=0.0.0.0,
+      _typeQualifiedName: AVGGame.ChoiceItemData, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections: []
       _direction: 1
@@ -481,9 +481,11 @@ MonoBehaviour:
   DialogText: 
   CharacterDisplays:
   - CharacterName: 
-    ActionType: 0
+    ActionType: 1
     Position: 0
     SpritePath: 
+  BgmPath: 
+  SePath: 
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &5995811028131455946

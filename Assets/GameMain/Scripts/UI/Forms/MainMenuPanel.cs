@@ -109,7 +109,7 @@ namespace AVGGame
             // 打开存档选择界面
             if (m_ProcedureMainMenu != null)
             {
-                m_ProcedureMainMenu.OpenArchive(true); // 告诉老板：开存档页，是新游戏！
+                m_ProcedureMainMenu.OpenArchive(true); 
             }
         }
 
