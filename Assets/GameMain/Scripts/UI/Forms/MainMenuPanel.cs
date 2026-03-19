@@ -6,8 +6,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
-using GameMain.Scripts.UI.Base;
-using GameMain.Scripts.UI.Extension;
+using AVGGame;
 using GameFramework.Fsm;
 using GameFramework.Procedure;
 using GameFramework.Procedure;
@@ -32,7 +31,7 @@ namespace AVGGame
 
         #region 私有字段
 
-        private IFsm<IProcedureManager> m_ProcedureFsm;
+        private ProcedureMainMenu m_ProcedureMainMenu = null;
 
         #endregion
 
@@ -64,7 +63,7 @@ namespace AVGGame
             base.OnOpen(userData);
 
             // 保存流程引用
-            m_ProcedureFsm = userData as IFsm<IProcedureManager>;
+            m_ProcedureMainMenu = userData as ProcedureMainMenu;
 
             // 检查是否有存档
             bool hasSave = CheckHasSave();
@@ -78,8 +77,8 @@ namespace AVGGame
 
         protected override void OnClose(bool isShutdown, object userData)
         {
+            m_ProcedureMainMenu = null;
             base.OnClose(isShutdown, userData);
-            m_ProcedureFsm = null;
         }
 
         #endregion
@@ -87,19 +86,17 @@ namespace AVGGame
         #region 按钮事件
 
         /// <summary>
-        /// 新游戏 - 打开存档选择界面（新游戏模式）
+        /// 新游戏 - 直接打开大地图
         /// </summary>
         private void OnNewGameClick()
         {
             Log.Info("[MainMenuPanel] New Game clicked");
             CloseSelf();
-            // 打开存档选择界面，传入 true 表示新游戏模式
-            GameEntry.UI.OpenUIForm(
-                AssetUtility.GetUIFormAsset(UIFormId.Archive),
-                UIGroupDefinition.Main,
-                Constant.AssetPriority.UIAsset,
-                true
-            );
+            if (m_ProcedureMainMenu != null)
+            {
+                m_ProcedureMainMenu.StartGame();
+            }
+            
         }
 
         /// <summary>
@@ -109,13 +106,11 @@ namespace AVGGame
         {
             Log.Info("[MainMenuPanel] Continue clicked");
             CloseSelf();
-            // 打开存档选择界面，传入 false 表示继续游戏模式
-            GameEntry.UI.OpenUIForm(
-                AssetUtility.GetUIFormAsset(UIFormId.Archive),
-                UIGroupDefinition.Main,
-                Constant.AssetPriority.UIAsset,
-                false
-            );
+            // 打开存档选择界面
+            if (m_ProcedureMainMenu != null)
+            {
+                m_ProcedureMainMenu.OpenArchive(true); // 告诉老板：开存档页，是新游戏！
+            }
         }
 
         /// <summary>
@@ -134,12 +129,7 @@ namespace AVGGame
         {
             Log.Info("[MainMenuPanel] Settings clicked");
             CloseSelf();
-            GameEntry.UI.OpenUIForm(
-                AssetUtility.GetUIFormAsset(UIFormId.Settings),
-                UIGroupDefinition.Popup,
-                Constant.AssetPriority.UIAsset,
-                null
-            );
+            
         }
 
         /// <summary>
@@ -148,12 +138,10 @@ namespace AVGGame
         private void OnExitClick()
         {
             Log.Info("[MainMenuPanel] Exit clicked");
-
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+            if (m_ProcedureMainMenu != null)
+            {
+                m_ProcedureMainMenu.QuitGame(); 
+            }
         }
 
         #endregion

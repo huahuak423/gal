@@ -5,9 +5,9 @@
 
 using GameFramework.UI;
 using UnityGameFramework.Runtime;
-using GameMain.Scripts.UI.Base;
+using AVGGame;
 
-namespace GameMain.Scripts.UI.Extension
+namespace AVGGame
 {
     /// <summary>
     /// UI 扩展方法

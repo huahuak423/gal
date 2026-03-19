@@ -3,7 +3,7 @@
 // AVG Game Project
 //------------------------------------------------------------
 
-namespace GameMain.Scripts.UI.Base
+namespace AVGGame
 {
     /// <summary>
     /// UI 界面 ID 定义

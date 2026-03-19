@@ -6,7 +6,7 @@
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
-namespace GameMain.Scripts.UI.Base
+namespace AVGGame
 {
     /// <summary>
     /// UI 界面基类

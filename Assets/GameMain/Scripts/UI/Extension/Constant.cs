@@ -3,7 +3,7 @@
 // AVG Game Project
 //------------------------------------------------------------
 
-namespace GameMain.Scripts.UI.Extension
+namespace AVGGame
 {
     /// <summary>
     /// 常量定义

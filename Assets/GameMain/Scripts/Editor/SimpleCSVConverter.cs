@@ -9,7 +9,7 @@ namespace AVGGame.Editor
 {
     public class SimpleCSVConverter : EditorWindow
     {
-        [MenuItem("AVG Tools/3. 极简 CSV 转换 UGF 数据表")]
+        [MenuItem("AVG Tools/3. 极简 CSV 转换 UGF 事件池数据表")]
         public static void ConvertCSVToTXT()
         {
             string inputPath = EditorUtility.OpenFilePanel("选择要导出的 CSV 表格", "Assets/", "csv");

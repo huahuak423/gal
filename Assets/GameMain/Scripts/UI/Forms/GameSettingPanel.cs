@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
 using UnityGameFramework.Runtime;
-using GameMain.Scripts.UI.Base;
+using AVGGame;
 
 namespace AVGGame
 {

@@ -5,120 +5,98 @@
 
 using GameFramework.Fsm;
 using GameFramework.Procedure;
+using UnityEngine;
 using UnityGameFramework.Runtime;
-using GameEntry = AVGGame.GameEntry;
 
 namespace AVGGame
 {
     /// <summary>
     /// 游戏主流程 - AVG 游戏的核心流程，处理对话、剧情等
     /// </summary>
-    public class ProcedureGame : ProcedureBase  
+    public class ProcedureGame : ProcedureBase
     {
         #region 字段
-
-        private bool m_IsPaused = false;
-
+        // 唯一的子页面记录器：大地图、剧情对话，谁打开就记录谁
+        private int m_CurrentSubFormId = -1;
+        
+        // 游戏核心数据
+        private int m_CurrentAP = 10;
+        
         #endregion
-
+        
         #region 生命周期
-
         protected override void OnEnter(IFsm<IProcedureManager> procedureOwner)
         {
             base.OnEnter(procedureOwner);
-            Log.Info("[ProcedureGame] Enter game procedure");
+            Log.Info("[ProcedureGame] 正式进入游戏核心流程！");
 
-            // TODO: 打开游戏主界面 UI
-            // GameEntry.UI.OpenUIForm(UIFormId.GameMain);
+            // 1. 读取主菜单传过来的数据
+            //bool isNewGame = procedureOwner.GetData<VarBool>("IsNewGame");
+            
+            // TODO: 2. 在这里加载 EventPool 等数据表！
 
-            // TODO: 初始化游戏数据
-            InitializeGame(procedureOwner);
+            // 3. 游戏开始，默认拉起大地图
+            //OpenMap();
         }
-
-        protected override void OnUpdate(IFsm<IProcedureManager> procedureOwner, float elapseSeconds, float realElapseSeconds)
-        {
-            base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
-
-            if (m_IsPaused)
-            {
-                return;
-            }
-
-            // TODO: 更新游戏逻辑
-            // 例如：对话系统、剧情系统等
-        }
-
-        protected override void OnLeave(IFsm<IProcedureManager> procedureOwner, bool isShutdown)
-        {
-            base.OnLeave(procedureOwner, isShutdown);
-
-            // TODO: 清理游戏数据
-            CleanupGame();
-
-            Log.Info("[ProcedureGame] Leave game procedure");
-        }
-
         #endregion
-
-        #region 游戏控制
-
+        
+        #region 公共方法
         /// <summary>
-        /// 暂停游戏
+        /// 打开大地图 (被 OnEnter 或 剧情结束时调用)
         /// </summary>
-        public void PauseGame()
+        public void OpenMap()
         {
-            m_IsPaused = true;
-            Log.Info("[ProcedureGame] Game paused");
+            Log.Info("[ProcedureGame] 切换到大地图界面");
+            // 把流程自己 (this) 传过去
+            SwitchSubForm(AssetUtility.GetUIFormAsset(UIFormId.Map), this);
         }
 
         /// <summary>
-        /// 恢复游戏
+        /// 进入剧情 (由 MapForm 点击地点时调用)
         /// </summary>
-        public void ResumeGame()
+        public void StartStory(int eventId, int costAp)
         {
-            m_IsPaused = false;
-            Log.Info("[ProcedureGame] Game resumed");
+            Log.Info($"[ProcedureGame] 扣除 {costAp} AP，开始播放事件: {eventId}");
+            
+            // 扣除体力
+            
+            // 把自己 (this) 和 目标事件 ID 打包传给 StoryForm
+          
         }
 
         /// <summary>
-        /// 返回主菜单
+        /// 剧情结束，返回大地图 (由 StoryForm 播放完最后一句时调用)
         /// </summary>
-        public void ReturnToMainMenu(IFsm<IProcedureManager> procedureOwner)
+        public void EndStoryAndReturnToMap()
         {
-            ChangeState<ProcedureMainMenu>(procedureOwner);
-        }
+            Log.Info("[ProcedureGame] 剧情结束，返回大地图");
+            
+            // 如果没体力了，直接进入结算流程（下一天/周目）
 
+            // 还有体力，重新拉起大地图
+            OpenMap();
+        }
+    
         #endregion
-
+        
         #region 私有方法
-
+        
         /// <summary>
-        /// 初始化游戏
+        /// 页面切换器
         /// </summary>
-        private void InitializeGame(IFsm<IProcedureManager> procedureOwner)
+        /// <param name="uiFormAssetName">页面id</param>
+        /// <param name="userData">UI页面会用到的数据</param>
+        private void SwitchSubForm(string uiFormAssetName, object userData = null)
         {
-            // TODO: 加载场景
-            // GameEntry.Scene.LoadScene(SceneId.GameScene);
-
-            // TODO: 加载角色
-            // GameEntry.Entity.ShowEntity<Entity>(EntityId.Player);
-
-            // TODO: 开始对话
-            // GameEntry.Dialog.StartDialog(DialogId.Introduction);
+            if (m_CurrentSubFormId != -1)
+            {
+                GameEntry.UI.CloseUIForm(m_CurrentSubFormId);
+                m_CurrentSubFormId = -1;
+            }
+            m_CurrentSubFormId = GameEntry.UI.OpenUIForm(uiFormAssetName, "Main", userData);
         }
-
-        /// <summary>
-        /// 清理游戏
-        /// </summary>
-        private void CleanupGame()
-        {
-            // TODO: 卸载场景
-            // GameEntry.Scene.UnloadScene(SceneId.GameScene);
-
-            // TODO: 隐藏所有实体
-            // GameEntry.Entity.HideAllLoadedEntities();
-        }
-
         #endregion
     }
+    
+    
 }

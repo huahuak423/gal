@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 
-namespace GameMain.Scripts.UI.Extension
+namespace AVGGame
 {
     /// <summary>
     /// Toast 提示工具

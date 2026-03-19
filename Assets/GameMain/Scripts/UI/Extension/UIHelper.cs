@@ -4,8 +4,7 @@
 //------------------------------------------------------------
 
 using UnityGameFramework.Runtime;
-using GameMain.Scripts.UI.Base;
-using GameMain.Scripts.UI.Extension;
+using AVGGame;
 using GameEntry = AVGGame.GameEntry;
 
 namespace GameMain.Scripts.UI

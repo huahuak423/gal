@@ -6,8 +6,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
-using GameMain.Scripts.UI.Base;
-using GameMain.Scripts.UI.Extension;
+using AVGGame;
 
 namespace AVGGame
 {

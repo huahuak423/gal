@@ -3,9 +3,9 @@
 // AVG Game Project
 //------------------------------------------------------------
 
-using GameMain.Scripts.UI.Base;
+using AVGGame;
 
-namespace GameMain.Scripts.UI.Extension
+namespace AVGGame
 {
     /// <summary>
     /// UI 资源工具类

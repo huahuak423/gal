@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityGameFramework.Runtime;
-using GameMain.Scripts.UI.Base;
+using AVGGame;
 
 namespace AVGGame
 {
