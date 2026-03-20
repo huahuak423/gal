@@ -48,7 +48,7 @@ namespace AVGGame
             {
                 m_StoryGraphLoader = new StoryGraphLoader();
             }
-            m_StoryGraphLoader.InitListener();
+            m_StoryGraphLoader.InitListener(this);
             
             //检查内存里是不是已经有这本账本了
             if (GameEntry.DataTable.HasDataTable<EventRowData>())
@@ -57,7 +57,7 @@ namespace AVGGame
                 GameEntry.DataTable.DestroyDataTable<EventRowData>();
             }
             
-            // 在这里加载 EventPool数据表
+            // 在这里加载 EventPool数据表（加载完会执行回调函数）
             IDataTable<EventRowData> emptyTable = GameEntry.DataTable.CreateDataTable<EventRowData>();
             DataTableBase tableBase = (DataTableBase)emptyTable;
             string realPath = "Assets/GameMain/DataTables/EventPool.txt";
@@ -85,7 +85,7 @@ namespace AVGGame
         /// <summary>
         /// 功能1：判断哪些事件应该显示在选项框上 (可见条件筛选)
         /// </summary>
-        public List<EventRowData> GetVisibleEventsInMap(string mapId, PlayerDataComponent playerData)
+        public List<EventRowData> GetVisibleEventsInMap(int mapId)
         {
             List<EventRowData> result = new List<EventRowData>();
 
@@ -95,7 +95,7 @@ namespace AVGGame
             foreach (var evt in allEventsInMap)
             {
                 // 使用刚刚写好的工具检查 VisibleConditions 列
-                if (ConditionChecker.CheckCondition(evt.VisibleConditions, playerData))
+                if (ConditionChecker.CheckCondition(evt.VisibleConditions, CustomEntry.PlayerData))
                 {
                     result.Add(evt);
                 }
@@ -104,11 +104,10 @@ namespace AVGGame
             return result;
         }
         
-        
         /// <summary>
-        /// 从底层的全量数据表中，实时筛选出属于某个地图的所有事件（不含条件过滤）
+        /// 从底层的全量数据表中，实时筛选出属于某个地图的所有事件（不含任何条件过滤）
         /// </summary>
-        public List<EventRowData> GetRawEventsByMapId(string mapId)
+        public List<EventRowData> GetRawEventsByMapId(int mapId)
         {
             List<EventRowData> result = new List<EventRowData>();
 
@@ -135,63 +134,22 @@ namespace AVGGame
         }
         
         /// <summary>
-        /// 如果你只想要纯粹的 TargetGraphName 列表（例如传给某些纯逻辑模块）：
-        /// </summary>
-        public List<string> GetVisibleGraphNamesInMap(string mapId, PlayerDataComponent playerData)
-        {
-            List<string> graphNames = new List<string>();
-            List<EventRowData> visibleEvents = GetVisibleEventsInMap(mapId, playerData);
-            
-            foreach (var evt in visibleEvents)
-            {
-                graphNames.Add(evt.TargetGraphName);
-            }
-            return graphNames;
-        }
-        
-        /// <summary>
-        /// 判断某个显示出来的事件，按钮是否亮起可点 (可玩条件筛选)
+        /// 判断某个显示出来的事件，按钮是否亮起可点 (点击条件筛选)
         /// 玩家点击按钮或 UI 刷新时调用。
         /// </summary>
-        public bool IsEventPlayable(EventRowData evt, PlayerDataComponent playerData)
+        public bool IsEventPlayable(EventRowData evt)
         {
+            
             // 如果连体力都不够，直接不可玩（假设体力判断在这里做）
-            if (playerData.CurrentActionPoints < evt.CostAP)
+            if (CustomEntry.PlayerData.CurrentActionPoints < evt.CostAP)
             {
                 return false;
             }
 
             // 使用工具检查 PlayableConditions 列
-            return ConditionChecker.CheckCondition(evt.PlayableConditions, playerData);
+            return ConditionChecker.CheckCondition(evt.PlayableConditions, CustomEntry.PlayerData);
         }
         
-        /// <summary>
-        /// 放回指定地图id里的所有事件
-        /// </summary>
-        /// <param name="mapId">地图id</param>
-        /// <returns></returns>
-        public List<EventRowData> GetEventsByMapId(string mapId)
-        {
-            List<EventRowData> result = new List<EventRowData>();
-
-            // 1. 直接向 UGF 伸手要已经加载好的整张表（瞬间完成，不读硬盘）
-            IDataTable<EventRowData> dtEvent = GameEntry.DataTable.GetDataTable<EventRowData>();
-
-            // 2. 实时进行全表遍历筛选
-            if (dtEvent != null)
-            {
-                foreach (EventRowData row in dtEvent)
-                {
-                    // 只要所属地图对得上，就塞进结果列表里
-                    if (row.MapId == mapId)
-                    {
-                        result.Add(row);
-                    }
-                }
-            }
-
-            return result; // 把找出的事件列表交给秘书 (UI)
-        }
         /// <summary>
         /// 打开大地图 (被 OnEnter 或 剧情结束时调用)
         /// </summary>
@@ -201,29 +159,29 @@ namespace AVGGame
             // 把流程自己 (this) 传过去
             SwitchSubForm(AssetUtility.GetUIFormAsset(UIFormId.Map), this);
         }
-
+        
         /// <summary>
-        /// 进入小地图
+        /// 加载剧情
         /// </summary>
-        /// <param name="MapId">地图id</param>
-        public void EntryPlace(int MapId)
+        public void LoadStory(int eventId)
         {
-            //打开对话页面，去事件池里寻找地图1且当前已经解锁的事件
-            
-            
+            EventRowData currentData = GameEntry.DataTable.GetDataTable<EventRowData>().GetDataRow(eventId);
+            // 扣除体力
+            Log.Info($"[ProcedureGame] 扣除 {currentData.CostAP} AP，开始播放事件: {eventId}");
+            //异步加载目标故事剧本
+            m_StoryGraphLoader.LoadGraph(currentData.TargetGraphName);
         }
-
+        
         /// <summary>
         /// 进入剧情
         /// </summary>
-        public void StartStory(int eventId, int costAp)
+        /// <param name="graphName"></param>
+        public void StartStory(string graphName)
         {
-            Log.Info($"[ProcedureGame] 扣除 {costAp} AP，开始播放事件: {eventId}");
-            
-            // 扣除体力
-            
-            // 把自己 (this) 和 目标事件 ID 打包传给 StoryForm
-          
+            //设置当前剧情
+            CustomEntry.PlayerData.SetCurrentStoryGarphName(graphName);
+            //进入对话页面
+            SwitchSubForm(AssetUtility.GetUIFormAsset(UIFormId.Dialogue), this);
         }
 
         /// <summary>

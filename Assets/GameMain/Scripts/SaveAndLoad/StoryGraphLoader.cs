@@ -6,17 +6,20 @@ namespace AVGGame
 {
    public class StoryGraphLoader 
     {
+        private ProcedureGame m_ProcedureGame;
         // 记得在系统初始化时调用这个监听，或者写在 Procedure 的 OnEnter 里
-        public void InitListener()
+        public void InitListener(ProcedureGame  procedureGame)
         {
             GameEntry.Event.Subscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadSuccess);
             GameEntry.Event.Subscribe(LoadDataTableFailureEventArgs.EventId, OnLoadFailure);
+            m_ProcedureGame = procedureGame;
         }
 
         public void RemoveListener()
         {
             GameEntry.Event.Unsubscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadSuccess);
             GameEntry.Event.Unsubscribe(LoadDataTableFailureEventArgs.EventId, OnLoadFailure);
+            m_ProcedureGame = null;
         }
 
         // ==========================================
@@ -97,9 +100,9 @@ namespace AVGGame
         private void StartPlayStory(string graphName)
         {
             // 以后你要拿这个图的数据，都要带上 graphName 这个别名去拿：
-            IDataTable<StoryRowData> dt = GameEntry.DataTable.GetDataTable<StoryRowData>(graphName);
-            
-            // TODO: 获取图里的第一句话（比如 dt.GetDataRow(1)），然后发给 DialoguePanel 显示！
+            //示例：IDataTable<StoryRowData> dt = GameEntry.DataTable.GetDataTable<StoryRowData>(graphName);
+            //加载成功后回调主流程的进入故事
+            m_ProcedureGame.StartStory(graphName);
         }
     }
 }

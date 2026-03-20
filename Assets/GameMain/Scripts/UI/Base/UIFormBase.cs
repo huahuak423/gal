@@ -134,6 +134,24 @@ namespace AVGGame
             }
             return child.GetComponent<T>();
         }
+        
+        /// <summary>
+        /// 获取指定路径的游戏对象的组件
+        /// </summary>
+        /// <param name="path">游戏对象路径</param>
+        /// <typeparam name="T">组件类型</typeparam>
+        /// <returns>游戏组件</returns>
+        protected T GetComponentByPath<T>(string path) where T : Component
+        {
+            GameObject  go = GameObject.Find(path);
+            if (go == null)
+            {
+                Log.Warning($"[UI] gameObject not found: {path}");
+                return null;
+            }
+            return go.GetComponent<T>();
+        }
+        
 
         /// <summary>
         /// 关闭当前 UI

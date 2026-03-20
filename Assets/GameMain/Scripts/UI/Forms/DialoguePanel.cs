@@ -47,6 +47,7 @@ namespace AVGGame
         private bool m_IsTyping = false;
         private string m_CurrentText = "";
         private System.Action m_OnComplete;
+        private ProcedureGame m_ProcedureGame;
 
         #endregion
 
@@ -67,6 +68,8 @@ namespace AVGGame
             {
                 m_ButtonMenu.onClick.AddListener(OnMenuClick);
             }
+
+            m_ProcedureGame = (ProcedureGame)userData;
         }
 
         /// <summary>

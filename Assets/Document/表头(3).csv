@@ -1,0 +1,7 @@
+﻿描述,唯一编号,所在地图,事件类型,标题（文本）,消耗AP,要求NPC_ID,是否会显示（解锁条件）,是否能点击条件,剧情图名称
+字段名,Id,MapId,EventType,Title,CostAP,ReqNpcId,VisibleConditions,PlayableConditions,TargetGraphName
+数据类型,int,string,int,string,int,int,string,string,string
+,1,01,1,常规事件,1,,,,strory_1
+,2,02,1,常规事件,1,,,,strory_2
+,3,01,2,温叙事件一,1,06,2|1|1,,strory_3
+,4,02,2,温叙事件二,1,06,"1|6|1,2|5|1",,strory_4

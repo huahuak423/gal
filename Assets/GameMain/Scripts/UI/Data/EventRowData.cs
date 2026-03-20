@@ -14,7 +14,7 @@ namespace AVGGame
         public override int Id => m_Id;
 
         // --- 对应 Excel 里的字段 ---
-        public string MapId { get; private set; }
+        public int MapId { get; private set; }
         public int EventType { get; private set; }
         public string Title { get; private set; }
         public int CostAP { get; private set; }
@@ -45,7 +45,7 @@ namespace AVGGame
 
             // 依次解析你的最新字段
             m_Id = int.Parse(columnTexts[index++]);
-            MapId = columnTexts[index++];
+            MapId = ParseInt(columnTexts[index++]);
             EventType = ParseInt(columnTexts[index++]); // 用封装的安全解析法
             Title = columnTexts[index++];
             CostAP = ParseInt(columnTexts[index++]);

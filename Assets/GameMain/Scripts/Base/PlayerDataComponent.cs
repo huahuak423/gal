@@ -344,6 +344,14 @@ namespace AVGGame
         }
 
         #endregion
+        
+        //当前所处故事
+        public string currentStoryGarphName {get; private set;}
+
+        public void SetCurrentStoryGarphName(string storyGarphName)
+        {
+            currentStoryGarphName = storyGarphName;
+        }
 
         #region 奖励应用
 
