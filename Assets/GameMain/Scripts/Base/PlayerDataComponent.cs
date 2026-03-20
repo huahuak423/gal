@@ -3,6 +3,7 @@
 // AVG Game Project
 //------------------------------------------------------------
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityGameFramework.Runtime;
@@ -22,13 +23,16 @@ namespace AVGGame
         [SerializeField] private int m_Charm = 0;           // 魅力
         [SerializeField] private int m_Inspiration = 0;     // 灵感
         [SerializeField] private int m_Sanity = 0;          // 理智
-
+        
         public int Charm => m_Charm;
         public int Inspiration => m_Inspiration;
         public int Sanity => m_Sanity;
-
         #endregion
 
+        #region NPC 进度数据
+        // Key: NPC_ID, Value: 该 NPC 已经完成的事件 ID 集合
+        private Dictionary<int, HashSet<int>> m_NpcProgress = new Dictionary<int, HashSet<int>>();
+        #endregion
         #region 行动点
 
         [Header("行动点")]
@@ -63,7 +67,7 @@ namespace AVGGame
 
         #region 特殊物品
 
-        private HashSet<string> m_SpecialItems = new HashSet<string>();
+        private HashSet<int> m_OwnedItems = new HashSet<int>();
 
         #endregion
 
@@ -84,7 +88,7 @@ namespace AVGGame
 
             // 清空好感度和物品
             m_NpcFavorability.Clear();
-            m_SpecialItems.Clear();
+            m_OwnedItems.Clear();
 
             Log.Info($"[PlayerDataComponent] 新周目初始化完成！周目: {m_CurrentRound}, 行动点: {m_CurrentActionPoints}");
         }
@@ -104,7 +108,7 @@ namespace AVGGame
             BonusInspiration = 0;
             BonusSanity = 0;
             m_NpcFavorability.Clear();
-            m_SpecialItems.Clear();
+            m_OwnedItems.Clear();
 
             Log.Info("[PlayerDataComponent] 游戏已重置！");
         }
@@ -229,9 +233,9 @@ namespace AVGGame
         /// <summary>
         /// 添加物品
         /// </summary>
-        public void AddItem(string itemId)
+        public void AddItem(int itemId)
         {
-            if (m_SpecialItems.Add(itemId))
+            if (m_OwnedItems.Add(itemId))
             {
                 Log.Info($"[PlayerDataComponent] 获得物品: {itemId}");
             }
@@ -240,9 +244,9 @@ namespace AVGGame
         /// <summary>
         /// 移除物品
         /// </summary>
-        public bool RemoveItem(string itemId)
+        public bool RemoveItem(int itemId)
         {
-            if (m_SpecialItems.Remove(itemId))
+            if (m_OwnedItems.Remove(itemId))
             {
                 Log.Info($"[PlayerDataComponent] 失去物品: {itemId}");
                 return true;
@@ -253,13 +257,39 @@ namespace AVGGame
         /// <summary>
         /// 检查是否拥有物品
         /// </summary>
-        public bool HasItem(string itemId)
+        public bool HasItem(int itemId)
         {
-            return m_SpecialItems.Contains(itemId);
+            return m_OwnedItems.Contains(itemId);
         }
 
         #endregion
+        
+        #region NPC进度操作
+        /// <summary>
+        /// 记录 NPC 完成了某个事件
+        /// </summary>
+        public void AddNpcEventProgress(int npcId, int eventId)
+        {
+            if (!m_NpcProgress.ContainsKey(npcId))
+            {
+                m_NpcProgress[npcId] = new HashSet<int>();
+            }
+            m_NpcProgress[npcId].Add(eventId);
+        }
 
+        /// <summary>
+        /// 检查 NPC 是否完成了某个前置事件
+        /// </summary>
+        public bool HasCompletedNpcEvent(int npcId, int eventId)
+        {
+            if (m_NpcProgress.TryGetValue(npcId, out HashSet<int> completedEvents))
+            {
+                return completedEvents.Contains(eventId);
+            }
+            return false;
+        }
+        #endregion
+        
         #region 条件检查
 
         /// <summary>
@@ -278,7 +308,7 @@ namespace AVGGame
                     return CheckValue(favorValue, condition.Value, condition.Operator);
 
                 case ConditionType.SpecialItem:
-                    bool hasItem = HasItem(condition.ItemId);
+                    bool hasItem = HasItem(int.Parse(condition.ItemId));
                     return condition.RequireItem ? hasItem : !hasItem;
 
                 default:
@@ -338,11 +368,11 @@ namespace AVGGame
                 case ConditionType.SpecialItem:
                     if (reward.Value > 0)
                     {
-                        AddItem(reward.ItemId);
+                        AddItem(int.Parse(reward.ItemId));
                     }
                     else
                     {
-                        RemoveItem(reward.ItemId);
+                        RemoveItem(int.Parse(reward.ItemId));
                     }
                     break;
             }
@@ -419,7 +449,7 @@ namespace AVGGame
             Log.Info($"行动点: {m_CurrentActionPoints}/{m_MaxActionPoints}");
             Log.Info($"属性: 魅力={m_Charm}, 灵感={m_Inspiration}, 理智={m_Sanity}");
             Log.Info($"继承加成: 行动点+{BonusActionPoints}, 魅力+{BonusCharm}, 灵感+{BonusInspiration}, 理智+{BonusSanity}");
-            Log.Info($"物品数量: {m_SpecialItems.Count}");
+            Log.Info($"物品数量: {m_OwnedItems.Count}");
             Log.Info($"NPC好感度数量: {m_NpcFavorability.Count}");
         }
 

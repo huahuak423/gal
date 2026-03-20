@@ -9,43 +9,50 @@ namespace AVGGame
     /// </summary>
     public class EventRowData : DataRowBase
     {
-        private int m_Id = 0;
-        
         // UGF 强制要求重写的 ID 属性
+        private int m_Id = 0;
         public override int Id => m_Id;
 
         // --- 对应 Excel 里的字段 ---
         public string MapId { get; private set; }
+        public int EventType { get; private set; }
         public string Title { get; private set; }
         public int CostAP { get; private set; }
+        public int ReqNpcId { get; private set; }
         public string VisibleConditions { get; private set; }
         public string PlayableConditions { get; private set; }
-        public string UnplayableReason { get; private set; }
+        public string TargetGraphName { get; private set; }
 
         /// <summary>
         /// UGF 核心解析方法：读取 txt 的每一行时自动调用
         /// </summary>
         public override bool ParseDataRow(string dataRowString, object userData)
         {
-            // 按制表符切开
             string[] columnTexts = dataRowString.Split('\t');
 
-            // 防御性检查：我们的表头有 7 列
-            if (columnTexts.Length < 7)
+            // 防御检查：现在我们至少需要 10 列（即使描述列是空的也要占位）
+            // 假设第 0 列是“描述”，第 1 列是 Id
+            if (columnTexts.Length < 10)
             {
-                Debug.LogError($"解析 EventRowData 失败，列数不足: {dataRowString}");
+                Log.Warning($"[EventRowData] 列数不足，解析失败: {dataRowString}");
                 return false;
             }
 
-            // 依次赋值，注意这里的顺序必须和 Excel 里的列顺序完全一致！
             int index = 0;
+            
+            // 跳过第 0 列 (中文描述列，机器不读)
+            index++; 
+
+            // 依次解析你的最新字段
             m_Id = int.Parse(columnTexts[index++]);
             MapId = columnTexts[index++];
+            EventType = ParseInt(columnTexts[index++]); // 用封装的安全解析法
             Title = columnTexts[index++];
-            CostAP = int.Parse(columnTexts[index++]);
+            CostAP = ParseInt(columnTexts[index++]);
+            ReqNpcId = ParseInt(columnTexts[index++]);
             VisibleConditions = columnTexts[index++];
             PlayableConditions = columnTexts[index++];
-            UnplayableReason = columnTexts[index++];
+            TargetGraphName = columnTexts[index++];
 
             return true;
         }
@@ -56,6 +63,16 @@ namespace AVGGame
         public override bool ParseDataRow(byte[] dataRowBytes, int startIndex, int length, object userData)
         {
             return false; 
+        }
+        
+        /// <summary>
+        /// 安全的 int 解析，防止 Excel 里格子为空导致崩溃
+        /// </summary>
+        private int ParseInt(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text)) return 0;
+            if (int.TryParse(text, out int result)) return result;
+            return 0;
         }
     }
 }

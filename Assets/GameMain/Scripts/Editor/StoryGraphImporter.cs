@@ -67,7 +67,7 @@ namespace AVGGame.Editor
                     }
 
                     newNode.position = spawnPosition;
-                    spawnPosition.y += 180; 
+                    spawnPosition.x += 450; 
 
                     if (previousNode != null)
                     {

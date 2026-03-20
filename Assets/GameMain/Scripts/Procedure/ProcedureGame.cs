@@ -25,6 +25,9 @@ namespace AVGGame
         // 游戏核心数据
         private int m_CurrentAP = 10;
         
+        //加载剧本类
+        private StoryGraphLoader  m_StoryGraphLoader;
+        
         #endregion
         
         #region 生命周期
@@ -36,22 +39,137 @@ namespace AVGGame
             // 1. 读取主菜单传过来的数据
             //bool isNewGame = procedureOwner.GetData<VarBool>("IsNewGame");
             
-            //读取时间表成功（失败）日志
+            //读取事件表成功（失败）回调
             GameEntry.Event.Subscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
             GameEntry.Event.Subscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
             
-            // TODO: 2. 在这里加载 EventPool 等数据表！
-            GameEntry.DataTable.LoadDataTable("EventPool", "Assets/GameMain/DataTables/EventPool.txt", this);
+            //剧本加载类成功（失败）回调
+            if(m_StoryGraphLoader == null)
+            {
+                m_StoryGraphLoader = new StoryGraphLoader();
+            }
+            m_StoryGraphLoader.InitListener();
             
-            // 3. 游戏开始，默认拉起大地图
-            //OpenMap();
+            //检查内存里是不是已经有这本账本了
+            if (GameEntry.DataTable.HasDataTable<EventRowData>())
+            {
+                // 如果有，为了防止重复装填，我们可以先把它销毁
+                GameEntry.DataTable.DestroyDataTable<EventRowData>();
+            }
+            
+            // 在这里加载 EventPool数据表
+            IDataTable<EventRowData> emptyTable = GameEntry.DataTable.CreateDataTable<EventRowData>();
+            DataTableBase tableBase = (DataTableBase)emptyTable;
+            string realPath = "Assets/GameMain/DataTables/EventPool.txt";
+            tableBase.ReadData(realPath, 0, this);
+            
+        }
+
+        protected override void OnLeave(IFsm<IProcedureManager> procedureOwner, bool isShutdown)
+        {
+            GameEntry.Event.Unsubscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
+            GameEntry.Event.Unsubscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
+            
+            if (m_StoryGraphLoader != null)
+            {
+                m_StoryGraphLoader.RemoveListener(); 
+                m_StoryGraphLoader = null;
+            }
+            
+            base.OnLeave(procedureOwner,isShutdown);
         }
         #endregion
         
         #region 公共方法
+        
         /// <summary>
-        /// 当玩家点击某个地点时，大地图 UI 调用此方法获取该地点的所有事件
+        /// 功能1：判断哪些事件应该显示在选项框上 (可见条件筛选)
         /// </summary>
+        public List<EventRowData> GetVisibleEventsInMap(string mapId, PlayerDataComponent playerData)
+        {
+            List<EventRowData> result = new List<EventRowData>();
+
+            // 获取该地图所有的原始事件 (从 DataTable 获取或从你的字典获取)
+            List<EventRowData> allEventsInMap = GetRawEventsByMapId(mapId); 
+
+            foreach (var evt in allEventsInMap)
+            {
+                // 使用刚刚写好的工具检查 VisibleConditions 列
+                if (ConditionChecker.CheckCondition(evt.VisibleConditions, playerData))
+                {
+                    result.Add(evt);
+                }
+            }
+
+            return result;
+        }
+        
+        
+        /// <summary>
+        /// 从底层的全量数据表中，实时筛选出属于某个地图的所有事件（不含条件过滤）
+        /// </summary>
+        public List<EventRowData> GetRawEventsByMapId(string mapId)
+        {
+            List<EventRowData> result = new List<EventRowData>();
+
+            // 1. 向 UGF 大管家伸手，拿到内存中已经加载好的事件表
+            IDataTable<EventRowData> dtEvent = GameEntry.DataTable.GetDataTable<EventRowData>();
+
+            if (dtEvent == null)
+            {
+                Log.Warning($"[EventManager] 找不到 EventRowData 数据表！请检查是否已成功加载。");
+                return result;
+            }
+
+            // 2. 实时遍历整张表（对于几百上千条数据的单机游戏，耗时不到 1 毫秒）
+            foreach (EventRowData row in dtEvent)
+            {
+                // 只要所在地图匹配，就把它加进待选列表
+                if (row.MapId == mapId)
+                {
+                    result.Add(row);
+                }
+            }
+
+            return result;
+        }
+        
+        /// <summary>
+        /// 如果你只想要纯粹的 TargetGraphName 列表（例如传给某些纯逻辑模块）：
+        /// </summary>
+        public List<string> GetVisibleGraphNamesInMap(string mapId, PlayerDataComponent playerData)
+        {
+            List<string> graphNames = new List<string>();
+            List<EventRowData> visibleEvents = GetVisibleEventsInMap(mapId, playerData);
+            
+            foreach (var evt in visibleEvents)
+            {
+                graphNames.Add(evt.TargetGraphName);
+            }
+            return graphNames;
+        }
+        
+        /// <summary>
+        /// 判断某个显示出来的事件，按钮是否亮起可点 (可玩条件筛选)
+        /// 玩家点击按钮或 UI 刷新时调用。
+        /// </summary>
+        public bool IsEventPlayable(EventRowData evt, PlayerDataComponent playerData)
+        {
+            // 如果连体力都不够，直接不可玩（假设体力判断在这里做）
+            if (playerData.CurrentActionPoints < evt.CostAP)
+            {
+                return false;
+            }
+
+            // 使用工具检查 PlayableConditions 列
+            return ConditionChecker.CheckCondition(evt.PlayableConditions, playerData);
+        }
+        
+        /// <summary>
+        /// 放回指定地图id里的所有事件
+        /// </summary>
+        /// <param name="mapId">地图id</param>
+        /// <returns></returns>
         public List<EventRowData> GetEventsByMapId(string mapId)
         {
             List<EventRowData> result = new List<EventRowData>();
@@ -127,8 +245,7 @@ namespace AVGGame
         
         private void OnLoadDataTableSuccess(object sender, GameEventArgs e)
         {
-            LoadDataTableSuccessEventArgs ne = (LoadDataTableSuccessEventArgs)e;
-            if (ne.UserData != this || ne.DataTableAssetName.Contains("EventPool") == false) return;
+            LoadDataTableSuccessEventArgs ne = (LoadDataTableSuccessEventArgs)e; if (ne.UserData != this || ne.DataTableAssetName.Contains("EventPool") == false) return;
 
             Log.Info("<color=green>[ProcedureGame] 数据表加载成功！直接打开大地图！</color>");
             // 表已经安稳地躺在 UGF 内存里了，直接干活！
@@ -138,6 +255,9 @@ namespace AVGGame
         private void OnLoadDataTableFailure(object sender, GameEventArgs e)
         {
             // ... 报错日志 ...
+            LoadDataTableFailureEventArgs ne = (LoadDataTableFailureEventArgs)e;
+            if (ne.UserData != this) return;
+            Log.Error($"加载失败了，快去检查路径对不对！报错信息: {ne.ErrorMessage}");
         }
         
         
