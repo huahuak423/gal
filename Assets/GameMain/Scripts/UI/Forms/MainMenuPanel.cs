@@ -91,7 +91,6 @@ namespace AVGGame
         private void OnNewGameClick()
         {
             Log.Info("[MainMenuPanel] New Game clicked");
-            CloseSelf();
             if (m_ProcedureMainMenu != null)
             {
                 m_ProcedureMainMenu.StartGame();

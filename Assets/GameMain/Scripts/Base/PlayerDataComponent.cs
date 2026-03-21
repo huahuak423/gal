@@ -20,9 +20,9 @@ namespace AVGGame
         #region 玩家属性
 
         [Header("玩家属性")]
-        [SerializeField] private int m_Charm = 0;           // 魅力
-        [SerializeField] private int m_Inspiration = 0;     // 灵感
-        [SerializeField] private int m_Sanity = 0;          // 理智
+        [SerializeField] private int m_Charm = 3;           // 魅力
+        [SerializeField] private int m_Inspiration = 3;     // 灵感
+        [SerializeField] private int m_Sanity = 3;          // 理智
         
         public int Charm => m_Charm;
         public int Inspiration => m_Inspiration;
@@ -37,7 +37,7 @@ namespace AVGGame
 
         [Header("行动点")]
         [SerializeField] private int m_MaxActionPoints = 10;
-        private int m_CurrentActionPoints = 0;
+        private int m_CurrentActionPoints = 10;
 
         public int CurrentActionPoints => m_CurrentActionPoints;
         public int MaxActionPoints => m_MaxActionPoints;

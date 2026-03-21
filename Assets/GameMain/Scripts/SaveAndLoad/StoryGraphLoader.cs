@@ -45,7 +45,7 @@ namespace AVGGame
             DataTableBase tableBase = (DataTableBase)newTable;
             
             // 拼凑 txt 文件的真实路径 (请根据你的实际文件夹结构修改)
-            string path = $"Assets/GameMain/DataTables/Story/{graphName}.txt";
+            string path = $"Assets/GameMain/DataTables/{graphName}.txt";
 
             // 【妙用取衣小票】：我们把 graphName 作为 userData 传进去！
             // 这样等回调成功时，我们就知道到底是哪个图加载完了。

@@ -36,7 +36,14 @@ namespace AVGGame
 
         protected override void OnLeave(IFsm<IProcedureManager> procedureOwner, bool isShutdown)
         {
+            if (m_CurrentSubFormId != -1)
+            {
+                GameEntry.UI.CloseUIForm(m_CurrentSubFormId);
+                m_CurrentSubFormId = -1;
+            }
+            
             base.OnLeave(procedureOwner, isShutdown);
+            
             Log.Info("[ProcedureMainMenu] Leave");
         }
 

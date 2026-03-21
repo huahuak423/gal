@@ -30,6 +30,7 @@ namespace AVGGame
         private Button m_Button3;
         private Button m_Button4;
         private Button m_Button5;
+        private Button m_ButtonExit;
         private Text m_TextOfSelection1;
         private Text m_TextOfSelection2;
         private Text m_TextOfSelection3;
@@ -50,30 +51,39 @@ namespace AVGGame
             m_ProcedureGame = (ProcedureGame)userData;
             
             //挂载组件引用
-            m_ButtonPlace1 = this.GetComponentByPath<Button>("Map/Canvas/Background/MapPlate/ButtonPlace1");
-            m_ButtonPlace2 = this.GetComponentByPath<Button>("Map/Canvas/Background/MapPlate/ButtonPlace2");
-            m_ButtonPlace3 = this.GetComponentByPath<Button>("Map/Canvas/Background/MapPlate/ButtonPlace3");
-            m_ButtonPlace4 = this.GetComponentByPath<Button>("Map/Canvas/Background/MapPlate/ButtonPlace4");
-            m_ButtonPlace5 = this.GetComponentByPath<Button>("Map/Canvas/Background/MapPlate/ButtonPlace5");
+            m_ButtonPlace1 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace1");
+            m_ButtonPlace2 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace2");
+            m_ButtonPlace3 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace3");
+            m_ButtonPlace4 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace4");
+            m_ButtonPlace5 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace5");
             
             //小地图
             
-            m_SelectPanel = this.GetComponentByPath<Transform>("Map/Canvas/Background/SelectPanel");
-            m_Button1 = this.GetComponentByPath<Button>("Map/Canvas/Background/SelectPanel/Background/Button1");
-            m_Button2 = this.GetComponentByPath<Button>("Map/Canvas/Background/SelectPanel/Background/Button2");
-            m_Button3 = this.GetComponentByPath<Button>("Map/Canvas/Background/SelectPanel/Background/Button3");
-            m_Button4 = this.GetComponentByPath<Button>("Map/Canvas/Background/SelectPanel/Background/Button4");
-            m_Button5 = this.GetComponentByPath<Button>("Map/Canvas/Background/SelectPanel/Background/Button5");
-            m_TextOfSelection1 = this.GetComponentByPath<Text>("Map/Canvas/Background/SelectPanel/Background/Button1/TextOfSelection");
-            m_TextOfSelection2 = this.GetComponentByPath<Text>("Map/Canvas/Background/SelectPanel/Background/Button2/TextOfSelection");
-            m_TextOfSelection3 = this.GetComponentByPath<Text>("Map/Canvas/Background/SelectPanel/Background/Button3/TextOfSelection");
-            m_TextOfSelection4 = this.GetComponentByPath<Text>("Map/Canvas/Background/SelectPanel/Background/Button4/TextOfSelection");
-            m_TextOfSelection5 = this.GetComponentByPath<Text>("Map/Canvas/Background/SelectPanel/Background/Button5/TextOfSelection");
+            m_SelectPanel = this.GetComponentByPath<Transform>("Canvas/Background/SelectPanel");
+            m_Button1 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button1");
+            m_Button2 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button2");
+            m_Button3 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button3");
+            m_Button4 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button4");
+            m_Button5 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button5");
+            m_ButtonExit = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/ButtonExit");
+            m_TextOfSelection1 = this.GetComponentByPath<Text>("Canvas/Background/SelectPanel/Background/Button1/TextOfSelection");
+            m_TextOfSelection2 = this.GetComponentByPath<Text>("Canvas/Background/SelectPanel/Background/Button2/TextOfSelection");
+            m_TextOfSelection3 = this.GetComponentByPath<Text>("Canvas/Background/SelectPanel/Background/Button3/TextOfSelection");
+            m_TextOfSelection4 = this.GetComponentByPath<Text>("Canvas/Background/SelectPanel/Background/Button4/TextOfSelection");
+            m_TextOfSelection5 = this.GetComponentByPath<Text>("Canvas/Background/SelectPanel/Background/Button5/TextOfSelection");
             m_Buttonlist.Add(m_Button1.gameObject);
             m_Buttonlist.Add(m_Button2.gameObject);
             m_Buttonlist.Add(m_Button3.gameObject);
             m_Buttonlist.Add(m_Button4.gameObject);
             m_Buttonlist.Add(m_Button5.gameObject);
+            
+            if(m_SelectPanel != null)
+                m_SelectPanel.gameObject.SetActive(false);
+            
+            if (m_ButtonExit != null)
+            {
+                m_ButtonExit.onClick.AddListener(OnSelectPanelExit);
+            }
             
             if (m_ButtonPlace1 != null)
             {
@@ -90,6 +100,10 @@ namespace AVGGame
         {
             m_ProcedureGame = null;
             m_Buttonlist.Clear();
+            if (m_ButtonExit != null)
+            {
+                m_ButtonPlace1.onClick.RemoveListener(OnSelectPanelExit);
+            }
             if (m_ButtonPlace1 != null)
             {
                 m_ButtonPlace1.onClick.RemoveListener(OnButtonPlace1Click);
@@ -113,9 +127,31 @@ namespace AVGGame
             Log.Info("[Place1Click] clicked");
             //获得该地图中已经解锁的事件列表
             List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(1);
+            SelectStory(eventList);
+        }
+        
+        /// <summary>
+        /// 选择地图2
+        /// </summary>
+        private void OnButtonPlace2Click()
+        {
+            Log.Info("[Place1Click] clicked");
+            //获得该地图中已经解锁的事件列表
+            List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(2);
+            SelectStory(eventList);
+        }
+        
+        /// <summary>
+        /// 打开并按条件显示可以进入的故事
+        /// </summary>
+        /// <param name="eventList"></param>
+        private void SelectStory(List<EventRowData> eventList)
+        {
+            //打开选择面板
+            m_SelectPanel.gameObject.SetActive(true);  
             //根据返回的事件数量来渲染按钮
             int dataCount = eventList != null ? eventList.Count : 0;
-            
+
             for (int i = 0; i < 5; i++) //目前最多就五个按钮来渲染可选事件
             {
                 GameObject nodeObj = m_Buttonlist[i];
@@ -165,16 +201,20 @@ namespace AVGGame
             }
         }
 
+        /// <summary>
+        /// 关闭选择面板
+        /// </summary>
+        private void OnSelectPanelExit()
+        {
+            m_SelectPanel.gameObject.SetActive(false);
+        }
+        
         private void OnEventButtonClicked(int eventId)
         {
+            //关闭选择面板
+            m_SelectPanel.gameObject.SetActive(false);
             //进入对话剧情
             m_ProcedureGame.LoadStory(eventId);
-        }
-
-        private void OnButtonPlace2Click()
-        {
-            Log.Info("[Place1Click] clicked");
-            //选择地图2
         }
         #endregion
         
