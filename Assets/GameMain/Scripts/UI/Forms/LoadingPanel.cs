@@ -47,6 +47,18 @@ namespace AVGGame
 
         #region 生命周期
 
+        protected override void OnInit(object userData)
+        {
+            base.OnInit(userData);
+
+            // 挂载组件引用
+            m_ProgressSlider = this.GetComponentByPath<Slider>("Canvas/Background/ProgressSlider");
+            m_ProgressFillImage = this.GetComponentByPath<Image>("Canvas/Background/ProgressSlider/Fill");
+            m_ProgressText = this.GetComponentByPath<TextMeshProUGUI>("Canvas/Background/ProgressText");
+            m_TipText = this.GetComponentByPath<TextMeshProUGUI>("Canvas/Background/TipText");
+            m_LoadingIcon = this.GetComponentByPath<Image>("Canvas/Background/LoadingIcon");
+        }
+
         protected override void OnOpen(object userData)
         {
             base.OnOpen(userData);

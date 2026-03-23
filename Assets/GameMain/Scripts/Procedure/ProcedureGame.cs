@@ -21,67 +21,70 @@ namespace AVGGame
         #region 字段
         // 唯一的子页面记录器：大地图、剧情对话，谁打开就记录谁
         private int m_CurrentSubFormId = -1;
-        
+
         // 游戏核心数据
         private int m_CurrentAP = 10;
-        
-        //加载剧本类
-        private StoryGraphLoader  m_StoryGraphLoader;
-        
+
+        // 加载剧本类
+        private StoryGraphLoader m_StoryGraphLoader;
+
+        // 对话状态管理
+        private int m_CurrentDialogueId = 0;
+
         #endregion
-        
+
         #region 生命周期
         protected override void OnEnter(IFsm<IProcedureManager> procedureOwner)
         {
             base.OnEnter(procedureOwner);
-            Log.Info("[ProcedureGame] 正式进入游戏核心流程！");
+            Debug.Log("[ProcedureGame] 正式进入游戏核心流程！");
 
-            // 1. 读取主菜单传过来的数据
-            //bool isNewGame = procedureOwner.GetData<VarBool>("IsNewGame");
-            
             //读取事件表成功（失败）回调
             GameEntry.Event.Subscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
             GameEntry.Event.Subscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
-            
+
             //剧本加载类成功（失败）回调
-            if(m_StoryGraphLoader == null)
+            if (m_StoryGraphLoader == null)
             {
                 m_StoryGraphLoader = new StoryGraphLoader();
             }
             m_StoryGraphLoader.InitListener(this);
-            
+
             //检查内存里是不是已经有这本账本了
             if (GameEntry.DataTable.HasDataTable<EventRowData>())
             {
                 // 如果有，为了防止重复装填，我们可以先把它销毁
                 GameEntry.DataTable.DestroyDataTable<EventRowData>();
             }
-            
+
             // 在这里加载 EventPool数据表（加载完会执行回调函数）
             IDataTable<EventRowData> emptyTable = GameEntry.DataTable.CreateDataTable<EventRowData>();
             DataTableBase tableBase = (DataTableBase)emptyTable;
             string realPath = "Assets/GameMain/DataTables/EventPool.txt";
             tableBase.ReadData(realPath, 0, this);
-            
         }
 
         protected override void OnLeave(IFsm<IProcedureManager> procedureOwner, bool isShutdown)
         {
-            GameEntry.Event.Unsubscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
-            GameEntry.Event.Unsubscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
-            
+            // 检查 GameEntry 是否还有效（游戏关闭时可能已被销毁）
+            if (GameEntry.IsInitialized && GameEntry.Event != null)
+            {
+                GameEntry.Event.Unsubscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
+                GameEntry.Event.Unsubscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
+            }
+
             if (m_StoryGraphLoader != null)
             {
-                m_StoryGraphLoader.RemoveListener(); 
+                m_StoryGraphLoader.RemoveListener();
                 m_StoryGraphLoader = null;
             }
-            
-            base.OnLeave(procedureOwner,isShutdown);
+
+            base.OnLeave(procedureOwner, isShutdown);
         }
         #endregion
-        
+
         #region 公共方法
-        
+
         /// <summary>
         /// 功能1：判断哪些事件应该显示在选项框上 (可见条件筛选)
         /// </summary>
@@ -90,7 +93,7 @@ namespace AVGGame
             List<EventRowData> result = new List<EventRowData>();
 
             // 获取该地图所有的原始事件 (从 DataTable 获取或从你的字典获取)
-            List<EventRowData> allEventsInMap = GetRawEventsByMapId(mapId); 
+            List<EventRowData> allEventsInMap = GetRawEventsByMapId(mapId);
 
             foreach (var evt in allEventsInMap)
             {
@@ -103,7 +106,7 @@ namespace AVGGame
 
             return result;
         }
-        
+
         /// <summary>
         /// 从底层的全量数据表中，实时筛选出属于某个地图的所有事件（不含任何条件过滤）
         /// </summary>
@@ -116,11 +119,11 @@ namespace AVGGame
 
             if (dtEvent == null)
             {
-                Log.Warning($"[EventManager] 找不到 EventRowData 数据表！请检查是否已成功加载。");
+                Debug.LogWarning($"[ProcedureGame] 找不到 EventRowData 数据表！");
                 return result;
             }
 
-            // 2. 实时遍历整张表（对于几百上千条数据的单机游戏，耗时不到 1 毫秒）
+            // 2. 实时遍历整张表
             foreach (EventRowData row in dtEvent)
             {
                 // 只要所在地图匹配，就把它加进待选列表
@@ -132,15 +135,13 @@ namespace AVGGame
 
             return result;
         }
-        
+
         /// <summary>
         /// 判断某个显示出来的事件，按钮是否亮起可点 (点击条件筛选)
-        /// 玩家点击按钮或 UI 刷新时调用。
         /// </summary>
         public bool IsEventPlayable(EventRowData evt)
         {
-            
-            // 如果连体力都不够，直接不可玩（假设体力判断在这里做）
+            // 如果连体力都不够，直接不可玩
             if (CustomEntry.PlayerData.CurrentActionPoints < evt.CostAP)
             {
                 return false;
@@ -149,39 +150,142 @@ namespace AVGGame
             // 使用工具检查 PlayableConditions 列
             return ConditionChecker.CheckCondition(evt.PlayableConditions, CustomEntry.PlayerData);
         }
-        
+
         /// <summary>
         /// 打开大地图 (被 OnEnter 或 剧情结束时调用)
         /// </summary>
         public void OpenMap()
         {
-            Log.Info("[ProcedureGame] 切换到大地图界面");
-            // 把流程自己 (this) 传过去
+            Debug.Log("[ProcedureGame] 切换到大地图界面");
             SwitchSubForm(AssetUtility.GetUIFormAsset(UIFormId.Map), this);
         }
-        
+
         /// <summary>
         /// 加载剧情
         /// </summary>
         public void LoadStory(int eventId)
         {
             EventRowData currentData = GameEntry.DataTable.GetDataTable<EventRowData>().GetDataRow(eventId);
-            // 扣除体力
-            Log.Info($"[ProcedureGame] 扣除 {currentData.CostAP} AP，开始播放事件: {eventId}");
+            Debug.Log($"[ProcedureGame] LoadStory 被调用, eventId: {eventId}");
+            Debug.Log($"[ProcedureGame] TargetGraphName: {currentData.TargetGraphName}");
+
             //异步加载目标故事剧本
             m_StoryGraphLoader.LoadGraph(currentData.TargetGraphName);
         }
-        
+
         /// <summary>
-        /// 进入剧情
+        /// 进入剧情（由 StoryGraphLoader 回调）
         /// </summary>
-        /// <param name="graphName"></param>
         public void StartStory(string graphName)
         {
-            //设置当前剧情
+            Debug.Log($"[ProcedureGame] === StartStory 被调用 ===");
+            Debug.Log($"[ProcedureGame] graphName: {graphName}");
+
+            // 设置当前剧情图名
             CustomEntry.PlayerData.SetCurrentStoryGarphName(graphName);
-            //进入对话页面
+
+            // 从第一条开始（默认起始ID为10000）
+            m_CurrentDialogueId = 10000;
+
+            Debug.Log($"[ProcedureGame] m_CurrentDialogueId 设置为: {m_CurrentDialogueId}");
+
+            // 进入对话页面
             SwitchSubForm(AssetUtility.GetUIFormAsset(UIFormId.Dialogue), this);
+        }
+
+        /// <summary>
+        /// 获取当前数据表（动态获取）
+        /// </summary>
+        private IDataTable<StoryRowData> GetCurrentStoryTable()
+        {
+            string graphName = CustomEntry.PlayerData.currentStoryGarphName;
+            if (string.IsNullOrEmpty(graphName))
+            {
+                Debug.LogWarning("[ProcedureGame] currentStoryGarphName 为空");
+                return null;
+            }
+
+            IDataTable<StoryRowData> table = GameEntry.DataTable.GetDataTable<StoryRowData>(graphName);
+            if (table == null)
+            {
+                Debug.LogWarning($"[ProcedureGame] 找不到剧情表: {graphName}");
+                return null;
+            }
+
+            return table;
+        }
+
+        /// <summary>
+        /// 获取当前对话的显示数据（供 DialoguePanel 调用）
+        /// </summary>
+        public DialogueDisplayData GetCurrentDialogue()
+        {
+            Debug.Log($"[ProcedureGame] === GetCurrentDialogue 被调用 ===");
+            Debug.Log($"[ProcedureGame] m_CurrentDialogueId = {m_CurrentDialogueId}");
+
+            IDataTable<StoryRowData> storyTable = GetCurrentStoryTable();
+            if (storyTable == null)
+            {
+                Debug.LogWarning("[ProcedureGame] 获取剧情表失败");
+                return null;
+            }
+
+            StoryRowData row = storyTable.GetDataRow(m_CurrentDialogueId);
+            if (row == null)
+            {
+                Debug.LogWarning($"[ProcedureGame] 找不到对话数据, ID: {m_CurrentDialogueId}");
+                return null;
+            }
+
+            Debug.Log($"[ProcedureGame] 成功获取对话数据!");
+            Debug.Log($"[ProcedureGame] - ID: {row.Id}");
+            Debug.Log($"[ProcedureGame] - 说话人: {row.SpeakerName}");
+            Debug.Log($"[ProcedureGame] - 文本: {row.DialogText}");
+
+            return new DialogueDisplayData
+            {
+                SpeakerName = row.SpeakerName,
+                DialogText = row.DialogText,
+                NextId = row.NextId,
+                CurrentNodeId = row.Id,
+                NodeType = row.NodeType,
+                ChoicesJson = row.ChoicesJson
+            };
+        }
+
+        /// <summary>
+        /// 前进到下一条对话（供 DialoguePanel 调用）
+        /// </summary>
+        public DialogueDisplayData GoToNextDialogue()
+        {
+            Debug.Log($"[ProcedureGame] GoToNextDialogue 被调用");
+
+            IDataTable<StoryRowData> storyTable = GetCurrentStoryTable();
+            if (storyTable == null)
+            {
+                Debug.LogWarning("[ProcedureGame] 获取剧情表失败");
+                return null;
+            }
+
+            StoryRowData currentRow = storyTable.GetDataRow(m_CurrentDialogueId);
+            if (currentRow == null)
+            {
+                Debug.LogWarning($"[ProcedureGame] 找不到当前对话, ID: {m_CurrentDialogueId}");
+                return null;
+            }
+
+            // 检查是否结束 (NextId = 0 表示结束)
+            if (currentRow.NextId == 0)
+            {
+                Debug.Log("[ProcedureGame] 对话结束，准备返回大地图");
+                EndStoryAndReturnToMap();
+                return null;
+            }
+
+            // 更新当前ID并返回下一条数据
+            m_CurrentDialogueId = currentRow.NextId;
+            Debug.Log($"[ProcedureGame] 切换到下一条对话, ID: {m_CurrentDialogueId}");
+            return GetCurrentDialogue();
         }
 
         /// <summary>
@@ -189,41 +293,33 @@ namespace AVGGame
         /// </summary>
         public void EndStoryAndReturnToMap()
         {
-            Log.Info("[ProcedureGame] 剧情结束，返回大地图");
-            
-            // 如果没体力了，直接进入结算流程（下一天/周目）
-
-            // 还有体力，重新拉起大地图
+            Debug.Log("[ProcedureGame] 剧情结束，返回大地图");
             OpenMap();
         }
-    
+
         #endregion
-        
+
         #region 私有方法
-        
+
         private void OnLoadDataTableSuccess(object sender, GameEventArgs e)
         {
-            LoadDataTableSuccessEventArgs ne = (LoadDataTableSuccessEventArgs)e; if (ne.UserData != this || ne.DataTableAssetName.Contains("EventPool") == false) return;
+            LoadDataTableSuccessEventArgs ne = (LoadDataTableSuccessEventArgs)e;
+            if (ne.UserData != this || ne.DataTableAssetName.Contains("EventPool") == false) return;
 
-            Log.Info("<color=green>[ProcedureGame] 数据表加载成功！直接打开大地图！</color>");
-            // 表已经安稳地躺在 UGF 内存里了，直接干活！
-            OpenMap(); 
+            Debug.Log("[ProcedureGame] EventPool数据表加载成功！直接打开大地图！");
+            OpenMap();
         }
 
         private void OnLoadDataTableFailure(object sender, GameEventArgs e)
         {
-            // ... 报错日志 ...
             LoadDataTableFailureEventArgs ne = (LoadDataTableFailureEventArgs)e;
             if (ne.UserData != this) return;
-            Log.Error($"加载失败了，快去检查路径对不对！报错信息: {ne.ErrorMessage}");
+            Debug.LogError($"[ProcedureGame] EventPool加载失败！报错信息: {ne.ErrorMessage}");
         }
-        
-        
+
         /// <summary>
         /// 页面切换器
         /// </summary>
-        /// <param name="uiFormAssetName">页面id</param>
-        /// <param name="userData">UI页面会用到的数据</param>
         private void SwitchSubForm(string uiFormAssetName, object userData = null)
         {
             if (m_CurrentSubFormId != -1)
@@ -235,6 +331,4 @@ namespace AVGGame
         }
         #endregion
     }
-    
-    
 }

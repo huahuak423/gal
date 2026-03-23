@@ -63,6 +63,22 @@ namespace AVGGame
         {
             base.OnInit(userData);
 
+            // 挂载组件引用 - 存档按钮
+            m_SaveSlot1 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot1");
+            m_SaveSlot2 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot2");
+            m_SaveSlot3 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot3");
+            m_SaveSlot4 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot4");
+            m_SaveSlot5 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot5");
+            m_SaveSlot6 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot6");
+            m_SaveSlot7 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot7");
+            m_SaveSlot8 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot8");
+            m_SaveSlot9 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot9");
+            m_SaveSlot10 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot10");
+
+            // 挂载组件引用 - 其他UI
+            m_ButtonBack = this.GetComponentByPath<Button>("Canvas/Background/ButtonBack");
+            m_TitleText = this.GetComponentByPath<TextMeshProUGUI>("Canvas/Background/TitleText");
+
             // 初始化存档按钮数组
             m_SaveSlots = new Button[]
             {

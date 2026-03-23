@@ -21,14 +21,15 @@ namespace AVGGame
 
         [Header("角色信息")]
         [SerializeField] private Image m_CharacterPortrait;
-        [SerializeField] private TextMeshProUGUI m_CharacterNameText;
+        [SerializeField] private Text m_CharacterNameText;
 
         [Header("对话内容")]
-        [SerializeField] private TextMeshProUGUI m_DialogueText;
+        [SerializeField] private Text m_DialogueText;
         [SerializeField] private GameObject m_ContinueIndicator;
 
         [Header("背景")]
         [SerializeField] private Image m_BackgroundImage;
+        [SerializeField] private Button m_BackgroundImageButton;
 
         [Header("菜单按钮")]
         [SerializeField] private Button m_ButtonMenu;
@@ -57,16 +58,37 @@ namespace AVGGame
         {
             base.OnInit(userData);
 
+            // 挂载组件引用
+            m_CharacterPortrait = this.GetComponentByPath<Image>("Canvas/Background/TextPlate/CharacterName");
+            m_CharacterNameText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/CharacterName/TextConstCharacterName");
+            m_DialogueText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/TextConstDialogue");
+            m_BackgroundImage = this.GetComponentByPath<Image>("Canvas/Background");
+            m_BackgroundImageButton = this.GetComponentByPath<Button>("Canvas/Background");
+            m_ButtonMenu = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonMenu");
+
+            /* 获取 ContinueIndicator (需要通过 Transform 获取 GameObject)
+            Transform continueIndicatorTrans = this.GetComponentByPath<Transform>("Canvas/Background/ContinueIndicator");
+            if (continueIndicatorTrans != null)
+            {
+                m_ContinueIndicator = continueIndicatorTrans.gameObject;
+            }
+
             // 初始化隐藏继续提示
             if (m_ContinueIndicator != null)
             {
                 m_ContinueIndicator.SetActive(false);
-            }
+            }*/
 
             // 绑定菜单按钮事件
             if (m_ButtonMenu != null)
             {
                 m_ButtonMenu.onClick.AddListener(OnMenuClick);
+            }
+
+            // 绑定背景按钮点击事件（用于继续对话）
+            if (m_BackgroundImageButton != null)
+            {
+                m_BackgroundImageButton.onClick.AddListener(OnContinueClick);
             }
 
             m_ProcedureGame = (ProcedureGame)userData;
@@ -90,7 +112,7 @@ namespace AVGGame
         {
             base.OnOpen(userData);
 
-            // 绑定点击事件
+            // 清空文本
             if (m_DialogueText != null)
             {
                 m_DialogueText.text = "";
@@ -101,6 +123,9 @@ namespace AVGGame
             {
                 m_ContinueIndicator.SetActive(false);
             }
+
+            // 从流程层获取当前对话数据并显示
+            ShowCurrentDialogue();
         }
 
         protected override void OnClose(bool isShutdown, object userData)
@@ -139,7 +164,7 @@ namespace AVGGame
             if (m_CharacterPortrait != null)
             {
                 m_CharacterPortrait.sprite = portrait;
-                m_CharacterPortrait.gameObject.SetActive(portrait != null);
+                //m_CharacterPortrait.gameObject.SetActive(portrait != null);
             }
 
             // 打字机效果显示文本
@@ -198,6 +223,59 @@ namespace AVGGame
         #endregion
 
         #region 私有方法
+
+        /// <summary>
+        /// 从流程层获取数据并显示当前对话
+        /// </summary>
+        private void ShowCurrentDialogue()
+        {
+            if (m_ProcedureGame == null)
+            {
+                Debug.Log("[DialoguePanel] m_ProcedureGame 为空");
+                return;
+            }
+
+            DialogueDisplayData data = m_ProcedureGame.GetCurrentDialogue();
+
+            if (data == null)
+            {
+                Debug.Log("[DialoguePanel] 获取对话数据失败");
+                return;
+            }
+
+            Log.Info($"[DialoguePanel] 显示对话 - 说话人: {data.SpeakerName}, 文本: {data.DialogText}");
+
+            // 调用已有的 SetDialogue 方法显示
+            SetDialogue(data.SpeakerName, data.DialogText);
+        }
+
+        /// <summary>
+        /// 点击继续，进入下一条对话
+        /// </summary>
+        public void OnContinueClick()
+        {
+            // 如果正在打字，先跳过打字效果
+            if (m_IsTyping)
+            {
+                SkipTypewriter();
+                return;
+            }
+
+            if (m_ProcedureGame == null) return;
+
+            // 获取下一条对话
+            DialogueDisplayData nextData = m_ProcedureGame.GoToNextDialogue();
+
+            if (nextData == null)
+            {
+                // 剧情已结束，流程层会处理返回大地图
+                Log.Info("[DialoguePanel] 剧情结束");
+                return;
+            }
+
+            // 显示下一条对话
+            SetDialogue(nextData.SpeakerName, nextData.DialogText);
+        }
 
         /// <summary>
         /// 打字机效果显示文本

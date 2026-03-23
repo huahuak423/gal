@@ -88,6 +88,30 @@ namespace AVGGame
         {
             base.OnInit(userData);
 
+            // 挂载组件引用 - 音量设置
+            m_SliderMasterVolume = this.GetComponentByPath<Slider>("Canvas/Background/VolumeSettings/MasterVolume/Slider");
+            m_SliderBGMVolume = this.GetComponentByPath<Slider>("Canvas/Background/VolumeSettings/BGMVolume/Slider");
+            m_SliderSFXVolume = this.GetComponentByPath<Slider>("Canvas/Background/VolumeSettings/SFXVolume/Slider");
+            m_TextMasterVolume = this.GetComponentByPath<TextMeshProUGUI>("Canvas/Background/VolumeSettings/MasterVolume/Text");
+            m_TextBGMVolume = this.GetComponentByPath<TextMeshProUGUI>("Canvas/Background/VolumeSettings/BGMVolume/Text");
+            m_TextSFXVolume = this.GetComponentByPath<TextMeshProUGUI>("Canvas/Background/VolumeSettings/SFXVolume/Text");
+
+            // 挂载组件引用 - 画面设置
+            m_ToggleFullScreen = this.GetComponentByPath<Toggle>("Canvas/Background/GraphicsSettings/FullScreen/Toggle");
+            m_DropdownResolution = this.GetComponentByPath<TMP_Dropdown>("Canvas/Background/GraphicsSettings/Resolution/Dropdown");
+            m_DropdownQuality = this.GetComponentByPath<TMP_Dropdown>("Canvas/Background/GraphicsSettings/Quality/Dropdown");
+
+            // 挂载组件引用 - 其他设置
+            m_SliderTextSpeed = this.GetComponentByPath<Slider>("Canvas/Background/OtherSettings/TextSpeed/Slider");
+            m_TextTextSpeed = this.GetComponentByPath<TextMeshProUGUI>("Canvas/Background/OtherSettings/TextSpeed/Text");
+            m_ToggleAutoPlay = this.GetComponentByPath<Toggle>("Canvas/Background/OtherSettings/AutoPlay/Toggle");
+
+            // 挂载组件引用 - 按钮
+            m_ButtonClose = this.GetComponentByPath<Button>("Canvas/Background/Buttons/Close");
+            m_ButtonApply = this.GetComponentByPath<Button>("Canvas/Background/Buttons/Apply");
+            m_ButtonReset = this.GetComponentByPath<Button>("Canvas/Background/Buttons/Reset");
+
+            // 绑定按钮事件
             if (m_ButtonClose != null)
                 m_ButtonClose.onClick.AddListener(OnCloseClick);
 

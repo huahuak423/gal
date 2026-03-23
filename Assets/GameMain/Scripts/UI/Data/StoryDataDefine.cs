@@ -46,8 +46,23 @@ namespace AVGGame
 
         public PlayerAttributeType AttributeType = PlayerAttributeType.None;
         public string NpcId;
-        public int Value; 
+        public int Value;
         public string ItemId;
     }
 
+    // ==========================================
+    // 3. 对话显示数据（流程层传递给UI）
+    // ==========================================
+    /// <summary>
+    /// 传递给 DialoguePanel 的显示数据
+    /// </summary>
+    public class DialogueDisplayData
+    {
+        public string SpeakerName;
+        public string DialogText;
+        public int NextId;           // 下一条ID（0表示结束）
+        public int CurrentNodeId;    // 当前节点ID
+        public int NodeType;         // 节点类型（对话、选项等）
+        public string ChoicesJson;   // 选项配置（如果是选项节点）
+    }
 }

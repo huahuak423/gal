@@ -30,7 +30,6 @@ namespace AVGGame
         {
             base.OnEnter(procedureOwner);
             Log.Info("[ProcedureMainMenu] Enter");
-            
             OpenMainMenuUI();
         }
 

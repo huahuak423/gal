@@ -1,6 +1,8 @@
 ﻿using GameFramework.Event;
 using UnityGameFramework.Runtime;
 using GameFramework.DataTable;
+using Unity.VisualScripting;
+using UnityEngine;
 
 namespace AVGGame
 {
@@ -31,12 +33,12 @@ namespace AVGGame
             // 注意：这里传入了 graphName 作为表的别名！
             if (GameEntry.DataTable.HasDataTable<StoryRowData>(graphName))
             {
-                Log.Info($"[StoryLoader] 剧情图 {graphName} 已在内存中，直接播放！");
+                Debug.Log($"[StoryLoader] 剧情图 {graphName} 已在内存中，直接播放！");
                 StartPlayStory(graphName);
                 return;
             }
 
-            Log.Info($"[StoryLoader] 开始从硬盘加载剧情图: {graphName} ...");
+            Debug.Log($"[StoryLoader] 开始从硬盘加载剧情图: {graphName} ...");
 
             // 【核心大招】：向 UGF 申请一个以图名命名的专属空账本
             IDataTable<StoryRowData> newTable = GameEntry.DataTable.CreateDataTable<StoryRowData>(graphName);
@@ -74,12 +76,16 @@ namespace AVGGame
 
             // 核对小票：看看传回来的 UserData 是不是一个字符串 (即我们的 graphName)
             string loadedGraphName = ne.UserData as string;
-            
-            // 如果不是字符串，说明是其他表（比如 EventPool）加载成功了，我们不理它
-            if (string.IsNullOrEmpty(loadedGraphName)) return; 
 
-            Log.Info($"<color=green>[StoryLoader] 剧情图 {loadedGraphName} 加载成功！</color>");
-            
+            // 如果不是字符串，说明是其他表（比如 EventPool）加载成功了，我们不理它
+            if (string.IsNullOrEmpty(loadedGraphName))
+            {
+                Log.Info($"[StoryLoader] OnLoadSuccess: 不是剧情表，跳过。UserData类型: {ne.UserData?.GetType()?.Name ?? "null"}");
+                return;
+            }
+
+            Debug.Log($"<color=green>[StoryLoader] 剧情图 {loadedGraphName} 加载成功！DataTableAssetName: {ne.DataTableAssetName}</color>");
+
             // 数据已经安稳躺在内存里了，马上拉起 UI 播放！
             StartPlayStory(loadedGraphName);
         }
@@ -100,7 +106,7 @@ namespace AVGGame
         private void StartPlayStory(string graphName)
         {
             // 以后你要拿这个图的数据，都要带上 graphName 这个别名去拿：
-            //示例：IDataTable<StoryRowData> dt = GameEntry.DataTable.GetDataTable<StoryRowData>(graphName);
+            IDataTable<StoryRowData> dt = GameEntry.DataTable.GetDataTable<StoryRowData>(graphName);
             //加载成功后回调主流程的进入故事
             m_ProcedureGame.StartStory(graphName);
         }

@@ -98,21 +98,15 @@ namespace AVGGame
 
         protected override void OnClose(bool isShutdown, object userData)
         {
-            m_ProcedureGame = null;
-            m_Buttonlist.Clear();
-            if (m_ButtonExit != null)
+            // 注意：不要清空 m_Buttonlist，因为 OnInit 只调用一次
+            // m_Buttonlist.Clear();  // ← 移除这行！
+
+            // 隐藏选择面板
+            if (m_SelectPanel != null)
             {
-                m_ButtonPlace1.onClick.RemoveListener(OnSelectPanelExit);
+                m_SelectPanel.gameObject.SetActive(false);
             }
-            if (m_ButtonPlace1 != null)
-            {
-                m_ButtonPlace1.onClick.RemoveListener(OnButtonPlace1Click);
-            }
-            
-            if (m_ButtonPlace2 != null)
-            {
-                m_ButtonPlace2.onClick.RemoveListener(OnButtonPlace2Click);
-            }
+
             base.OnClose(isShutdown, userData);
         }
 

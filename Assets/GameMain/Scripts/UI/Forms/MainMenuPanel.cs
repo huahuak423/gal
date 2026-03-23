@@ -41,6 +41,13 @@ namespace AVGGame
         {
             base.OnInit(userData);
 
+            // 挂载组件引用
+            m_ButtonNewGame = this.GetComponentByPath<Button>("Canvas/Background/ButtonPlate/ButtonNewGame");
+            m_ButtonContine = this.GetComponentByPath<Button>("Canvas/Background/ButtonPlate/ButtonContine");
+            m_ButtonCgShows = this.GetComponentByPath<Button>("Canvas/Background/ButtonPlate/ButtonCgShows");
+            m_ButtonSetting = this.GetComponentByPath<Button>("Canvas/Background/ButtonPlate/ButtonSetting");
+            m_ButtonExit = this.GetComponentByPath<Button>("Canvas/Background/ButtonPlate/ButtonExit");
+
             // 绑定按钮事件
             if (m_ButtonNewGame != null)
                 m_ButtonNewGame.onClick.AddListener(OnNewGameClick);
