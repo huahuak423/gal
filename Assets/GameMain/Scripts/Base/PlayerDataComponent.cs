@@ -71,6 +71,16 @@ namespace AVGGame
 
         #endregion
 
+        #region 事件完成记录
+
+        // 已完成的所有事件（用于存档）
+        private HashSet<int> m_CompletedEvents = new HashSet<int>();
+
+        // 已完成的特殊事件（完成后不再显示）
+        private HashSet<int> m_CompletedSpecialEvents = new HashSet<int>();
+
+        #endregion
+
         #region 初始化
 
         /// <summary>
@@ -289,7 +299,45 @@ namespace AVGGame
             return false;
         }
         #endregion
-        
+
+        #region 事件完成记录
+
+        /// <summary>
+        /// 标记事件已完成（通用，用于存档）
+        /// </summary>
+        public void MarkEventCompleted(int eventId)
+        {
+            m_CompletedEvents.Add(eventId);
+            Log.Info($"[PlayerDataComponent] 事件完成: {eventId}");
+        }
+
+        /// <summary>
+        /// 标记特殊事件已完成（完成后不再显示）
+        /// </summary>
+        public void MarkSpecialEventCompleted(int eventId)
+        {
+            m_CompletedSpecialEvents.Add(eventId);
+            Log.Info($"[PlayerDataComponent] 特殊事件完成: {eventId}");
+        }
+
+        /// <summary>
+        /// 检查事件是否已完成
+        /// </summary>
+        public bool HasCompletedEvent(int eventId)
+        {
+            return m_CompletedEvents.Contains(eventId);
+        }
+
+        /// <summary>
+        /// 检查特殊事件是否已完成（用于过滤显示）
+        /// </summary>
+        public bool HasCompletedSpecialEvent(int eventId)
+        {
+            return m_CompletedSpecialEvents.Contains(eventId);
+        }
+
+        #endregion
+
         #region 条件检查
 
         /// <summary>

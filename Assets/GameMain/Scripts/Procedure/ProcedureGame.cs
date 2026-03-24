@@ -97,6 +97,13 @@ namespace AVGGame
 
             foreach (var evt in allEventsInMap)
             {
+                // 过滤已完成的特殊事件（EventType == 1 表示特殊事件）
+                if (evt.EventType == 1 && CustomEntry.PlayerData.HasCompletedSpecialEvent(evt.Id))
+                {
+                    Debug.Log($"[ProcedureGame] 跳过已完成的特殊事件: {evt.Id} - {evt.Title}");
+                    continue;
+                }
+
                 // 使用刚刚写好的工具检查 VisibleConditions 列
                 if (ConditionChecker.CheckCondition(evt.VisibleConditions, CustomEntry.PlayerData))
                 {
@@ -168,6 +175,16 @@ namespace AVGGame
             EventRowData currentData = GameEntry.DataTable.GetDataTable<EventRowData>().GetDataRow(eventId);
             Debug.Log($"[ProcedureGame] LoadStory 被调用, eventId: {eventId}");
             Debug.Log($"[ProcedureGame] TargetGraphName: {currentData.TargetGraphName}");
+
+            // 标记事件已完成（用于存档）
+            CustomEntry.PlayerData.MarkEventCompleted(eventId);
+
+            // 如果是特殊事件（EventType == 1），额外标记为已完成的特殊事件
+            if (currentData.EventType == 1)
+            {
+                CustomEntry.PlayerData.MarkSpecialEventCompleted(eventId);
+                Debug.Log($"[ProcedureGame] 特殊事件已完成标记: {eventId}");
+            }
 
             //异步加载目标故事剧本
             m_StoryGraphLoader.LoadGraph(currentData.TargetGraphName);
@@ -278,7 +295,7 @@ namespace AVGGame
             if (currentRow.NextId == 0)
             {
                 Debug.Log("[ProcedureGame] 对话结束，准备返回大地图");
-                EndStoryAndReturnToMap();
+                EndStoryAndReturnToMap(storyTable.Name);
                 return null;
             }
 
@@ -291,9 +308,20 @@ namespace AVGGame
         /// <summary>
         /// 剧情结束，返回大地图 (由 StoryForm 播放完最后一句时调用)
         /// </summary>
-        public void EndStoryAndReturnToMap()
+        public void EndStoryAndReturnToMap(string graphName)
         {
-            Debug.Log("[ProcedureGame] 剧情结束，返回大地图");
+            Debug.Log($"[ProcedureGame] 剧情结束，准备卸载: {graphName}");
+
+            // 卸载剧情表
+            m_StoryGraphLoader.UnloadGraph(graphName);
+
+            // 清理 PlayerData 中的当前剧情图名（避免后续误用）
+            CustomEntry.PlayerData.SetCurrentStoryGarphName(null);
+
+            // 重置对话ID
+            m_CurrentDialogueId = 0;
+
+            // 返回大地图
             OpenMap();
         }
 

@@ -48,8 +48,6 @@ namespace AVGGame
         {
             base.OnInit(userData);
             
-            m_ProcedureGame = (ProcedureGame)userData;
-            
             //挂载组件引用
             m_ButtonPlace1 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace1");
             m_ButtonPlace2 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace2");
@@ -96,11 +94,27 @@ namespace AVGGame
             }
         }
 
+        protected override void OnOpen(object userData)
+        {
+            base.OnOpen(userData);
+
+            // 每次打开时更新 ProcedureGame 引用
+            if (userData is ProcedureGame procedureGame)
+            {
+                m_ProcedureGame = procedureGame;
+            }
+
+            Log.Info("[MapPanel] OnOpen - 刷新地图面板");
+
+            // 确保选择面板初始隐藏
+            if (m_SelectPanel != null)
+            {
+                m_SelectPanel.gameObject.SetActive(false);
+            }
+        }
+
         protected override void OnClose(bool isShutdown, object userData)
         {
-            // 注意：不要清空 m_Buttonlist，因为 OnInit 只调用一次
-            // m_Buttonlist.Clear();  // ← 移除这行！
-
             // 隐藏选择面板
             if (m_SelectPanel != null)
             {

@@ -59,11 +59,27 @@ namespace AVGGame
         // ==========================================
         public void UnloadGraph(string graphName)
         {
+            Debug.Log($"[StoryLoader] 尝试卸载剧情图: {graphName}");
+
             if (GameEntry.DataTable.HasDataTable<StoryRowData>(graphName))
             {
                 // 瞬间从内存中抹除这张表，释放空间！
                 GameEntry.DataTable.DestroyDataTable<StoryRowData>(graphName);
-                Log.Info($"<color=cyan>[StoryLoader] 剧情图 {graphName} 已安全卸载！</color>");
+                Debug.Log($"<color=cyan>[StoryLoader] 剧情图 {graphName} 已安全卸载！</color>");
+            }
+            else
+            {
+                Debug.LogWarning($"[StoryLoader] 找不到剧情表: {graphName}，无法卸载");
+
+                // 尝试列出当前所有 StoryRowData 表（调试用）
+                var tables = GameEntry.DataTable.GetAllDataTables();
+                foreach (var t in tables)
+                {
+                    if (t.Type == typeof(StoryRowData))
+                    {
+                        Debug.Log($"[StoryLoader] 当前存在的剧情表: {t.Name}");
+                    }
+                }
             }
         }
 
