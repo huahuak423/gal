@@ -48,6 +48,11 @@ namespace AVGGame
         /// </summary>
         public static PlayerDataComponent PlayerData { get; private set; }
 
+        /// <summary>
+        /// 存档系统组件
+        /// </summary>
+        public static SaveSystem SaveSystem { get; private set; }
+
         #endregion
 
         #region 初始化
@@ -73,6 +78,7 @@ namespace AVGGame
             // 在这里添加你的自定义组件
             // ========================================
             PlayerData = AddCustomComponent<PlayerDataComponent>();
+            SaveSystem = AddCustomComponent<SaveSystem>();
 
             IsInitialized = true;
             Log.Info($"[CustomEntry] Custom components initialized! Count: {s_CustomComponents.Count}");
@@ -98,6 +104,7 @@ namespace AVGGame
 
             // 清空自定义组件属性
             PlayerData = null;
+            SaveSystem = null;
 
             IsInitialized = false;
 

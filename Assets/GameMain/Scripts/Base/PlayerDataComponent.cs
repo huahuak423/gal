@@ -493,6 +493,185 @@ namespace AVGGame
 
         #endregion
 
+        #region 存档操作
+
+        /// <summary>
+        /// 获取当前玩家数据的存档快照
+        /// </summary>
+        public SaveData GetSaveData()
+        {
+            return new SaveData
+            {
+                // 玩家属性
+                Charm = m_Charm,
+                Inspiration = m_Inspiration,
+                Sanity = m_Sanity,
+
+                // 行动点
+                CurrentActionPoints = m_CurrentActionPoints,
+                MaxActionPoints = m_MaxActionPoints,
+
+                // 周目
+                CurrentRound = m_CurrentRound,
+                BonusActionPoints = BonusActionPoints,
+                BonusCharm = BonusCharm,
+                BonusInspiration = BonusInspiration,
+                BonusSanity = BonusSanity,
+
+                // NPC好感度
+                NpcFavorability = new SerializableDictionary<int, int>(m_NpcFavorability),
+
+                // 特殊物品
+                OwnedItems = new System.Collections.Generic.List<int>(m_OwnedItems).ToArray(),
+
+                // 已完成事件
+                CompletedEvents = new System.Collections.Generic.List<int>(m_CompletedEvents).ToArray(),
+
+                // 已完成特殊事件
+                CompletedSpecialEvents = new System.Collections.Generic.List<int>(m_CompletedSpecialEvents).ToArray(),
+
+                // NPC进度
+                NpcProgress = ConvertNpcProgressToSerializable(),
+
+                // 存档时间
+                SaveTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+            };
+        }
+
+        /// <summary>
+        /// 从存档数据恢复玩家状态
+        /// </summary>
+        public void LoadFromSaveData(SaveData saveData)
+        {
+            if (saveData == null)
+            {
+                Log.Warning("[PlayerDataComponent] 存档数据为空，无法加载");
+                return;
+            }
+
+            // 玩家属性
+            m_Charm = saveData.Charm;
+            m_Inspiration = saveData.Inspiration;
+            m_Sanity = saveData.Sanity;
+
+            // 行动点
+            m_CurrentActionPoints = saveData.CurrentActionPoints;
+            m_MaxActionPoints = saveData.MaxActionPoints;
+
+            // 周目
+            m_CurrentRound = saveData.CurrentRound;
+            BonusActionPoints = saveData.BonusActionPoints;
+            BonusCharm = saveData.BonusCharm;
+            BonusInspiration = saveData.BonusInspiration;
+            BonusSanity = saveData.BonusSanity;
+
+            // NPC好感度
+            m_NpcFavorability = saveData.NpcFavorability?.ToDictionary() ?? new Dictionary<int, int>();
+
+            // 特殊物品
+            m_OwnedItems = saveData.OwnedItems != null ? new HashSet<int>((IEnumerable<int>)saveData.OwnedItems) : new HashSet<int>();
+
+            // 已完成事件
+            m_CompletedEvents = saveData.CompletedEvents != null ? new HashSet<int>((IEnumerable<int>)saveData.CompletedEvents) : new HashSet<int>();
+
+            // 已完成特殊事件
+            m_CompletedSpecialEvents = saveData.CompletedSpecialEvents != null ? new HashSet<int>((IEnumerable<int>)saveData.CompletedSpecialEvents) : new HashSet<int>();
+
+            // NPC进度
+            m_NpcProgress = ConvertSerializableToNpcProgress(saveData.NpcProgress);
+
+            Log.Info($"[PlayerDataComponent] 存档加载完成！周目: {m_CurrentRound}, 行动点: {m_CurrentActionPoints}");
+        }
+
+        /// <summary>
+        /// 退出时保存游戏（默认存档槽位1）
+        /// </summary>
+        public void SaveOnExit(int slotId = 1)
+        {
+            if (CustomEntry.SaveSystem == null)
+            {
+                Log.Warning("[PlayerDataComponent] SaveSystem 未初始化，无法保存");
+                return;
+            }
+
+            bool success = CustomEntry.SaveSystem.Save(slotId);
+
+            if (success)
+            {
+                Log.Info($"[PlayerDataComponent] 游戏已保存到槽位 {slotId}");
+            }
+            else
+            {
+                Log.Warning($"[PlayerDataComponent] 保存失败！槽位: {slotId}");
+            }
+        }
+
+        /// <summary>
+        /// 手动保存游戏到指定槽位
+        /// </summary>
+        public bool SaveGame(int slotId)
+        {
+            if (CustomEntry.SaveSystem == null)
+            {
+                Log.Warning("[PlayerDataComponent] SaveSystem 未初始化，无法保存");
+                return false;
+            }
+            return CustomEntry.SaveSystem.Save(slotId);
+        }
+
+        /// <summary>
+        /// 从指定槽位加载游戏
+        /// </summary>
+        public bool LoadGame(int slotId)
+        {
+            if (CustomEntry.SaveSystem == null)
+            {
+                Log.Warning("[PlayerDataComponent] SaveSystem 未初始化，无法加载");
+                return false;
+            }
+            return CustomEntry.SaveSystem.Load(slotId);
+        }
+
+        /// <summary>
+        /// 转换NPC进度为可序列化格式
+        /// </summary>
+        private SerializableDictionary<int, int[]> ConvertNpcProgressToSerializable()
+        {
+            var result = new SerializableDictionary<int, int[]>();
+            if (m_NpcProgress != null && m_NpcProgress.Count > 0)
+            {
+                result.Keys = new int[m_NpcProgress.Count];
+                result.Values = new int[m_NpcProgress.Count][];
+
+                int i = 0;
+                foreach (var kvp in m_NpcProgress)
+                {
+                    result.Keys[i] = kvp.Key;
+                    result.Values[i] = new List<int>(kvp.Value).ToArray();
+                    i++;
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 从可序列化格式恢复NPC进度
+        /// </summary>
+        private Dictionary<int, HashSet<int>> ConvertSerializableToNpcProgress(SerializableDictionary<int, int[]> data)
+        {
+            var result = new Dictionary<int, HashSet<int>>();
+            if (data?.Keys != null && data.Values != null)
+            {
+                for (int i = 0; i < data.Keys.Length; i++)
+                {
+                    result[data.Keys[i]] = new HashSet<int>((IEnumerable<int>)data.Values[i]);
+                }
+            }
+            return result;
+        }
+
+        #endregion
+
         #region 调试
 
         /// <summary>
