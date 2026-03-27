@@ -33,7 +33,7 @@ namespace AVGGame
             {
                 if (m_CachedCanvas == null)
                 {
-                    m_CachedCanvas = GetComponent<Canvas>();
+                    m_CachedCanvas = GetComponentInChildren<Canvas>();
                 }
                 return m_CachedCanvas;
             }

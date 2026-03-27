@@ -168,6 +168,15 @@ namespace AVGGame
         }
 
         /// <summary>
+        /// 打开小菜单
+        /// </summary>
+        public void OpenMenu()
+        {
+            Debug.Log("[ProcedureGame] 打开小菜单界面");
+            GameEntry.UI.OpenUIForm(AssetUtility.GetUIFormAsset(UIFormId.Menu), "Popup", this);
+        }
+
+        /// <summary>
         /// 加载剧情
         /// </summary>
         public void LoadStory(int eventId)
@@ -357,6 +366,16 @@ namespace AVGGame
             }
             m_CurrentSubFormId = GameEntry.UI.OpenUIForm(uiFormAssetName, "Main", userData);
         }
+        
+        /// <summary>
+        /// 流程游戏退出
+        /// </summary>
+        public void QuitGame()
+        {
+            CustomEntry.PlayerData.SaveOnExit();
+            GameEntry.ShutdownGame(ShutdownType.Quit);
+        }
+
         #endregion
     }
 }

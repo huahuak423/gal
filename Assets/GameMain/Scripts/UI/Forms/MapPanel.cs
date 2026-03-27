@@ -21,8 +21,9 @@ namespace AVGGame
         [SerializeField] private Button m_ButtonPlace7;
         [SerializeField] private Button m_ButtonPlace8;
         [SerializeField] private Button m_ButtonPlace9;
-        
-        [Header("--- 小地图 UI 引用 ---")]
+
+        [Header("--- 小地图 UI 引用 ---")]        
+        [SerializeField] private Button m_ButtonMenu;
         private List<GameObject> m_Buttonlist = new List<GameObject>();
         private Transform m_SelectPanel;
         private Button m_Button1;
@@ -56,7 +57,7 @@ namespace AVGGame
             m_ButtonPlace5 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace5");
             
             //小地图
-            
+            m_ButtonMenu =  this.GetComponentByPath<Button>("Canvas/Background/ButtonMenu");
             m_SelectPanel = this.GetComponentByPath<Transform>("Canvas/Background/SelectPanel");
             m_Button1 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button1");
             m_Button2 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button2");
@@ -92,6 +93,11 @@ namespace AVGGame
             {
                 m_ButtonPlace2.onClick.AddListener(OnButtonPlace2Click);
             }
+            if (m_ButtonMenu != null)
+            {
+                m_ButtonMenu.onClick.AddListener(OnButtonMenuClick);
+            }
+
         }
 
         protected override void OnOpen(object userData)
@@ -125,6 +131,17 @@ namespace AVGGame
         }
 
         #endregion
+        
+        /// <summary>
+        /// 打开小菜单
+        /// </summary>
+        private void OnButtonMenuClick()
+        {
+            if (m_ProcedureGame != null)
+            {
+                m_ProcedureGame.OpenMenu();
+            }
+        }
         
         /// <summary>
         /// 选择地图1

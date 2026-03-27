@@ -23,6 +23,7 @@ namespace AVGGame
         [SerializeField] private Button m_ButtonSave;
         [SerializeField] private Button m_ButtonSettings;
         [SerializeField] private Button m_ButtonBack;
+        [SerializeField] private Button m_ButtonExit;
 
         [Header("透明背景 - 用于隔绝用户其他操作")]
         [SerializeField] private Button m_TransparentBgButton;
@@ -31,6 +32,7 @@ namespace AVGGame
 
         #region 私有字段
 
+        private ProcedureGame m_ProcedureGame = null;
         private bool m_IsPaused = false;
 
         #endregion
@@ -51,11 +53,12 @@ namespace AVGGame
             base.OnInit(userData);
 
             // 挂载组件引用
-            m_ButtonResume = this.GetComponentByPath<Button>("Canvas/Background/MenuButtons/Resume");
-            m_ButtonSave = this.GetComponentByPath<Button>("Canvas/Background/MenuButtons/Save");
-            m_ButtonSettings = this.GetComponentByPath<Button>("Canvas/Background/MenuButtons/Settings");
-            m_ButtonBack = this.GetComponentByPath<Button>("Canvas/Background/MenuButtons/Back");
-            m_TransparentBgButton = this.GetComponentByPath<Button>("Canvas/Background/TransparentBg");
+            m_ButtonResume = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonContinue");
+            m_ButtonSave = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonTimeLine");
+            m_ButtonSettings = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonSetting");
+            m_ButtonBack = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonMainMenu");
+            m_ButtonExit = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonExitGame");
+            m_TransparentBgButton = this.GetComponentByPath<Button>("Canvas/Background");
 
             // 绑定按钮事件
             if (m_ButtonResume != null)
@@ -69,6 +72,9 @@ namespace AVGGame
 
             if (m_ButtonBack != null)
                 m_ButtonBack.onClick.AddListener(OnBackClick);
+
+            if (m_ButtonExit != null)
+                m_ButtonExit.onClick.AddListener(OnExitClick);
 
             // 透明背景点击也关闭菜单
             if (m_TransparentBgButton != null)
@@ -141,6 +147,18 @@ namespace AVGGame
             // GameEntry.Scene.LoadScene("MainMenu");
         }
 
+        /// <summary>
+        /// 退出游戏
+        /// </summary>
+        private void OnExitClick()
+        {
+            
+            if (m_ProcedureGame != null)
+            {
+                m_ProcedureGame.QuitGame(); 
+            }
+            
+        }
         #endregion
 
         #region 公共方法
