@@ -110,12 +110,24 @@ namespace AVGGame
         /// </summary>
         private void OnContinueClick()
         {
-            Log.Info("[MainMenuPanel] Continue clicked");
+            Debug.Log("[MainMenuPanel] Continue clicked");
+            Debug.Log("[MainMenuPanel] m_ProcedureMainMenu: " + (m_ProcedureMainMenu != null));
+
+            // 先保存 ProcedureMainMenu 的引用，再关闭当前页面
+            ProcedureMainMenu procedureMainMenu = m_ProcedureMainMenu;
+
             CloseSelf();
-            // 打开存档选择界面
-            if (m_ProcedureMainMenu != null)
+
+            // 打开存档选择界面（false=继续游戏=加载模式）
+            if (procedureMainMenu != null)
             {
-                m_ProcedureMainMenu.OpenArchive(true); 
+                Debug.Log("[MainMenuPanel] Calling OpenArchive(false)");
+                procedureMainMenu.OpenArchive(false);
+                Debug.Log("[MainMenuPanel] OpenArchive called successfully");
+            }
+            else
+            {
+                Debug.Log("[MainMenuPanel] m_ProcedureMainMenu is null!");
             }
         }
 

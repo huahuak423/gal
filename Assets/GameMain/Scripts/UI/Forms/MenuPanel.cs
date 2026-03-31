@@ -111,12 +111,22 @@ namespace AVGGame
         }
 
         /// <summary>
-        /// 保存游戏
+        /// 保存游戏 - 打开存档选择界面（保存模式）
         /// </summary>
         private void OnSaveClick()
         {
             Log.Info("[MenuPanel] Save game clicked");
-            // TODO: 实际保存游戏逻辑
+
+            // 关闭当前菜单
+            CloseSelf();
+
+            // 打开存档选择界面（保存模式）
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.Archive),
+                UIGroupDefinition.Popup,
+                Constant.AssetPriority.UIAsset,
+                ArchivePanel.ArchiveMode.Save
+            );
         }
 
         /// <summary>
