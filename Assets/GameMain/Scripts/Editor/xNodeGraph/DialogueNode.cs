@@ -25,6 +25,9 @@ namespace AVGGame.Editor
         public string BgmPath; 
         [Tooltip("填入 临时音效 的资源路径或名称，留空代表无音效")]
         public string SePath;
+
+        [Header("动画效果设置")] 
+        public string PerformanceKey;
         
         [HideInInspector] 
         public bool NeedsAttention = false; 

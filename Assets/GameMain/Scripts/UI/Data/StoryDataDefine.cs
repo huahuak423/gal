@@ -12,7 +12,7 @@ namespace AVGGame
     public enum ConditionType { PlayerAttribute, NpcFavorability, SpecialItem }
     // 角色表现指令结构
     public enum CharacterActionType { Enter, Leave, ChangeSprite }
-    public enum CharacterPosition { Left, Center, Right }
+    public enum CharacterPosition { Left, Center, Right, EX1, EX2, EX3, EX4 }
 
     
     // ==========================================
