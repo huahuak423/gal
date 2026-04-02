@@ -8,14 +8,6 @@ namespace AVGGame.Editor
 {
     /// <summary>
     /// 预览沙盒引擎：在主场景中创建隔离的 UI 预览
-    ///
-    /// 技术说明：
-    /// 曾尝试使用 EditorSceneManager.NewPreviewScene() 方案，
-    /// 但 Unity 的 Preview Scene 对 UGUI Canvas 渲染支持不完整，
-    /// 导致 Canvas 内容无法正常显示（无论 WorldSpace 还是 ScreenSpaceCamera 模式）。
-    ///
-    /// 当前方案：在主场景实例化 UI，使用 HideAndDontSave 标记，
-    /// 对象不会保存到场景，但会在 Scene 视图中可见。
     /// </summary>
     public class PreviewSandboxEngine
     {
@@ -39,6 +31,19 @@ namespace AVGGame.Editor
         private Text m_DialogueText;
         private Text m_CharacterNameText;
         private List<Image> m_CharacterImages = new List<Image>();
+        private List<RectTransform> m_CharacterRects = new List<RectTransform>();
+
+        // 立绘原始位置（用于重置）
+        private List<Vector2> m_OriginalPositions = new List<Vector2>();
+
+        // 当前快照缓存（用于获取立绘数据）
+        private StoryStateSnapshot m_CurrentSnapshot;
+
+        // 当前选中的立绘槽位（-1 = 未选中）
+        public int SelectedCharacterIndex { get; private set; } = -1;
+
+        // 推荐的立绘间距（基于2500x3971像素立绘在1080p屏幕上）
+        public const float k_RecommendedSpacing = 300f;
 
         public void Initialize(GameObject uiPrefab)
         {
@@ -61,8 +66,6 @@ namespace AVGGame.Editor
             // 设置 Canvas 为 World Space 模式
             m_Canvas.renderMode = RenderMode.WorldSpace;
             RectTransform canvasRect = m_Canvas.GetComponent<RectTransform>();
-
-            // 关键修复：重置 Canvas 的 scale（从 ScreenSpace-Overlay 转换时 scale 会变成 0,0,0）
             canvasRect.localScale = Vector3.one;
             canvasRect.localPosition = Vector3.zero;
             canvasRect.sizeDelta = new Vector2(k_CanvasWidth, k_CanvasHeight);
@@ -72,12 +75,12 @@ namespace AVGGame.Editor
             cameraObj.hideFlags = HideFlags.HideAndDontSave;
             m_RenderCamera = cameraObj.AddComponent<Camera>();
             m_RenderCamera.orthographic = true;
-            m_RenderCamera.orthographicSize = k_CanvasHeight / 2f; // 540
+            m_RenderCamera.orthographicSize = k_CanvasHeight / 2f;
             m_RenderCamera.nearClipPlane = 0.1f;
             m_RenderCamera.farClipPlane = 100f;
             m_RenderCamera.backgroundColor = new Color(0.2f, 0.2f, 0.3f, 1f);
             m_RenderCamera.clearFlags = CameraClearFlags.SolidColor;
-            m_RenderCamera.cullingMask = -1; // 渲染所有层
+            m_RenderCamera.cullingMask = -1;
 
             // 缓存 UI 组件
             CacheUIComponents();
@@ -85,7 +88,7 @@ namespace AVGGame.Editor
             // 设置初始摄像机位置
             UpdateCameraPosition();
 
-            // 隐藏到场景中（不干扰主场景，但会在 Scene 视图显示）
+            // 隐藏到场景中
             m_UIInstance.hideFlags = HideFlags.HideAndDontSave;
             foreach (var trans in m_UIInstance.GetComponentsInChildren<Transform>())
             {
@@ -97,14 +100,15 @@ namespace AVGGame.Editor
         {
             if (m_Canvas == null) return;
 
-            // 查找背景图片
+            m_CharacterImages.Clear();
+            m_CharacterRects.Clear();
+            m_OriginalPositions.Clear();
+
             var bgTransform = m_Canvas.transform.Find("Background");
             if (bgTransform != null)
             {
                 m_BackgroundImage = bgTransform.GetComponent<Image>();
 
-                // 查找立绘
-                m_CharacterImages.Clear();
                 var charPlate = bgTransform.Find("CharacterPlate");
                 if (charPlate != null)
                 {
@@ -114,15 +118,17 @@ namespace AVGGame.Editor
                         if (charImg != null)
                         {
                             var img = charImg.GetComponent<Image>();
-                            if (img != null)
+                            var rect = charImg.GetComponent<RectTransform>();
+                            if (img != null && rect != null)
                             {
                                 m_CharacterImages.Add(img);
+                                m_CharacterRects.Add(rect);
+                                m_OriginalPositions.Add(rect.anchoredPosition);
                             }
                         }
                     }
                 }
 
-                // 查找对话框
                 var textPlate = bgTransform.Find("TextPlate");
                 if (textPlate != null)
                 {
@@ -145,6 +151,9 @@ namespace AVGGame.Editor
         {
             if (snapshot == null) return;
 
+            m_CurrentSnapshot = snapshot;
+            SelectedCharacterIndex = -1; // 重置选中状态
+
             // 先隐藏所有立绘
             foreach (var img in m_CharacterImages)
             {
@@ -156,7 +165,6 @@ namespace AVGGame.Editor
             {
                 if (charData == null || string.IsNullOrEmpty(charData.SpritePath)) continue;
 
-                // 只处理左中右三个基础位置，忽略 EX1-EX4
                 int positionIndex = (int)charData.Position;
                 if (positionIndex < 0 || positionIndex > 2) continue;
                 if (positionIndex >= m_CharacterImages.Count) continue;
@@ -166,6 +174,9 @@ namespace AVGGame.Editor
                 {
                     m_CharacterImages[positionIndex].sprite = charSprite;
                     m_CharacterImages[positionIndex].gameObject.SetActive(true);
+
+                    // 应用偏移和缩放
+                    ApplyCharacterTransform(positionIndex, charData);
                 }
             }
 
@@ -181,7 +192,7 @@ namespace AVGGame.Editor
                 m_CharacterNameText.text = snapshot.CharacterName ?? "";
             }
 
-            // 应用背景图（无论是否有值都要更新，避免残留旧背景）
+            // 应用背景图
             if (m_BackgroundImage != null)
             {
                 if (!string.IsNullOrEmpty(snapshot.BackgroundPath))
@@ -194,27 +205,220 @@ namespace AVGGame.Editor
                 }
                 else
                 {
-                    // 没有背景图时，清空背景
                     m_BackgroundImage.sprite = null;
                 }
             }
+        }
+
+        /// <summary>
+        /// 应用单个立绘的变换（偏移和缩放）
+        /// </summary>
+        private void ApplyCharacterTransform(int index, CharacterDisplayData data)
+        {
+            if (index < 0 || index >= m_CharacterRects.Count) return;
+
+            var rect = m_CharacterRects[index];
+
+            // 应用偏移（基于原始位置）
+            Vector2 originalPos = m_OriginalPositions[index];
+            rect.anchoredPosition = originalPos + new Vector2(data.OffsetX, data.OffsetY);
+
+            // 应用缩放
+            rect.localScale = Vector3.one * data.Scale;
+        }
+
+        /// <summary>
+        /// 获取立绘在屏幕空间的包围盒（用于点击检测）
+        /// </summary>
+        public Rect GetCharacterScreenRect(int index, Rect previewRect)
+        {
+            if (index < 0 || index >= m_CharacterRects.Count) return Rect.zero;
+            if (!m_CharacterImages[index].gameObject.activeSelf) return Rect.zero;
+
+            var rect = m_CharacterRects[index];
+            Vector2 center = rect.anchoredPosition;
+
+            // 考虑缩放后的尺寸
+            Vector2 size = rect.sizeDelta * rect.localScale.x;
+
+            // 转换到屏幕坐标（Canvas中心为原点）
+            float screenX = (center.x + k_CanvasWidth / 2f) / k_CanvasWidth * previewRect.width + previewRect.x;
+            float screenY = (k_CanvasHeight / 2f - center.y) / k_CanvasHeight * previewRect.height + previewRect.y;
+
+            // 考虑摄像机缩放和平移
+            screenX = (screenX - previewRect.x - previewRect.width / 2f) * m_Zoom + previewRect.width / 2f + m_PanOffset.x * previewRect.width / k_CanvasWidth * m_Zoom + previewRect.x;
+            screenY = (screenY - previewRect.y - previewRect.height / 2f) * m_Zoom + previewRect.height / 2f - m_PanOffset.y * previewRect.height / k_CanvasHeight * m_Zoom + previewRect.y;
+
+            float screenW = size.x / k_CanvasWidth * previewRect.width * m_Zoom;
+            float screenH = size.y / k_CanvasHeight * previewRect.height * m_Zoom;
+
+            return new Rect(screenX - screenW / 2f, screenY - screenH / 2f, screenW, screenH);
+        }
+
+        /// <summary>
+        /// 检测屏幕坐标点击了哪个立绘
+        /// </summary>
+        public int HitTestCharacter(Vector2 screenPos, Rect previewRect)
+        {
+            for (int i = m_CharacterImages.Count - 1; i >= 0; i--) // 从后往前检测（后面的在上层）
+            {
+                if (!m_CharacterImages[i].gameObject.activeSelf) continue;
+
+                Rect rect = GetCharacterScreenRect(i, previewRect);
+                if (rect.Contains(screenPos))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        /// <summary>
+        /// 选中立绘
+        /// </summary>
+        public void SelectCharacter(int index)
+        {
+            SelectedCharacterIndex = index;
+        }
+
+        /// <summary>
+        /// 取消选中
+        /// </summary>
+        public void DeselectCharacter()
+        {
+            SelectedCharacterIndex = -1;
+        }
+
+        /// <summary>
+        /// 移动选中的立绘
+        /// </summary>
+        public void MoveSelectedCharacter(Vector2 delta, bool constrainX = false, bool constrainY = false)
+        {
+            if (SelectedCharacterIndex < 0 || SelectedCharacterIndex >= m_CharacterRects.Count) return;
+
+            var rect = m_CharacterRects[SelectedCharacterIndex];
+            Vector2 newPos = rect.anchoredPosition;
+
+            // delta 是屏幕像素，需要转换为 Canvas 坐标
+            float canvasDeltaX = delta.x / m_Zoom;
+            float canvasDeltaY = -delta.y / m_Zoom; // Y轴反向
+
+            if (!constrainX) newPos.x += canvasDeltaX;
+            if (!constrainY) newPos.y += canvasDeltaY;
+
+            rect.anchoredPosition = newPos;
+        }
+
+        /// <summary>
+        /// 缩放选中的立绘
+        /// </summary>
+        public void ScaleSelectedCharacter(float scaleDelta)
+        {
+            if (SelectedCharacterIndex < 0 || SelectedCharacterIndex >= m_CharacterRects.Count) return;
+
+            var rect = m_CharacterRects[SelectedCharacterIndex];
+            float newScale = rect.localScale.x * (1f - scaleDelta * 0.1f);
+            newScale = Mathf.Clamp(newScale, 0.1f, 3f);
+            rect.localScale = Vector3.one * newScale;
+        }
+
+               /// <summary>
+        /// 获取选中立绘的当前偏移和缩放数据
+        /// </summary>
+        public (float offsetX, float offsetY, float scale) GetSelectedCharacterTransform()
+        {
+            if (SelectedCharacterIndex < 0 || SelectedCharacterIndex >= m_CharacterRects.Count)
+                return (0, 0, 1);
+
+            var rect = m_CharacterRects[SelectedCharacterIndex];
+            Vector2 originalPos = m_OriginalPositions[SelectedCharacterIndex];
+            Vector2 offset = rect.anchoredPosition - originalPos;
+            float scale = rect.localScale.x;
+
+            return (offset.x, offset.y, scale);
+        }
+
+        /// <summary>
+        /// 一键排位立绘
+        /// </summary>
+        public void AutoArrangeCharacters(float spacing)
+        {
+            // 统计当前有多少个立绘
+            List<int> activeIndices = new List<int>();
+            for (int i = 0; i < m_CharacterImages.Count; i++)
+            {
+                if (m_CharacterImages[i].gameObject.activeSelf)
+                {
+                    activeIndices.Add(i);
+                }
+            }
+
+            if (activeIndices.Count == 0) return;
+
+            // 计算居中排列的起始位置
+            float totalWidth = (activeIndices.Count - 1) * spacing;
+            float startX = -totalWidth / 2f;
+
+            // 设置每个立绘的位置
+            for (int i = 0; i < activeIndices.Count; i++)
+            {
+                int idx = activeIndices[i];
+                float targetX = startX + i * spacing;
+                float originalY = m_OriginalPositions[idx].y;
+
+                m_CharacterRects[idx].anchoredPosition = new Vector2(targetX, originalY);
+                m_OriginalPositions[idx] = new Vector2(m_OriginalPositions[idx].x, originalY); // 更新原始位置的Y
+            }
+        }
+
+        /// <summary>
+        /// 添加立绘到指定槽位
+        /// </summary>
+        public void AddCharacterToSlot(int slotIndex, string spritePath)
+        {
+            if (slotIndex < 0 || slotIndex >= m_CharacterImages.Count) return;
+
+            var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
+            if (sprite != null)
+            {
+                m_CharacterImages[slotIndex].sprite = sprite;
+                m_CharacterImages[slotIndex].gameObject.SetActive(true);
+
+                // 重置变换
+                m_CharacterRects[slotIndex].anchoredPosition = m_OriginalPositions[slotIndex];
+                m_CharacterRects[slotIndex].localScale = Vector3.one;
+            }
+        }
+
+        /// <summary>
+        /// 获取槽位是否有立绘
+        /// </summary>
+        public bool IsSlotOccupied(int slotIndex)
+        {
+            if (slotIndex < 0 || slotIndex >= m_CharacterImages.Count) return false;
+            return m_CharacterImages[slotIndex].gameObject.activeSelf;
+        }
+
+        /// <summary>
+        /// 获取当前快照
+        /// </summary>
+        public StoryStateSnapshot GetCurrentSnapshot()
+        {
+            return m_CurrentSnapshot;
         }
 
         public Texture Render(Rect previewRect)
         {
             if (m_RenderCamera == null || m_Canvas == null) return null;
 
-            // 使用固定高分辨率 RenderTexture，避免模糊
             if (m_RenderTexture == null)
             {
                 m_RenderTexture = new RenderTexture(k_RenderWidth, k_RenderHeight, 24);
-                m_RenderTexture.antiAliasing = 4; // 开启抗锯齿
+                m_RenderTexture.antiAliasing = 4;
                 m_RenderCamera.targetTexture = m_RenderTexture;
             }
 
-            // 渲染一帧
             m_RenderCamera.Render();
-
             return m_RenderTexture;
         }
 
@@ -275,6 +479,10 @@ namespace AVGGame.Editor
             m_DialogueText = null;
             m_CharacterNameText = null;
             m_CharacterImages.Clear();
+            m_CharacterRects.Clear();
+            m_OriginalPositions.Clear();
+            m_CurrentSnapshot = null;
+            SelectedCharacterIndex = -1;
         }
     }
 }

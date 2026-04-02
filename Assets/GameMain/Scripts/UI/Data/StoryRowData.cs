@@ -123,6 +123,21 @@ namespace AVGGame
         public CharacterActionType ActionType;
         public CharacterPosition Position;
         public string SpritePath;
+
+        /// <summary>
+        /// X轴偏移（像素），基于1920x1080分辨率
+        /// </summary>
+        public float OffsetX = 0f;
+
+        /// <summary>
+        /// Y轴偏移（像素），基于1920x1080分辨率
+        /// </summary>
+        public float OffsetY = 0f;
+
+        /// <summary>
+        /// 缩放比率，1.0 = 原始大小
+        /// </summary>
+        public float Scale = 1f;
     }
 
     [System.Serializable]
