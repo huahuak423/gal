@@ -49,6 +49,9 @@ namespace AVGGame.Editor
             {
                 if (UIPrefab == null) return;
 
+                // 检测是否切换了节点图，如果是则清空历史记录
+                StoryStateTracer.CheckAndClearHistoryIfGraphChanged(selectedNode);
+
                 // 1. 喂给大脑，记录点击历史（用于解决分支悖论）
                 StoryStateTracer.RecordClick(selectedNode);
 

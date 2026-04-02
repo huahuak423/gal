@@ -181,13 +181,21 @@ namespace AVGGame.Editor
                 m_CharacterNameText.text = snapshot.CharacterName ?? "";
             }
 
-            // 应用背景图
-            if (m_BackgroundImage != null && !string.IsNullOrEmpty(snapshot.BackgroundPath))
+            // 应用背景图（无论是否有值都要更新，避免残留旧背景）
+            if (m_BackgroundImage != null)
             {
-                var bgSprite = AssetDatabase.LoadAssetAtPath<Sprite>(snapshot.BackgroundPath);
-                if (bgSprite != null)
+                if (!string.IsNullOrEmpty(snapshot.BackgroundPath))
                 {
-                    m_BackgroundImage.sprite = bgSprite;
+                    var bgSprite = AssetDatabase.LoadAssetAtPath<Sprite>(snapshot.BackgroundPath);
+                    if (bgSprite != null)
+                    {
+                        m_BackgroundImage.sprite = bgSprite;
+                    }
+                }
+                else
+                {
+                    // 没有背景图时，清空背景
+                    m_BackgroundImage.sprite = null;
                 }
             }
         }

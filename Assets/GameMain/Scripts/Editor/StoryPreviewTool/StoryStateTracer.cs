@@ -17,6 +17,27 @@ namespace AVGGame.Editor
         private static List<DialogueNode> s_ClickHistory = new List<DialogueNode>();
 
         /// <summary>
+        /// 当前所在的节点图，用于检测切换
+        /// </summary>
+        private static NodeGraph s_CurrentGraph = null;
+
+        /// <summary>
+        /// 检测是否切换了节点图，如果是则清空历史记录
+        /// </summary>
+        public static void CheckAndClearHistoryIfGraphChanged(DialogueNode node)
+        {
+            if (node == null || node.graph == null) return;
+
+            if (s_CurrentGraph != node.graph)
+            {
+                // 切换到新的节点图，清空历史记录
+                s_ClickHistory.Clear();
+                s_CurrentGraph = node.graph;
+                Debug.Log($"[StoryStateTracer] 切换到新的节点图: {node.graph.name}，已清空历史记录");
+            }
+        }
+
+        /// <summary>
         /// 记录策划点击了哪个节点
         /// </summary>
         public static void RecordClick(DialogueNode node)
