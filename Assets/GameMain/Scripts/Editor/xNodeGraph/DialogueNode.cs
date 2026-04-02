@@ -20,11 +20,13 @@ namespace AVGGame.Editor
 
         public List<CharacterDisplayData> CharacterDisplays = new List<CharacterDisplayData>();
         
-        [Header("音频设置 (Audio)")]
+        [Header("音频设置和背景图")]
         [Tooltip("填入 BGM 的资源路径或名称，留空代表不切换（延续前面）")]
         public string BgmPath; 
         [Tooltip("填入 临时音效 的资源路径或名称，留空代表无音效")]
         public string SePath;
+        [Tooltip("填入 背景图 的资源路径或名称，留空代表无音效")]
+        public string BackgroundPath;
 
         [Header("动画效果设置")] 
         public string PerformanceKey;

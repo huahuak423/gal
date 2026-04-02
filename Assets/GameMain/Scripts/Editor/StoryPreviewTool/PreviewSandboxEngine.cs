@@ -180,6 +180,16 @@ namespace AVGGame.Editor
             {
                 m_CharacterNameText.text = snapshot.CharacterName ?? "";
             }
+
+            // 应用背景图
+            if (m_BackgroundImage != null && !string.IsNullOrEmpty(snapshot.BackgroundPath))
+            {
+                var bgSprite = AssetDatabase.LoadAssetAtPath<Sprite>(snapshot.BackgroundPath);
+                if (bgSprite != null)
+                {
+                    m_BackgroundImage.sprite = bgSprite;
+                }
+            }
         }
 
         public Texture Render(Rect previewRect)

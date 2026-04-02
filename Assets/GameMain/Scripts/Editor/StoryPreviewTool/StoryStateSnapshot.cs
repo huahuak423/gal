@@ -22,5 +22,15 @@ namespace AVGGame.Editor
         /// 立绘列表（直接复用 CharacterDisplayData，只处理左中右三个位置）
         /// </summary>
         public List<CharacterDisplayData> CharacterRoster = new List<CharacterDisplayData>();
+
+        /// <summary>
+        /// 当前背景音乐路径
+        /// </summary>
+        public string BgmPath;
+
+        /// <summary>
+        /// 当前背景图路径
+        /// </summary>
+        public string BackgroundPath;
     }
 }

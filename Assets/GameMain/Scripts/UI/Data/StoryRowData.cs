@@ -42,6 +42,7 @@ namespace AVGGame
         public string BgmPath;
         public string SePath;
         public string PerformanceKey;
+        public string BackgroundPath;
 
         /// <summary>
         /// 【核心魔法】UGF 引擎在加载 txt 数据表时，每读一行都会自动调用这个方法
@@ -76,6 +77,7 @@ namespace AVGGame
             BgmPath = SafeGetString(columnTexts, index++);        // 第10列：BGM
             SePath = SafeGetString(columnTexts, index++);         // 第11列：SE
             PerformanceKey = SafeGetString(columnTexts, index++);  //第12列：动画效果Key
+            BackgroundPath = SafeGetString(columnTexts, index++);  //第13列：背景图
 
             Debug.Log($"[StoryRowData] 解析成功! Id={m_Id}, NextId={NextId}, NodeType={NodeType}");
             return true;
