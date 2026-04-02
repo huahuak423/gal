@@ -374,13 +374,10 @@ namespace AVGGame.Editor
                             choiceText = choiceNode.Choices[branchIndex].ChoiceText ?? "";
                         }
 
-                        EditorUtility.DisplayDialog(
-                            "分支选择",
-                            $"检测到选择节点 [{choiceNode.name}]\n\n" +
-                            $"✅ 根据历史记录选择: 分支 {branchIndex + 1}\n" +
+                        Debug.Log($"[StoryStateTracer] 分支选择: 根据历史记录 → 分支 {branchIndex + 1}\n" +
+                            $"   选择节点: {choiceNode.name}\n" +
                             $"   选项: \"{choiceText}\"\n" +
-                            $"   目标节点: {branchStartNode.name}",
-                            "确定");
+                            $"   目标节点: {branchStartNode.name}");
                         return branchIndex;
                     }
                 }
@@ -396,14 +393,10 @@ namespace AVGGame.Editor
                 defaultChoiceText = choiceNode.Choices[0].ChoiceText ?? "";
             }
 
-            EditorUtility.DisplayDialog(
-                "分支选择",
-                $"检测到选择节点 [{choiceNode.name}]\n\n" +
-                $"⚠️ 未找到相关历史记录\n" +
-                $"📌 使用默认首选法则: 分支 1\n" +
+            Debug.Log($"[StoryStateTracer] 分支选择: 未找到历史记录，使用默认首选法则 → 分支 1\n" +
+                $"   选择节点: {choiceNode.name}\n" +
                 $"   选项: \"{defaultChoiceText}\"\n" +
-                $"   目标节点: {defaultNode?.name ?? "null"}",
-                "确定");
+                $"   目标节点: {defaultNode?.name ?? "null"}");
             return 0;
         }
 
