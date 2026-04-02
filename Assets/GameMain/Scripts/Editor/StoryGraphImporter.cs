@@ -71,12 +71,6 @@ namespace AVGGame.Editor
                         string marker = parts[3].Trim();
                         newNode.NeedsAttention = true;
                         newNode.EditorNote = "【立绘/演出标记】: " + marker;
-                        
-                        newNode.CharacterDisplays.Add(new CharacterDisplayData 
-                        { 
-                            CharacterName = newNode.SpeakerName,
-                            ActionType = CharacterActionType.ChangeSprite 
-                        });
                     }
 
                     newNode.position = spawnPosition;
