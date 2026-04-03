@@ -1,13 +1,3 @@
 {
-    "Entries": [
-        {
-            "GraphName": "Cinema",
-            "SpritePath": "Assets/GameMain/Art/Backgrounds/电影院/电影院1.png",
-            "Position": 1,
-            "OffsetX": 0.0,
-            "OffsetY": 0.0,
-            "Scale": 1.0,
-            "LastNodeGuid": "对话_1_许映月买了某位文艺片"
-        }
-    ]
+    "Entries": []
 }
