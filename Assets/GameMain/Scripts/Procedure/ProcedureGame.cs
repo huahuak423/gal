@@ -25,6 +25,9 @@ namespace AVGGame
         // 游戏核心数据
         private int m_CurrentAP = 10;
 
+        // 流程拥有者引用（用于状态切换）
+        private IFsm<IProcedureManager> m_ProcedureOwner;
+
         // 加载剧本类
         private StoryGraphLoader m_StoryGraphLoader;
 
@@ -37,6 +40,7 @@ namespace AVGGame
         protected override void OnEnter(IFsm<IProcedureManager> procedureOwner)
         {
             base.OnEnter(procedureOwner);
+            m_ProcedureOwner = procedureOwner;
             Debug.Log("[ProcedureGame] 正式进入游戏核心流程！");
 
             //读取事件表成功（失败）回调
@@ -66,6 +70,13 @@ namespace AVGGame
 
         protected override void OnLeave(IFsm<IProcedureManager> procedureOwner, bool isShutdown)
         {
+            // 关闭当前打开的子界面（如果有）
+            if (m_CurrentSubFormId != -1)
+            {
+                GameEntry.UI.CloseUIForm(m_CurrentSubFormId);
+                m_CurrentSubFormId = -1;
+            }
+
             // 检查 GameEntry 是否还有效（游戏关闭时可能已被销毁）
             if (GameEntry.IsInitialized && GameEntry.Event != null)
             {
@@ -374,6 +385,20 @@ namespace AVGGame
         {
             CustomEntry.PlayerData.SaveOnExit();
             GameEntry.ShutdownGame(ShutdownType.Quit);
+        }
+
+        /// <summary>
+        /// 返回主菜单
+        /// </summary>
+        public void ReturnToMainMenu()
+        {
+            Log.Info("[ProcedureGame] Returning to main menu");
+
+            // 保存当前游戏状态
+            CustomEntry.PlayerData.SaveOnExit();
+
+            // 切换到主菜单流程
+            ChangeState<ProcedureMainMenu>(m_ProcedureOwner);
         }
 
         #endregion
