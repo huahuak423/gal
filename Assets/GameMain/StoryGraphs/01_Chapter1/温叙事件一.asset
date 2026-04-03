@@ -1835,6 +1835,11 @@ MonoBehaviour:
     ActionType: 0
     Position: 1
     SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9.png"
+<<<<<<< HEAD
+    OffsetX: -42.85248
+    OffsetY: -6.93906
+    Scale: 1.2173069
+=======
     OffsetX: -80.39881
     OffsetY: -24.904642
     Scale: 1.4773659
@@ -1852,6 +1857,7 @@ MonoBehaviour:
     OffsetX: 51.345947
     OffsetY: 38.314854
     Scale: 1.3631359
+>>>>>>> bd68522873ed981e6955b37c1282f79a2d83320b
   BgmPath: 
   SePath: 
   BackgroundPath: 
