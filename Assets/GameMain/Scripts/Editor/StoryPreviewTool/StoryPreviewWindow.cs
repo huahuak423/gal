@@ -117,8 +117,6 @@ namespace AVGGame.Editor
                 ? "💡 编辑模式: 左键拖拽移动 | 按Shift仅X轴 | 按住Ctrl仅Y轴 | 滚轮缩放 | 按 Z 键保存并退出 | 按 Q 键添加退出指令"
                 : "💡 操作: 从Project拖入图片 | 左键选中立绘 | 右键拖拽平移 | 滚轮缩放";
 
-            EditorGUILayout.HelpBox(helpText, MessageType.Info);
-
             // UI预制体槽位
             EditorGUI.BeginChangeCheck();
             UIPrefab = (GameObject)EditorGUILayout.ObjectField("UI 预制体", UIPrefab, typeof(GameObject), false);
@@ -145,8 +143,6 @@ namespace AVGGame.Editor
                 Repaint();
             }
 
-            GUILayout.Space(5);
-
             // 一键排位
             GUILayout.Label("间距:", GUILayout.Width(40));
             m_ArrangeSpacing = EditorGUILayout.FloatField(m_ArrangeSpacing, GUILayout.Width(60));
@@ -155,6 +151,15 @@ namespace AVGGame.Editor
                 m_SandboxEngine.AutoArrangeCharacters(m_ArrangeSpacing);
                 SaveCharacterTransform();
                 Repaint();
+            }
+
+            // 修改按钮（编辑模式下显示）
+            if (m_IsEditingCharacter && m_SandboxEngine.SelectedCharacterIndex >= 0)
+            {
+                if (GUILayout.Button("修改图片", GUILayout.Width(80)))
+                {
+                    OpenChangeSpriteDialog();
+                }
             }
 
             // 打开记忆编辑器
@@ -196,73 +201,6 @@ namespace AVGGame.Editor
 
             // 处理事件
             HandleEvents(previewRect);
-
-            // 显示三个槽位的选中框位置按钮
-            EditorGUILayout.BeginHorizontal();
-            GUILayout.FlexibleSpace();
-
-            Color[] slotColors = { new Color(0.2f, 0.6f, 1f), new Color(0.2f, 1f, 0.6f), new Color(1f, 0.8f, 0.2f) };
-            string[] slotLabels = { "左槽", "中槽", "右槽" };
-            for (int i = 0; i < 3; i++)
-            {
-                bool occupied = m_SandboxEngine.IsSlotOccupied(i);
-                GUI.backgroundColor = occupied ? slotColors[i] : Color.gray;
-
-                string btnLabel = slotLabels[i];
-                if (occupied)
-                {
-                    Vector2 center = m_SandboxEngine.GetCharacterScreenCenter(i, previewRect);
-                    btnLabel = $"{slotLabels[i]} ({center.x:F0},{center.y:F0})";
-                }
-                else
-                {
-                    btnLabel = $"{slotLabels[i]} (空)";
-                }
-
-                GUI.enabled = occupied;
-                if (GUILayout.Button(btnLabel, GUILayout.Width(100), GUILayout.Height(25)))
-                {
-                    m_SandboxEngine.SelectCharacter(i);
-                }
-                GUI.enabled = true;
-                GUI.backgroundColor = Color.white;
-            }
-
-            GUILayout.FlexibleSpace();
-            EditorGUILayout.EndHorizontal();
-
-            // 修改图片功能（编辑模式下显示）
-            if (m_IsEditingCharacter && m_SandboxEngine.SelectedCharacterIndex >= 0)
-            {
-                EditorGUILayout.BeginHorizontal();
-                GUILayout.FlexibleSpace();
-
-                GUILayout.Label("修改图片:", GUILayout.Width(60));
-                EditorGUI.BeginChangeCheck();
-                Texture2D newSprite = (Texture2D)EditorGUILayout.ObjectField(GUIContent.none, null, typeof(Texture2D), false, GUILayout.Width(120), GUILayout.Height(30));
-                if (EditorGUI.EndChangeCheck() && newSprite != null)
-                {
-                    string spritePath = AssetDatabase.GetAssetPath(newSprite);
-                    ChangeCharacterSprite(m_SandboxEngine.SelectedCharacterIndex, spritePath);
-                }
-
-                // 快捷选择按钮（使用 Unity Selection）
-                if (GUILayout.Button("选择图片", GUILayout.Width(70), GUILayout.Height(25)))
-                {
-                    Selection.activeObject = null;
-                    EditorGUIUtility.ShowObjectPicker<Texture2D>(null, false, "t:texture2d", 0);
-                }
-
-                // 处理对象选择器的结果
-                if (Event.current.commandName == "ObjectSelectorClosed" && EditorGUIUtility.GetObjectPickerObject() is Texture2D selectedTexture)
-                {
-                    string spritePath = AssetDatabase.GetAssetPath(selectedTexture);
-                    ChangeCharacterSprite(m_SandboxEngine.SelectedCharacterIndex, spritePath);
-                }
-
-                GUILayout.FlexibleSpace();
-                EditorGUILayout.EndHorizontal();
-            }
         }
 
         #region 私有方法
@@ -742,6 +680,34 @@ namespace AVGGame.Editor
 
             // 刷新预览
             OnSelectionChanged();
+        }
+
+        /// <summary>
+        /// 打开修改立绘图片对话框
+        /// </summary>
+        private void OpenChangeSpriteDialog()
+        {
+            if (m_SelectedNode == null || m_SandboxEngine.SelectedCharacterIndex < 0) return;
+
+            int slotIndex = m_SandboxEngine.SelectedCharacterIndex;
+
+            // 弹出文件选择对话框
+            string spritePath = EditorUtility.OpenFilePanel(
+                "选择立绘图片",
+                "Assets",
+                "png,jpg,jpeg,gif,tga"
+            );
+
+            if (!string.IsNullOrEmpty(spritePath))
+            {
+                // 转换为相对路径
+                if (spritePath.StartsWith(Application.dataPath))
+                {
+                    spritePath = "Assets" + spritePath.Substring(Application.dataPath.Length);
+                }
+
+                ChangeCharacterSprite(slotIndex, spritePath);
+            }
         }
 
         /// <summary>
