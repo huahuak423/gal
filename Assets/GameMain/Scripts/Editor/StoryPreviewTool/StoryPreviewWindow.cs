@@ -30,6 +30,7 @@ namespace AVGGame.Editor
         private bool m_IsEditingCharacter = false;
         private bool m_IsMovingCharacter = false;
         private Vector2 m_LastMousePos;
+        private Vector2 m_DragOffset; // 鼠标和立绘中心之间的偏移量
 
         // 槽位颜色（半透明)
         private static readonly Color k_SlotColorLeft = new Color(1f, 0.3f, 0.4f);   // 红色 - 左
@@ -106,7 +107,7 @@ namespace AVGGame.Editor
 
             // 操作提示
             string helpText = m_IsEditingCharacter
-                ? "💡 编辑模式: 左键拖拽移动 | 按Shift仅X轴 | 按住Ctrl仅Y轴 | 滚轮缩放 | 点击空白保存"
+                ? "💡 编辑模式: 左键拖拽移动 | 按Shift仅X轴 | 按住Ctrl仅Y轴 | 滚轮缩放 | 按 Z 键保存并退出"
                 : "💡 操作: 从Project拖入图片 | 左键选中立绘 | 右键拖拽平移 | 滚轮缩放";
             GUILayout.Label(helpText, EditorStyles.helpBox);
 
@@ -165,7 +166,7 @@ namespace AVGGame.Editor
                 DrawDragSlots(previewRect);
             }
 
-            // 绘制选中高亮
+            // 绘制选中高亮（实心透明框）
             if (m_SandboxEngine.SelectedCharacterIndex >= 0)
             {
                 DrawSelectionHighlight(previewRect);
@@ -231,14 +232,20 @@ namespace AVGGame.Editor
             int index = m_SandboxEngine.SelectedCharacterIndex;
             if (index < 0) return;
 
-            Rect charRect = m_SandboxEngine.GetCharacterScreenRect(index, previewRect);
-            if (charRect.width > 0 && charRect.height > 0)
-            {
-                EditorGUI.DrawRect(charRect, k_SelectionColor);
+            Vector2 center = m_SandboxEngine.GetCharacterScreenCenter(index, previewRect);
 
-                // 绘制边框
-                Handles.DrawSolidRectangleWithOutline(charRect, Color.clear, Color.yellow);
-            }
+            // 固定大小的实心透明框（不随图片缩放）
+            float fixedSize = 35f;
+            Rect fixedRect = new Rect(
+                center.x - fixedSize / 2f,
+                center.y - fixedSize / 2f,
+                fixedSize,
+                fixedSize
+            );
+
+            // 绘制实心透明框
+            Color fillColor = new Color(1f, 0.6f, 0f, 0.25f); // 半透明橙色
+            EditorGUI.DrawRect(fixedRect, fillColor);
         }
 
         private void HandleEvents(Rect previewRect)
@@ -303,11 +310,40 @@ namespace AVGGame.Editor
             }
             else if (e.type == EventType.DragUpdated)
             {
-                m_IsDraggingSprite = true;
-                // 更新悬停槽位
-                float relativeX = (mousePos.x - previewRect.x) / previewRect.width;
-                m_DragOverSlotIndex = Mathf.FloorToInt(relativeX * 3);
-                m_DragOverSlotIndex = Mathf.Clamp(m_DragOverSlotIndex, 0, 2);
+                // 检查拖入的是否是有效图片类型
+                bool isValidDrag = false;
+                foreach (var obj in DragAndDrop.objectReferences)
+                {
+                    if (obj is Sprite || obj is Texture2D)
+                    {
+                        isValidDrag = true;
+                        break;
+                    }
+                    else if (obj is DefaultAsset asset)
+                    {
+                        string path = AssetDatabase.GetAssetPath(asset);
+                        if (!string.IsNullOrEmpty(path) && (path.EndsWith(".png") || path.EndsWith(".jpg")))
+                        {
+                            isValidDrag = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (isValidDrag)
+                {
+                    DragAndDrop.visualMode = DragAndDropVisualMode.Copy; // 关键：设置视觉模式
+                    m_IsDraggingSprite = true;
+                    // 更新悬停槽位
+                    float relativeX = (mousePos.x - previewRect.x) / previewRect.width;
+                    m_DragOverSlotIndex = Mathf.FloorToInt(relativeX * 3);
+                    m_DragOverSlotIndex = Mathf.Clamp(m_DragOverSlotIndex, 0, 2);
+                    e.Use();
+                }
+                else
+                {
+                    DragAndDrop.visualMode = DragAndDropVisualMode.Rejected;
+                }
                 Repaint();
             }
             else if (e.type == EventType.DragExited)
@@ -322,6 +358,21 @@ namespace AVGGame.Editor
         {
             Event e = Event.current;
             Vector2 mousePos = e.mousePosition;
+
+            // 按 Z 键保存并退出编辑模式
+            if (e.type == EventType.KeyDown && e.keyCode == KeyCode.Z)
+            {
+                if (m_IsEditingCharacter)
+                {
+                    SaveCharacterTransform();
+                    m_IsEditingCharacter = false;
+                    m_SandboxEngine.DeselectCharacter();
+                    e.Use();
+                    Repaint();
+                    Debug.Log("[预览] 已保存并退出编辑模式");
+                }
+                return;
+            }
 
             // 滚轮缩放
             if (e.type == EventType.ScrollWheel)
@@ -343,53 +394,38 @@ namespace AVGGame.Editor
                 return;
             }
 
-            // 左键点击
-            if (e.type == EventType.MouseDown && e.button == 0)
+            // 左键点击（编辑模式下禁止选中其他图片）
+            if (e.type == EventType.MouseDown && e.button == 0 && !m_IsEditingCharacter)
             {
-                int hitIndex = m_SandboxEngine.HitTestCharacter(mousePos, previewRect);
+                // 使用固定大小的点击检测（点击选中框的位置）
+                float clickSize = 35f; // 和选中框一样大
+                int hitIndex = m_SandboxEngine.HitTestCharacterFixed(mousePos, previewRect, clickSize);
 
                 if (hitIndex >= 0)
                 {
-                    // 点击了立绘
-                    if (m_SandboxEngine.SelectedCharacterIndex != hitIndex)
-                    {
-                        // 如果之前选中了其他立绘，先保存
-                        if (m_IsEditingCharacter)
-                        {
-                            SaveCharacterTransform();
-                        }
-                    }
-
                     m_SandboxEngine.SelectCharacter(hitIndex);
                     m_IsEditingCharacter = true;
+
+                    // 记录鼠标和立绘中心之间的偏移量
+                    Vector2 charCenter = m_SandboxEngine.GetCharacterScreenCenter(hitIndex, previewRect);
+                    m_DragOffset = charCenter - mousePos;
+
                     m_LastMousePos = mousePos;
                     e.Use();
                     Repaint();
-                }
-                else
-                {
-                    // 点击了空白区域
-                    if (m_IsEditingCharacter)
-                    {
-                        // 保存并退出编辑模式
-                        SaveCharacterTransform();
-                        m_IsEditingCharacter = false;
-                        m_SandboxEngine.DeselectCharacter();
-                        Repaint();
-                    }
                 }
             }
 
             // 左键拖拽移动立绘
             if (e.type == EventType.MouseDrag && e.button == 0 && m_IsEditingCharacter)
             {
-                Vector2 delta = mousePos - m_LastMousePos;
-
                 // 检查约束键
                 bool constrainX = (e.modifiers & EventModifiers.Shift) != 0;
                 bool constrainY = (e.modifiers & EventModifiers.Control) != 0;
 
-                m_SandboxEngine.MoveSelectedCharacter(delta, constrainX, constrainY);
+                // 将鼠标位置和偏移量传给引擎进行移动
+                m_SandboxEngine.MoveSelectedCharacterToPosition(mousePos, previewRect, m_DragOffset, constrainX, constrainY);
+
                 m_LastMousePos = mousePos;
                 e.Use();
                 Repaint();

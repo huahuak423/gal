@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_18_\u5BF9\u65B9\u4F3C\u4E4E\u5DF2\u7ECF\u5728\u90A3\u91CC\u7AD9"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 7650, y: 0}
+  position: {x: 7656, y: -8}
   ports:
     keys:
     - Entry
@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_9_\u5BA4\u53CB\u4FE1\u8A93\u65E6\u65E6\u5730\u8BF4\uFF0C\u80FD"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 3600, y: 0}
+  position: {x: 3608, y: -8}
   ports:
     keys:
     - Entry
@@ -697,6 +697,9 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/Characters/\u5973\u4E3B/\u5973\u4E3B01-00.png"
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 1
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -1148,7 +1151,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_3_\u4E3A\u4E86\u4E0B\u5468\u60C5\u611F\u8D5B\u9053\u7684\u7206"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 900, y: 0}
+  position: {x: 904, y: 8}
   ports:
     keys:
     - Entry
@@ -1832,6 +1835,23 @@ MonoBehaviour:
     ActionType: 0
     Position: 1
     SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9.png"
+    OffsetX: -80.39881
+    OffsetY: -24.904642
+    Scale: 1.4773659
+  - CharacterName: 
+    ActionType: 0
+    Position: 2
+    SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9.png"
+    OffsetX: -135.57327
+    OffsetY: -19.157427
+    Scale: 1.3328587
+  - CharacterName: 
+    ActionType: 0
+    Position: 0
+    SpritePath: "Assets/GameMain/Art/Characters/\u5973\u4E3B/\u5973\u4E3B01-00.png"
+    OffsetX: 51.345947
+    OffsetY: 38.314854
+    Scale: 1.3631359
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -3846,6 +3866,9 @@ MonoBehaviour:
     ActionType: 1
     Position: 0
     SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 1
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -4726,7 +4749,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_10_\u4F60\u6DF1\u4EE5\u4E3A\u7136\uFF0C\u751A\u81F3\u5728\u7F51"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 4050, y: 0}
+  position: {x: 4056, y: -8}
   ports:
     keys:
     - Entry
