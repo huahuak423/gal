@@ -8,6 +8,69 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_1_许映月买了某位文艺片"
+        },
+        {
+            "GraphName": "温叙事件一",
+            "SpritePath": "Assets/GameMain/Art/Characters/温叙/温叙最新.png",
+            "Position": 1,
+            "OffsetX": -1.2052587270736695,
+            "OffsetY": -522.5382080078125,
+            "Scale": 3.0,
+            "LastNodeGuid": "对话_64_他眼底的光熄了一瞬，"
+        },
+        {
+            "GraphName": "温叙事件一",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主01-00.png",
+            "Position": 1,
+            "OffsetX": 1.862197995185852,
+            "OffsetY": -394.1362609863281,
+            "Scale": 3.0,
+            "LastNodeGuid": "对话_69_“谢谢。”"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主02-00.png",
+            "Position": 1,
+            "OffsetX": 15.921713829040528,
+            "OffsetY": -444.5914001464844,
+            "Scale": 3.0,
+            "LastNodeGuid": "对话_16_“是有点冒昧，你怎么"
+        },
+        {
+            "GraphName": "温叙事件五",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主01-00.png",
+            "Position": 0,
+            "OffsetX": 126.95089721679688,
+            "OffsetY": -447.1893005371094,
+            "Scale": 3.0,
+            "LastNodeGuid": "对话_51_你迟疑着接过，翻开略"
+        },
+        {
+            "GraphName": "温叙事件五",
+            "SpritePath": "Assets/GameMain/Art/Characters/温叙/温叙最新.png",
+            "Position": 2,
+            "OffsetX": -500.69775390625,
+            "OffsetY": -599.4456787109375,
+            "Scale": 3.0,
+            "LastNodeGuid": "对话_49_“兴许是差些缘分，等"
+        },
+        {
+            "GraphName": "温叙事件五",
+            "SpritePath": "Assets/GameMain/Art/Characters/温叙/温叙最新.png",
+            "Position": 0,
+            "OffsetX": 264.86968994140627,
+            "OffsetY": -411.7763671875,
+            "Scale": 2.3422467708587648,
+            "LastNodeGuid": "对话_39_你一眼就看到了长椅上"
+        },
+        {
+            "GraphName": "温叙事件五",
+            "SpritePath": "Assets/GameMain/Art/Characters/温叙/温叙最新.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_53_“这是《棱镜回响》的"
         }
     ]
 }

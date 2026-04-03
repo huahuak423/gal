@@ -1015,6 +1015,9 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 1
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -1127,6 +1130,9 @@ MonoBehaviour:
     ActionType: 0
     Position: 1
     SpritePath: "Assets/GameMain/Art/Characters/\u5973\u4E3B/\u5973\u4E3B02-00.png"
+    OffsetX: 12.10895
+    OffsetY: -453.60126
+    Scale: 3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -1563,6 +1569,9 @@ MonoBehaviour:
     ActionType: 1
     Position: 1
     SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 1
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -1675,6 +1684,9 @@ MonoBehaviour:
     ActionType: 1
     Position: 1
     SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 1
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -2449,6 +2461,9 @@ MonoBehaviour:
     ActionType: 0
     Position: 1
     SpritePath: "Assets/GameMain/Art/Characters/\u5973\u4E3B/\u5973\u4E3B02-00.png"
+    OffsetX: 12
+    OffsetY: -453
+    Scale: 3
   BgmPath: 
   SePath: 
   BackgroundPath: 
