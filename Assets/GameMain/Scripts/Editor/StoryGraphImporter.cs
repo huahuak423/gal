@@ -32,6 +32,12 @@ namespace AVGGame.Editor
             DialogueNode previousNode = null;
             Vector2 spawnPosition = new Vector2(0, 0);
 
+            // 记录原始节点数量，用于判断是否需要保存
+            int originalNodeCount = (targetGraph.nodes != null) ? targetGraph.nodes.Count : 0;
+
+            // 获取 Graph 的资产路径，用于添加子资产
+            string graphPath = AssetDatabase.GetAssetPath(targetGraph);
+
             // 3. 开始解析并生成 (从第2行开始，跳过表头)
             for (int i = 1; i < lines.Length; i++)
             {
@@ -43,7 +49,14 @@ namespace AVGGame.Editor
                 if (parts.Length >= 3)
                 {
                     DialogueNode newNode = targetGraph.AddNode<DialogueNode>();
-                    newNode.name = "对话节点";
+
+                    // 关键：将节点作为子资产添加到 Graph
+                    if (!string.IsNullOrEmpty(graphPath))
+                    {
+                        AssetDatabase.AddObjectToAsset(newNode, targetGraph);
+                    }
+
+                    newNode.name = $"对话_{i}_{parts[2].Substring(0, Mathf.Min(10, parts[2].Length))}"; // 更有意义的名称
                     
                     // --- 核心修改：通过角色编号映射角色名称 ---
                     string roleID = parts[0].Trim();
@@ -58,12 +71,6 @@ namespace AVGGame.Editor
                         string marker = parts[3].Trim();
                         newNode.NeedsAttention = true;
                         newNode.EditorNote = "【立绘/演出标记】: " + marker;
-                        
-                        newNode.CharacterDisplays.Add(new CharacterDisplayData 
-                        { 
-                            CharacterName = newNode.SpeakerName,
-                            ActionType = CharacterActionType.ChangeSprite 
-                        });
                     }
 
                     newNode.position = spawnPosition;
@@ -80,9 +87,19 @@ namespace AVGGame.Editor
                 }
             }
 
+            // 标记 Graph 为脏，确保序列化
+            EditorUtility.SetDirty(targetGraph);
+
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
-            EditorUtility.DisplayDialog("成功", $"剧本导入完毕！角色名已根据编号自动转换。", "确定");
+
+            // 强制重新加载 Graph
+            if (!string.IsNullOrEmpty(graphPath))
+            {
+                AssetDatabase.ImportAsset(graphPath, ImportAssetOptions.ForceUpdate);
+            }
+
+            EditorUtility.DisplayDialog("成功", $"剧本导入完毕！角色名已根据编号自动转换。\n\n共导入 {targetGraph.nodes.Count - originalNodeCount} 个节点。", "确定");
         }
 
         /// <summary>

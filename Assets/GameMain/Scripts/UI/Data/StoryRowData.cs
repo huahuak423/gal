@@ -41,6 +41,8 @@ namespace AVGGame
         public string RewardsJson;
         public string BgmPath;
         public string SePath;
+        public string PerformanceKey;
+        public string BackgroundPath;
 
         /// <summary>
         /// 【核心魔法】UGF 引擎在加载 txt 数据表时，每读一行都会自动调用这个方法
@@ -52,7 +54,7 @@ namespace AVGGame
             string[] columnTexts = dataRowString.Split('\t');
 
             // 2. 防御性编程：检查列数是否对得上我们导出的 5 列
-            if (columnTexts.Length < 5)
+            if (columnTexts.Length != 12)
             {
                 Debug.LogError($"解析剧情数据表失败！行文本列数不足: {dataRowString}");
                 return false;
@@ -74,6 +76,8 @@ namespace AVGGame
             RewardsJson = SafeGetString(columnTexts, index++);    // 第9列：奖励JSON
             BgmPath = SafeGetString(columnTexts, index++);        // 第10列：BGM
             SePath = SafeGetString(columnTexts, index++);         // 第11列：SE
+            PerformanceKey = SafeGetString(columnTexts, index++);  //第12列：动画效果Key
+            BackgroundPath = SafeGetString(columnTexts, index++);  //第13列：背景图
 
             Debug.Log($"[StoryRowData] 解析成功! Id={m_Id}, NextId={NextId}, NodeType={NodeType}");
             return true;
@@ -119,6 +123,21 @@ namespace AVGGame
         public CharacterActionType ActionType;
         public CharacterPosition Position;
         public string SpritePath;
+
+        /// <summary>
+        /// X轴偏移（像素），基于1920x1080分辨率
+        /// </summary>
+        public float OffsetX = 0f;
+
+        /// <summary>
+        /// Y轴偏移（像素），基于1920x1080分辨率
+        /// </summary>
+        public float OffsetY = 0f;
+
+        /// <summary>
+        /// 缩放比率，1.0 = 原始大小
+        /// </summary>
+        public float Scale = 1f;
     }
 
     [System.Serializable]

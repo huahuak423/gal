@@ -12,8 +12,16 @@ Assets/GameMain/
 │   ├── Base/                   # 基础入口
 │   ├── Procedure/              # 流程管理
 │   ├── UI/                     # UI系统
+│   │   ├── Base/               # UI 基类
+│   │   ├── Extension/          # UI 扩展工具
+│   │   ├── Forms/              # UI 界面
+│   │   └── Data/               # UI 数据定义
 │   ├── AVGSystem/              # AVG游戏系统
 │   └── Editor/                 # 编辑器扩展
+│       ├── StoryGraphImporter.cs
+│       ├── StoryGraphExporter.cs
+│       ├── xNodeGraph/         # xNode 节点定义
+│       └── StoryPreviewTool/   # 剧情预览工具
 ├── UI/                         # UI资源
 │   └── Forms/                  # UI预制体
 ├── Scenes/                     # 场景文件
@@ -235,7 +243,7 @@ AVGSystem/
 | `ConditionOperator` | 条件运算符 | GreaterThanOrEqual, LessThanOrEqual, Equal |
 | `ConditionType` | 条件类型 | PlayerAttribute, NpcFavorability, SpecialItem |
 | `CharacterActionType` | 角色动作 | Enter(入场), Leave(离场), ChangeSprite(换立绘) |
-| `CharacterPosition` | 角色位置 | Left, Center, Right |
+| `CharacterPosition` | 角色位置 | Left, Center, Right, EX1, EX2, EX3, EX4 |
 
 **数据结构：**
 
@@ -628,6 +636,27 @@ UIHelper.CloseUIGroup(UIGroupDefinition.Popup);
 
 编辑器工具用于提高开发效率，位于菜单栏 `AVG Tools` 下。
 
+### 5.0 目录结构
+
+```
+Editor/
+├── StoryGraphImporter.cs       # CSV 导入工具
+├── StoryGraphExporter.cs       # 数据表导出工具
+├── GraphNodeSearchWindow.cs    # 节点导航器
+├── DialogueNodeEditor.cs       # 节点编辑器外观
+├── xNodeGraph/                 # xNode 节点定义
+│   ├── StoryGraph.cs
+│   ├── DialogueNode.cs
+│   ├── ChoiceNode.cs
+│   ├── RewardNode.cs
+│   └── SubGraphNode.cs
+└── StoryPreviewTool/           # 剧情预览工具
+    ├── StoryPreviewWindow.cs   # 预览窗口
+    ├── PreviewSandboxEngine.cs # 渲染引擎
+    ├── StoryStateTracer.cs     # 状态追踪器
+    └── StoryStateSnapshot.cs   # 状态快照
+```
+
 ### 5.1 工具列表
 
 | 菜单项 | 快捷键 | 功能 |
@@ -635,6 +664,7 @@ UIHelper.CloseUIGroup(UIGroupDefinition.Popup);
 | 1. 从 CSV 导入剧本到 xNode | - | 导入策划配置表 |
 | 2. 导出 xNode 为 UGF 数据表 | - | 导出运行时数据 |
 | 3. 节点快速导航器 | - | 搜索和定位节点 |
+| 4. 剧情实时预览 | Window → AVG | 实时预览 UI 效果 |
 
 ### 5.2 StoryGraphImporter.cs - CSV 导入工具
 
@@ -720,6 +750,122 @@ int   int       int         string         string        ...
 - 当 `NeedsAttention = true` 时，节点显示为橙色
 - 用于标记需要特殊处理的节点
 
+### 5.6 StoryPreviewTool - 剧情实时预览工具
+
+**菜单位置：** `Window → AVG → 剧情实时预览 (Story Preview)`
+
+**功能：** 在编辑器中实时预览 xNode 剧本图的 UI 效果，支持鼠标缩放和平移
+
+**目录结构：**
+```
+Editor/StoryPreviewTool/
+├── StoryPreviewWindow.cs      # 预览窗口 (EditorWindow)
+├── PreviewSandboxEngine.cs    # 渲染引擎 (Preview Scene 方案)
+├── StoryStateTracer.cs        # 状态追踪器 (逆向遍历图表)
+└── StoryStateSnapshot.cs      # 状态快照数据结构
+```
+
+#### 5.6.1 StoryPreviewWindow.cs - 预览窗口
+
+**功能：** 预览工具的主窗口界面
+
+**职责：**
+- 提供 UI 预制体拖拽槽位
+- 监听 xNode 节点选择变化
+- 处理鼠标交互（缩放、平移）
+- 显示渲染结果
+
+**操作方式：**
+| 操作 | 功能 |
+|------|------|
+| 滚轮 | 缩放预览画面 |
+| 右键拖拽 | 平移画面 |
+| 中键拖拽 | 平移画面 |
+| 双击右键 | 重置视图 |
+| 点击节点 | 更新预览内容 |
+
+#### 5.6.2 PreviewSandboxEngine.cs - 渲染引擎
+
+**功能：** 使用 Unity Preview Scene 技术渲染 UI 预览
+
+**技术方案：**
+- 使用 `EditorSceneManager.NewPreviewScene()` 创建独立预览场景
+- UI 预制体实例化到预览场景中，不污染用户场景
+- 使用独立 Camera + RenderTexture 渲染
+- 固定 1920x1080 分辨率 + 4x MSAA 抗锯齿
+
+**关键代码：**
+```csharp
+// 创建独立预览场景（不会显示在 Scene 视图）
+m_PreviewScene = EditorSceneManager.NewPreviewScene();
+
+// 将对象移动到预览场景
+SceneManager.MoveGameObjectToScene(m_UIInstance, m_PreviewScene);
+
+// 固定高分辨率渲染
+m_RenderTexture = new RenderTexture(1920, 1080, 24);
+m_RenderTexture.antiAliasing = 4;
+```
+
+**为什么不直接在用户场景中操作？**
+| 问题 | Preview Scene 方案 |
+|------|-------------------|
+| Scene 视图污染 | ✅ 完全隔离，用户看不到预览对象 |
+| Hierarchy 残留 | ✅ 不出现在 Hierarchy |
+| 与用户对象冲突 | ✅ 完全独立的场景空间 |
+
+#### 5.6.3 StoryStateTracer.cs - 状态追踪器
+
+**功能：** 逆向遍历 xNode 图表，收集完整剧情状态
+
+**核心算法：**
+1. 从当前点击的节点开始
+2. 逆向遍历所有前置节点
+3. 收集台词、角色名、立绘等数据
+4. 遇到多分支汇合时，根据点击历史选择路径
+
+**分支选择逻辑：**
+```
+多分支汇合点
+    │
+    ├─→ 查找点击历史记录
+    │       │
+    │       ├─→ 找到：使用历史路径
+    │       │
+    │       └─→ 未找到：使用默认首选法则（第一条路径）
+```
+
+**弹窗提示：**
+当遇到多分支选择时，会弹出对话框提示：
+- ✅ 从点击历史中找到路径
+- ⚠️ 未找到历史，使用默认首选
+
+#### 5.6.4 StoryStateSnapshot.cs - 状态快照
+
+**功能：** 存储某一时刻的完整剧情状态
+
+**数据结构：**
+```csharp
+public class StoryStateSnapshot
+{
+    public string DialogText;                              // 台词文本
+    public string CharacterName;                           // 角色名称
+    public List<CharacterDisplayData> CharacterRoster;    // 立绘列表
+}
+```
+
+**立绘位置处理：**
+- 只处理 Left(0)、Center(1)、Right(2) 三个基础位置
+- EX1-EX4 扩展位置在预览中被忽略
+
+#### 5.6.5 使用方法
+
+1. 打开窗口：`Window → AVG → 剧情实时预览`
+2. 拖入 UI 预制体到槽位
+3. 在 xNode 编辑器中点击任意 DialogueNode
+4. 预览窗口自动显示该节点的 UI 效果
+5. 使用鼠标缩放/平移查看细节
+
 ---
 
 ## 六、资源文件夹说明
@@ -761,7 +907,14 @@ int   int       int         string         string        ...
 4. 连接节点端口
 5. 填写节点内容
 
-### 7.3 导出运行
+### 7.3 使用预览工具调试
+
+1. 打开预览窗口：`Window → AVG → 剧情实时预览`
+2. 拖入对话 UI 预制体
+3. 在 xNode 编辑器中点击节点
+4. 预览窗口实时显示效果
+
+### 7.4 添加新 UI
 
 1. 选中 StoryGraph
 2. AVG Tools → 2. 导出 xNode 为 UGF 数据表
@@ -840,5 +993,5 @@ var storyManager = CustomEntry.GetCustomComponent<StoryManager>();
 
 ---
 
-*文档版本: 1.0*
-*最后更新: 2024*
+*文档版本: 1.1*
+*最后更新: 2026-04*
