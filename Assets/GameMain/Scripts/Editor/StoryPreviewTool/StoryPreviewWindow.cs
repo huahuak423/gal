@@ -393,6 +393,14 @@ namespace AVGGame.Editor
             Event e = Event.current;
             Vector2 mousePos = e.mousePosition;
 
+            // Fallback: 如果拖拽状态已结束但 m_IsDraggingSprite 仍为 true，则重置
+            if (m_IsDraggingSprite && DragAndDrop.activeControlID == 0)
+            {
+                m_IsDraggingSprite = false;
+                m_DragOverSlotIndex = -1;
+                Repaint();
+            }
+
             if (e.type == EventType.DragPerform)
             {
                 // 检查拖入的是否是图片
@@ -822,8 +830,20 @@ namespace AVGGame.Editor
 
             Debug.Log($"[预览] ChangeSprite: {System.IO.Path.GetFileNameWithoutExtension(newSpritePath)}, 来源:{source}, 偏移({currentOffset.x:F1}, {currentOffset.y:F1}), 缩放 {currentScale:F2}");
 
-            // 刷新预览
-            OnSelectionChanged();
+            // 直接刷新预览（不依赖 Selection.activeObject）
+            RefreshPreviewFromSelectedNode();
+            Repaint();
+        }
+
+        /// <summary>
+        /// 直接从当前选中的节点刷新预览
+        /// </summary>
+        private void RefreshPreviewFromSelectedNode()
+        {
+            if (m_SelectedNode == null || UIPrefab == null) return;
+
+            StoryStateSnapshot snapshot = StoryStateTracer.GetSnapshot(m_SelectedNode);
+            m_SandboxEngine.ApplySnapshot(snapshot);
         }
 
         /// <summary>
