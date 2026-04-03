@@ -50,6 +50,8 @@ namespace AVGGame
         private int m_SelectedSlotIndex = -1;            // 当前选中的存档槽位
         private Button[] m_SaveSlots;                     // 存档按钮数组缓存
         private Image[] m_SaveSlotImages;                // 存档按钮图片数组缓存
+        private bool m_IsFromGameMenu = false;           // 是否从游戏菜单（MenuPanel）进入
+        private ProcedureGame m_ProcedureGame = null;     // 游戏流程引用
 
         #endregion
 
@@ -139,6 +141,10 @@ namespace AVGGame
 
             Debug.Log($"[ArchivePanel] OnOpen called, userData: {userData}");
 
+            // 检查是否从游戏菜单进入
+            m_IsFromGameMenu = userData is ProcedureGame;
+            m_ProcedureGame = userData as ProcedureGame;
+
             // 获取打开模式（保存模式/加载模式）
             if (userData is ArchiveMode mode)
             {
@@ -163,7 +169,7 @@ namespace AVGGame
             // 更新存档槽位显示
             UpdateSaveSlotDisplay();
 
-            Debug.Log($"[ArchivePanel] Opened successfully, Mode: {m_Mode}");
+            Debug.Log($"[ArchivePanel] Opened successfully, Mode: {m_Mode}, FromGameMenu: {m_IsFromGameMenu}");
             Debug.Log($"[ArchivePanel] SaveSystem available: {CustomEntry.SaveSystem != null}");
         }
 
@@ -205,19 +211,45 @@ namespace AVGGame
         {
             Log.Info($"[ArchivePanel] Saving to slot {slotId}");
 
-            // 执行保存操作
-            bool success = CustomEntry.SaveSystem?.Save(slotId) ?? false;
+            // 显示保存提示
+            ShowMessage("正在保存...");
+
+            // 异步执行保存操作
+            StartCoroutine(SaveWithRetry(slotId));
+        }
+
+        /// <summary>
+        /// 带重试的保存操作
+        /// </summary>
+        private System.Collections.IEnumerator SaveWithRetry(int slotId, int maxRetries = 2)
+        {
+            bool success = false;
+            int retryCount = 0;
+
+            while (!success && retryCount < maxRetries)
+            {
+                retryCount++;
+                success = CustomEntry.SaveSystem?.Save(slotId) ?? false;
+
+                if (!success && retryCount < maxRetries)
+                {
+                    Log.Warning($"[ArchivePanel] 保存失败，正在重试 ({retryCount}/{maxRetries})");
+                    yield return new WaitForSeconds(0.5f);
+                }
+            }
 
             if (success)
             {
                 Log.Info($"[ArchivePanel] 保存成功：槽位 {slotId}");
-                // 更新存档显示
-                UpdateSaveSlotDisplay();
+                ShowMessage("保存成功！");
+
+                // 延迟后关闭存档界面，并返回大菜单
+                StartCoroutine(DelayAndReturnToMainMenu());
             }
             else
             {
-                Log.Error($"[ArchivePanel] 保存失败：槽位 {slotId}");
-                // TODO: 显示保存失败提示
+                Log.Error($"[ArchivePanel] 保存失败：槽位 {slotId}（重试{maxRetries}次后仍失败）");
+                ShowMessage("保存失败，请稍后重试");
             }
         }
 
@@ -228,25 +260,63 @@ namespace AVGGame
         {
             Log.Info($"[ArchivePanel] Loading from slot {slotId}");
 
-            // 执行加载操作
-            bool success = CustomEntry.SaveSystem?.Load(slotId) ?? false;
+            // 显示加载提示
+            ShowMessage("正在读取存档...");
+
+            // 异步执行加载操作
+            StartCoroutine(LoadWithRetry(slotId));
+        }
+
+        /// <summary>
+        /// 带重试的加载操作
+        /// </summary>
+        private System.Collections.IEnumerator LoadWithRetry(int slotId, int maxRetries = 2)
+        {
+            bool success = false;
+            int retryCount = 0;
+
+            while (!success && retryCount < maxRetries)
+            {
+                retryCount++;
+                success = CustomEntry.SaveSystem?.Load(slotId) ?? false;
+
+                if (!success && retryCount < maxRetries)
+                {
+                    Log.Warning($"[ArchivePanel] 加载失败，正在重试 ({retryCount}/{maxRetries})");
+                    yield return new WaitForSeconds(0.5f);
+                }
+            }
 
             if (success)
             {
                 Log.Info($"[ArchivePanel] 加载成功：槽位 {slotId}");
+                ShowMessage("加载成功！");
+
+                // 获取加载后的剧情状态
+                var playerData = CustomEntry.PlayerData;
+                string currentStory = playerData?.currentStoryGarphName;
 
                 // 关闭存档界面
                 CloseSelf();
 
-                // TODO: 根据加载的游戏状态跳转到相应的界面
-                // 暂时直接打开对话界面（用于新游戏流程）
-                // 实际应该根据存档中的剧情状态跳转
+                // 延迟跳转，确保UI关闭完成
+                StartCoroutine(DelayAndLoadGame(currentStory));
             }
             else
             {
-                Log.Error($"[ArchivePanel] 加载失败：槽位 {slotId}");
-                // TODO: 显示加载失败提示
+                Log.Error($"[ArchivePanel] 加载失败：槽位 {slotId}（重试{maxRetries}次后仍失败）");
+                ShowMessage("加载失败，请稍后重试");
             }
+        }
+
+        /// <summary>
+        /// 显示提示消息
+        /// </summary>
+        private void ShowMessage(string message)
+        {
+            // 这里可以扩展实现更复杂的提示UI
+            // 比如使用 UnityEngine.UI.Text 或其他UI组件显示消息
+            Debug.Log($"[ArchivePanel] {message}");
         }
 
         /// <summary>
@@ -318,6 +388,110 @@ namespace AVGGame
         private bool HasSaveData(int slotId)
         {
             return CustomEntry.SaveSystem?.HasSave(slotId) ?? false;
+        }
+
+        /// <summary>
+        /// 延迟后重新打开菜单（用于保存成功后）
+        /// </summary>
+        private System.Collections.IEnumerator DelayAndOpenMenu()
+        {
+            // 等待1.5秒，让用户看到保存成功的提示
+            yield return new WaitForSeconds(1.5f);
+
+            // 打开游戏菜单
+            if (m_ProcedureGame != null)
+            {
+                m_ProcedureGame.OpenMenu();
+            }
+            else
+            {
+                Log.Warning("[ArchivePanel] m_ProcedureGame is null, cannot open menu");
+            }
+        }
+
+        /// <summary>
+        /// 延迟后返回大菜单（用于"回到主菜单"流程）
+        /// </summary>
+        private System.Collections.IEnumerator DelayAndReturnToMainMenu()
+        {
+            // 等待1.5秒，让用户看到保存成功的提示
+            yield return new WaitForSeconds(1.5f);
+
+            // 关闭存档界面
+            CloseSelf();
+
+            // 切换到主菜单流程
+            if (m_ProcedureGame != null)
+            {
+                Log.Info("[ArchivePanel] 返回大菜单");
+                m_ProcedureGame.ReturnToMainMenu();
+            }
+            else
+            {
+                Log.Warning("[ArchivePanel] m_ProcedureGame is null, cannot return to main menu");
+            }
+        }
+
+        /// <summary>
+        /// 延迟后加载游戏（用于加载成功后）
+        /// </summary>
+        private System.Collections.IEnumerator DelayAndLoadGame(string currentStory)
+        {
+            // 等待1秒，让用户看到加载成功的提示
+            yield return new WaitForSeconds(1.0f);
+
+            if (m_ProcedureGame != null)
+            {
+                if (!string.IsNullOrEmpty(currentStory))
+                {
+                    // 有当前剧情，直接加载剧情
+                    Log.Info($"[ArchivePanel] 加载当前剧情: {currentStory}");
+                    m_ProcedureGame.LoadStory(GetEventIdFromStoryName(currentStory));
+                }
+                else
+                {
+                    // 没有当前剧情，打开大地图
+                    Log.Info("[ArchivePanel] 无当前剧情，打开大地图");
+                    m_ProcedureGame.OpenMap();
+                }
+            }
+            else
+            {
+                Log.Warning("[ArchivePanel] m_ProcedureGame is null, cannot load game");
+            }
+        }
+
+        /// <summary>
+        /// 根据故事名称获取事件ID（临时实现，需要根据实际项目调整）
+        /// </summary>
+        private int GetEventIdFromStoryName(string storyName)
+        {
+            // 这里需要根据项目的实际逻辑来获取对应的事件ID
+            // 临时实现：假设故事名称对应事件表中的某个事件ID
+            // 实际项目中应该有一个映射关系或查询方法
+
+            // 示例：查找EventRowData表中Title匹配storyName的记录
+            try
+            {
+                if (GameEntry.DataTable.HasDataTable<EventRowData>())
+                {
+                    var eventTable = GameEntry.DataTable.GetDataTable<EventRowData>();
+                    foreach (var eventData in eventTable)
+                    {
+                        if (eventData.Title == storyName || eventData.Id.ToString() == storyName)
+                        {
+                            return eventData.Id;
+                        }
+                    }
+                }
+                Log.Warning($"[ArchivePanel] 未找到匹配的故事: {storyName}，默认返回1");
+                return 1; // 默认返回第一个事件
+            }
+            catch (System.Exception e)
+            {
+                Log.Error($"[ArchivePanel] 根据故事名称查找事件ID失败: {e.Message}");
+                return 1; // 出错时返回默认值
+            }
         }
 
         #endregion

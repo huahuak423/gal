@@ -9,7 +9,7 @@ using UnityGameFramework.Runtime;
 using AVGGame;
 using GameFramework.Fsm;
 using GameFramework.Procedure;
-using GameFramework.Procedure;
+using System;
 
 namespace AVGGame
 {
@@ -22,7 +22,7 @@ namespace AVGGame
 
         [Header("按钮 - ButtonPlate 下")]
         [SerializeField] private Button m_ButtonNewGame;
-        [SerializeField] private Button m_ButtonContine;
+        [SerializeField] private Button m_ButtonContinue;
         [SerializeField] private Button m_ButtonCgShows;
         [SerializeField] private Button m_ButtonSetting;
         [SerializeField] private Button m_ButtonExit;
@@ -43,7 +43,7 @@ namespace AVGGame
 
             // 挂载组件引用
             m_ButtonNewGame = this.GetComponentByPath<Button>("Canvas/Background/ButtonPlate/ButtonNewGame");
-            m_ButtonContine = this.GetComponentByPath<Button>("Canvas/Background/ButtonPlate/ButtonContine");
+            m_ButtonContinue = this.GetComponentByPath<Button>("Canvas/Background/ButtonPlate/ButtonContine");
             m_ButtonCgShows = this.GetComponentByPath<Button>("Canvas/Background/ButtonPlate/ButtonCgShows");
             m_ButtonSetting = this.GetComponentByPath<Button>("Canvas/Background/ButtonPlate/ButtonSetting");
             m_ButtonExit = this.GetComponentByPath<Button>("Canvas/Background/ButtonPlate/ButtonExit");
@@ -52,8 +52,8 @@ namespace AVGGame
             if (m_ButtonNewGame != null)
                 m_ButtonNewGame.onClick.AddListener(OnNewGameClick);
 
-            if (m_ButtonContine != null)
-                m_ButtonContine.onClick.AddListener(OnContinueClick);
+            if (m_ButtonContinue != null)
+                m_ButtonContinue.onClick.AddListener(OnContinueClick);
 
             if (m_ButtonCgShows != null)
                 m_ButtonCgShows.onClick.AddListener(OnCgShowsClick);
@@ -74,9 +74,9 @@ namespace AVGGame
 
             // 检查是否有存档
             bool hasSave = CheckHasSave();
-            if (m_ButtonContine != null)
+            if (m_ButtonContinue != null)
             {
-                m_ButtonContine.interactable = hasSave;
+                m_ButtonContinue.interactable = hasSave;
             }
 
             Log.Info("[MainMenuPanel] Opened");
@@ -166,10 +166,29 @@ namespace AVGGame
 
         #region 私有方法
 
+        /// <summary>
+        /// 检查是否有任何存档槽位存档
+        /// </summary>
+        /// <returns>是否有存档</returns>
         private bool CheckHasSave()
         {
-            // TODO: 检查是否有存档
-            return true; // 暂时返回 true 方便测试
+            try
+            {
+                // 检查所有12个槽位是否有任何一个有存档
+                for (int slotId = 1; slotId <= 12; slotId++)
+                {
+                    if (CustomEntry.SaveSystem?.HasSave(slotId) ?? false)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                Log.Error($"[MainMenuPanel] 检查存档失败: {e.Message}");
+                return false;
+            }
         }
 
         #endregion
