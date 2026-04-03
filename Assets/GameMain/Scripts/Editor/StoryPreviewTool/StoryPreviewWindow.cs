@@ -460,6 +460,25 @@ namespace AVGGame.Editor
             // 添加立绘到预览
             m_SandboxEngine.AddCharacterToSlot(slotIndex, spritePath);
 
+            // 获取当前快照的记忆偏移
+            float memoryOffsetX = 0;
+            float memoryOffsetY = 0;
+            float memoryScale = 1f;
+            var snapshot = m_SandboxEngine.GetCurrentSnapshot();
+            if (snapshot != null && snapshot.SlotOffsetMemory != null && slotIndex < snapshot.SlotOffsetMemory.Length)
+            {
+                memoryOffsetX = snapshot.SlotOffsetMemory[slotIndex].OffsetX;
+                memoryOffsetY = snapshot.SlotOffsetMemory[slotIndex].OffsetY;
+                memoryScale = snapshot.SlotOffsetMemory[slotIndex].Scale;
+
+                // 应用记忆偏移到预览
+                if (memoryOffsetX != 0 || memoryOffsetY != 0 || memoryScale != 1f)
+                {
+                    m_SandboxEngine.ApplySlotMemoryOffset(slotIndex, memoryOffsetX, memoryOffsetY, memoryScale);
+                    Debug.Log($"[预览] 槽位 {slotIndex} 应用记忆偏移: ({memoryOffsetX:F1}, {memoryOffsetY:F1}), 缩放 {memoryScale:F2}");
+                }
+            }
+
             // 保存到当前节点
             if (m_SelectedNode != null)
             {
@@ -470,9 +489,9 @@ namespace AVGGame.Editor
                     ActionType = CharacterActionType.Enter,
                     Position = (CharacterPosition)slotIndex,
                     SpritePath = spritePath,
-                    OffsetX = 0,
-                    OffsetY = 0,
-                    Scale = 1f
+                    OffsetX = memoryOffsetX,
+                    OffsetY = memoryOffsetY,
+                    Scale = memoryScale
                 };
 
                 // 添加到节点的立绘列表
@@ -482,7 +501,10 @@ namespace AVGGame.Editor
                 // 标记节点为脏
                 EditorUtility.SetDirty(m_SelectedNode);
 
-                Debug.Log($"[预览] 添加立绘到槽位 {slotIndex}: {spritePath}");
+                Debug.Log($"[预览] 添加立绘到槽位 {slotIndex}: {spritePath}" +
+                    (memoryOffsetX != 0 || memoryOffsetY != 0 || memoryScale != 1f
+                        ? $" (应用记忆偏移: ({memoryOffsetX:F1}, {memoryOffsetY:F1}), 缩放 {memoryScale:F2})"
+                        : ""));
             }
 
             // 刷新预览

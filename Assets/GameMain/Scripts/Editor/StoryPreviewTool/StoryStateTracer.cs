@@ -180,6 +180,13 @@ namespace AVGGame.Editor
                     if (posIndex > 2) continue;
 
                     ProcessCharacterAction(node, display, snapshot);
+
+                    // 收集槽位偏移记忆（覆盖式，最新的生效）
+                    snapshot.SlotOffsetMemory[posIndex] = new CharacterSlotOffsetMemory(
+                        display.OffsetX,
+                        display.OffsetY,
+                        display.Scale
+                    );
                 }
             }
 

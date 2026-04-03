@@ -455,6 +455,19 @@ namespace AVGGame.Editor
         }
 
         /// <summary>
+        /// 应用槽位记忆偏移到指定槽位
+        /// </summary>
+        public void ApplySlotMemoryOffset(int slotIndex, float offsetX, float offsetY, float scale)
+        {
+            if (slotIndex < 0 || slotIndex >= m_CharacterRects.Count) return;
+
+            var rect = m_CharacterRects[slotIndex];
+            Vector2 originalPos = m_OriginalPositions[slotIndex];
+            rect.anchoredPosition = originalPos + new Vector2(offsetX, offsetY);
+            rect.localScale = Vector3.one * scale;
+        }
+
+        /// <summary>
         /// 获取槽位是否有立绘
         /// </summary>
         public bool IsSlotOccupied(int slotIndex)
