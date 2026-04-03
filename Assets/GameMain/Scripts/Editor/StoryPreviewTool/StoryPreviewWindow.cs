@@ -479,21 +479,21 @@ namespace AVGGame.Editor
                 }
             }
 
+            // 创建新的立绘数据
+            var newCharData = new CharacterDisplayData
+            {
+                CharacterName = "",
+                ActionType = CharacterActionType.Enter,
+                Position = (CharacterPosition)slotIndex,
+                SpritePath = spritePath,
+                OffsetX = memoryOffsetX,
+                OffsetY = memoryOffsetY,
+                Scale = memoryScale
+            };
+
             // 保存到当前节点
             if (m_SelectedNode != null)
             {
-                // 创建新的立绘数据
-                var newCharData = new CharacterDisplayData
-                {
-                    CharacterName = "",
-                    ActionType = CharacterActionType.Enter,
-                    Position = (CharacterPosition)slotIndex,
-                    SpritePath = spritePath,
-                    OffsetX = memoryOffsetX,
-                    OffsetY = memoryOffsetY,
-                    Scale = memoryScale
-                };
-
                 // 添加到节点的立绘列表
                 Undo.RecordObject(m_SelectedNode, "CharacterDisplays");
                 m_SelectedNode.CharacterDisplays.Add(newCharData);
@@ -507,8 +507,14 @@ namespace AVGGame.Editor
                         : ""));
             }
 
-            // 刷新预览
-            OnSelectionChanged();
+            // 刷新预览（直接应用快照，避免依赖 Selection.activeObject 在拖拽时不可靠）
+            if (snapshot != null)
+            {
+                // 将新添加的立绘加入快照的 CharacterRoster，以便 ApplySnapshot 能正确显示
+                snapshot.CharacterRoster.Add(newCharData);
+                m_SandboxEngine.ApplySnapshot(snapshot);
+            }
+            Repaint();
         }
 
         private void SaveCharacterTransform()
