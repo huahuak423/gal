@@ -235,11 +235,30 @@ namespace AVGGame.Editor
             if (index < 0 || index >= m_CharacterRects.Count) return Rect.zero;
             if (!m_CharacterImages[index].gameObject.activeSelf) return Rect.zero;
 
-            var rect = m_CharacterRects[index];
-            Vector2 center = rect.anchoredPosition;
+            var rectTransform = m_CharacterRects[index];
+            var image = m_CharacterImages[index];
 
-            // 考虑缩放后的尺寸
-            Vector2 size = rect.sizeDelta * rect.localScale.x;
+            // 获取实际显示的 sprite 尺寸
+            Vector2 displaySize;
+            if (image.sprite != null)
+            {
+                // 使用 sprite 的实际尺寸，考虑缩放
+                displaySize = image.sprite.rect.size * rectTransform.localScale.x;
+            }
+            else
+            {
+                displaySize = rectTransform.sizeDelta * rectTransform.localScale.x;
+            }
+
+            // 获取 RectTransform 的中心位置（Canvas 坐标）
+            Vector2 center = rectTransform.anchoredPosition;
+
+            // 考虑 pivot 偏移
+            Vector2 pivotOffset = new Vector2(
+                (rectTransform.pivot.x - 0.5f) * rectTransform.sizeDelta.x,
+                (rectTransform.pivot.y - 0.5f) * rectTransform.sizeDelta.y
+            );
+            center += pivotOffset;
 
             // 转换到屏幕坐标（Canvas中心为原点）
             float screenX = (center.x + k_CanvasWidth / 2f) / k_CanvasWidth * previewRect.width + previewRect.x;
@@ -249,28 +268,65 @@ namespace AVGGame.Editor
             screenX = (screenX - previewRect.x - previewRect.width / 2f) * m_Zoom + previewRect.width / 2f + m_PanOffset.x * previewRect.width / k_CanvasWidth * m_Zoom + previewRect.x;
             screenY = (screenY - previewRect.y - previewRect.height / 2f) * m_Zoom + previewRect.height / 2f - m_PanOffset.y * previewRect.height / k_CanvasHeight * m_Zoom + previewRect.y;
 
-            float screenW = size.x / k_CanvasWidth * previewRect.width * m_Zoom;
-            float screenH = size.y / k_CanvasHeight * previewRect.height * m_Zoom;
+            float screenW = displaySize.x / k_CanvasWidth * previewRect.width * m_Zoom;
+            float screenH = displaySize.y / k_CanvasHeight * previewRect.height * m_Zoom;
 
             return new Rect(screenX - screenW / 2f, screenY - screenH / 2f, screenW, screenH);
         }
 
         /// <summary>
-        /// 检测屏幕坐标点击了哪个立绘
+        /// 检测屏幕坐标点击了哪个立绘（使用固定大小的点击区域）
         /// </summary>
-        public int HitTestCharacter(Vector2 screenPos, Rect previewRect)
+        public int HitTestCharacterFixed(Vector2 screenPos, Rect previewRect, float fixedSize = 60f)
         {
             for (int i = m_CharacterImages.Count - 1; i >= 0; i--) // 从后往前检测（后面的在上层）
             {
                 if (!m_CharacterImages[i].gameObject.activeSelf) continue;
 
-                Rect rect = GetCharacterScreenRect(i, previewRect);
-                if (rect.Contains(screenPos))
+                Vector2 center = GetCharacterScreenCenter(i, previewRect);
+                Rect fixedRect = new Rect(
+                    center.x - fixedSize / 2f,
+                    center.y - fixedSize / 2f,
+                    fixedSize,
+                    fixedSize
+                );
+                if (fixedRect.Contains(screenPos))
                 {
                     return i;
                 }
             }
             return -1;
+        }
+
+        /// <summary>
+        /// 获取立绘中心的屏幕坐标
+        /// </summary>
+        public Vector2 GetCharacterScreenCenter(int index, Rect previewRect)
+        {
+            if (index < 0 || index >= m_CharacterRects.Count) return Vector2.zero;
+            if (!m_CharacterImages[index].gameObject.activeSelf) return Vector2.zero;
+
+            var rectTransform = m_CharacterRects[index];
+
+            // 获取 RectTransform 的中心位置（Canvas 坐标）
+            Vector2 center = rectTransform.anchoredPosition;
+
+            // 考虑 pivot 偏移
+            Vector2 pivotOffset = new Vector2(
+                (rectTransform.pivot.x - 0.5f) * rectTransform.sizeDelta.x,
+                (rectTransform.pivot.y - 0.5f) * rectTransform.sizeDelta.y
+            );
+            center += pivotOffset;
+
+            // 转换到屏幕坐标（Canvas中心为原点）
+            float screenX = (center.x + k_CanvasWidth / 2f) / k_CanvasWidth * previewRect.width + previewRect.x;
+            float screenY = (k_CanvasHeight / 2f - center.y) / k_CanvasHeight * previewRect.height + previewRect.y;
+
+            // 考虑摄像机缩放和平移
+            screenX = (screenX - previewRect.x - previewRect.width / 2f) * m_Zoom + previewRect.width / 2f + m_PanOffset.x * previewRect.width / k_CanvasWidth * m_Zoom + previewRect.x;
+            screenY = (screenY - previewRect.y - previewRect.height / 2f) * m_Zoom + previewRect.height / 2f - m_PanOffset.y * previewRect.height / k_CanvasHeight * m_Zoom + previewRect.y;
+
+            return new Vector2(screenX, screenY);
         }
 
         /// <summary>
@@ -290,21 +346,29 @@ namespace AVGGame.Editor
         }
 
         /// <summary>
-        /// 移动选中的立绘
+        /// 移动选中的立绘到指定的屏幕位置（保持偏移量）
         /// </summary>
-        public void MoveSelectedCharacter(Vector2 delta, bool constrainX = false, bool constrainY = false)
+        public void MoveSelectedCharacterToPosition(Vector2 mouseScreenPos, Rect previewRect, Vector2 dragOffset, bool constrainX = false, bool constrainY = false)
         {
             if (SelectedCharacterIndex < 0 || SelectedCharacterIndex >= m_CharacterRects.Count) return;
 
+            // 计算目标立绘中心位置（鼠标位置 + 偏移量）
+            Vector2 targetCenter = mouseScreenPos + dragOffset;
+
+            // 目标屏幕位置转换为 Canvas 坐标
+            // 先转换到相对于 previewRect 中心的坐标
+            float relX = (targetCenter.x - previewRect.x - previewRect.width / 2f) / previewRect.width;
+            float relY = (targetCenter.y - previewRect.y - previewRect.height / 2f) / previewRect.height;
+
+            // 考虑缩放和平移
+            float canvasX = relX * k_CanvasWidth / m_Zoom + m_PanOffset.x;
+            float canvasY = -relY * k_CanvasHeight / m_Zoom + m_PanOffset.y;
+
+            // 约束
             var rect = m_CharacterRects[SelectedCharacterIndex];
             Vector2 newPos = rect.anchoredPosition;
-
-            // delta 是屏幕像素，需要转换为 Canvas 坐标
-            float canvasDeltaX = delta.x / m_Zoom;
-            float canvasDeltaY = -delta.y / m_Zoom; // Y轴反向
-
-            if (!constrainX) newPos.x += canvasDeltaX;
-            if (!constrainY) newPos.y += canvasDeltaY;
+            if (!constrainX) newPos.x = canvasX;
+            if (!constrainY) newPos.y = canvasY;
 
             rect.anchoredPosition = newPos;
         }
@@ -317,7 +381,7 @@ namespace AVGGame.Editor
             if (SelectedCharacterIndex < 0 || SelectedCharacterIndex >= m_CharacterRects.Count) return;
 
             var rect = m_CharacterRects[SelectedCharacterIndex];
-            float newScale = rect.localScale.x * (1f - scaleDelta * 0.1f);
+            float newScale = rect.localScale.x * (1f - scaleDelta * 0.02f);
             newScale = Mathf.Clamp(newScale, 0.1f, 3f);
             rect.localScale = Vector3.one * newScale;
         }
