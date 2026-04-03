@@ -288,10 +288,17 @@ namespace AVGGame
         /// <summary>
         /// 获取所有存档槽位信息
         /// </summary>
-        /// <param name="maxSlots">最大槽位数，默认5</param>
+        /// <param name="maxSlots">最大槽位数，默认12</param>
         /// <returns>存档槽位数组</returns>
-        public SaveSlotInfo[] GetAllSaveSlotInfos(int maxSlots = 5)
+        public SaveSlotInfo[] GetAllSaveSlotInfos(int maxSlots = 12)
         {
+            // 确保最大槽位数为正值
+            if (maxSlots <= 0)
+            {
+                Log.Warning("[SaveSystem] 最大槽位数必须为正数，使用默认值12");
+                maxSlots = 12;
+            }
+
             var infos = new SaveSlotInfo[maxSlots];
             for (int i = 1; i <= maxSlots; i++)
             {
@@ -350,19 +357,33 @@ namespace AVGGame
         /// </summary>
         private string Encrypt(string plainText)
         {
-            byte[] plainBytes = Encoding.UTF8.GetBytes(plainText);
-            byte[] keyBytes = Encoding.UTF8.GetBytes(m_EncryptionKey.PadRight(32).Substring(0, 32));
-
-            using (Aes aes = Aes.Create())
+            try
             {
-                aes.Key = keyBytes;
-                aes.IV = new byte[16]; // 简单起见使用空IV
+                byte[] plainBytes = Encoding.UTF8.GetBytes(plainText);
+                byte[] keyBytes = Encoding.UTF8.GetBytes(m_EncryptionKey.PadRight(32).Substring(0, 32));
 
-                using (ICryptoTransform encryptor = aes.CreateEncryptor())
+                using (Aes aes = Aes.Create())
                 {
-                    byte[] encrypted = encryptor.TransformFinalBlock(plainBytes, 0, plainBytes.Length);
-                    return Convert.ToBase64String(encrypted);
+                    aes.Key = keyBytes;
+                    // 生成随机IV提高安全性
+                    aes.GenerateIV();
+
+                    // 将IV添加到加密数据前面（用于解密时使用）
+                    using (ICryptoTransform encryptor = aes.CreateEncryptor())
+                    {
+                        byte[] encrypted = encryptor.TransformFinalBlock(plainBytes, 0, plainBytes.Length);
+                        byte[] iv = aes.IV;
+                        byte[] result = new byte[iv.Length + encrypted.Length];
+                        Buffer.BlockCopy(iv, 0, result, 0, iv.Length);
+                        Buffer.BlockCopy(encrypted, 0, result, iv.Length, encrypted.Length);
+                        return Convert.ToBase64String(result);
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                Log.Error($"[SaveSystem] 加密失败: {e.Message}");
+                throw;
             }
         }
 
@@ -371,19 +392,35 @@ namespace AVGGame
         /// </summary>
         private string Decrypt(string cipherText)
         {
-            byte[] cipherBytes = Convert.FromBase64String(cipherText);
-            byte[] keyBytes = Encoding.UTF8.GetBytes(m_EncryptionKey.PadRight(32).Substring(0, 32));
-
-            using (Aes aes = Aes.Create())
+            try
             {
-                aes.Key = keyBytes;
-                aes.IV = new byte[16];
+                byte[] allBytes = Convert.FromBase64String(cipherText);
+                byte[] keyBytes = Encoding.UTF8.GetBytes(m_EncryptionKey.PadRight(32).Substring(0, 32));
 
-                using (ICryptoTransform decryptor = aes.CreateDecryptor())
+                // 提取IV（前16字节）
+                byte[] iv = new byte[16];
+                Buffer.BlockCopy(allBytes, 0, iv, 0, iv.Length);
+
+                // 提取加密数据（第16字节之后）
+                byte[] encrypted = new byte[allBytes.Length - 16];
+                Buffer.BlockCopy(allBytes, 16, encrypted, 0, encrypted.Length);
+
+                using (Aes aes = Aes.Create())
                 {
-                    byte[] decrypted = decryptor.TransformFinalBlock(cipherBytes, 0, cipherBytes.Length);
-                    return Encoding.UTF8.GetString(decrypted);
+                    aes.Key = keyBytes;
+                    aes.IV = iv;
+
+                    using (ICryptoTransform decryptor = aes.CreateDecryptor())
+                    {
+                        byte[] decrypted = decryptor.TransformFinalBlock(encrypted, 0, encrypted.Length);
+                        return Encoding.UTF8.GetString(decrypted);
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                Log.Error($"[SaveSystem] 解密失败: {e.Message}");
+                throw;
             }
         }
 

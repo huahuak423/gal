@@ -153,8 +153,32 @@ namespace AVGGame
             // 关闭当前菜单
             CloseSelf();
 
-            // TODO: 切换到主菜单场景
-            // GameEntry.Scene.LoadScene("MainMenu");
+            // 打开存档选择界面（保存模式）
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.Archive),
+                UIGroupDefinition.Popup,
+                Constant.AssetPriority.UIAsset,
+                ArchivePanel.ArchiveMode.Save
+            );
+        }
+
+        /// <summary>
+        /// 返回主菜单流程
+        /// </summary>
+        private void ReturnToMainMenu()
+        {
+            if (m_ProcedureGame != null)
+            {
+                // 保存当前游戏状态
+                CustomEntry.PlayerData.SaveOnExit();
+
+                // 切换到主菜单流程
+                m_ProcedureGame.ReturnToMainMenu();
+            }
+            else
+            {
+                Log.Error("[MenuPanel] m_ProcedureGame is null, cannot return to main menu");
+            }
         }
 
         /// <summary>
