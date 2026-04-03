@@ -455,16 +455,22 @@ namespace AVGGame.Editor
         }
 
         /// <summary>
-        /// 应用槽位记忆偏移到指定槽位
+        /// 添加立绘到指定槽位，并应用指定的偏移和缩放
         /// </summary>
-        public void ApplySlotMemoryOffset(int slotIndex, float offsetX, float offsetY, float scale)
+        public void AddCharacterToSlotWithOffset(int slotIndex, string spritePath, float offsetX, float offsetY, float scale)
         {
-            if (slotIndex < 0 || slotIndex >= m_CharacterRects.Count) return;
+            if (slotIndex < 0 || slotIndex >= m_CharacterImages.Count) return;
 
-            var rect = m_CharacterRects[slotIndex];
-            Vector2 originalPos = m_OriginalPositions[slotIndex];
-            rect.anchoredPosition = originalPos + new Vector2(offsetX, offsetY);
-            rect.localScale = Vector3.one * scale;
+            var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
+            if (sprite != null)
+            {
+                m_CharacterImages[slotIndex].sprite = sprite;
+                m_CharacterImages[slotIndex].gameObject.SetActive(true);
+
+                // 应用偏移和缩放
+                m_CharacterRects[slotIndex].anchoredPosition = m_OriginalPositions[slotIndex] + new Vector2(offsetX, offsetY);
+                m_CharacterRects[slotIndex].localScale = Vector3.one * scale;
+            }
         }
 
         /// <summary>

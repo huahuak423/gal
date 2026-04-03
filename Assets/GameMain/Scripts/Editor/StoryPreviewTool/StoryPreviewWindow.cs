@@ -13,6 +13,9 @@ namespace AVGGame.Editor
     {
         private PreviewSandboxEngine m_SandboxEngine;
 
+        // 记忆管理器
+        private CharacterMemoryManager m_MemoryManager => CharacterMemoryManager.Instance;
+
         [Tooltip("把你的对话 UI 预制体拖到这里")]
         public GameObject UIPrefab;
 
@@ -51,6 +54,7 @@ namespace AVGGame.Editor
         {
             m_SandboxEngine = new PreviewSandboxEngine();
             Selection.selectionChanged += OnSelectionChanged;
+            m_MemoryManager.Load();
         }
 
         private void OnDisable()
@@ -63,6 +67,9 @@ namespace AVGGame.Editor
 
             Selection.selectionChanged -= OnSelectionChanged;
             if (m_SandboxEngine != null) m_SandboxEngine.Cleanup();
+
+            // 保存记忆
+            m_MemoryManager.Save();
         }
 
         private void OnSelectionChanged()
@@ -107,9 +114,8 @@ namespace AVGGame.Editor
 
             // 操作提示
             string helpText = m_IsEditingCharacter
-                ? "💡 编辑模式: 左键拖拽移动 | 按Shift仅X轴 | 按住Ctrl仅Y轴 | 滚轮缩放 | 按 Z 键保存并退出"
+                ? "💡 编辑模式: 左键拖拽移动 | 按Shift仅X轴 | 按住Ctrl仅Y轴 | 滚轮缩放 | 按 Z 键保存并退出 | 按 Q 键添加退出指令"
                 : "💡 操作: 从Project拖入图片 | 左键选中立绘 | 右键拖拽平移 | 滚轮缩放";
-            GUILayout.Label(helpText, EditorStyles.helpBox);
 
             // UI预制体槽位
             EditorGUI.BeginChangeCheck();
@@ -147,6 +153,27 @@ namespace AVGGame.Editor
                 Repaint();
             }
 
+            // 修改按钮（编辑模式下显示）
+            if (m_IsEditingCharacter && m_SandboxEngine.SelectedCharacterIndex >= 0)
+            {
+                if (GUILayout.Button("修改图片", GUILayout.Width(80)))
+                {
+                    OpenChangeSpriteDialog();
+                }
+            }
+
+            // 打开记忆编辑器
+            if (GUILayout.Button("记忆管理", GUILayout.Width(80)))
+            {
+                CharacterMemoryEditorWindow.ShowWindow();
+            }
+
+            // 手动保存记忆按钮
+            if (GUILayout.Button("保存记忆", GUILayout.Width(80)))
+            {
+                SaveAllMemories();
+            }
+
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space(2);
 
@@ -177,6 +204,43 @@ namespace AVGGame.Editor
         }
 
         #region 私有方法
+
+        /// <summary>
+        /// 获取当前节点所属的节点图名称
+        /// </summary>
+        private string GetCurrentGraphName()
+        {
+            if (m_SelectedNode == null) return "";
+
+            // 获取节点所属的图
+            var graph = m_SelectedNode.graph;
+            if (graph != null)
+            {
+                return graph.name;
+            }
+
+            return "";
+        }
+
+        /// <summary>
+        /// 记录立绘偏移到记忆管理器并立即保存到磁盘
+        /// </summary>
+        private void RecordMemoryToManager(string graphName, string spritePath, CharacterPosition position, float offsetX, float offsetY, float scale)
+        {
+            if (string.IsNullOrEmpty(graphName) || string.IsNullOrEmpty(spritePath)) return;
+
+            m_MemoryManager.RecordMemory(graphName, spritePath, position, offsetX, offsetY, scale, m_SelectedNode?.name ?? "");
+            m_MemoryManager.Save(); // 立即保存到磁盘
+        }
+
+        /// <summary>
+        /// 手动保存所有当前记忆到磁盘
+        /// </summary>
+        private void SaveAllMemories()
+        {
+            m_MemoryManager.Save();
+            Debug.Log("[预览] 记忆已手动保存到磁盘");
+        }
 
         private void DrawDragSlots(Rect previewRect)
         {
@@ -374,6 +438,17 @@ namespace AVGGame.Editor
                 return;
             }
 
+            // 按 Q 键添加退出指令
+            if (e.type == EventType.KeyDown && e.keyCode == KeyCode.Q)
+            {
+                if (m_IsEditingCharacter && m_SandboxEngine.SelectedCharacterIndex >= 0)
+                {
+                    AddLeaveInstruction();
+                    e.Use();
+                }
+                return;
+            }
+
             // 滚轮缩放
             if (e.type == EventType.ScrollWheel)
             {
@@ -457,43 +532,34 @@ namespace AVGGame.Editor
                 return;
             }
 
-            // 添加立绘到预览
-            m_SandboxEngine.AddCharacterToSlot(slotIndex, spritePath);
+            float offsetX = 0, offsetY = 0, scale = 1f;
+            string graphName = GetCurrentGraphName();
+            CharacterPosition position = (CharacterPosition)slotIndex;
 
-            // 获取当前快照的记忆偏移
-            float memoryOffsetX = 0;
-            float memoryOffsetY = 0;
-            float memoryScale = 1f;
-            var snapshot = m_SandboxEngine.GetCurrentSnapshot();
-            if (snapshot != null && snapshot.SlotOffsetMemory != null && slotIndex < snapshot.SlotOffsetMemory.Length)
+            // Enter 指令：只从记忆获取
+            if (!string.IsNullOrEmpty(graphName) && m_MemoryManager.TryGetMemory(graphName, spritePath, position, out offsetX, out offsetY, out scale))
             {
-                memoryOffsetX = snapshot.SlotOffsetMemory[slotIndex].OffsetX;
-                memoryOffsetY = snapshot.SlotOffsetMemory[slotIndex].OffsetY;
-                memoryScale = snapshot.SlotOffsetMemory[slotIndex].Scale;
-
-                // 应用记忆偏移到预览
-                if (memoryOffsetX != 0 || memoryOffsetY != 0 || memoryScale != 1f)
-                {
-                    m_SandboxEngine.ApplySlotMemoryOffset(slotIndex, memoryOffsetX, memoryOffsetY, memoryScale);
-                    Debug.Log($"[预览] 槽位 {slotIndex} 应用记忆偏移: ({memoryOffsetX:F1}, {memoryOffsetY:F1}), 缩放 {memoryScale:F2}");
-                }
+                Debug.Log($"[预览] Enter 从记忆恢复: {System.IO.Path.GetFileNameWithoutExtension(spritePath)}, 偏移({offsetX:F1}, {offsetY:F1}), 缩放 {scale:F2}");
             }
 
-            // 创建新的立绘数据
-            var newCharData = new CharacterDisplayData
-            {
-                CharacterName = "",
-                ActionType = CharacterActionType.Enter,
-                Position = (CharacterPosition)slotIndex,
-                SpritePath = spritePath,
-                OffsetX = memoryOffsetX,
-                OffsetY = memoryOffsetY,
-                Scale = memoryScale
-            };
+            // 添加立绘到预览（引擎内部会根据偏移设置位置）
+            m_SandboxEngine.AddCharacterToSlotWithOffset(slotIndex, spritePath, offsetX, offsetY, scale);
 
             // 保存到当前节点
             if (m_SelectedNode != null)
             {
+                // 创建新的立绘数据
+                var newCharData = new CharacterDisplayData
+                {
+                    CharacterName = "",
+                    ActionType = CharacterActionType.Enter,
+                    Position = (CharacterPosition)slotIndex,
+                    SpritePath = spritePath,
+                    OffsetX = offsetX,
+                    OffsetY = offsetY,
+                    Scale = scale
+                };
+
                 // 添加到节点的立绘列表
                 Undo.RecordObject(m_SelectedNode, "CharacterDisplays");
                 m_SelectedNode.CharacterDisplays.Add(newCharData);
@@ -501,20 +567,12 @@ namespace AVGGame.Editor
                 // 标记节点为脏
                 EditorUtility.SetDirty(m_SelectedNode);
 
-                Debug.Log($"[预览] 添加立绘到槽位 {slotIndex}: {spritePath}" +
-                    (memoryOffsetX != 0 || memoryOffsetY != 0 || memoryScale != 1f
-                        ? $" (应用记忆偏移: ({memoryOffsetX:F1}, {memoryOffsetY:F1}), 缩放 {memoryScale:F2})"
-                        : ""));
+                // 记录到记忆（Enter 指令要记录到记忆）
+                RecordMemoryToManager(graphName, spritePath, position, offsetX, offsetY, scale);
             }
 
-            // 刷新预览（直接应用快照，避免依赖 Selection.activeObject 在拖拽时不可靠）
-            if (snapshot != null)
-            {
-                // 将新添加的立绘加入快照的 CharacterRoster，以便 ApplySnapshot 能正确显示
-                snapshot.CharacterRoster.Add(newCharData);
-                m_SandboxEngine.ApplySnapshot(snapshot);
-            }
-            Repaint();
+            // 刷新预览
+            OnSelectionChanged();
         }
 
         private void SaveCharacterTransform()
@@ -553,7 +611,212 @@ namespace AVGGame.Editor
 
             EditorUtility.SetDirty(m_SelectedNode);
 
+            // 记录到记忆管理器
+            string graphName = GetCurrentGraphName();
+            if (!string.IsNullOrEmpty(graphName) && !string.IsNullOrEmpty(targetData.SpritePath))
+            {
+                m_MemoryManager.RecordMemory(
+                    graphName,
+                    targetData.SpritePath,
+                    targetData.Position,
+                    offsetX, offsetY, scale,
+                    m_SelectedNode.name
+                );
+            }
+
             Debug.Log($"[预览] 保存立绘变换: 槽位 {slotIndex}, 偏移({offsetX:F1}, {offsetY:F1}), 缩放 {scale:F2}");
+        }
+
+        /// <summary>
+        /// 按 Q 键添加退出指令
+        /// </summary>
+        private void AddLeaveInstruction()
+        {
+            if (m_SelectedNode == null || m_SandboxEngine.SelectedCharacterIndex < 0) return;
+
+            int slotIndex = m_SandboxEngine.SelectedCharacterIndex;
+            CharacterPosition position = (CharacterPosition)slotIndex;
+
+            // 直接从预览引擎获取当前偏移和缩放（实时的）
+            var (offsetX, offsetY, currentScale) = m_SandboxEngine.GetSelectedCharacterTransform();
+
+            // 查找该槽位是否已有立绘数据（用于获取立绘名称和路径）
+            CharacterDisplayData existingData = null;
+            foreach (var charData in m_SelectedNode.CharacterDisplays)
+            {
+                if (charData.Position == position)
+                {
+                    existingData = charData;
+                    break;
+                }
+            }
+
+            // 添加 Leave 指令（使用当前预览引擎中的偏移和缩放）
+            Undo.RecordObject(m_SelectedNode, "CharacterDisplays");
+
+            var leaveData = new CharacterDisplayData
+            {
+                CharacterName = existingData?.CharacterName ?? "",
+                ActionType = CharacterActionType.Leave,
+                Position = position,
+                SpritePath = existingData?.SpritePath ?? "",
+                OffsetX = offsetX,
+                OffsetY = offsetY,
+                Scale = currentScale
+            };
+
+            m_SelectedNode.CharacterDisplays.Add(leaveData);
+            EditorUtility.SetDirty(m_SelectedNode);
+
+            Debug.Log($"[预览] 添加退出指令: 槽位 {slotIndex}, 偏移({offsetX:F1}, {offsetY:F1}), 缩放 {currentScale:F2}");
+
+            // 刷新预览
+            OnSelectionChanged();
+        }
+
+        /// <summary>
+        /// 打开修改立绘图片对话框
+        /// </summary>
+        private void OpenChangeSpriteDialog()
+        {
+            if (m_SelectedNode == null || m_SandboxEngine.SelectedCharacterIndex < 0) return;
+
+            int slotIndex = m_SandboxEngine.SelectedCharacterIndex;
+
+            // 弹出文件选择对话框
+            string spritePath = EditorUtility.OpenFilePanel(
+                "选择立绘图片",
+                "Assets",
+                "png,jpg,jpeg,gif,tga"
+            );
+
+            if (!string.IsNullOrEmpty(spritePath))
+            {
+                // 转换为相对路径
+                if (spritePath.StartsWith(Application.dataPath))
+                {
+                    spritePath = "Assets" + spritePath.Substring(Application.dataPath.Length);
+                }
+
+                ChangeCharacterSprite(slotIndex, spritePath);
+            }
+        }
+
+        /// <summary>
+        /// 修改立绘图片
+        /// </summary>
+        private void ChangeCharacterSprite(int slotIndex, string newSpritePath)
+        {
+            if (m_SelectedNode == null) return;
+
+            CharacterPosition position = (CharacterPosition)slotIndex;
+
+            // 获取当前偏移和缩放（默认）
+            Vector2 currentOffset = Vector2.zero;
+            float currentScale = 1f;
+            string charName = "";
+            string source = ""; // 用于日志
+
+            // ChangeSprite 优先级1：从上一个节点获取同一槽位的偏移和缩放
+            DialogueNode prevNode = GetPreviousNode();
+            if (prevNode != null)
+            {
+                // 在上一个节点中找同一槽位的立绘
+                foreach (var charData in prevNode.CharacterDisplays)
+                {
+                    if (charData.Position == position && !string.IsNullOrEmpty(charData.SpritePath))
+                    {
+                        currentOffset = new Vector2(charData.OffsetX, charData.OffsetY);
+                        currentScale = charData.Scale;
+                        charName = charData.CharacterName;
+                        source = "上一节点";
+                        break;
+                    }
+                }
+            }
+
+            // ChangeSprite 优先级2：从记忆获取（只有上一节点没有才用）
+            if (string.IsNullOrEmpty(source))
+            {
+                string graphName = GetCurrentGraphName();
+                if (!string.IsNullOrEmpty(graphName) && m_MemoryManager.TryGetMemory(graphName, newSpritePath, position, out float memOffsetX, out float memOffsetY, out float memScale))
+                {
+                    currentOffset = new Vector2(memOffsetX, memOffsetY);
+                    currentScale = memScale;
+                    source = "记忆";
+                }
+            }
+
+            // 查找该槽位是否已有立绘数据
+            CharacterDisplayData existingData = null;
+            foreach (var charData in m_SelectedNode.CharacterDisplays)
+            {
+                if (charData.Position == position)
+                {
+                    existingData = charData;
+                    break;
+                }
+            }
+
+            Undo.RecordObject(m_SelectedNode, "CharacterDisplays");
+
+            // 如果已有该槽位的立绘数据，更新路径；否则创建新数据
+            if (existingData != null)
+            {
+                existingData.SpritePath = newSpritePath;
+                existingData.OffsetX = currentOffset.x;
+                existingData.OffsetY = currentOffset.y;
+                existingData.Scale = currentScale;
+            }
+            else
+            {
+                // 创建新的立绘数据（使用 ChangeSprite 类型）
+                var newCharData = new CharacterDisplayData
+                {
+                    CharacterName = charName,
+                    ActionType = CharacterActionType.ChangeSprite,
+                    Position = position,
+                    SpritePath = newSpritePath,
+                    OffsetX = currentOffset.x,
+                    OffsetY = currentOffset.y,
+                    Scale = currentScale
+                };
+                m_SelectedNode.CharacterDisplays.Add(newCharData);
+            }
+
+            EditorUtility.SetDirty(m_SelectedNode);
+
+            Debug.Log($"[预览] ChangeSprite: {System.IO.Path.GetFileNameWithoutExtension(newSpritePath)}, 来源:{source}, 偏移({currentOffset.x:F1}, {currentOffset.y:F1}), 缩放 {currentScale:F2}");
+
+            // 刷新预览
+            OnSelectionChanged();
+        }
+
+        /// <summary>
+        /// 获取当前节点的上一节点（通过 Exit 端口连接）
+        /// </summary>
+        private DialogueNode GetPreviousNode()
+        {
+            if (m_SelectedNode == null) return null;
+
+            var graph = m_SelectedNode.graph;
+            if (graph == null) return null;
+
+            // 遍历图中所有节点，找到指向当前节点的节点
+            foreach (var node in graph.nodes)
+            {
+                if (node is DialogueNode dialogueNode)
+                {
+                    // 检查这个节点的 Exit 端口是否连接到当前节点
+                    var exitPort = dialogueNode.GetPort("Exit");
+                    if (exitPort != null && exitPort.Connection != null && exitPort.Connection.node == m_SelectedNode)
+                    {
+                        return dialogueNode;
+                    }
+                }
+            }
+
+            return null;
         }
 
         #endregion
