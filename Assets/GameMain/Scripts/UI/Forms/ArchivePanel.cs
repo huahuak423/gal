@@ -32,6 +32,12 @@ namespace AVGGame
         [SerializeField] private Button m_SaveSlot11;
         [SerializeField] private Button m_SaveSlot12;
 
+        [SerializeField] private Button m_ConfirmButton;
+        [SerializeField] private Button m_CancelButton;
+
+        [Header("确认面板")]
+        [SerializeField] private Transform m_ConfirmPlate;
+
         #endregion
 
         #region 序列化字段 - 其他UI
@@ -83,19 +89,33 @@ namespace AVGGame
             base.OnInit(userData);
 
             // 挂载组件引用 - 存档按钮
-            m_SaveSlot1 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot1");
-            m_SaveSlot2 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot2");
-            m_SaveSlot3 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot3");
-            m_SaveSlot4 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot4");
-            m_SaveSlot5 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot5");
-            m_SaveSlot6 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot6");
-            m_SaveSlot7 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot7");
-            m_SaveSlot8 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot8");
-            m_SaveSlot9 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot9");
-            m_SaveSlot10 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot10");
-            m_SaveSlot11 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot11");
-            m_SaveSlot12 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/SaveSlot12");
+            m_SaveSlot1 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb1");
+            m_SaveSlot2 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb2");
+            m_SaveSlot3 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb3");
+            m_SaveSlot4 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb4");
+            m_SaveSlot5 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb5");
+            m_SaveSlot6 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb6");
+            m_SaveSlot7 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb7");
+            m_SaveSlot8 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb8");
+            m_SaveSlot9 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb9");
+            m_SaveSlot10 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb10");
+            m_SaveSlot11 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb11");
+            m_SaveSlot12 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb12");
 
+            m_ConfirmButton = this.GetComponentByPath<Button>("Canvas/Background/ConfirmPlate/ButtonConfirm");
+            m_CancelButton = this.GetComponentByPath<Button>("Canvas/Background/ConfirmPlate/ButtonCancel");
+            m_ConfirmPlate = this.GetComponentByPath<Transform>("Canvas/Background/ConfirmPlate");
+
+            // 绑定确认和取消按钮事件
+            if (m_ConfirmButton != null)
+            {
+                m_ConfirmButton.onClick.AddListener(OnConfirmClick);
+            }
+            if (m_CancelButton != null)
+            {
+                m_CancelButton.onClick.AddListener(OnCancelClick);
+            }
+            
             // 挂载组件引用 - 其他UI
             m_ButtonBack = this.GetComponentByPath<Button>("Canvas/Background/ButtonBack");
             m_TitleText = this.GetComponentByPath<TextMeshProUGUI>("Canvas/Background/TitleText");
@@ -107,6 +127,17 @@ namespace AVGGame
                 m_SaveSlot6, m_SaveSlot7, m_SaveSlot8, m_SaveSlot9, m_SaveSlot10,
                 m_SaveSlot11, m_SaveSlot12
             };
+
+            // 调试日志：检查存档按钮获取情况
+            for (int i = 0; i < m_SaveSlots.Length; i++)
+            {
+                if (m_SaveSlots[i] == null)
+                {
+                    Debug.LogError($"[ArchivePanel] SaveSlot{i + 1} is null! Path: Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb{i + 1}");
+                }
+            }
+
+            Debug.Log($"[ArchivePanel] OnInit completed. ConfirmPlate: {(m_ConfirmPlate != null ? "found" : "null")}");
 
             // 初始化存档按钮图片数组
             m_SaveSlotImages = new Image[m_SaveSlots.Length];
@@ -140,6 +171,9 @@ namespace AVGGame
             base.OnOpen(userData);
 
             Debug.Log($"[ArchivePanel] OnOpen called, userData: {userData}");
+
+            // 隐藏确认面板
+            HideConfirmPlate();
 
             // 检查是否从游戏菜单进入
             m_IsFromGameMenu = userData is ProcedureGame;
@@ -176,6 +210,7 @@ namespace AVGGame
         protected override void OnClose(bool isShutdown, object userData)
         {
             base.OnClose(isShutdown, userData);
+            HideConfirmPlate();
             m_SelectedSlotIndex = -1;
         }
 
@@ -188,9 +223,27 @@ namespace AVGGame
         /// </summary>
         private void OnSaveSlotClick(int slotIndex)
         {
+            Debug.Log($"[ArchivePanel] OnSaveSlotClick called, slotIndex: {slotIndex}");
             int slotId = slotIndex + 1; // 槽位ID从1开始
             Log.Info($"[ArchivePanel] Slot {slotId} clicked, Mode: {m_Mode}");
             m_SelectedSlotIndex = slotIndex;
+
+            // 显示确认面板
+            ShowConfirmPlate();
+        }
+
+        /// <summary>
+        /// 确认按钮点击
+        /// </summary>
+        private void OnConfirmClick()
+        {
+            if (m_SelectedSlotIndex < 0)
+            {
+                Log.Warning("[ArchivePanel] No slot selected");
+                return;
+            }
+
+            int slotId = m_SelectedSlotIndex + 1;
 
             if (m_Mode == ArchiveMode.Save)
             {
@@ -201,6 +254,41 @@ namespace AVGGame
             {
                 // 加载模式：执行加载操作
                 OnLoadSlotSelected(slotId);
+            }
+
+            // 隐藏确认面板
+            HideConfirmPlate();
+        }
+
+        /// <summary>
+        /// 取消按钮点击
+        /// </summary>
+        private void OnCancelClick()
+        {
+            Log.Info("[ArchivePanel] Cancel clicked");
+            m_SelectedSlotIndex = -1;
+            HideConfirmPlate();
+        }
+
+        /// <summary>
+        /// 显示确认面板
+        /// </summary>
+        private void ShowConfirmPlate()
+        {
+            if (m_ConfirmPlate != null)
+            {
+                m_ConfirmPlate.gameObject.SetActive(true);
+            }
+        }
+
+        /// <summary>
+        /// 隐藏确认面板
+        /// </summary>
+        private void HideConfirmPlate()
+        {
+            if (m_ConfirmPlate != null)
+            {
+                m_ConfirmPlate.gameObject.SetActive(false);
             }
         }
 
@@ -324,6 +412,15 @@ namespace AVGGame
         /// </summary>
         private void OnBackClick()
         {
+            // 如果确认面板正在显示，先关闭它
+            if (m_ConfirmPlate != null && m_ConfirmPlate.gameObject.activeSelf)
+            {
+                Log.Info("[ArchivePanel] Confirm plate is open, closing it first");
+                HideConfirmPlate();
+                m_SelectedSlotIndex = -1;
+                return;
+            }
+
             Log.Info("[ArchivePanel] Back clicked");
             CloseSelf();
         }
