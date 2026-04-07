@@ -58,6 +58,7 @@ namespace AVGGame
         private Image[] m_SaveSlotImages;                // 存档按钮图片数组缓存
         private bool m_IsFromGameMenu = false;           // 是否从游戏菜单（MenuPanel）进入
         private ProcedureGame m_ProcedureGame = null;     // 游戏流程引用
+        private string m_CurrentStoryToLoad = string.Empty; // 要加载的故事名称
 
         #endregion
 
@@ -564,6 +565,9 @@ namespace AVGGame
         /// </summary>
         private void DelayAndLoadGame(string currentStory)
         {
+            // 保存要加载的故事名称
+            m_CurrentStoryToLoad = currentStory;
+
             // 检查游戏对象是否仍然 active
             if (!gameObject.activeInHierarchy)
             {
@@ -586,11 +590,11 @@ namespace AVGGame
 
             if (m_ProcedureGame != null)
             {
-                if (!string.IsNullOrEmpty(currentStory))
+                if (!string.IsNullOrEmpty(m_CurrentStoryToLoad))
                 {
                     // 有当前剧情，直接加载剧情
-                    Log.Info($"[ArchivePanel] 加载当前剧情: {currentStory}");
-                    m_ProcedureGame.LoadStory(GetEventIdFromStoryName(currentStory));
+                    Log.Info($"[ArchivePanel] 加载当前剧情: {m_CurrentStoryToLoad}");
+                    m_ProcedureGame.LoadStory(GetEventIdFromStoryName(m_CurrentStoryToLoad));
                 }
                 else
                 {

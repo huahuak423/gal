@@ -534,7 +534,10 @@ namespace AVGGame
                 NpcProgress = ConvertNpcProgressToSerializable(),
 
                 // 存档时间
-                SaveTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+                SaveTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+
+                // 当前所处故事
+                CurrentStoryGarphName = currentStoryGarphName
             };
         }
 
@@ -579,6 +582,9 @@ namespace AVGGame
 
             // NPC进度
             m_NpcProgress = ConvertSerializableToNpcProgress(saveData.NpcProgress);
+
+            // 恢复当前所处故事
+            currentStoryGarphName = saveData.CurrentStoryGarphName;
 
             Log.Info($"[PlayerDataComponent] 存档加载完成！周目: {m_CurrentRound}, 行动点: {m_CurrentActionPoints}");
         }

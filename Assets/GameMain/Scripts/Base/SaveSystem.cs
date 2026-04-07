@@ -55,6 +55,9 @@ namespace AVGGame
         // 存档时间
         public string SaveTime;
 
+        // 当前所处故事
+        public string CurrentStoryGarphName;
+
         // 存档版本（用于未来兼容性）
         public int Version = 1;
     }
