@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8351609503333719968
+--- !u!114 &-9058718229073283116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,34 +10,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_6_\u3010\u7CFB\u7EDF\u63D0\u793A\u3011\u5728\u53D8\u7F8E\u7684"
+  m_Name: "\u5BF9\u8BDD_7_\u3010\u7CFB\u7EDF\u63D0\u793A\u3011\u6539\u5934\u6362\u9762"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2250, y: 0}
+  position: {x: 2700, y: 0}
   ports:
     keys:
     - Entry
     - Exit
     values:
     - _fieldName: Entry
-      _node: {fileID: -8351609503333719968}
+      _node: {fileID: -9058718229073283116}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Exit
-        node: {fileID: 3693356672250390727}
+        node: {fileID: 134228304242577461}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Exit
-      _node: {fileID: -8351609503333719968}
+      _node: {fileID: -9058718229073283116}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: 8180465591837003949}
+        node: {fileID: 7211045427139680420}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u3010\u7CFB\u7EDF\u63D0\u793A\u3011\u5728\u53D8\u7F8E\u7684\u540C\u65F6\u5012\u7A7A\u4E86\u60C5\u7EEA\u5783\u573E\uFF0C\u4F60\u611F\u5230\u524D\u6240\u672A\u6709\u7684\u81EA\u4FE1"
+  DialogText: "\u6539\u5934\u6362\u9762\u5E26\u6765\u4E86\u65B0\u7684\u7A81\u7834\uFF0C\u7F8E\u4E3D\u4E0E\u667A\u6167\u7684\u706B\u82B1\u540C\u65F6\u8FF8\u53D1"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -54,7 +54,7 @@ MonoBehaviour:
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
---- !u!114 &-7165316008744928247
+--- !u!114 &-7296395738772956998
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,58 +64,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_1_\u8BB8\u6620\u6708\u4E00\u5927\u65E9\u5C31\u593A\u547D\u8FDE"
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 0, y: 0}
-  ports:
-    keys:
-    - Entry
-    - Exit
-    values:
-    - _fieldName: Entry
-      _node: {fileID: -7165316008744928247}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Exit
-      _node: {fileID: -7165316008744928247}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Entry
-        node: {fileID: -5137474591044197380}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Entry: 0
-  Exit: 0
-  SpeakerName: 
-  DialogText: "\u8BB8\u6620\u6708\u4E00\u5927\u65E9\u5C31\u593A\u547D\u8FDE\u73AFcall\uFF0C\u628A\u4F60\u4ECE\u5E8A\u4E0A\u8585\u8D77\u6765\uFF0C\u62D6\u53BB\u4E86\u5979\u5E38\u5149\u987E\u7684\u90A3\u5BB6\u7F8E\u7532\u6C99\u9F99"
-  CharacterDisplays: []
-  BgmPath: 
-  SePath: 
-  BackgroundPath: 
-  PerformanceKey: 
-  NeedsAttention: 0
-  EditorNote: 
---- !u!114 &-5137474591044197380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_2_\u201C\u5973\u4EBA\uFF01\u54EA\u6015\u5929\u5929\u5728\u5BB6"
+  m_Name: "\u5BF9\u8BDD_2_\u8BB8\u6620\u6708\u4E0D\u7531\u5206\u8BF4\uFF0C\u76F4\u63A5"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 450, y: 0}
@@ -125,24 +74,24 @@ MonoBehaviour:
     - Exit
     values:
     - _fieldName: Entry
-      _node: {fileID: -5137474591044197380}
+      _node: {fileID: -7296395738772956998}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Exit
-        node: {fileID: -7165316008744928247}
+        node: {fileID: -3063214677889560002}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Exit
-      _node: {fileID: -5137474591044197380}
+      _node: {fileID: -7296395738772956998}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: -3571895561894546349}
+        node: {fileID: -2288247415903572927}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -150,16 +99,16 @@ MonoBehaviour:
       _dynamic: 0
   Entry: 0
   Exit: 0
-  SpeakerName: "\u8BB8\u6620\u6708"
-  DialogText: "\u201C\u5973\u4EBA\uFF01\u54EA\u6015\u5929\u5929\u5728\u5BB6\u526A\u89C6\u9891\uFF0C\u4E5F\u8981\u505A\u6700\u7CBE\u81F4\u7684\u5E55\u540E\u9ED1\u624B\uFF01\u5FEB\u770B\u8FD9\u4E2A\u732B\u773C\u6781\u5149\u8272\uFF0C\u592A\u7EDD\u4E86\uFF01\u201D"
+  SpeakerName: 
+  DialogText: "\u8BB8\u6620\u6708\u4E0D\u7531\u5206\u8BF4\uFF0C\u76F4\u63A5\u628A\u4F60\u6309\u5728\u4E86\u5E97\u91CC\u9996\u5E2D\u9020\u578B\u5E08\u7684\u6905\u5B50\u4E0A"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
   BackgroundPath: 
   PerformanceKey: 
-  NeedsAttention: 1
-  EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
---- !u!114 &-3571895561894546349
+  NeedsAttention: 0
+  EditorNote: 
+--- !u!114 &-3063214677889560002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +118,58 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_3_\u7F8E\u7532\u5E08\u7EC6\u81F4\u5730\u4E3A\u4F60\u4FEE\u526A"
+  m_Name: "\u5BF9\u8BDD_1_\u201C\u4F60\u8FD9\u5934\u53D1\u5929\u5929\u4E00\u4E2A\u6837"
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 0, y: 0}
+  ports:
+    keys:
+    - Entry
+    - Exit
+    values:
+    - _fieldName: Entry
+      _node: {fileID: -3063214677889560002}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Exit
+      _node: {fileID: -3063214677889560002}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entry
+        node: {fileID: -7296395738772956998}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Entry: 0
+  Exit: 0
+  SpeakerName: "\u8BB8\u6620\u6708"
+  DialogText: "\u201C\u4F60\u8FD9\u5934\u53D1\u5929\u5929\u4E00\u4E2A\u6837\uFF0C\u8D76\u7D27\u8DDF\u6211\u6362\u4E2A\u9020\u578B\uFF01\u201D"
+  CharacterDisplays: []
+  BgmPath: 
+  SePath: 
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u7406\u53D1\u5E97.png"
+  PerformanceKey: 
+  NeedsAttention: 1
+  EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
+--- !u!114 &-2288247415903572927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
+  m_Name: "\u5BF9\u8BDD_3_Tony\u8001\u5E08\u624B\u8D77\u5200\u843D"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 900, y: 0}
@@ -179,24 +179,24 @@ MonoBehaviour:
     - Exit
     values:
     - _fieldName: Entry
-      _node: {fileID: -3571895561894546349}
+      _node: {fileID: -2288247415903572927}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Exit
-        node: {fileID: -5137474591044197380}
+        node: {fileID: -7296395738772956998}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Exit
-      _node: {fileID: -3571895561894546349}
+      _node: {fileID: -2288247415903572927}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: 7841042088661146571}
+        node: {fileID: -1877617664758330230}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -205,7 +205,115 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u7F8E\u7532\u5E08\u7EC6\u81F4\u5730\u4E3A\u4F60\u4FEE\u526A\u7740\u6307\u7532\uFF0C\u4F60\u548C\u8BB8\u6620\u6708\u4E00\u8FB9\u559D\u7740\u5E97\u91CC\u63D0\u4F9B\u7684\u82B1\u8336\uFF0C\u4E00\u8FB9\u5F00\u542F\u4E86\u6BEB\u65E0\u987E\u5FCC\u7684\u516B\u5366\u6A21\u5F0F"
+  DialogText: "Tony\u8001\u5E08\u624B\u8D77\u5200\u843D\uFF0C\u4E00\u8FB9\u4E3A\u4F60\u8FDB\u884C\u5934\u76AE\u62A4\u7406\uFF0C\u4E00\u8FB9\u548C\u4F60\u63A2\u8BA8\u7740\u5F53\u4E0B\u6700\u65F6\u5174\u7684\u98CE\u683C\u3002"
+  CharacterDisplays: []
+  BgmPath: 
+  SePath: 
+  BackgroundPath: 
+  PerformanceKey: 
+  NeedsAttention: 0
+  EditorNote: 
+--- !u!114 &-1877617664758330230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
+  m_Name: "\u5BF9\u8BDD_4_\u201C\u4EB2\u7231\u7684\uFF0C\u4F60\u7684\u9AA8\u76F8\u5F88"
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1350, y: 0}
+  ports:
+    keys:
+    - Entry
+    - Exit
+    values:
+    - _fieldName: Entry
+      _node: {fileID: -1877617664758330230}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Exit
+        node: {fileID: -2288247415903572927}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Exit
+      _node: {fileID: -1877617664758330230}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entry
+        node: {fileID: -1135926303884181338}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Entry: 0
+  Exit: 0
+  SpeakerName: "\u7FA4\u4F17"
+  DialogText: "\u201C\u4EB2\u7231\u7684\uFF0C\u4F60\u7684\u9AA8\u76F8\u5F88\u4F18\u8D8A\uFF0C\u4E0D\u5982\u5C1D\u8BD5\u4E00\u4E0B\u8FD9\u79CD\u5FAE\u5377\u7684\u6CD5\u5F0F\u6175\u61D2\u98CE\uFF1F\u201D"
+  CharacterDisplays: []
+  BgmPath: 
+  SePath: 
+  BackgroundPath: 
+  PerformanceKey: 
+  NeedsAttention: 0
+  EditorNote: 
+--- !u!114 &-1135926303884181338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
+  m_Name: "\u5BF9\u8BDD_5_\u5728\u4E0ETony\u8001\u5E08\u8BA8\u8BBA"
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1800, y: 0}
+  ports:
+    keys:
+    - Entry
+    - Exit
+    values:
+    - _fieldName: Entry
+      _node: {fileID: -1135926303884181338}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Exit
+        node: {fileID: -1877617664758330230}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Exit
+      _node: {fileID: -1135926303884181338}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entry
+        node: {fileID: 134228304242577461}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Entry: 0
+  Exit: 0
+  SpeakerName: 
+  DialogText: "\u5728\u4E0ETony\u8001\u5E08\u8BA8\u8BBA\u201C\u53D1\u578B\u5982\u4F55\u6539\u53D8\u4EBA\u7684\u6C14\u8D28\u201D\u65F6\uFF0C\u4F60\u7A81\u7136\u7075\u5149\u4E00\u95EA\uFF0C\u8FD9\u4E0D\u5C31\u662F\u4E00\u4E2A\u7EDD\u4F73\u7684\u7F8E\u5986\u7C7B\u793E\u4F1A\u5B66\u9009\u9898\u5417\uFF1F"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -227,14 +335,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: 6255395389022141978}
-  - {fileID: -7165316008744928247}
-  - {fileID: -5137474591044197380}
-  - {fileID: -3571895561894546349}
-  - {fileID: 7841042088661146571}
-  - {fileID: 3693356672250390727}
-  - {fileID: -8351609503333719968}
-  - {fileID: 8180465591837003949}
---- !u!114 &3693356672250390727
+  - {fileID: -3063214677889560002}
+  - {fileID: -7296395738772956998}
+  - {fileID: -2288247415903572927}
+  - {fileID: -1877617664758330230}
+  - {fileID: -1135926303884181338}
+  - {fileID: 134228304242577461}
+  - {fileID: -9058718229073283116}
+  - {fileID: 7211045427139680420}
+--- !u!114 &134228304242577461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,34 +353,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_5_\u770B\u7740\u624B\u6307\u4E0A\u95EA\u70C1\u7740\u7EC6\u788E"
+  m_Name: "\u5BF9\u8BDD_6_\u51E0\u4E2A\u5C0F\u65F6\u540E\uFF0C\u770B\u7740\u955C\u5B50"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1800, y: 0}
+  position: {x: 2250, y: 0}
   ports:
     keys:
     - Entry
     - Exit
     values:
     - _fieldName: Entry
-      _node: {fileID: 3693356672250390727}
+      _node: {fileID: 134228304242577461}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Exit
-        node: {fileID: 7841042088661146571}
+        node: {fileID: -1135926303884181338}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Exit
-      _node: {fileID: 3693356672250390727}
+      _node: {fileID: 134228304242577461}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: -8351609503333719968}
+        node: {fileID: -9058718229073283116}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -280,7 +389,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u770B\u7740\u624B\u6307\u4E0A\u95EA\u70C1\u7740\u7EC6\u788E\u5149\u8292\u7684\u7EDD\u7F8E\u732B\u773C\uFF0C\u4F60\u7684\u5FC3\u60C5\u5927\u597D\uFF0C\u611F\u89C9\u81EA\u5DF1\u53C8\u884C\u4E86"
+  DialogText: "\u51E0\u4E2A\u5C0F\u65F6\u540E\uFF0C\u770B\u7740\u955C\u5B50\u91CC\u6539\u5934\u6362\u9762\u3001\u7115\u7136\u4E00\u65B0\u7684\u81EA\u5DF1\uFF0C\u8111\u6D77\u91CC\u90A3\u7BC7\u300A\u4ECE\u53D1\u578B\u770B\u73B0\u4EE3\u5973\u6027\u7684\u81EA\u6211\u91CD\u5851\u300B\u7684\u5927\u7EB2\u4E5F\u5DF2\u7ECF\u6210\u578B"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -301,7 +410,7 @@ MonoBehaviour:
   m_Name: Reward
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 3144, y: -24}
+  position: {x: 3560, y: -8}
   ports:
     keys:
     - Entry
@@ -316,7 +425,7 @@ MonoBehaviour:
         node: {fileID: 0}
         reroutePoints: []
       - fieldName: Exit
-        node: {fileID: 8180465591837003949}
+        node: {fileID: 7211045427139680420}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -345,7 +454,7 @@ MonoBehaviour:
     NpcId: 
     Value: 5
     ItemId: 
---- !u!114 &7841042088661146571
+--- !u!114 &7211045427139680420
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -355,83 +464,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_4_\u4ECE\u5708\u5185\u5927V\u7684\u584C\u623F\u74DC\uFF0C"
+  m_Name: "\u5BF9\u8BDD_8_\u9B45\u529B\u503C + 7\uFF0C\u7075\u611F"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1350, y: 0}
+  position: {x: 3150, y: 0}
   ports:
     keys:
     - Entry
     - Exit
     values:
     - _fieldName: Entry
-      _node: {fileID: 7841042088661146571}
+      _node: {fileID: 7211045427139680420}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Exit
-        node: {fileID: -3571895561894546349}
+        node: {fileID: -9058718229073283116}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Exit
-      _node: {fileID: 7841042088661146571}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Entry
-        node: {fileID: 3693356672250390727}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Entry: 0
-  Exit: 0
-  SpeakerName: 
-  DialogText: "\u4ECE\u5708\u5185\u5927V\u7684\u584C\u623F\u74DC\uFF0C\u804A\u5230\u6700\u8FD1\u65B0\u4E0A\u7684\u70C2\u5267\u5410\u69FD\u3002\u90A3\u4E9B\u5DE5\u4F5C\u4E2D\u7684\u82E6\u95F7\uFF0C\u90FD\u5728\u8FD9\u573A\u6CA1\u5FC3\u6CA1\u80BA\u7684\u95F2\u804A\u4E2D\u6D88\u6563\u4E86"
-  CharacterDisplays: []
-  BgmPath: 
-  SePath: 
-  BackgroundPath: 
-  PerformanceKey: 
-  NeedsAttention: 0
-  EditorNote: 
---- !u!114 &8180465591837003949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_7_\u9B45\u529B\u503C + 10\uFF0C\u7406"
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 2700, y: 0}
-  ports:
-    keys:
-    - Entry
-    - Exit
-    values:
-    - _fieldName: Entry
-      _node: {fileID: 8180465591837003949}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Exit
-        node: {fileID: -8351609503333719968}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Exit
-      _node: {fileID: 8180465591837003949}
+      _node: {fileID: 7211045427139680420}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
@@ -445,7 +500,8 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u9B45\u529B\u503C + 10\uFF0C\u7406\u667A\u503C + 2"
+  DialogText: "\u3010\u7CFB\u7EDF\u63D0\u793A\u3011\u9B45\u529B\u503C + 7\uFF0C\u7075\u611F\u503C
+    + 5"
   CharacterDisplays: []
   BgmPath: 
   SePath: 

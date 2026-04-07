@@ -43,7 +43,7 @@
             "OffsetX": 126.95089721679688,
             "OffsetY": -447.1893005371094,
             "Scale": 3.0,
-            "LastNodeGuid": "对话_51_你迟疑着接过，翻开略"
+            "LastNodeGuid": "对话_69_落笔的瞬间，温叙突然"
         },
         {
             "GraphName": "温叙事件五",
@@ -67,10 +67,10 @@
             "GraphName": "温叙事件五",
             "SpritePath": "Assets/GameMain/Art/Characters/温叙/温叙最新.png",
             "Position": 1,
-            "OffsetX": 0.0,
-            "OffsetY": 0.0,
-            "Scale": 1.0,
-            "LastNodeGuid": "对话_53_“这是《棱镜回响》的"
+            "OffsetX": 41.14784240722656,
+            "OffsetY": -572.0918579101563,
+            "Scale": 3.0,
+            "LastNodeGuid": "对话_77_你抬头看向他，月光下"
         }
     ]
 }
