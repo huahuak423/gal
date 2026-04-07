@@ -89,18 +89,18 @@ namespace AVGGame
             base.OnInit(userData);
 
             // 挂载组件引用 - 存档按钮
-            m_SaveSlot1 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb1");
-            m_SaveSlot2 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb2");
-            m_SaveSlot3 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb3");
-            m_SaveSlot4 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb4");
-            m_SaveSlot5 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb5");
-            m_SaveSlot6 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb6");
-            m_SaveSlot7 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb7");
-            m_SaveSlot8 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb8");
-            m_SaveSlot9 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb9");
-            m_SaveSlot10 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb10");
-            m_SaveSlot11 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb11");
-            m_SaveSlot12 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb12");
+            m_SaveSlot1 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb1/ButtonNowSave");
+            m_SaveSlot2 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb2/ButtonNowSave");
+            m_SaveSlot3 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb3/ButtonNowSave");
+            m_SaveSlot4 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb4/ButtonNowSave");
+            m_SaveSlot5 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb5/ButtonNowSave");
+            m_SaveSlot6 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb6/ButtonNowSave");
+            m_SaveSlot7 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb7/ButtonNowSave");
+            m_SaveSlot8 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb8/ButtonNowSave");
+            m_SaveSlot9 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb9/ButtonNowSave");
+            m_SaveSlot10 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb10/ButtonNowSave");
+            m_SaveSlot11 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb11/ButtonNowSave");
+            m_SaveSlot12 = this.GetComponentByPath<Button>("Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb12/ButtonNowSave");
 
             m_ConfirmButton = this.GetComponentByPath<Button>("Canvas/Background/ConfirmPlate/ButtonConfirm");
             m_CancelButton = this.GetComponentByPath<Button>("Canvas/Background/ConfirmPlate/ButtonCancel");
@@ -332,7 +332,7 @@ namespace AVGGame
                 ShowMessage("保存成功！");
 
                 // 延迟后关闭存档界面，并返回大菜单
-                StartCoroutine(DelayAndReturnToMainMenu());
+                DelayAndReturnToMainMenu();
             }
             else
             {
@@ -388,7 +388,7 @@ namespace AVGGame
                 CloseSelf();
 
                 // 延迟跳转，确保UI关闭完成
-                StartCoroutine(DelayAndLoadGame(currentStory));
+                DelayAndLoadGame(currentStory);
             }
             else
             {
@@ -490,12 +490,27 @@ namespace AVGGame
         /// <summary>
         /// 延迟后重新打开菜单（用于保存成功后）
         /// </summary>
-        private System.Collections.IEnumerator DelayAndOpenMenu()
+        private void DelayAndOpenMenu()
         {
-            // 等待1.5秒，让用户看到保存成功的提示
-            yield return new WaitForSeconds(1.5f);
+            // 检查游戏对象是否仍然 active
+            if (!gameObject.activeInHierarchy)
+            {
+                Log.Warning("[ArchivePanel] Game object is inactive, cannot open menu");
+                return;
+            }
 
-            // 打开游戏菜单
+            // 使用 Unity 的 Invoke 来延迟执行，避免协程问题
+            Invoke(nameof(OpenMenuInternal), 1.5f);
+        }
+
+        private void OpenMenuInternal()
+        {
+            if (!gameObject.activeInHierarchy)
+            {
+                Log.Warning("[ArchivePanel] Game object is inactive when trying to open menu");
+                return;
+            }
+
             if (m_ProcedureGame != null)
             {
                 m_ProcedureGame.OpenMenu();
@@ -509,15 +524,30 @@ namespace AVGGame
         /// <summary>
         /// 延迟后返回大菜单（用于"回到主菜单"流程）
         /// </summary>
-        private System.Collections.IEnumerator DelayAndReturnToMainMenu()
+        private void DelayAndReturnToMainMenu()
         {
-            // 等待1.5秒，让用户看到保存成功的提示
-            yield return new WaitForSeconds(1.5f);
-
-            // 关闭存档界面
+            // 先关闭界面
             CloseSelf();
 
-            // 切换到主菜单流程
+            // 检查游戏对象是否仍然 active
+            if (!gameObject.activeInHierarchy)
+            {
+                Log.Warning("[ArchivePanel] Game object is inactive, cannot return to main menu");
+                return;
+            }
+
+            // 使用 Unity 的 Invoke 来延迟执行，避免协程问题
+            Invoke(nameof(ReturnToMainMenuInternal), 0.5f);
+        }
+
+        private void ReturnToMainMenuInternal()
+        {
+            if (!gameObject.activeInHierarchy)
+            {
+                Log.Warning("[ArchivePanel] Game object is inactive when trying to return to main menu");
+                return;
+            }
+
             if (m_ProcedureGame != null)
             {
                 Log.Info("[ArchivePanel] 返回大菜单");
@@ -532,10 +562,27 @@ namespace AVGGame
         /// <summary>
         /// 延迟后加载游戏（用于加载成功后）
         /// </summary>
-        private System.Collections.IEnumerator DelayAndLoadGame(string currentStory)
+        private void DelayAndLoadGame(string currentStory)
         {
-            // 等待1秒，让用户看到加载成功的提示
-            yield return new WaitForSeconds(1.0f);
+            // 检查游戏对象是否仍然 active
+            if (!gameObject.activeInHierarchy)
+            {
+                Log.Warning("[ArchivePanel] Game object is inactive, cannot load game");
+                return;
+            }
+
+            // 使用 Unity 的 Invoke 来延迟执行，避免协程问题
+            Invoke(nameof(LoadGameInternal), 0.5f);
+        }
+
+        private void LoadGameInternal()
+        {
+            // 再次检查，因为可能在等待期间游戏对象被销毁
+            if (!gameObject.activeInHierarchy)
+            {
+                Log.Warning("[ArchivePanel] Game object is inactive when trying to load game");
+                return;
+            }
 
             if (m_ProcedureGame != null)
             {
