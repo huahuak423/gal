@@ -1130,8 +1130,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 1
     SpritePath: "Assets/GameMain/Art/Characters/\u5973\u4E3B/\u5973\u4E3B02-00.png"
-    OffsetX: 12.10895
-    OffsetY: -453.60126
+    OffsetX: 22.55
+    OffsetY: -395.82
     Scale: 3
   BgmPath: 
   SePath: 
@@ -2461,8 +2461,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 1
     SpritePath: "Assets/GameMain/Art/Characters/\u5973\u4E3B/\u5973\u4E3B02-00.png"
-    OffsetX: 12
-    OffsetY: -453
+    OffsetX: 22.55
+    OffsetY: -395.82
     Scale: 3
   BgmPath: 
   SePath: 

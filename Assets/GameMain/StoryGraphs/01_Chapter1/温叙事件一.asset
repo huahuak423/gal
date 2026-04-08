@@ -1175,8 +1175,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 1
     SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9/\u6E29\u53D9\u6700\u65B0.png"
-    OffsetX: 18
-    OffsetY: -610
+    OffsetX: -1.2
+    OffsetY: -522.5382
     Scale: 3
   BgmPath: 
   SePath: 
@@ -1251,7 +1251,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_49_\u50CF\u662F\u88AB\u6293\u5305\u7684\u5FC3\u865A\uFF0C\u53C8"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 21600, y: 0}
+  position: {x: 21592, y: -8}
   ports:
     keys:
     - Entry
@@ -2000,7 +2000,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: "\u6E29\u53D9"
-  DialogText: "\u201C\u597D\u4E86\u2026\u2026\u201D"
+  DialogText: "\u201C\u597D\u4E86......\u201D"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -2442,7 +2442,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_36_\u6CA1\u6709\u4EFB\u4F55\u8BDD\u8BED\uFF0C\u53EA\u62AC\u773C"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 15750, y: 0}
+  position: {x: 15752, y: -8}
   ports:
     keys:
     - Entry
@@ -2481,8 +2481,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 1
     SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9/\u6E29\u53D9\u6700\u65B0.png"
-    OffsetX: 18.159628
-    OffsetY: -610.6195
+    OffsetX: -1.2
+    OffsetY: -522.5382
     Scale: 3
   BgmPath: 
   SePath: 
