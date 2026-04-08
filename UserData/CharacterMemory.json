@@ -278,6 +278,42 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_31_“这周末，我可以请你"
+        },
+        {
+            "GraphName": "周杉事件五",
+            "SpritePath": "Assets/GameMain/Art/Characters/周杉/周杉01-00.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_62_他的眼睛暗了一下，像"
+        },
+        {
+            "GraphName": "周杉事件五",
+            "SpritePath": "Assets/GameMain/Art/Characters/周杉/周杉01-00.png",
+            "Position": 2,
+            "OffsetX": -280.4781188964844,
+            "OffsetY": -330.0,
+            "Scale": 2.299999952316284,
+            "LastNodeGuid": "对话_99_他松开你的时候，耳尖"
+        },
+        {
+            "GraphName": "周杉事件五",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主01-00.png",
+            "Position": 0,
+            "OffsetX": 300.43743896484377,
+            "OffsetY": -195.244140625,
+            "Scale": 2.299999952316284,
+            "LastNodeGuid": "对话_87_“但…… 试试看吧，"
+        },
+        {
+            "GraphName": "周杉事件五",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主01-02.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_109_“嗯。”"
         }
     ]
 }
