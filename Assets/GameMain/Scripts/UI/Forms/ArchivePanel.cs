@@ -512,13 +512,15 @@ namespace AVGGame
                 return;
             }
 
-            if (m_ProcedureGame != null)
+            // 获取当前活动的 Procedure
+            var currentProcedure = GameEntry.Procedure?.CurrentProcedure as ProcedureGame;
+            if (currentProcedure != null)
             {
-                m_ProcedureGame.OpenMenu();
+                currentProcedure.OpenMenu();
             }
             else
             {
-                Log.Warning("[ArchivePanel] m_ProcedureGame is null, cannot open menu");
+                Log.Warning("[ArchivePanel] CurrentProcedure is null, cannot open menu");
             }
         }
 
@@ -549,14 +551,16 @@ namespace AVGGame
                 return;
             }
 
-            if (m_ProcedureGame != null)
+            // 获取当前活动的 Procedure
+            var currentProcedure = GameEntry.Procedure?.CurrentProcedure as ProcedureGame;
+            if (currentProcedure != null)
             {
                 Log.Info("[ArchivePanel] 返回大菜单");
-                m_ProcedureGame.ReturnToMainMenu();
+                currentProcedure.ReturnToMainMenu();
             }
             else
             {
-                Log.Warning("[ArchivePanel] m_ProcedureGame is null, cannot return to main menu");
+                Log.Warning("[ArchivePanel] CurrentProcedure is null, cannot return to main menu");
             }
         }
 
@@ -588,24 +592,26 @@ namespace AVGGame
                 return;
             }
 
-            if (m_ProcedureGame != null)
+            // 获取当前活动的 Procedure
+            var currentProcedure = GameEntry.Procedure?.CurrentProcedure as ProcedureGame;
+            if (currentProcedure != null)
             {
                 if (!string.IsNullOrEmpty(m_CurrentStoryToLoad))
                 {
                     // 有当前剧情，直接加载剧情
                     Log.Info($"[ArchivePanel] 加载当前剧情: {m_CurrentStoryToLoad}");
-                    m_ProcedureGame.LoadStory(GetEventIdFromStoryName(m_CurrentStoryToLoad));
+                    currentProcedure.LoadStory(GetEventIdFromStoryName(m_CurrentStoryToLoad));
                 }
                 else
                 {
                     // 没有当前剧情，打开大地图
                     Log.Info("[ArchivePanel] 无当前剧情，打开大地图");
-                    m_ProcedureGame.OpenMap();
+                    currentProcedure.OpenMap();
                 }
             }
             else
             {
-                Log.Warning("[ArchivePanel] m_ProcedureGame is null, cannot load game");
+                Log.Warning("[ArchivePanel] CurrentProcedure is null, cannot load game");
             }
         }
 
