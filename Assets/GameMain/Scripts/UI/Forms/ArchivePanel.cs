@@ -129,7 +129,7 @@ namespace AVGGame
                 m_SaveSlot11, m_SaveSlot12
             };
 
-            // 调试日志：检查存档按钮获取情况
+            // 检查存档按钮获取情况（仅在错误时输出）
             for (int i = 0; i < m_SaveSlots.Length; i++)
             {
                 if (m_SaveSlots[i] == null)
@@ -137,8 +137,6 @@ namespace AVGGame
                     Debug.LogError($"[ArchivePanel] SaveSlot{i + 1} is null! Path: Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb{i + 1}");
                 }
             }
-
-            Debug.Log($"[ArchivePanel] OnInit completed. ConfirmPlate: {(m_ConfirmPlate != null ? "found" : "null")}");
 
             // 初始化存档按钮图片数组
             m_SaveSlotImages = new Image[m_SaveSlots.Length];
@@ -171,7 +169,7 @@ namespace AVGGame
         {
             base.OnOpen(userData);
 
-            Debug.Log($"[ArchivePanel] OnOpen called, userData: {userData}");
+            // Debug.Log($"[ArchivePanel] OnOpen called, userData: {userData}");
 
             // 隐藏确认面板
             HideConfirmPlate();
@@ -184,18 +182,18 @@ namespace AVGGame
             if (userData is ArchiveMode mode)
             {
                 m_Mode = mode;
-                Debug.Log($"[ArchivePanel] Mode set to: {mode}");
+                // Debug.Log($"[ArchivePanel] Mode set to: {mode}");
             }
             else if (userData is bool isNewGame)
             {
                 // 兼容旧的 bool 参数（true=新游戏，false=继续游戏）
                 m_Mode = isNewGame ? ArchiveMode.Save : ArchiveMode.Load;
-                Debug.Log($"[ArchivePanel] Mode set from bool: {m_Mode}");
+                // Debug.Log($"[ArchivePanel] Mode set from bool: {m_Mode}");
             }
             else
             {
                 m_Mode = ArchiveMode.Save; // 默认保存模式
-                Debug.Log("[ArchivePanel] Default mode set to: Save");
+                // Debug.Log("[ArchivePanel] Default mode set to: Save");
             }
 
             // 更新标题
@@ -204,8 +202,8 @@ namespace AVGGame
             // 更新存档槽位显示
             UpdateSaveSlotDisplay();
 
-            Debug.Log($"[ArchivePanel] Opened successfully, Mode: {m_Mode}, FromGameMenu: {m_IsFromGameMenu}");
-            Debug.Log($"[ArchivePanel] SaveSystem available: {CustomEntry.SaveSystem != null}");
+            // Debug.Log($"[ArchivePanel] Opened successfully, Mode: {m_Mode}, FromGameMenu: {m_IsFromGameMenu}");
+            // Debug.Log($"[ArchivePanel] SaveSystem available: {CustomEntry.SaveSystem != null}");
         }
 
         protected override void OnClose(bool isShutdown, object userData)
@@ -226,7 +224,7 @@ namespace AVGGame
         {
             Debug.Log($"[ArchivePanel] OnSaveSlotClick called, slotIndex: {slotIndex}");
             int slotId = slotIndex + 1; // 槽位ID从1开始
-            Log.Info($"[ArchivePanel] Slot {slotId} clicked, Mode: {m_Mode}");
+            // Debug.Log($"[ArchivePanel] Slot {slotId} clicked, Mode: {m_Mode}");
             m_SelectedSlotIndex = slotIndex;
 
             // 显示确认面板
@@ -240,7 +238,7 @@ namespace AVGGame
         {
             if (m_SelectedSlotIndex < 0)
             {
-                Log.Warning("[ArchivePanel] No slot selected");
+                Debug.LogWarning("[ArchivePanel] No slot selected");
                 return;
             }
 
@@ -266,7 +264,7 @@ namespace AVGGame
         /// </summary>
         private void OnCancelClick()
         {
-            Log.Info("[ArchivePanel] Cancel clicked");
+            Debug.Log("[ArchivePanel] Cancel clicked");
             m_SelectedSlotIndex = -1;
             HideConfirmPlate();
         }
@@ -298,7 +296,7 @@ namespace AVGGame
         /// </summary>
         private void OnSaveSlotSelected(int slotId)
         {
-            Log.Info($"[ArchivePanel] Saving to slot {slotId}");
+            // Debug.Log($"[ArchivePanel] Saving to slot {slotId}");
 
             // 显示保存提示
             ShowMessage("正在保存...");
@@ -322,14 +320,14 @@ namespace AVGGame
 
                 if (!success && retryCount < maxRetries)
                 {
-                    Log.Warning($"[ArchivePanel] 保存失败，正在重试 ({retryCount}/{maxRetries})");
+                    Debug.LogWarning($"[ArchivePanel] 保存失败，正在重试 ({retryCount}/{maxRetries})");
                     yield return new WaitForSeconds(0.5f);
                 }
             }
 
             if (success)
             {
-                Log.Info($"[ArchivePanel] 保存成功：槽位 {slotId}");
+                // Debug.Log($"[ArchivePanel] 保存成功：槽位 {slotId}");
                 ShowMessage("保存成功！");
 
                 // 延迟后关闭存档界面，并返回大菜单
@@ -337,7 +335,7 @@ namespace AVGGame
             }
             else
             {
-                Log.Error($"[ArchivePanel] 保存失败：槽位 {slotId}（重试{maxRetries}次后仍失败）");
+                Debug.LogError($"[ArchivePanel] 保存失败：槽位 {slotId}（重试{maxRetries}次后仍失败）");
                 ShowMessage("保存失败，请稍后重试");
             }
         }
@@ -347,7 +345,7 @@ namespace AVGGame
         /// </summary>
         private void OnLoadSlotSelected(int slotId)
         {
-            Log.Info($"[ArchivePanel] Loading from slot {slotId}");
+            // Debug.Log($"[ArchivePanel] Loading from slot {slotId}");
 
             // 显示加载提示
             ShowMessage("正在读取存档...");
@@ -371,20 +369,20 @@ namespace AVGGame
 
                 if (!success && retryCount < maxRetries)
                 {
-                    Log.Warning($"[ArchivePanel] 加载失败，正在重试 ({retryCount}/{maxRetries})");
+                    Debug.LogWarning($"[ArchivePanel] 加载失败，正在重试 ({retryCount}/{maxRetries})");
                     yield return new WaitForSeconds(0.5f);
                 }
             }
 
             if (success)
             {
-                Log.Info($"[ArchivePanel] 加载成功：槽位 {slotId}");
+                // Debug.Log($"[ArchivePanel] 加载成功：槽位 {slotId}");
                 ShowMessage("加载成功！");
 
                 // 获取加载后的剧情状态
                 var playerData = CustomEntry.PlayerData;
                 string currentStory = playerData?.currentStoryGarphName;
-                Log.Info($"[ArchivePanel] 加载后的 currentStory: '{currentStory}'");
+                // Debug.Log($"[ArchivePanel] 加载后的 currentStory: '{currentStory}'");
 
                 // 关闭存档界面
                 CloseSelf();
@@ -394,7 +392,7 @@ namespace AVGGame
             }
             else
             {
-                Log.Error($"[ArchivePanel] 加载失败：槽位 {slotId}（重试{maxRetries}次后仍失败）");
+                // Debug.LogError($"[ArchivePanel] 加载失败：槽位 {slotId}（重试{maxRetries}次后仍失败）");
                 ShowMessage("加载失败，请稍后重试");
             }
         }
@@ -406,7 +404,7 @@ namespace AVGGame
         {
             // 这里可以扩展实现更复杂的提示UI
             // 比如使用 UnityEngine.UI.Text 或其他UI组件显示消息
-            Debug.Log($"[ArchivePanel] {message}");
+            // Debug.Log($"[ArchivePanel] {message}");
         }
 
         /// <summary>
@@ -417,13 +415,13 @@ namespace AVGGame
             // 如果确认面板正在显示，先关闭它
             if (m_ConfirmPlate != null && m_ConfirmPlate.gameObject.activeSelf)
             {
-                Log.Info("[ArchivePanel] Confirm plate is open, closing it first");
+                // Debug.Log("[ArchivePanel] Confirm plate is open, closing it first");
                 HideConfirmPlate();
                 m_SelectedSlotIndex = -1;
                 return;
             }
 
-            Log.Info("[ArchivePanel] Back clicked");
+            // Debug.Log("[ArchivePanel] Back clicked");
             CloseSelf();
         }
 
@@ -497,7 +495,7 @@ namespace AVGGame
             // 检查游戏对象是否仍然 active
             if (!gameObject.activeInHierarchy)
             {
-                Log.Warning("[ArchivePanel] Game object is inactive, cannot open menu");
+                Debug.LogWarning("[ArchivePanel] Game object is inactive, cannot open menu");
                 return;
             }
 
@@ -509,7 +507,7 @@ namespace AVGGame
         {
             if (!gameObject.activeInHierarchy)
             {
-                Log.Warning("[ArchivePanel] Game object is inactive when trying to open menu");
+                Debug.LogWarning("[ArchivePanel] Game object is inactive when trying to open menu");
                 return;
             }
 
@@ -521,7 +519,7 @@ namespace AVGGame
             }
             else
             {
-                Log.Warning("[ArchivePanel] CurrentProcedure is null, cannot open menu");
+                Debug.LogWarning("[ArchivePanel] CurrentProcedure is null, cannot open menu");
             }
         }
 
@@ -536,7 +534,7 @@ namespace AVGGame
             // 检查游戏对象是否仍然 active
             if (!gameObject.activeInHierarchy)
             {
-                Log.Warning("[ArchivePanel] Game object is inactive, cannot return to main menu");
+                Debug.LogWarning("[ArchivePanel] Game object is inactive, cannot return to main menu");
                 return;
             }
 
@@ -548,7 +546,7 @@ namespace AVGGame
         {
             if (!gameObject.activeInHierarchy)
             {
-                Log.Warning("[ArchivePanel] Game object is inactive when trying to return to main menu");
+                Debug.LogWarning("[ArchivePanel] Game object is inactive when trying to return to main menu");
                 return;
             }
 
@@ -556,12 +554,12 @@ namespace AVGGame
             var currentProcedure = GameEntry.Procedure?.CurrentProcedure as ProcedureGame;
             if (currentProcedure != null)
             {
-                Log.Info("[ArchivePanel] 返回大菜单");
+                // Debug.Log("[ArchivePanel] 返回大菜单");
                 currentProcedure.ReturnToMainMenu();
             }
             else
             {
-                Log.Warning("[ArchivePanel] CurrentProcedure is null, cannot return to main menu");
+                Debug.LogWarning("[ArchivePanel] CurrentProcedure is null, cannot return to main menu");
             }
         }
 
@@ -576,7 +574,7 @@ namespace AVGGame
             // 检查游戏对象是否仍然 active
             if (!gameObject.activeInHierarchy)
             {
-                Log.Warning("[ArchivePanel] Game object is inactive, cannot load game");
+                Debug.LogWarning("[ArchivePanel] Game object is inactive, cannot load game");
                 return;
             }
 
@@ -589,34 +587,33 @@ namespace AVGGame
             // 再次检查，因为可能在等待期间游戏对象被销毁
             if (!gameObject.activeInHierarchy)
             {
-                Log.Warning("[ArchivePanel] Game object is inactive when trying to load game");
+                Debug.LogWarning("[ArchivePanel] Game object is inactive when trying to load game");
                 return;
             }
 
             // 获取当前活动的 Procedure
             var currentProcedure = GameEntry.Procedure?.CurrentProcedure as ProcedureGame;
-            Log.Info($"[ArchivePanel] CurrentProcedure: {(currentProcedure != null ? "not null" : "null")}");
-            Log.Info($"[ArchivePanel] m_CurrentStoryToLoad: '{m_CurrentStoryToLoad}'");
+            Debug.Log($"[ArchivePanel] CurrentProcedure: {(currentProcedure != null ? "not null" : "null")}");
+            Debug.Log($"[ArchivePanel] m_CurrentStoryToLoad: '{m_CurrentStoryToLoad}'");
 
             if (currentProcedure != null)
             {
                 if (!string.IsNullOrEmpty(m_CurrentStoryToLoad))
                 {
                     // 有当前剧情，直接加载剧情
-                    Log.Info($"[ArchivePanel] 加载当前剧情: {m_CurrentStoryToLoad}");
+                    // Debug.Log($"[ArchivePanel] 加载当前剧情: {m_CurrentStoryToLoad}");
                     currentProcedure.LoadStory(GetEventIdFromStoryName(m_CurrentStoryToLoad));
                 }
                 else
                 {
                     // 没有当前剧情，打开大地图
-                    Log.Info("[ArchivePanel] 无当前剧情，打开大地图");
-                    Log.Info($"[ArchiveProcedure] Procedure state: {currentProcedure.Fsm.CurrentStateName}");
+                    // Debug.Log("[ArchivePanel] 无当前剧情，打开大地图");
                     currentProcedure.OpenMap();
                 }
             }
             else
             {
-                Log.Warning("[ArchivePanel] CurrentProcedure is null, cannot load game");
+                Debug.LogWarning("[ArchivePanel] CurrentProcedure is null, cannot load game");
             }
         }
 
@@ -643,12 +640,12 @@ namespace AVGGame
                         }
                     }
                 }
-                Log.Warning($"[ArchivePanel] 未找到匹配的故事: {storyName}，默认返回1");
+                Debug.LogWarning($"[ArchivePanel] 未找到匹配的故事: {storyName}，默认返回1");
                 return 1; // 默认返回第一个事件
             }
             catch (System.Exception e)
             {
-                Log.Error($"[ArchivePanel] 根据故事名称查找事件ID失败: {e.Message}");
+                Debug.LogError($"[ArchivePanel] 根据故事名称查找事件ID失败: {e.Message}");
                 return 1; // 出错时返回默认值
             }
         }
