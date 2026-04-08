@@ -1,15 +1,6 @@
 {
     "Entries": [
         {
-            "GraphName": "Cinema",
-            "SpritePath": "Assets/GameMain/Art/Backgrounds/电影院/电影院1.png",
-            "Position": 1,
-            "OffsetX": 0.0,
-            "OffsetY": 0.0,
-            "Scale": 1.0,
-            "LastNodeGuid": "对话_1_许映月买了某位文艺片"
-        },
-        {
             "GraphName": "温叙事件一",
             "SpritePath": "Assets/GameMain/Art/Characters/温叙/温叙最新.png",
             "Position": 1,
@@ -40,10 +31,10 @@
             "GraphName": "温叙事件五",
             "SpritePath": "Assets/GameMain/Art/Characters/女主/女主01-00.png",
             "Position": 0,
-            "OffsetX": 126.95089721679688,
-            "OffsetY": -447.1893005371094,
+            "OffsetX": 431.35882568359377,
+            "OffsetY": -395.8200988769531,
             "Scale": 3.0,
-            "LastNodeGuid": "对话_68_你深吸一口气，接过钢"
+            "LastNodeGuid": "对话_69_落笔的瞬间，温叙突然"
         },
         {
             "GraphName": "温叙事件五",
@@ -67,10 +58,10 @@
             "GraphName": "温叙事件五",
             "SpritePath": "Assets/GameMain/Art/Characters/温叙/温叙最新.png",
             "Position": 1,
-            "OffsetX": 212.9360809326172,
-            "OffsetY": -552.530029296875,
+            "OffsetX": 176.77760314941407,
+            "OffsetY": -546.6033935546875,
             "Scale": 3.0,
-            "LastNodeGuid": "对话_72_“你拯救了我的过去，"
+            "LastNodeGuid": "对话_69_落笔的瞬间，温叙突然"
         },
         {
             "GraphName": "温叙事件二",
@@ -103,8 +94,8 @@
             "GraphName": "温叙事件四",
             "SpritePath": "Assets/GameMain/Art/Characters/温叙/温叙最新.png",
             "Position": 1,
-            "OffsetX": 18.498655319213868,
-            "OffsetY": -178.35081481933595,
+            "OffsetX": 366.3114013671875,
+            "OffsetY": -562.0123291015625,
             "Scale": 3.0,
             "LastNodeGuid": "对话_71_“是我失态了，抱歉。"
         },
@@ -143,6 +134,87 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_68_你深吸一口气，接过钢"
+        },
+        {
+            "GraphName": "周杉事件一",
+            "SpritePath": "Assets/GameMain/Art/Characters/周杉/周杉00-00.png",
+            "Position": 2,
+            "OffsetX": -431.88604736328127,
+            "OffsetY": -309.00067138671877,
+            "Scale": 1.342095136642456,
+            "LastNodeGuid": "对话_17_老板晚上好，我是时安"
+        },
+        {
+            "GraphName": "周杉事件一",
+            "SpritePath": "Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png",
+            "Position": 1,
+            "OffsetX": 499.29876708984377,
+            "OffsetY": -408.5750732421875,
+            "Scale": 2.299999952316284,
+            "LastNodeGuid": "对话_17_老板晚上好，我是时安"
+        },
+        {
+            "GraphName": "周杉事件一",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主01-01.png",
+            "Position": 0,
+            "OffsetX": 113.96197509765625,
+            "OffsetY": -324.001708984375,
+            "Scale": 3.0,
+            "LastNodeGuid": "对话_17_老板晚上好，我是时安"
+        },
+        {
+            "GraphName": "周杉事件一",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主01-00.png",
+            "Position": 0,
+            "OffsetX": -44.87298583984375,
+            "OffsetY": -367.0546569824219,
+            "Scale": 3.0,
+            "LastNodeGuid": "对话_17_老板晚上好，我是时安"
+        },
+        {
+            "GraphName": "周杉事件一",
+            "SpritePath": "Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png",
+            "Position": 2,
+            "OffsetX": -50.0,
+            "OffsetY": -566.0,
+            "Scale": 3.0,
+            "LastNodeGuid": "对话_56_原来是这样，很高兴能"
+        },
+        {
+            "GraphName": "周杉事件一",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主02-00.png",
+            "Position": 1,
+            "OffsetX": -355.3773498535156,
+            "OffsetY": -395.820068359375,
+            "Scale": 3.0,
+            "LastNodeGuid": "对话_43_打得不错，这钱花得很"
+        },
+        {
+            "GraphName": "周杉事件一",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主02-00.png",
+            "Position": 0,
+            "OffsetX": 124.77044677734375,
+            "OffsetY": -196.5487060546875,
+            "Scale": 2.299999952316284,
+            "LastNodeGuid": "对话_53_所以这笔打赏，是合理"
+        },
+        {
+            "GraphName": "周杉事件二",
+            "SpritePath": "Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png",
+            "Position": 2,
+            "OffsetX": -37.83648681640625,
+            "OffsetY": -461.4942321777344,
+            "Scale": 2.3422467708587648,
+            "LastNodeGuid": "对话_67_“老板晚安，好梦。”"
+        },
+        {
+            "GraphName": "周杉事件二",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主01-00.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_57_“谢谢你刚才的陪伴，"
         }
     ]
 }

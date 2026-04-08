@@ -3313,7 +3313,7 @@ MonoBehaviour:
     ActionType: 0
     Position: 1
     SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9/\u6E29\u53D9\u6700\u65B0.png"
-    OffsetX: 22.55
+    OffsetX: 366.3114
     OffsetY: -552.53
     Scale: 3
   BgmPath: 
