@@ -384,6 +384,7 @@ namespace AVGGame
                 // 获取加载后的剧情状态
                 var playerData = CustomEntry.PlayerData;
                 string currentStory = playerData?.currentStoryGarphName;
+                Log.Info($"[ArchivePanel] 加载后的 currentStory: '{currentStory}'");
 
                 // 关闭存档界面
                 CloseSelf();
@@ -594,6 +595,9 @@ namespace AVGGame
 
             // 获取当前活动的 Procedure
             var currentProcedure = GameEntry.Procedure?.CurrentProcedure as ProcedureGame;
+            Log.Info($"[ArchivePanel] CurrentProcedure: {(currentProcedure != null ? "not null" : "null")}");
+            Log.Info($"[ArchivePanel] m_CurrentStoryToLoad: '{m_CurrentStoryToLoad}'");
+
             if (currentProcedure != null)
             {
                 if (!string.IsNullOrEmpty(m_CurrentStoryToLoad))
@@ -606,6 +610,7 @@ namespace AVGGame
                 {
                     // 没有当前剧情，打开大地图
                     Log.Info("[ArchivePanel] 无当前剧情，打开大地图");
+                    Log.Info($"[ArchiveProcedure] Procedure state: {currentProcedure.Fsm.CurrentStateName}");
                     currentProcedure.OpenMap();
                 }
             }

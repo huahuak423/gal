@@ -175,7 +175,11 @@ namespace AVGGame
         public void OpenMap()
         {
             Debug.Log("[ProcedureGame] 切换到大地图界面");
-            SwitchSubForm(AssetUtility.GetUIFormAsset(UIFormId.Map), this);
+            Debug.Log("[ProcedureGame] 当前 CurrentProcedure 类型: " + this.GetType().Name);
+
+            // 直接使用 Main 层级打开地图，不使用 SwitchSubForm
+            int mapFormId = GameEntry.UI.OpenUIForm(AssetUtility.GetUIFormAsset(UIFormId.Map), "Main", this);
+            Debug.Log($"[ProcedureGame] 打开地图界面，FormId: {mapFormId}");
         }
 
         /// <summary>
