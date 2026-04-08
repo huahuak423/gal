@@ -4,10 +4,10 @@
             "GraphName": "温叙事件一",
             "SpritePath": "Assets/GameMain/Art/Characters/温叙/温叙最新.png",
             "Position": 1,
-            "OffsetX": 25.613895416259767,
-            "OffsetY": -502.55877685546877,
-            "Scale": 3.0,
-            "LastNodeGuid": "对话_36_没有任何话语，只抬眼"
+            "OffsetX": 11.087191581726075,
+            "OffsetY": -399.6953125,
+            "Scale": 2.6507999897003176,
+            "LastNodeGuid": "对话_39_你抬头看他，他正低着"
         },
         {
             "GraphName": "温叙事件一",
@@ -215,6 +215,69 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_57_“谢谢你刚才的陪伴，"
+        },
+        {
+            "GraphName": "周杉事件三",
+            "SpritePath": "Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png",
+            "Position": 2,
+            "OffsetX": 2.09124755859375,
+            "OffsetY": -499.6754455566406,
+            "Scale": 2.212505578994751,
+            "LastNodeGuid": "对话_87_“好。”"
+        },
+        {
+            "GraphName": "周杉事件三",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主01-03.png",
+            "Position": 0,
+            "OffsetX": 69.00942993164063,
+            "OffsetY": -382.5966796875,
+            "Scale": 2.132927894592285,
+            "LastNodeGuid": "对话_16_“没什么特别想聊的，"
+        },
+        {
+            "GraphName": "周杉事件三",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主01-00.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_85_“好好生活，比什么都"
+        },
+        {
+            "GraphName": "周杉事件三",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主01-02.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_47_他好像有点语无伦次，"
+        },
+        {
+            "GraphName": "周杉事件三",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主01-01.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_52_“平时都看什么书？”"
+        },
+        {
+            "GraphName": "周杉事件四",
+            "SpritePath": "Assets/GameMain/Art/Characters/女主/女主02-00.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_38_“可以，刚好可以做一"
+        },
+        {
+            "GraphName": "周杉事件四",
+            "SpritePath": "Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png",
+            "Position": 2,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_31_“这周末，我可以请你"
         }
     ]
 }
