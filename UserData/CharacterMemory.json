@@ -710,6 +710,150 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_63_他沉默了几秒，然后他"
+        },
+        {
+            "GraphName": "陈予宁事件一",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主运动.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_3_你刚结束了五公里的晨"
+        },
+        {
+            "GraphName": "陈予宁事件一",
+            "SpritePath": "Assets/GameMain/Art/Characters/陈予宁/陈予宁01-00.png",
+            "Position": 2,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_56_“好，回见。”"
+        },
+        {
+            "GraphName": "陈予宁事件一",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主运动.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_55_“今天天气不错，你可"
+        },
+        {
+            "GraphName": "陈予宁事件一",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主中国.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_17_“早，陈警官。昨晚我"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Characters/陈予荣/陈予荣01-00.png",
+            "Position": 2,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_67_作为讲求逻辑的人，他"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主没眼看.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_15_“嗯嗯，那您有什么高"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主温和.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_48_“正好我也对结果感到"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主常规.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_29_“但你的推断只是基于"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主01-04.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_67_作为讲求逻辑的人，他"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主01-04.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_69_你点了点头，从店员那"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/家居常规.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_74_“收到，谢谢。我的测"
+        },
+        {
+            "GraphName": "何行舟事件一",
+            "SpritePath": "Assets/GameMain/Art/Characters/何行舟/何行舟02-00.png",
+            "Position": 2,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_36_他转过头，用一种极其"
+        },
+        {
+            "GraphName": "何行舟事件一",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主中国.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_9_他穿着一件质地极好的"
+        },
+        {
+            "GraphName": "何行舟事件一",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主常规.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_26_“打扰一下二位，我刚"
+        },
+        {
+            "GraphName": "何行舟事件一",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主01-04.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_59_“别把你的那套想法套"
+        },
+        {
+            "GraphName": "何行舟事件一",
+            "SpritePath": "Assets/GameMain/Art/Characters/何行舟/何行舟02-00.png",
+            "Position": 1,
+            "OffsetX": 192.37620544433595,
+            "OffsetY": -153.09388732910157,
+            "Scale": 1.3236209154129029,
+            "LastNodeGuid": "对话_52_何行舟猛地一怔。他惯"
         }
     ]
 }
