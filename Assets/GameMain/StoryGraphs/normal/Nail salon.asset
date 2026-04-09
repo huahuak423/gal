@@ -47,7 +47,14 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: "\u8BB8\u6620\u6708"
   DialogText: "\u201C\u5973\u4EBA\uFF01\u54EA\u6015\u5929\u5929\u5728\u5BB6\u526A\u89C6\u9891\uFF0C\u4E5F\u8981\u505A\u6700\u7CBE\u81F4\u7684\u5E55\u540E\u9ED1\u624B\uFF01\u5FEB\u770B\u8FD9\u4E2A\u732B\u773C\u6781\u5149\u8272\uFF0C\u592A\u7EDD\u4E86\uFF01\u201D"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 0
+    Position: 1
+    SpritePath: "Assets/GameMain/Art/New Characters/\u8BB8\u6620\u6708/\u8BB8\u6620\u6708\u5E38\u89C4.png"
+    OffsetX: 0
+    OffsetY: -200
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -321,7 +328,14 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: 
   DialogText: "\u7F8E\u7532\u5E08\u7EC6\u81F4\u5730\u4E3A\u4F60\u4FEE\u526A\u7740\u6307\u7532\uFF0C\u4F60\u548C\u8BB8\u6620\u6708\u4E00\u8FB9\u559D\u7740\u5E97\u91CC\u63D0\u4F9B\u7684\u82B1\u8336\uFF0C\u4E00\u8FB9\u5F00\u542F\u4E86\u6BEB\u65E0\u987E\u5FCC\u7684\u516B\u5366\u6A21\u5F0F"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 1
+    Position: 1
+    SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 0
   BgmPath: 
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u7F8E\u7532\u5E97.png"

@@ -158,7 +158,7 @@ MonoBehaviour:
   CharacterDisplays:
   - CharacterName: 
     ActionType: 1
-    Position: 1
+    Position: 0
     SpritePath: 
     OffsetX: 0
     OffsetY: 0
@@ -669,7 +669,21 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: 
   DialogText: "\u90A3\u70B9\u5934\u7684\u5F27\u5EA6\u4F9D\u7136\u6070\u5230\u597D\u5904\uFF0C\u4EFF\u4F5B\u65E0\u8BBA\u4F60\u7ED9\u51FA\u4EC0\u4E48\u53CD\u5E94\uFF0C\u4ED6\u90FD\u6709\u9884\u6848"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 1
+    Position: 1
+    SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 0
+  - CharacterName: 
+    ActionType: 0
+    Position: 0
+    SpritePath: "Assets/GameMain/Art/New Characters/\u6E29\u53D9/\u6E29\u53D9\u5FAE\u7B11.png"
+    OffsetX: 560
+    OffsetY: -280
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -782,9 +796,9 @@ MonoBehaviour:
     ActionType: 0
     Position: 1
     SpritePath: "Assets/GameMain/Art/Characters/\u5973\u4E3B/\u5973\u4E3B01-00.png"
-    OffsetX: 1.862198
-    OffsetY: -394.13626
-    Scale: 3
+    OffsetX: 22.5
+    OffsetY: -196
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -1174,9 +1188,9 @@ MonoBehaviour:
   - CharacterName: 
     ActionType: 0
     Position: 1
-    SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9/\u6E29\u53D9\u6700\u65B0.png"
-    OffsetX: 18
-    OffsetY: -610
+    SpritePath: "Assets/GameMain/Art/New Characters/\u6E29\u53D9/\u6E29\u53D9\u5E73\u548C.png"
+    OffsetX: 0
+    OffsetY: -522.5382
     Scale: 3
   BgmPath: 
   SePath: 
@@ -1251,7 +1265,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_49_\u50CF\u662F\u88AB\u6293\u5305\u7684\u5FC3\u865A\uFF0C\u53C8"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 21600, y: 0}
+  position: {x: 21592, y: -8}
   ports:
     keys:
     - Entry
@@ -1285,7 +1299,21 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: 
   DialogText: "\u50CF\u662F\u88AB\u6293\u5305\u7684\u5FC3\u865A\uFF0C\u53C8\u50CF\u662F\u4E00\u79CD\u9690\u79D8\u7684\u6EE1\u8DB3\u3002\u4F46\u4ED6\u5F88\u5FEB\u8C03\u6574\u8FC7\u6765\uFF0C\u5F2F\u8D77\u773C\u5C3E\uFF0C\u53C8\u662F\u90A3\u526F\u6E29\u548C\u65E0\u5BB3\u7684\u6A21\u6837"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 1
+    Position: 1
+    SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 0
+  - CharacterName: 
+    ActionType: 0
+    Position: 0
+    SpritePath: "Assets/GameMain/Art/New Characters/\u6E29\u53D9/\u6E29\u53D9\u5FAE\u7B11.png"
+    OffsetX: 560
+    OffsetY: -280
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -1343,10 +1371,10 @@ MonoBehaviour:
   - CharacterName: 
     ActionType: 0
     Position: 1
-    SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9/\u6E29\u53D9\u6700\u65B0.png"
-    OffsetX: -1.2052587
-    OffsetY: -522.5382
-    Scale: 3
+    SpritePath: "Assets/GameMain/Art/New Characters/\u6E29\u53D9/\u6E29\u53D901-02.png"
+    OffsetX: 0
+    OffsetY: -280
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -2000,7 +2028,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: "\u6E29\u53D9"
-  DialogText: "\u201C\u597D\u4E86\u2026\u2026\u201D"
+  DialogText: "\u201C\u597D\u4E86......\u201D"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -2059,10 +2087,10 @@ MonoBehaviour:
   - CharacterName: 
     ActionType: 0
     Position: 1
-    SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9/\u6E29\u53D9\u6700\u65B0.png"
-    OffsetX: -1.2052587
-    OffsetY: -522.5382
-    Scale: 3
+    SpritePath: "Assets/GameMain/Art/New Characters/\u6E29\u53D9/\u6E29\u53D9\u5E73\u548C.png"
+    OffsetX: 0
+    OffsetY: -280
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -2120,9 +2148,9 @@ MonoBehaviour:
   - CharacterName: 
     ActionType: 0
     Position: 1
-    SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9/\u6E29\u53D9\u6700\u65B0.png"
-    OffsetX: 23.214855
-    OffsetY: -599.72546
+    SpritePath: "Assets/GameMain/Art/New Characters/\u6E29\u53D9/\u6E29\u53D9\u5E73\u548C.png"
+    OffsetX: 0
+    OffsetY: -632.8198
     Scale: 3
   BgmPath: 
   SePath: 
@@ -2368,7 +2396,14 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: 
   DialogText: "\u4F60\u5C31\u90A3\u6837\u88AB\u4ED6\u7684\u89C6\u7EBF\u7B3C\u7F69\u7740\uFF0C\u5E26\u7740\u4E00\u79CD\u51E0\u4E4E\u8981\u5C06\u4EBA\u6EBA\u6BD9\u7684\u4E13\u6CE8"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 1
+    Position: 1
+    SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 0
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -2442,7 +2477,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_36_\u6CA1\u6709\u4EFB\u4F55\u8BDD\u8BED\uFF0C\u53EA\u62AC\u773C"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 15750, y: 0}
+  position: {x: 15752, y: -8}
   ports:
     keys:
     - Entry
@@ -2480,9 +2515,9 @@ MonoBehaviour:
   - CharacterName: 
     ActionType: 0
     Position: 1
-    SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9/\u6E29\u53D9\u6700\u65B0.png"
-    OffsetX: 18.159628
-    OffsetY: -610.6195
+    SpritePath: "Assets/GameMain/Art/New Characters/\u6E29\u53D9/\u6E29\u53D9\u5FAE\u7B11.png"
+    OffsetX: 0
+    OffsetY: -522.5382
     Scale: 3
   BgmPath: 
   SePath: 
@@ -2595,8 +2630,8 @@ MonoBehaviour:
   - CharacterName: 
     ActionType: 0
     Position: 1
-    SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9/\u6E29\u53D9\u6700\u65B0.png"
-    OffsetX: -1.2052587
+    SpritePath: "Assets/GameMain/Art/New Characters/\u6E29\u53D9/\u6E29\u53D9\u95ED\u773C.png"
+    OffsetX: 0
     OffsetY: -522.5382
     Scale: 3
   BgmPath: 
@@ -2771,10 +2806,10 @@ MonoBehaviour:
   - CharacterName: 
     ActionType: 0
     Position: 1
-    SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9/\u6E29\u53D9\u6700\u65B0.png"
-    OffsetX: -1.3293369
-    OffsetY: -282.06506
-    Scale: 2.201712
+    SpritePath: "Assets/GameMain/Art/New Characters/\u6E29\u53D9/\u6E29\u53D9\u5E73\u548C.png"
+    OffsetX: 0
+    OffsetY: -280
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -2828,7 +2863,14 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: 
   DialogText: "\u89C1\u4F60\u671B\u8FC7\u6765\uFF0C\u4ED6\u81EA\u7136\u5730\u6536\u655B\u4E86\u773C\u5E95\u7FFB\u6D8C\u7684\u60C5\u7EEA\uFF0C\u90A3\u60C5\u7EEA\u592A\u590D\u6742\uFF0C\u4F60\u6765\u4E0D\u53CA\u8FA8\u8BA4\uFF0C\u5C31\u88AB\u4ED6\u6362\u4E0A\u7684\u90A3\u526F\u6E29\u548C\u65E0\u5BB3\u7684\u795E\u60C5\u53D6\u4EE3"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 0
+    Position: 1
+    SpritePath: "Assets/GameMain/Art/New Characters/\u6E29\u53D9/\u6E29\u53D9\u5FAE\u7B11.png"
+    OffsetX: 0
+    OffsetY: -280
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -2939,7 +2981,7 @@ MonoBehaviour:
   CharacterDisplays:
   - CharacterName: 
     ActionType: 1
-    Position: 1
+    Position: 0
     SpritePath: 
     OffsetX: 0
     OffsetY: 0
@@ -3217,10 +3259,10 @@ MonoBehaviour:
   - CharacterName: 
     ActionType: 0
     Position: 1
-    SpritePath: "Assets/GameMain/Art/Characters/\u6E29\u53D9/\u6E29\u53D9\u6700\u65B0.png"
-    OffsetX: -26.382637
-    OffsetY: -324.09952
-    Scale: 2.3422468
+    SpritePath: "Assets/GameMain/Art/New Characters/\u6E29\u53D9/\u6E29\u53D9\u5FAE\u7B11.png"
+    OffsetX: 0
+    OffsetY: -280
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -3727,7 +3769,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_16_\u5C31\u50CF\u662F\u6709\u4EBA\u9884\u5224\u4E86\u4F60\u7684"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 6750, y: 0}
+  position: {x: 6744, y: 8}
   ports:
     keys:
     - Entry

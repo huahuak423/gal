@@ -261,7 +261,7 @@ MonoBehaviour:
       _dynamic: 0
   Entry: 0
   Exit: 0
-  SpeakerName: "\u5973\u4E3B\u540D"
+  SpeakerName: 
   DialogText: "\u201C\u8C22\u8C22\u6E29\u8001\u5E08\u7684\u4F53\u8C05\uFF0C\u5BA3\u53D1\u7684\u4E8B\u6211\u4F1A\u5C3D\u5FEB\u6574\u7406\u597D\u7EC6\u8282\uFF0C\u5230\u65F6\u5019\u53D1\u7ED9\u4F60\u4E00\u8D77\u5546\u91CF\u3002\u201D"
   CharacterDisplays: []
   BgmPath: 
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_13_\u624B\u673A\u51E0\u4E4E\u540C\u65F6\u9707\u52A8\u4E86\u4E00"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 5400, y: 0}
+  position: {x: 5400, y: 8}
   ports:
     keys:
     - Entry
@@ -976,7 +976,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_12_\u201C\u5973\u58EB\uFF0C\u60A8\u7684\u5916\u5356\u3002\u201D"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 4950, y: 0}
+  position: {x: 4952, y: -8}
   ports:
     keys:
     - Entry
@@ -1010,14 +1010,7 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: "\u5916\u5356\u5C0F\u54E5"
   DialogText: "\u201C\u5973\u58EB\uFF0C\u60A8\u7684\u5916\u5356\u3002\u201D"
-  CharacterDisplays:
-  - CharacterName: 
-    ActionType: 0
-    Position: 0
-    SpritePath: 
-    OffsetX: 0
-    OffsetY: 0
-    Scale: 1
+  CharacterDisplays: []
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -1037,7 +1030,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_19_\u8DB3\u8DB3\u8FC7\u4E86\u4E24\u5206\u949F\uFF0C\u6E29\u53D9"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 8100, y: 0}
+  position: {x: 8104, y: -8}
   ports:
     keys:
     - Entry
@@ -1091,7 +1084,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_7_\u6B64\u523B\u7684\u4F60\uFF0C\u6B63\u7A7F\u7740\u5BBD\u677E"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2700, y: 0}
+  position: {x: 2696, y: -8}
   ports:
     keys:
     - Entry
@@ -1129,10 +1122,10 @@ MonoBehaviour:
   - CharacterName: 
     ActionType: 0
     Position: 1
-    SpritePath: "Assets/GameMain/Art/Characters/\u5973\u4E3B/\u5973\u4E3B02-00.png"
-    OffsetX: 12.10895
-    OffsetY: -453.60126
-    Scale: 3
+    SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u5BB6\u5C45\u67D4\u548C.png"
+    OffsetX: 22.55
+    OffsetY: -196
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -1238,7 +1231,7 @@ MonoBehaviour:
       _dynamic: 0
   Entry: 0
   Exit: 0
-  SpeakerName: "\u6E29\u53D9"
+  SpeakerName: 
   DialogText: "\u201C\u5B66\u59B9\u73B0\u5728\u53EF\u662F\u5927\u7EA2\u4EBA\uFF0C\u53D9\u95FB\u5192\u6627\u6C42\u5E26\u98DE\u3002\u8FD9\u6B21\u65B0\u4E66\u5BA3\u4F20\uFF0C\u8FD8\u8BF7\u4F60\u591A\u591A\u501F\u5149\u3002\u201D"
   CharacterDisplays: []
   BgmPath: 
@@ -1738,7 +1731,7 @@ MonoBehaviour:
       _dynamic: 0
   Entry: 0
   Exit: 0
-  SpeakerName: "\u6E29\u53D9"
+  SpeakerName: 
   DialogText: "\u201C\u597D\uFF0C\u8F9B\u82E6\u4F60\u4E86\u3002\u4E0D\u7BA1\u6709\u4EC0\u4E48\u9700\u6C42\uFF0C\u968F\u65F6\u8DDF\u6211\u8BF4\u3002\u201D"
   CharacterDisplays: []
   BgmPath: 
@@ -2130,7 +2123,7 @@ MonoBehaviour:
       _dynamic: 0
   Entry: 0
   Exit: 0
-  SpeakerName: "\u6E29\u53D9"
+  SpeakerName: 
   DialogText: "\u201C\u4E0D\u8FC7\uFF0C\u8FD9\u5BB6\u5E97\u7684\u86CB\u7CD5\u786E\u5B9E\u5F88\u4E0D\u9519\uFF0C\u6211\u6B63\u597D\u6709\u4ED6\u4EEC\u5BB6\u7684\u4F1A\u5458\uFF0C\u7B49\u65B0\u4E66\u5BA3\u53D1\u7ED3\u675F\uFF0C\u6211\u8BF7\u4F60\u5403\u86CB\u7CD5\u3002\u201D"
   CharacterDisplays: []
   BgmPath: 
@@ -2184,7 +2177,7 @@ MonoBehaviour:
       _dynamic: 0
   Entry: 0
   Exit: 0
-  SpeakerName: "\u5973\u4E3B\u540D"
+  SpeakerName: 
   DialogText: "\u201C\u8FD9\u5BB6\u86CB\u7CD5\u771F\u7684\u597D\u597D\u5403\uFF0C\u90A3\u6211\u5C31\u63D0\u524D\u8C22\u8C22\u6E29\u8001\u5E08\u5566~\u5BA3\u53D1\u7684\u4E8B\u4F60\u653E\u5FC3\uFF0C\u6211\u5DF2\u7ECF\u5728\u6784\u601D\u521D\u6B65\u65B9\u6848\u4E86\uFF0C\u4E00\u5B9A\u4E0D\u8F9C\u8D1F\u60A8\u7684\u4FE1\u4EFB\uFF01\u201D"
   CharacterDisplays: []
   BgmPath: 
@@ -2260,7 +2253,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_22_\u201C\u5B9D\u5B9D\uFF0C\u86CB\u7CD5\u6536\u5230\u4E86\u5417"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 9450, y: 0}
+  position: {x: 9448, y: 8}
   ports:
     keys:
     - Entry
@@ -2292,7 +2285,7 @@ MonoBehaviour:
       _dynamic: 0
   Entry: 0
   Exit: 0
-  SpeakerName: "\u8BB8\u6620\u6708"
+  SpeakerName: 
   DialogText: "\u201C\u5B9D\u5B9D\uFF0C\u86CB\u7CD5\u6536\u5230\u4E86\u5417\uFF1F\u6211\u524D\u51E0\u5929\u63A2\u5E97\u5403\u5230\u7684\uFF0C\u5DE8\u597D\u5403\uFF01\u6B63\u597D\u4ECA\u5929\u53D1\u9879\u76EE\u5956\u91D1\uFF0C\u7ED9\u4F60\u70B9\u4E00\u4E2A\u5C1D\u5C1D~\u5FEB\u5403\u5FEB\u5403\uFF0C\u7ED9\u6211\u53CD\u9988\uFF01\u201D"
   CharacterDisplays: []
   BgmPath: 
@@ -2460,10 +2453,10 @@ MonoBehaviour:
   - CharacterName: 
     ActionType: 0
     Position: 1
-    SpritePath: "Assets/GameMain/Art/Characters/\u5973\u4E3B/\u5973\u4E3B02-00.png"
-    OffsetX: 12
-    OffsetY: -453
-    Scale: 3
+    SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u5BB6\u5C45\u5FAE\u4E0D\u723D.png"
+    OffsetX: 22.5
+    OffsetY: -196
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -2731,7 +2724,7 @@ MonoBehaviour:
       _dynamic: 0
   Entry: 0
   Exit: 0
-  SpeakerName: "\u6E29\u53D9"
+  SpeakerName: 
   DialogText: "\u201C\u62B1\u6B49\uFF0C\u53EF\u8FD9\u4E0D\u662F\u6211\u9001\u7684\u3002\u201D"
   CharacterDisplays: []
   BgmPath: 
@@ -2807,7 +2800,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_27_\u4E3A\u4E86\u7F13\u89E3\u5C34\u5C2C\uFF0C\u4F60\u8D76\u7D27"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 11700, y: 0}
+  position: {x: 11704, y: 8}
   ports:
     keys:
     - Entry
@@ -2893,7 +2886,7 @@ MonoBehaviour:
       _dynamic: 0
   Entry: 0
   Exit: 0
-  SpeakerName: "\u6E29\u53D9"
+  SpeakerName: 
   DialogText: "\u201C\u4E0D\u6025\uFF0C\u6309\u81EA\u5DF1\u7684\u8282\u594F\u6765\u5C31\u597D\u3002\u201D"
   CharacterDisplays: []
   BgmPath: 
@@ -3001,7 +2994,7 @@ MonoBehaviour:
       _dynamic: 0
   Entry: 0
   Exit: 0
-  SpeakerName: "\u6E29\u53D9"
+  SpeakerName: 
   DialogText: "\u201C\u6CA1\u4E8B\u6CA1\u4E8B\u3002\u5973\u751F\u8B66\u60D5\u5FC3\u9AD8\u4E00\u70B9\u662F\u597D\u4E8B\uFF0C\u6362\u4F5C\u4EFB\u4F55\u4EBA\u9047\u5230\u8FD9\u79CD\u5DE7\u5408\u90FD\u4F1A\u591A\u60F3\uFF0C\u4E0D\u7528\u653E\u5728\u5FC3\u4E0A\u3002\u201D"
   CharacterDisplays: []
   BgmPath: 
@@ -3075,7 +3068,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_26_\u201C\u5BF9\u4E0D\u8D77\u5BF9\u4E0D\u8D77\u6E29\u8001\u5E08"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 11250, y: 0}
+  position: {x: 11256, y: -8}
   ports:
     keys:
     - Entry
@@ -3107,7 +3100,7 @@ MonoBehaviour:
       _dynamic: 0
   Entry: 0
   Exit: 0
-  SpeakerName: "\u5973\u4E3B\u540D"
+  SpeakerName: 
   DialogText: "\u201C\u5BF9\u4E0D\u8D77\u5BF9\u4E0D\u8D77\u6E29\u8001\u5E08\uFF0C\u86CB\u7CD5\u662F\u6211\u95FA\u871C\u9001\u7684\uFF0C\u60A8\u7684\u6D88\u606F\u6765\u5F97\u592A\u5DE7\uFF0C\u8BEF\u4F1A\u4E86\u60A8\u771F\u7684\u592A\u62B1\u6B49\u4E86\uFF01\u201D"
   CharacterDisplays: []
   BgmPath: 

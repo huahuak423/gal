@@ -47,7 +47,21 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: 
   DialogText: "\u548C\u95FA\u871C\u8FDB\u884C\u4E86\u4E00\u573A\u6DF1\u5EA6\u7684\u5BA1\u7F8E\u718F\u9676\uFF0C\u4F60\u5BF9\u7F8E\u7684\u611F\u77E5\u529B\u76F4\u7EBF\u4E0A\u5347"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 1
+    Position: 0
+    SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 0
+  - CharacterName: 
+    ActionType: 1
+    Position: 2
+    SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 0
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -155,7 +169,14 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: "\u8BB8\u6620\u6708"
   DialogText: "\u201C\u5929\u54EA\uFF0C\u8FD9\u6253\u5149\uFF01\u5B9D\uFF0C\u4F60\u4E0B\u671F\u7684\u89C6\u9891\u4E5F\u53EF\u4EE5\u8BD5\u8BD5\u8FD9\u79CD\u590D\u53E4\u6C1B\u56F4\u611F\uFF01\u201D"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 0
+    Position: 1
+    SpritePath: "Assets/GameMain/Art/New Characters/\u8BB8\u6620\u6708/\u8BB8\u6620\u6708\u5FAE\u7B11.png"
+    OffsetX: 0
+    OffsetY: -200
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -398,7 +419,28 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: 
   DialogText: "\u6563\u573A\u540E\uFF0C\u4F60\u4EEC\u8DEF\u8FC7\u5F71\u9662\u7684\u843D\u5730\u955C\uFF0C\u4F60\u4E0D\u81EA\u89C9\u5730\u6A21\u4EFF\u8D77\u5973\u4E3B\u89D2\u7684\u59FF\u6001\uFF0C\u60F9\u5F97\u8BB8\u6620\u6708\u8FDE\u8FDE\u7528\u624B\u673A\u4E3A\u4F60\u6293\u62CD"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 1
+    Position: 1
+    SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 0
+  - CharacterName: 
+    ActionType: 0
+    Position: 0
+    SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u5973\u4E3B\u6E29\u548C.png"
+    OffsetX: 250
+    OffsetY: -196
+    Scale: 2.3
+  - CharacterName: 
+    ActionType: 0
+    Position: 2
+    SpritePath: "Assets/GameMain/Art/New Characters/\u8BB8\u6620\u6708/\u8BB8\u6620\u6708\u5FAE\u7B11.png"
+    OffsetX: -250
+    OffsetY: -200
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
