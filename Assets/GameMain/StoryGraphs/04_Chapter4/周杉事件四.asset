@@ -652,7 +652,7 @@ MonoBehaviour:
   - CharacterName: 
     ActionType: 0
     Position: 1
-    SpritePath: "Assets/GameMain/Art/Characters/\u5973\u4E3B/\u5973\u4E3B02-00.png"
+    SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u5BB6\u5C45\u67D4\u548C.png"
     OffsetX: 22.55
     OffsetY: -196
     Scale: 2.3
@@ -1312,7 +1312,7 @@ MonoBehaviour:
   - CharacterName: 
     ActionType: 0
     Position: 1
-    SpritePath: "Assets/GameMain/Art/Characters/\u5973\u4E3B/\u5973\u4E3B02-00.png"
+    SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u5BB6\u5C45\u67D4\u548C.png"
     OffsetX: 22.55
     OffsetY: -196
     Scale: 2.3

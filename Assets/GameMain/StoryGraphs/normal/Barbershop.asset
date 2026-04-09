@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_2_\u8BB8\u6620\u6708\u4E0D\u7531\u5206\u8BF4\uFF0C\u76F4\u63A5"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 450, y: 0}
+  position: {x: 456, y: -8}
   ports:
     keys:
     - Entry
@@ -101,7 +101,21 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: 
   DialogText: "\u8BB8\u6620\u6708\u4E0D\u7531\u5206\u8BF4\uFF0C\u76F4\u63A5\u628A\u4F60\u6309\u5728\u4E86\u5E97\u91CC\u9996\u5E2D\u9020\u578B\u5E08\u7684\u6905\u5B50\u4E0A"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 1
+    Position: 1
+    SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 0
+  - CharacterName: 
+    ActionType: 0
+    Position: 0
+    SpritePath: "Assets/GameMain/Art/New Characters/\u8BB8\u6620\u6708/\u8BB8\u6620\u6708\u5FAE\u7B11.png"
+    OffsetX: 555
+    OffsetY: -200
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -121,7 +135,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_1_\u201C\u4F60\u8FD9\u5934\u53D1\u5929\u5929\u4E00\u4E2A\u6837"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 0, y: 0}
+  position: {x: -8, y: -8}
   ports:
     keys:
     - Entry
@@ -152,7 +166,14 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: "\u8BB8\u6620\u6708"
   DialogText: "\u201C\u4F60\u8FD9\u5934\u53D1\u5929\u5929\u4E00\u4E2A\u6837\uFF0C\u8D76\u7D27\u8DDF\u6211\u6362\u4E2A\u9020\u578B\uFF01\u201D"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 0
+    Position: 1
+    SpritePath: "Assets/GameMain/Art/New Characters/\u8BB8\u6620\u6708/\u8BB8\u6620\u6708\u8BA4\u771F.png"
+    OffsetX: 0
+    OffsetY: -200
+    Scale: 2.3
   BgmPath: 
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u7406\u53D1\u5E97.png"
@@ -206,7 +227,14 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: 
   DialogText: "Tony\u8001\u5E08\u624B\u8D77\u5200\u843D\uFF0C\u4E00\u8FB9\u4E3A\u4F60\u8FDB\u884C\u5934\u76AE\u62A4\u7406\uFF0C\u4E00\u8FB9\u548C\u4F60\u63A2\u8BA8\u7740\u5F53\u4E0B\u6700\u65F6\u5174\u7684\u98CE\u683C\u3002"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 1
+    Position: 0
+    SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 0
   BgmPath: 
   SePath: 
   BackgroundPath: 
