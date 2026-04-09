@@ -66,9 +66,17 @@ namespace AVGGame
         {
             Debug.Log($"[SaveLoadManager] Load and enter game from slot {slotId}");
 
-            // 设置上下文
-            string storyFromSave = GetStoryFromSave(slotId);
-            SaveLoadContext.SetSaveLoadContext(slotId, storyFromSave);
+            // 检查SaveLoadContext是否已经被ArchivePanel设置
+            if (!SaveLoadContext.IsLoadingFromSave)
+            {
+                // 如果没有设置，从存档中读取故事名称
+                string storyFromSave = GetStoryFromSave(slotId);
+                SaveLoadContext.SetSaveLoadContext(slotId, storyFromSave);
+            }
+            else
+            {
+                Debug.Log("[SaveLoadManager] SaveLoadContext already set, using existing data");
+            }
 
             // 等待一帧，确保上下文被设置
             yield return null;

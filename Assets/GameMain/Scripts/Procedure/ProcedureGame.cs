@@ -43,6 +43,50 @@ namespace AVGGame
             m_ProcedureOwner = procedureOwner;
             Debug.Log("[ProcedureGame] 正式进入游戏核心流程！");
 
+            // 检查是否从存档加载
+            if (SaveLoadContext.IsLoadingFromSave)
+            {
+                Debug.Log("[ProcedureGame] 检测到存档加载，准备进入相应剧情或地图");
+
+                var (hasTarget, storyName, eventId) = SaveLoadContext.GetTargetInfo();
+                if (hasTarget)
+                {
+                    if (eventId > 0)
+                    {
+                        Debug.Log($"[ProcedureGame] 直接进入事件: {eventId}");
+                        LoadStory(eventId);
+                    }
+                    else if (!string.IsNullOrEmpty(storyName))
+                    {
+                        // 根据故事名称查找事件ID
+                        int storyEventId = GetEventIdFromStoryName(storyName);
+                        if (storyEventId > 0)
+                        {
+                            Debug.Log($"[ProcedureGame] 根据故事名称进入事件: {storyEventId}");
+                            LoadStory(storyEventId);
+                        }
+                        else
+                        {
+                            Debug.Log("[ProcedureGame] 未能找到对应事件，打开大地图");
+                            OpenMap();
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.Log("[ProcedureGame] 没有找到具体目标，打开大地图");
+                    OpenMap();
+                }
+
+                // 清除上下文（只清除一次）
+                SaveLoadContext.ClearContext();
+            }
+            else
+            {
+                Debug.Log("[ProcedureGame] 新游戏流程，打开大地图");
+                OpenMap();
+            }
+
             //读取事件表成功（失败）回调
             GameEntry.Event.Subscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
             GameEntry.Event.Subscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
@@ -92,6 +136,42 @@ namespace AVGGame
 
             base.OnLeave(procedureOwner, isShutdown);
         }
+
+        #endregion
+
+        #region 私有方法
+
+        /// <summary>
+        /// 根据故事名称获取事件ID
+        /// </summary>
+        private int GetEventIdFromStoryName(string storyName)
+        {
+            if (string.IsNullOrEmpty(storyName))
+                return 0;
+
+            try
+            {
+                if (GameEntry.DataTable.HasDataTable<EventRowData>())
+                {
+                    var eventTable = GameEntry.DataTable.GetDataTable<EventRowData>();
+                    foreach (var eventData in eventTable)
+                    {
+                        if (eventData.Title == storyName || eventData.TargetGraphName == storyName)
+                        {
+                            return eventData.Id;
+                        }
+                    }
+                }
+                Debug.LogWarning($"[ProcedureGame] 未找到匹配的故事: {storyName}");
+                return 0;
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"[ProcedureGame] 根据故事名称查找事件ID失败: {e.Message}");
+                return 0;
+            }
+        }
+
         #endregion
 
         #region 公共方法
