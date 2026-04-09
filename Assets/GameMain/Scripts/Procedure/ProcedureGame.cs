@@ -174,7 +174,7 @@ namespace AVGGame
         /// </summary>
         public void OpenMap()
         {
-            Debug.Log("[ProcedureGame] 切换到大地图界面");
+            // Debug.Log("[ProcedureGame] 切换到大地图界面");
             SwitchSubForm(AssetUtility.GetUIFormAsset(UIFormId.Map), this);
         }
 
@@ -183,7 +183,7 @@ namespace AVGGame
         /// </summary>
         public void OpenMenu()
         {
-            Debug.Log("[ProcedureGame] 打开小菜单界面");
+            // Debug.Log("[ProcedureGame] 打开小菜单界面");
             GameEntry.UI.OpenUIForm(AssetUtility.GetUIFormAsset(UIFormId.Menu), "Popup", this);
         }
 
@@ -392,7 +392,7 @@ namespace AVGGame
         /// </summary>
         public void ReturnToMainMenu()
         {
-            Log.Info("[ProcedureGame] Returning to main menu");
+            Debug.Log("[ProcedureGame] Returning to main menu");
 
             // 保存当前游戏状态
             CustomEntry.PlayerData.SaveOnExit();

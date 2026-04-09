@@ -100,7 +100,7 @@ namespace AVGGame
             m_NpcFavorability.Clear();
             m_OwnedItems.Clear();
 
-            Log.Info($"[PlayerDataComponent] 新周目初始化完成！周目: {m_CurrentRound}, 行动点: {m_CurrentActionPoints}");
+            Debug.Log($"[PlayerDataComponent] 新周目初始化完成！周目: {m_CurrentRound}, 行动点: {m_CurrentActionPoints}");
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace AVGGame
             m_NpcFavorability.Clear();
             m_OwnedItems.Clear();
 
-            Log.Info("[PlayerDataComponent] 游戏已重置！");
+            Debug.Log("[PlayerDataComponent] 游戏已重置！");
         }
 
         #endregion
@@ -144,11 +144,11 @@ namespace AVGGame
                     m_Sanity += value;
                     break;
                 default:
-                    Log.Warning($"[PlayerDataComponent] 未知的属性类型: {type}");
+                    Debug.LogWarning($"[PlayerDataComponent] 未知的属性类型: {type}");
                     return;
             }
 
-            Log.Info($"[PlayerDataComponent] 属性变化: {type} +{value}");
+            Debug.Log($"[PlayerDataComponent] 属性变化: {type} +{value}");
         }
 
         /// <summary>
@@ -178,7 +178,7 @@ namespace AVGGame
         {
             if (m_CurrentActionPoints < amount)
             {
-                Log.Warning($"[PlayerDataComponent] 行动点不足！当前: {m_CurrentActionPoints}, 需要: {amount}");
+                Debug.LogWarning($"[PlayerDataComponent] 行动点不足！当前: {m_CurrentActionPoints}, 需要: {amount}");
                 return false;
             }
 
@@ -190,7 +190,7 @@ namespace AVGGame
                //GameEntry.Event.Fire(this, ActionPointChangedEventArgs.Create(m_CurrentActionPoints));
             }
 
-            Log.Info($"[PlayerDataComponent] 消耗行动点: {amount}, 剩余: {m_CurrentActionPoints}");
+            Debug.Log($"[PlayerDataComponent] 消耗行动点: {amount}, 剩余: {m_CurrentActionPoints}");
             return true;
         }
 
@@ -225,7 +225,7 @@ namespace AVGGame
             }
             m_NpcFavorability[npcId] += value;
 
-            Log.Info($"[PlayerDataComponent] NPC好感度变化: NPC_{npcId} +{value}, 当前: {m_NpcFavorability[npcId]}");
+            Debug.Log($"[PlayerDataComponent] NPC好感度变化: NPC_{npcId} +{value}, 当前: {m_NpcFavorability[npcId]}");
         }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace AVGGame
         {
             if (m_OwnedItems.Add(itemId))
             {
-                Log.Info($"[PlayerDataComponent] 获得物品: {itemId}");
+                Debug.Log($"[PlayerDataComponent] 获得物品: {itemId}");
             }
         }
 
@@ -258,7 +258,7 @@ namespace AVGGame
         {
             if (m_OwnedItems.Remove(itemId))
             {
-                Log.Info($"[PlayerDataComponent] 失去物品: {itemId}");
+                Debug.Log($"[PlayerDataComponent] 失去物品: {itemId}");
                 return true;
             }
             return false;
@@ -308,7 +308,7 @@ namespace AVGGame
         public void MarkEventCompleted(int eventId)
         {
             m_CompletedEvents.Add(eventId);
-            Log.Info($"[PlayerDataComponent] 事件完成: {eventId}");
+            Debug.Log($"[PlayerDataComponent] 事件完成: {eventId}");
         }
 
         /// <summary>
@@ -317,7 +317,7 @@ namespace AVGGame
         public void MarkSpecialEventCompleted(int eventId)
         {
             m_CompletedSpecialEvents.Add(eventId);
-            Log.Info($"[PlayerDataComponent] 特殊事件完成: {eventId}");
+            Debug.Log($"[PlayerDataComponent] 特殊事件完成: {eventId}");
         }
 
         /// <summary>
@@ -334,6 +334,14 @@ namespace AVGGame
         public bool HasCompletedSpecialEvent(int eventId)
         {
             return m_CompletedSpecialEvents.Contains(eventId);
+        }
+
+        /// <summary>
+        /// 获取已完成事件数量（调试用）
+        /// </summary>
+        public int GetCompletedEventsCount()
+        {
+            return m_CompletedEvents.Count;
         }
 
         #endregion
@@ -460,7 +468,7 @@ namespace AVGGame
             // 计算下周目继承加成（可以根据当前周目表现计算）
             CalculateRoundBonus();
 
-            Log.Info($"[PlayerDataComponent] 第 {m_CurrentRound} 周目结束！");
+            Debug.Log($"[PlayerDataComponent] 第 {m_CurrentRound} 周目结束！");
         }
 
         /// <summary>
@@ -471,7 +479,7 @@ namespace AVGGame
             m_CurrentRound++;
             InitializeNewRound();
 
-            Log.Info($"[PlayerDataComponent] 开始第 {m_CurrentRound} 周目！");
+            Debug.Log($"[PlayerDataComponent] 开始第 {m_CurrentRound} 周目！");
         }
 
         /// <summary>
@@ -488,7 +496,7 @@ namespace AVGGame
             BonusInspiration += m_Inspiration / 10;
             BonusSanity += m_Sanity / 10;
 
-            Log.Info($"[PlayerDataComponent] 周目继承加成: 行动点+{1}, 魅力+{m_Charm/10}, 灵感+{m_Inspiration/10}, 理智+{m_Sanity/10}");
+            Debug.Log($"[PlayerDataComponent] 周目继承加成: 行动点+{1}, 魅力+{m_Charm/10}, 灵感+{m_Inspiration/10}, 理智+{m_Sanity/10}");
         }
 
         #endregion
@@ -534,7 +542,10 @@ namespace AVGGame
                 NpcProgress = ConvertNpcProgressToSerializable(),
 
                 // 存档时间
-                SaveTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+                SaveTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+
+                // 当前所处故事
+                CurrentStoryGarphName = currentStoryGarphName
             };
         }
 
@@ -545,42 +556,118 @@ namespace AVGGame
         {
             if (saveData == null)
             {
-                Log.Warning("[PlayerDataComponent] 存档数据为空，无法加载");
+                Debug.LogWarning("[PlayerDataComponent] 存档数据为空，无法加载");
                 return;
             }
 
-            // 玩家属性
-            m_Charm = saveData.Charm;
-            m_Inspiration = saveData.Inspiration;
-            m_Sanity = saveData.Sanity;
+            // 安全加载数据
+            Debug.Log($"[PlayerDataComponent] 开始加载存档数据，版本: {saveData.Version}");
 
-            // 行动点
-            m_CurrentActionPoints = saveData.CurrentActionPoints;
-            m_MaxActionPoints = saveData.MaxActionPoints;
+            // 玩家属性 - 确保在合理范围内
+            m_Charm = Mathf.Max(0, saveData.Charm);
+            m_Inspiration = Mathf.Max(0, saveData.Inspiration);
+            m_Sanity = Mathf.Max(0, saveData.Sanity);
 
-            // 周目
-            m_CurrentRound = saveData.CurrentRound;
-            BonusActionPoints = saveData.BonusActionPoints;
-            BonusCharm = saveData.BonusCharm;
-            BonusInspiration = saveData.BonusInspiration;
-            BonusSanity = saveData.BonusSanity;
+            // 行动点 - 确保合理
+            m_CurrentActionPoints = Mathf.Max(0, saveData.CurrentActionPoints);
+            m_MaxActionPoints = Mathf.Max(1, saveData.MaxActionPoints); // 最小为1
+
+            // 周目 - 确保至少为1
+            m_CurrentRound = Mathf.Max(1, saveData.CurrentRound);
+            BonusActionPoints = Mathf.Max(0, saveData.BonusActionPoints);
+            BonusCharm = Mathf.Max(0, saveData.BonusCharm);
+            BonusInspiration = Mathf.Max(0, saveData.BonusInspiration);
+            BonusSanity = Mathf.Max(0, saveData.BonusSanity);
 
             // NPC好感度
             m_NpcFavorability = saveData.NpcFavorability?.ToDictionary() ?? new Dictionary<int, int>();
+            // 清理无效的NPC ID
+            var validNpcFavorability = new Dictionary<int, int>();
+            foreach (var kvp in m_NpcFavorability)
+            {
+                if (kvp.Key > 0)
+                {
+                    validNpcFavorability[kvp.Key] = Mathf.Max(0, kvp.Value);
+                }
+            }
+            m_NpcFavorability = validNpcFavorability;
 
             // 特殊物品
-            m_OwnedItems = saveData.OwnedItems != null ? new HashSet<int>((IEnumerable<int>)saveData.OwnedItems) : new HashSet<int>();
+            m_OwnedItems = new HashSet<int>();
+            if (saveData.OwnedItems != null)
+            {
+                foreach (int id in saveData.OwnedItems)
+                {
+                    if (id > 0)
+                    {
+                        m_OwnedItems.Add(id);
+                    }
+                }
+            }
 
             // 已完成事件
-            m_CompletedEvents = saveData.CompletedEvents != null ? new HashSet<int>((IEnumerable<int>)saveData.CompletedEvents) : new HashSet<int>();
+            m_CompletedEvents = new HashSet<int>();
+            if (saveData.CompletedEvents != null)
+            {
+                foreach (int id in saveData.CompletedEvents)
+                {
+                    if (id > 0)
+                    {
+                        m_CompletedEvents.Add(id);
+                    }
+                }
+            }
 
             // 已完成特殊事件
-            m_CompletedSpecialEvents = saveData.CompletedSpecialEvents != null ? new HashSet<int>((IEnumerable<int>)saveData.CompletedSpecialEvents) : new HashSet<int>();
+            m_CompletedSpecialEvents = new HashSet<int>();
+            if (saveData.CompletedSpecialEvents != null)
+            {
+                foreach (int id in saveData.CompletedSpecialEvents)
+                {
+                    if (id > 0)
+                    {
+                        m_CompletedSpecialEvents.Add(id);
+                    }
+                }
+            }
 
             // NPC进度
             m_NpcProgress = ConvertSerializableToNpcProgress(saveData.NpcProgress);
+            // 清理无效的NPC进度
+            var validNpcProgress = new Dictionary<int, HashSet<int>>();
+            foreach (var kvp in m_NpcProgress)
+            {
+                if (kvp.Key > 0 && kvp.Value != null)
+                {
+                    var validEvents = new HashSet<int>();
+                    foreach (int eventId in kvp.Value)
+                    {
+                        if (eventId > 0)
+                        {
+                            validEvents.Add(eventId);
+                        }
+                    }
+                    validNpcProgress[kvp.Key] = validEvents;
+                }
+            }
+            m_NpcProgress = validNpcProgress;
 
-            Log.Info($"[PlayerDataComponent] 存档加载完成！周目: {m_CurrentRound}, 行动点: {m_CurrentActionPoints}");
+            // 恢复当前所处故事 - 如果为空则使用默认值
+            currentStoryGarphName = string.IsNullOrEmpty(saveData.CurrentStoryGarphName)
+                ? "DefaultStory"
+                : saveData.CurrentStoryGarphName;
+
+            // 记录加载详情
+            Debug.Log($"[PlayerDataComponent] 存档加载完成！");
+            Debug.Log($"- 周目: {m_CurrentRound}");
+            Debug.Log($"- 行动点: {m_CurrentActionPoints}/{m_MaxActionPoints}");
+            Debug.Log($"- 属性: 魅力={m_Charm}, 灵感={m_Inspiration}, 理智={m_Sanity}");
+            Debug.Log($"- 继承加成: 行动点+{BonusActionPoints}, 魅力+{BonusCharm}, 灵感+{BonusInspiration}, 理智+{BonusSanity}");
+            Debug.Log($"- 已完成事件数: {m_CompletedEvents.Count}");
+            Debug.Log($"- 已完成特殊事件数: {m_CompletedSpecialEvents.Count}");
+            Debug.Log($"- 拥有物品数: {m_OwnedItems.Count}");
+            Debug.Log($"- NPC好感度数: {m_NpcFavorability.Count}");
+            Debug.Log($"- 当前故事: {currentStoryGarphName}");
         }
 
         /// <summary>
@@ -590,7 +677,7 @@ namespace AVGGame
         {
             if (CustomEntry.SaveSystem == null)
             {
-                Log.Warning("[PlayerDataComponent] SaveSystem 未初始化，无法保存");
+                Debug.LogWarning("[PlayerDataComponent] SaveSystem 未初始化，无法保存");
                 return;
             }
 
@@ -598,11 +685,11 @@ namespace AVGGame
 
             if (success)
             {
-                Log.Info($"[PlayerDataComponent] 游戏已保存到槽位 {slotId}");
+                Debug.Log($"[PlayerDataComponent] 游戏已保存到槽位 {slotId}");
             }
             else
             {
-                Log.Warning($"[PlayerDataComponent] 保存失败！槽位: {slotId}");
+                Debug.LogWarning($"[PlayerDataComponent] 保存失败！槽位: {slotId}");
             }
         }
 
@@ -613,7 +700,7 @@ namespace AVGGame
         {
             if (CustomEntry.SaveSystem == null)
             {
-                Log.Warning("[PlayerDataComponent] SaveSystem 未初始化，无法保存");
+                Debug.LogWarning("[PlayerDataComponent] SaveSystem 未初始化，无法保存");
                 return false;
             }
             return CustomEntry.SaveSystem.Save(slotId);
@@ -626,7 +713,7 @@ namespace AVGGame
         {
             if (CustomEntry.SaveSystem == null)
             {
-                Log.Warning("[PlayerDataComponent] SaveSystem 未初始化，无法加载");
+                Debug.LogWarning("[PlayerDataComponent] SaveSystem 未初始化，无法加载");
                 return false;
             }
             return CustomEntry.SaveSystem.Load(slotId);
@@ -679,13 +766,13 @@ namespace AVGGame
         /// </summary>
         public void DebugPrintStatus()
         {
-            Log.Info("=== PlayerDataComponent Status ===");
-            Log.Info($"周目: {m_CurrentRound}");
-            Log.Info($"行动点: {m_CurrentActionPoints}/{m_MaxActionPoints}");
-            Log.Info($"属性: 魅力={m_Charm}, 灵感={m_Inspiration}, 理智={m_Sanity}");
-            Log.Info($"继承加成: 行动点+{BonusActionPoints}, 魅力+{BonusCharm}, 灵感+{BonusInspiration}, 理智+{BonusSanity}");
-            Log.Info($"物品数量: {m_OwnedItems.Count}");
-            Log.Info($"NPC好感度数量: {m_NpcFavorability.Count}");
+            Debug.Log("=== PlayerDataComponent Status ===");
+            Debug.Log($"周目: {m_CurrentRound}");
+            Debug.Log($"行动点: {m_CurrentActionPoints}/{m_MaxActionPoints}");
+            Debug.Log($"属性: 魅力={m_Charm}, 灵感={m_Inspiration}, 理智={m_Sanity}");
+            Debug.Log($"继承加成: 行动点+{BonusActionPoints}, 魅力+{BonusCharm}, 灵感+{BonusInspiration}, 理智+{BonusSanity}");
+            Debug.Log($"物品数量: {m_OwnedItems.Count}");
+            Debug.Log($"NPC好感度数量: {m_NpcFavorability.Count}");
         }
 
         #endregion

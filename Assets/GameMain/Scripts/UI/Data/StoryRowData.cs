@@ -54,10 +54,16 @@ namespace AVGGame
             string[] columnTexts = dataRowString.Split('\t');
 
             // 2. 防御性编程：检查列数是否对得上我们导出的 5 列
-            if (columnTexts.Length != 12)
+            if (columnTexts.Length < 13)
             {
-                Debug.LogError($"解析剧情数据表失败！行文本列数不足: {dataRowString}");
-                return false;
+                Debug.LogWarning($"[StoryRowData] 行文本列数不足13列，当前只有{columnTexts.Length}列，补空列");
+                // 补足空列，防止后续访问越界
+                string[] tempArray = new string[13];
+                for (int i = 0; i < columnTexts.Length; i++)
+                {
+                    tempArray[i] = columnTexts[i];
+                }
+                columnTexts = tempArray;
             }
 
             // 3. 依次把切割出来的文本， 转换类型并赋值给我们的变量

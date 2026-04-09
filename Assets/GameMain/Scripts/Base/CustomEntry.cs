@@ -61,18 +61,18 @@ namespace AVGGame
         {
             if (root == null)
             {
-                Log.Error("[CustomEntry] Root gameObject is null!");
+                Debug.LogError("[CustomEntry] Root gameObject is null!");
                 return;
             }
 
             if (IsInitialized)
             {
-                Log.Warning("[CustomEntry] Already initialized!");
+                Debug.LogWarning("[CustomEntry] Already initialized!");
                 return;
             }
 
             s_RootObject = root;
-            Log.Info("[CustomEntry] Initializing custom components...");
+            Debug.Log("[CustomEntry] Initializing custom components...");
 
             // ========================================
             // 在这里添加你的自定义组件
@@ -81,12 +81,12 @@ namespace AVGGame
             SaveSystem = AddCustomComponent<SaveSystem>();
 
             IsInitialized = true;
-            Log.Info($"[CustomEntry] Custom components initialized! Count: {s_CustomComponents.Count}");
+            Debug.Log($"[CustomEntry] Custom components initialized! Count: {s_CustomComponents.Count}");
         }
 
         public static void Shutdown()
         {
-            Log.Info("[CustomEntry] Shutting down...");
+            Debug.Log("[CustomEntry] Shutting down...");
 
             // 反向清理
             for (int i = s_CustomComponentList.Count - 1; i >= 0; i--)
@@ -108,7 +108,7 @@ namespace AVGGame
 
             IsInitialized = false;
 
-            Log.Info("[CustomEntry] Shutdown complete.");
+            Debug.Log("[CustomEntry] Shutdown complete.");
         }
 
         #endregion
@@ -120,14 +120,14 @@ namespace AVGGame
             var targetRoot = root ?? s_RootObject;
             if (targetRoot == null)
             {
-                Log.Error("[CustomEntry] Root gameObject is null!");
+                Debug.LogError("[CustomEntry] Root gameObject is null!");
                 return null;
             }
 
             var type = typeof(T);
             if (s_CustomComponents.ContainsKey(type))
             {
-                Log.Warning($"[CustomEntry] Component {type.Name} already exists!");
+                Debug.LogWarning($"[CustomEntry] Component {type.Name} already exists!");
                 return GetCustomComponent<T>();
             }
 
@@ -135,7 +135,7 @@ namespace AVGGame
             s_CustomComponents[type] = component;
             s_CustomComponentList.Add(component);
 
-            Log.Info($"[CustomEntry] Added: {type.Name}");
+            Debug.Log($"[CustomEntry] Added: {type.Name}");
             return component;
         }
 
@@ -167,7 +167,7 @@ namespace AVGGame
                     Object.Destroy(component);
                 }
 
-                Log.Info($"[CustomEntry] Removed: {type.Name}");
+                Debug.Log($"[CustomEntry] Removed: {type.Name}");
                 return true;
             }
             return false;
@@ -184,14 +184,14 @@ namespace AVGGame
 
         public static void LogComponentsStatus()
         {
-            Log.Info("=== Custom Components ===");
-            Log.Info($"Total: {s_CustomComponents.Count}");
+            Debug.Log("=== Custom Components ===");
+            Debug.Log($"Total: {s_CustomComponents.Count}");
 
             int index = 1;
             foreach (var kvp in s_CustomComponents)
             {
                 string status = kvp.Value != null ? "OK" : "NULL";
-                Log.Info($"  [{index}] {kvp.Key.Name}: {status}");
+                Debug.Log($"  [{index}] {kvp.Key.Name}: {status}");
                 index++;
             }
         }
