@@ -1,0 +1,113 @@
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+##int	int	int	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+10000	10001	0		周六上午十点，游乐园门口人声鼎沸								Assets/GameMain/Art/Backgrounds/游乐园.png
+10001	10002	0		早晨的阳光明媚得有些晃眼，你眯着眼睛看了一眼天空，万里无云，是个好天气								
+10002	10003	0		你拎着装着拍摄设备的托特包，沉甸甸的，单肩背着有点勒								
+10003	10004	0		你走到约定的喷泉广场，视线在人群中扫了一圈								
+10004	10005	0		然后，你的视线自动锁定了一个挺拔的身影，那是一个穿着干净白 T 恤和浅色水洗牛仔裤的年轻男生								
+10005	10006	0		他正低头看着手机里的地图导航，手指在屏幕上划来划去，像是在确认路线								
+10006	10007	0		或许是坐了几个小时的大巴，他的眉宇间带着一丝不易察觉的倦色								
+10007	10008	0		眼底有一层淡淡的青黑，嘴唇的颜色也比正常人淡一些，但他的脊背却挺得笔直								
+10008	10009	0		似乎是察觉到了你的注视，他抬起头								
+10009	10010	0		那双清澈的眼眸在人群中精准地捕捉到了你，就像是在一个满是噪点的画面里，突然锁定了焦点								
+10010	10011	0		原本因为疲惫而微微抿起的唇角，瞬间扬起了一个温和却克制的弧度								
+10011	10012	0	周杉	“老板，这里。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉常规.png","OffsetX":0.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10012	10013	0		他快步走到你面前，脚步很快，但不会让你觉得急躁	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10013	10014	0		那是一个等了很久的人，终于等到的时候，不自觉地加快的步频								
+10014	10015	0		他自然地伸出手，接过了你手里沉甸甸的设备包，动作妥帖得仿佛你们已经认识了很久								
+10015	10016	0	周杉	“初次见面，我是周杉，也是…… 你的时安。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉常规.png","OffsetX":22.5,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10016	10017	0		他说 “你的时安” 的时候，声音轻了一点。像是犹豫了一下要不要加上 “你的”，但最终还是说了	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10017	10018	0		他的声音在现实中听起来比隔着网线时少了几分刻意打磨的失真感，多了一丝属于年轻人的清朗								
+10018	10019	0		这种阳光的外表，与你脑海中那个深夜里成熟克制的嗓音，形成了极具张力的反差								
+10019	10020	0		你突然明白了一件事，他在网上的那种成熟，不是天生的，是练出来的								
+10020	10021	0		是在无数个深夜里，对着屏幕，一个字一个字地调整语气、控制情绪、把自己打磨成别人想要的样子								
+10021	10022	0		而此刻站在你面前的这个人，才是真正的他	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉常规.png","OffsetX":22.5,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10022	10023	0		这一天，他如约履行了苦力的职责，展现出了极高的社交素养和观察力	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10023	10024	0		不仅熟练地为你开路，在人群中侧着身子帮你挡住拥挤的人流；还能在你举起相机时，默契地举起反光板，角度调整得刚刚好								
+10024	10025	0		他甚至会在你还没开口的时候，就提前买好饮料，拧开盖子，递到你面前								
+10025	10026	0		但他不再是那个情绪稳定的完美陪玩，当过山车猛地俯冲时，你会看到他下意识握紧安全压杆，嘴抿成一条直线								
+10026	10027	0		但他没有叫出来，只是等那一阵失重感过去，对你笑着说 “有点刺激”								
+10027	10028	0		当他吃到网红摊位上味道不错的海盐冰淇淋时，眼底会流露出真实的满足感								
+10028	10029	0		这种充满生命力的鲜活感，让习惯了做观察者的你，也不自觉地卸下了防备								
+10029	10030	0		你发现，和他呆在一起的时候，你不需要想太多								
+10030	10031	0		他会在你犹豫的时候给出建议，在你累了的时候找到长椅，在你举起相机的时候默默退到一边								
+10031	10032	0		他不会问 “你在拍什么”“为什么要拍这个”，他只是给你空间，让你做你想做的事								
+10032	10033	0		这是一种很奇怪的默契，你们认识的时间不长，但相处起来，像是已经磨合了很久								
+10033	10034	0		夕阳落下时，素材已经录制得差不多了								
+10034	10035	0		作为游玩的最后一站，你们坐上了游乐园的摩天轮								
+10035	10036	0		轿厢不大，两个人面对面坐着，膝盖几乎要碰到一起								
+10036	10037	0		随着轿厢缓缓升空，游乐园的喧嚣被渐渐远离								
+10037	10038	0		那些尖叫声、音乐声、广播声，都变成了模糊的背景音，越来越远，越来越轻								
+10038	10039	0		夕阳的余晖透过玻璃洒进轿厢，为他的侧脸镀上了一层温柔而深邃的金边								
+10039	10040	0		他的睫毛很长，在脸颊上投下一小片阴影。他看着窗外逐渐缩小的建筑，神情很安静，安静得让你觉得他此刻在想很多事								
+10040	10041	0		他转过头看着你，眼里倒映着细碎的光								
+10041	10042	0	周杉	“其实从小到大，都没人带我来过游乐园。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉闭眼.png","OffsetX":0.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10042	10043	0		这是一个引子，你看着他，静静地听	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10043	10044	0		他讲了很多他的过去，像是要把自己完全展示给你看								
+10044	10045	0		他的眼里不再有雇佣关系的讨好，只有成年人之间率真且坦诚的直白，他微微倾身								
+10045	10046	0		距离拉近的时候，你能闻到他身上那股干净的、属于秋日草木的清冽气息								
+10046	10047	0	周杉	“我知道你很成熟、很强大，不需要依赖任何人。我没资格说保护你这种不自量力的大话……”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉常规.png","OffsetX":0.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10047	10048	0		他的声音放得很慢，像是在斟酌每一个字的分量	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10048	10049	0	周杉	“但是，我想试着跨出那条边界。我想成为你在这个世界上，可以偶尔卸下防备的、能随时依靠的底牌。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉常规.png","OffsetX":0.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10049	10050	0		摩天轮升到了最高点，整个城市的轮廓在你脚下展开，夕阳把一切都染成了金红色	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10050	10109	0		你看着他，他的眼睛里倒映着夕阳的光，还有你的影子	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉常规.png","OffsetX":-280.4781188964844,"OffsetY":-330.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":300.43743896484377,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10051	10052	0		他还是把藏在心底的话说出来了，对此你并不感到意外	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉常规.png","OffsetX":22.5,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10052	10053	0		他的表情很认真，认真到你能看见他下颌线因为紧张而微微发紧								
+10053	10054	0		但你并不觉得那是可以被称为 “喜欢” 的感情，他对你或许只是一种依赖，而这种依赖在见到你之后落到了实处	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10054	10055	0		虽然被他的真诚打动，但理智依然牢牢占据着上风								
+10055	10056	0		虚拟的陪伴很完美，但现实的羁绊太沉重，更何况现实中还有诸多要考虑的因素								
+10056	10057	0	女主名	“你还年轻，可能是刺激项目带来的吊桥效应，让你错把乱了拍子的心跳当成了心动。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主闭眼.png","OffsetX":300.43743896484377,"OffsetY":-195.244140625,"Scale":2.299999952316284}]}							
+10057	10058	0		你故意用了吊桥效应这个词，一个心理学名词，足够冷静理性，足够把这段对话拉回到分析的层面	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10058	10059	0	女主名	“虚拟和现实是两回事，我们还是做朋友吧。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":300.43743896484377,"OffsetY":-195.244140625,"Scale":2.299999952316284}]}							
+10059	10060	0		说到朋友二字的时候，你特意把重音放在了后面，这是你能给的最大限度	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10060	10061	0		他的眼睛暗了一下，像是一盏灯被轻轻关上。他垂下眼眸，睫毛在脸颊上投下一片阴影	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉常规.png","OffsetX":-280.4781188964844,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10061	10062	0		他沉默了几秒，然后他抬起头，对你笑了笑	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉微笑.png","OffsetX":-280.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10062	10063	0		那个笑容里没有委屈，没有不甘，只有一种克制的、不想让你为难的温柔								
+10063	10064	0	周杉	“对不起，是我冒昧了。既然是你的决定，我接受。能以朋友的身份陪着你，我已经很知足了。”								
+10064	10065	0		摩天轮开始下降。城市的轮廓从眼前慢慢滑过，夕阳的光线变成了更深的橘红色	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10065	10066	0		他站起来，帮你拿起设备包，动作还是那么妥帖，还是那么自然								
+10066	10067	0	周杉	“天黑了，你回家路上千万当心。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉常规.png","OffsetX":-280.4781188964844,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10067	10068	0		你们在游乐园门口分道扬镳，夜风带着一丝凉意掠过，吹起你的头发	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10068	10069	0		你回头看了一眼，他站在原地，安静地望着你的背影								
+10069	10070	0		没有追上来。没有再多说一句打扰的话								
+10070	10071	0		那份被你推开的心意，他妥帖收好，没有半分怨怼，只剩无声的体谅								
+10071	10072	0		你转过身，继续往前走								
+10072	10073	0		你压下心底片刻的酸涩，那酸涩来得莫名其妙，你甚至分不清是什么情感								
+10073	10074	0		但你更清楚，理智的拒绝才是对两个人最负责的答案								
+10074	0	0		有些心动适合停留在屏幕那头，有些陪伴，止步于朋友才最长久								
+10075	10076	0		你看着他因为紧张而微微发紧的下颌线，以及那双执着专注的眼睛	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10076	10077	0		他对你的情感很微妙特别，你们的接触不多不少，没有夸张到一见钟情，也没有长久到细水长流	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10077	10078	0		但是相处时的舒适合拍，确实也让你重新审视起你们之间的关系，你似乎也并不排斥生活中多一个合拍的搭档								
+10078	10079	0		面对这份赤诚直白，你决定允许自己感性一次								
+10079	10080	0	女主名	“想要成为我的底牌，门槛可是很高的。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主温和.png","OffsetX":300.43743896484377,"OffsetY":-195.244140625,"Scale":2.299999952316284}]}							
+10080	10081	0		你故意停顿了一下，语气拖长	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10081	10082	0		肉眼可见地，那双原本充满希冀的清澈眼眸，因为你这句看似拒绝的话，瞬间黯淡了	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉常规.png","OffsetX":-280.4781188964844,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10082	10083	0		他的瞳孔微微收缩，连脊背都微微僵硬，像是一棵被风吹弯了的树，在等一个宣判								
+10083	10084	0		看到他的沮丧，你才把后半句说完	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10084	10085	0	女主名	“但…… 试试看吧，看看真实的你，能不能接得住我。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主温和.png","OffsetX":300.43743896484377,"OffsetY":-195.244140625,"Scale":2.299999952316284}]}							
+10085	10086	0		话音刚落，他的眼底瞬间绽放出难以置信的光芒	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10086	10087	0		那光芒太亮了，亮得盖住了夕阳								
+10087	10088	0		他张了张嘴，像是想说什么，但喉咙像是被什么堵住，他的呼吸停滞了一瞬，你看见他的胸口起伏了一下，然后停住了								
+10088	10089	0		他没有做出任何逾矩的动作，没有扑过来，没有激动地抓住你的手								
+10089	10090	0		他只是极其郑重地伸出手，将你轻轻拥入怀中								
+10090	10091	0		那个拥抱很轻，轻到你能感觉到他在控制自己的力道。他浑身都在发抖，但他的手臂只是松松地环着你，像捧着一件易碎品								
+10091	10092	0		不带任何情欲，却充满了一种令人心悸的坚定								
+10092	10093	0		然后他的声音从你头顶传来，沙哑的，带着一丝颤抖								
+10093	10094	0	周杉	“谢谢……谢谢。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉闭眼.png","OffsetX":-280.4781188964844,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10094	10095	0		他只说了这两个字，但这两个字里，藏了他过去二十三年所有的委屈、孤独和不被看见	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10095	10096	0		摩天轮开始下降，城市的灯光一盏一盏地亮起来，像地上的星星								
+10096	10097	0		他松开你的时候，耳尖红了一片。他别过头，假装看窗外的风景，但玻璃上倒映出的他的脸，嘴角是弯着的	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉微笑.png","OffsetX":-280.4781188964844,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10097	10098	0		从摩天轮上下来的时候天已经擦黑，时间不早了，你催促他早些回学校	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10098	10099	0		他却执意要把你先送回家，美其名曰太晚了一个人不安全								
+10099	10100	0		你哭笑不得，这么多年来你一直如此，但如今不再是一个人，也就没有拂了他的意								
+10100	10101	0		电梯门关上的那一刻，你的手机震了一下。你低头一看，是他的消息								
+10101	10102	0		“今天是我这辈子最开心的一天。”								
+10102	10103	0		你盯着那行字看了几秒，然后随手回了几个字								
+10103	10104	0		“明天会更开心。”								
+10104	10105	0		发出去之后，你觉得自己好像说了什么了不得的话，想撤回但已经来不及了								
+10105	10106	0		“那我可以期待一下明天吗？”								
+10106	10107	0	女主名	“嗯。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主闭眼.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10107	10108	0		你把手机息屏放进口袋，窗外城市的灯火一盏一盏地亮着	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10108	0	0		你靠着窗，看着远处的霓虹，觉得今晚的夜色，格外温柔								
+10109	0	1				{"Choices":[{"ChoiceText":"拒绝，止步友情 ","NextId":10051,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":10,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":10,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":5,"ItemId":""}]},{"ChoiceText":"接受，关系升华 ","NextId":10075,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":25,"ItemId":""},{"Type":2,"AttributeType":0,"NpcId":"","Value":0,"ItemId":"0303"}]}]}						

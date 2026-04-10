@@ -1,0 +1,11 @@
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+##int	int	int	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+10000	10001	0		因为最近熬夜太多有些心悸，你挂了市中心医院的常规体检号								Assets/GameMain/Art/Backgrounds/医院.png
+10001	10002	0		坐在急诊大厅的金属长椅上，消毒水的气味无孔不入								
+10002	10003	0		面前人来人往，你看到焦急等待家属的病患、冷静下达医嘱的医生，还有因无力承担医药费而在角落默默流泪的人								
+10003	10004	0		这里是离生死最近的地方，所有的伪装都被撕碎，只剩下最极致的脆弱与最残酷的现实								
+10004	10005	0		你冷静地观察着这一切，人类的悲欢虽然并不相通，但这份沉甸甸的真实感，却让你的内心变得更加坚韧								
+10005	10006	0		直面了生命的脆弱，你的内心筑起了一道防线								
+10006	10007	0		【系统提示】灵感值 + 2，理智值 + 10								
+10007	0	3						{"RewardTitle":"","Rewards":[{"Type":0,"AttributeType":2,"NpcId":"","Value":2,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":10,"ItemId":""}]}				

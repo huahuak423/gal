@@ -6,6 +6,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 using UnityGameFramework.Runtime;
 using AVGGame;
 
@@ -59,6 +60,7 @@ namespace AVGGame
         private bool m_IsFromGameMenu = false;           // 是否从游戏菜单（MenuPanel）进入
         private ProcedureGame m_ProcedureGame = null;     // 游戏流程引用
         private string m_CurrentStoryToLoad = string.Empty; // 要加载的故事名称
+        private int m_CurrentLoadSlot = -1;              // 当前加载的存档槽位
 
         #endregion
 
@@ -346,6 +348,7 @@ namespace AVGGame
         private void OnLoadSlotSelected(int slotId)
         {
             // Debug.Log($"[ArchivePanel] Loading from slot {slotId}");
+            m_CurrentLoadSlot = slotId; // 保存当前加载的槽位
 
             // 显示加载提示
             ShowMessage("正在读取存档...");
@@ -384,11 +387,25 @@ namespace AVGGame
                 string currentStory = playerData?.currentStoryGarphName;
                 // Debug.Log($"[ArchivePanel] 加载后的 currentStory: '{currentStory}'");
 
+                // 设置SaveLoadContext - 这是为了在流程切换时保持数据
+                SaveLoadContext.SetSaveLoadContext(slotId, currentStory);
+
+                // 等待一帧，确保Context被设置
+                yield return null;
+
+                // 使用SaveLoadManager处理流程切换（在关闭UI之前调用）
+                var manager = SaveLoadManager.Instance;
+                if (manager != null)
+                {
+                    manager.StartCoroutine(manager.LoadAndEnterGame(slotId));
+                }
+                else
+                {
+                    Debug.LogError("[ArchivePanel] SaveLoadManager instance is null!");
+                }
+
                 // 关闭存档界面
                 CloseSelf();
-
-                // 延迟跳转，确保UI关闭完成
-                DelayAndLoadGame(currentStory);
             }
             else
             {
@@ -566,55 +583,10 @@ namespace AVGGame
         /// <summary>
         /// 延迟后加载游戏（用于加载成功后）
         /// </summary>
-        private void DelayAndLoadGame(string currentStory)
-        {
-            // 保存要加载的故事名称
-            m_CurrentStoryToLoad = currentStory;
-
-            // 检查游戏对象是否仍然 active
-            if (!gameObject.activeInHierarchy)
-            {
-                Debug.LogWarning("[ArchivePanel] Game object is inactive, cannot load game");
-                return;
-            }
-
-            // 使用 Unity 的 Invoke 来延迟执行，避免协程问题
-            Invoke(nameof(LoadGameInternal), 0.5f);
-        }
-
         private void LoadGameInternal()
         {
-            // 再次检查，因为可能在等待期间游戏对象被销毁
-            if (!gameObject.activeInHierarchy)
-            {
-                Debug.LogWarning("[ArchivePanel] Game object is inactive when trying to load game");
-                return;
-            }
-
-            // 获取当前活动的 Procedure
-            var currentProcedure = GameEntry.Procedure?.CurrentProcedure as ProcedureGame;
-            Debug.Log($"[ArchivePanel] CurrentProcedure: {(currentProcedure != null ? "not null" : "null")}");
-            Debug.Log($"[ArchivePanel] m_CurrentStoryToLoad: '{m_CurrentStoryToLoad}'");
-
-            if (currentProcedure != null)
-            {
-                if (!string.IsNullOrEmpty(m_CurrentStoryToLoad))
-                {
-                    // 有当前剧情，直接加载剧情
-                    // Debug.Log($"[ArchivePanel] 加载当前剧情: {m_CurrentStoryToLoad}");
-                    currentProcedure.LoadStory(GetEventIdFromStoryName(m_CurrentStoryToLoad));
-                }
-                else
-                {
-                    // 没有当前剧情，打开大地图
-                    // Debug.Log("[ArchivePanel] 无当前剧情，打开大地图");
-                    currentProcedure.OpenMap();
-                }
-            }
-            else
-            {
-                Debug.LogWarning("[ArchivePanel] CurrentProcedure is null, cannot load game");
-            }
+            // 这个方法已经不再使用，被 SaveLoadManager 替代
+            Debug.LogWarning("[ArchivePanel] LoadGameInternal is deprecated, using SaveLoadManager instead");
         }
 
         /// <summary>

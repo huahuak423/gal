@@ -1,0 +1,58 @@
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+##int	int	int	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+10000	10001	0		清晨，市郊的湿地公园笼罩在一层薄薄的晨雾中，空气沁着草木的清润，带着微凉的湿意								Assets/GameMain/Art/Backgrounds/公园/公园.png
+10001	10002	0		湖面上浮着淡淡的白气，几只白鹭在不远处的水草丛中踱步，姿态闲适								
+10002	10003	0		你刚结束了五公里的晨跑，正一边用毛巾擦着颈间的细汗，一边慢条斯理地往公园门口走去	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主运动.png","OffsetX":22.5,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10003	10004	0		身体机能的维护很重要，规律的运动能让你保持头脑清醒，也能给那些在电脑前久坐僵硬的肌肉一个喘息的机会	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10004	10005	0		就在你走到广场附近时，视线自然地落在了那里站着的男人身上								
+10005	10006	0		他穿着一套黑白配色的羽毛球服，袖口和领口处有汗渍洇湿的痕迹，头发微微湿润，像是刚结束了一场高强度的对决	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/陈予宁/陈予宁01-00.png","OffsetX":-100.0,"OffsetY":-350.0,"Scale":2.299999952316284}]}							
+10006	10007	0		此刻，他正微微仰着头喝水。修长有力的脖颈随着吞咽的动作上下滚动，顺着利落的下颌线往下，是他裸露在外的小臂	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10007	10008	0		那是一双极具力量感的手臂，常年挥拍击球让他的小臂肌肉线条呈现出一种极其紧实、漂亮却不夸张的勃发状态								
+10008	10009	0		他的长相极其正派，眉骨料峭，五官深邃，透着一股不容侵犯的凛然正气								
+10009	10010	0		即便只是站在那里喝水，脊背也挺得笔直，像一棵扎根极深的松树								
+10010	10011	0		你认识他，或者说，你认识这张脸。他是住在你隔壁公寓的那对双胞胎兄弟之一								
+10011	10012	0		平时出门或在电梯里偶尔会碰见，但你们的关系仅仅维持在点头之交								
+10012	10013	0		就在你路过他面前时，原本正在喝水的男人停下了动作。他拧紧矿泉水瓶盖，视线落在了你的脸上								
+10013	10014	0	陈予宁	“早，昨晚十二点二十三分，我家人去走廊外接了个电话，声音有些吵。如果打扰到了你休息，我代他向你道个歉。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/陈予宁/陈予宁01-00.png","OffsetX":-100.0,"OffsetY":-350.0,"Scale":2.299999952316284}]}							
+10014	10015	0		他的声音低沉醇厚，措辞严密，仿佛每一个字都经过了斟酌	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10015	10016	0		你停下脚步，用毛巾随意地擦了擦额头，目光迎上他								
+10016	10017	0	女主名	“早，陈警官。昨晚我带着降噪耳机在剪视频，并没有被吵到。不过，你其实没必要替你的家人道歉。你是你，他是他。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主运动.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10017	10018	0		你说最后那句话的时候，语气很轻，但你能看到他的睫毛微微颤动了一下	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10018	10019	0		陈予宁那双总是带着审视的眼睛，在听到 “陈警官” 时，眼底飞快地划过一丝微讶的光芒								
+10019	10020	0	陈予宁	“你怎么知道我是陈警官？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/陈予宁/陈予宁01-00.png","OffsetX":-100.0,"OffsetY":-350.0,"Scale":2.299999952316284}]}							
+10020	10021	0		他顿了顿，声音里藏着一抹他自己都没察觉到的、隐秘的期冀	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10021	10022	0	陈予宁	“在这栋公寓里，不，哪怕是我们的亲戚，几乎所有人都会把我和他弄混。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/陈予宁/陈予宁01-00.png","OffsetX":-100.0,"OffsetY":-350.0,"Scale":2.299999952316284}]}							
+10022	10023	0		你看着他，心底泛起一丝明悟。对自我身份的敏感，这大抵是双生子的通病	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主运动.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10023	10024	0		人们总是热衷于将双胞胎视作一个奇妙的整体，赋予他们相同的装扮、平分的关爱，甚至连称呼都要捆绑在一起	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10024	10025	0		却鲜少有人意识到，在这种绝对的端水哲学下，作为独立个体的 “自我” 正在被不断模糊与剥夺								
+10025	10054	0		他们或许一直都在渴望着能有一双眼睛，剥开那层一模一样的皮囊，准确无误地喊出只属于他们自己的名字								
+10026	10027	0		在这个世界上，每个人都渴望被当作独一无二的个体来对待，你并不介意给予这位严谨的邻居一点小小的心理慰藉								
+10027	10028	0		不是施舍，而是一种对等的好奇								
+10028	10029	0	女主名	“这并不难区分。即便拥有相同的基因编码，灵魂的质感也是完全不同的。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主运动.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10029	10030	0	女主名	“你的兄弟面对生人时总带着木讷与疏离，看人像是在扫视图纸，而你——”								
+10030	10031	0		你的目光从他紧绷的手臂肌肉，扫到他明亮的双眼	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/陈予宁/陈予宁01-00.png","OffsetX":-100.0,"OffsetY":-350.0,"Scale":2.299999952316284}]}							
+10031	10032	0	女主名	“你的眼神里带着长年监管审查留下的戒备，像一把随时准备丈量刻度的标尺。”	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10032	10033	0		他的喉结微微滚动了一下，从小到大，他听过无数次 “你们兄弟俩真是一模一样” 的评价，连他的父母都在极力维持这种平衡	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10033	10034	0		原来，在真正用心观察的人眼里，能这么容易就将他们区分开								
+10034	10035	0	陈予宁	“原来是这样……你的观察很细致。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/陈予宁/陈予宁01-00.png","OffsetX":-100.0,"OffsetY":-350.0,"Scale":2.299999952316284}]}							
+10035	10036	0		他的声音比刚才低了一些，像是在消化某种迟来的确认。他的目光在你脸上停留了片刻，然后移开，落在你身后的晨雾里	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10036	10037	0	女主名	“多谢夸奖，不过是一些个人职业素养而已。对了，你平时经常来这里打球吗？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主运动.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10037	10038	0		你将话题引向了日常的闲聊，缓解了过于深入的剖析带来的局促。他显然也察觉到了你的体贴，眼底的光柔和了几分	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10038	10039	0	陈予宁	“嗯，如果周末不用加班，通常会在这里打两个小时，保持手感。你也喜欢打球吗？或许下次可以一起。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/陈予宁/陈予宁01-00.png","OffsetX":-100.0,"OffsetY":-350.0,"Scale":2.299999952316284}]}							
+10039	10040	0	女主名	“有机会的话可以，不过最近都在赶稿，包括今天也是。那我先走了，陈警官，回见。”	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主运动.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10040	10041	0	陈予宁	“回见，路上小心。”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/陈予宁/陈予宁01-00.png","OffsetX":-100.0,"OffsetY":-350.0,"Scale":2.299999952316284}]}							
+10041	0	0		他微微点头，语气里少了几分最初的拘谨，多了一丝属于邻里之间的熟稔	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10042	10043	0		面对他略带好奇的神色，你斟酌了一下用词。常年深耕社会观察，让你能轻易对任何事物进行逻辑解构								
+10043	10044	0		这既是职业本能，也是你与这个世界对话的方式								
+10044	10045	0	女主名	“纯粹的逻辑推理罢了。第一，你的上肢肌肉发达，结合你特殊的职业性质，确实应该经常打羽毛球。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主运动.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10045	10046	0	女主名	“而据我观察，你的兄弟或许没有运动的习惯或者时间。第二，你的气场比他更严肃凌厉，着装更正经讲究些。”								
+10046	10047	0		你顿了顿，补了一句	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10047	10048	0	女主名	“其实只要稍微去观察细节，就可以避免犯认错人的错误。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主运动.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10048	10049	0		陈予宁的眼神里透出一丝赞赏，他一向信奉严密的逻辑和事实，而你这份有理有据的分析，非常契合他的思维方式	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10049	10050	0	陈予宁	“很严谨，看来你有极强的洞察力。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/陈予宁/陈予宁01-00.png","OffsetX":-100.0,"OffsetY":-350.0,"Scale":2.299999952316284}]}							
+10050	10051	0	女主名	“只是习惯了多看多想，毕竟这个世界上的很多答案，都藏在细节里。”	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主运动.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10051	10052	0		你适可而止地收住了话题，看了一眼腕表上的时间，向他礼貌地微微颔首	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10052	10053	0	女主名	“今天天气不错，你可以多休息一会儿。我手头还有些工作要处理，就先失陪了。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主运动.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10053	0	0	陈予宁	“好，回见。”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/陈予宁/陈予宁01-00.png","OffsetX":-100.0,"OffsetY":-350.0,"Scale":2.299999952316284}]}							
+10054	0	1				{"Choices":[{"ChoiceText":"展现对个体的尊重 ","NextId":10026,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"04","Value":20,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":2,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":3,"ItemId":""}]},{"ChoiceText":"展现绝对的逻辑推理 ","NextId":10042,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"04","Value":15,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":5,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":5,"ItemId":""}]}]}						

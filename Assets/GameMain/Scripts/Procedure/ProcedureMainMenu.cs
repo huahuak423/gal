@@ -37,12 +37,20 @@ namespace AVGGame
         {
             if (m_CurrentSubFormId != -1)
             {
-                GameEntry.UI.CloseUIForm(m_CurrentSubFormId);
+                try
+                {
+                    GameEntry.UI.CloseUIForm(m_CurrentSubFormId);
+                    Log.Info($"[ProcedureMainMenu] Closed sub form: {m_CurrentSubFormId}");
+                }
+                catch (System.Exception e)
+                {
+                    Log.Warning($"[ProcedureMainMenu] Failed to close sub form {m_CurrentSubFormId}: {e.Message}");
+                }
                 m_CurrentSubFormId = -1;
             }
-            
+
             base.OnLeave(procedureOwner, isShutdown);
-            
+
             Log.Info("[ProcedureMainMenu] Leave");
         }
 

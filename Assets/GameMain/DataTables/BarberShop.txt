@@ -1,0 +1,12 @@
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+##int	int	int	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+10000	10001	0	许映月	“你这头发天天一个样，赶紧跟我换个造型！”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/许映月/许映月认真.png","OffsetX":0.0,"OffsetY":-200.0,"Scale":2.299999952316284}]}							Assets/GameMain/Art/Backgrounds/理发店.png
+10001	10002	0		许映月不由分说，直接把你按在了店里首席造型师的椅子上	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/许映月/许映月微笑.png","OffsetX":555.0,"OffsetY":-200.0,"Scale":2.299999952316284}]}							
+10002	10003	0		Tony老师手起刀落，一边为你进行头皮护理，一边和你探讨着当下最时兴的风格。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10003	10004	0	群众	“亲爱的，你的骨相很优越，不如尝试一下这种微卷的法式慵懒风？”								
+10004	10005	0		在与Tony老师讨论“发型如何改变人的气质”时，你突然灵光一闪，这不就是一个绝佳的美妆类社会学选题吗？								
+10005	10006	0		几个小时后，看着镜子里改头换面、焕然一新的自己，脑海里那篇《从发型看现代女性的自我重塑》的大纲也已经成型								
+10006	10007	0		改头换面带来了新的突破，美丽与智慧的火花同时迸发								
+10007	10008	0		【系统提示】魅力值 + 7，灵感值 + 5								
+10008	0	3						{"RewardTitle":"","Rewards":[{"Type":0,"AttributeType":1,"NpcId":"","Value":7,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":5,"ItemId":""}]}				
