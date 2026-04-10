@@ -9,6 +9,8 @@ using TMPro;
 using UnityGameFramework.Runtime;
 using AVGGame;
 using System.Collections;
+using System.Collections.Generic;
+using GameFramework.Resource;
 
 namespace AVGGame
 {
@@ -50,6 +52,11 @@ namespace AVGGame
         private System.Action m_OnComplete;
         private ProcedureGame m_ProcedureGame;
 
+        // 立绘相关
+        private Image[] m_CharacterImages = new Image[3];
+        private RectTransform[] m_CharacterRects = new RectTransform[3];
+        private Vector2[] m_OriginalPositions = new Vector2[3];
+
         #endregion
 
         #region 生命周期
@@ -65,6 +72,18 @@ namespace AVGGame
             m_BackgroundImage = this.GetComponentByPath<Image>("Canvas/Background");
             m_BackgroundImageButton = this.GetComponentByPath<Button>("Canvas/Background");
             m_ButtonMenu = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonMenu");
+
+            // 挂载立绘组件引用 (0=Left, 1=Center, 2=Right)
+            for (int i = 0; i < 3; i++)
+            {
+                m_CharacterImages[i] = this.GetComponentByPath<Image>($"Canvas/Background/CharacterPlate/CharacterImage{i}");
+                if (m_CharacterImages[i] != null)
+                {
+                    m_CharacterRects[i] = m_CharacterImages[i].rectTransform;
+                    m_OriginalPositions[i] = m_CharacterRects[i].anchoredPosition;
+                    m_CharacterImages[i].gameObject.SetActive(false);
+                }
+            }
 
             /* 获取 ContinueIndicator (需要通过 Transform 获取 GameObject)
             Transform continueIndicatorTrans = this.GetComponentByPath<Transform>("Canvas/Background/ContinueIndicator");
@@ -222,6 +241,186 @@ namespace AVGGame
 
         #endregion
 
+        #region 立绘显示
+
+        /// <summary>
+        /// 根据立绘动作JSON更新立绘显示
+        /// </summary>
+        private void ApplyCharacterDisplay(string characterActionsJson)
+        {
+            // 先隐藏所有立绘
+            HideAllCharacters();
+
+            // 没有立绘数据则直接返回
+            if (string.IsNullOrEmpty(characterActionsJson))
+            {
+                return;
+            }
+
+            // 反序列化立绘动作列表
+            RuntimeActionListWrapper wrapper = null;
+            try
+            {
+                wrapper = JsonUtility.FromJson<RuntimeActionListWrapper>(characterActionsJson);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"[DialoguePanel] 立绘JSON解析失败: {e.Message}");
+                return;
+            }
+
+            if (wrapper == null || wrapper.actions == null || wrapper.actions.Count == 0)
+            {
+                return;
+            }
+
+            // 遍历处理每个角色的立绘动作
+            foreach (var charData in wrapper.actions)
+            {
+                if (charData == null) continue;
+
+                int slotIndex = GetCharacterSlotIndex(charData.Position);
+                if (slotIndex < 0) continue;
+                if (slotIndex >= m_CharacterImages.Length || m_CharacterImages[slotIndex] == null) continue;
+
+                switch (charData.ActionType)
+                {
+                    case CharacterActionType.Enter:
+                    case CharacterActionType.ChangeSprite:
+                        LoadCharacterSprite(charData, slotIndex);
+                        break;
+
+                    case CharacterActionType.Leave:
+                        m_CharacterImages[slotIndex].gameObject.SetActive(false);
+                        break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 异步加载立绘Sprite并设置到对应位置
+        /// </summary>
+        private void LoadCharacterSprite(CharacterDisplayData charData, int slotIndex)
+        {
+            if (string.IsNullOrEmpty(charData.SpritePath))
+            {
+                Debug.LogWarning($"[DialoguePanel] 立绘SpritePath为空, 角色名: {charData.CharacterName}");
+                return;
+            }
+
+            // 通过userData把slotIndex和偏移/缩放数据传给回调
+            var callbackData = new CharacterLoadCallbackData
+            {
+                SlotIndex = slotIndex,
+                OffsetX = charData.OffsetX,
+                OffsetY = charData.OffsetY,
+                Scale = charData.Scale
+            };
+
+            GameEntry.Resource.LoadAsset(
+                charData.SpritePath,
+                typeof(Sprite),
+                new LoadAssetCallbacks(
+                    OnLoadCharacterSpriteSuccess,
+                    OnLoadCharacterSpriteFailure
+                ),
+                callbackData
+            );
+        }
+
+        /// <summary>
+        /// 立绘加载成功回调
+        /// </summary>
+        private void OnLoadCharacterSpriteSuccess(string assetName, object asset, float duration, object userData)
+        {
+            var callbackData = userData as CharacterLoadCallbackData;
+            if (callbackData == null) return;
+
+            int slotIndex = callbackData.SlotIndex;
+            if (slotIndex < 0 || slotIndex >= m_CharacterImages.Length) return;
+            if (m_CharacterImages[slotIndex] == null) return;
+
+            Sprite sprite = asset as Sprite;
+            if (sprite != null)
+            {
+                m_CharacterImages[slotIndex].sprite = sprite;
+                m_CharacterImages[slotIndex].gameObject.SetActive(true);
+
+                // 应用偏移和缩放
+                ApplyCharacterTransform(slotIndex, callbackData.OffsetX, callbackData.OffsetY, callbackData.Scale);
+            }
+        }
+
+        /// <summary>
+        /// 立绘加载失败回调
+        /// </summary>
+        private void OnLoadCharacterSpriteFailure(string assetName, LoadResourceStatus status, string errorMessage, object userData)
+        {
+            Debug.LogWarning($"[DialoguePanel] 立绘加载失败: {assetName}, 状态: {status}, 错误: {errorMessage}");
+        }
+
+        /// <summary>
+        /// 应用立绘的偏移和缩放
+        /// </summary>
+        private void ApplyCharacterTransform(int index, float offsetX, float offsetY, float scale)
+        {
+            if (index < 0 || index >= m_CharacterRects.Length) return;
+            if (m_CharacterRects[index] == null) return;
+
+            var rect = m_CharacterRects[index];
+            rect.anchoredPosition = m_OriginalPositions[index] + new Vector2(offsetX, offsetY);
+            rect.localScale = Vector3.one * scale;
+        }
+
+        /// <summary>
+        /// 隐藏所有立绘
+        /// </summary>
+        private void HideAllCharacters()
+        {
+            for (int i = 0; i < m_CharacterImages.Length; i++)
+            {
+                if (m_CharacterImages[i] != null)
+                {
+                    m_CharacterImages[i].gameObject.SetActive(false);
+                    m_CharacterImages[i].sprite = null;
+
+                    // 重置偏移和缩放
+                    if (m_CharacterRects[i] != null)
+                    {
+                        m_CharacterRects[i].anchoredPosition = m_OriginalPositions[i];
+                        m_CharacterRects[i].localScale = Vector3.one;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 将 CharacterPosition 枚举映射为立绘 slot 数组索引
+        /// </summary>
+        private int GetCharacterSlotIndex(CharacterPosition pos)
+        {
+            switch (pos)
+            {
+                case CharacterPosition.Left:   return 0;
+                case CharacterPosition.Center:  return 1;
+                case CharacterPosition.Right:   return 2;
+                default: return -1; // EX1~EX4 暂不支持
+            }
+        }
+
+        /// <summary>
+        /// 异步加载回调的传递数据
+        /// </summary>
+        private class CharacterLoadCallbackData
+        {
+            public int SlotIndex;
+            public float OffsetX;
+            public float OffsetY;
+            public float Scale;
+        }
+
+        #endregion
+
         #region 私有方法
 
         /// <summary>
@@ -244,6 +443,9 @@ namespace AVGGame
             }
 
             Log.Info($"[DialoguePanel] 显示对话 - 说话人: {data.SpeakerName}, 文本: {data.DialogText}");
+
+            // 应用立绘
+            ApplyCharacterDisplay(data.CharacterActionsJson);
 
             // 调用已有的 SetDialogue 方法显示
             SetDialogue(data.SpeakerName, data.DialogText);
@@ -272,6 +474,9 @@ namespace AVGGame
                 Log.Info("[DialoguePanel] 剧情结束");
                 return;
             }
+
+            // 应用立绘
+            ApplyCharacterDisplay(nextData.CharacterActionsJson);
 
             // 显示下一条对话
             SetDialogue(nextData.SpeakerName, nextData.DialogText);

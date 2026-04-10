@@ -64,5 +64,6 @@ namespace AVGGame
         public int CurrentNodeId;    // 当前节点ID
         public int NodeType;         // 节点类型（对话、选项等）
         public string ChoicesJson;   // 选项配置（如果是选项节点）
+        public string CharacterActionsJson; // 立绘动作配置JSON
     }
 }
