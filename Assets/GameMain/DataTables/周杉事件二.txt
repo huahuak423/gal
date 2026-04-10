@@ -1,0 +1,69 @@
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+##int	int	int	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+10000	10001	0		凌晨两点十七分，你蜷缩在出租车的后座，手捂着胃，指节因为用力而泛白								Assets/GameMain/Art/Backgrounds/深夜城市.png
+10001	10002	0		窗外的城市灯火在雨幕里晕成一片模糊的光斑，像一幅被水浸泡过的油画								
+10002	10003	0		是急性肠胃炎，连续三天的外卖、两杯冰美式、加上今天下午那顿辣到胃痉挛的火锅，报应来得很快								
+10003	10004	0		你不想麻烦许映月，她在赶一个项目deadline，已经连续加班三天了，你知道她现在需要睡眠								
+10004	10005	0		急诊走廊比白天安静了一些，但依然不是那种让人安宁的安静								Assets/GameMain/Art/Backgrounds/医院.png
+10005	10006	0		有人在低声哭泣，有人在对护士发脾气，有担架车从你身边推过，轮子摩擦地面发出刺耳的声响								
+10006	10007	0		消毒水的味道混着某种说不清的药味，在空气里弥漫								
+10007	10008	0		你坐在金属椅上，手背上扎着针，输液管里的液体一滴一滴地往下坠								
+10008	10009	0		你掏出手机，划开屏幕，手指在屏幕上漫无目的地滑动，你需要一点白噪音来转移注意力，压制胃部还在持续发作的痉挛								
+10009	10010	0		然后你鬼使神差般点开了那个陪玩App，在那天之后，你又断断续续点过时安几次，不过多数时候是为了调研								
+10010	10011	0		你的视线落在关注列表里，那个纯黑色的头像，右下角挂着一个绿色的小点，在线且空闲的标志								
+10011	10012	0		你想了想，打开交易商城，给他发去了一个小礼物，金额不大，刚好够吸引他的注意力								
+10012	10013	0		几乎瞬间，他就发来了连麦邀请								
+10013	10014	0		你连上蓝牙，把耳机塞进耳朵里。走廊里的嘈杂被隔绝了一层，但依然能听见								
+10014	10015	0		然后，一道带着淡淡倦意的男声，轻轻落进耳里								
+10015	10016	0		是那种特有的、带着一点沙哑和慵懒的声音，像是本来准备下线了，却被你的提示音拉了回来								
+10016	10017	0	周杉	“老板晚上好，今天是想玩游戏，还是想随便聊聊天？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10017	10018	0		就在他话音落下的瞬间，一辆换药车从你面前经过	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10018	10019	0		金属托盘上摆满了药瓶和器械，轮子碾过地面，托盘碰撞发出清脆声响。紧接着，急诊室的叫号系统也响了								
+10019	10020	0		这些声音，顺着你的麦克风，毫无保留地传了过去。你看见通话界面上的音量条跳动了一下，然后，电话那头突然安静了								
+10020	10021	0		大概停顿了三四秒，他的声音才再次传来。这一次，他的语速慢了半拍，尾音泄露了一丝不易察觉的紧绷								
+10021	10022	0	周杉	“老板，你那边的背景音……你在医院？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10022	10023	0		你有些疲惫地靠在金属椅背上，淡淡地“嗯”了一声	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10023	10024	0	女主名	“急性肠胃炎，在挂水，没什么大事。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主没眼看.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10024	10025	0		你的语气很平静，像是在陈述一个和自己无关的事实	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10025	10026	0		听筒里先是传来一声极轻的叹息，然后是一阵翻找东西的窸窣声，像是手在桌面上摸索，在找什么								
+10026	10027	0	周杉	“既然在输液，就别盯着手机屏幕看了，伤神。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10027	10028	0		他的声音变了，褪去了那种刻意保持轻快的陪玩腔调，是一种更加沉稳和缓的真实男声	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10028	10029	0	周杉	“闭上眼睛。如果不舒服，随时打断我。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10029	10030	0		你犹豫了一下，然后闭上了眼睛，耳机里传来翻书的声音。纸张摩擦的沙沙声，在凌晨的寂静里格外清晰	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10030	10031	0		他的声音变成了一种更适合深夜的频段，没有刻意的嘘寒问暖，没有多余的关心和问候								
+10031	10032	0		只是用那平稳的嗓音，为你构建了一个隔绝医院喧嚣的听觉屏障								
+10032	10033	0		走廊里那些刺耳叫号声、哭声、担架车的声音都变成了遥远的背景音，被他的声音隔绝在另一个世界里								
+10033	10034	0		你微微挑眉，职业本能让你在放松的状态下依然保持着一丝观察者的清醒								
+10034	10035	0		你敏锐地捕捉到了他这场服务中，那一瞬间产生的裂痕								
+10035	10036	0		比起像毫无破绽的时安，这个会因为突发状况而泄露一丝真实情绪的年轻人，似乎更生动，也更有意思了一些								
+10036	10037	0		他的声音继续在耳边流淌，你听不清他念的是什么内容，可能是散文、小说，或者只是一本他不知道从哪里翻出来的书								
+10037	10038	0		你的呼吸慢慢平稳下来，胃部的痉挛似乎也缓解了一些								
+10038	10039	0		也许是药效上来了，也许是被他的声音安抚了。你的意识开始变得模糊，像是站在清醒和睡眠的边界线上，摇摇欲坠	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主没眼看.png","OffsetX":22.5,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10039	10040	0		不知道过了多久，直到你感觉到手背上的输液管被护士拔掉，你才猛地睁开眼睛，药液见底了	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":22.5,"OffsetY":-196.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":22.5,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10040	10041	0		你低头看了一眼手机，通话还在继续，通话时长显示：47分钟	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10041	10065	0		耳机里，他的声音还在继续。已经念到了不知道第几页，声音比刚开始时更低了，带着一丝沙哑，但依然平稳								
+10042	10043	0		你深知在这个世界上，免费的、带有私人情绪的关心才是最昂贵的，必须干脆利落地划清界限								
+10043	10044	0	女主名	“输液结束了，很感谢你今晚的陪伴。我会按平台最高时薪的双倍结算给你，去睡吧，辛苦了。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主温和.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10044	10045	0		你轻巧地将他这份带有私人情感的陪伴，重新框定在了金钱交易的边界内	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10045	10046	0		你听见他轻轻地吸了一口气，很轻，轻到几乎听不见，但你还是捕捉到了								
+10046	10047	0	周杉	“……拿钱办事是应该的，老板不用算得这么清楚。既然输完液了，就早点回去休息吧。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10047	10048	0		他没有推辞，只是用一句不用算得这么清楚，轻轻地、不着痕迹地，表达了一点点……遗憾？	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10048	10049	0		你听不出来，也许只是你的过度解读								
+10049	10050	0		你退出通话，打开交易页面，按你说的数字转了账，备注栏你写的是：服务费，含夜间附加								
+10050	0	0		没有牵绊，没有亏欠，只有清清楚楚的交易，安安全全的距离								
+10051	10052	0		你看着已经空掉的输液瓶，胃部的痉挛已经平息								
+10052	10053	0		护士帮你拔了针，在手背上贴了一小块胶布。你活动了一下手指，血液重新流通的感觉有点麻								
+10053	10054	0		你向来习惯一个人扛下所有，也深知虚拟网络与现实的安全界限。但此刻，你愿意给予他这份笨拙的善意一点正向的反馈								
+10054	10055	0	女主名	“谢谢你刚才的陪伴，你的声音真的是很好的止痛剂。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主温和.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10055	10056	0		这是实话，不是客套也不是恭维。刚才那四十七分钟里，他的声音确实比任何止痛药都有效	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10056	10057	0	周杉	“能起作用就好……那我就不打扰老板休息了。回去的路上注意安全，如果可以的话，到家给我发个消息，好吗？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10057	10058	0		他最后那个“好吗”说得很轻，像是在问一个很重要的问题，又像是在给自己留一条退路	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10058	10059	0		你还没来得及应声，他又像是怕太过唐突，低声补了一句								
+10059	10060	0	周杉	“我……只是有点放心不下。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10060	10061	0		通话在一片安静又温柔的氛围里结束，你按了挂断键，把手机放进包里	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10061	10062	0		出租车来了。你坐进去，报上地址。车子停下时，你打开和时安的聊天框，打了一行字								Assets/GameMain/Art/Backgrounds/深夜城市.png
+10062	10063	0	女主名	“到家了，晚安。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/家居柔和.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							Assets/GameMain/Art/Backgrounds/居家/韩漫平涂风格影院大厅重绘.png
+10063	10064	0		他的回复来得很快，是条语音，带着因困倦带来的沙哑	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10064	0	0	周杉	“老板晚安，好梦。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
+10065	0	1				{"Choices":[{"ChoiceText":"为特殊的陪伴买单 ","NextId":10042,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":15,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":5,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":5,"ItemId":""}]},{"ChoiceText":"感谢他的陪伴 ","NextId":10051,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":20,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":3,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":2,"ItemId":""}]}]}						

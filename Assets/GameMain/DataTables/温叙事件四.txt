@@ -1,0 +1,78 @@
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+##int	int	int	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+10000	10001	0		周六下午，你拉着许映月在商场逛街	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主温和.png","OffsetX":330.0,"OffsetY":-196.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/许映月/许映月常规.png","OffsetX":-330.0,"OffsetY":-200.0,"Scale":2.299999952316284}]}							Assets/GameMain/Art/Backgrounds/商场/商场地图.png
+10001	10002	0		这是你们的老习惯了，每周一次，逛吃逛吃，吐槽工作，分享八卦								
+10002	10003	0		今天的目标是盲盒店新出的系列，你俩正蹲在货架前，煞有介事地研究哪个盒子手感更重、更容易抽到隐藏款								
+10003	10004	0		店外面突然传来一阵骚动	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10004	10072	0	围观群众A	“哎！有人晕倒了！”								
+10005	10006	0		人群迅速围成了一个圈，却纷纷向后退缩								
+10006	10007	0		你正想上前帮忙，许映月的反应比你还快，她放下手中的盲盒，拽着你挤进了人群	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/许映月/许映月认真.png","OffsetX":0.0,"OffsetY":-200.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主微讶.png","OffsetX":250.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10007	10008	0		一位头发花白、衣着朴素但整洁的老妇人脸色惨白地倒在地上，双眼紧闭	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10008	10009	0		周围的人都在交头接耳、甚至举起手机拍照，却没人敢上前碰她								
+10009	10010	0		你和闺蜜对视一眼，这是你们之间不用说话就能懂的默契	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":200.0,"OffsetY":-196.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/许映月/许映月认真.png","OffsetX":200.0,"OffsetY":-200.0,"Scale":2.299999952316284}]}							
+10010	10011	0		她在一旁帮忙挡开那些凑热闹的镜头，疏散人群	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10011	10012	0		你快速探了探老妇人的颈动脉和呼吸，虽然存在，但很微弱了	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":200.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10012	10013	0	女主名	“大家都散开点！保持空气流通，别围着拍照了！”								
+10013	10014	0	许映月	“我已经打120了，救护车马上从市中心医院过来。”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":1.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/许映月/许映月认真.png","OffsetX":200.0,"OffsetY":-200.0,"Scale":2.299999952316284}]}							
+10014	10015	0		清脆果断的声音让几个愣神的路人也纷纷收起手机，主动让出了空间	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10015	10016	0		在等待救护车的几分钟里，你小心翼翼地在老人的随身布包里翻找，希望能找到病历或药瓶								
+10016	10017	0		没有找到药，却在夹层里找到了一张过塑的紧急联系人卡片，上面只有一串加粗的电话号码								
+10017	10018	0		你毫不犹豫地照着号码拨了过去，电话响了一会儿才被接起								
+10018	10019	0	女主名	“喂？请问是机主家属吗？她在天环商场晕倒了，救护车马上把她送到市中心医院急诊科，您尽快过来一趟！”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":22.5,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10019	10020	0		电话那头先是死一般的寂静	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":1.0}]}							
+10020	10021	0		紧接着传来椅子翻倒和重物落地的声响，那是有人猛地站起来，撞翻了椅子，又碰倒了什么东西								
+10021	10022	0		随后是一道耳熟、却透着慌乱与微颤的男声								
+10022	10023	0		“我，我马上到！求你先别走，帮我看着她……”								
+10023	10024	0		那声音支离破碎，带着浓浓的恐惧。是真的怕，声音都在抖，几乎语无伦次								
+10024	10025	0		来不及细想电话那头是不是熟人，救护车已经抵达，你挂断电话，跟着医护人员上了车								
+10025	10026	0		半小时后，市中心医院急诊室走廊								Assets/GameMain/Art/Backgrounds/医院.png
+10026	10027	0		许映月主动去前台缴费和办手续，你独自坐在长椅上，消毒水的气味充斥着鼻腔，白炽灯的光线冷硬而惨白	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主01-04.png","OffsetX":22.5,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10027	10028	0		一阵急促到近乎踉跄的脚步声在走廊尽头响起，打破了压抑的宁静	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10028	10029	0		你抬起头，然后愣住了								
+10029	10030	0		温叙只穿着一件单薄的白衬衫，领口微微敞开，他跑得太急，外套都没来得及穿	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙急头白脸.png","OffsetX":22.549999237060548,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10030	10031	0		发丝凌乱地贴在满是细汗的额头上，眼眶红得吓人，嘴唇因为过度紧张而失去血色								
+10031	10032	0		他平日里那种从容不迫、温润如水的滤镜瞬间碎裂								
+10032	10033	0		此时此刻的他，像一只被剥夺了安全感的困兽，目光焦灼地在走廊里搜寻								
+10033	10034	0		那目光里有恐惧，有慌张，有某种接近崩溃边缘的情绪								
+10034	10035	0		几乎立刻你就对上了电话那头是谁的声音，你站起身，快步迎了上去	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10035	10036	0	女主名	“温叙！这边！医生说阿姨是急性突发低血压导致的晕厥，已经脱离危险了，你别太着急。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主01-04.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10036	10037	0		听到“脱离危险”四个字，温叙紧绷到极限的肩膀猛地垮了下来	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10037	10038	0		他脱力般地扶着墙壁，胸口剧烈起伏，仿佛要把积压在肺里的恐惧全都吐出来	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙哀伤.png","OffsetX":-125.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10038	10039	0		他大口大口地喘气，像是刚才那一路狂奔，把他的所有力气都耗尽了								
+10039	10040	0		突然，他猛地直起身，上前一步，紧紧握住你的手	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/Characters/女主/女主01-00.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/女主/女主01-00.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙哀伤.png","OffsetX":0.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10040	10041	0		他的手冰凉刺骨，还在不受控制地微微发抖								
+10041	10042	0	温叙	“谢谢……真的谢谢你……”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10042	10043	0		他的声音哑得不成样子，带着劫后余生的庆幸和难以言喻的后怕	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10043	10044	0		他低着头，你看不清他的表情，但你能感觉到他在努力控制自己，控制那些快要涌出来的情绪和那些快要说出口的话								
+10044	10045	0		在那一瞬间，由于距离极近，你突然察觉到了什么								
+10045	10046	0		他的眼神里，除了对恩人的感激，似乎还翻涌着某种更深沉的情绪	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙白衫常规.png","OffsetX":0.0,"OffsetY":-500.0,"Scale":3.0}]}							
+10046	10047	0		那种情绪太复杂，你辨认不出来，只觉得它太过浓烈，浓到让你有些害怕	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10047	10074	0		就像是，一个在无边黑暗中独自行走了很久的人，终于再次抓住了他生命中唯一的锚								
+10048	10049	0		手上传来的痛感让你迅速找回了理智，他握得太紧，紧到你的手指都有些发麻								
+10049	10050	0		你轻轻挣开了他，从包里翻出一包纸巾递过去，语气保持着客观和镇定								
+10050	10051	0	女主名	“举手之劳而已，刚好被我和我朋友碰上。你先擦擦汗，阿姨还需要你照顾，你得先撑住自己。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主01-04.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10051	10052	0		手心里的温度抽离，温叙眼底的光似乎也跟着黯淡了一瞬	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":1.0}]}							
+10052	10053	0		那一瞬间，他像是被抽走了什么很重要的东西，眼神里闪过一丝不可名状的落寞								
+10053	10054	0		他接过纸巾，默默捏紧在掌心								
+10054	10055	0	温叙	“好……你说的对，我必须得撑住。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙白衫常规.png","OffsetX":-125.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10055	10056	0		他深吸一口气，努力把自己整理成那个你熟悉的、从容不迫的温叙	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10056	10057	0		但他转身走向病房的背影，依然透着一股让人心疼的脆弱								
+10057	10058	0		你站在原地，看着他跟护士交涉后匆匆走进病房的背影								
+10058	10059	0		那种萦绕在心头多日的违和感，如同藤蔓般疯狂滋长，将你紧紧缠绕								
+10059	0	0		他对你的依赖，是不是太重了？你们才认识多久？								
+10060	10061	0		你看着他脆弱的样子，心里没来由地一软								
+10061	10062	0		你没有挣脱，反而用另一只手覆上了他的手背，试图传递一点你的温度给他	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主温和.png","OffsetX":160.0,"OffsetY":-196.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙哀伤.png","OffsetX":0.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10062	10063	0	女主名	“没事了，阿姨现在很安全。你先平复一下呼吸，别自己也倒下了，阿姨等会儿醒了还需要你。”	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/Characters/女主/女主01-00.png","OffsetX":22.549999237060548,"OffsetY":-395.82000732421877,"Scale":3.0}]}							
+10063	10064	0		感受到你掌心的温度，温叙微微一窒	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":1.0}]}							
+10064	10065	0		他缓缓抬起头，看向你的眼神里有太多东西	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙哀伤.png","OffsetX":0.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10065	10066	0		感激、依赖、后怕，还有一种你看不懂的、更深沉的情绪。那情绪太浓，浓到让你有些不安，但你又说不清那是什么	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10066	10067	0		他缓缓松开手，后退半步，目光却还在你脸上停留了很久	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙哀伤.png","OffsetX":-250.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10067	10068	0		最终他垂下眼帘，低声道	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10068	10069	0	温叙	“是我失态了，抱歉。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙白衫常规.png","OffsetX":-250.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10069	10070	0		你站在原地，看着他跟护士交涉后匆匆走进病房的背影	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10070	10071	0		那种萦绕在心头多日的违和感，如同藤蔓般疯狂滋长，将你紧紧缠绕								
+10071	0	0		他刚才的眼神，真的只是感激吗？								
+10072	10073	0	围观群众B	“这咋整，能扶吗？”								
+10073	10005	0	围观群众C	“不能吧，这年头讹人的事多，看看得了。”								
+10074	0	1				{"Choices":[{"ChoiceText":"冷静地抽回手，递给他纸巾 ","NextId":10048,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"06","Value":15,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":5,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":5,"ItemId":""}]},{"ChoiceText":"反握住他的手，轻声安抚 ","NextId":10060,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"20","Value":0,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":4,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":1,"ItemId":""}]}]}						

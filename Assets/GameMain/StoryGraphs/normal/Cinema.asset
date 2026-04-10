@@ -183,63 +183,6 @@ MonoBehaviour:
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
---- !u!114 &-2792676321788715373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3010c8dbf0094c4fa96481a43c339678, type: 3}
-  m_Name: Reward
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 2680, y: -56}
-  ports:
-    keys:
-    - Entry
-    - Exit
-    values:
-    - _fieldName: Entry
-      _node: {fileID: -2792676321788715373}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Exit
-        node: {fileID: 0}
-        reroutePoints: []
-      - fieldName: Exit
-        node: {fileID: 4891791012974788113}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Exit
-      _node: {fileID: -2792676321788715373}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Entry: 0
-  Exit: 0
-  RewardTitle: 
-  Rewards:
-  - Type: 0
-    AttributeType: 1
-    NpcId: 
-    Value: 8
-    ItemId: 
-  - Type: 0
-    AttributeType: 2
-    NpcId: 
-    Value: 4
-    ItemId: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,19 +196,13 @@ MonoBehaviour:
   m_Name: Cinema
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: -2792676321788715373}
   - {fileID: 5441743452428578883}
   - {fileID: -6710868806324579895}
   - {fileID: -5665492446842873859}
   - {fileID: 6287394171457385675}
   - {fileID: -7309658031055027892}
   - {fileID: 4891791012974788113}
+  - {fileID: 6467903205109171629}
 --- !u!114 &4891791012974788113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,7 +240,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: -2792676321788715373}
+        node: {fileID: 6467903205109171629}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -447,3 +384,57 @@ MonoBehaviour:
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
+--- !u!114 &6467903205109171629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3010c8dbf0094c4fa96481a43c339678, type: 3}
+  m_Name: Reward
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2763.3567, y: -337.86874}
+  ports:
+    keys:
+    - Entry
+    - Exit
+    values:
+    - _fieldName: Entry
+      _node: {fileID: 6467903205109171629}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Exit
+        node: {fileID: 4891791012974788113}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Exit
+      _node: {fileID: 6467903205109171629}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Entry: 0
+  Exit: 0
+  RewardTitle: 
+  Rewards:
+  - Type: 0
+    AttributeType: 1
+    NpcId: 
+    Value: 8
+    ItemId: 
+  - Type: 0
+    AttributeType: 2
+    NpcId: 
+    Value: 4
+    ItemId: 

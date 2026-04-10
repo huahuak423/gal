@@ -1,6 +1,6 @@
-﻿Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
-int	int	int	string	string	string	string	string	string	string	string	string	string
-编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+##int	int	int	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
 10000	10001	0		连续的高强度工作让你觉得大脑有些超载，你决定去市中心的商场逛一逛								Assets/GameMain/Art/Backgrounds/商场/商场地图.png
 10001	10002	0		穿梭在琳琅满目的橱窗间，你精准地捕捉到了本季的流行色彩搭配								
 10002	10003	0		你在常去的那家服装店买下了一件舒适休闲的运动服，顺便去买了一杯少糖的咖啡								Assets/GameMain/Art/Backgrounds/商场/咖啡厅.png

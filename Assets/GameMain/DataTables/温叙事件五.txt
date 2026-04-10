@@ -1,0 +1,80 @@
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+##int	int	int	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+10000	10001	0		医院事件过去后的两周，温叙母亲的身体状况已经彻底稳定下来								Assets/GameMain/Art/Backgrounds/居家/韩漫平涂风格影院大厅重绘.png
+10001	10002	0		你偶尔会问他几句，他都简短地回复“好多了”“谢谢关心”								
+10002	10003	0		不像之前那样主动找你聊天，也不像之前那样随时等着你的消息								
+10003	10004	0		你知道他在克制，那天在医院里，他失控了，他让你看到了他最脆弱的一面								
+10004	10005	0		而现在，他在努力把自己重新装回那个“温润如玉”的壳子里，不打扰你，不越界，不让你为难								
+10005	10006	0		傍晚，你刚完成新选题的内容整理，正准备再问问情况，手机屏幕亮了，是温叙发来的消息								
+10006	10007	0		“我的母亲今天出院，她一直念叨着想要当面谢谢你。不过我拦住了她，不想给你添麻烦。”								
+10007	10008	0		“但是，有一份属于我的谢意，我希望能亲自交给你。听说今晚八点有月全食，方便一起去南湖公园吗？”								
+10008	10009	0		你的手指停在键盘上方，迟迟不肯落下								
+10009	10010	0		这些天，关于巧合的疑云一直盘旋在你的脑海								
+10010	10076	0		让你感到一丝战栗，却又克制不住地想要去探寻真相								
+10011	10012	0		接二连三的巧合让你本能地感到一丝危险，是那种一旦靠近就再也无法抽身的危险								
+10012	10013	0		你决定拉开距离，让沸腾的思绪冷静一下								
+10013	10014	0	女主名	“温老师客气了，阿姨没事就好。今晚我还有个稿子要赶，就不去凑热闹啦，祝您赏月愉快。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/家居常规.png","OffsetX":22.5,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10014	10015	0		两分钟后，温叙的消息再次跳了出来	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10015	10016	0		“没关系，工作要紧。”								
+10016	10017	0		“只是我今天带了《棱镜回响》的手写初稿，原本想送给它的灵感缪斯。如果你改变主意，我会在湖边的长椅等你。”								
+10017	10018	0		“灵感缪斯”								
+10018	10019	0		哪怕再迟钝，你也彻底听懂了他话语里潜藏的越界与深意								
+10019	10020	0		他不是在邀请你去赏月，他是在告诉你：你是我写了这么多年的理由								
+10020	10021	0		这一切果然不是命运的眷顾，而是他蓄谋已久的靠近								
+10021	10022	0		你将目光从手机屏幕上移开，看向窗外逐渐沉下来的夜色。天边的云被染成暗色，像某种预兆	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/家居没眼看.png","OffsetX":22.5,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10022	10023	0		对于这段深不见底的情感博弈，理智最终战胜了好奇心	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10023	10024	0		你长长地叹了口气，强压下心底因为被长久注视而泛起的那一丝复杂悸动								
+10024	10025	0		那悸动里有被看见的温暖，有被等待的感动，也有面对未知的恐惧								
+10025	10026	0		你一字一句地敲下回复								
+10026	10027	0		“温老师，您的心意我心领了。您是非常优秀的作者，我相信我们以后也会是很好的朋友和合作对象。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/家居常规.png","OffsetX":22.5,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10027	10028	0		发完这条消息，你锁上手机屏幕，将那份隐秘的牵绊彻底斩断	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10028	0	0		窗外，月亮刚刚升起								
+10029	10030	0		你是个从不畏惧直面谜团的人								
+10030	10031	0		如果这一切真的是一张网，你也想亲眼看清织网人的模样								
+10031	10032	0		“好，一会见。”								
+10032	10033	0		发完这条消息，你盯着屏幕看了几秒。心跳比平时快了一点，但你分不清那是紧张，还是期待								
+10033	10034	0		夜晚的南湖公园格外静谧								Assets/GameMain/Art/Backgrounds/公园/公园夜晚.png
+10034	10035	0		树影婆娑间，微凉的夜风带着水汽的草木香								
+10035	10036	0		你沿着南湖公园的栈道走了几分钟，月光透过树叶的缝隙，在地上投下斑驳的光影								
+10036	10037	0		你一眼就看到了长椅上的温叙								
+10037	10038	0		他今天穿了一件深色风衣，没有看天上的月亮，而是低着头	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙大衣常规.png","OffsetX":-209.09213256835938,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10038	10039	0		修长的手指轻轻抚摸着膝盖上的一本厚重的黑色皮质笔记本	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10039	10040	0		昏暗的月光勾勒出他清隽的侧脸，在那份惯常的温柔之外，平添了几分让人心悸的深沉与孤独								
+10040	10041	0		听到你的脚步声，他抬起头								
+10041	10042	0		那双暗沉的眼眸里，瞬间盛满了细碎的光芒，像是黑暗里突然亮起的灯	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙大衣微笑.png","OffsetX":22.5,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10042	10043	0		温叙站起身，慢慢走到你面前	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙大衣微笑.png","OffsetX":22.549999237060548,"OffsetY":-552.530029296875,"Scale":3.0}]}							
+10043	10044	0		他深深地看着你，眼底涌动着某种压抑了极久的情绪	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10044	10045	0	温叙	“九年。从高中毕业那天起，我就在这个城市里找你。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙期许.png","OffsetX":-125.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10045	10046	0		他的声音很轻，像是怕惊扰了夜	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10046	10047	0	温叙	“兴许是差些缘分，等我打听到你的时候，你已经在外地读书了。还好……你又回到了这里。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙期许.png","OffsetX":-125.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10047	10048	0		他将手里那本黑色的皮质笔记本递到你面前	{"actions":[{"CharacterName":"","ActionType":2,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙大衣微笑.png","OffsetX":-350.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10048	10049	0		你迟疑着接过，翻开略显泛黄的纸张。里面密密麻麻全是手写的字迹，有些地方还带着涂改的墨迹	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10049	10050	0		那是创作的痕迹，是一个字一个字打磨过的痕迹	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10050	10051	0	温叙	“这是《棱镜回响》的第一版手稿，是除了上次赠予你的作品以外，第一篇正式发行的作品。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙大衣微笑.png","OffsetX":-350.0,"OffsetY":-280.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/Characters/温叙/温叙最新.png","OffsetX":0.0,"OffsetY":0.0,"Scale":1.0}]}							
+10051	10052	0		他的声音在夜风里微微发颤	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10052	10053	0	温叙	“因为我想，如果我能成为足够有名的作者，或许有一天，你能看到我写的书，能看到我对你迟到的感谢。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙期许.png","OffsetX":-350.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10053	10054	0		看着手里的原稿，脑海中所有的线索在这一刻轰然闭合	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10054	10055	0		你张了张嘴，却发现喉咙干涩得发不出声音								
+10055	10056	0		这时，夜空中的满月开始渐渐被阴影吞噬，呈现出一种暗红的色泽，月全食开始了								
+10056	10057	0		光线暗下来，整个世界都笼罩在一层奇异的红色里								
+10057	10058	0		在暗下来的光线里，温叙从口袋里拿出了一支钢笔，递到了你的面前								
+10058	10059	0	温叙	“作为作者，我给无数读者签过名。但是今天，这本《棱镜回响》的手稿……”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙认真.png","OffsetX":22.5,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10059	10060	0		他的声音因为紧张而带着一丝不易察觉的轻颤，目光却炽热得仿佛要将你融化	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10060	10061	0	温叙	“我想请故事的主角，在我心里的扉页上，签下她的名字。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Characters/温叙/温叙最新.png","OffsetX":15.829999923706055,"OffsetY":-552.530029296875,"Scale":3.0}]}							
+10061	10062	0		你看着他递过来的钢笔，指尖因为内心巨大的震撼而微微发麻	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10062	10063	0		这不仅仅是一个签名，这是他用九年时间，等来的一个答案								
+10063	10064	0		你低头看向手稿的扉页，那里本来是一片空白								
+10064	10065	0		现在，你要在那片空白上，写下你的名字								
+10065	10066	0		你深吸一口气，接过钢笔，在扉页上，你郑重地写下了你的名字								
+10066	10067	0		落笔的瞬间，温叙突然上前一步。他没有触碰你，只是微微低头，温热的呼吸轻轻拂过你的耳畔	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙期许.png","OffsetX":-50.0,"OffsetY":-280.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主温和.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10067	10068	0	温叙	“书评里曾说，‘叙闻’擅长写宿命的重逢。但他们不知道，为了这场重逢，我用了多少日夜精打细算、步步为营。”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10068	10069	0		他的声音很轻，轻得几乎被夜风吹散，却又重得字字落在你心上	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10069	10070	0	温叙	“你拯救了我的过去，而现在，我想用我的余生，做你永远的退路。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙认真.png","OffsetX":-50.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}							
+10070	10071	0		赤月当空，公园的湖面被染上了一层幽深的色彩	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10071	10072	0		他温柔的告白在夜风中缱绻回荡，但那句“步步为营”却让你在心跳加速的同时，隐隐感受到了一丝深不可测的占有								
+10072	10073	0		这个男人，远比他表现出来的温柔解语花，要危险得多								
+10073	10074	0		他用九年时间织了一张网，而你，已经落了进来								
+10074	10075	0		你抬头看向他，月光下，他的眼睛里倒映着你的影子，只有你的影子	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙认真.png","OffsetX":22.5,"OffsetY":-500.0,"Scale":3.0}]}							
+10075	0	0		你好像，并不想逃	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10076	0	1				{"Choices":[{"ChoiceText":"委婉拒绝，保持距离 ","NextId":10011,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"06","Value":10,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":10,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":5,"ItemId":""}]},{"ChoiceText":"欣然赴约，探寻真相 ","NextId":10029,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"06","Value":25,"ItemId":""},{"Type":2,"AttributeType":0,"NpcId":"","Value":0,"ItemId":"0606"}]}]}						

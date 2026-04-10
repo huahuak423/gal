@@ -1,6 +1,6 @@
-﻿Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
-int	int	int	string	string	string	string	string	string	string	string	string	string
-编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+##int	int	int	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
 10000	10001	0		许映月一大早就夺命连环call，把你从床上薅起来，拖去了她常光顾的那家美甲沙龙								Assets/GameMain/Art/Backgrounds/居家/韩漫平涂风格影院大厅重绘 (1).png
 10001	10002	0	许映月	“女人！哪怕天天在家剪视频，也要做最精致的幕后黑手！快看这个猫眼极光色，太绝了！”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/许映月/许映月常规.png","OffsetX":0.0,"OffsetY":-200.0,"Scale":2.299999952316284}]}							
 10002	10003	0		美甲师细致地为你修剪着指甲，你和许映月一边喝着店里提供的花茶，一边开启了毫无顾忌的八卦模式	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							Assets/GameMain/Art/Backgrounds/美甲店.png

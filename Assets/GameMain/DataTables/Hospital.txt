@@ -1,6 +1,6 @@
-﻿Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
-int	int	int	string	string	string	string	string	string	string	string	string	string
-编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+##int	int	int	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
 10000	10001	0		因为最近熬夜太多有些心悸，你挂了市中心医院的常规体检号								Assets/GameMain/Art/Backgrounds/医院.png
 10001	10002	0		坐在急诊大厅的金属长椅上，消毒水的气味无孔不入								
 10002	10003	0		面前人来人往，你看到焦急等待家属的病患、冷静下达医嘱的医生，还有因无力承担医药费而在角落默默流泪的人								

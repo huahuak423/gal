@@ -1,6 +1,6 @@
-﻿Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
-int	int	int	string	string	string	string	string	string	string	string	string	string
-编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+##int	int	int	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
 10000	10001	0		今天的天气出奇的好，你带上单反相机，去附近的生态公园采风								Assets/GameMain/Art/Backgrounds/公园/公园.png
 10001	10002	0		午后的阳光穿过交错的树叶，在草坪上落下斑驳的光斑，几只流浪猫慵懒地躺在长椅上打盹								
 10002	10003	0		你举起相机，捕捉了一对老夫妻互相搀扶着散步的背影，以及湖面上泛起的粼粼波光								

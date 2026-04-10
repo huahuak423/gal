@@ -1,6 +1,6 @@
-﻿Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
-int	int	int	string	string	string	string	string	string	string	string	string	string
-编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+##int	int	int	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
 10000	10001	0		许映月买了某位文艺片名导的新作首映票，拉着你一起去了电影院								Assets/GameMain/Art/Backgrounds/电影院/电影院1.png
 10001	10002	0		银幕上光影交错，女主角穿着复古的红裙在霓虹灯下漫步，极致的美学色彩将你们包围								
 10002	10003	0	许映月	“天哪，这打光！宝，你下期的视频也可以试试这种复古氛围感！”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/许映月/许映月微笑.png","OffsetX":0.0,"OffsetY":-200.0,"Scale":2.299999952316284}]}							
