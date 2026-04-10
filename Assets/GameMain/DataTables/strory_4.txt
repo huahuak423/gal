@@ -1,8 +1,0 @@
-﻿##	Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath
-##	int	int	int	string	string	string	string	string	string	string	string	string	string
-##	编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效
-10000	10001	0	1	4444444444						
-10001	10002	0	2	4444444444444						
-10002	10003	0	3	444444444444						
-10003	10004	0	4	444444444444						
-10004	0	0	5	4444444444444						

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6676304192073086343
+--- !u!114 &-9115831524263935689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13,20 +13,17 @@ MonoBehaviour:
   m_Name: Reward
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2728, y: -40}
+  position: {x: 2712, y: 8}
   ports:
     keys:
     - Entry
     - Exit
     values:
     - _fieldName: Entry
-      _node: {fileID: -6676304192073086343}
+      _node: {fileID: -9115831524263935689}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: Exit
-        node: {fileID: 0}
-        reroutePoints: []
       - fieldName: Exit
         node: {fileID: 779314925943530715}
         reroutePoints: []
@@ -35,7 +32,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Exit
-      _node: {fileID: -6676304192073086343}
+      _node: {fileID: -9115831524263935689}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections: []
@@ -121,19 +118,13 @@ MonoBehaviour:
   m_Name: Park
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: -6676304192073086343}
   - {fileID: -1923963314595264802}
   - {fileID: 5913118084727453878}
   - {fileID: 456139667737145190}
   - {fileID: 9023220315288860706}
   - {fileID: 8282612567070314351}
   - {fileID: 779314925943530715}
+  - {fileID: -9115831524263935689}
 --- !u!114 &456139667737145190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +216,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: -6676304192073086343}
+        node: {fileID: -9115831524263935689}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
