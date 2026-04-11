@@ -172,6 +172,83 @@ namespace AVGGame
             }
         }
 
+        /// <summary>
+        /// 检查选项条件是否满足（供外部使用）
+        /// </summary>
+        public bool CheckChoiceConditions(string npcId, ConditionType type, int value, ConditionOperator op = ConditionOperator.GreaterThanOrEqual)
+        {
+            var playerData = CustomEntry.PlayerData;
+            if (playerData == null)
+            {
+                Debug.LogWarning("[ProcedureGame] PlayerData is null");
+                return false;
+            }
+
+            switch (type)
+            {
+                case ConditionType.PlayerAttribute:
+                    switch (op)
+                    {
+                        case ConditionOperator.GreaterThanOrEqual:
+                            return GetPlayerAttribute(npcId) >= value;
+                        case ConditionOperator.LessThanOrEqual:
+                            return GetPlayerAttribute(npcId) <= value;
+                        case ConditionOperator.Equal:
+                            return GetPlayerAttribute(npcId) == value;
+                    }
+                    break;
+
+                case ConditionType.NpcFavorability:
+                    if (int.TryParse(npcId, out int npcIdInt))
+                    {
+                        int favorability = playerData.GetFavorability(npcIdInt);
+                        switch (op)
+                        {
+                            case ConditionOperator.GreaterThanOrEqual:
+                                return favorability >= value;
+                            case ConditionOperator.LessThanOrEqual:
+                                return favorability <= value;
+                            case ConditionOperator.Equal:
+                                return favorability == value;
+                        }
+                    }
+                    break;
+
+                case ConditionType.SpecialItem:
+                    if (int.TryParse(npcId, out int itemId))
+                    {
+                        bool hasItem = playerData.HasItem(itemId);
+                        switch (op)
+                        {
+                            case ConditionOperator.Equal:
+                                return hasItem;
+                        }
+                    }
+                    break;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// 获取玩家属性值
+        /// </summary>
+        private int GetPlayerAttribute(string attributeType)
+        {
+            switch (attributeType.ToLower())
+            {
+                case "charm":
+                    return CustomEntry.PlayerData?.Charm ?? 0;
+                case "inspiration":
+                    return CustomEntry.PlayerData?.Inspiration ?? 0;
+                case "sanity":
+                    return CustomEntry.PlayerData?.Sanity ?? 0;
+                default:
+                    Debug.LogWarning($"[ProcedureGame] Unknown attribute type: {attributeType}");
+                    return 0;
+            }
+        }
+
         #endregion
 
         #region 公共方法
@@ -186,22 +263,32 @@ namespace AVGGame
             // 获取该地图所有的原始事件 (从 DataTable 获取或从你的字典获取)
             List<EventRowData> allEventsInMap = GetRawEventsByMapId(mapId);
 
+            Debug.Log($"[ProcedureGame] GetVisibleEventsInMap - 地图{mapId}，原始事件数量: {allEventsInMap.Count}");
+
             foreach (var evt in allEventsInMap)
             {
-                // 过滤已完成的特殊事件（EventType == 1 表示特殊事件）
-                if (evt.EventType == 1 && CustomEntry.PlayerData.HasCompletedSpecialEvent(evt.Id))
+                Debug.Log($"[ProcedureGame] 检查事件: ID={evt.Id}, Title={evt.Title}, EventType={evt.EventType}, VisibleConditions='{evt.VisibleConditions}'");
+
+                // EventType == 1 是地图入口，始终显示
+                // EventType == 2 是角色事件，完成后需要隐藏
+                if (evt.EventType == 2 && CustomEntry.PlayerData.HasCompletedEvent(evt.Id))
                 {
-                    Debug.Log($"[ProcedureGame] 跳过已完成的特殊事件: {evt.Id} - {evt.Title}");
+                    Debug.Log($"[ProcedureGame] 跳过已完成的事件: {evt.Id} - {evt.Title}");
                     continue;
                 }
 
                 // 使用刚刚写好的工具检查 VisibleConditions 列
-                if (ConditionChecker.CheckCondition(evt.VisibleConditions, CustomEntry.PlayerData))
+                bool conditionMet = ConditionChecker.CheckCondition(evt.VisibleConditions, CustomEntry.PlayerData);
+                Debug.Log($"[ProcedureGame] 条件检查结果: {conditionMet}");
+
+                if (conditionMet)
                 {
                     result.Add(evt);
+                    Debug.Log($"[ProcedureGame] 添加到结果: {evt.Title}");
                 }
             }
 
+            Debug.Log($"[ProcedureGame] GetVisibleEventsInMap - 地图{mapId}，可见事件数量: {result.Count}");
             return result;
         }
 
@@ -221,16 +308,24 @@ namespace AVGGame
                 return result;
             }
 
+            Debug.Log($"[ProcedureGame] GetRawEventsByMapId - 数据表存在，开始遍历，目标地图ID: {mapId}");
+
             // 2. 实时遍历整张表
+            int totalCount = 0;
             foreach (EventRowData row in dtEvent)
             {
+                totalCount++;
+                Debug.Log($"[ProcedureGame] 遍历事件 - ID: {row.Id}, MapId: {row.MapId}, Title: {row.Title}");
+
                 // 只要所在地图匹配，就把它加进待选列表
                 if (row.MapId == mapId)
                 {
                     result.Add(row);
+                    Debug.Log($"[ProcedureGame] 匹配地图 {mapId}，添加事件: {row.Title}");
                 }
             }
 
+            Debug.Log($"[ProcedureGame] GetRawEventsByMapId - 总事件数: {totalCount}, 匹配事件数: {result.Count}");
             return result;
         }
 
@@ -279,11 +374,10 @@ namespace AVGGame
             // 标记事件已完成（用于存档）
             CustomEntry.PlayerData.MarkEventCompleted(eventId);
 
-            // 如果是特殊事件（EventType == 1），额外标记为已完成的特殊事件
-            if (currentData.EventType == 1)
+            // EventType == 2 是角色特殊事件，完成后不再显示
+            if (currentData.EventType == 2)
             {
-                CustomEntry.PlayerData.MarkSpecialEventCompleted(eventId);
-                Debug.Log($"[ProcedureGame] 特殊事件已完成标记: {eventId}");
+                Debug.Log($"[ProcedureGame] 角色事件已完成: {eventId} - {currentData.Title}");
             }
 
             //异步加载目标故事剧本
@@ -376,7 +470,7 @@ namespace AVGGame
         /// </summary>
         public DialogueDisplayData GoToNextDialogue()
         {
-            Debug.Log($"[ProcedureGame] GoToNextDialogue 被调用");
+            Debug.Log($"[ProcedureGame] GoToNextDialogue 被调用，当前ID: {m_CurrentDialogueId}");
 
             IDataTable<StoryRowData> storyTable = GetCurrentStoryTable();
             if (storyTable == null)
@@ -392,7 +486,16 @@ namespace AVGGame
                 return null;
             }
 
-            // 检查是否结束 (NextId = 0 表示结束)
+            Debug.Log($"[ProcedureGame] 当前节点 - ID: {currentRow.Id}, NodeType: {currentRow.NodeType}, NextId: {currentRow.NextId}");
+
+            // 如果当前是选项节点，直接返回，让DialoguePanel处理
+            if (currentRow.NodeType == 1)
+            {
+                Debug.Log("[ProcedureGame] 检测到选项节点，直接返回数据");
+                return GetCurrentDialogue();
+            }
+
+            // 检查是否结束 (普通对话节点的 NextId = 0 表示结束)
             if (currentRow.NextId == 0)
             {
                 Debug.Log("[ProcedureGame] 对话结束，准备返回大地图");
@@ -404,6 +507,37 @@ namespace AVGGame
             m_CurrentDialogueId = currentRow.NextId;
             Debug.Log($"[ProcedureGame] 切换到下一条对话, ID: {m_CurrentDialogueId}");
             return GetCurrentDialogue();
+        }
+
+        /// <summary>
+        /// 手动设置下一句对话ID（用于选项分支）
+        /// </summary>
+        public void SetNextDialogueId(int nextDialogueId)
+        {
+            Debug.Log($"[ProcedureGame] 手动设置下一句对话ID: {nextDialogueId}");
+            m_CurrentDialogueId = nextDialogueId;
+        }
+
+        /// <summary>
+        /// 加载测试故事（用于测试选项功能）
+        /// </summary>
+        public void LoadTestChoiceStory()
+        {
+            Debug.Log("[ProcedureGame] 加载测试故事 ChoiceTest");
+
+            // 设置当前故事名称
+            CustomEntry.PlayerData.SetCurrentStoryGarphName("ChoiceTest");
+
+            // 从第一句开始
+            m_CurrentDialogueId = 10000;
+
+            // 确保故事表已加载
+            if (!GameEntry.DataTable.HasDataTable<StoryRowData>())
+            {
+                IDataTable<StoryRowData> emptyTable = GameEntry.DataTable.CreateDataTable<StoryRowData>();
+                DataTableBase tableBase = (DataTableBase)emptyTable;
+                tableBase.ReadData("Assets/GameMain/Scripts/UI/Data/ChoiceTest.txt", 0, this);
+            }
         }
 
         /// <summary>
