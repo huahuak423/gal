@@ -429,7 +429,7 @@ namespace AVGGame
                     // 清除旧的事件
                     allButtons[i].onClick.RemoveAllListeners();
                     // 添加新的事件
-                    allButtons[i].onClick.AddListener(() => OnChoiceButtonClick(choiceData.NextId));
+                    allButtons[i].onClick.AddListener(() => OnChoiceButtonClick(choiceData.NextId, choiceData.Rewards));
 
                     // 显示按钮
                     allButtons[i].gameObject.SetActive(true);
@@ -482,7 +482,7 @@ namespace AVGGame
         /// <summary>
         /// 选项按钮点击
         /// </summary>
-        private void OnChoiceButtonClick(int nextDialogueId)
+        private void OnChoiceButtonClick(int nextDialogueId, List<ChoiceReward> rewards)
         {
             Log.Info($"[DialoguePanel] 选项已选择，跳转到对话ID: {nextDialogueId}");
 
@@ -494,6 +494,9 @@ namespace AVGGame
 
             // 隐藏选项面板
             HideChoicesPanel();
+
+            // 应用选项奖励（流程层处理）
+            m_ProcedureGame.ApplyChoiceRewards(rewards);
 
             // 设置下一对话ID
             m_ProcedureGame.SetNextDialogueId(nextDialogueId);
@@ -594,7 +597,7 @@ namespace AVGGame
         
         #endregion
 
-        #region 立绘显示
+        #region 立绘与背景显示
 
         /// <summary>
         /// 根据立绘动作JSON更新立绘显示
@@ -772,6 +775,42 @@ namespace AVGGame
             public float Scale;
         }
 
+        /// <summary>
+        /// 异步加载并设置背景图
+        /// </summary>
+        private void ApplyBackground(string backgroundPath)
+        {
+            if (string.IsNullOrEmpty(backgroundPath) || m_BackgroundImage == null)
+            {
+                return;
+            }
+
+            GameEntry.Resource.LoadAsset(
+                backgroundPath,
+                typeof(Sprite),
+                new LoadAssetCallbacks(
+                    OnLoadBackgroundSuccess,
+                    OnLoadBackgroundFailure
+                )
+            );
+        }
+
+        private void OnLoadBackgroundSuccess(string assetName, object asset, float duration, object userData)
+        {
+            if (m_BackgroundImage == null) return;
+
+            Sprite sprite = asset as Sprite;
+            if (sprite != null)
+            {
+                m_BackgroundImage.sprite = sprite;
+            }
+        }
+
+        private void OnLoadBackgroundFailure(string assetName, LoadResourceStatus status, string errorMessage, object userData)
+        {
+            Debug.LogWarning($"[DialoguePanel] 背景图加载失败: {assetName}, 状态: {status}, 错误: {errorMessage}");
+        }
+
         #endregion
 
         #region 私有方法
@@ -803,6 +842,9 @@ namespace AVGGame
 
             // 应用立绘
             ApplyCharacterDisplay(data.CharacterActionsJson);
+
+            // 应用背景图
+            ApplyBackground(data.BackgroundPath);
 
             // 检查是否是选择节点
             if (data.NodeType == 1) // 选择节点

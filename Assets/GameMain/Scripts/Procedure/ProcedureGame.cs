@@ -448,6 +448,22 @@ namespace AVGGame
                 return null;
             }
 
+            // 奖励节点：应用奖励后自动推进（UI层完全无感知）
+            if (row.NodeType == 3)
+            {
+                ApplyRewardsFromRow(row);
+
+                if (row.NextId == 0)
+                {
+                    Debug.Log("[ProcedureGame] 奖励节点是最后一条，结束剧情");
+                    EndStoryAndReturnToMap(storyTable.Name);
+                    return null;
+                }
+
+                m_CurrentDialogueId = row.NextId;
+                return GetCurrentDialogue(); // 递归处理下一条
+            }
+
             Debug.Log($"[ProcedureGame] 成功获取对话数据!");
             Debug.Log($"[ProcedureGame] - ID: {row.Id}");
             Debug.Log($"[ProcedureGame] - 说话人: {row.SpeakerName}");
@@ -517,6 +533,38 @@ namespace AVGGame
         {
             Debug.Log($"[ProcedureGame] 手动设置下一句对话ID: {nextDialogueId}");
             m_CurrentDialogueId = nextDialogueId;
+        }
+
+        /// <summary>
+        /// 应用奖励节点的奖励数据
+        /// </summary>
+        private void ApplyRewardsFromRow(StoryRowData row)
+        {
+            if (string.IsNullOrEmpty(row.RewardsJson)) return;
+
+            try
+            {
+                var wrapper = JsonUtility.FromJson<RuntimeRewardListWrapper>(row.RewardsJson);
+                if (wrapper != null && wrapper.Rewards != null && wrapper.Rewards.Count > 0)
+                {
+                    CustomEntry.PlayerData.ApplyRewards(wrapper.Rewards);
+                    Debug.Log($"[ProcedureGame] 奖励节点({row.Id})已应用 {wrapper.Rewards.Count} 个奖励");
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"[ProcedureGame] 奖励JSON解析失败, 节点ID: {row.Id}, 错误: {e.Message}");
+            }
+        }
+
+        /// <summary>
+        /// 应用选项带来的奖励（供 DialoguePanel 调用）
+        /// </summary>
+        public void ApplyChoiceRewards(List<ChoiceReward> rewards)
+        {
+            if (rewards == null || rewards.Count == 0) return;
+            CustomEntry.PlayerData.ApplyRewards(rewards);
+            Debug.Log($"[ProcedureGame] 选项奖励已应用 {rewards.Count} 个");
         }
 
         /// <summary>
