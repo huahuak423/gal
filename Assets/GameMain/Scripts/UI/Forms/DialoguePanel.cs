@@ -604,10 +604,7 @@ namespace AVGGame
         /// </summary>
         private void ApplyCharacterDisplay(string characterActionsJson)
         {
-            // 先隐藏所有立绘
-            HideAllCharacters();
-
-            // 没有立绘数据则直接返回
+            // 没有立绘数据则保持当前立绘不动
             if (string.IsNullOrEmpty(characterActionsJson))
             {
                 return;
