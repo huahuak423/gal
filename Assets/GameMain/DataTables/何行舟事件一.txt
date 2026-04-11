@@ -1,11 +1,11 @@
-﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
-##int	int	int	string	string	string	string	string	string	string	string	string	string
-##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+﻿Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+int	int	int	string	string	string	string	string	string	string	string	string	string
+编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
 10000	10001	0		凌晨一点半，你刚结束一部冗长且晦涩的欧洲文艺片观影，正揉着发酸的眉心，从昏暗的放映厅走向长廊								Assets/GameMain/Art/Backgrounds/电影院/电影院出口.png
 10001	10002	0		长廊铺着厚重吸音的天鹅绒地毯，暖黄色的壁灯将一切都笼罩在一层暧昧不明的滤镜中								
 10002	10003	0		你准备拐去隔壁酒吧喝点小酒，却在酒吧侧门撞见了两个男人的拉扯								Assets/GameMain/Art/Backgrounds/电影院/酒吧.png
-10003	10004	0	富商	“装什么清高啊，渡？你们店长没教过你规矩吗？我今晚在这开了最贵的包厢，点了最贵的酒，你连手都不让碰一下？”								
-10004	10005	0		男人的声音浑浊且傲慢，带着一种长期用金钱培养出的颐指气使								
+10003	10004	0	富商	“装什么清高啊，渡？你们店长没教过你规矩吗？我今晚在这开了最贵的包厢，点了最贵的酒，你连手都不让碰一下？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/NPC/富商.png","OffsetX":22.5,"OffsetY":-110.0,"Scale":2.0}]}							
+10004	10005	0		男人的声音浑浊且傲慢，带着一种长期用金钱培养出的颐指气使	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
 10005	10006	0		他身上浓烈的雪茄味混杂着古龙水的气息，即便隔着几米的距离，依然极具侵略性地刺入你的鼻腔								
 10006	10007	0		你停下脚步，目光落在了那个被称为 “渡” 的年轻男人身上								
 10007	10008	0		那是一个在任何人群中都会瞬间掠夺视线的男人								
@@ -17,8 +17,8 @@
 10013	10014	0		他的声音很好听，带着一点刻意的慵懒	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
 10014	10015	0		常年剖析微表情的你一眼就看穿了那副风流皮囊下，正在疯狂嘶吼的屈辱与濒临崩溃的厌恶								
 10015	10016	0		他像是一个被迫穿上华丽戏服的提线木偶，灵魂正在被一点点凌迟								
-10016	10017	0	富商	“少拿规矩压我！你不就是嫌钱不够吗？五十万，今晚跟我走。你那点烂账，只要你把我哄高兴了，我一句话的事！”								
-10017	10018	0		男人一边说着，一边极其放肆地伸手去拍他的脸颊。何行舟本能地瑟缩了一下，眼底闪过一丝恶心与绝望								
+10016	10017	0	富商	“少拿规矩压我！你不就是嫌钱不够吗？五十万，今晚跟我走。你那点烂账，只要你把我哄高兴了，我一句话的事！”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/NPC/富商.png","OffsetX":22.5,"OffsetY":-110.0,"Scale":2.0}]}							
+10017	10018	0		男人一边说着，一边极其放肆地伸手去拍他的脸颊。何行舟本能地瑟缩了一下，眼底闪过一丝恶心与绝望	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
 10018	10019	0		但他没有躲开，因为 “五十万” 和 “烂账” 这两个词，像两根淬了毒的钉子，死死地将他的双脚钉在原地								
 10019	10020	0		他的脊背在那一瞬间似乎佝偻了下去，原本试图维持的最后一丝尊严，在抛出的价码面前，显得如此可笑且不堪一击								
 10020	10021	0		他缓缓闭上眼睛，仿佛是在等待命运的最终宣判								
@@ -28,13 +28,13 @@
 10024	10025	0		你举起手机，摄像头对准了那个正在纠缠的富商								
 10025	10026	0	女主名	“打扰一下二位，我刚才在录制一些素材，好像不小心录到了一些不太符合《治安管理处罚法》的画面。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
 10026	10027	0		你的声音不大，却透着一股不容置疑的冷冽。富商和何行舟同时愣住，齐齐看向你	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10027	10028	0	富商	“你谁啊？！敢管我的闲事？知道我是谁吗，信不信我让你在这座城市混不下去！”								
-10028	10029	0	女主名	“我不需要知道您是谁，刘先生。但我刚好认识本市几个头部八卦公众号的主编。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主01-04.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
+10027	10028	0	富商	“你谁啊？！敢管我的闲事？知道我是谁吗，信不信我让你在这座城市混不下去！”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/NPC/富商.png","OffsetX":22.5,"OffsetY":-110.0,"Scale":2.0}]}							
+10028	10029	0	女主名	“我不需要知道您是谁，刘先生。但我刚好认识本市几个头部八卦公众号的主编。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主01-04.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主01-04.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
 10029	10030	0	女主名	“如果您觉得视频内容不够劲爆，我不介意一会儿就帮您润色发过去。”								
 10030	10031	0		你似笑非笑地看着他，这种程度的威胁对你来说不算什么。毕竟在圈子里混的生意人，最怕的就是舆论和身败名裂	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
 10031	10032	0		那位刘总的脸色瞬间变得极其难看，红白交加。他恶狠狠地瞪了你一眼，又看了看你手里亮着屏幕的手机，最终狠狠地啐了一口								
-10032	10033	0	富商	“算你狠！真他爹晦气！”								
-10033	10034	0		他冷哼了一声，怒气冲冲地离开了								
+10032	10033	0	富商	“算你狠！真他爹晦气！”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/NPC/富商.png","OffsetX":22.5,"OffsetY":-110.0,"Scale":2.0}]}							
+10033	10034	0		他冷哼了一声，怒气冲冲地离开了	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
 10034	10035	0		何行舟用手背狠狠地擦着刚才被男人碰过的脸颊，直到把那块皮肤擦得通红								
 10035	10036	0		他转过头，用一种极其复杂、充满戒备和探究的眼神看着你	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主01-04.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/何行舟/何行舟02-00.png","OffsetX":-100.0,"OffsetY":-300.0,"Scale":2.299999952316284}]}							
 10036	10037	0		对于这种在欢场摸爬滚打、见惯了人情冷暖的人来说，他们从不相信无缘无故的善意								

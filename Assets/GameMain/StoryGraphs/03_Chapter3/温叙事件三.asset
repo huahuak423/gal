@@ -425,7 +425,14 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: 
   DialogText: "\u624B\u673A\u51E0\u4E4E\u540C\u65F6\u9707\u52A8\u4E86\u4E00\u4E0B\uFF0C\u4F60\u770B\u4E86\u4E00\u773C\u624B\u673A\uFF0C\u662F\u6E29\u53D9\u53D1\u6765\u7684\u6D88\u606F\uFF0C\u9644\u7740\u4E00\u4EFD\u540D\u4E3A\u300A\u4F24\u75D5\u5316\u94E0\u300B\u7684\u7535\u5B50\u6587\u6863"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 1
+    Position: 1
+    SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 0
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -712,7 +719,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_15_\u4F60\u62CE\u8FC7\u86CB\u7CD5\uFF0C\u5411\u5916\u5356\u5C0F"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 6300, y: 0}
+  position: {x: 6296, y: -8}
   ports:
     keys:
     - Entry
@@ -745,7 +752,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u4F60\u62CE\u8FC7\u86CB\u7CD5\uFF0C\u5411\u5916\u5356\u5C0F\u54E5\u9053\u4E86\u8C22\uFF0C\u968F\u624B\u62CD\u7167\u7ED9\u4ED6\u53D1\u4E86\u8FC7\u53BB"
+  DialogText: "\u4F60\u62CE\u8FC7\u86CB\u7CD5\uFF0C\u5411\u5916\u5356\u5458\u9053\u4E86\u8C22\uFF0C\u968F\u624B\u62CD\u7167\u7ED9\u4ED6\u53D1\u4E86\u8FC7\u53BB"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -955,7 +962,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u4F60\u8DBF\u62C9\u7740\u62D6\u978B\u8D70\u8FC7\u53BB\uFF0C\u5F00\u95E8\u7684\u77AC\u95F4\uFF0C\u4E00\u4E2A\u7A7F\u7740\u5236\u670D\u7684\u5916\u5356\u5C0F\u54E5\u5C06\u4E00\u4E2A\u5370\u7740\u70EB\u91D1logo\u7684\u7CBE\u7F8E\u86CB\u7CD5\u76D2\u5B50\u9012\u5230\u4F60\u9762\u524D"
+  DialogText: "\u4F60\u8DBF\u62C9\u7740\u62D6\u978B\u8D70\u8FC7\u53BB\uFF0C\u5F00\u95E8\u7684\u77AC\u95F4\uFF0C\u4E00\u4E2A\u7A7F\u7740\u5236\u670D\u7684\u5916\u5356\u5458\u5C06\u4E00\u4E2A\u5370\u7740\u70EB\u91D1logo\u7684\u7CBE\u7F8E\u86CB\u7CD5\u76D2\u5B50\u9012\u5230\u4F60\u9762\u524D"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -1010,7 +1017,14 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: "\u5916\u5356\u5C0F\u54E5"
   DialogText: "\u201C\u5973\u58EB\uFF0C\u60A8\u7684\u5916\u5356\u3002\u201D"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 0
+    Position: 1
+    SpritePath: "Assets/GameMain/Art/NPC/\u5916\u5356\u5458.png"
+    OffsetX: 0
+    OffsetY: -150
+    Scale: 2
   BgmPath: 
   SePath: 
   BackgroundPath: 
