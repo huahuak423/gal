@@ -859,10 +859,73 @@
             "GraphName": "何行舟事件一",
             "SpritePath": "Assets/GameMain/Art/NPC/富商.png",
             "Position": 1,
+            "OffsetX": -5.9874725341796879,
+            "OffsetY": -115.83644104003906,
+            "Scale": 1.6894787549972535,
+            "LastNodeGuid": "对话_33_“算你狠！真他爹晦气"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/NPC/外卖员.png",
+            "Position": 1,
             "OffsetX": 0.0,
             "OffsetY": 0.0,
-            "Scale": 1.6894787549972535,
-            "LastNodeGuid": "对话_4_“装什么清高啊，渡？"
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_12_“女士，您的外卖。”"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/NPC/路人1.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_15_清脆果断的声音让几个"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/NPC/路人2.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/NPC/路人4.png",
+            "Position": 2,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/NPC/路人3.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_15_清脆果断的声音让几个"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/NPC/路人2.png",
+            "Position": 2,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_15_清脆果断的声音让几个"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/NPC/路人3.png",
+            "Position": 2,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_15_清脆果断的声音让几个"
         }
     ]
 }
