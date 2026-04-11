@@ -29,6 +29,20 @@ namespace AVGGame
         [SerializeField] private Text m_DialogueText;
         [SerializeField] private GameObject m_ContinueIndicator;
 
+        [Header("选项面板")]
+        [SerializeField] private Transform m_SelectPanel;
+        [SerializeField] private Transform m_ChoicesContainer;
+        [SerializeField] private Button m_ChoiceButton1;
+        [SerializeField] private Button m_ChoiceButton2;
+        [SerializeField] private Button m_ChoiceButton3;
+        [SerializeField] private Button m_ChoiceButton4;
+        [SerializeField] private Button m_ChoiceButton5;
+        [SerializeField] private Text m_ChoiceButton1Text;
+        [SerializeField] private Text m_ChoiceButton2Text;
+        [SerializeField] private Text m_ChoiceButton3Text;
+        [SerializeField] private Text m_ChoiceButton4Text;
+        [SerializeField] private Text m_ChoiceButton5Text;
+
         [Header("背景")]
         [SerializeField] private Image m_BackgroundImage;
         [SerializeField] private Button m_BackgroundImageButton;
@@ -57,6 +71,10 @@ namespace AVGGame
         private RectTransform[] m_CharacterRects = new RectTransform[3];
         private Vector2[] m_OriginalPositions = new Vector2[3];
 
+        // 选项相关
+        private List<Button> m_ChoiceButtons = new List<Button>();
+        private GameObject m_ChoiceButtonPrefab;
+
         #endregion
 
         #region 生命周期
@@ -72,6 +90,26 @@ namespace AVGGame
             m_BackgroundImage = this.GetComponentByPath<Image>("Canvas/Background");
             m_BackgroundImageButton = this.GetComponentByPath<Button>("Canvas/Background");
             m_ButtonMenu = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonMenu");
+            m_ChoiceButton1 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button1");
+            m_ChoiceButton2 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button2");
+            m_ChoiceButton3 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button3");
+            m_ChoiceButton4 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button4");
+            m_ChoiceButton5 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button5");
+            m_ChoiceButton1Text = this.GetComponentByPath<Text>("Canvas/Background/SelectPanel/Background/Button1/TextOfSelection");
+            m_ChoiceButton2Text = this.GetComponentByPath<Text>("Canvas/Background/SelectPanel/Background/Button2/TextOfSelection");
+            m_ChoiceButton3Text = this.GetComponentByPath<Text>("Canvas/Background/SelectPanel/Background/Button3/TextOfSelection");
+            m_ChoiceButton4Text = this.GetComponentByPath<Text>("Canvas/Background/SelectPanel/Background/Button4/TextOfSelection");
+            m_ChoiceButton5Text = this.GetComponentByPath<Text>("Canvas/Background/SelectPanel/Background/Button5/TextOfSelection");
+
+            // 挂载选项面板组件引用
+            m_SelectPanel = this.GetComponentByPath<Transform>("Canvas/Background/SelectPanel");
+            m_ChoicesContainer = this.GetComponentByPath<Transform>("Canvas/Background/SelectPanel/ChoicesContainer");
+
+            Debug.Log($"[DialoguePanel] OnInit - SelectPanel: {m_SelectPanel != null}, ChoicesContainer: {m_ChoicesContainer != null}");
+            if (m_SelectPanel != null)
+            {
+                Debug.Log($"[DialoguePanel] OnInit - SelectPanel path: {m_SelectPanel.name}, ActiveSelf: {m_SelectPanel.gameObject.activeSelf}");
+            }
 
             // 挂载立绘组件引用 (0=Left, 1=Center, 2=Right)
             for (int i = 0; i < 3; i++)
@@ -110,6 +148,14 @@ namespace AVGGame
                 m_BackgroundImageButton.onClick.AddListener(OnContinueClick);
             }
 
+    
+            // 初始化隐藏选项面板
+            if (m_SelectPanel != null)
+            {
+                m_SelectPanel.gameObject.SetActive(false);
+            }
+
+            
             m_ProcedureGame = (ProcedureGame)userData;
         }
 
@@ -157,6 +203,16 @@ namespace AVGGame
                 StopCoroutine(m_TypeWriterCoroutine);
                 m_TypeWriterCoroutine = null;
             }
+
+            // 清理选项按钮事件（不销毁按钮，因为它们是插件的一部分）
+            foreach (var button in m_ChoiceButtons)
+            {
+                if (button != null)
+                {
+                    button.onClick.RemoveAllListeners();
+                }
+            }
+            m_ChoiceButtons.Clear();
 
             m_OnComplete = null;
         }
@@ -241,7 +297,307 @@ namespace AVGGame
 
         #endregion
 
-        #region 立绘显示
+        #region 选项处理
+
+        /// <summary>
+        /// 解析选项JSON数据
+        /// </summary>
+        private List<RuntimeChoiceData> ParseChoicesJson(string choicesJson)
+        {
+            if (string.IsNullOrEmpty(choicesJson))
+            {
+                Debug.LogWarning("[DialoguePanel] 选项JSON为空");
+                return null;
+            }
+
+            try
+            {
+                RuntimeChoiceListWrapper wrapper = JsonUtility.FromJson<RuntimeChoiceListWrapper>(choicesJson);
+                if (wrapper != null && wrapper.Choices != null)
+                {
+                    Log.Info($"[DialoguePanel] 解析成功 {wrapper.Choices.Count} 个选项");
+                    return wrapper.Choices;
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"[DialoguePanel] 选项JSON解析失败: {e.Message}");
+                return null;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// 选项选择回调
+        /// </summary>
+        private void OnChoiceMade(int nextDialogueId)
+        {
+            Log.Info($"[DialoguePanel] 选项已选择，跳转到对话ID: {nextDialogueId}");
+
+            if (m_ProcedureGame == null)
+            {
+                Debug.LogError("[DialoguePanel] m_ProcedureGame 为空，无法处理选项选择");
+                return;
+            }
+
+            // 设置下一对话ID
+            m_ProcedureGame.SetNextDialogueId(nextDialogueId);
+
+            // 延迟一小帧后显示下一句对话
+            StartCoroutine(ShowNextDialogueAfterChoice());
+        }
+
+        /// <summary>
+        /// 选择后延迟显示下一句对话
+        /// </summary>
+        private System.Collections.IEnumerator ShowNextDialogueAfterChoice()
+        {
+            yield return null; // 等待一帧，确保UI更新完成
+
+            // 清空对话文本
+            if (m_DialogueText != null)
+            {
+                m_DialogueText.text = "";
+            }
+
+            // 显示下一句对话
+            ShowCurrentDialogue();
+        }
+
+        /// <summary>
+        /// 显示选项面板
+        /// </summary>
+        private void ShowChoicesPanel(List<RuntimeChoiceData> choicesData)
+        {
+            Debug.Log($"[DialoguePanel] === ShowChoicesPanel 开始 ===");
+            Debug.Log($"[DialoguePanel] m_SelectPanel: {m_SelectPanel != null}");
+
+            if (m_SelectPanel == null)
+            {
+                Debug.LogError("[DialoguePanel] SelectPanel not found");
+                return;
+            }
+
+            Log.Info($"[DialoguePanel] 显示选项面板，共 {choicesData.Count} 个选项");
+
+            // 检查选项面板的初始状态
+            Debug.Log($"[DialoguePanel] 选项面板初始状态 - ActiveSelf: {m_SelectPanel.gameObject.activeSelf}, ActiveInHierarchy: {m_SelectPanel.gameObject.activeInHierarchy}");
+
+            // 清空旧的按钮引用和事件
+            foreach (var button in m_ChoiceButtons)
+            {
+                if (button != null)
+                {
+                    button.onClick.RemoveAllListeners();
+                }
+            }
+            m_ChoiceButtons.Clear();
+
+            // 初始化所有选项按钮为不可见
+            if (m_ChoiceButton1 != null) m_ChoiceButton1.gameObject.SetActive(false);
+            if (m_ChoiceButton2 != null) m_ChoiceButton2.gameObject.SetActive(false);
+            if (m_ChoiceButton3 != null) m_ChoiceButton3.gameObject.SetActive(false);
+            if (m_ChoiceButton4 != null) m_ChoiceButton4.gameObject.SetActive(false);
+            if (m_ChoiceButton5 != null) m_ChoiceButton5.gameObject.SetActive(false);
+
+            // 使用固定按钮显示选项
+            Button[] allButtons = { m_ChoiceButton1, m_ChoiceButton2, m_ChoiceButton3, m_ChoiceButton4, m_ChoiceButton5 };
+            Text[] allButtonTexts = { m_ChoiceButton1Text,m_ChoiceButton2Text,m_ChoiceButton3Text,m_ChoiceButton4Text,m_ChoiceButton5Text};
+
+            Debug.Log($"[DialoguePanel] 按钮检查: Button1={allButtons[0]!=null}, Text1={allButtonTexts[0]!=null}");
+
+            for (int i = 0; i < choicesData.Count && i < 5; i++)
+            {
+                var choiceData = choicesData[i];
+
+                Debug.Log($"[DialoguePanel] 处理选项 {i}: {choiceData.ChoiceText}");
+
+                // 检查选项条件是否满足
+                if (!CanShowChoice(choiceData))
+                {
+                    Debug.Log($"[DialoguePanel] 隐藏选项 {i} due to unmet conditions");
+                    continue;
+                }
+
+                // 使用固定按钮
+                if (allButtons[i] != null && allButtonTexts[i] != null)
+                {
+                    // 设置选项文本
+                    allButtonTexts[i].text = choiceData.ChoiceText;
+
+                    // 清除旧的事件
+                    allButtons[i].onClick.RemoveAllListeners();
+                    // 添加新的事件
+                    allButtons[i].onClick.AddListener(() => OnChoiceButtonClick(choiceData.NextId, choiceData.Rewards));
+
+                    // 显示按钮
+                    allButtons[i].gameObject.SetActive(true);
+                    m_ChoiceButtons.Add(allButtons[i]);
+
+                    Debug.Log($"[DialoguePanel] 已设置按钮 {i}: {choiceData.ChoiceText}, Active: {allButtons[i].gameObject.activeSelf}");
+                }
+                else
+                {
+                    Debug.LogError($"[DialoguePanel] 无法使用按钮 {i}: Button={allButtons[i]!=null}, Text={allButtonTexts[i]!=null}");
+                }
+            }
+
+            // 显示选项面板
+            m_SelectPanel.gameObject.SetActive(true);
+            Debug.Log($"[DialoguePanel] 设置选项面板 active = true");
+            Debug.Log($"[DialoguePanel] 选项面板当前状态 - ActiveSelf: {m_SelectPanel.gameObject.activeSelf}, ActiveInHierarchy: {m_SelectPanel.gameObject.activeInHierarchy}");
+
+            // 检查 Canvas Group
+            var canvasGroup = m_SelectPanel.GetComponent<CanvasGroup>();
+            if (canvasGroup != null)
+            {
+                Debug.Log($"[DialoguePanel] 选项面板 CanvasGroup - Alpha: {canvasGroup.alpha}, Interactable: {canvasGroup.interactable}, BlocksRaycasts: {canvasGroup.blocksRaycasts}");
+            }
+
+            Log.Info("[DialoguePanel] 选项面板已显示");
+        }
+
+        /// <summary>
+        /// 隐藏选项面板
+        /// </summary>
+        private void HideChoicesPanel()
+        {
+            if (m_SelectPanel != null)
+            {
+                m_SelectPanel.gameObject.SetActive(false);
+            }
+
+            // 清理按钮事件（不销毁按钮，因为它们是插件的一部分）
+            foreach (var button in m_ChoiceButtons)
+            {
+                if (button != null)
+                {
+                    button.onClick.RemoveAllListeners();
+                }
+            }
+            m_ChoiceButtons.Clear();
+        }
+
+        /// <summary>
+        /// 选项按钮点击
+        /// </summary>
+        private void OnChoiceButtonClick(int nextDialogueId, List<ChoiceReward> rewards)
+        {
+            Log.Info($"[DialoguePanel] 选项已选择，跳转到对话ID: {nextDialogueId}");
+
+            if (m_ProcedureGame == null)
+            {
+                Debug.LogError("[DialoguePanel] m_ProcedureGame 为空，无法处理选项选择");
+                return;
+            }
+
+            // 隐藏选项面板
+            HideChoicesPanel();
+
+            // 应用选项奖励（流程层处理）
+            m_ProcedureGame.ApplyChoiceRewards(rewards);
+
+            // 设置下一对话ID
+            m_ProcedureGame.SetNextDialogueId(nextDialogueId);
+
+            // 延迟显示下一句对话
+            StartCoroutine(ShowNextDialogueAfterChoice());
+        }
+
+        /// <summary>
+        /// 检查选项是否满足显示条件
+        /// </summary>
+        private bool CanShowChoice(RuntimeChoiceData choice)
+        {
+            if (choice.Conditions == null || choice.Conditions.Count == 0)
+            {
+                // 没有条件，默认显示
+                return true;
+            }
+
+            var playerData = CustomEntry.PlayerData;
+            if (playerData == null)
+            {
+                return false;
+            }
+
+            foreach (var condition in choice.Conditions)
+            {
+                bool conditionMet = false;
+
+                switch (condition.Type)
+                {
+                    case ConditionType.PlayerAttribute:
+                        int currentAttr = 0;
+                        switch (condition.AttributeType)
+                        {
+                            case PlayerAttributeType.Charm:
+                                currentAttr = playerData.Charm;
+                                break;
+                            case PlayerAttributeType.Inspiration:
+                                currentAttr = playerData.Inspiration;
+                                break;
+                            case PlayerAttributeType.Sanity:
+                                currentAttr = playerData.Sanity;
+                                break;
+                        }
+                        conditionMet = condition switch
+                        {
+                            { Operator: ConditionOperator.GreaterThanOrEqual } => currentAttr >= condition.Value,
+                            { Operator: ConditionOperator.LessThanOrEqual } => currentAttr <= condition.Value,
+                            { Operator: ConditionOperator.Equal } => currentAttr == condition.Value,
+                            _ => false
+                        };
+                        break;
+
+                    case ConditionType.NpcFavorability:
+                        if (int.TryParse(condition.NpcId, out int npcId))
+                        {
+                            int favorability = playerData.GetFavorability(npcId);
+                            conditionMet = condition switch
+                            {
+                                { Operator: ConditionOperator.GreaterThanOrEqual } => favorability >= condition.Value,
+                                { Operator: ConditionOperator.LessThanOrEqual } => favorability <= condition.Value,
+                                { Operator: ConditionOperator.Equal } => favorability == condition.Value,
+                                _ => false
+                            };
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"[DialoguePanel] 无效的NPC ID: {condition.NpcId}");
+                        }
+                        break;
+
+                    case ConditionType.SpecialItem:
+                        if (int.TryParse(condition.ItemId, out int itemId))
+                        {
+                            bool hasItem = playerData.HasItem(itemId);
+                            conditionMet = condition.RequireItem ? hasItem : !hasItem;
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"[DialoguePanel] 无效的物品 ID: {condition.ItemId}");
+                            conditionMet = false;
+                        }
+                        break;
+                }
+
+                if (!conditionMet)
+                {
+                    // 只要有一个条件不满足，就不显示该选项
+                    return false;
+                }
+            }
+
+            // 所有条件都满足
+            return true;
+        }
+
+        
+        #endregion
+
+        #region 立绘与背景显示
 
         /// <summary>
         /// 根据立绘动作JSON更新立绘显示
@@ -419,6 +775,42 @@ namespace AVGGame
             public float Scale;
         }
 
+        /// <summary>
+        /// 异步加载并设置背景图
+        /// </summary>
+        private void ApplyBackground(string backgroundPath)
+        {
+            if (string.IsNullOrEmpty(backgroundPath) || m_BackgroundImage == null)
+            {
+                return;
+            }
+
+            GameEntry.Resource.LoadAsset(
+                backgroundPath,
+                typeof(Sprite),
+                new LoadAssetCallbacks(
+                    OnLoadBackgroundSuccess,
+                    OnLoadBackgroundFailure
+                )
+            );
+        }
+
+        private void OnLoadBackgroundSuccess(string assetName, object asset, float duration, object userData)
+        {
+            if (m_BackgroundImage == null) return;
+
+            Sprite sprite = asset as Sprite;
+            if (sprite != null)
+            {
+                m_BackgroundImage.sprite = sprite;
+            }
+        }
+
+        private void OnLoadBackgroundFailure(string assetName, LoadResourceStatus status, string errorMessage, object userData)
+        {
+            Debug.LogWarning($"[DialoguePanel] 背景图加载失败: {assetName}, 状态: {status}, 错误: {errorMessage}");
+        }
+
         #endregion
 
         #region 私有方法
@@ -434,6 +826,8 @@ namespace AVGGame
                 return;
             }
 
+            Debug.Log("[DialoguePanel] === ShowCurrentDialogue 开始 ===");
+
             DialogueDisplayData data = m_ProcedureGame.GetCurrentDialogue();
 
             if (data == null)
@@ -442,13 +836,71 @@ namespace AVGGame
                 return;
             }
 
-            Log.Info($"[DialoguePanel] 显示对话 - 说话人: {data.SpeakerName}, 文本: {data.DialogText}");
+            Debug.Log($"[DialoguePanel] 获取数据成功 - NodeType: {data.NodeType}, ChoicesJson: {data.ChoicesJson}");
+
+            Log.Info($"[DialoguePanel] 显示对话 - 说话人: {data.SpeakerName}, 文本: {data.DialogText}, 类型: {data.NodeType}");
 
             // 应用立绘
             ApplyCharacterDisplay(data.CharacterActionsJson);
 
-            // 调用已有的 SetDialogue 方法显示
+            // 应用背景图
+            ApplyBackground(data.BackgroundPath);
+
+            // 检查是否是选择节点
+            if (data.NodeType == 1) // 选择节点
+            {
+                Log.Info("[DialoguePanel] 检测到选择节点，显示内部选项面板");
+                Debug.Log($"[DialoguePanel] Options JSON: {data.ChoicesJson}");
+
+                // 解析选项数据
+                List<RuntimeChoiceData> choicesData = ParseChoicesJson(data.ChoicesJson);
+                Debug.Log($"[DialoguePanel] ParseChoicesJson 返回: {(choicesData != null ? choicesData.Count.ToString() : "null")}");
+
+                if (choicesData != null && choicesData.Count > 0)
+                {
+                    Log.Info($"[DialoguePanel] 解析成功 {choicesData.Count} 个选项");
+                    foreach (var choice in choicesData)
+                    {
+                        Log.Info($"[DialoguePanel] 选项: {choice.ChoiceText}, NextId: {choice.NextId}");
+                    }
+
+                    // 显示选项面板
+                    ShowChoicesPanel(choicesData);
+
+                    // 隐藏对话文本
+                    if (m_DialogueText != null)
+                    {
+                        m_DialogueText.text = "";
+                    }
+
+                    // 隐藏继续提示
+                    if (m_ContinueIndicator != null)
+                    {
+                        m_ContinueIndicator.SetActive(false);
+                    }
+
+                    Debug.Log("[DialoguePanel] === 选项显示完成 ===");
+                    return;
+                }
+                else
+                {
+                    Debug.LogError("[DialoguePanel] 选项数据解析失败或为空");
+                    // 如果选项解析失败，按普通对话处理
+                }
+            }
+
+            // 普通对话或非选择节点
+            // 隐藏选项面板
+            HideChoicesPanel();
+
+            // 显示对话
             SetDialogue(data.SpeakerName, data.DialogText);
+
+            // 显示继续提示
+            if (m_ContinueIndicator != null)
+            {
+                m_ContinueIndicator.SetActive(true);
+            }
         }
 
         /// <summary>
@@ -460,6 +912,13 @@ namespace AVGGame
             if (m_IsTyping)
             {
                 SkipTypewriter();
+                return;
+            }
+
+            // 如果正在显示选项面板，不做任何处理（等待选项）
+            if (m_SelectPanel != null && m_SelectPanel.gameObject.activeSelf)
+            {
+                Debug.Log("[DialoguePanel] 正在显示选项面板，等待选择");
                 return;
             }
 
@@ -475,11 +934,10 @@ namespace AVGGame
                 return;
             }
 
-            // 应用立绘
-            ApplyCharacterDisplay(nextData.CharacterActionsJson);
+            Debug.Log($"[DialoguePanel] OnContinueClick - 获取到下一条对话: NodeType={nextData.NodeType}");
 
-            // 显示下一条对话
-            SetDialogue(nextData.SpeakerName, nextData.DialogText);
+            // 使用 ShowCurrentDialogue 来正确处理选项节点
+            ShowCurrentDialogue();
         }
 
         /// <summary>

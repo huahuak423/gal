@@ -55,7 +55,11 @@ namespace AVGGame
             m_ButtonPlace3 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace3");
             m_ButtonPlace4 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace4");
             m_ButtonPlace5 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace5");
-            
+            m_ButtonPlace6 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace6");
+            m_ButtonPlace7 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace7");
+            m_ButtonPlace8 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace8");
+            m_ButtonPlace9 = this.GetComponentByPath<Button>("Canvas/Background/MapPlate/ButtonPlace9");
+
             //小地图
             m_ButtonMenu =  this.GetComponentByPath<Button>("Canvas/Background/ButtonMenu");
             m_SelectPanel = this.GetComponentByPath<Transform>("Canvas/Background/SelectPanel");
@@ -88,11 +92,47 @@ namespace AVGGame
             {
                 m_ButtonPlace1.onClick.AddListener(OnButtonPlace1Click);
             }
-            
+
             if (m_ButtonPlace2 != null)
             {
                 m_ButtonPlace2.onClick.AddListener(OnButtonPlace2Click);
             }
+
+            if (m_ButtonPlace3 != null)
+            {
+                m_ButtonPlace3.onClick.AddListener(OnButtonPlace3Click);
+            }
+
+            if (m_ButtonPlace4 != null)
+            {
+                m_ButtonPlace4.onClick.AddListener(OnButtonPlace4Click);
+            }
+
+            if (m_ButtonPlace5 != null)
+            {
+                m_ButtonPlace5.onClick.AddListener(OnButtonPlace5Click);
+            }
+
+            if (m_ButtonPlace6 != null)
+            {
+                m_ButtonPlace6.onClick.AddListener(OnButtonPlace6Click);
+            }
+
+            if (m_ButtonPlace7 != null)
+            {
+                m_ButtonPlace7.onClick.AddListener(OnButtonPlace7Click);
+            }
+
+            if (m_ButtonPlace8 != null)
+            {
+                m_ButtonPlace8.onClick.AddListener(OnButtonPlace8Click);
+            }
+
+            if (m_ButtonPlace9 != null)
+            {
+                m_ButtonPlace9.onClick.AddListener(OnButtonPlace9Click);
+            }
+
             if (m_ButtonMenu != null)
             {
                 m_ButtonMenu.onClick.AddListener(OnButtonMenuClick);
@@ -160,12 +200,82 @@ namespace AVGGame
         /// </summary>
         private void OnButtonPlace2Click()
         {
-            Log.Info("[Place1Click] clicked");
+            Log.Info("[Place2Click] clicked");
             //获得该地图中已经解锁的事件列表
             List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(2);
             SelectStory(eventList);
         }
-        
+
+        /// <summary>
+        /// 选择地图3
+        /// </summary>
+        private void OnButtonPlace3Click()
+        {
+            Log.Info("[Place3Click] clicked");
+            List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(3);
+            SelectStory(eventList);
+        }
+
+        /// <summary>
+        /// 选择地图4
+        /// </summary>
+        private void OnButtonPlace4Click()
+        {
+            Log.Info("[Place4Click] clicked");
+            List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(4);
+            SelectStory(eventList);
+        }
+
+        /// <summary>
+        /// 选择地图5
+        /// </summary>
+        private void OnButtonPlace5Click()
+        {
+            Log.Info("[Place5Click] clicked");
+            List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(5);
+            SelectStory(eventList);
+        }
+
+        /// <summary>
+        /// 选择地图6
+        /// </summary>
+        private void OnButtonPlace6Click()
+        {
+            Log.Info("[Place6Click] clicked");
+            List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(6);
+            SelectStory(eventList);
+        }
+
+        /// <summary>
+        /// 选择地图7
+        /// </summary>
+        private void OnButtonPlace7Click()
+        {
+            Log.Info("[Place7Click] clicked");
+            List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(7);
+            SelectStory(eventList);
+        }
+
+        /// <summary>
+        /// 选择地图8
+        /// </summary>
+        private void OnButtonPlace8Click()
+        {
+            Log.Info("[Place8Click] clicked");
+            List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(8);
+            SelectStory(eventList);
+        }
+
+        /// <summary>
+        /// 选择地图9
+        /// </summary>
+        private void OnButtonPlace9Click()
+        {
+            Log.Info("[Place9Click] clicked");
+            List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(9);
+            SelectStory(eventList);
+        }
+
         /// <summary>
         /// 打开并按条件显示可以进入的故事
         /// </summary>
