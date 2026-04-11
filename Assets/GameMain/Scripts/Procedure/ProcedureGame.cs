@@ -461,7 +461,8 @@ namespace AVGGame
                 CurrentNodeId = row.Id,
                 NodeType = row.NodeType,
                 ChoicesJson = row.ChoicesJson,
-                CharacterActionsJson = row.CharacterActionsJson
+                CharacterActionsJson = row.CharacterActionsJson,
+                BackgroundPath = row.BackgroundPath
             };
         }
 
