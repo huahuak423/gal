@@ -191,17 +191,6 @@ namespace AVGGame
         }
 
         /// <summary>
-        /// 设置背景图片
-        /// </summary>
-        public void SetBackground(Sprite background)
-        {
-            if (m_BackgroundImage != null)
-            {
-                m_BackgroundImage.sprite = background;
-            }
-        }
-
-        /// <summary>
         /// 设置完成回调
         /// </summary>
         public void SetCompleteCallback(System.Action onComplete)
@@ -241,7 +230,7 @@ namespace AVGGame
 
         #endregion
 
-        #region 立绘显示
+        #region 立绘与背景显示
 
         /// <summary>
         /// 根据立绘动作JSON更新立绘显示
@@ -419,6 +408,42 @@ namespace AVGGame
             public float Scale;
         }
 
+        /// <summary>
+        /// 异步加载并设置背景图
+        /// </summary>
+        private void ApplyBackground(string backgroundPath)
+        {
+            if (string.IsNullOrEmpty(backgroundPath) || m_BackgroundImage == null)
+            {
+                return;
+            }
+
+            GameEntry.Resource.LoadAsset(
+                backgroundPath,
+                typeof(Sprite),
+                new LoadAssetCallbacks(
+                    OnLoadBackgroundSuccess,
+                    OnLoadBackgroundFailure
+                )
+            );
+        }
+
+        private void OnLoadBackgroundSuccess(string assetName, object asset, float duration, object userData)
+        {
+            if (m_BackgroundImage == null) return;
+
+            Sprite sprite = asset as Sprite;
+            if (sprite != null)
+            {
+                m_BackgroundImage.sprite = sprite;
+            }
+        }
+
+        private void OnLoadBackgroundFailure(string assetName, LoadResourceStatus status, string errorMessage, object userData)
+        {
+            Debug.LogWarning($"[DialoguePanel] 背景图加载失败: {assetName}, 状态: {status}, 错误: {errorMessage}");
+        }
+
         #endregion
 
         #region 私有方法
@@ -446,6 +471,9 @@ namespace AVGGame
 
             // 应用立绘
             ApplyCharacterDisplay(data.CharacterActionsJson);
+
+            // 应用背景图
+            ApplyBackground(data.BackgroundPath);
 
             // 调用已有的 SetDialogue 方法显示
             SetDialogue(data.SpeakerName, data.DialogText);
@@ -477,6 +505,9 @@ namespace AVGGame
 
             // 应用立绘
             ApplyCharacterDisplay(nextData.CharacterActionsJson);
+
+            // 应用背景图
+            ApplyBackground(nextData.BackgroundPath);
 
             // 显示下一条对话
             SetDialogue(nextData.SpeakerName, nextData.DialogText);
