@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UnityGameFramework>
+  <ResourceBuilder>
+    <Settings>
+      <InternalResourceVersion>0</InternalResourceVersion>
+      <Platforms>1</Platforms>
+      <AssetBundleCompression>1</AssetBundleCompression>
+      <CompressionHelperTypeName>
+      </CompressionHelperTypeName>
+      <AdditionalCompressionSelected>False</AdditionalCompressionSelected>
+      <ForceRebuildAssetBundleSelected>False</ForceRebuildAssetBundleSelected>
+      <BuildEventHandlerTypeName>
+      </BuildEventHandlerTypeName>
+      <OutputDirectory>C:/Users/rrrrpg/Desktop</OutputDirectory>
+      <OutputPackageSelected>True</OutputPackageSelected>
+      <OutputFullSelected>True</OutputFullSelected>
+      <OutputPackedSelected>True</OutputPackedSelected>
+    </Settings>
+  </ResourceBuilder>
+</UnityGameFramework>
