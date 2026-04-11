@@ -854,6 +854,15 @@
             "OffsetY": -153.09388732910157,
             "Scale": 1.3236209154129029,
             "LastNodeGuid": "对话_52_何行舟猛地一怔。他惯"
+        },
+        {
+            "GraphName": "何行舟事件一",
+            "SpritePath": "Assets/GameMain/Art/NPC/富商.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.6894787549972535,
+            "LastNodeGuid": "对话_4_“装什么清高啊，渡？"
         }
     ]
 }

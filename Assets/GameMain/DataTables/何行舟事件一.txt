@@ -39,10 +39,10 @@
 10035	10036	0		他转过头，用一种极其复杂、充满戒备和探究的眼神看着你	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主01-04.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/何行舟/何行舟02-00.png","OffsetX":-100.0,"OffsetY":-300.0,"Scale":2.299999952316284}]}							
 10036	10037	0		对于这种在欢场摸爬滚打、见惯了人情冷暖的人来说，他们从不相信无缘无故的善意								
 10037	10038	0		在剧本里，赶走一匹恶狼的，往往是另一只想要独吞猎物的猛虎								
-10038	10039	0	周杉	“谢谢这位姐姐英雌救帅～”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
+10038	10039	0	何行舟	“谢谢这位姐姐英雌救帅～”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
 10039	10040	0		他突然勾起唇角，露出了一个极具攻击性的、玩世不恭的笑。他单手插在西裤口袋里，迈着修长的双腿，一步步向你逼近	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Characters/何行舟/何行舟02-00.png","OffsetX":150.0,"OffsetY":-300.0,"Scale":2.299999952316284}]}							
 10040	10041	0		直到他身上那股混合酒精的气味几乎要将你包围，才停下								
-10041	10042	0	周杉	“赶走了我的大金主……姐姐是在欲擒故纵吗？还是说，你看上了我，想用这种方式让我报答你？”								
+10041	10042	0	何行舟	“赶走了我的大金主……姐姐是在欲擒故纵吗？还是说，你看上了我，想用这种方式让我报答你？”								
 10042	10043	0		他微微俯身，眼神里满是恶劣的挑衅与试探。他在试图用这种轻浮的言语来激怒你								
 10043	10064	0		或者揭开你虚伪的善意面具，证明你和刚才那个老男人其实是一丘之貉								
 10044	10045	0		你看着他满脸戒备、浑身是刺的模样，只觉得眼下的局面有些荒诞	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
