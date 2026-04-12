@@ -1,6 +1,6 @@
-﻿Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
-int	int	int	string	string	string	string	string	string	string	string	string	string
-编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
+##int	int	int	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
 10000	10001	0		凌晨一点半，你刚结束一部冗长且晦涩的欧洲文艺片观影，正揉着发酸的眉心，从昏暗的放映厅走向长廊								Assets/GameMain/Art/Backgrounds/电影院/电影院出口.png
 10001	10002	0		长廊铺着厚重吸音的天鹅绒地毯，暖黄色的壁灯将一切都笼罩在一层暧昧不明的滤镜中								
 10002	10003	0		你准备拐去隔壁酒吧喝点小酒，却在酒吧侧门撞见了两个男人的拉扯								Assets/GameMain/Art/Backgrounds/电影院/酒吧.png
