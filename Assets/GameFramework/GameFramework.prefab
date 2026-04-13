@@ -665,11 +665,11 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier:
   m_AvailableProcedureTypeNames:
-  - AVGGame.Procedure.ProcedurePreload
-  - AVGGame.Procedure.ProcedureSplash
-  - AVGGame.Procedure.ProcedureMainMenu
-  - AVGGame.Procedure.ProcedureGame
-  m_EntranceProcedureTypeName: AVGGame.Procedure.ProcedurePreload 
+  - AVGGame.ProcedurePreload
+  - AVGGame.ProcedureSplash
+  - AVGGame.ProcedureMainMenu
+  - AVGGame.ProcedureGame
+  m_EntranceProcedureTypeName: AVGGame.ProcedurePreload 
 --- !u!114 &11413340
 MonoBehaviour:
   m_ObjectHideFlags: 1

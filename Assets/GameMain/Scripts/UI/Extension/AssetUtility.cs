@@ -41,7 +41,6 @@ namespace AVGGame
 
                 // 游戏内UI (3000-3999)
                 case UIFormId.Dialogue: return "Dialogue";
-                case UIFormId.Choice: return "ChoicePanel";
                 case UIFormId.Menu: return "Menu";
                 case UIFormId.Map: return "Map";
 

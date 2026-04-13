@@ -18,7 +18,8 @@ namespace AVGGame
     {
         #region 字段
 
-        private bool m_PreloadComplete = false;
+        private bool m_InitResourcesComplete = false;
+        private bool m_InitResourcesSuccess = false;
 
         #endregion
 
@@ -28,23 +29,43 @@ namespace AVGGame
         {
             base.OnEnter(procedureOwner);
             Log.Info("[ProcedurePreload] Enter");
-
+            
+            // 调试：确认当前资源模式
+            bool editorMode = GameEntry.Base.EditorResourceMode;
+            Debug.Log($"[ProcedureGame] EditorResourceMode: {editorMode}");
+            
             // 初始化 UI 环境
             InitializeUIEnvironment();
 
-            // TODO: 在这里进行资源预加载、数据表加载等
-
-            // 模拟加载完成
-            m_PreloadComplete = true;
+            // 编辑器模式下不需要初始化资源管理器
+            if (GameEntry.Base.EditorResourceMode)
+            {
+                Log.Info("[ProcedurePreload] Editor mode, skip InitResources");
+                m_InitResourcesComplete = true;
+                m_InitResourcesSuccess = true;
+            }
+            else
+            {
+                // 打包模式：必须先初始化资源管理器，加载版本清单
+                Log.Info("[ProcedurePreload] Build mode, initializing resources...");
+                GameEntry.Resource.InitResources(OnInitResourcesComplete);
+            }
         }
 
         protected override void OnUpdate(IFsm<IProcedureManager> procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
 
-            if (m_PreloadComplete)
+            if (m_InitResourcesComplete)
             {
-                ChangeState<ProcedureSplash>(procedureOwner);
+                if (m_InitResourcesSuccess)
+                {
+                    ChangeState<ProcedureSplash>(procedureOwner);
+                }
+                else
+                {
+                    Log.Error("[ProcedurePreload] Init resources failed, can not continue.");
+                }
             }
         }
 
@@ -52,6 +73,17 @@ namespace AVGGame
         {
             base.OnLeave(procedureOwner, isShutdown);
             Log.Info("[ProcedurePreload] Leave");
+        }
+
+        #endregion
+
+        #region 回调
+
+        private void OnInitResourcesComplete()
+        {
+            m_InitResourcesComplete = true;
+            m_InitResourcesSuccess = true;
+            Log.Info("[ProcedurePreload] Init resources complete!");
         }
 
         #endregion

@@ -2,8 +2,132 @@
 <UnityGameFramework>
   <ResourceCollection>
     <Resources>
-      <Resource Name="MainRes" LoadType="0" Packed="False" />
+      <Resource Name="Art" LoadType="0" Packed="True" />
+      <Resource Name="DataTable" LoadType="0" Packed="True" />
+      <Resource Name="Prefab" LoadType="0" Packed="True" />
+      <Resource Name="Scenes" LoadType="0" Packed="True" />
     </Resources>
-    <Assets />
+    <Assets>
+      <Asset Guid="07c057a2efb835846b0cb51af2aba67e" ResourceName="Art" />
+      <Asset Guid="08806a125d23f41498aa8de3d20f9381" ResourceName="Art" />
+      <Asset Guid="089092141e0ac264b9a086f4af9dada4" ResourceName="Art" />
+      <Asset Guid="09462c11f286c424eb8c8006f705c0d5" ResourceName="Art" />
+      <Asset Guid="0d1e13c0bcdf2df42b07bd91fe07b1d6" ResourceName="Art" />
+      <Asset Guid="124def8a534896045aa8a965e14c28ff" ResourceName="Art" />
+      <Asset Guid="13950106b9ceb9d49996e97bd4966bb2" ResourceName="Art" />
+      <Asset Guid="164ee765c3da610498a7301f4fee9729" ResourceName="Art" />
+      <Asset Guid="166f0f6b54f489a4b8a4bcd2248e83b3" ResourceName="Prefab" />
+      <Asset Guid="184ca67ad78f68e4c8d92e7c6f96db94" ResourceName="Art" />
+      <Asset Guid="1ae4c2c85d2428242acf02fe0d5dc8e2" ResourceName="Art" />
+      <Asset Guid="1be9dc3fb06e85f4d8964e77184c8d8b" ResourceName="Prefab" />
+      <Asset Guid="1cf5ad67a09885e4a9cef848e0e7c9e1" ResourceName="Art" />
+      <Asset Guid="1d21a213882848c4a9230707756a8928" ResourceName="Art" />
+      <Asset Guid="1e1f48c56f131c34ea03bf526d04acb4" ResourceName="Art" />
+      <Asset Guid="1f6be3a90ad1c624ab56682eae390809" ResourceName="DataTable" />
+      <Asset Guid="2008a4311e5ade54b8206655d11967bb" ResourceName="DataTable" />
+      <Asset Guid="200aaa622c467cc46857d02fd28dbcea" ResourceName="Art" />
+      <Asset Guid="263fefc0c582d5441959578c6da2831e" ResourceName="Art" />
+      <Asset Guid="2956204b44b95de47a7042c380b2a72d" ResourceName="Art" />
+      <Asset Guid="2b33ccb945f239049b9baa3bfd75619b" ResourceName="DataTable" />
+      <Asset Guid="2cda990e2423bbf4892e6590ba056729" ResourceName="Scenes" />
+      <Asset Guid="2f474d59c9119a44fa9a9e705dbe5a58" ResourceName="Art" />
+      <Asset Guid="2f680f25409eb884791c8618d3080b04" ResourceName="DataTable" />
+      <Asset Guid="37452be0852d24f47879ba3a2ac1be50" ResourceName="Art" />
+      <Asset Guid="3865c0022b77faa41b3a11a0c488e4a4" ResourceName="Art" />
+      <Asset Guid="3ed4faaebb4ef1448a64675449465013" ResourceName="Art" />
+      <Asset Guid="4048e1703cb0b9742855b0ea3a8a4ff4" ResourceName="Art" />
+      <Asset Guid="40687a926d7c38c4bab4eed06e217ed8" ResourceName="Art" />
+      <Asset Guid="4259e6a8de68c33419331326ccfb9dae" ResourceName="Art" />
+      <Asset Guid="4beada88e1fc45f47b5e91aaebb284dd" ResourceName="DataTable" />
+      <Asset Guid="4cd8ef4adb6bf0d48b908cd03fffcc0b" ResourceName="Art" />
+      <Asset Guid="4d45c4db2282bb144ab50bf9ce442c99" ResourceName="Art" />
+      <Asset Guid="4d49542d2626c864db7456edc7156371" ResourceName="Art" />
+      <Asset Guid="4eb2765fe2b1b4a42b2df3d097707189" ResourceName="Art" />
+      <Asset Guid="50e74cd85f720264093e3ed32225bddb" ResourceName="DataTable" />
+      <Asset Guid="54f323c937a5e65469e14ede0214057e" ResourceName="Art" />
+      <Asset Guid="5d9ba3518116aba4797d813d88c436ce" ResourceName="DataTable" />
+      <Asset Guid="5eb91c75cb8d14e4db6e4053a0613c8e" ResourceName="Art" />
+      <Asset Guid="62ca1a3dd6bfa9e4ea8e0d021a0dbe50" ResourceName="Art" />
+      <Asset Guid="67dcb89fa607f5a46bc7250dfb5f0886" ResourceName="DataTable" />
+      <Asset Guid="683deb474687195409e276d1ab4110f2" ResourceName="DataTable" />
+      <Asset Guid="695d578219cb41d488f7cab83c738a74" ResourceName="Art" />
+      <Asset Guid="69e01c0e2f7bc6542a585fc47d9da57d" ResourceName="Art" />
+      <Asset Guid="6bc09cbddce977d45a10c4b9e94fadbf" ResourceName="DataTable" />
+      <Asset Guid="6d53bda3e7ab33a46ae6fc140f2da8ff" ResourceName="Art" />
+      <Asset Guid="6e303ccab7635fd429250d1b6df3abac" ResourceName="Art" />
+      <Asset Guid="6e3c41c0583fe514985d7cf1f85af9ee" ResourceName="Art" />
+      <Asset Guid="6f7f260ad7ba46142b426f39c59ce719" ResourceName="Art" />
+      <Asset Guid="6fa8759bc430d274db5e45685feef723" ResourceName="Art" />
+      <Asset Guid="737c3e8b56c16a94e9ca6680436635ca" ResourceName="Art" />
+      <Asset Guid="750b48829ad0e9042a73a248241527d9" ResourceName="Art" />
+      <Asset Guid="7596217d1c0f7ca41a742dc73b9abbc0" ResourceName="DataTable" />
+      <Asset Guid="7b0207e8e8d33024a8a0264ca01fee21" ResourceName="Art" />
+      <Asset Guid="7b51276f446fd93479f0ac1ec624f255" ResourceName="Art" />
+      <Asset Guid="7cb6ee3653ce6cf48bd751130b7ca13c" ResourceName="Art" />
+      <Asset Guid="81672a70f4e7d7b47b8725fad3cd62df" ResourceName="DataTable" />
+      <Asset Guid="84a0fc75c1c56e64ca03d06210334652" ResourceName="Art" />
+      <Asset Guid="84bbb3e28e2d51c45b662bb6f6c76a87" ResourceName="Art" />
+      <Asset Guid="88b3a63bcfc58c54ba1c33cfd1307f77" ResourceName="Art" />
+      <Asset Guid="8ab96703bb78f60449f3a21c9922b834" ResourceName="Art" />
+      <Asset Guid="904a697c8585e3a43b74fb793874a927" ResourceName="Art" />
+      <Asset Guid="90ad2822395aae2439f23cf7242aa2d8" ResourceName="Art" />
+      <Asset Guid="93c332a39d93dbf46aa3a33c372869dd" ResourceName="Art" />
+      <Asset Guid="94a47723ec7c67f429a07ff96ce03d14" ResourceName="Art" />
+      <Asset Guid="9b51af6264b05974e94c067074b48a03" ResourceName="Art" />
+      <Asset Guid="9cb7d4e4632201c48871dd93e0dd5f1f" ResourceName="Prefab" />
+      <Asset Guid="9d137b6a5eeb34344b3eddad8d3f61f4" ResourceName="Art" />
+      <Asset Guid="9de8d0ddd794d644ea6043d7eb0f4477" ResourceName="Art" />
+      <Asset Guid="9e53b7219b2bdff49a89742bb43b93a1" ResourceName="Art" />
+      <Asset Guid="9ed5e0cb50111724ba8f4f2fd9da4b90" ResourceName="DataTable" />
+      <Asset Guid="9fadc1fa0d89f7c45b243cb5ca54709c" ResourceName="Art" />
+      <Asset Guid="a19c791bd33e1794fb5815e757594602" ResourceName="Art" />
+      <Asset Guid="a28860b1a8f456b489be90859b8bcbff" ResourceName="Art" />
+      <Asset Guid="a38e758da75e5e24c86400119a2d1a1c" ResourceName="Art" />
+      <Asset Guid="a40597b360c42ed40b1ec84153f005a5" ResourceName="Art" />
+      <Asset Guid="a68a600ca49095040b174b3282aef4e3" ResourceName="Art" />
+      <Asset Guid="a839719b5b7ec604d9249a6e01a51c69" ResourceName="Art" />
+      <Asset Guid="a8f4dc056ee7a0e42a465d96544cf5dc" ResourceName="Prefab" />
+      <Asset Guid="ab2a405b4b4dab549b3d705cd9bf1ece" ResourceName="Art" />
+      <Asset Guid="adaf5ca617125f149b8f958f2b1fc330" ResourceName="Art" />
+      <Asset Guid="b24090998b5c81d48bea3642ad832565" ResourceName="Art" />
+      <Asset Guid="b2a5b2fe949a39e4191f69e3afba4227" ResourceName="Art" />
+      <Asset Guid="b64c5a3667e3a6c43a8d8193f02f2729" ResourceName="DataTable" />
+      <Asset Guid="b8f7785291d06c04f9059b8b07b74b9c" ResourceName="Art" />
+      <Asset Guid="bbbee354af236624fa21ed476ceee1f9" ResourceName="Art" />
+      <Asset Guid="bbce596c042fafe4eaa94b7112a04dd1" ResourceName="Prefab" />
+      <Asset Guid="bc831a453e7999947bcfbaf35149602f" ResourceName="DataTable" />
+      <Asset Guid="c29894ce9a8d5eb46a9fda67d14facb0" ResourceName="Art" />
+      <Asset Guid="c44e259a34035a5488047185138a8d47" ResourceName="Art" />
+      <Asset Guid="c6b9b5c19f73df644bb96e116f8def82" ResourceName="Art" />
+      <Asset Guid="c6f355c687e287048b85c17317f7946a" ResourceName="Art" />
+      <Asset Guid="cc9fd6e9c237eb449bcf5e79a8867a39" ResourceName="Art" />
+      <Asset Guid="d0402e5c94413814ca3c2d87def23da3" ResourceName="DataTable" />
+      <Asset Guid="d17cbdcf16ca84249b1f833eb8b1fbba" ResourceName="DataTable" />
+      <Asset Guid="dc120996a7b57394487195b6c7b1b0eb" ResourceName="Art" />
+      <Asset Guid="dc6196d634aefc14eb2be6808bb14344" ResourceName="Art" />
+      <Asset Guid="e1b9da561841eda4296a2277a226a9a6" ResourceName="Art" />
+      <Asset Guid="e326ddfc137cdb74a8c8fc060dcb3c46" ResourceName="Art" />
+      <Asset Guid="e4353c395bf7f304e9d36897649256cb" ResourceName="Art" />
+      <Asset Guid="e5c7db0d9555ce542a52d93cf6d835b3" ResourceName="DataTable" />
+      <Asset Guid="e79e8a5e86fb0f4459156e7be54b2693" ResourceName="Art" />
+      <Asset Guid="e7ff7e0dc71655e4795b10866fdd6f9b" ResourceName="DataTable" />
+      <Asset Guid="e881d989d08f5414d86e4ef9716dcb18" ResourceName="Art" />
+      <Asset Guid="e9f5c990eb6c8884ca6a2e9d3c8c1ff1" ResourceName="DataTable" />
+      <Asset Guid="ed100eb9ba346994592a384f7243a9a2" ResourceName="DataTable" />
+      <Asset Guid="eea38e86651f6084cbe8b740f89e49a5" ResourceName="Art" />
+      <Asset Guid="f095f68f29c3b9949891cd9c643805ef" ResourceName="Art" />
+      <Asset Guid="f164a1fc2bf27df42b6e3931d5b2efe2" ResourceName="Prefab" />
+      <Asset Guid="f35299f653442244ab7dddf5f324a9f2" ResourceName="DataTable" />
+      <Asset Guid="f760baa34616dec4cb35b47efa45625b" ResourceName="Art" />
+      <Asset Guid="f7e19d488bd540249b5cc49594b45b72" ResourceName="Prefab" />
+      <Asset Guid="f7e8a6112d8c7ef44b769020783942b8" ResourceName="DataTable" />
+      <Asset Guid="f972bfefbc4ad2843aa68583d6297cbc" ResourceName="Art" />
+      <Asset Guid="f9d7638182cab404194bb5027308ceb4" ResourceName="Art" />
+      <Asset Guid="fd6c9fa23f719354e9678c35fdc5ee8d" ResourceName="Art" />
+      <Asset Guid="fdabf97e3af58334991123c7f6ce171b" ResourceName="Art" />
+      <Asset Guid="fddc30f082428ef4790c4788ff2b4ae2" ResourceName="Art" />
+      <Asset Guid="ff078119cae47e64e8e6344292665ddb" ResourceName="Art" />
+      <Asset Guid="ff2418ba48f455b4983de6667c577f94" ResourceName="Prefab" />
+    </Assets>
   </ResourceCollection>
 </UnityGameFramework>

@@ -21,7 +21,6 @@ namespace AVGGame
 
         // 游戏内UI (3000-3999)
         public const int Dialogue = 3000;
-        public const int Choice = 3001;
         public const int Menu = 3002;           // 游戏内菜单
         public const int Map = 3003;            // 地图界面
     }

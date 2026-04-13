@@ -33,41 +33,44 @@ namespace AVGGame
             Debug.Log($"[EventRowData] 解析行数据，列数: {columnTexts.Length}");
             Debug.Log($"[EventRowData] 原始数据: {dataRowString}");
 
-            // EventPool.txt 开头有两个制表符，跳过两个空列
-            int index = 2;
-
-            // 先解析前几列来获取 EventType
-            if (columnTexts.Length < 5)
+            // EventPool.txt 最多12列，统一补齐防止越界
+            const int requiredColCount = 12;
+            if (columnTexts.Length < requiredColCount)
             {
-                Debug.LogWarning($"[EventRowData] 列数过少，无法解析基本字段，实际: {columnTexts.Length}");
-                return false;
+                Debug.LogWarning($"[EventRowData] 列数不足{requiredColCount}列，当前{columnTexts.Length}列，补空列");
+                string[] tempArray = new string[requiredColCount];
+                for (int i = 0; i < columnTexts.Length; i++)
+                {
+                    tempArray[i] = columnTexts[i];
+                }
+                columnTexts = tempArray;
             }
 
-            m_Id = ParseInt(columnTexts[index++]);
-            MapId = ParseInt(columnTexts[index++]);
-            EventType = ParseInt(columnTexts[index++]);
-
-            // 根据 EventType 判断列结构
-            // EventType=1: 12列（地图入口，有额外的空列）
-            // EventType=2: 11列（角色事件，无额外空列）
-            if (EventType == 1 && columnTexts.Length < 12)
+            // 检测表头的空列数（跳过 ## 前缀），动态确定起始索引
+            // 表头格式: ##\t\tId\tMapId... （2个空列）
+            // 数据格式: \tId\tMapId...     （1个空列）
+            // 通过检测前几个非空列来判断实际偏移
+            int index = 0;
+            if (columnTexts.Length > 0 && columnTexts[0] == "##")
             {
-                Debug.LogWarning($"[EventRowData] EventType=1 需要12列，实际: {columnTexts.Length}");
-                return false;
+                // 表头行，跳过 ## 后找到第一个实际列名
+                index = 0;
+            }
+            else
+            {
+                // 数据行：找到第一个非空且非数字前缀的列作为 Id
+                // 数据行第一个元素通常是空的（制表符开头），第二个元素是 Id
+                index = 1;
             }
 
-            if (EventType == 2 && columnTexts.Length < 11)
-            {
-                Debug.LogWarning($"[EventRowData] EventType=2 需要11列，实际: {columnTexts.Length}");
-                return false;
-            }
-
-            // 依次解析字段
-            Title = columnTexts[index++];
-            CostAP = ParseInt(columnTexts[index++]);
-            EventNum = SafeGetString(columnTexts[index++]);
-            VisibleConditions = columnTexts[index++];
-            PlayableConditions = columnTexts[index++];
+            m_Id = SafeGetInt(columnTexts, index++);
+            MapId = SafeGetInt(columnTexts, index++);
+            EventType = SafeGetInt(columnTexts, index++);
+            Title = SafeGetString(columnTexts, index++);
+            CostAP = SafeGetInt(columnTexts, index++);
+            EventNum = SafeGetString(columnTexts, index++);
+            VisibleConditions = SafeGetString(columnTexts, index++);
+            PlayableConditions = SafeGetString(columnTexts, index++);
 
             // EventType=1 有额外的空列，需要跳过
             if (EventType == 1)
@@ -75,7 +78,7 @@ namespace AVGGame
                 index++;
             }
 
-            TargetGraphName = columnTexts[index++];
+            TargetGraphName = SafeGetString(columnTexts, index++);
 
             Debug.Log(
                 $"[EventRowData] 解析成功 - ID: {m_Id}, MapId: {MapId}, EventType: {EventType}, Title: {Title}, TargetGraphName: {TargetGraphName}");
@@ -93,32 +96,26 @@ namespace AVGGame
         /// <summary>
         /// 安全的 int 解析，防止 Excel 里格子为空导致崩溃
         /// </summary>
-        private int ParseInt(string text)
+        private int SafeGetInt(string[] array, int index)
         {
-            if (string.IsNullOrWhiteSpace(text))
-            {
-                Debug.Log("[EventRowData] ParseInt: 空字符串，返回 0");
+            if (index < 0 || index >= array.Length)
                 return 0;
-            }
-
-            if (int.TryParse(text, out int result))
-            {
-                Debug.Log($"[EventRowData] ParseInt: '{text}' -> {result}");
+            string value = array[index];
+            if (string.IsNullOrEmpty(value))
+                return 0;
+            if (int.TryParse(value, out int result))
                 return result;
-            }
-
-            Debug.LogWarning($"[EventRowData] ParseInt: 无法解析 '{text}'，返回 0");
             return 0;
         }
 
         /// <summary>
         /// 安全的 string 解析，防止索引越界
         /// </summary>
-        private string SafeGetString(string text)
+        private string SafeGetString(string[] array, int index)
         {
-            if (string.IsNullOrEmpty(text))
+            if (index < 0 || index >= array.Length)
                 return "";
-            return text;
+            return array[index];
         }
     }
 }

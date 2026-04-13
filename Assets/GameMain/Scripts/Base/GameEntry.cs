@@ -116,7 +116,19 @@ namespace AVGGame
             baseComponent.GameSpeed = m_GameSpeed;
             baseComponent.RunInBackground = m_RunInBackground;
             baseComponent.NeverSleep = m_NeverSleep;
-            baseComponent.EditorResourceMode = m_EditorResourceMode;
+
+            // 打包后强制使用 AssetBundle 模式，编辑器中可自由切换
+            bool actualEditorResourceMode = Application.isEditor ? m_EditorResourceMode : false;
+            baseComponent.EditorResourceMode = actualEditorResourceMode;
+
+            if (!Application.isEditor)
+            {
+                Log.Info("[GameEntry] Running in build mode, forcing AssetBundle mode");
+            }
+            else
+            {
+                Log.Info($"[GameEntry] Running in editor mode, ResourceMode: {(actualEditorResourceMode ? "Editor" : "AssetBundle")}");
+            }
         }
 
         #endregion
