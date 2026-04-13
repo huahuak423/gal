@@ -926,6 +926,15 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_15_清脆果断的声音让几个"
+        },
+        {
+            "GraphName": "序章",
+            "SpritePath": "Assets/GameMain/Art/UI_Common/Button/美甲店08.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
         }
     ]
 }
