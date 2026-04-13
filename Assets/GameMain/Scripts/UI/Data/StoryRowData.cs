@@ -43,6 +43,7 @@ namespace AVGGame
         public string SePath;
         public string PerformanceKey;
         public string BackgroundPath;
+        public string VoicePath;
 
         /// <summary>
         /// 【核心魔法】UGF 引擎在加载 txt 数据表时，每读一行都会自动调用这个方法
@@ -54,11 +55,11 @@ namespace AVGGame
             string[] columnTexts = dataRowString.Split('\t');
 
             // 2. 防御性编程：检查列数是否对得上我们导出的 5 列
-            if (columnTexts.Length < 13)
+            if (columnTexts.Length < 14)
             {
-                Debug.LogWarning($"[StoryRowData] 行文本列数不足13列，当前只有{columnTexts.Length}列，补空列");
+                Debug.LogWarning($"[StoryRowData] 行文本列数不足14列，当前只有{columnTexts.Length}列，补空列");
                 // 补足空列，防止后续访问越界
-                string[] tempArray = new string[13];
+                string[] tempArray = new string[14];
                 for (int i = 0; i < columnTexts.Length; i++)
                 {
                     tempArray[i] = columnTexts[i];
@@ -84,6 +85,7 @@ namespace AVGGame
             SePath = SafeGetString(columnTexts, index++);         // 第11列：SE
             PerformanceKey = SafeGetString(columnTexts, index++);  //第12列：动画效果Key
             BackgroundPath = SafeGetString(columnTexts, index++);  //第13列：背景图
+            VoicePath = SafeGetString(columnTexts, index++);       //第14列：语音
 
             Debug.Log($"[StoryRowData] 解析成功! Id={m_Id}, NextId={NextId}, NodeType={NodeType}");
             return true;

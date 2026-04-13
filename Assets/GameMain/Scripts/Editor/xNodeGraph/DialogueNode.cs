@@ -22,11 +22,13 @@ namespace AVGGame.Editor
         
         [Header("音频设置和背景图")]
         [Tooltip("填入 BGM 的资源路径或名称，留空代表不切换（延续前面）")]
-        public string BgmPath; 
+        public string BgmPath;
         [Tooltip("填入 临时音效 的资源路径或名称，留空代表无音效")]
         public string SePath;
-        [Tooltip("填入 背景图 的资源路径或名称，留空代表无音效")]
+        [Tooltip("填入 背景图 的资源路径或名称，留空代表无背景图")]
         public string BackgroundPath;
+        [Tooltip("填入 语音 的资源路径或名称，留空代表无语音")]
+        public string VoicePath;
 
         [Header("动画效果设置")] 
         public string PerformanceKey;

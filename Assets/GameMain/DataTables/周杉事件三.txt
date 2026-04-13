@@ -1,90 +1,90 @@
-﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
-##int	int	int	string	string	string	string	string	string	string	string	string	string
-##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
-10000	10001	0		午后，阳光正好								Assets/GameMain/Art/Backgrounds/公园/公园.png
-10001	10002	0		你挑了一个离家不远的公园，换上舒服的运动鞋，带了一本书，打算找一个景致优美的地方，安安静静地过一个下午								
-10002	10003	0		许是工作日的缘故，整个公园被静谧笼罩。偶尔有一两个遛狗的老人经过，脚步慢悠悠的，像是在和时间商量着什么								
-10003	10004	0		可是安静的有些过了头，习惯了城市喧嚣的你，在这种绝对的安静里，反而觉得有些空落落的								
-10004	10005	0		可惜许映月还在苦命地上班，你打开微信，看见她三小时前发的一条朋友圈：“甲方又要改需求，我要死了。”								
-10005	10006	0		你犹豫了一下，没敢打扰她。很自然的，你就想起时安								
-10006	10007	0		你打开那个陪玩 App，看见他的黑色头像亮着，就顺手下了两小时的闲聊单								
-10007	10008	0		语音刚接通，耳机里传来的却不是他往日那般从容温润的开场白，而是一阵沉重且急促的喘息								
-10008	10009	0		背景音里还夹杂着呼啸的风声和手推车滚轮摩擦地面的轰隆声								
-10009	10010	0	周杉	“呼…… 老板，下午好。抱歉，刚才风有点大，今天想聊点什么？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10010	10011	0		他的语速比平时快了些，尾音里带着一丝显而易见的沙哑和虚浮	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10011	10012	0		他在极力调整呼吸，试图把那种疲惫感强压下去，重新披上那层完美且游刃有余的外衣								
-10012	10013	0		作为常年和各种情绪打交道的自媒体人，你瞬间就察觉到了他的不对劲								
-10013	10014	0		他现在的状态，就像是一根已经崩到极限、随时会断裂的弦								
-10014	10015	0		你没有戳破他的勉强，只是把语气放得更平和、更随意了一些，像是真的什么都没察觉到								
-10015	10016	0	女主名	“没什么特别想聊的，我在公园采风，只是想找个人连着麦。你在外面？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10016	10017	0		那头沉默了两秒，然后他的声音响起，带着一丝窘迫，但很快就被压了下去	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10017	10018	0	周杉	“嗯，接了个同城搬运的兼职。不影响的，老板可以说说你那边的风景，我听着呢。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10018	10019	0		他说话的时候，背景里传来一声沉闷的重物落地声，像是他把什么东西放下了，然后长长地呼了一口气								
-10019	10020	0		你没有追问，开始随口向他描述公园里晒太阳的流浪猫、落在地上歇脚的喜鹊、从容路过的行人	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10020	10021	0		起初，他还能用那些恰到好处的温柔话语回应你								
-10021	10022	0		但渐渐地，他的回应变成了单音节的 “嗯”、“是吗”，甚至好几次出现了长达十几秒的空白								
-10022	10023	0		听筒里传来的，只有他越来越沉重的呼吸声，以及某种重物被艰难放下的闷响								
-10023	10024	0		大概又过了十秒，他的声音才再次响起，比之前更低、更哑								
-10024	10025	0	周杉	“……听起来真好啊。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10025	10026	0		他说真好的时候，声音里有一种很奇怪的东西，有一种隔着玻璃看别人家的灯火的怅然	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10026	10027	0		这种透过网线传来的、几乎要令人窒息的疲惫感，让你不自觉地皱起了眉头								
-10027	10028	0		你们虽然有过几次不错的交流，但还只是雇佣关系，你不打算越界去窥探一个年轻人的窘迫								
-10028	10029	0		你看了眼时间，已经过了四十分钟，或许是时候做出了一个成熟体贴的决定								
-10029	10030	0	女主名	“时安，我这边也没什么事了。听得出你今天很累，这单就先到这里吧。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10030	10031	0		你顿了顿，又补了一句	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10031	10032	0	女主名	“你不用有负担，我会照常结算。去买瓶水，找个阴凉的地方歇一会儿吧。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10032	10033	0		你准备按下挂断键，但就在你的手指即将触碰到屏幕的那一刻								
-10033	10034	0	周杉	“老板！等等……”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10034	10035	0		你停住了动作，但那头陷入的沉默几乎让你以为已经挂断了	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10035	10036	0		过了好一会儿，你听到他像是脱力一般，顺着墙壁滑坐下去的摩擦声								
-10036	10037	0		当他再次开口时，那层完美服务者的坚硬外壳已经彻底粉碎								
-10037	10038	0		他的声音带着一种生怕被拒绝的小心翼翼，甚至透出一丝不易察觉的哀求								
-10038	10039	0	周杉	“……可以不挂吗？就十分钟。我可以把钱退给你……我只是，现在真的很想再听听你的声音。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10039	10040	0		左右现在也没什么急事，你没有接受，也没有拒绝	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10040	10041	0		在你的不带评判、充满包容的沉默里，他安静了下来								
-10041	10042	0		过了大概两分钟，他的声音才再次响起，比之前稳了一些，但依然带着一种不加掩饰的疲惫								
-10042	10043	0	周杉	“老板你不用给我结算。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10043	10044	0		他的声音很轻，像是在自言自语								
-10044	10045	0	周杉	“我刚才什么都没做，光听你说话了。不对，现在是你听我说了。”								
-10045	10046	0		你坐在公园的长椅上，阳光透过银杏叶的缝隙，在你的手背上投下斑驳的光影	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10046	10047	0		他好像有点语无伦次，或许需要你适时地引导话题。你想了想，随口一问								
-10047	10048	0	女主名	“时安，你在哪里兼职？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10048	10049	0		在你的引导下，他慢慢平复了呼吸，开始断断续续地说起自己的生活	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10049	10050	0		“物流园的兼职、学校图书馆的整理工作、给初中生补课的周末。三份工，日结，不耽误上课。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10050	10051	0		你说不清自己是什么感觉，大概是一种敬意	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10051	10052	0	女主名	“平时都看什么书？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10052	10053	0	周杉	“啊？”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10053	10054	0	女主名	“你说图书馆的活儿能顺便看书，你都看什么？”	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10054	10055	0		他没想到你会问这个问题，沉默了一下，似乎停下了手头的工作开始回想	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10055	10056	0	周杉	“最近在看《被讨厌的勇气》，里面有一句话我记了很久——‘重要的不是被给予了什么，而是如何去利用被给予的东西’。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10056	10057	0		他说这句话的时候，声音里有一种很深的确认感，像是溺水的人终于抓住了一根浮木	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10057	10058	0	女主名	“或许另外一本书也很适合你。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10058	10059	0	周杉	“哪本？”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10059	10060	0	女主名	“维克多・弗兰克尔的《活出生命的意义》”	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10060	10061	0	女主名	“‘人所拥有的任何东西，都可以被剥夺，唯独人性最后的自由，选择自己态度和生活方式的自由，不能被剥夺’。”								
-10061	10062	0		电话那头安静了很久，才听到他很轻很轻的答复声	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10062	10063	0	周杉	“……我记住了，谢谢。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10063	10064	0		你无意深入了解他的遭遇抑或是境遇，但没有谁是一座孤岛	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10064	10086	0		千百小时的倾听，可能他自己也没意识到，他也想被听到								
-10065	10066	0		你靠在长椅上，树上的银杏叶从你眼前飘落								
-10066	10067	0	女主名	“你能靠自己打三份工攒学费，说明你已经具备了独立生存的能力。不要回头看那些不值得的人和事，向前走就是了。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10067	10068	0		不知又是触发了他什么回忆，呼吸声明显急促了片刻，随后，他长长地呼出一口气	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10068	10069	0	周杉	“你说得对，只有攥在自己手里的未来才是真的。老板，谢谢你。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10069	10070	0		他的声音褪去了脆弱，重新变得坚定	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/女主/女主01-00.png","OffsetX":0.0,"OffsetY":0.0,"Scale":1.0}]}							
-10070	10071	0	女主名	“嗯，去吧。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10071	10072	0		挂断电话后，你收到了平台退款到账的通知，还有时安发过来的红包	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10072	10073	0		备注是：感谢老板的倾听，一点小小的心意，还请收下								
-10073	10074	0		你没有跟他客气，点开收了								
-10074	10075	0		一方面，这是你应得的。另一方面，你也知道，这是他的方式								
-10075	0	0		他不习惯被给予，在平等的关系中能找到一点安全感，接受他的好意，才是对他的尊重								
-10076	10077	0		你听着他的话，风从湖面上吹过来，带着水汽的凉意								
-10077	10078	0		你开口，声音比平时轻了一些								
-10078	10079	0	女主名	“你不需要向我道谢，我不知道你的过去，但能在那种环境里靠自己走出来，时安，你已经比大多数人都厉害了。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10079	10080	0		又是一段长时间的静默，你下意识看了看手机，确认电话没有挂断	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10080	10081	0		片刻后他的声音再次响起时，不知是不是错觉，你感觉他的声音有些哽咽								
-10081	10082	0	周杉	“……从小到大，从来没有人对我说过这些。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10082	10083	0	女主名	“好好生活，比什么都重要。”	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10083	10084	0		他很轻的应了一声	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10084	10085	0	周杉	“好。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10085	0	0		风再次掠过枝头，带起一阵轻响，刚刚翻涌的情绪被悄悄藏进了沉默里	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10086	0	1				{"Choices":[{"ChoiceText":"意有所指的回复","NextId":10065,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":20,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":2,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":3,"ItemId":""}]},{"ChoiceText":"给予情感上的回应 ","NextId":10076,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":15,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":5,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":5,"ItemId":""}]}]}						
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
+##int	int	int	string	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
+10000	10001	0		午后，阳光正好								Assets/GameMain/Art/Backgrounds/公园/公园.png	
+10001	10002	0		你挑了一个离家不远的公园，换上舒服的运动鞋，带了一本书，打算找一个景致优美的地方，安安静静地过一个下午									
+10002	10003	0		许是工作日的缘故，整个公园被静谧笼罩。偶尔有一两个遛狗的老人经过，脚步慢悠悠的，像是在和时间商量着什么									
+10003	10004	0		可是安静的有些过了头，习惯了城市喧嚣的你，在这种绝对的安静里，反而觉得有些空落落的									
+10004	10005	0		可惜许映月还在苦命地上班，你打开微信，看见她三小时前发的一条朋友圈：“甲方又要改需求，我要死了。”									
+10005	10006	0		你犹豫了一下，没敢打扰她。很自然的，你就想起时安									
+10006	10007	0		你打开那个陪玩 App，看见他的黑色头像亮着，就顺手下了两小时的闲聊单									
+10007	10008	0		语音刚接通，耳机里传来的却不是他往日那般从容温润的开场白，而是一阵沉重且急促的喘息									
+10008	10009	0		背景音里还夹杂着呼啸的风声和手推车滚轮摩擦地面的轰隆声									
+10009	10010	0	周杉	“呼…… 老板，下午好。抱歉，刚才风有点大，今天想聊点什么？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10010	10011	0		他的语速比平时快了些，尾音里带着一丝显而易见的沙哑和虚浮	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10011	10012	0		他在极力调整呼吸，试图把那种疲惫感强压下去，重新披上那层完美且游刃有余的外衣									
+10012	10013	0		作为常年和各种情绪打交道的自媒体人，你瞬间就察觉到了他的不对劲									
+10013	10014	0		他现在的状态，就像是一根已经崩到极限、随时会断裂的弦									
+10014	10015	0		你没有戳破他的勉强，只是把语气放得更平和、更随意了一些，像是真的什么都没察觉到									
+10015	10016	0	女主名	“没什么特别想聊的，我在公园采风，只是想找个人连着麦。你在外面？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10016	10017	0		那头沉默了两秒，然后他的声音响起，带着一丝窘迫，但很快就被压了下去	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10017	10018	0	周杉	“嗯，接了个同城搬运的兼职。不影响的，老板可以说说你那边的风景，我听着呢。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10018	10019	0		他说话的时候，背景里传来一声沉闷的重物落地声，像是他把什么东西放下了，然后长长地呼了一口气									
+10019	10020	0		你没有追问，开始随口向他描述公园里晒太阳的流浪猫、落在地上歇脚的喜鹊、从容路过的行人	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10020	10021	0		起初，他还能用那些恰到好处的温柔话语回应你									
+10021	10022	0		但渐渐地，他的回应变成了单音节的 “嗯”、“是吗”，甚至好几次出现了长达十几秒的空白									
+10022	10023	0		听筒里传来的，只有他越来越沉重的呼吸声，以及某种重物被艰难放下的闷响									
+10023	10024	0		大概又过了十秒，他的声音才再次响起，比之前更低、更哑									
+10024	10025	0	周杉	“……听起来真好啊。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10025	10026	0		他说真好的时候，声音里有一种很奇怪的东西，有一种隔着玻璃看别人家的灯火的怅然	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10026	10027	0		这种透过网线传来的、几乎要令人窒息的疲惫感，让你不自觉地皱起了眉头									
+10027	10028	0		你们虽然有过几次不错的交流，但还只是雇佣关系，你不打算越界去窥探一个年轻人的窘迫									
+10028	10029	0		你看了眼时间，已经过了四十分钟，或许是时候做出了一个成熟体贴的决定									
+10029	10030	0	女主名	“时安，我这边也没什么事了。听得出你今天很累，这单就先到这里吧。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10030	10031	0		你顿了顿，又补了一句	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10031	10032	0	女主名	“你不用有负担，我会照常结算。去买瓶水，找个阴凉的地方歇一会儿吧。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10032	10033	0		你准备按下挂断键，但就在你的手指即将触碰到屏幕的那一刻									
+10033	10034	0	周杉	“老板！等等……”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10034	10035	0		你停住了动作，但那头陷入的沉默几乎让你以为已经挂断了	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10035	10036	0		过了好一会儿，你听到他像是脱力一般，顺着墙壁滑坐下去的摩擦声									
+10036	10037	0		当他再次开口时，那层完美服务者的坚硬外壳已经彻底粉碎									
+10037	10038	0		他的声音带着一种生怕被拒绝的小心翼翼，甚至透出一丝不易察觉的哀求									
+10038	10039	0	周杉	“……可以不挂吗？就十分钟。我可以把钱退给你……我只是，现在真的很想再听听你的声音。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10039	10040	0		左右现在也没什么急事，你没有接受，也没有拒绝	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10040	10041	0		在你的不带评判、充满包容的沉默里，他安静了下来									
+10041	10042	0		过了大概两分钟，他的声音才再次响起，比之前稳了一些，但依然带着一种不加掩饰的疲惫									
+10042	10043	0	周杉	“老板你不用给我结算。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10043	10044	0		他的声音很轻，像是在自言自语									
+10044	10045	0	周杉	“我刚才什么都没做，光听你说话了。不对，现在是你听我说了。”									
+10045	10046	0		你坐在公园的长椅上，阳光透过银杏叶的缝隙，在你的手背上投下斑驳的光影	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10046	10047	0		他好像有点语无伦次，或许需要你适时地引导话题。你想了想，随口一问									
+10047	10048	0	女主名	“时安，你在哪里兼职？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10048	10049	0		在你的引导下，他慢慢平复了呼吸，开始断断续续地说起自己的生活	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10049	10050	0		“物流园的兼职、学校图书馆的整理工作、给初中生补课的周末。三份工，日结，不耽误上课。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10050	10051	0		你说不清自己是什么感觉，大概是一种敬意	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10051	10052	0	女主名	“平时都看什么书？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10052	10053	0	周杉	“啊？”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10053	10054	0	女主名	“你说图书馆的活儿能顺便看书，你都看什么？”	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10054	10055	0		他没想到你会问这个问题，沉默了一下，似乎停下了手头的工作开始回想	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10055	10056	0	周杉	“最近在看《被讨厌的勇气》，里面有一句话我记了很久——‘重要的不是被给予了什么，而是如何去利用被给予的东西’。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10056	10057	0		他说这句话的时候，声音里有一种很深的确认感，像是溺水的人终于抓住了一根浮木	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10057	10058	0	女主名	“或许另外一本书也很适合你。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10058	10059	0	周杉	“哪本？”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10059	10060	0	女主名	“维克多・弗兰克尔的《活出生命的意义》”	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10060	10061	0	女主名	“‘人所拥有的任何东西，都可以被剥夺，唯独人性最后的自由，选择自己态度和生活方式的自由，不能被剥夺’。”									
+10061	10062	0		电话那头安静了很久，才听到他很轻很轻的答复声	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10062	10063	0	周杉	“……我记住了，谢谢。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10063	10064	0		你无意深入了解他的遭遇抑或是境遇，但没有谁是一座孤岛	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10064	10086	0		千百小时的倾听，可能他自己也没意识到，他也想被听到									
+10065	10066	0		你靠在长椅上，树上的银杏叶从你眼前飘落									
+10066	10067	0	女主名	“你能靠自己打三份工攒学费，说明你已经具备了独立生存的能力。不要回头看那些不值得的人和事，向前走就是了。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10067	10068	0		不知又是触发了他什么回忆，呼吸声明显急促了片刻，随后，他长长地呼出一口气	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10068	10069	0	周杉	“你说得对，只有攥在自己手里的未来才是真的。老板，谢谢你。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10069	10070	0		他的声音褪去了脆弱，重新变得坚定	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/女主/女主01-00.png","OffsetX":0.0,"OffsetY":0.0,"Scale":1.0}]}								
+10070	10071	0	女主名	“嗯，去吧。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10071	10072	0		挂断电话后，你收到了平台退款到账的通知，还有时安发过来的红包	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10072	10073	0		备注是：感谢老板的倾听，一点小小的心意，还请收下									
+10073	10074	0		你没有跟他客气，点开收了									
+10074	10075	0		一方面，这是你应得的。另一方面，你也知道，这是他的方式									
+10075	0	0		他不习惯被给予，在平等的关系中能找到一点安全感，接受他的好意，才是对他的尊重									
+10076	10077	0		你听着他的话，风从湖面上吹过来，带着水汽的凉意									
+10077	10078	0		你开口，声音比平时轻了一些									
+10078	10079	0	女主名	“你不需要向我道谢，我不知道你的过去，但能在那种环境里靠自己走出来，时安，你已经比大多数人都厉害了。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10079	10080	0		又是一段长时间的静默，你下意识看了看手机，确认电话没有挂断	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10080	10081	0		片刻后他的声音再次响起时，不知是不是错觉，你感觉他的声音有些哽咽									
+10081	10082	0	周杉	“……从小到大，从来没有人对我说过这些。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10082	10083	0	女主名	“好好生活，比什么都重要。”	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10083	10084	0		他很轻的应了一声	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10084	10085	0	周杉	“好。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10085	0	0		风再次掠过枝头，带起一阵轻响，刚刚翻涌的情绪被悄悄藏进了沉默里	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10086	0	1				{"Choices":[{"ChoiceText":"意有所指的回复","NextId":10065,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":20,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":2,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":3,"ItemId":""}]},{"ChoiceText":"给予情感上的回应 ","NextId":10076,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":15,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":5,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":5,"ItemId":""}]}]}							

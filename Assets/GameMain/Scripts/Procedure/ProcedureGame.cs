@@ -596,6 +596,9 @@ namespace AVGGame
         {
             Debug.Log($"[ProcedureGame] 剧情结束，准备卸载: {graphName}");
 
+            // 记录 NPC 进度（在卸载剧情表和清理 graphName 之前）
+            UpdateNpcProgress(graphName);
+
             // 卸载剧情表
             m_StoryGraphLoader.UnloadGraph(graphName);
 
@@ -607,6 +610,43 @@ namespace AVGGame
 
             // 返回大地图
             OpenMap();
+        }
+
+        /// <summary>
+        /// 根据当前剧情图名更新 NPC 进度
+        /// </summary>
+        private void UpdateNpcProgress(string graphName)
+        {
+            if (string.IsNullOrEmpty(graphName)) return;
+
+            IDataTable<EventRowData> dtEvent = GameEntry.DataTable.GetDataTable<EventRowData>();
+            if (dtEvent == null) return;
+
+            // 在事件表中查找 TargetGraphName 匹配的行
+            foreach (EventRowData evt in dtEvent)
+            {
+                if (evt.TargetGraphName == graphName)
+                {
+                    string eventNum = evt.EventNum;
+                    if (string.IsNullOrEmpty(eventNum)) break;
+
+                    // EventNum 格式: "npcId_eventId"，如 "1_2" 表示 NPC1 的事件2
+                    string[] parts = eventNum.Split('_');
+                    if (parts.Length == 2 &&
+                        int.TryParse(parts[0], out int npcId) &&
+                        int.TryParse(parts[1], out int eventId))
+                    {
+                        CustomEntry.PlayerData.AddNpcEventProgress(npcId, eventId);
+                        Debug.Log($"[ProcedureGame] NPC进度更新: NPC_{npcId} 事件_{eventId} (EventNum: {eventNum})");
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"[ProcedureGame] EventNum 格式无效: {eventNum}");
+                    }
+
+                    break; // 只匹配第一条
+                }
+            }
         }
 
         #endregion

@@ -1,63 +1,63 @@
-﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
-##int	int	int	string	string	string	string	string	string	string	string	string	string
-##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
-10000	10001	0		连续六天的高强度工作，让你的大脑仿佛被塞进了一团生锈的齿轮								Assets/GameMain/Art/Backgrounds/居家/韩漫平涂风格影院大厅重绘.png
-10001	10002	0		选题、改稿、复盘数据……你的生活被切割成无数个以小时为单位的碎片，每一片都填满了别人的情绪，唯独没有你自己的								
-10002	10003	0		你急需一个出口，一个可以被动的、不消耗自己的放松方式								
-10003	10004	0		于是你想到了那个正在做的选题，“当代年轻人电竞社交与情感代偿”								
-10004	10005	0		与其在二手资料里打转，不如亲自下水，把自己变成样本								
-10005	10006	0		你拿起手机，点开了目前市面上最火的陪玩App								
-10006	10007	0		首页上铺满了各式各样的陪玩卡片，甜妹、御姐、奶狗、狼狗，标签花里胡哨得像是菜市场里争奇斗艳的招牌								
-10007	10008	0		你的视线在各种头像和简介上扫过，心里却在评估								
-10008	10009	0		最终，你的手指停在了“至尊盲盒单”上								
-10009	10010	0		好评率100%，没有头像，没有简介，没有花里胡哨的标签，只有一串数字								
-10010	10011	0		——累计服务时长：3472小时，评分：5.0								
-10011	10012	0		把选择权交给算法，把惊喜留给运气。对于你这种选择困难症来说，简直是救星								
-10012	10013	0		你点击下单，并在备注栏里飞快地敲下几行要求								
-10013	10014	0		“话少，情绪稳定，不需要刻意讨好，能接得住任何逆风局。”								
-10014	10015	0		订单刚发出，几乎是在同一瞬间，一个纯黑色的默认头像跳进了你的聊天框								
-10015	10016	0		你戴上降噪耳机，一道极其温润、干净的青年音顺着电流落入耳廓								
-10016	10017	0	周杉	“老板晚上好，我是时安。接下来的时间，我会全力配合您的节奏。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":500.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10017	10018	0		进入游戏后，作为观察者，你刻意选择了一个极度考验配合、且容错率极低的高爆发输出位	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10018	10019	0		你的打法也带着一种强势的压迫感，开局便毫无顾忌地入侵敌方野区，试图探出对方的底线								
-10019	10020	0		然而，你们的配合却出奇地默契。他没有对你激进的打法提出任何质疑，反而完美地契合了你的每一个意图								
-10020	10021	0	周杉	“左侧草丛安全，对方打野在下半区露头了，老板，您可以直接进场，我留了控制技能掩护你。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10021	10022	0		每当你准备冲锋陷阵，耳机里总会适时传来他温和却精准的报点，他总能提前为你扫清视野的盲区，无需多言便能心意相通	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10022	10023	0		直到对局进行到二十分钟的关键团战，你为了强切敌方核心，走位出现了致命失误，角色冲进了三个人的包围圈								
-10023	10024	0		屏幕变成了代表死亡的灰白色，己方阵型随之溃败，高地塔岌岌可危								
-10024	10025	0		按照常理，这种关键时刻的“送人头”行为，足以让大多数玩家心态爆炸、开麦抱怨								
-10025	10026	0		但你的耳机里，不仅没有传来预想中的叹气，甚至连一丝情绪波动的杂音都没有								
-10026	10027	0		安静到你能听见他轻微的呼吸声，然后，他的声音响起								
-10027	10028	0	周杉	“我的错，刚才给你的护盾慢了，没保住你。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10028	10029	0		他用最平稳的语气，毫不犹豫地揽下了责任，随后迅速切出计分板复盘，语速飞快地布置下一波止损战术	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10029	10030	0	周杉	“对面双C为了抓你，已经交了全部关键技能和闪现。老板别急，我去清线守高地，你复活后直接带线拿龙，这局能翻，信我。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10030	10031	0		在他的冷静指挥下，你们成功抗住了敌方的一波强推，并在你复活后完成了一波极其漂亮的反打，直接推平了对面的水晶	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10031	10032	0		确实有点意思，无论是游戏，还是时安。但比起复盘对局，你对复盘他的表现更感兴趣								
-10032	10033	0		作为常年剖析人的内容创作者，你敏锐地察觉到，这种极致的情绪控制，绝非单纯的“脾气好”								
-10033	10034	0		这是一种极高的双商和近乎可怕的自我克制力，他能在关键时刻压抑住自己的情绪反应，用理性替代本能								
-10034	10035	0		他仿佛一个深不见底的湖泊，能够无声无息地消化掉所有外来的情绪垃圾								
-10035	10036	0		结算界面弹出，你随手点开打赏界面，刷了一个价值三位数的虚拟礼物，这对你来说，是购买高质量研究样本的合理开销								
-10036	10037	0		屏幕上顿时绽开绚烂的特效，金色的光效在屏幕上炸开，像是一场小型烟花秀								
-10037	10038	0		耳机那头陷入短暂的沉默，然后，一声极轻的笑声从听筒里传来								
-10038	10039	0	周杉	“谢谢老板的打赏，不过您出手这么大方，倒让我觉得……刚才的服务还不够周到，受之有愧了。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10039	10059	0		他的声音里带着一丝不易察觉的窘迫，不是那种“被钱砸晕”的窘迫，而是那种“我做了什么值得这么多”的困惑	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10040	10041	0		你靠在椅背上，胜利带来的喜悦让你心情不错								
-10041	10042	0		你转了一下椅子，目光从屏幕移到窗外的夜色上，连语气也带上一丝棋逢对手的欣赏								
-10042	10043	0	女主名	“打得不错，这钱花得很值。你的情绪控制很完美，是个不可多得的优质样本，希望下次还能和你合作。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/家居柔和.png","OffsetX":125.0,"OffsetY":-200.0,"Scale":2.299999952316284}]}							
-10043	10044	0		耳机那头又安静了，可能在想怎么回应这句近乎商品评估的夸奖	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10044	10045	0		然后他的声音才再次响起，比之前低了几分，像是被你的直白弄得有些措手不及								
-10045	10046	0	周杉	“谢谢老板，能成为您的优质样本，是我的荣幸，期待下次为您服务。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10046	10047	0		他的措辞依然专业，语气依然温和，他选择了最安全的方式，顺着你的话，把自己放进你给他划定的框里								
-10047	0	0		今晚的样本采集，很成功	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10048	10049	0		你将刚才录制的几段高光操作保存进素材库，文件名你打上了“时安_样本001_情绪控制示范”								
-10049	10050	0		然后你才开口，语气平淡得像是在汇报工作								
-10050	10051	0	女主名	“不用有负担，我刚好在做关于虚拟陪伴的社会向选题，今天算是打了个很好的素材。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/家居常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10051	10052	0		你顿了顿，又补了一句	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10052	10053	0	女主名	“所以这笔打赏，是合理的调研支出，你不用觉得受之有愧。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/家居常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							
-10053	10054	0		你把所有可能产生暧昧感的缝隙，都用“调研”、“支出”这些词填得严严实实	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10054	10055	0		这是你的职业习惯，也是你的保护色，把一切私人化的东西，都框定在交易的边界里								
-10055	10056	0	周杉	“原来是这样，很高兴能为老板的事业添砖加瓦。您还需要素材的话，随时联系我。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}							
-10056	10057	0		添砖加瓦这个词用得很妙，不是帮忙，不是支持，而是一个把自己放在辅助位置的、谦逊又不卑不亢的说法	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							
-10057	10058	0		他没有因为被当成工具人而表现出哪怕一丝的抵触，依旧保持着那份无懈可击的专业素养，顺从地接过了你的话茬								
-10058	0	0		或许他会是一个值得深入研究的样本								
-10059	0	1				{"Choices":[{"ChoiceText":"这是你应得的 ","NextId":10040,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":20,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":3,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":2,"ItemId":""}]},{"ChoiceText":"只是购买样本的必要支出 ","NextId":10048,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":15,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":5,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":5,"ItemId":""}]}]}						
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
+##int	int	int	string	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
+10000	10001	0		连续六天的高强度工作，让你的大脑仿佛被塞进了一团生锈的齿轮								Assets/GameMain/Art/Backgrounds/居家/韩漫平涂风格影院大厅重绘.png	
+10001	10002	0		选题、改稿、复盘数据……你的生活被切割成无数个以小时为单位的碎片，每一片都填满了别人的情绪，唯独没有你自己的									
+10002	10003	0		你急需一个出口，一个可以被动的、不消耗自己的放松方式									
+10003	10004	0		于是你想到了那个正在做的选题，“当代年轻人电竞社交与情感代偿”									
+10004	10005	0		与其在二手资料里打转，不如亲自下水，把自己变成样本									
+10005	10006	0		你拿起手机，点开了目前市面上最火的陪玩App									
+10006	10007	0		首页上铺满了各式各样的陪玩卡片，甜妹、御姐、奶狗、狼狗，标签花里胡哨得像是菜市场里争奇斗艳的招牌									
+10007	10008	0		你的视线在各种头像和简介上扫过，心里却在评估									
+10008	10009	0		最终，你的手指停在了“至尊盲盒单”上									
+10009	10010	0		好评率100%，没有头像，没有简介，没有花里胡哨的标签，只有一串数字									
+10010	10011	0		——累计服务时长：3472小时，评分：5.0									
+10011	10012	0		把选择权交给算法，把惊喜留给运气。对于你这种选择困难症来说，简直是救星									
+10012	10013	0		你点击下单，并在备注栏里飞快地敲下几行要求									
+10013	10014	0		“话少，情绪稳定，不需要刻意讨好，能接得住任何逆风局。”									
+10014	10015	0		订单刚发出，几乎是在同一瞬间，一个纯黑色的默认头像跳进了你的聊天框									
+10015	10016	0		你戴上降噪耳机，一道极其温润、干净的青年音顺着电流落入耳廓									
+10016	10017	0	周杉	“老板晚上好，我是时安。接下来的时间，我会全力配合您的节奏。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":500.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10017	10018	0		进入游戏后，作为观察者，你刻意选择了一个极度考验配合、且容错率极低的高爆发输出位	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10018	10019	0		你的打法也带着一种强势的压迫感，开局便毫无顾忌地入侵敌方野区，试图探出对方的底线									
+10019	10020	0		然而，你们的配合却出奇地默契。他没有对你激进的打法提出任何质疑，反而完美地契合了你的每一个意图									
+10020	10021	0	周杉	“左侧草丛安全，对方打野在下半区露头了，老板，您可以直接进场，我留了控制技能掩护你。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10021	10022	0		每当你准备冲锋陷阵，耳机里总会适时传来他温和却精准的报点，他总能提前为你扫清视野的盲区，无需多言便能心意相通	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10022	10023	0		直到对局进行到二十分钟的关键团战，你为了强切敌方核心，走位出现了致命失误，角色冲进了三个人的包围圈									
+10023	10024	0		屏幕变成了代表死亡的灰白色，己方阵型随之溃败，高地塔岌岌可危									
+10024	10025	0		按照常理，这种关键时刻的“送人头”行为，足以让大多数玩家心态爆炸、开麦抱怨									
+10025	10026	0		但你的耳机里，不仅没有传来预想中的叹气，甚至连一丝情绪波动的杂音都没有									
+10026	10027	0		安静到你能听见他轻微的呼吸声，然后，他的声音响起									
+10027	10028	0	周杉	“我的错，刚才给你的护盾慢了，没保住你。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10028	10029	0		他用最平稳的语气，毫不犹豫地揽下了责任，随后迅速切出计分板复盘，语速飞快地布置下一波止损战术	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10029	10030	0	周杉	“对面双C为了抓你，已经交了全部关键技能和闪现。老板别急，我去清线守高地，你复活后直接带线拿龙，这局能翻，信我。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10030	10031	0		在他的冷静指挥下，你们成功抗住了敌方的一波强推，并在你复活后完成了一波极其漂亮的反打，直接推平了对面的水晶	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10031	10032	0		确实有点意思，无论是游戏，还是时安。但比起复盘对局，你对复盘他的表现更感兴趣									
+10032	10033	0		作为常年剖析人的内容创作者，你敏锐地察觉到，这种极致的情绪控制，绝非单纯的“脾气好”									
+10033	10034	0		这是一种极高的双商和近乎可怕的自我克制力，他能在关键时刻压抑住自己的情绪反应，用理性替代本能									
+10034	10035	0		他仿佛一个深不见底的湖泊，能够无声无息地消化掉所有外来的情绪垃圾									
+10035	10036	0		结算界面弹出，你随手点开打赏界面，刷了一个价值三位数的虚拟礼物,这对你来说，是购买高质量研究样本的合理开销									
+10036	10037	0		屏幕上顿时绽开绚烂的特效，金色的光效在屏幕上炸开，像是一场小型烟花秀									
+10037	10038	0		耳机那头陷入短暂的沉默，然后，一声极轻的笑声从听筒里传来									
+10038	10039	0	周杉	“谢谢老板的打赏，不过您出手这么大方，倒让我觉得……刚才的服务还不够周到，受之有愧了。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10039	10059	0		他的声音里带着一丝不易察觉的窘迫，不是那种“被钱砸晕”的窘迫，而是那种“我做了什么值得这么多”的困惑	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10040	10041	0		你靠在椅背上，胜利带来的喜悦让你心情不错									
+10041	10042	0		你转了一下椅子，目光从屏幕移到窗外的夜色上，连语气也带上一丝棋逢对手的欣赏									
+10042	10043	0	女主名	“打得不错，这钱花得很值。你的情绪控制很完美，是个不可多得的优质样本，希望下次还能和你合作。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/家居柔和.png","OffsetX":125.0,"OffsetY":-200.0,"Scale":2.299999952316284}]}								
+10043	10044	0		耳机那头又安静了，可能在想怎么回应这句近乎商品评估的夸奖	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10044	10045	0		然后他的声音才再次响起，比之前低了几分，像是被你的直白弄得有些措手不及									
+10045	10046	0	周杉	“谢谢老板，能成为您的优质样本，是我的荣幸，期待下次为您服务。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10046	10047	0		他的措辞依然专业，语气依然温和，他选择了最安全的方式，顺着你的话，把自己放进你给他划定的框里									
+10047	0	0		今晚的样本采集，很成功	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10048	10049	0		你将刚才录制的几段高光操作保存进素材库，文件名你打上了“时安_样本001_情绪控制示范”									
+10049	10050	0		然后你才开口，语气平淡得像是在汇报工作									
+10050	10051	0	女主名	“不用有负担，我刚好在做关于虚拟陪伴的社会向选题，今天算是打了个很好的素材。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/家居常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10051	10052	0		你顿了顿，又补了一句	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10052	10053	0	女主名	“所以这笔打赏，是合理的调研支出，你不用觉得受之有愧。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/家居常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10053	10054	0		你把所有可能产生暧昧感的缝隙，都用“调研”、“支出”这些词填得严严实实	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10054	10055	0		这是你的职业习惯，也是你的保护色，把一切私人化的东西，都框定在交易的边界里									
+10055	10056	0	周杉	“原来是这样，很高兴能为老板的事业添砖加瓦。您还需要素材的话，随时联系我。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10056	10057	0		添砖加瓦这个词用得很妙，不是帮忙，不是支持，而是一个把自己放在辅助位置的、谦逊又不卑不亢的说法	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10057	10058	0		他没有因为被当成工具人而表现出哪怕一丝的抵触，依旧保持着那份无懈可击的专业素养，顺从地接过了你的话茬									
+10058	0	0		或许他会是一个值得深入研究的样本									
+10059	0	1				{"Choices":[{"ChoiceText":"这是你应得的 ","NextId":10040,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":20,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":3,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":2,"ItemId":""}]},{"ChoiceText":"只是购买样本的必要支出 ","NextId":10048,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":15,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":5,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":5,"ItemId":""}]}]}							

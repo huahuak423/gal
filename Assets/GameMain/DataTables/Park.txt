@@ -1,10 +1,10 @@
-﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath
-##int	int	int	string	string	string	string	string	string	string	string	string	string
-##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图
-10000	10001	0		今天的天气出奇的好，你带上单反相机，去附近的生态公园采风								Assets/GameMain/Art/Backgrounds/公园/公园.png
-10001	10002	0		午后的阳光穿过交错的树叶，在草坪上落下斑驳的光斑，几只流浪猫慵懒地躺在长椅上打盹								
-10002	10003	0		你举起相机，捕捉了一对老夫妻互相搀扶着散步的背影，以及湖面上泛起的粼粼波光								
-10003	10004	0		远离了城市的钢筋水泥，大自然的白噪音洗涤了你沾满班味的灵魂。不仅气色变好了，你甚至构思好了新栏目								
-10004	10005	0		在自然中汲取了养分，整个人神采奕奕								
-10005	10006	0		【系统提示】魅力值 + 5，灵感值 + 7								
-10006	0	3						{"RewardTitle":"","Rewards":[{"Type":0,"AttributeType":1,"NpcId":"","Value":5,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":7,"ItemId":""}]}				
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
+##int	int	int	string	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
+10000	10001	0		今天的天气出奇的好，你带上单反相机，去附近的生态公园采风								Assets/GameMain/Art/Backgrounds/公园/公园.png	
+10001	10002	0		午后的阳光穿过交错的树叶，在草坪上落下斑驳的光斑，几只流浪猫慵懒地躺在长椅上打盹									
+10002	10003	0		你举起相机，捕捉了一对老夫妻互相搀扶着散步的背影，以及湖面上泛起的粼粼波光									
+10003	10004	0		远离了城市的钢筋水泥，大自然的白噪音洗涤了你沾满班味的灵魂。不仅气色变好了，你甚至构思好了新栏目									
+10004	10005	0		在自然中汲取了养分，整个人神采奕奕									
+10005	10006	0		【系统提示】魅力值 + 5，灵感值 + 7									
+10006	0	3						{"RewardTitle":"","Rewards":[{"Type":0,"AttributeType":1,"NpcId":"","Value":5,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":7,"ItemId":""}]}					

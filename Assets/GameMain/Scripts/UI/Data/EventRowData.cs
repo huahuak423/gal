@@ -18,7 +18,7 @@ namespace AVGGame
         public int EventType { get; private set; }
         public string Title { get; private set; }
         public int CostAP { get; private set; }
-        public int ReqNpcId { get; private set; }
+        public string EventNum { get; private set; }
         public string VisibleConditions { get; private set; }
         public string PlayableConditions { get; private set; }
         public string TargetGraphName { get; private set; }
@@ -55,6 +55,7 @@ namespace AVGGame
                 Debug.LogWarning($"[EventRowData] EventType=1 需要12列，实际: {columnTexts.Length}");
                 return false;
             }
+
             if (EventType == 2 && columnTexts.Length < 11)
             {
                 Debug.LogWarning($"[EventRowData] EventType=2 需要11列，实际: {columnTexts.Length}");
@@ -64,7 +65,7 @@ namespace AVGGame
             // 依次解析字段
             Title = columnTexts[index++];
             CostAP = ParseInt(columnTexts[index++]);
-            ReqNpcId = ParseInt(columnTexts[index++]);
+            EventNum = SafeGetString(columnTexts[index++]);
             VisibleConditions = columnTexts[index++];
             PlayableConditions = columnTexts[index++];
 
@@ -76,7 +77,8 @@ namespace AVGGame
 
             TargetGraphName = columnTexts[index++];
 
-            Debug.Log($"[EventRowData] 解析成功 - ID: {m_Id}, MapId: {MapId}, EventType: {EventType}, Title: {Title}, TargetGraphName: {TargetGraphName}");
+            Debug.Log(
+                $"[EventRowData] 解析成功 - ID: {m_Id}, MapId: {MapId}, EventType: {EventType}, Title: {Title}, TargetGraphName: {TargetGraphName}");
             return true;
         }
 
@@ -85,9 +87,9 @@ namespace AVGGame
         /// </summary>
         public override bool ParseDataRow(byte[] dataRowBytes, int startIndex, int length, object userData)
         {
-            return false; 
+            return false;
         }
-        
+
         /// <summary>
         /// 安全的 int 解析，防止 Excel 里格子为空导致崩溃
         /// </summary>
@@ -98,13 +100,25 @@ namespace AVGGame
                 Debug.Log("[EventRowData] ParseInt: 空字符串，返回 0");
                 return 0;
             }
+
             if (int.TryParse(text, out int result))
             {
                 Debug.Log($"[EventRowData] ParseInt: '{text}' -> {result}");
                 return result;
             }
+
             Debug.LogWarning($"[EventRowData] ParseInt: 无法解析 '{text}'，返回 0");
             return 0;
+        }
+
+        /// <summary>
+        /// 安全的 string 解析，防止索引越界
+        /// </summary>
+        private string SafeGetString(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return "";
+            return text;
         }
     }
 }
