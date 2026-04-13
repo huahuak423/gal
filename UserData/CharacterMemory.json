@@ -926,6 +926,96 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_15_清脆果断的声音让几个"
+        },
+        {
+            "GraphName": "序章",
+            "SpritePath": "Assets/GameMain/Art/UI_Common/Button/美甲店08.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/许映月/许映月微笑.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_59_“我们以后会一直这样"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主没眼看.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_5_“现在的女性内容，要"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/许映月/许映月认真.png",
+            "Position": 2,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_8_你们对视了一眼，然后"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主常规.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_7_“真正有用的东西没人"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/许映月/许映月常规.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_11_“就叫‘她说’吧，简"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/许映月/许映月认真.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_50_“因为我们是女人，因"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主温和.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_63_“好。”"
+        },
+        {
+            "GraphName": "手握资本的“公关女王”",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主温和.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_10_“来，我跟我的观众打"
+        },
+        {
+            "GraphName": "手握资本的“公关女王”",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主闭眼.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_34_“等我忙完这阵吧。”"
         }
     ]
 }
