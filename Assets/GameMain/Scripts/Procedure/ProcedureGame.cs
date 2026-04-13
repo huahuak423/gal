@@ -34,6 +34,9 @@ namespace AVGGame
         // 对话状态管理
         private int m_CurrentDialogueId = 0;
 
+        // 序章标记（新游戏时先播序章再开地图）
+        private bool m_PlayPrologue = false;
+
         #endregion
 
         #region 生命周期
@@ -83,8 +86,8 @@ namespace AVGGame
             }
             else
             {
-                Debug.Log("[ProcedureGame] 新游戏流程，打开大地图");
-                OpenMap();
+                Debug.Log("[ProcedureGame] 新游戏流程，等待事件表加载后播放序章");
+                m_PlayPrologue = true;
             }
 
             //读取事件表成功（失败）回调
@@ -658,8 +661,21 @@ namespace AVGGame
             LoadDataTableSuccessEventArgs ne = (LoadDataTableSuccessEventArgs)e;
             if (ne.UserData != this || ne.DataTableAssetName.Contains("EventPool") == false) return;
 
-            Debug.Log("[ProcedureGame] EventPool数据表加载成功！直接打开大地图！");
-            OpenMap();
+            Debug.Log("[ProcedureGame] EventPool数据表加载成功！");
+
+            if (m_PlayPrologue)
+            {
+                m_PlayPrologue = false;
+                Debug.Log("[ProcedureGame] 新游戏流程，开始播放序章");
+                m_StoryGraphLoader.LoadGraph("序章");
+                //Debug.Log("[ProcedureGame] 直接打开大地图");
+                //OpenMap();
+            }
+            else
+            {
+                Debug.Log("[ProcedureGame] 直接打开大地图");
+                OpenMap();
+            }
         }
 
         private void OnLoadDataTableFailure(object sender, GameEventArgs e)
