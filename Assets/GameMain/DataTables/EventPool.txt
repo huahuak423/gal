@@ -1,6 +1,6 @@
-﻿##		Id	MapId	EventType	Title	CostAP	EventNum	VisibleConditions	PlayableConditions		TargetGraphName
-##		int	int	int	string	int	string	string	string		string
-##		编号	地图ID	类型	标题	消耗AP	事件编号	可见条件	可玩条件		目标图名称
+﻿##Id	MapId	EventType	Title	CostAP	EventNum	VisibleConditions	PlayableConditions	TargetGraphName
+##int	int	int	string	int	string	string	string	string
+##编号	地图ID	类型	标题	消耗AP	事件编号	可见条件	可玩条件	目标图名称
 	1	01	1	居家	1				Home
 	2	02	1	去商场	1				ShoppingMall
 	3	03	1	去医院	1				Hospital

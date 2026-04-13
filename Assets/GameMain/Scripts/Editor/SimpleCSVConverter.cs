@@ -19,9 +19,9 @@ namespace AVGGame.Editor
             StringBuilder sb = new StringBuilder();
 
             // 写入表头（## 开头会被 UGF 数据表解析跳过）
-            sb.AppendLine("##\t\tId\tMapId\tEventType\tTitle\tCostAP\tEventNum\tVisibleConditions\tPlayableConditions\t\tTargetGraphName");
-            sb.AppendLine("##\t\tint\tint\tint\tstring\tint\tstring\tstring\tstring\t\tstring");
-            sb.AppendLine("##\t\t编号\t地图ID\t类型\t标题\t消耗AP\t事件编号\t可见条件\t可玩条件\t\t目标图名称");
+            sb.AppendLine("##Id\tMapId\tEventType\tTitle\tCostAP\tEventNum\tVisibleConditions\tPlayableConditions\tTargetGraphName");
+            sb.AppendLine("##int\tint\tint\tstring\tint\tstring\tstring\tstring\tstring");
+            sb.AppendLine("##编号\t地图ID\t类型\t标题\t消耗AP\t事件编号\t可见条件\t可玩条件\t目标图名称");
 
             for (int i = 3; i < lines.Length; i++)
             {
