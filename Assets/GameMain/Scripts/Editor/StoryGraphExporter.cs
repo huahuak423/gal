@@ -124,7 +124,8 @@ namespace AVGGame.Editor
                 {
                     int nextId = GetNextNodeId(node, "Exit", nodeToIdMap);
                     string actionsJson = dNode.CharacterDisplays.Count > 0 ? JsonUtility.ToJson(new RuntimeActionListWrapper { actions = dNode.CharacterDisplays }) : "";
-                    sb.AppendLine($"{myId}\t{nextId}\t0\t{dNode.SpeakerName}\t{dNode.DialogText}\t{actionsJson}\t\t\t\t{dNode.BgmPath}\t{dNode.SePath}\t{dNode.PerformanceKey}\t{dNode.BackgroundPath}\t{dNode.VoicePath}");
+                    string dialogText = dNode.DialogText.Replace("\r", "").Replace("\n", "");
+                    sb.AppendLine($"{myId}\t{nextId}\t0\t{dNode.SpeakerName}\t{dialogText}\t{actionsJson}\t\t\t\t{dNode.BgmPath}\t{dNode.SePath}\t{dNode.PerformanceKey}\t{dNode.BackgroundPath}\t{dNode.VoicePath}");
                 }
                 else if (node is ChoiceNode cNode)
                 {

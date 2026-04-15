@@ -926,6 +926,186 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_15_清脆果断的声音让几个"
+        },
+        {
+            "GraphName": "序章",
+            "SpritePath": "Assets/GameMain/Art/UI_Common/Button/美甲店08.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/许映月/许映月微笑.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_59_“我们以后会一直这样"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主没眼看.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_5_“现在的女性内容，要"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/许映月/许映月认真.png",
+            "Position": 2,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_8_你们对视了一眼，然后"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主常规.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_7_“真正有用的东西没人"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/许映月/许映月常规.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_11_“就叫‘她说’吧，简"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/许映月/许映月认真.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_50_“因为我们是女人，因"
+        },
+        {
+            "GraphName": "不被定义的自由",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主温和.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_63_“好。”"
+        },
+        {
+            "GraphName": "手握资本的“公关女王”",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主温和.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_10_“来，我跟我的观众打"
+        },
+        {
+            "GraphName": "手握资本的“公关女王”",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主闭眼.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_34_“等我忙完这阵吧。”"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/温叙/温叙平和.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_7_“你看，这个人读得很"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主温和.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_124_“下次一起去？”"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/温叙/温叙微笑.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_37_“好。”"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主微讶.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_14_“好像要下雨了。”"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/温叙/温叙平和.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_27_“看看这些合不合你的"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主常规.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_94_“他们来找你要钱？”"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/周杉/周杉常规.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_117_“我知道。”"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/周杉/周杉闭眼.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_116_他沉默了很久，然后轻"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主闭眼.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_115_“有什么事可以跟我说"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/周杉/周杉立绘.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_120_“你最近……去过书店"
         }
     ]
 }

@@ -105,6 +105,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -155,7 +156,8 @@ MonoBehaviour:
   CharacterDisplays: []
   BgmPath: 
   SePath: 
-  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u4E66\u5E97/\u4E66\u5E971.png"
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u4E66\u5E97/\u4E66\u5E97.png"
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -210,6 +212,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -265,6 +268,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -319,6 +323,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -335,12 +340,6 @@ MonoBehaviour:
   m_Name: BookStore
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: -3163911266315972363}
   - {fileID: -3805277169981984344}
   - {fileID: -2906834394033484344}
@@ -399,6 +398,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
