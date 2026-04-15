@@ -49,6 +49,12 @@ namespace AVGGame
 
         [Header("菜单按钮")]
         [SerializeField] private Button m_ButtonMenu;
+        [SerializeField] private Button m_ButtonSpeedUp;
+        [SerializeField] private Button m_ButtonHistory;
+        [SerializeField] private Button m_ButtonHide;
+        [SerializeField] private Button m_ButtonInformation;
+        [SerializeField] private Button m_ButtonSave;
+        [SerializeField] private Button m_ButtonAuto;
 
         #endregion
 
@@ -90,6 +96,12 @@ namespace AVGGame
             m_BackgroundImage = this.GetComponentByPath<Image>("Canvas/Background");
             m_BackgroundImageButton = this.GetComponentByPath<Button>("Canvas/Background");
             m_ButtonMenu = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonMenu");
+            m_ButtonSpeedUp = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSpeedUp");
+            m_ButtonHistory = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHistory");
+            m_ButtonHide = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHide");
+            m_ButtonInformation = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonInformation");
+            m_ButtonSave = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSave");
+            m_ButtonAuto= this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonAuto");
             m_ChoiceButton1 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button1");
             m_ChoiceButton2 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button2");
             m_ChoiceButton3 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button3");
@@ -142,6 +154,12 @@ namespace AVGGame
                 m_ButtonMenu.onClick.AddListener(OnMenuClick);
             }
 
+            // 绑定情报按钮事件
+            if (m_ButtonInformation != null)
+            {
+                m_ButtonInformation.onClick.AddListener(OnButtonInformationClick);
+            }
+
             // 绑定背景按钮点击事件（用于继续对话）
             if (m_BackgroundImageButton != null)
             {
@@ -170,6 +188,20 @@ namespace AVGGame
                 UIGroupDefinition.Popup,
                 Constant.AssetPriority.UIAsset,
                 null
+            );
+        }
+
+        /// <summary>
+        /// 打开情报界面
+        /// </summary>
+        private void OnButtonInformationClick()
+        {
+            Log.Info("[DialoguePanel] ButtonInformation clicked");
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.Information),
+                UIGroupDefinition.Popup,
+                Constant.AssetPriority.UIAsset,
+                m_ProcedureGame
             );
         }
 

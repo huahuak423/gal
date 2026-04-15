@@ -34,6 +34,9 @@ namespace AVGGame
         // 对话状态管理
         private int m_CurrentDialogueId = 0;
 
+        // 当前交互的 NPC ID（用于情报界面）
+        private int m_CurrentNpcId = 0;
+
         #endregion
 
         #region 生命周期
@@ -330,6 +333,84 @@ namespace AVGGame
         }
 
         /// <summary>
+        /// 获取女主当前数值（供 InformationPanel 显示）
+        /// </summary>
+        public PlayerStatsData GetPlayerStats()
+        {
+            var playerData = CustomEntry.PlayerData;
+            if (playerData == null)
+            {
+                Debug.LogWarning("[ProcedureGame] PlayerData is null");
+                return null;
+            }
+
+            return new PlayerStatsData
+            {
+                Inspiration = playerData.Inspiration,
+                Charm = playerData.Charm,
+                Sanity = playerData.Sanity,
+                ActionPoints = playerData.CurrentActionPoints,
+                MaxActionPoints = playerData.MaxActionPoints,
+                CurrentRound = playerData.CurrentRound
+            };
+        }
+
+        /// <summary>
+        /// 获取当前交互的 NPC ID
+        /// </summary>
+        public int GetCurrentNpcId()
+        {
+            return m_CurrentNpcId;
+        }
+
+        /// <summary>
+        /// 设置当前交互的 NPC ID
+        /// </summary>
+        public void SetCurrentNpcId(int npcId)
+        {
+            m_CurrentNpcId = npcId;
+            Debug.Log($"[ProcedureGame] SetCurrentNpcId: {npcId}");
+        }
+
+        /// <summary>
+        /// 获取指定 NPC 的已完成事件列表（按事件号排序）
+        /// </summary>
+        public List<EventRowData> GetCompletedEventsByNpcId(int npcId)
+        {
+            List<EventRowData> result = new List<EventRowData>();
+            IDataTable<EventRowData> dtEvent = GameEntry.DataTable.GetDataTable<EventRowData>();
+            if (dtEvent == null) return result;
+
+            foreach (EventRowData evt in dtEvent)
+            {
+                if (evt.EventType != 2) continue;
+                if (string.IsNullOrEmpty(evt.EventNum)) continue;
+
+                string[] parts = evt.EventNum.Split('_');
+                if (parts.Length != 2) continue;
+                if (!int.TryParse(parts[0], out int evtNpcId) || evtNpcId != npcId) continue;
+                if (!int.TryParse(parts[1], out int eventId)) continue;
+
+                if (CustomEntry.PlayerData.HasCompletedNpcEvent(npcId, eventId))
+                {
+                    result.Add(evt);
+                }
+            }
+
+            // 按事件号排序
+            result.Sort((a, b) =>
+            {
+                string[] aParts = a.EventNum.Split('_');
+                string[] bParts = b.EventNum.Split('_');
+                int aSeq = aParts.Length == 2 && int.TryParse(aParts[1], out int aVal) ? aVal : 0;
+                int bSeq = bParts.Length == 2 && int.TryParse(bParts[1], out int bVal) ? bVal : 0;
+                return aSeq.CompareTo(bSeq);
+            });
+
+            return result;
+        }
+
+        /// <summary>
         /// 判断某个显示出来的事件，按钮是否亮起可点 (点击条件筛选)
         /// </summary>
         public bool IsEventPlayable(EventRowData evt)
@@ -363,6 +444,22 @@ namespace AVGGame
         }
 
         /// <summary>
+        /// 打开情报界面
+        /// </summary>
+        public void OpenInformation()
+        {
+            GameEntry.UI.OpenUIForm(AssetUtility.GetUIFormAsset(UIFormId.Information), "Popup", this);
+        }
+
+        /// <summary>
+        /// 打开背包界面
+        /// </summary>
+        public void OpenInventory()
+        {
+            GameEntry.UI.OpenUIForm(AssetUtility.GetUIFormAsset(UIFormId.Inventory), "Popup", this);
+        }
+
+        /// <summary>
         /// 加载剧情
         /// </summary>
         public void LoadStory(int eventId)
@@ -378,6 +475,15 @@ namespace AVGGame
             if (currentData.EventType == 2)
             {
                 Debug.Log($"[ProcedureGame] 角色事件已完成: {eventId} - {currentData.Title}");
+                // 提取 NPC ID 并设置为当前 NPC
+                if (!string.IsNullOrEmpty(currentData.EventNum))
+                {
+                    string[] parts = currentData.EventNum.Split('_');
+                    if (parts.Length == 2 && int.TryParse(parts[0], out int npcId))
+                    {
+                        m_CurrentNpcId = npcId;
+                    }
+                }
             }
 
             //异步加载目标故事剧本
