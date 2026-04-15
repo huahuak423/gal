@@ -519,7 +519,7 @@ MonoBehaviour:
   CharacterDisplays: []
   BgmPath: 
   SePath: 
-  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5E8F\u7AE0/\u5E8F\u7AE0\xB7\u5B89\u5B81.png"
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u4E91\u5C42.png"
   VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
@@ -945,7 +945,7 @@ MonoBehaviour:
   CharacterDisplays: []
   BgmPath: 
   SePath: 
-  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5E8F\u7AE0/\u97E9\u6F2B\u5E73\u6D82\u98CE\u683C\u5F71\u9662\u5927\u5385\u91CD\u7ED8.png"
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u4E91\u5C422.png"
   VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
@@ -1571,7 +1571,7 @@ MonoBehaviour:
     Scale: 2.3
   BgmPath: 
   SePath: 
-  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5C45\u5BB6/\u97E9\u6F2B\u5E73\u6D82\u98CE\u683C\u5F71\u9662\u5927\u5385\u91CD\u7ED8.png"
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5C45\u5BB6/\u5367\u5BA4.png"
   VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0

@@ -395,7 +395,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u9648\u4E88\u8363/\u5185\u90E8\u7ED3\u6784\uFF08\u7528\u8FD9\u7248\uFF09.mp3"
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
