@@ -834,7 +834,7 @@ MonoBehaviour:
   CharacterDisplays: []
   BgmPath: 
   SePath: 
-  BackgroundPath: 
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u6DF1\u591C\u57CE\u5E02.png"
   VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0

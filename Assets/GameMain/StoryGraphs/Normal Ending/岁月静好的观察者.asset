@@ -46,7 +46,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u4E0D\u591A\uFF0C\u4F46\u521A\u597D\u3002\u4F60\u4E0D\u9700\u8981\u548C\u90BB\u5C45\u6210\u4E3A\u670B\u53CB\uFF0C\u53EA\u8981\u4E0D\u4E92\u76F8\u6253\u6270\u5C31\u597D"
+  DialogText: "\u4F60\u4E0D\u9700\u8981\u548C\u90BB\u5C45\u6210\u4E3A\u670B\u53CB\uFF0C\u53EA\u8981\u4E0D\u4E92\u76F8\u6253\u6270\u5C31\u597D"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -3002,7 +3002,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_37_\u8FD9\u5C31\u662F\u5168\u90E8\u7684\u4EA4\u6D41"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 16200, y: 0}
+  position: {x: 16200, y: -8}
   ports:
     keys:
     - Entry

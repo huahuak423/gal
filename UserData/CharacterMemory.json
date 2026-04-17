@@ -1106,6 +1106,24 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_120_“你最近……去过书店"
+        },
+        {
+            "GraphName": "BarberShop",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主温和.png",
+            "Position": 0,
+            "OffsetX": 372.4010314941406,
+            "OffsetY": -230.79591369628907,
+            "Scale": 2.299999952316284,
+            "LastNodeGuid": "对话_2_许映月不由分说，直接"
+        },
+        {
+            "GraphName": "BarberShop",
+            "SpritePath": "Assets/GameMain/Art/New Characters/许映月/许映月认真.png",
+            "Position": 1,
+            "OffsetX": 163.00917053222657,
+            "OffsetY": -221.16880798339845,
+            "Scale": 2.299999952316284,
+            "LastNodeGuid": "对话_1_“你这头发天天一个样"
         }
     ]
 }

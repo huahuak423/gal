@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
-10000	10001	0		医院事件过去后的两周，温叙母亲的身体状况已经彻底稳定下来								Assets/GameMain/Art/Backgrounds/居家/韩漫平涂风格影院大厅重绘.png	
+10000	10001	0		医院事件过去后的两周，温叙母亲的身体状况已经彻底稳定下来					Assets/GameMain/Music/风.mp3			Assets/GameMain/Art/Backgrounds/居家/卧室.png	
 10001	10002	0		你偶尔会问他几句，他都简短地回复“好多了”“谢谢关心”									
 10002	10003	0		不像之前那样主动找你聊天，也不像之前那样随时等着你的消息									
 10003	10004	0		你知道他在克制，那天在医院里，他失控了，他让你看到了他最脆弱的一面									
@@ -34,7 +34,7 @@
 10030	10031	0		如果这一切真的是一张网，你也想亲眼看清织网人的模样									
 10031	10032	0		“好，一会见。”									
 10032	10033	0		发完这条消息，你盯着屏幕看了几秒。心跳比平时快了一点，但你分不清那是紧张，还是期待									
-10033	10034	0		夜晚的南湖公园格外静谧								Assets/GameMain/Art/Backgrounds/公园/公园夜晚.png	
+10033	10034	0		夜晚的南湖公园格外静谧								Assets/GameMain/Art/Backgrounds/公园/公园月食.png	
 10034	10035	0		树影婆娑间，微凉的夜风带着水汽的草木香									
 10035	10036	0		你沿着南湖公园的栈道走了几分钟，月光透过树叶的缝隙，在地上投下斑驳的光影									
 10036	10037	0		你一眼就看到了长椅上的温叙									
@@ -61,7 +61,7 @@
 10057	10058	0		在暗下来的光线里，温叙从口袋里拿出了一支钢笔，递到了你的面前									
 10058	10059	0	温叙	“作为作者，我给无数读者签过名。但是今天，这本《棱镜回响》的手稿……”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙认真.png","OffsetX":22.5,"OffsetY":-280.0,"Scale":2.299999952316284}]}								
 10059	10060	0		他的声音因为紧张而带着一丝不易察觉的轻颤，目光却炽热得仿佛要将你融化	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10060	10061	0	温叙	“我想请故事的主角，在我心里的扉页上，签下她的名字。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Characters/温叙/温叙最新.png","OffsetX":15.829999923706055,"OffsetY":-552.530029296875,"Scale":3.0}]}								
+10060	10061	0	温叙	“我想请故事的主角，在我心里的扉页上，签下她的名字。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙认真.png","OffsetX":15.829999923706055,"OffsetY":-552.530029296875,"Scale":3.0}]}								
 10061	10062	0		你看着他递过来的钢笔，指尖因为内心巨大的震撼而微微发麻	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10062	10063	0		这不仅仅是一个签名，这是他用九年时间，等来的一个答案									
 10063	10064	0		你低头看向手稿的扉页，那里本来是一片空白									

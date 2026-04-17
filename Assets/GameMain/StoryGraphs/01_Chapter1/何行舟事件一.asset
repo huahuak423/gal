@@ -51,6 +51,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -105,6 +106,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -159,6 +161,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -220,6 +223,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -281,6 +285,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -342,6 +347,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -403,6 +409,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -464,6 +471,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -518,6 +526,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -579,6 +588,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -640,6 +650,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -694,6 +705,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -748,6 +760,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -802,6 +815,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -856,6 +870,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -917,6 +932,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -971,6 +987,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1025,6 +1042,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1086,6 +1104,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1140,6 +1159,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1194,6 +1214,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1353,6 +1374,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1414,6 +1436,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -1475,6 +1498,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1529,6 +1553,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1590,6 +1615,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1644,6 +1670,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1698,6 +1725,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1766,6 +1794,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1820,6 +1849,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u7535\u5F71\u9662/\u9152\u5427.png"
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1874,6 +1904,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -1928,6 +1959,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -1989,6 +2021,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2050,6 +2083,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -2182,6 +2216,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2243,6 +2278,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2297,6 +2333,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2352,6 +2389,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2413,6 +2451,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2474,6 +2513,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2528,6 +2568,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2583,6 +2624,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2637,6 +2679,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2698,6 +2741,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2752,6 +2796,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2813,6 +2858,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -2867,6 +2913,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2919,8 +2966,9 @@ MonoBehaviour:
   DialogText: "\u4F60\u4ECE\u9634\u5F71\u4E2D\u8D70\u4E86\u51FA\u53BB\uFF0C\u9774\u5B50\u5728\u5927\u7406\u77F3\u5730\u677F\u4E0A\u6572\u51FB\u51FA\u6E05\u8106\u4E14\u6781\u5177\u538B\u8FEB\u611F\u7684\u8282\u594F"
   CharacterDisplays: []
   BgmPath: 
-  SePath: 
+  SePath: "Assets/GameMain/Sounds/\u9AD8\u8DDF\u978B\u97F3\u6548.mp3"
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -2989,6 +3037,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -3043,6 +3092,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -3094,6 +3144,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -3148,6 +3199,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -3202,6 +3254,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -3263,6 +3316,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -3317,6 +3371,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -3378,6 +3433,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -3432,6 +3488,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -3480,9 +3537,10 @@ MonoBehaviour:
   SpeakerName: 
   DialogText: "\u51CC\u6668\u4E00\u70B9\u534A\uFF0C\u4F60\u521A\u7ED3\u675F\u4E00\u90E8\u5197\u957F\u4E14\u6666\u6DA9\u7684\u6B27\u6D32\u6587\u827A\u7247\u89C2\u5F71\uFF0C\u6B63\u63C9\u7740\u53D1\u9178\u7684\u7709\u5FC3\uFF0C\u4ECE\u660F\u6697\u7684\u653E\u6620\u5385\u8D70\u5411\u957F\u5ECA"
   CharacterDisplays: []
-  BgmPath: 
+  BgmPath: "Assets/GameMain/Music/\u591C\u665A.mp3"
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u7535\u5F71\u9662/\u7535\u5F71\u9662\u51FA\u53E3.png"
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -3534,6 +3592,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -3595,6 +3654,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -3656,6 +3716,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -3724,6 +3785,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -3792,6 +3854,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -3846,6 +3909,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 

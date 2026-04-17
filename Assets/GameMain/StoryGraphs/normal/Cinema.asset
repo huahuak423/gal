@@ -307,7 +307,7 @@ MonoBehaviour:
   SpeakerName: 
   DialogText: "\u8BB8\u6620\u6708\u4E70\u4E86\u67D0\u4F4D\u6587\u827A\u7247\u540D\u5BFC\u7684\u65B0\u4F5C\u9996\u6620\u7968\uFF0C\u62C9\u7740\u4F60\u4E00\u8D77\u53BB\u4E86\u7535\u5F71\u9662"
   CharacterDisplays: []
-  BgmPath: 
+  BgmPath: "Assets/GameMain/Music/\u60A6\u8033\u8212\u7F13\u7684\u4E50\u66F2.mp3"
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u7535\u5F71\u9662/\u7535\u5F71\u96621.png"
   VoicePath: 

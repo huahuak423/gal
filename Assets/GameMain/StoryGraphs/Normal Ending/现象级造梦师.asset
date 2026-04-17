@@ -210,7 +210,7 @@ MonoBehaviour:
       _dynamic: 0
   Entry: 0
   Exit: 0
-  SpeakerName: "\u5973\u4E3B\u540D"
+  SpeakerName: 
   DialogText: "\u8BE5\u5199\u7684\u90FD\u5199\u4E86\uFF0C\u8FD9\u5C31\u591F\u4E86"
   CharacterDisplays: []
   BgmPath: 
@@ -930,7 +930,7 @@ MonoBehaviour:
   CharacterDisplays: []
   BgmPath: 
   SePath: 
-  BackgroundPath: 
+  BackgroundPath: Assets/GameMain/Art/Backgrounds/big map.png
   VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
@@ -1490,7 +1490,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_30_\u4F60\u770B\u7740\u7A97\u5916\u7684\u6D77\uFF0C\u5FC3\u4E2D"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 13050, y: 0}
+  position: {x: 13048, y: -8}
   ports:
     keys:
     - Entry
@@ -1851,7 +1851,7 @@ MonoBehaviour:
   CharacterDisplays: []
   BgmPath: 
   SePath: 
-  BackgroundPath: 
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5E8F\u7AE0/\u4E91\u5C42.png"
   VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
