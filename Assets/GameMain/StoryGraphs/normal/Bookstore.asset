@@ -105,6 +105,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -153,9 +154,10 @@ MonoBehaviour:
   SpeakerName: 
   DialogText: "\u4F60\u6765\u5230\u5E38\u53BB\u7684\u90A3\u5BB6\u72EC\u7ACB\u4E66\u5E97\uFF0C\u70B9\u4E86\u4E00\u676F\u70ED\u7EA2\u8336\uFF0C\u5750\u5728\u4E00\u4E2A\u9760\u7A97\u7684\u4F4D\u7F6E"
   CharacterDisplays: []
-  BgmPath: 
+  BgmPath: "Assets/GameMain/Music/\u4F3C\u6C34.mp3"
   SePath: 
-  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u4E66\u5E97/\u4E66\u5E971.png"
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u4E66\u5E97/\u4E66\u5E97.png"
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -210,6 +212,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -265,6 +268,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -319,6 +323,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -335,12 +340,6 @@ MonoBehaviour:
   m_Name: BookStore
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: -3163911266315972363}
   - {fileID: -3805277169981984344}
   - {fileID: -2906834394033484344}
@@ -399,6 +398,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 

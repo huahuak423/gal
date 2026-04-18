@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
-10000	10001	0		没过几天，你就看完了试读本								Assets/GameMain/Art/Backgrounds/居家/韩漫平涂风格影院大厅重绘 (1).png	
+10000	10001	0		没过几天，你就看完了试读本					Assets/GameMain/Music/春光明媚.mp3			Assets/GameMain/Art/Backgrounds/居家/卧室2.png	
 10001	10002	0		字里行间藏着熟悉的牵引，这确实是叙闻的写作风格，擅长用文字把那些女性所处的困境、难以排解的忧思逐一诉说									
 10002	10003	0		但这一次，你在阅读时多了一层审视，一个男人，是如何写出这些的？									
 10003	10004	0		合上书，你的思绪还停留在尾页那行浅淡的数字，那是他专门为你留下的信号，像一个安静的邀请，不催促，但一直都在									
@@ -18,7 +18,7 @@
 10014	10015	0		半小时后，手机屏幕亮了起来，温叙的回复简短利落									
 10015	10016	0		“好。”									
 10016	10017	0		你松了口气，访谈对象既定，是时候为这场深度对话做准备了									
-10017	10018	0		到了约定的日子，你走进咖啡馆时，温叙已经到了								Assets/GameMain/Art/Backgrounds/商场/咖啡厅.png	
+10017	10018	0		到了约定的日子，你走进咖啡馆时，温叙已经到了					Assets/GameMain/Music/花落江南.mp3			Assets/GameMain/Art/Backgrounds/商场/咖啡店点.png	
 10018	10019	0		刚坐下，一杯咖啡被推到你的眼前									
 10019	10020	0	温叙	“这是这家店的热款，不知是否合你的口味。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":22.549999237060548,"OffsetY":-280.0,"Scale":2.299999952316284}]}								
 10020	10021	0		兴许是他太过自然熟稔，又或者一路赶来确实口干舌燥，你一时也没有推脱，端起杯子抿了一口	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								

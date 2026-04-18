@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
-10000	10001	0		凌晨两点十七分，你蜷缩在出租车的后座，手捂着胃，指节因为用力而泛白								Assets/GameMain/Art/Backgrounds/深夜城市.png	
+10000	10001	0		凌晨两点十七分，你蜷缩在出租车的后座，手捂着胃，指节因为用力而泛白					Assets/GameMain/Music/夜晚.mp3			Assets/GameMain/Art/Backgrounds/深夜城市.png	
 10001	10002	0		窗外的城市灯火在雨幕里晕成一片模糊的光斑，像一幅被水浸泡过的油画									
 10002	10003	0		是急性肠胃炎，连续三天的外卖、两杯冰美式、加上今天下午那顿辣到胃痉挛的火锅，报应来得很快									
 10003	10004	0		你不想麻烦许映月，她在赶一个项目deadline，已经连续加班三天了，你知道她现在需要睡眠									
@@ -63,7 +63,7 @@
 10059	10060	0	周杉	“我……只是有点放心不下。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
 10060	10061	0		通话在一片安静又温柔的氛围里结束，你按了挂断键，把手机放进包里	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10061	10062	0		出租车来了。你坐进去，报上地址。车子停下时，你打开和时安的聊天框，打了一行字								Assets/GameMain/Art/Backgrounds/深夜城市.png	
-10062	10063	0	女主名	“到家了，晚安。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/家居柔和.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							Assets/GameMain/Art/Backgrounds/居家/韩漫平涂风格影院大厅重绘.png	
+10062	10063	0	女主名	“到家了，晚安。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/家居柔和.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}							Assets/GameMain/Art/Backgrounds/居家/卧室.png	
 10063	10064	0		他的回复来得很快，是条语音，带着因困倦带来的沙哑	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10064	0	0	周杉	“老板晚安，好梦。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
 10065	0	1				{"Choices":[{"ChoiceText":"为特殊的陪伴买单 ","NextId":10042,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":15,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":5,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":5,"ItemId":""}]},{"ChoiceText":"感谢他的陪伴 ","NextId":10051,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"03","Value":20,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":3,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":2,"ItemId":""}]}]}							

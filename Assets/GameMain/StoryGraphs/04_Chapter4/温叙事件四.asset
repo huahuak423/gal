@@ -2761,7 +2761,7 @@ MonoBehaviour:
     OffsetX: -330
     OffsetY: -200
     Scale: 2.3
-  BgmPath: 
+  BgmPath: "Assets/GameMain/Music/\u6625\u5149\u660E\u5A9A.mp3"
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5546\u573A/\u5546\u573A\u5730\u56FE.png"
   VoicePath: 

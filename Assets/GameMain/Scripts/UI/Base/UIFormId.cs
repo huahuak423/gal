@@ -23,5 +23,7 @@ namespace AVGGame
         public const int Dialogue = 3000;
         public const int Menu = 3002;           // 游戏内菜单
         public const int Map = 3003;            // 地图界面
+        public const int Information = 3004;    // 情报界面
+        public const int Inventory = 3005;       // 背包界面
     }
 }

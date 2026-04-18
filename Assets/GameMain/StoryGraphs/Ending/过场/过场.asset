@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6113635428465335716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1448, y: 1176}
+  ports:
+    keys:
+    - Entry
+    - Exit
+    values:
+    - _fieldName: Entry
+      _node: {fileID: -6113635428465335716}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Exit
+      _node: {fileID: -6113635428465335716}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entry
+        node: {fileID: 7540858225738150184}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Entry: 0
+  Exit: 0
+  SpeakerName: 
+  DialogText: "\u5728\u8FD9\u6BB5\u5145\u5B9E\u800C\u7F8E\u597D\u7684\u65F6\u5149\u91CC\uFF0C\u4F60\u4E0E\u4ED6\u4EEC\u90FD\u7ED3\u4E0B\u4E86\u6DF1\u539A\u7684\u7F81\u7ECA\uFF0C\u4ED6\u4EEC\u90FD\u5728\u4F60\u7684\u5FC3\u91CC\u7559\u4E0B\u4E86\u4E0D\u53EF\u78E8\u706D\u7684\u5370\u8BB0"
+  CharacterDisplays: []
+  BgmPath: 
+  SePath: 
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5E8F\u7AE0/\u4E91\u5C42.png"
+  VoicePath: 
+  PerformanceKey: 
+  NeedsAttention: 0
+  EditorNote: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b5291e301f49da9c21126ff1a16733, type: 3}
+  m_Name: "\u8FC7\u573A"
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -6113635428465335716}
+  - {fileID: 7540858225738150184}
+--- !u!114 &7540858225738150184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1864, y: 1176}
+  ports:
+    keys:
+    - Entry
+    - Exit
+    values:
+    - _fieldName: Entry
+      _node: {fileID: 7540858225738150184}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Exit
+        node: {fileID: -6113635428465335716}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Exit
+      _node: {fileID: 7540858225738150184}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Entry: 0
+  Exit: 0
+  SpeakerName: 
+  DialogText: "\u7136\u800C\uFF0C\u6216\u8BB8\u4F60\u8BE5\u8003\u8651\u662F\u5426\u8FDB\u884C\u9009\u62E9\uFF0C\u6B64\u523B\uFF0C\u4F60\u5FC3\u4E2D\u60F3\u7684\u662F"
+  CharacterDisplays: []
+  BgmPath: 
+  SePath: 
+  BackgroundPath: 
+  VoicePath: 
+  PerformanceKey: 
+  NeedsAttention: 0
+  EditorNote: 

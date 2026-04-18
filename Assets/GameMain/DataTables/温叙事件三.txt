@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
-10000	10001	0		上周的那篇专访一经推出，毫无悬念地引爆了全网								Assets/GameMain/Art/Backgrounds/居家/韩漫平涂风格影院大厅重绘 (1).png	
+10000	10001	0		上周的那篇专访一经推出，毫无悬念地引爆了全网					Assets/GameMain/Music/悦耳舒缓的乐曲.mp3			Assets/GameMain/Art/Backgrounds/居家/卧室2.png	
 10001	10002	0		后台数据一路狂飙，红色的增长曲线像坐上了火箭									
 10002	10003	0		评论区炸了，有人哭，有人共鸣，有人@闺蜜来看，有人在深夜发长文诉说自己的故事									
 10003	10004	0		你一条条翻着，心里有一种奇异的满足，你做到了，你也能把那些说不出口的情绪写出来									

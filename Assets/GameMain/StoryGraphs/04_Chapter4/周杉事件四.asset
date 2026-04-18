@@ -782,9 +782,9 @@ MonoBehaviour:
   DialogText: "\u665A\u4E0A\uFF0C\u4F60\u6B63\u5750\u5728\u7535\u8111\u524D\u8FDB\u884C
     \u201C\u7535\u7ADE\u793E\u4EA4\u4E0E\u60C5\u611F\u4EE3\u507F\u201D \u89C6\u9891\u7684\u7CBE\u4FEE"
   CharacterDisplays: []
-  BgmPath: 
+  BgmPath: "Assets/GameMain/Music/\u591C\u665A.mp3"
   SePath: 
-  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5C45\u5BB6/\u97E9\u6F2B\u5E73\u6D82\u98CE\u683C\u5F71\u9662\u5927\u5385\u91CD\u7ED8.png"
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5C45\u5BB6/\u5367\u5BA4.png"
   VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0

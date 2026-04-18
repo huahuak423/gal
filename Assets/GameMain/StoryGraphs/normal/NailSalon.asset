@@ -303,13 +303,6 @@ MonoBehaviour:
   m_Name: NailSalon
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 4638593841746194671}
   - {fileID: -5320452848211601333}
   - {fileID: -436415572652005375}
@@ -418,10 +411,9 @@ MonoBehaviour:
   SpeakerName: 
   DialogText: "\u8BB8\u6620\u6708\u4E00\u5927\u65E9\u5C31\u593A\u547D\u8FDE\u73AFcall\uFF0C\u628A\u4F60\u4ECE\u5E8A\u4E0A\u8585\u8D77\u6765\uFF0C\u62D6\u53BB\u4E86\u5979\u5E38\u5149\u987E\u7684\u90A3\u5BB6\u7F8E\u7532\u6C99\u9F99"
   CharacterDisplays: []
-  BgmPath: 
+  BgmPath: "Assets/GameMain/Music/\u4F18\u96C5.mp3"
   SePath: 
-  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5C45\u5BB6/\u97E9\u6F2B\u5E73\u6D82\u98CE\u683C\u5F71\u9662\u5927\u5385\u91CD\u7ED8
-    (1).png"
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5C45\u5BB6/\u5367\u5BA42.png"
   VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0

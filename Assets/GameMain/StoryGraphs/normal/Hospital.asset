@@ -105,6 +105,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -153,9 +154,10 @@ MonoBehaviour:
   SpeakerName: 
   DialogText: "\u56E0\u4E3A\u6700\u8FD1\u71AC\u591C\u592A\u591A\u6709\u4E9B\u5FC3\u60B8\uFF0C\u4F60\u6302\u4E86\u5E02\u4E2D\u5FC3\u533B\u9662\u7684\u5E38\u89C4\u4F53\u68C0\u53F7"
   CharacterDisplays: []
-  BgmPath: 
+  BgmPath: "Assets/GameMain/Music/\u591C\u665A.mp3"
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u533B\u9662.png"
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -210,6 +212,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -264,6 +267,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -339,6 +343,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -394,6 +399,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
@@ -448,6 +454,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
+  VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 

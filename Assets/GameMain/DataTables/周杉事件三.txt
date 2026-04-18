@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
-10000	10001	0		午后，阳光正好								Assets/GameMain/Art/Backgrounds/公园/公园.png	
+10000	10001	0		午后，阳光正好					Assets/GameMain/Music/夏天.mp3			Assets/GameMain/Art/Backgrounds/公园/公园.png	
 10001	10002	0		你挑了一个离家不远的公园，换上舒服的运动鞋，带了一本书，打算找一个景致优美的地方，安安静静地过一个下午									
 10002	10003	0		许是工作日的缘故，整个公园被静谧笼罩。偶尔有一两个遛狗的老人经过，脚步慢悠悠的，像是在和时间商量着什么									
 10003	10004	0		可是安静的有些过了头，习惯了城市喧嚣的你，在这种绝对的安静里，反而觉得有些空落落的									

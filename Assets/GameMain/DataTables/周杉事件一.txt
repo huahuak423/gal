@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
-10000	10001	0		连续六天的高强度工作，让你的大脑仿佛被塞进了一团生锈的齿轮								Assets/GameMain/Art/Backgrounds/居家/韩漫平涂风格影院大厅重绘.png	
+10000	10001	0		连续六天的高强度工作，让你的大脑仿佛被塞进了一团生锈的齿轮					Assets/GameMain/Music/夜晚.mp3			Assets/GameMain/Art/Backgrounds/居家/卧室.png	
 10001	10002	0		选题、改稿、复盘数据……你的生活被切割成无数个以小时为单位的碎片，每一片都填满了别人的情绪，唯独没有你自己的									
 10002	10003	0		你急需一个出口，一个可以被动的、不消耗自己的放松方式									
 10003	10004	0		于是你想到了那个正在做的选题，“当代年轻人电竞社交与情感代偿”									

@@ -51,7 +51,23 @@ namespace AVGGame
     }
 
     // ==========================================
-    // 3. 对话显示数据（流程层传递给UI）
+    // 3. 玩家数值数据（流程层传递给InformationPanel）
+    // ==========================================
+    /// <summary>
+    /// 传递给 InformationPanel 的玩家数值
+    /// </summary>
+    public class PlayerStatsData
+    {
+        public int Inspiration;     // 灵感
+        public int Charm;           // 魅力
+        public int Sanity;          // 理智
+        public int ActionPoints;    // 当前行动点
+        public int MaxActionPoints; // 最大行动点
+        public int CurrentRound;    // 当前周目
+    }
+
+    // ==========================================
+    // 4. 对话显示数据（流程层传递给UI）
     // ==========================================
     /// <summary>
     /// 传递给 DialoguePanel 的显示数据

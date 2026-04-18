@@ -1016,6 +1016,114 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_34_“等我忙完这阵吧。”"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/温叙/温叙平和.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_7_“你看，这个人读得很"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主温和.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_124_“下次一起去？”"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/温叙/温叙微笑.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_37_“好。”"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主微讶.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_14_“好像要下雨了。”"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/温叙/温叙平和.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_27_“看看这些合不合你的"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主常规.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_94_“他们来找你要钱？”"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/周杉/周杉常规.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_117_“我知道。”"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/周杉/周杉闭眼.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_116_他沉默了很久，然后轻"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主闭眼.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_115_“有什么事可以跟我说"
+        },
+        {
+            "GraphName": "周杉&温叙线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/周杉/周杉立绘.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_120_“你最近……去过书店"
+        },
+        {
+            "GraphName": "BarberShop",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主温和.png",
+            "Position": 0,
+            "OffsetX": 372.4010314941406,
+            "OffsetY": -230.79591369628907,
+            "Scale": 2.299999952316284,
+            "LastNodeGuid": "对话_2_许映月不由分说，直接"
+        },
+        {
+            "GraphName": "BarberShop",
+            "SpritePath": "Assets/GameMain/Art/New Characters/许映月/许映月认真.png",
+            "Position": 1,
+            "OffsetX": 163.00917053222657,
+            "OffsetY": -221.16880798339845,
+            "Scale": 2.299999952316284,
+            "LastNodeGuid": "对话_1_“你这头发天天一个样"
         }
     ]
 }

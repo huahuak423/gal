@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
-10000	10001	0		你来到常去的那家独立书店，点了一杯热红茶，坐在一个靠窗的位置								Assets/GameMain/Art/Backgrounds/书店/书店1.png	
+10000	10001	0		你来到常去的那家独立书店，点了一杯热红茶，坐在一个靠窗的位置					Assets/GameMain/Music/似水.mp3			Assets/GameMain/Art/Backgrounds/书店/书店.png	
 10001	10002	0		你从架子上抽出一本厚重的犯罪心理学专著									
 10002	10003	0		严谨的犯罪侧写逻辑让你的大脑保持着高速的运转与绝对的清醒									
 10003	10004	0		你在书页的空白处写下密密麻麻的批注，感觉自己的灵魂都变得丰盈了起来									
