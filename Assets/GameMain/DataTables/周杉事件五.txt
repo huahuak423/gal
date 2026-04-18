@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
-10000	10001	0		周六上午十点，游乐园门口人声鼎沸								Assets/GameMain/Art/Backgrounds/游乐园.png	
+10000	10001	0		周六上午十点，游乐园门口人声鼎沸					Assets/GameMain/Music/温柔的懒风.mp3			Assets/GameMain/Art/Backgrounds/游乐园.png	
 10001	10002	0		早晨的阳光明媚得有些晃眼，你眯着眼睛看了一眼天空，万里无云，是个好天气									
 10002	10003	0		你拎着装着拍摄设备的托特包，沉甸甸的，单肩背着有点勒									
 10003	10004	0		你走到约定的喷泉广场，视线在人群中扫了一圈									

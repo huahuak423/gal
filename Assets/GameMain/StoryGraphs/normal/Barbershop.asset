@@ -102,7 +102,21 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: 
   DialogText: "\u5979\u4E0D\u7531\u5206\u8BF4\u7684\uFF0C\u76F4\u63A5\u628A\u4F60\u6309\u5728\u4E86\u5E97\u91CC\u9996\u5E2D\u9020\u578B\u5E08\u7684\u6905\u5B50\u4E0A"
-  CharacterDisplays: []
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 1
+    Position: 0
+    SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 0
+  - CharacterName: 
+    ActionType: 1
+    Position: 1
+    SpritePath: 
+    OffsetX: 0
+    OffsetY: 0
+    Scale: 0
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -155,8 +169,22 @@ MonoBehaviour:
   SpeakerName: 
   DialogText: " \u8BB8\u6620\u6708\u76EF\u7740\u4F60\u4E00\u6210\u4E0D\u53D8\u7684\u53D1\u578B\u770B\u4E86\u534A\u5929\uFF0C\u773C\u795E\u91CC\u5199\u6EE1\u4E86
     \u201C\u5FC5\u987B\u6539\u9020\u201D \u7684\u7B03\u5B9A\uFF0C\u4E8C\u8BDD\u4E0D\u8BF4\u5C31\u628A\u4F60\u62C9\u8FDB\u4E86\u7406\u53D1\u6C99\u9F99 "
-  CharacterDisplays: []
-  BgmPath: 
+  CharacterDisplays:
+  - CharacterName: 
+    ActionType: 0
+    Position: 0
+    SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u5973\u4E3B\u6E29\u548C.png"
+    OffsetX: 372.40103
+    OffsetY: -196
+    Scale: 2.3
+  - CharacterName: 
+    ActionType: 0
+    Position: 1
+    SpritePath: "Assets/GameMain/Art/New Characters/\u8BB8\u6620\u6708/\u8BB8\u6620\u6708\u8BA4\u771F.png"
+    OffsetX: 163.00917
+    OffsetY: -200
+    Scale: 2.3
+  BgmPath: "Assets/GameMain/Music/\u8F7B\u97F3\u4E50.mp3"
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u7406\u53D1\u5E97.png"
   VoicePath: 

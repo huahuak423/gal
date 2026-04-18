@@ -47,7 +47,7 @@ MonoBehaviour:
   CharacterDisplays: []
   BgmPath: 
   SePath: 
-  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u4E91\u5C42.png"
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5E8F\u7AE0/\u4E91\u5C42.png"
   VoicePath: 
   PerformanceKey: 
   NeedsAttention: 0

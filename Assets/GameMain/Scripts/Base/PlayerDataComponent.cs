@@ -95,10 +95,10 @@ namespace AVGGame
             // 重置行动点（加上周目继承加成）
             m_CurrentActionPoints = m_MaxActionPoints + BonusActionPoints;
 
-            // 重置属性（保留周目继承加成）
-            m_Charm = BonusCharm;
-            m_Inspiration = BonusInspiration;
-            m_Sanity = BonusSanity;
+            // 重置属性为0
+            m_Charm = 0;
+            m_Inspiration = 0;
+            m_Sanity = 0;
 
             // 清空好感度和物品
             m_NpcFavorability.Clear();
@@ -132,7 +132,7 @@ namespace AVGGame
         #region 属性操作
 
         /// <summary>
-        /// 增加玩家属性
+        /// 增加玩家属性（自动限制在上下限范围内）
         /// </summary>
         public void AddAttribute(PlayerAttributeType type, int value)
         {

@@ -32,5 +32,15 @@ namespace AVGGame.Editor
         /// 当前背景图路径
         /// </summary>
         public string BackgroundPath;
+
+        /// <summary>
+        /// 当前节点语音路径
+        /// </summary>
+        public string VoicePath;
+
+        /// <summary>
+        /// 当前节点音效路径
+        /// </summary>
+        public string SePath;
     }
 }
