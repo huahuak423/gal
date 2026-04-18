@@ -35,6 +35,12 @@ namespace AVGGame.Editor
         private Vector2 m_LastMousePos;
         private Vector2 m_DragOffset; // 鼠标和立绘中心之间的偏移量
 
+        // 音频预览
+        private AudioSource m_PreviewVoiceSource;
+        private AudioSource m_PreviewSeSource;
+        private string m_PreviewVoicePath;
+        private string m_PreviewSePath;
+
         // 槽位颜色（半透明)
         private static readonly Color k_SlotColorLeft = new Color(1f, 0.3f, 0.4f);   // 红色 - 左
         private static readonly Color k_SlotColorCenter = new Color(0.3f, 1f, 0.4f); // 绿色 - 中
@@ -55,6 +61,12 @@ namespace AVGGame.Editor
             m_SandboxEngine = new PreviewSandboxEngine();
             Selection.selectionChanged += OnSelectionChanged;
             m_MemoryManager.Load();
+
+            // 初始化音频源（挂在隐藏的 GameObject 上）
+            var audioObj = new GameObject("PreviewAudio");
+            audioObj.hideFlags = HideFlags.HideAndDontSave;
+            m_PreviewVoiceSource = audioObj.AddComponent<AudioSource>();
+            m_PreviewSeSource = audioObj.AddComponent<AudioSource>();
         }
 
         private void OnDisable()
@@ -67,6 +79,13 @@ namespace AVGGame.Editor
 
             Selection.selectionChanged -= OnSelectionChanged;
             if (m_SandboxEngine != null) m_SandboxEngine.Cleanup();
+
+            // 停止并清理音频
+            StopPreviewAudio();
+            if (m_PreviewVoiceSource != null)
+            {
+                Object.DestroyImmediate(m_PreviewVoiceSource.gameObject);
+            }
 
             // 保存记忆
             m_MemoryManager.Save();
@@ -95,6 +114,9 @@ namespace AVGGame.Editor
 
                 // 应用快照
                 m_SandboxEngine.ApplySnapshot(snapshot);
+
+                // 快照变化，停止当前音频
+                StopPreviewAudio();
 
                 // 记录当前节点
                 m_SelectedNode = selectedNode;
@@ -168,6 +190,27 @@ namespace AVGGame.Editor
             {
                 SaveAllMemories();
             }
+
+            GUILayout.Space(10);
+
+            // 播放音频按钮
+            var currentSnapshot = m_SandboxEngine.GetCurrentSnapshot();
+            bool hasVoice = currentSnapshot != null && !string.IsNullOrEmpty(currentSnapshot.VoicePath);
+            bool hasSe = currentSnapshot != null && !string.IsNullOrEmpty(currentSnapshot.SePath);
+
+            GUI.enabled = hasVoice;
+            if (GUILayout.Button("播放语音", GUILayout.Width(80)))
+            {
+                PlayPreviewVoice();
+            }
+            GUI.enabled = true;
+
+            GUI.enabled = hasSe;
+            if (GUILayout.Button("播放音效", GUILayout.Width(80)))
+            {
+                PlayPreviewSe();
+            }
+            GUI.enabled = true;
 
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space(2);
@@ -871,6 +914,71 @@ namespace AVGGame.Editor
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// 播放预览语音（再次点击中断并重播）
+        /// </summary>
+        private void PlayPreviewVoice()
+        {
+            var snapshot = m_SandboxEngine.GetCurrentSnapshot();
+            if (snapshot == null || string.IsNullOrEmpty(snapshot.VoicePath)) return;
+
+            // 如果正在播放同一段语音，先中断
+            if (m_PreviewVoiceSource != null && m_PreviewVoiceSource.isPlaying && m_PreviewVoicePath == snapshot.VoicePath)
+            {
+                m_PreviewVoiceSource.Stop();
+            }
+
+            m_PreviewVoicePath = snapshot.VoicePath;
+            var clip = AssetDatabase.LoadAssetAtPath<AudioClip>(snapshot.VoicePath);
+            if (clip != null && m_PreviewVoiceSource != null)
+            {
+                m_PreviewVoiceSource.clip = clip;
+                m_PreviewVoiceSource.Play();
+            }
+            else
+            {
+                Debug.LogWarning($"[预览] 语音加载失败: {snapshot.VoicePath}");
+            }
+        }
+
+        /// <summary>
+        /// 播放预览音效
+        /// </summary>
+        private void PlayPreviewSe()
+        {
+            var snapshot = m_SandboxEngine.GetCurrentSnapshot();
+            if (snapshot == null || string.IsNullOrEmpty(snapshot.SePath)) return;
+
+            m_PreviewSePath = snapshot.SePath;
+            var clip = AssetDatabase.LoadAssetAtPath<AudioClip>(snapshot.SePath);
+            if (clip != null && m_PreviewSeSource != null)
+            {
+                m_PreviewSeSource.PlayOneShot(clip);
+            }
+            else
+            {
+                Debug.LogWarning($"[预览] 音效加载失败: {snapshot.SePath}");
+            }
+        }
+
+        /// <summary>
+        /// 停止所有预览音频
+        /// </summary>
+        private void StopPreviewAudio()
+        {
+            if (m_PreviewVoiceSource != null)
+            {
+                m_PreviewVoiceSource.Stop();
+                m_PreviewVoiceSource.clip = null;
+            }
+            if (m_PreviewSeSource != null)
+            {
+                m_PreviewSeSource.Stop();
+            }
+            m_PreviewVoicePath = null;
+            m_PreviewSePath = null;
         }
 
         #endregion

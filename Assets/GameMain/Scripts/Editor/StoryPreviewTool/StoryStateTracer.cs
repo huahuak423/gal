@@ -188,6 +188,8 @@ namespace AVGGame.Editor
             {
                 snapshot.DialogText = node.DialogText ?? "";
                 snapshot.CharacterName = node.SpeakerName ?? "";
+                snapshot.VoicePath = node.VoicePath ?? "";
+                snapshot.SePath = node.SePath ?? "";
             }
         }
 

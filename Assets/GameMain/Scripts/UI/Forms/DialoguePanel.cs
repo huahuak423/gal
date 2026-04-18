@@ -75,6 +75,11 @@ namespace AVGGame
         private List<Button> m_ChoiceButtons = new List<Button>();
         private GameObject m_ChoiceButtonPrefab;
 
+        // 音频相关
+        private AudioSource m_VoiceAudioSource;
+        private AudioSource m_SeAudioSource;
+        private bool m_VoiceInterruptEnabled = true; // 语音中断控制（设置页面可开关）
+
         #endregion
 
         #region 生命周期
@@ -141,6 +146,12 @@ namespace AVGGame
             {
                 m_ButtonMenu.onClick.AddListener(OnMenuClick);
             }
+
+            // 初始化音频源
+            m_VoiceAudioSource = gameObject.AddComponent<AudioSource>();
+            m_VoiceAudioSource.playOnAwake = false;
+            m_SeAudioSource = gameObject.AddComponent<AudioSource>();
+            m_SeAudioSource.playOnAwake = false;
 
             // 绑定背景按钮点击事件（用于继续对话）
             if (m_BackgroundImageButton != null)
@@ -213,6 +224,16 @@ namespace AVGGame
                 }
             }
             m_ChoiceButtons.Clear();
+
+            // 清除残留立绘
+            HideAllCharacters();
+
+            // 停止所有音频
+            StopVoice();
+            if (m_SeAudioSource != null)
+            {
+                m_SeAudioSource.Stop();
+            }
 
             m_OnComplete = null;
         }
@@ -810,6 +831,100 @@ namespace AVGGame
 
         #endregion
 
+        #region 音频播放
+
+        /// <summary>
+        /// 播放语音（进入下一句时会自动中断上一句）
+        /// </summary>
+        private void PlayVoice(string voicePath)
+        {
+            // 先中断当前语音
+            StopVoice();
+
+            if (string.IsNullOrEmpty(voicePath)) return;
+
+            GameEntry.Resource.LoadAsset(
+                voicePath,
+                typeof(AudioClip),
+                new LoadAssetCallbacks(
+                    OnLoadVoiceSuccess,
+                    OnLoadVoiceFailure
+                )
+            );
+        }
+
+        private void OnLoadVoiceSuccess(string assetName, object asset, float duration, object userData)
+        {
+            if (m_VoiceAudioSource == null) return;
+
+            AudioClip clip = asset as AudioClip;
+            if (clip != null)
+            {
+                m_VoiceAudioSource.clip = clip;
+                m_VoiceAudioSource.Play();
+            }
+        }
+
+        private void OnLoadVoiceFailure(string assetName, LoadResourceStatus status, string errorMessage, object userData)
+        {
+            Debug.LogWarning($"[DialoguePanel] 语音加载失败: {assetName}, 错误: {errorMessage}");
+        }
+
+        /// <summary>
+        /// 停止语音播放（受中断开关控制）
+        /// </summary>
+        private void StopVoice()
+        {
+            if (m_VoiceAudioSource != null && m_VoiceAudioSource.isPlaying)
+            {
+                m_VoiceAudioSource.Stop();
+                m_VoiceAudioSource.clip = null;
+            }
+        }
+
+        /// <summary>
+        /// 播放音效
+        /// </summary>
+        private void PlaySe(string sePath)
+        {
+            if (string.IsNullOrEmpty(sePath)) return;
+
+            GameEntry.Resource.LoadAsset(
+                sePath,
+                typeof(AudioClip),
+                new LoadAssetCallbacks(
+                    OnLoadSeSuccess,
+                    OnLoadSeFailure
+                )
+            );
+        }
+
+        private void OnLoadSeSuccess(string assetName, object asset, float duration, object userData)
+        {
+            if (m_SeAudioSource == null) return;
+
+            AudioClip clip = asset as AudioClip;
+            if (clip != null)
+            {
+                m_SeAudioSource.PlayOneShot(clip);
+            }
+        }
+
+        private void OnLoadSeFailure(string assetName, LoadResourceStatus status, string errorMessage, object userData)
+        {
+            Debug.LogWarning($"[DialoguePanel] 音效加载失败: {assetName}, 错误: {errorMessage}");
+        }
+
+        /// <summary>
+        /// 设置语音中断开关（供设置页面调用）
+        /// </summary>
+        public void SetVoiceInterruptEnabled(bool enabled)
+        {
+            m_VoiceInterruptEnabled = enabled;
+        }
+
+        #endregion
+
         #region 私有方法
 
         /// <summary>
@@ -842,6 +957,15 @@ namespace AVGGame
 
             // 应用背景图
             ApplyBackground(data.BackgroundPath);
+
+            // 播放语音（上一句会自动中断）
+            if (m_VoiceInterruptEnabled)
+            {
+                PlayVoice(data.VoicePath);
+            }
+
+            // 播放音效
+            PlaySe(data.SePath);
 
             // 检查是否是选择节点
             if (data.NodeType == 1) // 选择节点

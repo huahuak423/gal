@@ -66,5 +66,7 @@ namespace AVGGame
         public string ChoicesJson;   // 选项配置（如果是选项节点）
         public string CharacterActionsJson; // 立绘动作配置JSON
         public string BackgroundPath;       // 背景图资源路径
+        public string VoicePath;            // 语音资源路径
+        public string SePath;               // 音效资源路径
     }
 }
