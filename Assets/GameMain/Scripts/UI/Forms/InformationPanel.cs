@@ -25,7 +25,8 @@ namespace AVGGame
         [SerializeField] private Text m_Charm;
 
         [Header("好感度与进度")]
-        [SerializeField] private RectTransform m_LovePlate;
+        [SerializeField] private Slider m_LovePlate;
+        [SerializeField] private Text m_LovePlateText;
         [SerializeField] private Scrollbar m_ScrollbarInspiration;
 
         [Header("按钮")]
@@ -66,7 +67,8 @@ namespace AVGGame
             m_Charm = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/PersonalPlate/Charm/TextVarCharm");
 
             // 进度
-            m_LovePlate = this.GetComponentByPath<RectTransform>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/LovePlate");
+            m_LovePlate = this.GetComponentByPath<Slider>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/LovePlate/Slider");
+            m_LovePlateText = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/LovePlate/TextConstLove");
 
             // 按钮
             m_ButtonClose = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/ButtonClose");
@@ -150,6 +152,7 @@ namespace AVGGame
                 m_PersonalPlate.gameObject.SetActive(false);
             if (m_CharacterPlate != null)
                 m_CharacterPlate.gameObject.SetActive(true);
+            RefreshFavorability();
             RefreshEventButtons();
             Log.Info("[InformationPanel] ShowCharacterTab");
         }
@@ -231,6 +234,31 @@ namespace AVGGame
                     m_EventButtons[i].gameObject.SetActive(false);
                 }
             }
+        }
+
+        /// <summary>
+        /// 刷新当前角色好感度显示
+        /// </summary>
+        private void RefreshFavorability()
+        {
+            if (m_ProcedureGame == null) return;
+            if (CustomEntry.PlayerData == null) return;
+
+            int npcId = m_ProcedureGame.GetCurrentNpcId();
+            int favorability = CustomEntry.PlayerData.GetFavorability(npcId);
+            const int maxFavorability = 100;
+
+            if (m_LovePlate != null)
+            {
+                m_LovePlate.value = (float)favorability / maxFavorability;
+            }
+
+            if (m_LovePlateText != null)
+            {
+                m_LovePlateText.text = favorability.ToString();
+            }
+
+            Log.Info($"[InformationPanel] RefreshFavorability - NPC:{npcId} 好感度:{favorability}");
         }
 
         #endregion

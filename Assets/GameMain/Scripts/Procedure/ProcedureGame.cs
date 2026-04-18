@@ -475,6 +475,17 @@ namespace AVGGame
             // 标记事件已完成（用于存档）
             CustomEntry.PlayerData.MarkEventCompleted(eventId);
 
+            // 消耗行动点
+            if (currentData.CostAP > 0)
+            {
+                if (!CustomEntry.PlayerData.ConsumeActionPoints(currentData.CostAP))
+                {
+                    Debug.LogWarning($"[ProcedureGame] AP 不足，无法开始事件: {eventId}，需要 {currentData.CostAP}，当前 {CustomEntry.PlayerData.CurrentActionPoints}");
+                    return;
+                }
+                Debug.Log($"[ProcedureGame] 消耗 AP: {currentData.CostAP}，剩余: {CustomEntry.PlayerData.CurrentActionPoints}");
+            }
+
             // EventType == 2 是角色特殊事件，完成后不再显示
             if (currentData.EventType == 2)
             {
@@ -718,8 +729,81 @@ namespace AVGGame
             // 重置对话ID
             m_CurrentDialogueId = 0;
 
+            // 检查 AP 是否耗尽 → 触发结局判定
+            if (CustomEntry.PlayerData.CurrentActionPoints <= 0)
+            {
+                Debug.Log("[ProcedureGame] AP 已耗尽，进入结局判定流程");
+                CheckAndTriggerEnding();
+                return;
+            }
+
             // 返回大地图
             OpenMap();
+        }
+
+        /// <summary>
+        /// AP 耗尽时检查并触发结局（框架占位，实际判定逻辑待后续填充）
+        /// </summary>
+        private void CheckAndTriggerEnding()
+        {
+            Debug.Log("[ProcedureGame] ===== 结局判定开始 =====");
+            Debug.Log($"[ProcedureGame] 当前周目: {CustomEntry.PlayerData.CurrentRound}");
+            Debug.Log($"[ProcedureGame] 属性 - 魅力: {CustomEntry.PlayerData.Charm}, 灵感: {CustomEntry.PlayerData.Inspiration}, 理智: {CustomEntry.PlayerData.Sanity}");
+
+            // TODO: 结局判定逻辑，按优先级检查：
+            // 1. 男主单线结局（好感度 + 专属事件完成度）
+            // 2. 常规结局（属性阈值判定）
+            // 返回结局ID，0 = 常规结局
+
+            int endingId = DetermineEnding();
+
+            if (endingId > 0)
+            {
+                TriggerEnding(endingId);
+            }
+            else
+            {
+                TriggerNormalEnding();
+            }
+        }
+
+        /// <summary>
+        /// 结局判定核心逻辑（占位）
+        /// </summary>
+        /// <returns>结局ID，0 表示常规结局</returns>
+        private int DetermineEnding()
+        {
+            // TODO: 实现结局优先级判定
+            // 1. 检查各男主单线条件（好感度是否达标 + 专属事件链是否完成）
+            // 2. 检查属性相关的常规结局条件
+            // 3. 都不满足则返回 0（常规/默认结局）
+            Debug.Log("[ProcedureGame] DetermineEnding - 结局判定未实现，返回常规结局");
+            return 0;
+        }
+
+        /// <summary>
+        /// 触发特定结局的剧情（占位）
+        /// </summary>
+        private void TriggerEnding(int endingId)
+        {
+            Debug.Log($"[ProcedureGame] 触发结局: {endingId}");
+            // TODO: 根据 endingId 加载对应结局剧情
+            // LoadStory(endingId) 或加载结局专用剧情图
+        }
+
+        /// <summary>
+        /// 触发常规结局 / 周目结算（占位）
+        /// </summary>
+        private void TriggerNormalEnding()
+        {
+            Debug.Log("[ProcedureGame] 触发常规结局 / 周目结算");
+
+            // 结束当前周目
+            CustomEntry.PlayerData.EndRound();
+
+            // TODO: 显示周目结算界面或常规结局剧情
+            // 暂时直接返回主菜单
+            ReturnToMainMenu();
         }
 
         /// <summary>

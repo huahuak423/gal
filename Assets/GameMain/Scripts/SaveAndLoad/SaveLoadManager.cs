@@ -126,8 +126,9 @@ namespace AVGGame
                 Debug.LogWarning("[SaveLoadManager] No current procedure found");
             }
 
-            // 清理上下文
-            SaveLoadContext.ClearContext();
+            // 注意：不在这里清理上下文！
+            // ProcedureGame.OnEnter 会读取 SaveLoadContext 并在自己内部调用 ClearContext()
+            // 如果在这里提前清除，ProcedureGame.OnEnter 拿到的 IsLoadingFromSave 就会是 false
         }
 
         /// <summary>

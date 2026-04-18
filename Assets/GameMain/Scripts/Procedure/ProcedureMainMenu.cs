@@ -30,6 +30,11 @@ namespace AVGGame
         protected override void OnEnter(IFsm<IProcedureManager> procedureOwner)
         {
             base.OnEnter(procedureOwner);
+
+            // 重置标志，防止重新进入时 OnUpdate 立即跳转到 ProcedureGame
+            m_StartGame = false;
+            m_CurrentSubFormId = -1;
+
             Log.Info("[ProcedureMainMenu] Enter");
             OpenMainMenuUI();
         }
@@ -121,7 +126,14 @@ namespace AVGGame
             // 关掉当前不管是什么的页面（存档/画廊/设置）
             if (m_CurrentSubFormId != -1)
             {
-                GameEntry.UI.CloseUIForm(m_CurrentSubFormId);
+                try
+                {
+                    GameEntry.UI.CloseUIForm(m_CurrentSubFormId);
+                }
+                catch (System.Exception)
+                {
+                    // 面板可能已经被自己关闭了（如 ArchivePanel.OnBackClick 先 CloseSelf）
+                }
                 m_CurrentSubFormId = -1;
             }
             // 重新拉起首页

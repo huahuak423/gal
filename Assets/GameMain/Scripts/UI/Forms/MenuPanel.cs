@@ -21,6 +21,7 @@ namespace AVGGame
         [Header("菜单按钮")]
         [SerializeField] private Button m_ButtonResume;
         [SerializeField] private Button m_ButtonSave;
+        [SerializeField] private Button m_ButtonLoad;
         [SerializeField] private Button m_ButtonSettings;
         [SerializeField] private Button m_ButtonBack;
         [SerializeField] private Button m_ButtonExit;
@@ -55,6 +56,7 @@ namespace AVGGame
             // 挂载组件引用
             m_ButtonResume = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonContinue");
             m_ButtonSave = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonTimeLine");
+            m_ButtonLoad = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonLoad");
             m_ButtonSettings = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonSetting");
             m_ButtonBack = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonMainMenu");
             m_ButtonExit = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonExitGame");
@@ -66,6 +68,9 @@ namespace AVGGame
 
             if (m_ButtonSave != null)
                 m_ButtonSave.onClick.AddListener(OnSaveClick);
+
+            if (m_ButtonLoad != null)
+                m_ButtonLoad.onClick.AddListener(OnLoadClick);
 
             if (m_ButtonSettings != null)
                 m_ButtonSettings.onClick.AddListener(OnSettingClick);
@@ -84,6 +89,11 @@ namespace AVGGame
         protected override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+
+            if (userData is ProcedureGame procedureGame)
+            {
+                m_ProcedureGame = procedureGame;
+            }
 
             // 暂停游戏
             PauseGame();
@@ -130,6 +140,23 @@ namespace AVGGame
         }
 
         /// <summary>
+        /// 读档 - 打开存档选择界面（加载模式）
+        /// </summary>
+        private void OnLoadClick()
+        {
+            Log.Info("[MenuPanel] Load game clicked");
+
+            CloseSelf();
+
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.Archive),
+                UIGroupDefinition.Popup,
+                Constant.AssetPriority.UIAsset,
+                ArchivePanel.ArchiveMode.Load
+            );
+        }
+
+        /// <summary>
         /// 打开设置界面
         /// </summary>
         private void OnSettingClick()
@@ -144,11 +171,14 @@ namespace AVGGame
         }
 
         /// <summary>
-        /// 返回主菜单
+        /// 返回主菜单 - 打开存档页面提醒玩家保存，保存后自动返回主菜单
         /// </summary>
         private void OnBackClick()
         {
             Log.Info("[MenuPanel] Back to main menu clicked");
+
+            // 设置标记：存档完成后返回主菜单
+            ArchivePanel.ReturnToMainMenuFlag = true;
 
             // 关闭当前菜单
             CloseSelf();

@@ -20,9 +20,13 @@ namespace AVGGame
         #region 玩家属性
 
         [Header("玩家属性")]
-        [SerializeField] private int m_Charm = 3;           // 魅力
-        [SerializeField] private int m_Inspiration = 3;     // 灵感
-        [SerializeField] private int m_Sanity = 3;          // 理智
+        [SerializeField] private int m_Charm = 3;           // 魅力（上限100）
+        [SerializeField] private int m_Inspiration = 3;     // 灵感（上限80）
+        [SerializeField] private int m_Sanity = 3;          // 理智（上限100）
+
+        public const int MaxCharm = 100;
+        public const int MaxInspiration = 80;
+        public const int MaxSanity = 100;
         
         public int Charm => m_Charm;
         public int Inspiration => m_Inspiration;
@@ -36,8 +40,8 @@ namespace AVGGame
         #region 行动点
 
         [Header("行动点")]
-        [SerializeField] private int m_MaxActionPoints = 10;
-        private int m_CurrentActionPoints = 10;
+        [SerializeField] private int m_MaxActionPoints = 12;
+        private int m_CurrentActionPoints = 12;
 
         public int CurrentActionPoints => m_CurrentActionPoints;
         public int MaxActionPoints => m_MaxActionPoints;
@@ -135,13 +139,13 @@ namespace AVGGame
             switch (type)
             {
                 case PlayerAttributeType.Charm:
-                    m_Charm += value;
+                    m_Charm = Mathf.Clamp(m_Charm + value, 0, MaxCharm);
                     break;
                 case PlayerAttributeType.Inspiration:
-                    m_Inspiration += value;
+                    m_Inspiration = Mathf.Clamp(m_Inspiration + value, 0, MaxInspiration);
                     break;
                 case PlayerAttributeType.Sanity:
-                    m_Sanity += value;
+                    m_Sanity = Mathf.Clamp(m_Sanity + value, 0, MaxSanity);
                     break;
                 default:
                     Debug.LogWarning($"[PlayerDataComponent] 未知的属性类型: {type}");

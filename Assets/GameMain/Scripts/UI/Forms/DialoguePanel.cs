@@ -160,6 +160,12 @@ namespace AVGGame
                 m_ButtonInformation.onClick.AddListener(OnButtonInformationClick);
             }
 
+            // 绑定存档按钮事件
+            if (m_ButtonSave != null)
+            {
+                m_ButtonSave.onClick.AddListener(OnSaveClick);
+            }
+
             // 绑定背景按钮点击事件（用于继续对话）
             if (m_BackgroundImageButton != null)
             {
@@ -187,7 +193,7 @@ namespace AVGGame
                 AssetUtility.GetUIFormAsset(UIFormId.Menu),
                 UIGroupDefinition.Popup,
                 Constant.AssetPriority.UIAsset,
-                null
+                m_ProcedureGame
             );
         }
 
@@ -202,6 +208,20 @@ namespace AVGGame
                 UIGroupDefinition.Popup,
                 Constant.AssetPriority.UIAsset,
                 m_ProcedureGame
+            );
+        }
+
+        /// <summary>
+        /// 打开存档界面（保存模式）
+        /// </summary>
+        private void OnSaveClick()
+        {
+            Log.Info("[DialoguePanel] Save clicked");
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.Archive),
+                UIGroupDefinition.Popup,
+                Constant.AssetPriority.UIAsset,
+                ArchivePanel.ArchiveMode.Save
             );
         }
 

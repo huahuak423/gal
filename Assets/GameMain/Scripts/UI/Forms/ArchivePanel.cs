@@ -62,6 +62,14 @@ namespace AVGGame
         private string m_CurrentStoryToLoad = string.Empty; // 要加载的故事名称
         private int m_CurrentLoadSlot = -1;              // 当前加载的存档槽位
 
+        /// <summary>
+        /// 静态标记：存档完成后是否返回主菜单
+        /// 由调用方在 OpenUIForm 前设置，ArchivePanel.OnOpen 中读取后重置
+        /// </summary>
+        public static bool ReturnToMainMenuFlag = false;
+
+        private bool m_ReturnToMainMenuAfterSave = false; // 实例标记，由 OnOpen 从静态标记读取
+
         #endregion
 
         #region 嵌套类型
@@ -176,6 +184,10 @@ namespace AVGGame
             // 隐藏确认面板
             HideConfirmPlate();
 
+            // 读取并重置静态标记
+            bool returnToMainMenu = ReturnToMainMenuFlag;
+            ReturnToMainMenuFlag = false;
+
             // 检查是否从游戏菜单进入
             m_IsFromGameMenu = userData is ProcedureGame;
             m_ProcedureGame = userData as ProcedureGame;
@@ -197,6 +209,9 @@ namespace AVGGame
                 m_Mode = ArchiveMode.Save; // 默认保存模式
                 // Debug.Log("[ArchivePanel] Default mode set to: Save");
             }
+
+            // 应用静态标记（由 MenuPanel 的主菜单按钮在打开前设置）
+            m_ReturnToMainMenuAfterSave = returnToMainMenu;
 
             // 更新标题
             UpdateTitle();
@@ -332,8 +347,16 @@ namespace AVGGame
                 // Debug.Log($"[ArchivePanel] 保存成功：槽位 {slotId}");
                 ShowMessage("保存成功！");
 
-                // 延迟后关闭存档界面，并返回大菜单
-                DelayAndReturnToMainMenu();
+                if (m_ReturnToMainMenuAfterSave)
+                {
+                    // 由"主菜单"按钮触发：存档后返回主菜单
+                    DelayAndReturnToMainMenu();
+                }
+                else
+                {
+                    // 普通存档：关闭存档界面，回到游戏
+                    CloseSelf();
+                }
             }
             else
             {
@@ -432,14 +455,19 @@ namespace AVGGame
             // 如果确认面板正在显示，先关闭它
             if (m_ConfirmPlate != null && m_ConfirmPlate.gameObject.activeSelf)
             {
-                // Debug.Log("[ArchivePanel] Confirm plate is open, closing it first");
                 HideConfirmPlate();
                 m_SelectedSlotIndex = -1;
                 return;
             }
 
-            // Debug.Log("[ArchivePanel] Back clicked");
             CloseSelf();
+
+            // 如果在主菜单流程中，重新打开主菜单首页
+            var currentProcedure = GameEntry.Procedure?.CurrentProcedure;
+            if (currentProcedure is ProcedureMainMenu mainMenu)
+            {
+                mainMenu.ReturnToHome();
+            }
         }
 
         #endregion
@@ -505,88 +533,29 @@ namespace AVGGame
         }
 
         /// <summary>
-        /// 延迟后重新打开菜单（用于保存成功后）
-        /// </summary>
-        private void DelayAndOpenMenu()
-        {
-            // 检查游戏对象是否仍然 active
-            if (!gameObject.activeInHierarchy)
-            {
-                Debug.LogWarning("[ArchivePanel] Game object is inactive, cannot open menu");
-                return;
-            }
-
-            // 使用 Unity 的 Invoke 来延迟执行，避免协程问题
-            Invoke(nameof(OpenMenuInternal), 1.5f);
-        }
-
-        private void OpenMenuInternal()
-        {
-            if (!gameObject.activeInHierarchy)
-            {
-                Debug.LogWarning("[ArchivePanel] Game object is inactive when trying to open menu");
-                return;
-            }
-
-            // 获取当前活动的 Procedure
-            var currentProcedure = GameEntry.Procedure?.CurrentProcedure as ProcedureGame;
-            if (currentProcedure != null)
-            {
-                currentProcedure.OpenMenu();
-            }
-            else
-            {
-                Debug.LogWarning("[ArchivePanel] CurrentProcedure is null, cannot open menu");
-            }
-        }
-
-        /// <summary>
-        /// 延迟后返回大菜单（用于"回到主菜单"流程）
+        /// 存档完成后返回主菜单（由"主菜单"按钮触发的存档流程使用）
         /// </summary>
         private void DelayAndReturnToMainMenu()
         {
-            // 先关闭界面
-            CloseSelf();
-
-            // 检查游戏对象是否仍然 active
-            if (!gameObject.activeInHierarchy)
+            // 先获取流程引用
+            var procedure = m_ProcedureGame;
+            if (procedure == null)
             {
-                Debug.LogWarning("[ArchivePanel] Game object is inactive, cannot return to main menu");
-                return;
+                procedure = GameEntry.Procedure?.CurrentProcedure as ProcedureGame;
             }
 
-            // 使用 Unity 的 Invoke 来延迟执行，避免协程问题
-            Invoke(nameof(ReturnToMainMenuInternal), 0.5f);
-        }
-
-        private void ReturnToMainMenuInternal()
-        {
-            if (!gameObject.activeInHierarchy)
+            // 先触发返回主菜单（内部会 SaveOnExit，状态切换由框架在下一帧处理）
+            if (procedure != null)
             {
-                Debug.LogWarning("[ArchivePanel] Game object is inactive when trying to return to main menu");
-                return;
-            }
-
-            // 获取当前活动的 Procedure
-            var currentProcedure = GameEntry.Procedure?.CurrentProcedure as ProcedureGame;
-            if (currentProcedure != null)
-            {
-                // Debug.Log("[ArchivePanel] 返回大菜单");
-                currentProcedure.ReturnToMainMenu();
+                procedure.ReturnToMainMenu();
             }
             else
             {
-                Debug.LogWarning("[ArchivePanel] CurrentProcedure is null, cannot return to main menu");
+                Debug.LogWarning("[ArchivePanel] ProcedureGame is null, cannot return to main menu");
             }
-        }
 
-        /// <summary>
-        /// 延迟后加载游戏（用于加载成功后）
-        /// </summary>
-        private void LoadGameInternal()
-        {
-            // 这个方法已经不再使用，被 SaveLoadManager 替代
-            Debug.LogWarning("[ArchivePanel] LoadGameInternal is deprecated, using SaveLoadManager instead");
+            // 最后关闭自己（此时 ReturnToMainMenu 已经触发，不会被中断）
+            CloseSelf();
         }
 
         /// <summary>

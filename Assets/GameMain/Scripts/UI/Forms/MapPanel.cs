@@ -26,6 +26,7 @@ namespace AVGGame
         [SerializeField] private Button m_ButtonMenu;
         private List<GameObject> m_Buttonlist = new List<GameObject>();
         private Transform m_SelectPanel;
+        private Button m_ButtonInformation;
         private Button m_Button1;
         private Button m_Button2;
         private Button m_Button3;
@@ -62,6 +63,7 @@ namespace AVGGame
 
             //小地图
             m_ButtonMenu =  this.GetComponentByPath<Button>("Canvas/Background/ButtonMenu");
+            m_ButtonInformation = this.GetComponentByPath<Button>("Canvas/Background/MessagePlate/ButtonInformation");
             m_SelectPanel = this.GetComponentByPath<Transform>("Canvas/Background/SelectPanel");
             m_Button1 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button1");
             m_Button2 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button2");
@@ -138,6 +140,11 @@ namespace AVGGame
                 m_ButtonMenu.onClick.AddListener(OnButtonMenuClick);
             }
 
+            if (m_ButtonInformation != null)
+            {
+                m_ButtonInformation.onClick.AddListener(OnButtonInformationClick);
+            }
+
         }
 
         protected override void OnOpen(object userData)
@@ -180,6 +187,17 @@ namespace AVGGame
             if (m_ProcedureGame != null)
             {
                 m_ProcedureGame.OpenMenu();
+            }
+        }
+
+        /// <summary>
+        /// 打开信息面板（个人属性与角色好感度）
+        /// </summary>
+        private void OnButtonInformationClick()
+        {
+            if (m_ProcedureGame != null)
+            {
+                m_ProcedureGame.OpenInformation();
             }
         }
         
