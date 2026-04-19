@@ -408,9 +408,27 @@ namespace AVGGame
         //当前所处故事
         public string currentStoryGarphName {get; private set;}
 
+        // 当前对话进度ID（0 = 不在对话中）
+        private int m_CurrentDialogueId = 0;
+        public int CurrentDialogueId => m_CurrentDialogueId;
+
+        // 当前进行中的事件ID（0 = 无进行中事件）
+        private int m_CurrentEventId = 0;
+        public int CurrentEventId => m_CurrentEventId;
+
         public void SetCurrentStoryGarphName(string storyGarphName)
         {
             currentStoryGarphName = storyGarphName;
+        }
+
+        public void SetCurrentDialogueId(int dialogueId)
+        {
+            m_CurrentDialogueId = dialogueId;
+        }
+
+        public void SetCurrentEventId(int eventId)
+        {
+            m_CurrentEventId = eventId;
         }
 
         #region 奖励应用
@@ -549,7 +567,11 @@ namespace AVGGame
                 SaveTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
 
                 // 当前所处故事
-                CurrentStoryGarphName = currentStoryGarphName
+                CurrentStoryGarphName = currentStoryGarphName,
+
+                // 对话进度和事件ID
+                CurrentDialogueId = m_CurrentDialogueId,
+                CurrentEventId = m_CurrentEventId
             };
         }
 
@@ -661,6 +683,10 @@ namespace AVGGame
                 ? "DefaultStory"
                 : saveData.CurrentStoryGarphName;
 
+            // 恢复对话进度和事件ID
+            m_CurrentDialogueId = Mathf.Max(0, saveData.CurrentDialogueId);
+            m_CurrentEventId = Mathf.Max(0, saveData.CurrentEventId);
+
             // 记录加载详情
             Debug.Log($"[PlayerDataComponent] 存档加载完成！");
             Debug.Log($"- 周目: {m_CurrentRound}");
@@ -672,6 +698,7 @@ namespace AVGGame
             Debug.Log($"- 拥有物品数: {m_OwnedItems.Count}");
             Debug.Log($"- NPC好感度数: {m_NpcFavorability.Count}");
             Debug.Log($"- 当前故事: {currentStoryGarphName}");
+            Debug.Log($"- 对话进度: {m_CurrentDialogueId}, 事件ID: {m_CurrentEventId}");
         }
 
         /// <summary>

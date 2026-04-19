@@ -59,8 +59,14 @@ namespace AVGGame
         // 当前所处故事
         public string CurrentStoryGarphName;
 
+        // 当前对话进度ID（0 = 不在对话中）
+        public int CurrentDialogueId;
+
+        // 当前进行中的事件ID（0 = 无进行中事件）
+        public int CurrentEventId;
+
         // 存档版本（用于未来兼容性）
-        public int Version = 1;
+        public int Version = 2;
     }
 
     /// <summary>
@@ -500,6 +506,10 @@ namespace AVGGame
                 saveData.NpcProgress = new SerializableDictionary<int, int[]>();
             }
 
+            // 确保对话进度和事件ID有效
+            saveData.CurrentDialogueId = Mathf.Max(0, saveData.CurrentDialogueId);
+            saveData.CurrentEventId = Mathf.Max(0, saveData.CurrentEventId);
+
             Debug.Log("[SaveSystem] 存档数据安全处理完成");
             return saveData;
         }
@@ -529,7 +539,9 @@ namespace AVGGame
                 NpcProgress = new SerializableDictionary<int, int[]>(),
                 SaveTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                 CurrentStoryGarphName = "DefaultStory",
-                Version = 1
+                CurrentDialogueId = 0,
+                CurrentEventId = 0,
+                Version = 2
             };
         }
 

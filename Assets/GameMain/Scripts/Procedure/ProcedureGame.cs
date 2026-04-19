@@ -40,6 +40,9 @@ namespace AVGGame
         // 序章标记（新游戏时先播序章再开地图）
         private bool m_PlayPrologue = false;
 
+        // 存档加载标记（EventPool加载完成后用于判断是否断点续传）
+        private bool m_IsLoadingFromSave = false;
+
         
         #endregion
 
@@ -50,47 +53,16 @@ namespace AVGGame
             m_ProcedureOwner = procedureOwner;
             Debug.Log("[ProcedureGame] 正式进入游戏核心流程！");
 
-            // 检查是否从存档加载
+            // 判断是否为存档加载（设置标记，供 OnLoadDataTableSuccess 使用）
             if (SaveLoadContext.IsLoadingFromSave)
             {
-                Debug.Log("[ProcedureGame] 检测到存档加载，准备进入相应剧情或地图");
-
-                var (hasTarget, storyName, eventId) = SaveLoadContext.GetTargetInfo();
-                if (hasTarget)
-                {
-                    if (eventId > 0)
-                    {
-                        Debug.Log($"[ProcedureGame] 直接进入事件: {eventId}");
-                        LoadStory(eventId);
-                    }
-                    else if (!string.IsNullOrEmpty(storyName))
-                    {
-                        // 根据故事名称查找事件ID
-                        int storyEventId = GetEventIdFromStoryName(storyName);
-                        if (storyEventId > 0)
-                        {
-                            Debug.Log($"[ProcedureGame] 根据故事名称进入事件: {storyEventId}");
-                            LoadStory(storyEventId);
-                        }
-                        else
-                        {
-                            Debug.Log("[ProcedureGame] 未能找到对应事件，打开大地图");
-                            OpenMap();
-                        }
-                    }
-                }
-                else
-                {
-                    Debug.Log("[ProcedureGame] 没有找到具体目标，打开大地图");
-                    OpenMap();
-                }
-
-                // 清除上下文（只清除一次）
-                SaveLoadContext.ClearContext();
+                Debug.Log("[ProcedureGame] 检测到存档加载，等待事件表加载后恢复进度");
+                m_IsLoadingFromSave = true;
             }
             else
             {
-                Debug.Log("[ProcedureGame] 新游戏流程，等待事件表加载后播放序章");
+                Debug.Log("[ProcedureGame] 新游戏流程，重置玩家数据并等待事件表加载后播放序章");
+                CustomEntry.PlayerData.ResetGame();
                 m_PlayPrologue = true;
             }
 
@@ -466,30 +438,34 @@ namespace AVGGame
         /// <summary>
         /// 加载剧情
         /// </summary>
-        public void LoadStory(int eventId)
+        public void LoadStory(int eventId, bool isResume = false)
         {
             EventRowData currentData = GameEntry.DataTable.GetDataTable<EventRowData>().GetDataRow(eventId);
-            Debug.Log($"[ProcedureGame] LoadStory 被调用, eventId: {eventId}");
+            Debug.Log($"[ProcedureGame] LoadStory 被调用, eventId: {eventId}, isResume: {isResume}");
             Debug.Log($"[ProcedureGame] TargetGraphName: {currentData.TargetGraphName}");
 
-            // 标记事件已完成（用于存档）
-            CustomEntry.PlayerData.MarkEventCompleted(eventId);
+            // 记录当前进行中的事件ID（用于存档断点续传）
+            CustomEntry.PlayerData.SetCurrentEventId(eventId);
 
-            // 消耗行动点
-            if (currentData.CostAP > 0)
+            // 非断点续传时才消耗AP（续传时AP已在首次进入时扣过）
+            if (!isResume)
             {
-                if (!CustomEntry.PlayerData.ConsumeActionPoints(currentData.CostAP))
+                // 消耗行动点
+                if (currentData.CostAP > 0)
                 {
-                    Debug.LogWarning($"[ProcedureGame] AP 不足，无法开始事件: {eventId}，需要 {currentData.CostAP}，当前 {CustomEntry.PlayerData.CurrentActionPoints}");
-                    return;
+                    if (!CustomEntry.PlayerData.ConsumeActionPoints(currentData.CostAP))
+                    {
+                        Debug.LogWarning($"[ProcedureGame] AP 不足，无法开始事件: {eventId}，需要 {currentData.CostAP}，当前 {CustomEntry.PlayerData.CurrentActionPoints}");
+                        CustomEntry.PlayerData.SetCurrentEventId(0);
+                        return;
+                    }
+                    Debug.Log($"[ProcedureGame] 消耗 AP: {currentData.CostAP}，剩余: {CustomEntry.PlayerData.CurrentActionPoints}");
                 }
-                Debug.Log($"[ProcedureGame] 消耗 AP: {currentData.CostAP}，剩余: {CustomEntry.PlayerData.CurrentActionPoints}");
             }
 
-            // EventType == 2 是角色特殊事件，完成后不再显示
+            // EventType == 2 是角色特殊事件
             if (currentData.EventType == 2)
             {
-                Debug.Log($"[ProcedureGame] 角色事件已完成: {eventId} - {currentData.Title}");
                 // 提取 NPC ID 并设置为当前 NPC
                 if (!string.IsNullOrEmpty(currentData.EventNum))
                 {
@@ -516,10 +492,21 @@ namespace AVGGame
             // 设置当前剧情图名
             CustomEntry.PlayerData.SetCurrentStoryGarphName(graphName);
 
-            // 从第一条开始（默认起始ID为10000）
-            m_CurrentDialogueId = 10000;
+            // 断点续传：如果存档中有对话进度，从断点恢复；否则从头开始
+            int savedDialogueId = CustomEntry.PlayerData.CurrentDialogueId;
+            if (savedDialogueId > 0)
+            {
+                m_CurrentDialogueId = savedDialogueId;
+                Debug.Log($"[ProcedureGame] 断点续传，从对话ID {m_CurrentDialogueId} 恢复");
+            }
+            else
+            {
+                m_CurrentDialogueId = 10000;
+                Debug.Log($"[ProcedureGame] 新故事，从对话ID 10000 开始");
+            }
 
-            Debug.Log($"[ProcedureGame] m_CurrentDialogueId 设置为: {m_CurrentDialogueId}");
+            // 同步对话ID到PlayerData
+            CustomEntry.PlayerData.SetCurrentDialogueId(m_CurrentDialogueId);
 
             // 进入对话页面
             SwitchSubForm(AssetUtility.GetUIFormAsset(UIFormId.Dialogue), this);
@@ -582,6 +569,7 @@ namespace AVGGame
                 }
 
                 m_CurrentDialogueId = row.NextId;
+                CustomEntry.PlayerData.SetCurrentDialogueId(m_CurrentDialogueId);
                 return GetCurrentDialogue(); // 递归处理下一条
             }
 
@@ -645,6 +633,7 @@ namespace AVGGame
 
             // 更新当前ID并返回下一条数据
             m_CurrentDialogueId = currentRow.NextId;
+            CustomEntry.PlayerData.SetCurrentDialogueId(m_CurrentDialogueId);
             Debug.Log($"[ProcedureGame] 切换到下一条对话, ID: {m_CurrentDialogueId}");
             return GetCurrentDialogue();
         }
@@ -656,6 +645,7 @@ namespace AVGGame
         {
             Debug.Log($"[ProcedureGame] 手动设置下一句对话ID: {nextDialogueId}");
             m_CurrentDialogueId = nextDialogueId;
+            CustomEntry.PlayerData.SetCurrentDialogueId(m_CurrentDialogueId);
         }
 
         /// <summary>
@@ -719,17 +709,26 @@ namespace AVGGame
         {
             Debug.Log($"[ProcedureGame] 剧情结束，准备卸载: {graphName}");
 
+            // 标记事件已完成（移到结束时才标记，避免中途存档被误标完成）
+            int completedEventId = CustomEntry.PlayerData.CurrentEventId;
+            if (completedEventId > 0)
+            {
+                CustomEntry.PlayerData.MarkEventCompleted(completedEventId);
+            }
+
             // 记录 NPC 进度（在卸载剧情表和清理 graphName 之前）
             UpdateNpcProgress(graphName);
 
             // 卸载剧情表
             m_StoryGraphLoader.UnloadGraph(graphName);
 
-            // 清理 PlayerData 中的当前剧情图名（避免后续误用）
+            // 清理 PlayerData 中的当前剧情图名
             CustomEntry.PlayerData.SetCurrentStoryGarphName(null);
 
-            // 重置对话ID
+            // 重置对话ID和事件ID
             m_CurrentDialogueId = 0;
+            CustomEntry.PlayerData.SetCurrentDialogueId(0);
+            CustomEntry.PlayerData.SetCurrentEventId(0);
 
             // 检查 AP 是否耗尽 → 触发结局判定
             if (CustomEntry.PlayerData.CurrentActionPoints <= 0)
@@ -856,13 +855,49 @@ namespace AVGGame
 
             Debug.Log("[ProcedureGame] EventPool数据表加载成功！");
 
-            if (m_PlayPrologue)
+            // 存档断点续传
+            if (m_IsLoadingFromSave)
+            {
+                m_IsLoadingFromSave = false;
+                SaveLoadContext.ClearContext();
+
+                var playerData = CustomEntry.PlayerData;
+                int savedEventId = playerData.CurrentEventId;
+                string savedStoryName = playerData.currentStoryGarphName;
+
+                if (savedEventId > 0)
+                {
+                    // 有进行中的事件 → 断点续传到存档时的事件和对话进度
+                    Debug.Log($"[ProcedureGame] 存档断点续传，恢复事件: {savedEventId}，对话ID: {playerData.CurrentDialogueId}");
+                    LoadStory(savedEventId, isResume: true);
+                }
+                else if (!string.IsNullOrEmpty(savedStoryName) && savedStoryName != "DefaultStory")
+                {
+                    // 兼容旧存档：只有故事名没有事件ID
+                    int storyEventId = GetEventIdFromStoryName(savedStoryName);
+                    if (storyEventId > 0)
+                    {
+                        Debug.Log($"[ProcedureGame] 兼容旧存档，根据故事名恢复: {storyEventId}");
+                        LoadStory(storyEventId, isResume: true);
+                    }
+                    else
+                    {
+                        Debug.Log("[ProcedureGame] 未能找到对应事件，打开大地图");
+                        OpenMap();
+                    }
+                }
+                else
+                {
+                    // 存档时在地图上（无进行中事件）
+                    Debug.Log("[ProcedureGame] 存档位于大地图，打开大地图");
+                    OpenMap();
+                }
+            }
+            else if (m_PlayPrologue)
             {
                 m_PlayPrologue = false;
                 Debug.Log("[ProcedureGame] 新游戏流程，开始播放序章");
                 m_StoryGraphLoader.LoadGraph("序章");
-                //Debug.Log("[ProcedureGame] 直接打开大地图");
-                //OpenMap();
             }
             else
             {
