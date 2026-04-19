@@ -29,10 +29,10 @@
 10025	10026	0		终于，一条语音发了过来，你点开语音									
 10026	10027	0		他的语速放得很慢，背景音里还有食堂风扇转动的嗡嗡声，以及远处隐约的餐盘碰撞声									
 10027	10028	0		他的声音带着一种孤注一掷的试探与忐忑，像是站在悬崖边上，不知道跳下去是飞翔还是坠落									
-10028	10029	0	周杉	“其实…… 这段时间我一直在想，网络那端那个冷静又清醒的你，在现实中到底是个什么样的人。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
+10028	10029	0	周杉	“其实…… 这段时间我一直在想，网络那端那个冷静又清醒的你，在现实中到底是个什么样的人。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								Assets/GameMain/Art/Voice/配音/周杉/29.其实这段时间.mp3
 10029	10030	0		他深吸了一口气，带着一种怕被拒绝的小心翼翼	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10030	10031	0	周杉	“这周末，我可以请你见个面吗？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								
-10031	10032	0	周杉	“不走平台的单子，也不计费。这一次，我想以我最真实的身份，去认识你。”									
+10030	10031	0	周杉	“这周末，我可以请你见个面吗？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/周杉/微信图片_20260408134930_32_160.png","OffsetX":-50.0,"OffsetY":-330.0,"Scale":2.299999952316284}]}								Assets/GameMain/Art/Voice/配音/周杉/30.这周末我可以请你见个面.mp3
+10031	10032	0	周杉	“不走平台的单子，也不计费。这一次，我想以我最真实的身份，去认识你。”									Assets/GameMain/Art/Voice/配音/周杉/31.不走平台的单子，也不计费.mp3
 10032	10054	0		语音播放完毕，你看着屏幕上那条语音的波形图，手指悬在键盘上方	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10033	10034	0		对于这个在你眼皮子底下成长起来的年轻人，你不反感给予他一些额外的奖励									
 10034	10035	0		作为更成熟的一方，你并不介意顺水推舟，去验证一下这份隔着网线的羁绊，在现实中是否依然有趣									
