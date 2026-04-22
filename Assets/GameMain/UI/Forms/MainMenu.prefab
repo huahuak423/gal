@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ButtonNewGame: {fileID: 3324514856757064797}
-  m_ButtonContine: {fileID: 8828454059775705749}
+  m_ButtonContinue: {fileID: 0}
   m_ButtonCgShows: {fileID: 5005440523099547698}
   m_ButtonSetting: {fileID: 1740682464969461771}
   m_ButtonExit: {fileID: 3247002033855139622}
