@@ -783,27 +783,31 @@ namespace AVGGame
         }
 
         /// <summary>
-        /// 触发特定结局的剧情（占位）
+        /// 触发特定结局的剧情（暂时直接走周目结算流程，后续替换为结局剧情播放）
         /// </summary>
         private void TriggerEnding(int endingId)
         {
             Debug.Log($"[ProcedureGame] 触发结局: {endingId}");
-            // TODO: 根据 endingId 加载对应结局剧情
-            // LoadStory(endingId) 或加载结局专用剧情图
+
+            // TODO: 后续替换为播放结局剧情
+            // m_StoryGraphLoader.LoadGraph("结局_" + endingId);
+
+            // 暂时走周目结算
+            TriggerNormalEnding();
         }
 
         /// <summary>
-        /// 触发常规结局 / 周目结算（占位）
+        /// 触发常规结局 / 周目结算
         /// </summary>
         private void TriggerNormalEnding()
         {
             Debug.Log("[ProcedureGame] 触发常规结局 / 周目结算");
 
-            // 结束当前周目
+            // 结束当前周目，计算继承加成
             CustomEntry.PlayerData.EndRound();
 
-            // TODO: 显示周目结算界面或常规结局剧情
-            // 暂时直接返回主菜单
+            // TODO: 后续替换为周目结算界面，暂时直接返回主菜单
+            Debug.Log($"[ProcedureGame] 第 {CustomEntry.PlayerData.CurrentRound} 周目结束，返回主菜单");
             ReturnToMainMenu();
         }
 
