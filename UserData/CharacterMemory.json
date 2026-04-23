@@ -1124,6 +1124,15 @@
             "OffsetY": -221.16880798339845,
             "Scale": 2.299999952316284,
             "LastNodeGuid": "对话_1_“你这头发天天一个样"
+        },
+        {
+            "GraphName": "周杉事件三",
+            "SpritePath": "Assets/GameMain/Art/New Characters/周杉/剪影.png",
+            "Position": 2,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_74_备注是：感谢老板的倾"
         }
     ]
 }

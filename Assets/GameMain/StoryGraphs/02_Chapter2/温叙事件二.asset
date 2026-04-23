@@ -5748,7 +5748,7 @@ MonoBehaviour:
       NpcId: 
       Value: 3
       ItemId: 
-  - ChoiceText: "\u4FCF\u76AE\u63A5\u8BDD\uFF0C\u62C9\u8FD1\u8DDD\u79BB "
+  - ChoiceText: "\u7406\u6027\u56DE\u5E94\uFF0C\u793C\u8C8C\u5206\u522B "
     Conditions: []
     Rewards:
     - Type: 1

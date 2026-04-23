@@ -1986,7 +1986,7 @@ MonoBehaviour:
       ItemId: 0606
       RequireItem: 0
     Rewards: []
-  - ChoiceText: 
+  - ChoiceText: '?'
     Conditions:
     - Type: 2
       AttributeType: 0

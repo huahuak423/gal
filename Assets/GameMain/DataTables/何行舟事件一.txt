@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
-10000	10001	0		凌晨一点半，你刚结束一部冗长且晦涩的欧洲文艺片观影，正揉着发酸的眉心，从昏暗的放映厅走向长廊								Assets/GameMain/Art/Backgrounds/电影院/电影院出口.png	
+10000	10001	0		凌晨一点半，你刚结束一部冗长且晦涩的欧洲文艺片观影，正揉着发酸的眉心，从昏暗的放映厅走向长廊					Assets/GameMain/Music/夜晚.mp3			Assets/GameMain/Art/Backgrounds/电影院/电影院出口.png	
 10001	10002	0		长廊铺着厚重吸音的天鹅绒地毯，暖黄色的壁灯将一切都笼罩在一层暧昧不明的滤镜中									
 10002	10003	0		你准备拐去隔壁酒吧喝点小酒，却在酒吧侧门撞见了两个男人的拉扯								Assets/GameMain/Art/Backgrounds/电影院/酒吧.png	
 10003	10004	0	富商	“装什么清高啊，渡？你们店长没教过你规矩吗？我今晚在这开了最贵的包厢，点了最贵的酒，你连手都不让碰一下？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/NPC/富商.png","OffsetX":22.5,"OffsetY":-110.0,"Scale":2.0}]}								
@@ -13,7 +13,7 @@
 10009	10010	0		他的五官生得极其昳丽，眼尾微微上挑，带着一种天生的、极具蛊惑的风流									
 10010	10011	0		然而此刻，面对中年富商戴着硕大金扳指的粗糙手指几乎要戳到他鼻子上	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10011	10012	0		他依然极力维持着唇角那抹带有讨好意味的弧度，但他垂在身侧、隐没在阴影里的双手，却死死地攥成了拳头									
-10012	10013	0	何行舟	“刘总，您喝多了。我们店里的规矩您是知道的，只陪酒，不外带。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Characters/何行舟/何行舟02-00.png","OffsetX":0.0,"OffsetY":-300.0,"Scale":2.299999952316284}]}								
+10012	10013	0	何行舟	“刘总，您喝多了。我们店里的规矩您是知道的，只陪酒，不外带。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Characters/何行舟/何行舟02-00.png","OffsetX":0.0,"OffsetY":-300.0,"Scale":2.299999952316284}]}								Assets/GameMain/Art/Voice/配音/何行舟/刘总.mp3
 10013	10014	0		他的声音很好听，带着一点刻意的慵懒	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10014	10015	0		常年剖析微表情的你一眼就看穿了那副风流皮囊下，正在疯狂嘶吼的屈辱与濒临崩溃的厌恶									
 10015	10016	0		他像是一个被迫穿上华丽戏服的提线木偶，灵魂正在被一点点凌迟									
@@ -24,7 +24,7 @@
 10020	10021	0		他缓缓闭上眼睛，仿佛是在等待命运的最终宣判									
 10021	10022	0		在这个物欲横流的城市里，每个人都有自己的深渊，你不是救世主，更没有兴趣去拯救一个试图将自己明码标价的灵魂									
 10022	10023	0		但富商将人视为玩物的傲慢，以及何行舟眼底即将死去的微光，确实令人反感									
-10023	10024	0		你从阴影中走了出去，靴子在大理石地板上敲击出清脆且极具压迫感的节奏									
+10023	10024	0		你从阴影中走了出去，靴子在大理石地板上敲击出清脆且极具压迫感的节奏						Assets/GameMain/Sounds/高跟鞋音效.mp3			
 10024	10025	0		你举起手机，摄像头对准了那个正在纠缠的富商									
 10025	10026	0	女主名	“打扰一下二位，我刚才在录制一些素材，好像不小心录到了一些不太符合《治安管理处罚法》的画面。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
 10026	10027	0		你的声音不大，却透着一股不容置疑的冷冽。富商和何行舟同时愣住，齐齐看向你	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
@@ -39,10 +39,10 @@
 10035	10036	0		他转过头，用一种极其复杂、充满戒备和探究的眼神看着你	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主01-04.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Characters/何行舟/何行舟02-00.png","OffsetX":-100.0,"OffsetY":-300.0,"Scale":2.299999952316284}]}								
 10036	10037	0		对于这种在欢场摸爬滚打、见惯了人情冷暖的人来说，他们从不相信无缘无故的善意									
 10037	10038	0		在剧本里，赶走一匹恶狼的，往往是另一只想要独吞猎物的猛虎									
-10038	10039	0	何行舟	“谢谢这位姐姐英雌救帅～”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10038	10039	0	何行舟	“谢谢这位姐姐英雌救帅～”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								Assets/GameMain/Art/Voice/配音/何行舟/英雌救帅.mp3
 10039	10040	0		他突然勾起唇角，露出了一个极具攻击性的、玩世不恭的笑。他单手插在西裤口袋里，迈着修长的双腿，一步步向你逼近	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Characters/何行舟/何行舟02-00.png","OffsetX":150.0,"OffsetY":-300.0,"Scale":2.299999952316284}]}								
 10040	10041	0		直到他身上那股混合酒精的气味几乎要将你包围，才停下									
-10041	10042	0	何行舟	“赶走了我的大金主……姐姐是在欲擒故纵吗？还是说，你看上了我，想用这种方式让我报答你？”									
+10041	10042	0	何行舟	“赶走了我的大金主……姐姐是在欲擒故纵吗？还是说，你看上了我，想用这种方式让我报答你？”									Assets/GameMain/Art/Voice/配音/何行舟/报答1.mp3
 10042	10043	0		他微微俯身，眼神里满是恶劣的挑衅与试探。他在试图用这种轻浮的言语来激怒你									
 10043	10064	0		或者揭开你虚伪的善意面具，证明你和刚才那个老男人其实是一丘之貉									
 10044	10045	0		你看着他满脸戒备、浑身是刺的模样，只觉得眼下的局面有些荒诞	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
