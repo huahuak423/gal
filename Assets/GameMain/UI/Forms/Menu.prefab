@@ -129,7 +129,7 @@ MonoBehaviour:
   m_ButtonLoad: {fileID: 0}
   m_ButtonSettings: {fileID: 5069240677417010678}
   m_ButtonBack: {fileID: 8448226685988268309}
-  m_ButtonExit: {fileID: 0}
+  m_ButtonExit: {fileID: 1205489757370479136}
   m_TransparentBgButton: {fileID: 0}
 --- !u!1 &1939261357849247332
 GameObject:
