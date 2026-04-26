@@ -43,6 +43,9 @@ namespace AVGGame
         // 存档加载标记（EventPool加载完成后用于判断是否断点续传）
         private bool m_IsLoadingFromSave = false;
 
+        // 当前是否为重玩事件（影响快进行为）
+        public bool IsReplayEvent { get; private set; }
+
         
         #endregion
 
@@ -508,6 +511,11 @@ namespace AVGGame
             // 同步对话ID到PlayerData
             CustomEntry.PlayerData.SetCurrentDialogueId(m_CurrentDialogueId);
 
+            // 判断是否为重玩事件（事件已完成说明是重来，快进行为不同）
+            int currentEventId = CustomEntry.PlayerData.CurrentEventId;
+            IsReplayEvent = currentEventId > 0 && CustomEntry.PlayerData.HasCompletedEvent(currentEventId);
+            Debug.Log($"[ProcedureGame] StartStory - 事件ID: {currentEventId}, 重玩: {IsReplayEvent}");
+
             // 进入对话页面
             SwitchSubForm(AssetUtility.GetUIFormAsset(UIFormId.Dialogue), this);
         }
@@ -769,31 +777,63 @@ namespace AVGGame
         }
 
         /// <summary>
-        /// 结局判定核心逻辑（占位）
+        /// 结局判定核心逻辑
+        /// 遍历 EventPool 中 EventType=3 的结局事件，依次检查条件
+        /// 第一个满足条件的事件即为当前结局
         /// </summary>
-        /// <returns>结局ID，0 表示常规结局</returns>
+        /// <returns>结局事件ID，0 表示无结局（常规结局）</returns>
         private int DetermineEnding()
         {
-            // TODO: 实现结局优先级判定
-            // 1. 检查各男主单线条件（好感度是否达标 + 专属事件链是否完成）
-            // 2. 检查属性相关的常规结局条件
-            // 3. 都不满足则返回 0（常规/默认结局）
-            Debug.Log("[ProcedureGame] DetermineEnding - 结局判定未实现，返回常规结局");
+            IDataTable<EventRowData> dtEvent = GameEntry.DataTable.GetDataTable<EventRowData>();
+            if (dtEvent == null)
+            {
+                Debug.LogWarning("[ProcedureGame] 事件表为空，无法判定结局");
+                return 0;
+            }
+
+            Debug.Log("[ProcedureGame] ===== 遍历结局事件表，寻找符合条件的结局 =====");
+
+            // 按事件ID顺序遍历（EventPool 中顺序即为优先级）
+            foreach (EventRowData evt in dtEvent)
+            {
+                // 只处理 EventType=3 的结局事件
+                if (evt.EventType != 3)
+                    continue;
+
+                Debug.Log($"[ProcedureGame] 检查结局事件: ID={evt.Id}, Title='{evt.Title}', VisibleConditions='{evt.VisibleConditions}', PlayableConditions='{evt.PlayableConditions}'");
+
+                // 检查可见条件（VisibleConditions）
+                if (!ConditionChecker.CheckCondition(evt.VisibleConditions, CustomEntry.PlayerData))
+                {
+                    Debug.Log($"[ProcedureGame] 结局 '{evt.Title}' 可见条件不满足，跳过");
+                    continue;
+                }
+
+                // 检查触发条件（PlayableConditions）
+                if (!ConditionChecker.CheckCondition(evt.PlayableConditions, CustomEntry.PlayerData))
+                {
+                    Debug.Log($"[ProcedureGame] 结局 '{evt.Title}' 触发条件不满足，跳过");
+                    continue;
+                }
+
+                // 找到第一个满足条件的结局
+                Debug.Log($"[ProcedureGame] ===== 结局命中: ID={evt.Id}, Title='{evt.Title}' =====");
+                return evt.Id;
+            }
+
+            Debug.Log("[ProcedureGame] 无符合条件的结果，返回常规结局");
             return 0;
         }
 
         /// <summary>
-        /// 触发特定结局的剧情（暂时直接走周目结算流程，后续替换为结局剧情播放）
+        /// 触发特定结局的剧情
         /// </summary>
         private void TriggerEnding(int endingId)
         {
             Debug.Log($"[ProcedureGame] 触发结局: {endingId}");
 
-            // TODO: 后续替换为播放结局剧情
-            // m_StoryGraphLoader.LoadGraph("结局_" + endingId);
-
-            // 暂时走周目结算
-            TriggerNormalEnding();
+            // 加载对应结局剧情图
+            LoadStory(endingId, isResume: false);
         }
 
         /// <summary>

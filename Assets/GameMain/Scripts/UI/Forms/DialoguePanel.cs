@@ -74,9 +74,15 @@ namespace AVGGame
 
         // 自动播放 & 加速
         private bool m_IsAutoMode = false;
+        private bool m_IsSpeedUpMode = false;  // 快进按钮开关
+        private bool m_IsReplayMode = false;   // 当前是否为重玩（历史回顾/下一周目）
         private readonly int[] m_SpeedLevels = { 1, 2, 4, 8 };
         private int m_SpeedIndex = 0;           // 当前速度索引
         private Coroutine m_AutoAdvanceCoroutine;
+
+        // 已读对话追踪（用于快进跳过）
+        private HashSet<int> m_ReadDialogueIds = new HashSet<int>();
+        private int m_CurrentDisplayingDialogueId = 0; // 当前正在显示的对话ID
 
         // 立绘相关
         private Image[] m_CharacterImages = new Image[3];
@@ -244,13 +250,19 @@ namespace AVGGame
         }
 
         /// <summary>
-        /// 加速按钮：在 1x 2x 4x 8x 之间循环
+        /// 快进按钮：切换快进模式（开启/关闭），同时速度在 1x 2x 4x 8x 之间循环
+        /// 快进模式：已读文本直接跳过，未读文本按速度倍率加速
         /// </summary>
         private void OnSpeedUpClick()
         {
+            // 切换快进模式
+            m_IsSpeedUpMode = !m_IsSpeedUpMode;
+
+            // 同时循环速度等级
             m_SpeedIndex = (m_SpeedIndex + 1) % m_SpeedLevels.Length;
             int speed = m_SpeedLevels[m_SpeedIndex];
-            Debug.Log($"[DialoguePanel] 加速: {speed}x");
+
+            Debug.Log($"[DialoguePanel] 快进: {(m_IsSpeedUpMode ? "开启" : "关闭")}，速度: {speed}x");
 
             // 如果正在打字，变速会在打字机循环中实时生效
             // 如果正在自动播放倒计时，重新启动倒计时以应用新速度
@@ -296,6 +308,15 @@ namespace AVGGame
                 m_ContinueIndicator.SetActive(false);
             }
 
+            // 读取是否为重玩事件，决定快进模式的初始行为
+            // 重玩（历史回顾/下一周目）→ 快进=加速+自动跳过
+            // 首次进入 → 快进=只加速文字
+            if (m_ProcedureGame != null)
+            {
+                m_IsReplayMode = m_ProcedureGame.IsReplayEvent;
+                Debug.Log($"[DialoguePanel] OnOpen - 重玩状态: {m_IsReplayMode}");
+            }
+
             // 从流程层获取当前对话数据并显示
             ShowCurrentDialogue();
         }
@@ -319,7 +340,10 @@ namespace AVGGame
             }
 
             m_IsAutoMode = false;
+            m_IsSpeedUpMode = false;
+            m_IsReplayMode = false;
             m_SpeedIndex = 0;
+            m_ReadDialogueIds.Clear();
 
             // 清理选项按钮事件（不销毁按钮，因为它们是插件的一部分）
             foreach (var button in m_ChoiceButtons)
@@ -399,6 +423,9 @@ namespace AVGGame
                     m_DialogueText.text = m_CurrentText;
                 }
 
+                // 标记为已读
+                m_ReadDialogueIds.Add(m_CurrentDisplayingDialogueId);
+
                 // 显示继续提示
                 if (m_ContinueIndicator != null)
                 {
@@ -416,6 +443,27 @@ namespace AVGGame
                 // 如果已经显示完毕，触发完成回调
                 m_OnComplete?.Invoke();
             }
+        }
+
+        /// <summary>
+        /// 快进模式下跳过当前已读对话，直接进入下一句
+        /// </summary>
+        private void SkipToNextDialogue()
+        {
+            if (m_ProcedureGame == null) return;
+
+            // 先标记当前为已读（以防万一还没标记）
+            m_ReadDialogueIds.Add(m_CurrentDisplayingDialogueId);
+
+            DialogueDisplayData nextData = m_ProcedureGame.GoToNextDialogue();
+            if (nextData == null)
+            {
+                Log.Info("[DialoguePanel] 剧情结束（快进）");
+                return;
+            }
+
+            // 立即显示下一句（不走打字机）
+            ShowCurrentDialogue();
         }
 
         #endregion
@@ -958,6 +1006,9 @@ namespace AVGGame
 
             Debug.Log($"[DialoguePanel] 获取数据成功 - NodeType: {data.NodeType}, ChoicesJson: {data.ChoicesJson}");
 
+            // 记录当前对话ID（用于已读追踪和快进跳过）
+            m_CurrentDisplayingDialogueId = data.CurrentNodeId;
+
             Log.Info($"[DialoguePanel] 显示对话 - 说话人: {data.SpeakerName}, 文本: {data.DialogText}, 类型: {data.NodeType}");
 
             // 应用立绘
@@ -1031,6 +1082,14 @@ namespace AVGGame
             // 用户手动操作，取消自动播放倒计时
             CancelAutoAdvance();
 
+            // 快进按钮开启，且（已读 OR 重玩）→ 直接跳下一句
+            if (m_IsSpeedUpMode && (m_ReadDialogueIds.Contains(m_CurrentDisplayingDialogueId) || m_IsReplayMode))
+            {
+                Debug.Log($"[DialoguePanel] 快进跳过已读对话: {m_CurrentDisplayingDialogueId}");
+                SkipToNextDialogue();
+                return;
+            }
+
             // 如果正在打字，先跳过打字效果
             if (m_IsTyping)
             {
@@ -1096,41 +1155,57 @@ namespace AVGGame
             }
 
             int speed = m_SpeedLevels[m_SpeedIndex];
+            bool isAlreadyRead = m_ReadDialogueIds.Contains(m_CurrentDisplayingDialogueId);
 
-            // 8倍速直接显示全文
-            if (speed >= 8)
+            // 快进按钮开启，且（已读 OR 重玩）→ 直接显示全文，不等待
+            if (m_IsSpeedUpMode && (isAlreadyRead || m_IsReplayMode))
             {
                 if (m_DialogueText != null)
                 {
                     m_DialogueText.text = text;
                 }
+                yield return null; // 让 UI 先刷新一帧
             }
             else
             {
-                float typeSpeed = 0.03f / speed; // 基础0.03s，速度越快间隔越短
-
-                for (int i = 0; i < text.Length; i++)
+                // 8倍速直接显示全文
+                if (speed >= 8)
                 {
-                    // 实时读取速度（中途变速立即生效）
-                    speed = m_SpeedLevels[m_SpeedIndex];
-                    if (speed >= 8)
-                    {
-                        if (m_DialogueText != null)
-                            m_DialogueText.text = text;
-                        break;
-                    }
-
-                    typeSpeed = 0.03f / speed;
-
                     if (m_DialogueText != null)
                     {
-                        m_DialogueText.text += text[i];
+                        m_DialogueText.text = text;
                     }
-                    yield return new WaitForSeconds(typeSpeed);
+                }
+                else
+                {
+                    float typeSpeed = 0.03f / speed; // 基础0.03s，速度越快间隔越短
+
+                    for (int i = 0; i < text.Length; i++)
+                    {
+                        // 实时读取速度（中途变速立即生效）
+                        speed = m_SpeedLevels[m_SpeedIndex];
+                        if (speed >= 8)
+                        {
+                            if (m_DialogueText != null)
+                                m_DialogueText.text = text;
+                            break;
+                        }
+
+                        typeSpeed = 0.03f / speed;
+
+                        if (m_DialogueText != null)
+                        {
+                            m_DialogueText.text += text[i];
+                        }
+                        yield return new WaitForSeconds(typeSpeed);
+                    }
                 }
             }
 
             m_IsTyping = false;
+
+            // 标记为已读
+            m_ReadDialogueIds.Add(m_CurrentDisplayingDialogueId);
 
             // 显示继续提示
             if (m_ContinueIndicator != null)
