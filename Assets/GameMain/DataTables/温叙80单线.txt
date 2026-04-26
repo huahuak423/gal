@@ -1,0 +1,48 @@
+﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
+##int	int	int	string	string	string	string	string	string	string	string	string	string	string
+##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
+10000	10001	0		某天下午，温叙说想一起回高中看看。他这么一说你才想起来，那个地方你毕业后再也没回去过					Assets/GameMain/Music/似水.mp3			Assets/GameMain/Art/Backgrounds/大地图.png	
+10001	10002	0		倒不是有什么不好的回忆，只是单纯没有找到合适的搭子，也没什么很想探望的老师									
+10002	10003	0		不过难得找到能一起回去的人，你也就没有拒绝									
+10003	10004	0		你们坐了很久的公交车，看着窗外的建筑从高楼变成矮房，从密集再到稀疏									
+10004	10005	0		到站的时候他伸手在你身侧挡了一下，怕你被下车的人流挤到									
+10005	10006	0		你们并肩走到校门口，那里还是老样子，铁栅栏门，门卫室窗户旁的钉子上挂着来客登记									
+10006	10007	0		温叙走过去，跟门卫说了几句，门卫看了他一眼，又看了看你，摆摆手让你们进去了，大概是那张脸还没怎么变，门卫认出来了									
+10007	10008	0		现在是上课时间，校园里很安静，只有教学楼那边隐隐传来的讲课声									
+10008	10009	0		你们走在那条从校门通往教学楼的路上，两旁的香樟树比以前高了很多，树冠几乎交织在一起，把天空遮得只剩一条缝									
+10009	10010	0		你们路过了操场，跑道重新铺了塑胶，以前是煤渣的，跑步的时候会扬起灰									
+10010	10011	0		足球场还是真草的，冬天就会枯黄一片，和记忆里一模一样。看台上刷了新漆，但栏杆还是旧的，锈迹斑斑									
+10011	10012	0		你们又走过教学楼，走廊的墙上贴满了优秀作文，密密麻麻的									
+10012	10013	0		你认出其中一份，那是你当年写的。纸张已经泛黄，虽然用透明胶带粘了好几道，但边角还是倔强地翘起来									
+10013	10014	0		你惊喜于时隔多年还能看到留有自己记忆的物品，哪怕以现在的视角来看，那篇作文的文笔太过稚嫩									
+10014	10015	0		你们还去了图书馆，说是图书馆，其实就是两间打通了的教室，被书架挤得满满当当									
+10015	10016	0		里面的日光灯管有一根坏了，忽明忽暗地闪着								Assets/GameMain/Art/Backgrounds/书店/书店.png	
+10016	10017	0		管理员还是那个女老师，正戴着老花镜在看报纸。她抬头看了你们一眼，又低下头去									
+10017	10018	0		温叙轻车熟路地走到文学区，抽出一本很旧的书，翻开扉页，上面有图书馆的印章，还有一个手写的编号									
+10018	10019	0		翻到某一页时他停了下来，你凑过去看，页边空白处夹着一张便签，上面有一行铅笔写的字，字迹很淡，像是很多年前写的									
+10019	10020	0		“写小说的人，把结局藏在开头。”									
+10020	10021	0		字迹清秀，落笔很轻，你认出是他的笔迹，也认出了这个段落									
+10021	10022	0	女主名	“你那时候就开始写了？”	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主温和.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10022	10023	0		他点了点头	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10023	10024	0	温叙	“上课的时候写，写在草稿纸上，下课再抄到本子里。被老师没收过一次，不过后面又还给了我，还说‘写完了给我看看’。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙大衣微笑.png","OffsetX":-125.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}								
+10024	10025	0	女主名	“那你给老师看了吗？”	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主温和.png","OffsetX":125.0,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10025	10026	0	温叙	“没有，那时候还没写完。”	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙大衣微笑.png","OffsetX":-125.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}								
+10026	10027	0		他没有说后来有没有写完，但你知道那本没写完的小说，后来变成了《一纸叙尽平生念》中的一部	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10027	10028	0		他站在那里，手里捧着那本旧书，目光里满是怀念									
+10028	10029	0		你没有打扰他，只是找了个地方坐了下来									
+10029	10030	0		离开图书馆的时候，天色已经暗了。教学楼的灯亮了起来，是学生们在晚自习									
+10030	10031	0		走到校门口，你们默契地停了下来，回头看了一眼								Assets/GameMain/Art/Backgrounds/大地图.png	
+10031	10032	0		教学楼、操场、图书馆、那排香樟树，都在暮色里模糊成一团，这是你们的曾走过的路，承载着你们的青春									
+10032	10033	0		出了学校之后，他带着你穿过一条窄巷子，路灯很旧，光线昏黄									
+10033	10034	0		巷子尽头有一棵老槐树，树干很粗，枝叶在头顶黑黢黢地散开									
+10034	10035	0		他站在树下，抬头看了看									
+10035	10036	0	温叙	“就是这里。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙大衣微笑.png","OffsetX":-125.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}								
+10036	10037	0		这里怎么了？他没有说	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10037	10038	0		然后他转过身来，目光落在你身上。路灯的光穿过枝叶的缝隙，在他的脸上投下细碎的光影									
+10038	10039	0		风吹过来，几片干枯的叶子打着旋落在他的肩上，然后落在地上									
+10039	10040	0		你突然就想起了很多年前，那个黄昏									
+10040	10041	0		他就站在那，当时你匆匆离开，没有回头									
+10041	10042	0		而现在，他站在你面前，目光沉静而专注，像是要把当年错过的对视都补回来									
+10042	10043	0		你忽然觉得，这棵树和当年没什么不同									
+10043	10044	0		只是树下的人，终于等到了他想等的那一眼									
+10044	0	0		【获得单线结局：旧巷】									

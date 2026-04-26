@@ -49,10 +49,10 @@
 10045	10046	0		动作快得几乎像是不想让你看见，甚至有些刻意									
 10046	10047	0		他抬起头，对上你的目光，那一瞬间，他的眼睛里有一种说不清的情绪	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙01-02.png","OffsetX":0.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}								
 10047	10048	0		像是被抓包的心虚，又像是一种隐秘的满足。但他很快调整过来，弯起眼尾，又是那副温和无害的模样	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":560.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}								
-10048	10049	0	温叙	“好了......”									
+10048	10049	0	温叙	“好了......”									Assets/GameMain/Art/Voice/配音/温叙/1.好了.mp3
 10049	10050	0		他的声音轻得像是在自言自语	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10050	10051	0		嘀嘀咕咕说什么呢，你只听清两个字，但还没等你追问，他就开口了									
-10051	10052	0	温叙	“我还有事，先走了。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}								
+10051	10052	0	温叙	“我还有事，先走了。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}								Assets/GameMain/Art/Voice/配音/温叙/2.我还有事.mp3
 10052	10053	0		他说得很快走的也很快，快得像是怕你拦他	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10053	10054	0		你站在原地，看着他走下楼梯，他的背影渐渐变小									
 10054	10055	0		但你注意到，他走到楼梯拐角处时，脚步顿了一下									
@@ -64,10 +64,10 @@
 10060	10061	0		太巧了，巧得像精心排练过的剧目									
 10061	10062	0		他眼底的光熄了一瞬，但他很快又掩饰了过去，顺从地收起手机，点头致意	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙闭眼.png","OffsetX":0.0,"OffsetY":-522.5382080078125,"Scale":3.0}]}								
 10062	10063	0		那点头的弧度依然恰到好处，仿佛无论你给出什么反应，他都有预案	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":560.0,"OffsetY":-280.0,"Scale":2.299999952316284}]}								
-10063	10064	0	温叙	“这本书是未公开的试读版，可以先借给你。如果后面需要联系我，尾页有联系方式。”									
+10063	10064	0	温叙	“这本书是未公开的试读版，可以先借给你。如果后面需要联系我，尾页有联系方式。”									Assets/GameMain/Art/Voice/配音/温叙/3.这本书是未公开的试读版.mp3
 10064	10065	0		这份未公开的作品出现得太过恰逢其时，简直像极了一张为你量身定制、提前铺好的网	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10065	10066	0		但这确实是你现在最需要的，而且他也给了你检验真伪和掌控主动权的时间									
-10066	10067	0	女主名	“谢谢。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Characters/女主/女主01-00.png","OffsetX":22.5,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
+10066	10067	0	女主名	“谢谢。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/女主常规.png","OffsetX":22.5,"OffsetY":-196.0,"Scale":2.299999952316284}]}								
 10067	10068	0		你合上书，转身离开	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10068	0	0		在你身后，那道如影随形的视线直到你走下楼梯，才慢慢收回									
 10069	0	1				{"Choices":[{"ChoiceText":"爽快扫码，备注自己的名字 ","NextId":10036,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"06","Value":20,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":2,"ItemId":""},{"Type":0,"AttributeType":2,"NpcId":"","Value":3,"ItemId":""}]},{"ChoiceText":"顺利到让你心生警惕 ","NextId":10058,"Conditions":[],"Rewards":[{"Type":1,"AttributeType":0,"NpcId":"06","Value":15,"ItemId":""},{"Type":0,"AttributeType":3,"NpcId":"","Value":5,"ItemId":""},{"Type":0,"AttributeType":0,"NpcId":"","Value":5,"ItemId":""}]}]}							

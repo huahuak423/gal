@@ -1,4 +1,4 @@
-描述	唯一编号	所在地图	事件类型	陈予荣事件一	消耗AP	事件标号	是否会显示（解锁条件）	是否能点击条件	剧情图名称
+描述	唯一编号	所在地图	事件类型	标题	消耗AP	事件标号	是否会显示（解锁条件）	是否能点击条件	剧情图名称
 字段名	Id	MapId	EventType	Title	CostAP	EventNum	VisibleConditions	PlayableConditions	TargetGraphName
 数据类型	int	string	int	string	int	string	string	string	string
 	1	01	1	居家	1	-1_1			Home
@@ -28,3 +28,6 @@
 	25		3	手握资本的“公关女王”	0	0_3	2|100|1		手握资本的“公关女王”
 	26		3	不被定义的自由	0	0_4	7		不被定义的自由
 	27		3	岁月静好的观察者	0	0_5			岁月静好的观察者
+	28		3	周杉80单线	0	0_6	6|3|80|1		周杉80单线
+	29		3	温叙80单线	0	0_7	6|6|80|1		温叙80单线
+	30		3	周杉&温叙1	0	0_8	"6|3|80|1,6|6|80|1"		周杉&温叙1

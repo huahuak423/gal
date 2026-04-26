@@ -1133,6 +1133,51 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_74_备注是：感谢老板的倾"
+        },
+        {
+            "GraphName": "周杉&温叙1",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主常规.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_92_“那两个人，是你父母"
+        },
+        {
+            "GraphName": "温叙80单线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主微讶.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_22_“你那时候就开始写了"
+        },
+        {
+            "GraphName": "温叙80单线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/温叙/温叙大衣微笑.png",
+            "Position": 2,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_26_“没有，那时候还没写"
+        },
+        {
+            "GraphName": "温叙80单线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/女主温和.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_25_“那你给老师看了吗？"
+        },
+        {
+            "GraphName": "温叙80单线",
+            "SpritePath": "Assets/GameMain/Art/New Characters/温叙/温叙认真.png",
+            "Position": 2,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_36_“就是这里。”"
         }
     ]
 }
