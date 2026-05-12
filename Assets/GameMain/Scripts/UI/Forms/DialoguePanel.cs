@@ -78,7 +78,8 @@ namespace AVGGame
         private bool m_IsReplayMode = false;   // 当前是否为重玩（历史回顾/下一周目）
         private readonly int[] m_SpeedLevels = { 1, 2, 4, 8 };
         private int m_SpeedIndex = 0;           // 当前速度索引
-        private Coroutine m_AutoAdvanceCoroutine;
+        private float m_AutoAdvanceTimer = 0f;  // 自动播放计时器
+        private bool m_AutoAdvanceWaiting = false; // 是否正在等待自动播放
 
         // 已读对话追踪（用于快进跳过）
         private HashSet<int> m_ReadDialogueIds = new HashSet<int>();
@@ -264,11 +265,10 @@ namespace AVGGame
 
             Debug.Log($"[DialoguePanel] 快进: {(m_IsSpeedUpMode ? "开启" : "关闭")}，速度: {speed}x");
 
-            // 如果正在打字，变速会在打字机循环中实时生效
-            // 如果正在自动播放倒计时，重新启动倒计时以应用新速度
-            if (m_IsAutoMode && !m_IsTyping && m_AutoAdvanceCoroutine != null)
+            // 如果正在自动播放倒计时，重置计时器以应用新速度
+            if (m_IsAutoMode && !m_IsTyping && m_AutoAdvanceWaiting)
             {
-                StartAutoAdvance();
+                m_AutoAdvanceTimer = 0f;
             }
         }
 
@@ -283,12 +283,14 @@ namespace AVGGame
             if (m_IsAutoMode && !m_IsTyping)
             {
                 // 当前没有在打字，立即开始自动倒计时
-                StartAutoAdvance();
+                m_AutoAdvanceTimer = 0f;
+                m_AutoAdvanceWaiting = true;
             }
             else if (!m_IsAutoMode)
             {
                 // 关闭自动，取消等待中的倒计时
-                CancelAutoAdvance();
+                m_AutoAdvanceWaiting = false;
+                m_AutoAdvanceTimer = 0f;
             }
         }
 
@@ -332,12 +334,9 @@ namespace AVGGame
                 m_TypeWriterCoroutine = null;
             }
 
-            // 停止自动播放协程
-            if (m_AutoAdvanceCoroutine != null)
-            {
-                StopCoroutine(m_AutoAdvanceCoroutine);
-                m_AutoAdvanceCoroutine = null;
-            }
+            // 重置自动播放计时器
+            m_AutoAdvanceWaiting = false;
+            m_AutoAdvanceTimer = 0f;
 
             m_IsAutoMode = false;
             m_IsSpeedUpMode = false;
@@ -435,7 +434,8 @@ namespace AVGGame
                 // 跳过后如果自动模式开启，开始自动倒计时
                 if (m_IsAutoMode)
                 {
-                    StartAutoAdvance();
+                    m_AutoAdvanceTimer = 0f;
+                    m_AutoAdvanceWaiting = true;
                 }
             }
             else if (!m_IsTyping)
@@ -1080,7 +1080,8 @@ namespace AVGGame
         public void OnContinueClick()
         {
             // 用户手动操作，取消自动播放倒计时
-            CancelAutoAdvance();
+            m_AutoAdvanceWaiting = false;
+            m_AutoAdvanceTimer = 0f;
 
             // 快进按钮开启，且（已读 OR 重玩）→ 直接跳下一句
             if (m_IsSpeedUpMode && (m_ReadDialogueIds.Contains(m_CurrentDisplayingDialogueId) || m_IsReplayMode))
@@ -1215,45 +1216,32 @@ namespace AVGGame
 
             m_TypeWriterCoroutine = null;
 
-            // 自动播放：文字显示完后延迟自动切到下一句
+            // 自动播放：文字显示完后开始自动倒计时
             if (m_IsAutoMode)
             {
-                StartAutoAdvance();
+                m_AutoAdvanceTimer = 0f;
+                m_AutoAdvanceWaiting = true;
             }
         }
 
         /// <summary>
-        /// 开始自动播放倒计时
+        /// 每帧更新：处理自动播放计时器
         /// </summary>
-        private void StartAutoAdvance()
+        protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
-            CancelAutoAdvance();
-            m_AutoAdvanceCoroutine = StartCoroutine(AutoAdvanceRoutine());
-        }
+            base.OnUpdate(elapseSeconds, realElapseSeconds);
 
-        /// <summary>
-        /// 取消自动播放倒计时
-        /// </summary>
-        private void CancelAutoAdvance()
-        {
-            if (m_AutoAdvanceCoroutine != null)
-            {
-                StopCoroutine(m_AutoAdvanceCoroutine);
-                m_AutoAdvanceCoroutine = null;
-            }
-        }
+            if (!m_AutoAdvanceWaiting || !m_IsAutoMode) return;
 
-        /// <summary>
-        /// 自动播放协程：等待后自动点击继续
-        /// </summary>
-        private IEnumerator AutoAdvanceRoutine()
-        {
-            // 基础1秒，受速度倍率影响
+            m_AutoAdvanceTimer += elapseSeconds;
             float delay = 1.0f / m_SpeedLevels[m_SpeedIndex];
-            yield return new WaitForSeconds(delay);
 
-            m_AutoAdvanceCoroutine = null;
-            OnContinueClick();
+            if (m_AutoAdvanceTimer >= delay)
+            {
+                m_AutoAdvanceWaiting = false;
+                m_AutoAdvanceTimer = 0f;
+                OnContinueClick();
+            }
         }
 
         #endregion

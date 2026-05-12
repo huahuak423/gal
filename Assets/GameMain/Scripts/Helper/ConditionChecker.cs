@@ -65,6 +65,19 @@ namespace AVGGame
                         if (param2 == 2 && hasItem) return false;       // 要求没有却有
                         break;
 
+                    case 6: // NPC好感度检测 (6 | NpcId | Value | Operator)
+                        if (parts.Length < 4)
+                        {
+                            Log.Warning($"[ConditionChecker] NPC好感度条件格式错误(需要4段): {cond}");
+                            return false;
+                        }
+                        int npcId = param1;
+                        int favorValue = param2;
+                        int favorOp = int.Parse(parts[3]);
+                        int favorability = playerData.GetFavorability(npcId);
+                        if (!CompareValue(favorability, favorValue, favorOp)) return false;
+                        break;
+
                     default:
                         Log.Warning($"[ConditionChecker] 未知的规则类型: {ruleType}");
                         break;
