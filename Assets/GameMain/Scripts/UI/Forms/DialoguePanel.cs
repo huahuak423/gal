@@ -114,7 +114,7 @@ namespace AVGGame
             m_ButtonHide = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHide");
             m_ButtonInformation = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonInformation");
             m_ButtonSave = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSave");
-            m_ButtonAuto= this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonAuto");
+            m_ButtonAuto= this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonAuto");
             m_ChoiceButton1 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button1");
             m_ChoiceButton2 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button2");
             m_ChoiceButton3 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button3");
@@ -278,7 +278,7 @@ namespace AVGGame
         private void OnAutoClick()
         {
             m_IsAutoMode = !m_IsAutoMode;
-            Debug.Log($"[DialoguePanel] 自动播放: {(m_IsAutoMode ? "开启" : "关闭")}");
+            Debug.Log($"[DialoguePanel] 自动播放: {(m_IsAutoMode ? "开启" : "关闭")}, m_IsTyping={m_IsTyping}, m_IsSpeedUpMode={m_IsSpeedUpMode}, speed={m_SpeedLevels[m_SpeedIndex]}x");
 
             if (m_IsAutoMode && !m_IsTyping)
             {
@@ -291,6 +291,27 @@ namespace AVGGame
                 // 关闭自动，取消等待中的倒计时
                 m_AutoAdvanceWaiting = false;
                 m_AutoAdvanceTimer = 0f;
+            }
+        }
+
+        /// <summary>
+        /// 每帧更新：处理自动播放计时器
+        /// </summary>
+        protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
+        {
+            base.OnUpdate(elapseSeconds, realElapseSeconds);
+
+            if (!m_AutoAdvanceWaiting || !m_IsAutoMode) return;
+
+            m_AutoAdvanceTimer += elapseSeconds;
+            float delay = 1.0f / m_SpeedLevels[m_SpeedIndex];
+
+            if (m_AutoAdvanceTimer >= delay)
+            {
+                Debug.Log($"[DialoguePanel] 自动播放计时器触发 timer={m_AutoAdvanceTimer:F2}s >= delay={delay:F2}s, speed={m_SpeedLevels[m_SpeedIndex]}x");
+                m_AutoAdvanceWaiting = false;
+                m_AutoAdvanceTimer = 0f;
+                OnContinueClick();
             }
         }
 
@@ -1221,26 +1242,7 @@ namespace AVGGame
             {
                 m_AutoAdvanceTimer = 0f;
                 m_AutoAdvanceWaiting = true;
-            }
-        }
-
-        /// <summary>
-        /// 每帧更新：处理自动播放计时器
-        /// </summary>
-        protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
-        {
-            base.OnUpdate(elapseSeconds, realElapseSeconds);
-
-            if (!m_AutoAdvanceWaiting || !m_IsAutoMode) return;
-
-            m_AutoAdvanceTimer += elapseSeconds;
-            float delay = 1.0f / m_SpeedLevels[m_SpeedIndex];
-
-            if (m_AutoAdvanceTimer >= delay)
-            {
-                m_AutoAdvanceWaiting = false;
-                m_AutoAdvanceTimer = 0f;
-                OnContinueClick();
+                Debug.Log($"[DialoguePanel] TypewriterRoutine结束 → 自动计时器启动, delay={1.0f / m_SpeedLevels[m_SpeedIndex]:F2}s");
             }
         }
 
