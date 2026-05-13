@@ -2112,6 +2112,59 @@ MonoBehaviour:
   - {fileID: -3576589856758463296}
   - {fileID: 825555520574477201}
   - {fileID: 7649417372933217643}
+  - {fileID: 44684996742847026}
+--- !u!114 &44684996742847026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 29192, y: -8}
+  ports:
+    keys:
+    - Entry
+    - Exit
+    values:
+    - _fieldName: Entry
+      _node: {fileID: 44684996742847026}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Exit
+        node: {fileID: 7649417372933217643}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Exit
+      _node: {fileID: 44684996742847026}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Entry: 0
+  Exit: 0
+  SpeakerName: 
+  DialogText: "\u3010\u7CFB\u7EDF\u63D0\u793A\u3011\u83B7\u5F97 Normal End \u201C\u5C81\u6708\u9759\u597D\u7684\u89C2\u5BDF\u8005\u201D"
+  CharacterDisplays: []
+  BgmPath: 
+  SePath: 
+  BackgroundPath: 
+  VoicePath: 
+  PerformanceKey: 
+  NeedsAttention: 0
+  EditorNote: 
 --- !u!114 &491043848594220398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3277,7 +3330,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_65_\u8FD9\u5C31\u662F\u4F60\u7684\u7ED3\u5C40\uFF0C\u4E0D\u662F"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 28800, y: 0}
+  position: {x: 28760, y: -8}
   ports:
     keys:
     - Entry
@@ -3299,7 +3352,10 @@ MonoBehaviour:
       _node: {fileID: 7649417372933217643}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Entry
+        node: {fileID: 44684996742847026}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -3307,7 +3363,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u8FD9\u5C31\u662F\u4F60\u7684\u7ED3\u5C40\uFF0C\u4E0D\u662F\u8F70\u8F70\u70C8\u70C8\u7684\u90A3\u79CD"
+  DialogText: "\u8FD9,\u5C31\u662F\u4F60\u7684\u7ED3\u5C40"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
