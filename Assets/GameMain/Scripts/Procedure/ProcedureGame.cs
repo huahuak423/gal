@@ -719,8 +719,16 @@ namespace AVGGame
 
             // 标记事件已完成（移到结束时才标记，避免中途存档被误标完成）
             int completedEventId = CustomEntry.PlayerData.CurrentEventId;
+            bool isEndingEvent = false;
             if (completedEventId > 0)
             {
+                // 检查是否为结局事件（EventType=3）
+                IDataTable<EventRowData> dtEvent = GameEntry.DataTable.GetDataTable<EventRowData>();
+                if (dtEvent != null)
+                {
+                    EventRowData completedEvent = dtEvent.GetDataRow(completedEventId);
+                    isEndingEvent = completedEvent != null && completedEvent.EventType == 3;
+                }
                 CustomEntry.PlayerData.MarkEventCompleted(completedEventId);
             }
 
@@ -737,6 +745,14 @@ namespace AVGGame
             m_CurrentDialogueId = 0;
             CustomEntry.PlayerData.SetCurrentDialogueId(0);
             CustomEntry.PlayerData.SetCurrentEventId(0);
+
+            // 结局故事播完 → 直接周目结算，不再二次判定
+            if (isEndingEvent)
+            {
+                Debug.Log("[ProcedureGame] 结局故事播放完毕，进入周目结算");
+                TriggerNormalEnding();
+                return;
+            }
 
             // 检查 AP 是否耗尽 → 触发结局判定
             if (CustomEntry.PlayerData.CurrentActionPoints <= 0)

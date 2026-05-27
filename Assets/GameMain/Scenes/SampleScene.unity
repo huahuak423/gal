@@ -171,7 +171,7 @@ MonoBehaviour:
   m_GameSpeed: 1
   m_RunInBackground: 1
   m_NeverSleep: 1
-  m_EditorResourceMode: 1
+  m_EditorResourceMode: 0
 --- !u!1001 &423756379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11499388, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
       propertyPath: m_EditorResourceMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
