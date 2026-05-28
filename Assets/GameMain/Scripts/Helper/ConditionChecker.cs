@@ -27,17 +27,28 @@ namespace AVGGame
             {
                 // 2. 按竖线拆分出每一条规则的具体参数 (比如 "2|2|1" 拆成 "2", "2", "1")
                 string[] parts = cond.Split('|');
-                
-                if (parts.Length < 3) 
+
+                if (parts.Length < 3)
                 {
                     Log.Warning($"[ConditionChecker] 条件格式错误: {cond}");
-                    continue; 
+                    continue;
                 }
 
                 // 解析基本参数
-                int ruleType = int.Parse(parts[0]);
-                int param1 = int.Parse(parts[1]);
-                int param2 = int.Parse(parts[2]);
+                int ruleType;
+                int param1;
+                int param2;
+                try
+                {
+                    ruleType = int.Parse(parts[0]);
+                    param1 = int.Parse(parts[1]);
+                    param2 = int.Parse(parts[2]);
+                }
+                catch (FormatException)
+                {
+                    Log.Warning($"[ConditionChecker] 条件参数解析失败: {cond}");
+                    continue;
+                }
 
                 // 3. 根据不同的规则序号，执行对应逻辑。
                 // 只要有一条规则不满足，直接返回 false！

@@ -73,6 +73,24 @@ namespace AVGGame
 
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            // 关键：必须在 ResourceComponent.Start() 之前设置 EditorResourceMode
+            // Unity 保证所有 Awake() 在任何 Start() 之前执行
+            var baseComponent = UnityGameFramework.Runtime.GameEntry.GetComponent<BaseComponent>();
+            if (baseComponent != null)
+            {
+                bool actualEditorResourceMode = Application.isEditor ? m_EditorResourceMode : false;
+                baseComponent.EditorResourceMode = actualEditorResourceMode;
+
+                if (!Application.isEditor)
+                {
+                    Log.Info("[GameEntry.Awake] Build mode, forcing AssetBundle mode");
+                }
+                else
+                {
+                    Log.Info($"[GameEntry.Awake] Editor mode, ResourceMode: {(actualEditorResourceMode ? "Editor" : "AssetBundle")}");
+                }
+            }
         }
 
         private void Start()
@@ -117,18 +135,8 @@ namespace AVGGame
             baseComponent.RunInBackground = m_RunInBackground;
             baseComponent.NeverSleep = m_NeverSleep;
 
-            // 打包后强制使用 AssetBundle 模式，编辑器中可自由切换
-            bool actualEditorResourceMode = Application.isEditor ? m_EditorResourceMode : false;
-            baseComponent.EditorResourceMode = actualEditorResourceMode;
-
-            if (!Application.isEditor)
-            {
-                Log.Info("[GameEntry] Running in build mode, forcing AssetBundle mode");
-            }
-            else
-            {
-                Log.Info($"[GameEntry] Running in editor mode, ResourceMode: {(actualEditorResourceMode ? "Editor" : "AssetBundle")}");
-            }
+            // 注意：EditorResourceMode 已在 Awake() 中提前设置，
+            // 确保在 ResourceComponent.Start() 之前生效
         }
 
         #endregion
