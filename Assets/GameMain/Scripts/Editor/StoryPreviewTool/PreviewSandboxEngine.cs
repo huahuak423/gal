@@ -132,20 +132,16 @@ namespace AVGGame.Editor
                 var textPlate = bgTransform.Find("TextPlate");
                 if (textPlate != null)
                 {
-                    var dialogueUI = textPlate.Find("DialogueUI");
-                    if (dialogueUI != null)
+                    var nameTrans = textPlate.Find("CharacterName");
+                    if (nameTrans != null)
                     {
-                        var nameTrans = dialogueUI.Find("CharacterNamePlate");
-                        if (nameTrans != null)
-                        {
-                            m_CharacterNameText = nameTrans.GetComponentInChildren<Text>();
-                        }
+                        m_CharacterNameText = nameTrans.GetComponentInChildren<Text>();
+                    }
 
-                        var dialoguePlate = dialogueUI.Find("DialoguePlate");
-                        if (dialoguePlate != null)
-                        {
-                            m_DialogueText = dialoguePlate.GetComponentInChildren<Text>();
-                        }
+                    var dialoguePlate = textPlate.Find("DialoguePlate");
+                    if (dialoguePlate != null)
+                    {
+                        m_DialogueText = dialoguePlate.GetComponentInChildren<Text>();
                     }
                 }
             }
