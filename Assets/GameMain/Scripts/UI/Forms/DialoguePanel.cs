@@ -55,6 +55,13 @@ namespace AVGGame
         [SerializeField] private Button m_ButtonInformation;
         [SerializeField] private Button m_ButtonSave;
         [SerializeField] private Button m_ButtonAuto;
+        [SerializeField] private Text m_ButtonMenuText;
+        [SerializeField] private Text m_ButtonSpeedUpText;
+        [SerializeField] private Text m_ButtonHistoryText;
+        [SerializeField] private Text m_ButtonHideText;
+        [SerializeField] private Text m_ButtonInformationText;
+        [SerializeField] private Text m_ButtonSaveText;
+        [SerializeField] private Text m_ButtonAutoText;
 
         #endregion
 
@@ -103,18 +110,24 @@ namespace AVGGame
             base.OnInit(userData);
 
             // 挂载组件引用
-            m_CharacterPortrait = this.GetComponentByPath<Image>("Canvas/Background/TextPlate/CharacterName");
-            m_CharacterNameText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/CharacterName/TextConstCharacterName");
-            m_DialogueText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/TextConstDialogue");
+            m_CharacterNameText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/TextConstCharacterName");
+            m_DialogueText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/TextConstDialogue");
             m_BackgroundImage = this.GetComponentByPath<Image>("Canvas/Background");
             m_BackgroundImageButton = this.GetComponentByPath<Button>("Canvas/Background");
-            m_ButtonMenu = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonMenu");
-            m_ButtonSpeedUp = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSpeedUp");
-            m_ButtonHistory = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHistory");
-            m_ButtonHide = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHide");
-            m_ButtonInformation = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonInformation");
-            m_ButtonSave = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSave");
+            m_ButtonMenu = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonMenu");
+            m_ButtonSpeedUp = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonSpeedUp");
+            m_ButtonHistory = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonHistory");
+            m_ButtonHide = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonHide");
+            m_ButtonInformation = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonInformation");
+            m_ButtonSave = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonSave");
             m_ButtonAuto= this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonAuto");
+            m_ButtonMenuText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonMenu/TextForTest");
+            m_ButtonSpeedUpText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonSpeedUp/TextForTest");
+            m_ButtonHistoryText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonHistory/TextForTest");
+            m_ButtonHideText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonHide/TextForTest");
+            m_ButtonInformationText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonInformation/TextForTest");
+            m_ButtonSaveText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonSave/TextForTest");
+            m_ButtonAutoText= this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonAuto/TextForTest");
             m_ChoiceButton1 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button1");
             m_ChoiceButton2 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button2");
             m_ChoiceButton3 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button3");

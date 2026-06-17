@@ -20,12 +20,16 @@ namespace AVGGame
                 return true;
             }
 
+            // 0. 清洗：去除首尾引号和空白（兼容 Excel/策划手动加引号的情况）
+            conditionStr = conditionStr.Trim().Trim('"');
+
             // 1. 按逗号拆分出所有并列的条件规则 (比如 "2|2|1,5|10|1" 会被拆成两个)
             string[] conditions = conditionStr.Split(',');
 
-            foreach (string cond in conditions)
+            foreach (string rawCond in conditions)
             {
-                // 2. 按竖线拆分出每一条规则的具体参数 (比如 "2|2|1" 拆成 "2", "2", "1")
+                // 2. 清洗每条子条件后按竖线拆分参数
+                string cond = rawCond.Trim().Trim('"');
                 string[] parts = cond.Split('|');
 
                 if (parts.Length < 3)
@@ -47,7 +51,7 @@ namespace AVGGame
                 catch (FormatException)
                 {
                     Log.Warning($"[ConditionChecker] 条件参数解析失败: {cond}");
-                    continue;
+                    return false;
                 }
 
                 // 3. 根据不同的规则序号，执行对应逻辑。

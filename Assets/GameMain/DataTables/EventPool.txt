@@ -1,0 +1,10 @@
+﻿##Id	MapId	EventType	Title	CostAP	EventNum	VisibleConditions	PlayableConditions	TargetGraphName
+##int	int	int	string	int	string	string	string	string
+##编号	地图ID	类型	标题	消耗AP	事件编号	可见条件	可玩条件	目标图名称
+	1	01	2	周杉事件一	1	3_1			周杉事件一
+	2	05	2	温叙事件一	1	6_1			温叙事件一
+	3	02	2	温叙事件二	1	6_2	1|6|1		温叙事件二
+	4	01	2	温叙事件三	1	6_3	1|6|2		温叙事件三
+	5	03	2	温叙事件四	1	6_4	1|6|3		温叙事件四
+	6	04	2	温叙事件五	1	6_5	1|6|4		温叙事件五
+	7	02	2	陈予荣事件一	1	5_1			陈予荣事件一
