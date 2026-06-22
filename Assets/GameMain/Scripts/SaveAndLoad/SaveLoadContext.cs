@@ -32,6 +32,11 @@ namespace AVGGame
         // 目标事件ID（如果直接进入某个事件）
         private static int m_TargetEventId = 0;
 
+        /// <summary>
+        /// 起名完成后的回调，由 ProcedureMainMenu 注册
+        /// </summary>
+        public static System.Action OnCreateNameComplete;
+
         #endregion
 
         #region 属性

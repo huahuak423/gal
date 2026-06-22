@@ -18,6 +18,7 @@ namespace AVGGame
         public const int MainMenu = 2000;
         public const int Settings = 2001;
         public const int Archive = 2002;        // 存档选择界面
+        public const int CreateName = 2003;     // 起名界面
 
         // 游戏内UI (3000-3999)
         public const int Dialogue = 3000;

@@ -110,8 +110,8 @@ namespace AVGGame
             base.OnInit(userData);
 
             // 挂载组件引用
-            m_CharacterNameText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/TextConstCharacterName");
-            m_DialogueText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/TextConstDialogue");
+            m_CharacterNameText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/CharacterName/TextConstCharacterName");
+            m_DialogueText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/TextConstDialogue");
             m_BackgroundImage = this.GetComponentByPath<Image>("Canvas/Background");
             m_BackgroundImageButton = this.GetComponentByPath<Button>("Canvas/Background");
             m_ButtonMenu = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonMenu");

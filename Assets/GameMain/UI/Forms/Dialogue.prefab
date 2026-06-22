@@ -996,15 +996,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CharacterPortrait: {fileID: 0}
   m_CharacterNameText: {fileID: 853542242546104064}
-  m_DialogueText: {fileID: 0}
+  m_DialogueText: {fileID: 6954346627895928108}
   m_ContinueIndicator: {fileID: 0}
-  m_SelectPanel: {fileID: 0}
+  m_SelectPanel: {fileID: 487967913773380984}
   m_ChoicesContainer: {fileID: 0}
-  m_ChoiceButton1: {fileID: 0}
-  m_ChoiceButton2: {fileID: 0}
-  m_ChoiceButton3: {fileID: 0}
-  m_ChoiceButton4: {fileID: 0}
-  m_ChoiceButton5: {fileID: 0}
+  m_ChoiceButton1: {fileID: 2740798649232267250}
+  m_ChoiceButton2: {fileID: 5626976404910093477}
+  m_ChoiceButton3: {fileID: 5426256404772961608}
+  m_ChoiceButton4: {fileID: 402256976671025553}
+  m_ChoiceButton5: {fileID: 8309859804769309690}
   m_ChoiceButton1Text: {fileID: 0}
   m_ChoiceButton2Text: {fileID: 0}
   m_ChoiceButton3Text: {fileID: 0}

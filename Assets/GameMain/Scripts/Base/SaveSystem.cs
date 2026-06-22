@@ -26,6 +26,7 @@ namespace AVGGame
         public int Charm;
         public int Inspiration;
         public int Sanity;
+        public string PlayerName;
 
         // 行动点
         public int CurrentActionPoints;
@@ -66,7 +67,7 @@ namespace AVGGame
         public int CurrentEventId;
 
         // 存档版本（用于未来兼容性）
-        public int Version = 2;
+        public int Version = 3;
     }
 
     /// <summary>

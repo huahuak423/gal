@@ -40,6 +40,9 @@ namespace AVGGame
         // 序章标记（新游戏时先播序章再开地图）
         private bool m_PlayPrologue = false;
 
+        // 标记：在 OnUpdate 中打开大地图（避免在回调中直接调用导致时序问题）
+        private bool m_PendingOpenMap = false;
+
         // 存档加载标记（EventPool加载完成后用于判断是否断点续传）
         private bool m_IsLoadingFromSave = false;
 
@@ -61,12 +64,14 @@ namespace AVGGame
             {
                 Debug.Log("[ProcedureGame] 检测到存档加载，等待事件表加载后恢复进度");
                 m_IsLoadingFromSave = true;
+                m_PendingOpenMap = false;
             }
             else
             {
-                Debug.Log("[ProcedureGame] 新游戏流程，重置玩家数据并等待事件表加载后播放序章");
+                Debug.Log("[ProcedureGame] 新游戏流程，重置玩家数据并等待事件表加载后直接进入大地图");
                 CustomEntry.PlayerData.ResetGame();
-                m_PlayPrologue = true;
+                m_PlayPrologue = false; // 序章已暂时剔除，直接进大地图
+                m_PendingOpenMap = false;
             }
 
             //读取事件表成功（失败）回调
@@ -117,6 +122,18 @@ namespace AVGGame
             }
 
             base.OnLeave(procedureOwner, isShutdown);
+        }
+
+        protected override void OnUpdate(IFsm<IProcedureManager> procedureOwner, float elapseSeconds, float realElapseSeconds)
+        {
+            base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
+
+            // 在 OnUpdate 中打开大地图，避免在回调中直接调用导致状态机时序问题
+            if (m_PendingOpenMap)
+            {
+                m_PendingOpenMap = false;
+                OpenMap();
+            }
         }
 
         #endregion
@@ -943,14 +960,14 @@ namespace AVGGame
                     else
                     {
                         Debug.Log("[ProcedureGame] 未能找到对应事件，打开大地图");
-                        OpenMap();
+                        m_PendingOpenMap = true;
                     }
                 }
                 else
                 {
                     // 存档时在地图上（无进行中事件）
                     Debug.Log("[ProcedureGame] 存档位于大地图，打开大地图");
-                    OpenMap();
+                    m_PendingOpenMap = true;
                 }
             }
             else if (m_PlayPrologue)
@@ -962,7 +979,8 @@ namespace AVGGame
             else
             {
                 Debug.Log("[ProcedureGame] 直接打开大地图");
-                OpenMap();
+                // 设为待处理标志，由 OnUpdate 下一帧打开，避免时序问题
+                m_PendingOpenMap = true;
             }
         }
 

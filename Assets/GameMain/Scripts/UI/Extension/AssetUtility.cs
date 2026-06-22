@@ -38,6 +38,7 @@ namespace AVGGame
                 case UIFormId.MainMenu: return "MainMenu";
                 case UIFormId.Settings: return "GameSetting";
                 case UIFormId.Archive: return "Archive";
+                case UIFormId.CreateName: return "CreateName";
 
                 // 游戏内UI (3000-3999)
                 case UIFormId.Dialogue: return "Dialogue";

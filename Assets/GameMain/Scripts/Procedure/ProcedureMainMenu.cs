@@ -23,6 +23,9 @@ namespace AVGGame
         
         private bool m_StartGame = false;
 
+        // 标记起名面板是否正在显示中（防止重复打开，同时不触发 m_StartGame）
+        private bool m_CreateNameOpening = false;
+
         #endregion
 
         #region 生命周期
@@ -33,6 +36,7 @@ namespace AVGGame
 
             // 重置标志，防止重新进入时 OnUpdate 立即跳转到 ProcedureGame
             m_StartGame = false;
+            m_CreateNameOpening = false;
             m_CurrentSubFormId = -1;
 
             Log.Info("[ProcedureMainMenu] Enter");
@@ -77,7 +81,20 @@ namespace AVGGame
 
         public void StartGame()
         {
-            m_StartGame = true;
+            // 防止重复打开起名界面
+            if (m_CreateNameOpening)
+                return;
+
+            // 注册回调：CreateName 关闭时才设置 m_StartGame，触发 OnUpdate 跳转到 ProcedureGame
+            SaveLoadContext.OnCreateNameComplete = () =>
+            {
+                m_StartGame = true;
+                m_CreateNameOpening = false;
+            };
+
+            // 打开起名界面（会同时关闭主菜单）
+            SwitchSubForm(AssetUtility.GetUIFormAsset(UIFormId.CreateName), this);
+            m_CreateNameOpening = true;
         }
         
         public void QuitGame()

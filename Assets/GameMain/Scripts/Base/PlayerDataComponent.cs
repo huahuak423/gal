@@ -23,6 +23,7 @@ namespace AVGGame
         [SerializeField] private int m_Charm = 3;           // 魅力（上限100）
         [SerializeField] private int m_Inspiration = 3;     // 灵感（上限80）
         [SerializeField] private int m_Sanity = 3;          // 理智（上限100）
+        [SerializeField] private string m_PlayerName = "";  // 玩家名称
 
         public const int MaxCharm = 100;
         public const int MaxInspiration = 80;
@@ -31,6 +32,18 @@ namespace AVGGame
         public int Charm => m_Charm;
         public int Inspiration => m_Inspiration;
         public int Sanity => m_Sanity;
+
+        public string PlayerName => m_PlayerName;
+
+        /// <summary>
+        /// 设置玩家名称
+        /// </summary>
+        public void SetPlayerName(string name)
+        {
+            m_PlayerName = name ?? "";
+            Debug.Log($"[PlayerDataComponent] 玩家名称已设置为: {m_PlayerName}");
+        }
+
         #endregion
 
         #region NPC 进度数据
@@ -116,6 +129,7 @@ namespace AVGGame
             m_Charm = 0;
             m_Inspiration = 0;
             m_Sanity = 0;
+            m_PlayerName = "";
             m_CurrentActionPoints = m_MaxActionPoints;
             BonusActionPoints = 0;
             BonusCharm = 0;
@@ -536,6 +550,7 @@ namespace AVGGame
                 Charm = m_Charm,
                 Inspiration = m_Inspiration,
                 Sanity = m_Sanity,
+                PlayerName = m_PlayerName,
 
                 // 行动点
                 CurrentActionPoints = m_CurrentActionPoints,
@@ -593,6 +608,7 @@ namespace AVGGame
             m_Charm = Mathf.Max(0, saveData.Charm);
             m_Inspiration = Mathf.Max(0, saveData.Inspiration);
             m_Sanity = Mathf.Max(0, saveData.Sanity);
+            m_PlayerName = saveData.PlayerName ?? "";
 
             // 行动点 - 确保合理
             m_CurrentActionPoints = Mathf.Max(0, saveData.CurrentActionPoints);
