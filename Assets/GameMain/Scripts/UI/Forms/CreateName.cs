@@ -221,7 +221,10 @@ namespace AVGGame
             Debug.Log("[CreateName] OnConfirmClick - 名称有效，显示CorrectPlate");
 
             if (Message != null)
+            {
+                Message.gameObject.SetActive(true);
                 Message.text = "欢迎您，希望您玩的开心";
+            }
 
             if (CorrectPlate != null)
             {
