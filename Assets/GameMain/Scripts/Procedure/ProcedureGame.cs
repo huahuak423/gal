@@ -69,7 +69,11 @@ namespace AVGGame
             else
             {
                 Debug.Log("[ProcedureGame] 新游戏流程，重置玩家数据并等待事件表加载后直接进入大地图");
+                // 保护玩家取名：ResetGame会清空名字，但名字已在CreateName中设置
+                string savedName = CustomEntry.PlayerData.PlayerName;
                 CustomEntry.PlayerData.ResetGame();
+                CustomEntry.PlayerData.SetPlayerName(savedName);
+                Debug.Log($"[ProcedureGame] 保留玩家取名: '{savedName}'");
                 m_PlayPrologue = false; // 序章已暂时剔除，直接进大地图
                 m_PendingOpenMap = false;
             }
@@ -527,10 +531,29 @@ namespace AVGGame
             Debug.Log($"[ProcedureGame] - 说话人: {row.SpeakerName}");
             Debug.Log($"[ProcedureGame] - 文本: {row.DialogText}");
 
+            // 将剧情文本中的"主控名"替换为玩家取名
+            string playerName = CustomEntry.PlayerData?.PlayerName ?? "";
+            string speakerName = row.SpeakerName;
+            string dialogText = row.DialogText;
+            Debug.Log($"[ProcedureGame] 主控名替换检查: PlayerName='{playerName}', 原始SpeakerName='{speakerName}', 原始DialogText='{dialogText}'");
+            if (!string.IsNullOrEmpty(playerName))
+            {
+                if (speakerName.Contains("主控名") || dialogText.Contains("主控名"))
+                {
+                    speakerName = speakerName.Replace("主控名", playerName);
+                    dialogText = dialogText.Replace("主控名", playerName);
+                    Debug.Log($"[ProcedureGame] 主控名替换完成: SpeakerName='{speakerName}', DialogText='{dialogText}'");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("[ProcedureGame] PlayerName 为空，跳过主控名替换");
+            }
+
             return new DialogueDisplayData
             {
-                SpeakerName = row.SpeakerName,
-                DialogText = row.DialogText,
+                SpeakerName = speakerName,
+                DialogText = dialogText,
                 NextId = row.NextId,
                 CurrentNodeId = row.Id,
                 NodeType = row.NodeType,

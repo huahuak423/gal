@@ -30,6 +30,7 @@ namespace AVGGame.Editor
         private Image m_BackgroundImage;
         private Text m_DialogueText;
         private Text m_CharacterNameText;
+        private Image m_TextImage; // 对话框背景图
         private List<Image> m_CharacterImages = new List<Image>();
         private List<RectTransform> m_CharacterRects = new List<RectTransform>();
 
@@ -135,6 +136,7 @@ namespace AVGGame.Editor
                     if (nameTrans != null)
                     {
                         m_CharacterNameText = nameTrans.GetComponentInChildren<Text>();
+                        m_TextImage = nameTrans.GetComponent<Image>();
                     }
 
                     var dialoguePlate = textPlate.Find("DialoguePlate");
@@ -189,6 +191,20 @@ namespace AVGGame.Editor
             if (m_CharacterNameText != null)
             {
                 m_CharacterNameText.text = snapshot.CharacterName ?? "";
+            }
+
+            // 根据有无说话人切换对话框背景
+            if (m_TextImage != null)
+            {
+                bool hasSpeaker = !string.IsNullOrEmpty(snapshot.CharacterName);
+                string spritePath = hasSpeaker
+                    ? "Assets/GameMain/Art/UI_Common/UI/对话框"
+                    : "Assets/GameMain/Art/UI_Common/UI/对话框（无名字）";
+                var dialogBox = AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
+                if (dialogBox != null)
+                {
+                    m_TextImage.sprite = dialogBox;
+                }
             }
 
             // 应用背景图

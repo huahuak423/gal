@@ -45,6 +45,7 @@ namespace AVGGame
 
         [Header("背景")]
         [SerializeField] private Image m_BackgroundImage;
+        [SerializeField] private Image m_TextImage;
         [SerializeField] private Button m_BackgroundImageButton;
 
         [Header("菜单按钮")]
@@ -100,6 +101,12 @@ namespace AVGGame
         // 对话框区域引用（用于隐藏/显示）
         private Transform m_TextPlate;
 
+        // 对话框背景 Sprite 缓存
+        private Sprite m_DialogBoxWithSpeaker;
+        private Sprite m_DialogBoxWithoutSpeaker;
+        private const string c_DialogBoxWithSpeakerPath = "Assets/GameMain/Art/UI_Common/UI/对话框.png";
+        private const string c_DialogBoxWithoutSpeakerPath = "Assets/GameMain/Art/UI_Common/UI/对话框（无名字）.png";
+
         // 选项相关
         private List<Button> m_ChoiceButtons = new List<Button>();
         private GameObject m_ChoiceButtonPrefab;
@@ -117,6 +124,7 @@ namespace AVGGame
             m_DialogueText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/TextConstDialogue");
             m_TextPlate = this.GetComponentByPath<Transform>("Canvas/Background/TextPlate");
             m_BackgroundImage = this.GetComponentByPath<Image>("Canvas/Background");
+            m_TextImage = this.GetComponentByPath<Image>("Canvas/Background/TextPlate/CharacterName");
             m_BackgroundImageButton = this.GetComponentByPath<Button>("Canvas/Background");
             m_ButtonAuto = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonAuto");
             m_ButtonSpeedUp = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSpeedUp");
@@ -228,6 +236,33 @@ namespace AVGGame
             {
                 m_SelectPanel.gameObject.SetActive(false);
             }
+
+            // 预加载对话框背景 Sprite
+            Debug.Log("[DialoguePanel] 开始预加载对话框背景 Sprite");
+            GameEntry.Resource.LoadAsset(
+                c_DialogBoxWithSpeakerPath,
+                typeof(Sprite),
+                new LoadAssetCallbacks(
+                    (assetName, asset, duration, userData) =>
+                    {
+                        m_DialogBoxWithSpeaker = asset as Sprite;
+                        Debug.Log($"[DialoguePanel] 对话框(有名字)加载成功: {assetName}, sprite={m_DialogBoxWithSpeaker}");
+                    },
+                    (assetName, status, errorMessage, userData) => Debug.LogWarning($"[DialoguePanel] 对话框(有名字)加载失败: {assetName}, {errorMessage}")
+                )
+            );
+            GameEntry.Resource.LoadAsset(
+                c_DialogBoxWithoutSpeakerPath,
+                typeof(Sprite),
+                new LoadAssetCallbacks(
+                    (assetName, asset, duration, userData) =>
+                    {
+                        m_DialogBoxWithoutSpeaker = asset as Sprite;
+                        Debug.Log($"[DialoguePanel] 对话框(无名字)加载成功: {assetName}, sprite={m_DialogBoxWithoutSpeaker}");
+                    },
+                    (assetName, status, errorMessage, userData) => Debug.LogWarning($"[DialoguePanel] 对话框(无名字)加载失败: {assetName}, {errorMessage}")
+                )
+            );
 
             
             m_ProcedureGame = (ProcedureGame)userData;
@@ -1044,6 +1079,39 @@ namespace AVGGame
             if (m_TextPlate != null)
             {
                 m_TextPlate.gameObject.SetActive(!data.HideDialoguePanel);
+            }
+
+            // 根据有无说话人切换对话框背景
+            if (m_TextImage != null)
+            {
+                bool hasSpeaker = !string.IsNullOrEmpty(data.SpeakerName);
+                Sprite targetSprite = hasSpeaker ? m_DialogBoxWithSpeaker : m_DialogBoxWithoutSpeaker;
+
+                if (targetSprite != null)
+                {
+                    m_TextImage.sprite = targetSprite;
+                }
+                else
+                {
+                    // 缓存未命中，按需异步加载
+                    string loadPath = hasSpeaker ? c_DialogBoxWithSpeakerPath : c_DialogBoxWithoutSpeakerPath;
+                    Debug.Log($"[DialoguePanel] 对话框Sprite未缓存，按需加载: {loadPath}");
+                    GameEntry.Resource.LoadAsset(
+                        loadPath,
+                        typeof(Sprite),
+                        new LoadAssetCallbacks(
+                            (assetName, asset, duration, userData) =>
+                            {
+                                Sprite loaded = asset as Sprite;
+                                if (hasSpeaker) m_DialogBoxWithSpeaker = loaded;
+                                else m_DialogBoxWithoutSpeaker = loaded;
+                                if (m_TextImage != null) m_TextImage.sprite = loaded;
+                                Debug.Log($"[DialoguePanel] 对话框Sprite按需加载成功: {assetName}");
+                            },
+                            (assetName, status, errorMessage, userData) => Debug.LogWarning($"[DialoguePanel] 对话框Sprite加载失败: {assetName}, {errorMessage}")
+                        )
+                    );
+                }
             }
 
             // 检查是否是选择节点
