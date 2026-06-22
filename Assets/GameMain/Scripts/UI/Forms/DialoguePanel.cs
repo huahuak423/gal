@@ -1067,6 +1067,12 @@ namespace AVGGame
                     // 显示选项面板
                     ShowChoicesPanel(choicesData);
 
+                    // 选项出现时隐藏对话框区域
+                    if (m_TextPlate != null)
+                    {
+                        m_TextPlate.gameObject.SetActive(false);
+                    }
+
                     // 隐藏对话文本
                     if (m_DialogueText != null)
                     {

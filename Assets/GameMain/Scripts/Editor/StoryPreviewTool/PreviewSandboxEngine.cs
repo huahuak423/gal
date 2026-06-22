@@ -109,22 +109,21 @@ namespace AVGGame.Editor
             {
                 m_BackgroundImage = bgTransform.GetComponent<Image>();
 
-                var charPlate = bgTransform.Find("CharacterPlate");
-                if (charPlate != null)
+                // 立绘查找：CharacterImage0 在 Background 下，1/2 在 CharacterPlate 下
+                for (int i = 0; i < 3; i++)
                 {
-                    for (int i = 0; i < 3; i++)
+                    Transform charImg = i == 0
+                        ? bgTransform.Find("CharacterImage0")
+                        : bgTransform.Find("CharacterPlate")?.Find($"CharacterImage{i}");
+                    if (charImg != null)
                     {
-                        var charImg = charPlate.Find($"CharacterImage{i}");
-                        if (charImg != null)
+                        var img = charImg.GetComponent<Image>();
+                        var rect = charImg.GetComponent<RectTransform>();
+                        if (img != null && rect != null)
                         {
-                            var img = charImg.GetComponent<Image>();
-                            var rect = charImg.GetComponent<RectTransform>();
-                            if (img != null && rect != null)
-                            {
-                                m_CharacterImages.Add(img);
-                                m_CharacterRects.Add(rect);
-                                m_OriginalPositions.Add(rect.anchoredPosition);
-                            }
+                            m_CharacterImages.Add(img);
+                            m_CharacterRects.Add(rect);
+                            m_OriginalPositions.Add(rect.anchoredPosition);
                         }
                     }
                 }
