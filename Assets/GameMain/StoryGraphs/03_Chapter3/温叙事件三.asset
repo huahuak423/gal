@@ -4475,9 +4475,9 @@ MonoBehaviour:
     Scale: 1.325
   - CharacterName: 
     ActionType: 0
-    Position: 0
+    Position: 2
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u8BB8\u6620\u6708/8.\u8FD8\u6CA1\u5462.png"
-    OffsetX: 525
+    OffsetX: -525
     OffsetY: -360
     Scale: 2
   BgmPath: 
@@ -4650,7 +4650,7 @@ MonoBehaviour:
   CharacterDisplays:
   - CharacterName: 
     ActionType: 1
-    Position: 0
+    Position: 2
     SpritePath: 
     OffsetX: 0
     OffsetY: 0
