@@ -4,10 +4,10 @@
             "GraphName": "陈予荣事件一",
             "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控常服无表情.png",
             "Position": 0,
-            "OffsetX": 0.0,
-            "OffsetY": 0.0,
-            "Scale": 1.0,
-            "LastNodeGuid": "对话_94_你点点头，认可了他关"
+            "OffsetX": -206.868408203125,
+            "OffsetY": -538.2513427734375,
+            "Scale": 2.0,
+            "LastNodeGuid": "对话_10_你端着实木托盘，站在"
         },
         {
             "GraphName": "陈予荣事件一",
@@ -160,7 +160,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_59_空气安静了几秒，你敛"
+            "LastNodeGuid": "对话_137_骄傲的同时，心底还泛"
         },
         {
             "GraphName": "温叙事件二",
@@ -241,7 +241,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_186_你随手将掂了半天的盲"
+            "LastNodeGuid": "对话_150_她看着里三层外三层冷"
         },
         {
             "GraphName": "温叙事件四",
@@ -259,7 +259,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_204_大家配合一下往后退！"
+            "LastNodeGuid": "对话_227_你也没想到随手救下的"
         },
         {
             "GraphName": "温叙事件四",
@@ -277,7 +277,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_122_是我失态了…… 抱歉"
+            "LastNodeGuid": "对话_84_手心里的温度抽离，温"
         },
         {
             "GraphName": "温叙事件四",
@@ -295,7 +295,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_153_别想了。"
+            "LastNodeGuid": "对话_233_好，那您先忙。"
         },
         {
             "GraphName": "温叙事件四",
@@ -313,7 +313,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_211_许映月手舞足蹈地模仿"
+            "LastNodeGuid": "对话_214_你们俩对视一眼，赶紧"
         },
         {
             "GraphName": "周杉事件一",
@@ -385,7 +385,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_114_你直白地询问让他愣了"
+            "LastNodeGuid": "对话_165_我会好好珍藏，直到…"
         },
         {
             "GraphName": "温叙事件五",
@@ -412,7 +412,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_149_你的心意我已明了。"
+            "LastNodeGuid": "对话_81_你缓缓抬眼对上他的视"
         },
         {
             "GraphName": "温叙事件五",
@@ -430,7 +430,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_131_你没有问过我的心意。"
+            "LastNodeGuid": "对话_109_他深情的剖白还在耳边"
         },
         {
             "GraphName": "温叙事件五",
@@ -439,7 +439,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_155_好。"
+            "LastNodeGuid": "对话_81_你缓缓抬眼对上他的视"
         },
         {
             "GraphName": "温叙事件五",
@@ -448,7 +448,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_134_我不知道。温叙，我对"
+            "LastNodeGuid": "对话_111_这些疑问像细密的小刺"
         },
         {
             "GraphName": "温叙事件五",
@@ -673,7 +673,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_36_到了约定的日子，你提"
+            "LastNodeGuid": "对话_136_此刻，看着眼前自己曾"
         },
         {
             "GraphName": "温叙事件二",
@@ -697,10 +697,10 @@
             "GraphName": "陈予荣事件一",
             "SpritePath": "Assets/GameMain/Art/Photo/海盐吐司.png",
             "Position": 1,
-            "OffsetX": 7.390793800354004,
-            "OffsetY": 89.75396728515625,
+            "OffsetX": 0.0,
+            "OffsetY": 116.9039306640625,
             "Scale": 1.5,
-            "LastNodeGuid": "对话_41_你打开玻璃橱柜，用夹"
+            "LastNodeGuid": "对话_10_你端着实木托盘，站在"
         },
         {
             "GraphName": "陈予荣事件一",
@@ -745,7 +745,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_198_有叙闻老师的配合，这"
+            "LastNodeGuid": "对话_101_还没呢，我尝尝。"
         },
         {
             "GraphName": "温叙事件三",
@@ -763,7 +763,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_167_工作，又是工作。"
+            "LastNodeGuid": "对话_54_你暗骂了自己一句 “"
         },
         {
             "GraphName": "温叙事件三",
@@ -808,7 +808,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_2_周六下午，你拉着许映"
+            "LastNodeGuid": "对话_207_人群渐渐散去，你和许"
         },
         {
             "GraphName": "温叙事件四",
@@ -818,6 +818,249 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_6_就在你举起盲盒准备贴"
+        },
+        {
+            "GraphName": "温叙事件二",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙：好.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_31_“好。”"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/宣发初稿.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/宣发修改稿.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_4_回复也是在凌晨弹出来"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/焦糖海盐蛋糕.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_169_盒盖上印着陌生的蛋糕"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控皱眉.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_83_看着屏幕上那行温吞的"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控常服微笑.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_95_你无奈失笑，索性拿出"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙：太优秀啦.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_10_最终版发过去时，他发"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/宣发终稿.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控皱眉.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_119_指骨间传来的痛感昭示"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控常服无表情.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_228_但转念又觉得，这世界"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控常服微笑.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_214_你们俩对视一眼，赶紧"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控睡衣无表情.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_162_没关系的，工作的事不"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_135_好，那等您的消息。"
+        },
+        {
+            "GraphName": "温叙事件五",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控睡衣无表情.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_31_你站在窗边看了一会儿"
+        },
+        {
+            "GraphName": "温叙事件五",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控睡衣无表情.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_32_心底难免掠过一丝怅然"
+        },
+        {
+            "GraphName": "温叙事件五",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_52_方便的，一会见。"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/伤痕化铠.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/冒昧带飞.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_37_学妹现在可是大红人了"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/蛋糕.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_40_是有点冒昧，您怎么会"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/对方正在输入.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_45_屏幕顶端 “对方正在"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/抱歉.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_47_抱歉…… 可这蛋糕不"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/宝宝！.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_49_宝宝！蛋糕收到了吗？"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/蛋糕收到了吗.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/惊为天人.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/项目奖金.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/女主抱歉.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_55_不好意思叙闻老师，您"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/拜读.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_64_刚拜读了您写的部分内"
         }
     ]
 }

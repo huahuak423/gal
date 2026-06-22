@@ -231,8 +231,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u95ED\u773C\u65E0\u8868\u60C5.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -959,8 +959,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u4E25\u8083.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_47_\u6700\u72C2\u70ED\u7684\u65F6\u5019\uFF0C\u4F60\u751A\u81F3"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 20700, y: 0}
+  position: {x: 20696, y: -8}
   ports:
     keys:
     - Entry
@@ -1460,7 +1460,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: 5405393983109846474}
+        node: {fileID: 8617938484614090707}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -1469,8 +1469,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u90A3\u4E9B\u81EA\u8BE9\u80FD\u6233\u4E2D\u5973\u6027\u8BFB\u8005\u7684\u5185\u5BB9\uFF0C\u8981\u4E48\u662F\u5728\u8D29\u5356
-    \u201C\u8D81\u7740\u5E74\u8F7B\u8D76\u7D27\u5AC1\u4EBA\u201D \u7684\u7126\u8651\uFF0C"
+  DialogText: "\u90A3\u4E9B\u81EA\u8BE9\u80FD\u6233\u4E2D\u5973\u6027\u8BFB\u8005\u7684\u5185\u5BB9\uFF0C\u8981\u4E48\u662F\u5728\u8D29\u5356\u201C\u8D81\u7740\u5E74\u8F7B\u8D76\u7D27\u5AC1\u4EBA\u201D\u7684\u7126\u8651\uFF0C\u8981\u4E48\u662F\u5728\u5BA3\u626C\u201C\u56DE\u5F52\u5BB6\u5EAD\u624D\u662F\u5973\u4EBA\u6700\u7EC8\u5F52\u5BBF\u201D\u7684\u9648\u8150\u89C2\u5FF5\u3002"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -1538,8 +1537,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u4E25\u8083.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -1786,8 +1785,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u65E0\u8868\u60C5.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -2254,8 +2253,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u95ED\u773C\u65E0\u8868\u60C5.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -2447,8 +2446,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u4E25\u8083.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -2592,7 +2591,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Exit
-        node: {fileID: 4045862094564334601}
+        node: {fileID: 5000083058247761777}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -2681,8 +2680,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u95ED\u773C\u65E0\u8868\u60C5.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -2805,8 +2804,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u4E25\u8083.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -3682,61 +3681,6 @@ MonoBehaviour:
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
---- !u!114 &-2722821365331368866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_29_\u8BF4\u4E0D\u5728\u4E4E\u5B69\u5B50\u80FD\u5426\u51FA\u4EBA"
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 12600, y: 0}
-  ports:
-    keys:
-    - Entry
-    - Exit
-    values:
-    - _fieldName: Entry
-      _node: {fileID: -2722821365331368866}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Exit
-        node: {fileID: 3349009305239094256}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Exit
-      _node: {fileID: -2722821365331368866}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Entry
-        node: {fileID: 2540269942423494435}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Entry: 0
-  Exit: 0
-  SpeakerName: 
-  DialogText: "\u8BF4\u4E0D\u5728\u4E4E\u5B69\u5B50\u80FD\u5426\u51FA\u4EBA\u5934\u5730\uFF0C\u53EA\u5E0C\u671Bta\u5E73\u5B89\u5065\u5EB7\u2026\u2026"
-  CharacterDisplays: []
-  BgmPath: 
-  SePath: 
-  BackgroundPath: 
-  VoicePath: 
-  PerformanceKey: 
-  NeedsAttention: 0
-  EditorNote: 
 --- !u!114 &-2686720703807295392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3838,8 +3782,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u4E3A\u4E86\u4E0B\u5468\u60C5\u611F\u8D5B\u9053\u7684\u7206\u6B3E\u9009\u9898\uFF0C\u4F60\u5DF2\u7ECF\u71AC\u4E86\u4E24\u4E2A\u901A\u5BB5\uFF0C\u7FFB\u904D\u4E86\u5F53\u4E0B\u70ED\u95E8
-    IP\uFF0C\u5374\u603B\u89C9\u5F97\u5DEE\u70B9\u610F\u601D\uFF1A"
+  DialogText: "\u4E3A\u4E86\u4E0B\u5468\u60C5\u611F\u8D5B\u9053\u7684\u7206\u6B3E\u9009\u9898\uFF0C\u4F60\u5DF2\u7ECF\u71AC\u4E86\u4E24\u4E2A\u901A\u5BB5\uFF0C\u7FFB\u904D\u4E86\u5F53\u4E0B\u70ED\u95E8IP\uFF0C\u5374\u603B\u89C9\u5F97\u5DEE\u70B9\u610F\u601D\uFF1A"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -3894,7 +3837,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u53EA\u4E00\u4E0B\uFF0C\u7136\u540E\u4ED6\u4FA7\u8FC7\u5934\uFF0C\u5F80\u4F60\u8FD9\u4E2A\u65B9\u5411\u770B\u4E86\u4E00\u773C\u3002"
+  DialogText: "\u7136\u540E\u4ED6\u4FA7\u8FC7\u5934\uFF0C\u5F80\u4F60\u8FD9\u4E2A\u65B9\u5411\u770B\u4E86\u4E00\u773C\u3002"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -3940,7 +3883,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: 1045689764428648521}
+        node: {fileID: 6443753731320862618}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -3949,7 +3892,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u4ED6\u6CA1\u6709\u8BF4\u8BDD\uFF0C\u6307\u5C16\u5728\u4E66\u810A\u70EB\u91D1\u7684\u300C\u53D9\u95FB\u300D\u4E8C\u5B57\u4E0A\u8F7B\u8F7B\u4E00\u70B9\uFF0C\u5E26\u7740\u4E00\u70B9\u5C0F\u5FC3\u7FFC\u7FFC\u7684\u8BD5\u63A2\uFF0C"
+  DialogText: "\u4ED6\u6CA1\u6709\u8BF4\u8BDD\uFF0C\u6307\u5C16\u5728\u4E66\u810A\u70EB\u91D1\u7684\u300C\u53D9\u95FB\u300D\u4E8C\u5B57\u4E0A\u8F7B\u8F7B\u4E00\u70B9\uFF0C\u5E26\u7740\u4E00\u70B9\u5C0F\u5FC3\u7FFC\u7FFC\u7684\u8BD5\u63A2\uFF0C\u50CF\u662F\u5728\u95EE\uFF1A\u4F60\u662F\u5728\u627E\u8FD9\u4E2A\u5417\uFF1F"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -4237,8 +4180,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u95ED\u773C\u65E0\u8868\u60C5.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -4410,7 +4353,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u76F4\u63A5\u6495\u7834\u8138\u62D2\u7EDD\u592A\u96BE\u770B\uFF0C\u4E07\u4E00\u4ED6\u662F\u771F\u7684\uFF0C\u4EE5\u540E\u518D\u60F3\u63A5\u89E6\u53EF\u80FD\u5C31\u96BE\u4E86\u3002"
+  DialogText: "\u76F4\u63A5\u6495\u7834\u8138\u62D2\u7EDD\u592A\u96BE\u770B\uFF0C\u4E07\u4E00\u4ED6\u771F\u7684\u662F\u53D9\u95FB\uFF0C\u4EE5\u540E\u518D\u60F3\u63A5\u89E6\u53EF\u80FD\u5C31\u96BE\u4E86\u3002"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -4609,7 +4552,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Exit
-        node: {fileID: 1008568425897650195}
+        node: {fileID: -499518769743685628}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -4643,8 +4586,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u5FAE\u7B11.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -4705,8 +4648,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u95ED\u773C\u5FAE\u7B11.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -4752,7 +4695,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: 1008568425897650195}
+        node: {fileID: -685085195371297080}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -4761,7 +4704,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u9762\u5BF9\u7236\u6BCD\u6B47\u65AF\u5E95\u91CC\u7684\u6307\u8D23\u3001\u4EE5\u6B7B\u76F8\u903C\u7684\u633D\u7559\uFF0C\u4EB2\u621A\u90BB\u91CC\u7684\u553E\u6CAB\u661F\u5B50\uFF0C"
+  DialogText: "\u9762\u5BF9\u7236\u6BCD\u6B47\u65AF\u5E95\u91CC\u7684\u6307\u8D23\u3001\u4EE5\u6B7B\u76F8\u903C\u7684\u633D\u7559\uFF0C\u4EB2\u621A\u90BB\u91CC\u7684\u553E\u6CAB\u661F\u5B50\uFF0C\u8FD8\u6709\u70C2\u4EBA\u548C\u4ED6\u5BB6\u4EBA\u607C\u7F9E\u6210\u6012\u7684\u8FB1\u9A82\u4E0E\u5835\u95E8\u5A01\u80C1\u2026\u2026"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -5148,7 +5091,6 @@ MonoBehaviour:
   - {fileID: 265108760390308443}
   - {fileID: 1127834586755387687}
   - {fileID: -6632789059149601369}
-  - {fileID: 5405393983109846474}
   - {fileID: 8617938484614090707}
   - {fileID: -8615610789735727168}
   - {fileID: -3446718504323227481}
@@ -5165,10 +5107,8 @@ MonoBehaviour:
   - {fileID: 4266310616901490816}
   - {fileID: -2906875333028360843}
   - {fileID: 5000083058247761777}
-  - {fileID: 4045862094564334601}
   - {fileID: -4568775491767869863}
   - {fileID: 3349009305239094256}
-  - {fileID: -2722821365331368866}
   - {fileID: 2540269942423494435}
   - {fileID: -9177201996044675580}
   - {fileID: -2686720703807295392}
@@ -5178,7 +5118,6 @@ MonoBehaviour:
   - {fileID: 8903074642773061572}
   - {fileID: -972159867114762619}
   - {fileID: -499518769743685628}
-  - {fileID: 1008568425897650195}
   - {fileID: -685085195371297080}
   - {fileID: 7750559618772557757}
   - {fileID: 5430719303501356301}
@@ -5205,7 +5144,6 @@ MonoBehaviour:
   - {fileID: -3634305692500387098}
   - {fileID: -5180880444724950683}
   - {fileID: -2253828765195618333}
-  - {fileID: 1045689764428648521}
   - {fileID: 6443753731320862618}
   - {fileID: 8270523918633701875}
   - {fileID: -3637090792142387364}
@@ -5664,116 +5602,6 @@ MonoBehaviour:
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
---- !u!114 &1008568425897650195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_39_\u8FD8\u6709\u70C2\u4EBA\u548C\u4ED6\u5BB6\u4EBA\u607C\u7F9E"
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 17100, y: 0}
-  ports:
-    keys:
-    - Entry
-    - Exit
-    values:
-    - _fieldName: Entry
-      _node: {fileID: 1008568425897650195}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Exit
-        node: {fileID: -499518769743685628}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Exit
-      _node: {fileID: 1008568425897650195}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Entry
-        node: {fileID: -685085195371297080}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Entry: 0
-  Exit: 0
-  SpeakerName: 
-  DialogText: "\u8FD8\u6709\u70C2\u4EBA\u548C\u4ED6\u5BB6\u4EBA\u607C\u7F9E\u6210\u6012\u7684\u8FB1\u9A82\u4E0E\u5835\u95E8\u5A01\u80C1\u2026\u2026"
-  CharacterDisplays: []
-  BgmPath: 
-  SePath: 
-  BackgroundPath: 
-  VoicePath: 
-  PerformanceKey: 
-  NeedsAttention: 0
-  EditorNote: 
---- !u!114 &1045689764428648521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_67_\u50CF\u662F\u5728\u95EE\uFF1A\u4F60\u662F\u5728\u627E\u8FD9"
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 29700, y: 0}
-  ports:
-    keys:
-    - Entry
-    - Exit
-    values:
-    - _fieldName: Entry
-      _node: {fileID: 1045689764428648521}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Exit
-        node: {fileID: -2253828765195618333}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Exit
-      _node: {fileID: 1045689764428648521}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Entry
-        node: {fileID: 6443753731320862618}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Entry: 0
-  Exit: 0
-  SpeakerName: 
-  DialogText: "\u50CF\u662F\u5728\u95EE\uFF1A\u4F60\u662F\u5728\u627E\u8FD9\u4E2A\u5417\uFF1F"
-  CharacterDisplays: []
-  BgmPath: 
-  SePath: 
-  BackgroundPath: 
-  VoicePath: 
-  PerformanceKey: 
-  NeedsAttention: 0
-  EditorNote: 
 --- !u!114 &1127834586755387687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5897,7 +5725,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_152_\u90A3\u6709\u6CA1\u6709\u4EC0\u4E48\u529E\u6CD5\uFF0C\u65E2"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 67950, y: 0}
+  position: {x: 67944, y: -8}
   ports:
     keys:
     - Entry
@@ -5936,8 +5764,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u95ED\u773C\u65E0\u8868\u60C5.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -6219,7 +6047,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "ta\u8BE5\u6D3B\u6210\u4ED6\u81EA\u5DF1\uFF0C\u8FD8\u662F\u6D3B\u6210\u5979\u60F3\u8981\u7684\u6837\u5B50\uFF1F"
+  DialogText: "ta\u8BE5\u6D3B\u6210ta\u81EA\u5DF1\uFF0C\u8FD8\u662F\u6D3B\u6210\u5979\u60F3\u8981\u7684\u6837\u5B50\uFF1F"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -6308,7 +6136,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Exit
-        node: {fileID: -2722821365331368866}
+        node: {fileID: 3349009305239094256}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -7056,7 +6884,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: -2722821365331368866}
+        node: {fileID: 2540269942423494435}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -7065,7 +6893,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u5979\u5927\u53EF\u4EE5\u8BF4\u82E6\u4E86\u81EA\u5DF1\u4E0D\u80FD\u82E6\u5B69\u5B50\uFF0C\u8BF4\u81EA\u5DF1\u62FC\u5C3D\u5168\u529B\u4E5F\u4F1A\u62A4\u5B69\u5B50\u5468\u5168\uFF0C"
+  DialogText: "\u5979\u5927\u53EF\u4EE5\u8BF4\u82E6\u4E86\u81EA\u5DF1\u4E0D\u80FD\u82E6\u5B69\u5B50\uFF0C\u8BF4\u81EA\u5DF1\u62FC\u5C3D\u5168\u529B\u4E5F\u4F1A\u62A4\u5B69\u5B50\u5468\u5168\uFF0C\u8BF4\u4E0D\u5728\u4E4E\u5B69\u5B50\u80FD\u5426\u51FA\u4EBA\u5934\u5730\uFF0C\u53EA\u5E0C\u671Bta\u5E73\u5B89\u5065\u5EB7\u2026\u2026"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -7243,8 +7071,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u4E25\u8083.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -7491,61 +7319,6 @@ MonoBehaviour:
   PerformanceKey: 
   NeedsAttention: 0
   EditorNote: 
---- !u!114 &4045862094564334601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_26_\u5979\u7684\u5B69\u5B50\u4F1A\u4E0D\u4F1A\u5BF9\u7740\u6F0F"
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 11250, y: 0}
-  ports:
-    keys:
-    - Entry
-    - Exit
-    values:
-    - _fieldName: Entry
-      _node: {fileID: 4045862094564334601}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Exit
-        node: {fileID: 5000083058247761777}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Exit
-      _node: {fileID: 4045862094564334601}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Entry
-        node: {fileID: -4568775491767869863}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Entry: 0
-  Exit: 0
-  SpeakerName: 
-  DialogText: "\u5979\u7684\u5B69\u5B50\u4F1A\u4E0D\u4F1A\u5BF9\u7740\u6F0F\u96E8\u7684\u5C4B\u9876\u3001\u6C38\u8FDC\u586B\u4E0D\u9971\u7684\u809A\u5B50\u548C\u9157\u9152\u5BB6\u66B4\u7684\u7236\u4EB2\u5FC3\u751F\u6028\u603C\uFF1A"
-  CharacterDisplays: []
-  BgmPath: 
-  SePath: 
-  BackgroundPath: 
-  VoicePath: 
-  PerformanceKey: 
-  NeedsAttention: 0
-  EditorNote: 
 --- !u!114 &4173408860259871827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7598,8 +7371,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u60CA\u8BB6.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -7829,8 +7602,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u4E25\u8083.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -8100,7 +7873,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: 4045862094564334601}
+        node: {fileID: -4568775491767869863}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -8109,7 +7882,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u5979\u8BF4\uFF0C\u5982\u679C\u8FDE\u81EA\u5DF1\u7684\u4EBA\u751F\u90FD\u6491\u5F97\u6447\u6447\u6B32\u5760\uFF0C"
+  DialogText: "\u5979\u8BF4\uFF0C\u5982\u679C\u8FDE\u81EA\u5DF1\u7684\u4EBA\u751F\u90FD\u6491\u5F97\u6447\u6447\u6B32\u5760\uFF0C\u5979\u7684\u5B69\u5B50\u4F1A\u4E0D\u4F1A\u5BF9\u7740\u6F0F\u96E8\u7684\u5C4B\u9876\u3001\u6C38\u8FDC\u586B\u4E0D\u9971\u7684\u809A\u5B50\u548C\u9157\u9152\u5BB6\u66B4\u7684\u7236\u4EB2\u5FC3\u751F\u6028\u603C\uFF1A"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -8282,62 +8055,6 @@ MonoBehaviour:
   Exit: 0
   SpeakerName: 
   DialogText: "\u5982\u6B64\u5DE7\u80FD\u5728\u7EA0\u7ED3\u9009\u62E9\u65F6\u5C31\u6709\u4EBA\u9012\u4E0A\u4E66\u518C\uFF0C\u600E\u4E48\u60F3\u90FD\u5F88\u8BE1\u5F02\u3002"
-  CharacterDisplays: []
-  BgmPath: 
-  SePath: 
-  BackgroundPath: 
-  VoicePath: 
-  PerformanceKey: 
-  NeedsAttention: 0
-  EditorNote: 
---- !u!114 &5405393983109846474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_8_\u8981\u4E48\u662F\u5728\u5BA3\u626C \u201C\u56DE\u5F52"
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 3150, y: 0}
-  ports:
-    keys:
-    - Entry
-    - Exit
-    values:
-    - _fieldName: Entry
-      _node: {fileID: 5405393983109846474}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Exit
-        node: {fileID: -6632789059149601369}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Exit
-      _node: {fileID: 5405393983109846474}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Entry
-        node: {fileID: 8617938484614090707}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Entry: 0
-  Exit: 0
-  SpeakerName: 
-  DialogText: "\u8981\u4E48\u662F\u5728\u5BA3\u626C \u201C\u56DE\u5F52\u5BB6\u5EAD\u624D\u662F\u5973\u4EBA\u6700\u7EC8\u5F52\u5BBF\u201D
-    \u7684\u9648\u8150\u89C2\u5FF5\u3002"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -8955,8 +8672,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u4E25\u8083.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   - CharacterName: 
     ActionType: 1
@@ -9066,7 +8783,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Exit
-        node: {fileID: 1045689764428648521}
+        node: {fileID: -2253828765195618333}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -9272,8 +8989,8 @@ MonoBehaviour:
     ActionType: 0
     Position: 0
     SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u5E38\u670D\u4E25\u8083.png"
-    OffsetX: -240
-    OffsetY: -620
+    OffsetX: -210
+    OffsetY: -600
     Scale: 2
   BgmPath: 
   SePath: 
@@ -10325,7 +10042,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Exit
-        node: {fileID: 5405393983109846474}
+        node: {fileID: -6632789059149601369}
         reroutePoints: []
       _direction: 0
       _connectionType: 0

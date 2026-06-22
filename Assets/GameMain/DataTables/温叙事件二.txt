@@ -1,17 +1,17 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音
-10000	10001	0		不过三天，你就把温叙留下的书册翻到了最后一页，								Assets/GameMain/Art/Backgrounds/居家/家-夜晚.png	
-10001	10002	0		手边的草稿纸上写满了令你感触较深的词句，那是你阅读叙闻作品多年养成的习惯。									
+10000	10001	0		不过三天，你就把温叙留下的书册翻到了最后一页。								Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png	
+10001	10002	0		放在手边的草稿纸上写满了令你感触较深的句子，那是你阅读叙闻作品多年养成的习惯。									
 10002	10003	0		字里行间那股熟悉牵引骗不了人，确实是他的笔触。									
-10003	10004	0		叙闻最擅长用细腻平和的口吻，把那些女性说不出口的忧思、深夜独自消化的委屈，一一铺陈：									
-10004	10005	0		如学生时代被草草贴上 “后劲不足” 的标签，如长桌会议上总被轻描淡写截断的发言，									
-10005	10006	0		还有父母那句 “女孩子别太要强” 的叹息，他都把握得精准又克制。									
-10006	10007	0		明明没有一个字在写 “痛”，却字字都浸着钝刀割肉般的疼。									
-10007	10008	0		可这一次，你在阅读时始终带着一丝挥之不去的审视，你越往下读越感到困惑。									
+10003	10004	0		叙闻擅长用细腻平和的口吻，把那些女性说不出口的忧思、深夜独自消化的委屈，一一铺陈：									
+10004	10005	0		如学生时代被草草贴上“后劲不足”的标签，如长桌会议上总被轻描淡写截断的发言，还有父母那句“女孩子别太要强”的叹息……									
+10005	10006	0		他都把握得精准又克制。									
+10006	10007	0		明明没有一个字在写“痛”，却字字都浸着钝刀割肉般的疼。									
+10007	10008	0		可这一次，你在阅读时始终带着一丝挥之不去的审视，你越往下读越感到困惑。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
 10008	10009	0		那些只有女性才能共情的细微情绪，他是怎么能描摹得如此入木三分，恍若亲身经历？									
-10009	10010	0		合上书的瞬间，你的思绪没有停留在故事结局，反而飘回了尾页的右下角。									
-10010	10011	0		有人用铅笔在那写下一串号码，字迹浅淡，几乎要融进米黄色的纸里。									
+10009	10010	0		合上书的瞬间，你的思绪没有停留在故事结局，反而飘回了尾页的右下角。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10010	10011	0		有人用铅笔在那写下一串号码，字迹浅淡，几乎要融进米黄色的纸里。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10011	10012	0		那是他专门为你留下的信号，既是递过来的橄榄枝，也是他早就留好的后手。									
 10012	10013	0		你清楚这种叙事的杀伤力，更清楚身为知名作家“叙闻”的影响力。									
 10013	10014	0		这种以微观情绪见宏大情感的写法，正是当下同质化严重的市场里，最稀缺也最容易出爆款的切口。									
@@ -19,202 +19,199 @@
 10015	10016	0		但那行提前预留的联系方式，却成了你犹豫再三的理由。									
 10016	10017	0		他做得太周全，从身份表明到试读本的借阅，每一步都像精心设计。									
 10017	10018	0		比起偶遇，更像是在迎接你，或许……他认识你。									
-10018	10019	0		你想了半天，也没想起来这么一号人，从高中，到大学，再到工作……									
+10018	10019	0		你想了半天，也没想起来这么一号人，从高中，到大学，再到工作……	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
 10019	10020	0		你接触过的人太多了，没有一个能对上这张脸、这个名字。									
-10020	10021	0		最终，对爆款的渴求还是短暂地压过了警惕，毕竟破圈机会不容错过。									
+10020	10021	0		最终，对爆款的渴求还是短暂地压过了警惕，毕竟破圈机会不容错过。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
 10021	10022	0		而你也想弄清楚，这个人到底是谁。									
 10022	10023	0		你斟酌着编辑些内容发过去，输入框里的文字删删改改。									
-10023	10024	0		开门见山提专访恐怕行不通，他隐居八年，必然排斥曝光，太急功近利只会把人吓跑。									
+10023	10024	0		开门见山提专访恐怕行不通，他隐居八年，必然排斥曝光，太急功近利只会把人吓跑。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10024	10025	0		更何况你隐约有种预感，他或许正是碍于性别，才始终不肯露面。									
 10025	10026	0		他把自己完全藏在笔名背后，进行着最纯粹的文字创作，大概就是不被身份标签所打扰。									
 10026	10027	0		若是贸然提出访谈要求，他大概率会直接拒绝。									
 10027	10028	0		思虑再三，你选择了较为稳妥的方式：以还书为软借口，先铺就见面的台阶。									
 10028	10029	0		至于专访，等见了面，试探他的态度再提也不迟。									
 10029	10030	0		半小时后，手机屏幕亮起，温叙的回复简短利落：									
-10030	10031	0		“好。”									
-10031	10032	0		你松了口气，悬着的心终于落了地。									
-10032	10033	0		访谈对象既定，接下来就是为这场至关重要的深度对话做准备。									
-10033	10034	0		你翻出了自己珍藏的所有叙闻的书，把每一本批注都重新整理了一遍，									
-10034	10035	0		又提前列好了问题清单，从情节设计到人物形象，事无巨细。									
-10035	10036	0		到了约定的日子，你提前十分钟走进了咖啡店。								Assets/GameMain/Art/Backgrounds/商场/咖啡店.png	
-10036	10037	0		刚推开门，就看到了坐在靠窗位置的温叙。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10037	10038	0		他也似乎心有所感，视线投向你所在之处。									
-10038	10039	0		目光交汇的刹那，他的嘴角绽开一抹极尽温柔的笑意，周遭的喧嚣都为之寂静。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10039	10040	0		你迈步上前，在他对面的空位落座。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10040	10041	0		伴随着瓷杯磕碰桌面的轻响，一杯醇香的咖啡便被推至你的手边。									
-10041	10042	0	温叙	这是这家店的热款，不知是否合你的口味。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10042	10043	0		或许是因为他那份自然的熟稔，也可能是你微渴的本能作祟，你没有推脱，端起瓷杯浅尝了一口。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10043	10044	0		醇厚的液体带着温热漫过舌尖，多一分嫌甜，少一分嫌苦，连奶泡的厚度都恰到好处。									
-10044	10045	0		你放下杯子，轻一点头算作回应。									
-10045	10046	0		看向他时，他正安静地注视着你，眸光里含着几分清浅的笑。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10046	10047	0	主控名	谢谢，很好喝。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服微笑.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10047	10048	0		几句寒暄过后，你没再绕弯子，干脆表明了自己的职业诉求，以及想对他进行简短访谈的意愿。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10048	10049	0	女主名	叙闻老师，实不相瞒，除了还书，我还有个不情之请。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服微笑.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10049	10050	0	女主名	于私，作为您的忠实读者，您笔下的文字，曾陪我熬过许多难捱的低谷，我始终深深敬仰着您的创作理念。									
-10050	10051	0	女主名	于公，我想以媒体人的身份，诚挚地邀请您进行一次深度访谈。									
-10051	10052	0		他长睫微动，眸光微敛，似乎陷入了某种考量。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙01-02.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10052	10053	0		见他未立刻作答，你暗自深吸了一口气，主动打消他的顾虑：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10053	10054	0	主控名	您不必有任何负担，这次访谈全程只以文本形式呈现，绝不会涉及或暴露您的私人信息。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10054	10055	0		为了彰显诚意，你将你其中一个粉丝量积攒了小几万的帐号展示给他：	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10055	10056	0	主控名	这是我一直在做的账号，虽然粉丝不多，但都是真正喜欢文字、关注女性议题的读者。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10056	10057	0	主控名	这次访谈发布的时候，我会用这个账号首发，也会帮您的账号做引流。									
-10057	10058	0		他的视线落在你的账号名上，眼底漾开了一抹了然。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10058	10059	0		空气安静了几秒，你敛了敛呼吸。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10059	10060	0		毕竟悬殊的粉丝基数摆在那，这场合作究竟是谁给谁引流，彼此都心知肚明。									
-10060	10061	0		倘若他开口婉拒，也完全无可厚非。									
-10061	10062	0		可令你意外的是，他略一颔首，应允得异常痛快：									
-10062	10063	0	温叙	当然可以，我的荣幸。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10063	10064	0		达成共识后，紧绷的弦一松，你顺势聊起了自己所面临的困境。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10064	10065	0	女主名	在这个流量内卷的时代，情感赛道早已陷入了要么冷饭热炒、要么过度消费情绪的泥沼……	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10065	10066	0		原本你只打算浅尝辄止，用更多的问询语句引导话题走向。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10066	10067	0		可看着他倾听时专注又包容的神情，心中的戒备渐渐消弭。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙常规.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10067	10068	0		在这场访谈里，他更多时候扮演的是聆听者。									
-10068	10069	0		他总能在你稍作停顿的间隙，用微笑点头，或是一道静静等候下文的目光，引着你继续说下去。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10069	10070	0		那种被理解与接纳的倾听感太过难得，让你不自觉地打开了话匣。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10070	10071	0		关于行业的痛点、对内容深度的焦虑，乃至对个人未来发展的疲惫与迷茫，就这样自然而然地全盘托出。									
-10071	10072	0		聊到深处，气氛不知不觉变得柔软。									
-10072	10073	0		你没忍住，将盘旋在心底许久的疑问抛了出，语气里带着三分好奇，以及几分试探：									
-10073	10074	0	主控名	叙闻老师，其实我一直很好奇，您作为一名男性，究竟是如何做到对女性的处境感同身受的？	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10074	10075	0	女主名	又为什么……会选择写为女性发声的内容？									
-10075	10076	0		他阖眸，指尖轻轻摩挲着悬挂着水珠的杯壁。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10076	10077	0		漫长的静默后，他才缓缓开口，声音比刚才更柔和些，却掺了些化不开的涩意和自嘲：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10077	10078	0	温叙	其实没什么特别的，只是我从小见得比旁人多些。									
-10078	10079	0	温叙	我父亲在我很小的时候就去世了，我的母亲一个人拉扯我长大。孤儿寡母的，难免会受委屈。									
-10079	10080	0	温叙	亲戚的冷眼、邻居的闲话、办事时被人敷衍……									
-10080	10081	0	温叙	那些年里，我也见过不少和我母亲情况类似的女性，大家彼此照应，互相取暖。									
-10081	10082	0	温叙	我是在那些女性的善意里长大的。									
-10082	10083	0		他微微停顿了一瞬，眸光也随之放缓，仿佛隔着遥远的岁月，再次触碰到了那些久违的温度。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10083	10084	0	温叙	包括后来上了高中，因为我是单亲家庭，加上外形和性格不像其他同龄的男生，不够合群。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙常规.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10084	10085	0	温叙	所以也免不了被排挤甚至霸凌。									
-10085	10086	0		说到这里，他摩挲杯壁的手指微微收紧。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10086	10087	0		那些深埋于心底、曾让他喘不过气来的过往，还是在这一刻泄露了半分端倪。									
-10087	10088	0		即便已经熬过了漫长岁月，那些疼痛依然鲜活，以至于只消寥寥数语的触碰，就能让他条件反射地绷紧。									
-10088	10089	0		可他越过往事看向你的目光，却依旧温和得像一汪春水，没有沾染半分岁月的戾气。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10089	10090	0	温叙	不过都过去了，那时候碰巧遇到一个女生，她其实也不认识我，只是路过看到我被围住。									
-10090	10091	0	温叙	她二话不说冲上来，挡在我前面，又去找主任，又说要报警，硬生生把那些人唬住。									
-10091	10092	0		他随之放轻了声线，字里行间，皆是触碰珍贵往事时的缱绻与温柔。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10092	10093	0	温叙	她其实也很害怕，我看得出来。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10093	10094	0	温叙	她的手在抖，声音也在抖。但她就是没有走，一直挡在我前面，直到那些人散了。									
-10094	10095	0	温叙	只可惜她走得太着急，我连她的名字都没来得及问。									
-10095	10096	0		他的尾音放得极缓，裹挟着对往昔的缱绻，却又在消散时，化作了一抹为错失岁月而生的微弱叹息。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10096	10214	0	温叙	或许是见过太多女性的隐忍和不易，也或许是那时被人帮过的瞬间，	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10097	10098	0		原来如此。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10098	10099	0		原来他笔下那些足以治愈人心的温柔与通透，竟是在这样支离破碎的过往里淬炼出来的。									
-10099	10100	0		被世俗冷眼相待的孤立无援、在无尽暗夜里被人用力拉出的感激、还有想将这份善意反哺给世人的执念……									
-10100	10101	0		恍然大悟间，你心底那些出于本能的防备全然褪去。									
-10101	10102	0		取而代之的，是一种基于相同底色的理解与悲悯，以及……									
-10102	10215	0		一丝莫名的、说不清的熟悉感。									
-10103	10104	0		他的话语像是一把钥匙，悄无声息地拧开了某段尘封的记忆。									
-10104	10105	0		仔细一想，这段故事你好像真的隐约有些印象，零碎的画面在脑海中拼凑成型 ——									
-10105	10106	0		那是九年前一个蝉鸣聒噪的午后，阳光白得刺眼，裸露在外的皮肤被烤得发烫。								Assets/GameMain/Art/CG/w2.png	
-10106	10107	0		校外那条逼仄的后巷里，充斥着恶意的嘲弄与粗暴的推搡。									
-10107	10108	0		那天你刚放学，原本只是想抄近道去文具店补充一桶笔芯。									
-10108	10109	0		路过巷口时，却瞥见几个高壮的男生正把一个单薄的身影围堵在满是青苔的墙角。									
-10109	10110	0		那人死气沉沉地低着头，一声不吭，像个破布口袋一样任由他们拉扯着辱骂，没有一丝一毫的反抗。									
-10110	10111	0		那时的你远比现在年轻气盛，骨子里还带着点不切实际的中二，总向往着做个行侠仗义、深藏功名的大侠。									
-10111	10112	0		当然，路见不平前你也不会完全不留后手。									
-10112	10113	0		这破巷子离校门口和派出所都不远，要是这帮混混急眼连你一块儿揍，你就立刻带人往安全的地方跑。									
-10113	10114	0		这条巷子向来是霸凌事件的重灾区，你不是头一回在这儿多管闲事，也算经验娴熟。									
-10114	10115	0		所以在他们抬起手即将升级事态前，你冲进人群，对那几个施暴者拔高音量，劈头盖脸的一顿恐吓。									
-10115	10116	0	女主名	警察两分钟就到，教导主任也快来了，你们想被开除就继续。									
-10116	10117	0		你厉声呵斥着，为了防止被对面看出来你是在虚张声势，你把手揣进了校裤兜里。									
-10117	10118	0		其实你也没来得及提前做任何事，也压根没有手机报警，全凭一股子初生牛犊不怕虎的气势硬撑。									
-10118	10119	0		好在那帮人到底只是些心虚的学生，见你这副难惹的架势，									
-10119	10120	0		他们交头接耳了几句，最终只能骂骂咧咧地踹一脚地上的易拉罐，作鸟兽散。									
-10120	10121	0		巷子终于重新安静下来，你长舒了一口气，转头瞥了一眼缩在墙角的那个文弱男生。									
-10121	10122	0		逆着光，他始终低垂着头，凌乱的额发遮住了大半张脸，让你根本看不清他的模样。									
-10122	10123	0		你也没当回事，只随意地抹掉手中的冷汗，像完成日常任务的NPC一样，随口留下一句：									
-10123	10124	0	主控名	没事了，你赶紧回家吧。									
-10124	10125	0		这样“见义勇为”的举动，在整个高中生涯其实发生过三五回。								Assets/GameMain/Art/Backgrounds/商场/咖啡店.png	
-10125	10126	0		你只当那是被试卷和排名压得喘不过气时，一种莫名其妙的情绪宣泄。									
-10126	10127	0		也是恰巧遇到才会冲上去吼两句，把施暴者吓跑就算完，回想起来，也不是每次都能这么顺利。									
-10127	10128	0		有次你没唬住人，被一帮人追了一条街，最后靠着速度和对地图熟悉程度的优势，									
-10128	10129	0		趁他们晕头转向，遛着他们一头扎进了派出所里。									
-10129	10130	0		也是在那之后，你父母发现了你的危险行为。									
-10130	10131	0		虽然认可了你的正义感，却也把你狠狠骂了一顿，勒令你以后再不许多管闲事。									
-10131	10132	0		你乖乖答应着，后来再遇到类似的事，确实收敛了不少。									
-10132	10133	0		你一直以为，这些不过是你漫长青春里，几个微不足道的小插曲。									
-10133	10134	0		可你万万没有想到，对你来说只是一时兴起的举手之劳，竟然真能把人从泥潭里拉出。									
-10134	10135	0		此刻，看着眼前自己曾帮助过的人，再回想起当年自己那副装腔作势的大侠做派，	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10135	10216	0		骄傲的同时，心底还泛起了一股无可名状的害臊，有种见不得人的黑历史重见天日的窒息感。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10136	10137	0		你扶着额，并拢的手指半遮住了你的视线，说话都有些气虚：									
-10137	10138	0	主控名	哈哈，你看这事儿闹的。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服闭眼微笑.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10138	10139	0		他看出了你的窘迫，只是笑着将桌上的书册推回了你手边。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10139	10140	0	温叙	这本未公开的试读本，是我迟到的感谢。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10140	10141	0	温叙	至于账号宣发的事，有需要配合的地方，学妹直接联系我就好，不用客气。									
-10141	10142	0		当“学妹”两个字从他口中说出，这个带着青涩气息的称呼，瞬间冲淡了疏离感，让彼此的距离一下子近了许多。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10142	10143	0	主控名	谢谢叙闻老师。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服微笑.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10143	10144	0		这是你喜欢的作者赠与你的独家谢礼，无论如何你都不可能说出半个拒绝的字眼。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10144	10145	0		既以粉丝身份将孤本亲签收入囊中，又以媒体人身份拿下了独家专访，你看到泼天的流量似乎在朝你招手。									
-10145	10146	0		那点被旧事重提的窘迫瞬间烟消云散，你大大方方地就着他递来的台阶应承了下来。									
-10146	0	0		……									
-10147	10148	0		你犹豫片刻，还是问出了那个在心底盘旋已久的沉重问题。									
-10148	10149	0	主控名	那次之后……他们还有再为难你吗？	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10149	10150	0		校园霸凌从来不是可以一次性叫停的，你不是他的保护神，不可能分分秒秒都护在他身前。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10150	10151	0		人性的阴暗面，从来都只在黑暗中展露无遗。									
-10151	10152	0		校园霸凌之所以如此可怕，正是因为它大多发生在无人看见的角落。									
-10152	10153	0		一次偶然的干预，或许能暂时阻止一场伤害，却无法根除滋生恶意的土壤。									
-10153	10154	0		那些被打断的恶意，只会在阴影里积蓄更多的力量，然后卷土重来。									
-10154	10155	0		听到这个问题，他深邃悠远的目光落在虚空，像在凝视着某段不见天日的碎片。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙01-02.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10155	10156	0		过了半晌，他的脸上又挂起了温和却带着几分歉然的浅笑：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10156	10157	0	温叙	我自己想了些办法解决，说来话长。									
-10157	10158	0		他说得轻描淡写，一笔带过了那些岁月，可你能听出简短话语里一丝不愿被深挖的疲惫。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10158	10159	0		那些黑暗中踽踽独行的日子，必定浸透了难以言说的代价。你及时止住了话头：									
-10159	10160	0	主控名	能靠自己的力量从绝境里蹚出来，你已经非常厉害了。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服微笑.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10160	10161	0		他端起瓷杯，借着喝咖啡的动作，掩住了嘴角的笑意。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10161	0	0		音乐舒缓地流淌着，所有喧嚣与伤痛都被隔绝，只余下此刻安宁。									
-10162	10163	0		那股莫名的熟悉感萦绕着你，生物本能的直觉在疯狂报警，催促你逃离。									
-10163	10164	0		你不想被拽进那个未知的漩涡里，于是下意识地竖起职业盾牌，试图用客套话在彼此间拉出安全的距离。									
-10164	10165	0	主控名	今天的交流很有价值，谢谢您的配合。试读本我看完了，收获很多，祝您新书顺利。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10165	10166	0		你把书递了过去，他没有伸手接过。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10166	10167	0		他只是朝你缓慢地眨了眨眼，你可以感觉到他在用这个眨眼的时间酝酿情绪。									
-10167	10168	0	温叙	它不是新书，也不会公开出版。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10168	10169	0	温叙	学妹，是我该谢谢那时候的你。									
-10169	10170	0		学妹。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10170	10171	0		迎上你因惊愕而睁大的双眼，他如释重负地笑了，还有一种 “终于说出来了” 的松快。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10171	10172	0		他将那本书轻轻推回你的怀里：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10172	10173	0	温叙	这是我的第一部作品，赠予你，以示一点微不足道的谢意。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10173	10174	0		直到最后分道扬镳，你还有些发懵。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10174	10175	0		起初你怀疑他认错了人，但顺着“学妹”这个称呼，高中时期那场你几乎已经遗忘的旧事，逐渐浮现出来——									
-10175	10176	0		是的，是有那么一次，你路过校外某条小巷，看到几个男生围着一个人。								Assets/GameMain/Art/CG/w2.png	
-10176	10177	0		然后你冲上去，挡在那个低着头的人前面，用你能想到的最凶的语气吼了几句。									
-10177	10178	0		把霸凌者吓退后，你回头看了他一眼，阴郁清瘦、眼神呆滞，看上去愣愣的，从头到尾默不作声。									
-10178	10179	0		你觉得他可能是被吓傻了，没太在意，你帮人从来不求回报，既然没事，便转身离开了。									
-10179	10180	0		你看着他的眉眼，忽然有那么一秒，整个世界都扭曲成了光怪陆离的模样。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}							Assets/GameMain/Art/Backgrounds/商场/咖啡店.png	
-10180	10181	0		光影流转的瞬间，眼前这个男人的眉眼，和九年前那个阴郁少年，在你眼前缓缓重叠。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10181	10182	0		原来，隔着九年的岁月折叠，你们早已在光阴深处打过照面。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10182	10183	0		但你心头仍有疑问，他也曾遇到过心软的长辈、仗义的同学、友善的邻里……									
-10183	10184	0		他们递出的善意，不乏比你当初随手解围更持久的。									
-10184	10185	0		但他，却好像偏偏缠上了你。									
-10185	0	0		当一份本该随风飘散的感激，被刻意保存多年，它，仍然纯粹吗？									
-10186	10187	0		他的眼神深不见底，藏着太多让人看不懂的情绪，即使不开口，你也隐约能猜到他即将宣之于口的话语。									
-10187	10188	0		在短暂的慌乱后，求生的本能让你下意识地想要筑起高墙。									
-10188	10189	0		你害怕那种深沉的羁绊，更不想让这段突如其来的旧日因果，打乱你如今平静的生活。									
-10189	10190	0	主控名	今天的交流非常愉快，谢谢您的配合，专访初稿我会尽快发给您确认。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10190	10191	0		你用公事公办的语气强行切断了逐渐变味的气氛，同时将书册沿着桌面推了过去，用物理距离划清界限：	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10191	10192	0	主控名	您给试读本我看完了，写得很好，给了我很多启发。现在还给您，祝您一切顺利。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10192	10193	0		你将书递到他面前，但他的手却始终放在膝上，没有任何要接过的意思。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10193	10194	0	温叙	它不是新书，也不会公开出版。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙常规.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10194	10195	0		他的声音缓慢而郑重，说的却是那句你最不想听到的话：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10195	10196	0	温叙	学妹，是我该谢谢那时候的你。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10196	10197	0		靴子终于落了地。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10197	10198	0		行吧，你叹了口气，放弃了逃避，坦然地抬起头直视他的双眼。									
-10198	10199	0	主控名	叙闻老师，就算真的有这件事，也已经过去很久了。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10199	10200	0		你不喜欢被高高供上神坛的感觉。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10200	10201	0		在这场对话里，你更渴望你们是灵魂契合的交流者，而不是背负着旧日恩情的恩人与受害者。									
-10201	10202	0		那样沉重的不对等，只会让你感到窒息。									
-10202	10203	0	主控名	我只不过做了一件微不足道的事，真不值得您把它当成执念，记上这么多年。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10203	10204	0		这番话说得冷静又绝情，肉眼可见的，他眼底流露出一抹涩然的失落。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙常规.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10204	10205	0		他无奈地笑了笑，顺从地伸出手，像要去接过那本书。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10205	10206	0		可就在你心弦一松，准备抽回手的刹那，他却又轻轻将书推了回来。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10206	10207	0	温叙	我看过你写的文章，你也是优秀的创作者，这就当是……	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10207	10208	0		他顿了顿，目光从推回的书册一点点移到你的眼眸：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10208	10209	0	温叙	我对你的欣赏。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
-10209	10210	0	温叙	希望以后，我们还能以作者和读者，或是商业合作伙伴的身份，继续交流。									
-10210	10211	0		他妥帖地包裹住了你的抗拒，给了你想要的平等。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10211	10212	0		看着他眼底那份小心翼翼的期盼，你不再推脱，反手握住了那本书的边缘。									
-10212	10213	0	主控名	谢谢您，那么希望以后，合作愉快。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}								
-10213	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10214	10097	0	温叙	让我总想着把那些没说出口的情绪，用文字写出来。									
-10215	0	1				{"Choices":[{"ChoiceText":"借着还书，转移话题","NextId":10162,"Conditions":[],"Rewards":[]},{"ChoiceText":"仔细回忆","NextId":10103,"Conditions":[],"Rewards":[]},{"ChoiceText":"拒绝回忆","NextId":10186,"Conditions":[],"Rewards":[]}]}							
-10216	0	1				{"Choices":[{"ChoiceText":"局促装傻","NextId":10136,"Conditions":[],"Rewards":[]},{"ChoiceText":"追问过去","NextId":10147,"Conditions":[],"Rewards":[]}]}							
+10030	10031	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙：好.png","OffsetX":0.0,"OffsetY":-180.0,"Scale":1.5}]}								
+10031	10032	0		你松了口气，悬着的心终于落了地。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10032	10033	0		访谈对象既定，接下来就是为这场至关重要的深度对话做准备。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10033	10213	0		你翻出了自己珍藏的所有叙闻的书，把每一本批注都重新整理了一遍，又提前列好了问题清单，从情节设计到人物形象，事无巨细。									
+10034	10035	0		到了约定的日子，你提前十分钟走进了咖啡店。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}							Assets/GameMain/Art/Backgrounds/商场/咖啡店.png	
+10035	10036	0		刚推开门，就看到了坐在靠窗位置的温叙。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10036	10037	0		他也似乎心有所感，视线投向你所在之处。									
+10037	10038	0		目光交汇的刹那，他的嘴角绽开一抹极尽温柔的笑意，周遭的喧嚣都为之寂静。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10038	10039	0		你迈步上前，在他对面的空位落座。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10039	10040	0		伴随着瓷杯磕碰桌面的轻响，一杯醇香的咖啡便被推至你的手边。									
+10040	10041	0	温叙	这是这家店的热款，不知是否合你的口味。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10041	10042	0		或许是因为他那份自然的熟稔，也可能是你微渴的本能作祟，你没有推脱，端起瓷杯浅尝了一口。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10042	10043	0		醇厚的液体带着温热漫过舌尖，多一分嫌甜，少一分嫌苦，连奶泡的厚度都恰到好处。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10043	10044	0		你放下杯子，轻一点头算作回应。									
+10044	10045	0		看向他时，他正安静地注视着你，眸光里含着几分清浅的笑。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10045	10046	0	主控名	谢谢，很好喝。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10046	10047	0		几句寒暄过后，你没再绕弯子，干脆表明了自己的职业诉求，以及想对他进行简短访谈的意愿。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10047	10048	0	主控名	叙闻老师，实不相瞒，除了还书，我还有个不情之请。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10048	10049	0	主控名	于私，作为您的忠实读者，您笔下的文字，曾陪我熬过许多难捱的低谷，我始终深深敬仰着您的创作理念。									
+10049	10050	0	主控名	于公，我想以媒体人的身份，诚挚地邀请您进行一次深度访谈。									
+10050	10051	0		他的睫毛微微颤了颤，眸光微敛，似乎陷入了某种考量。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10051	10052	0		见他未立刻作答，你暗自深吸了一口气，主动打消他的顾虑：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10052	10053	0	主控名	您不必有任何负担，这次访谈全程只以文本形式呈现，绝不会涉及或暴露您的私人信息。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10053	10054	0		为了彰显诚意，你将你其中一个粉丝量积攒了小几万的帐号展示给他：	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10054	10055	0	主控名	这是我一直在做的账号，虽然粉丝不多，但都是真正喜欢文字、关注女性议题的读者。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10055	10056	0	主控名	这次访谈发布的时候，我会用这个账号首发，也会帮您的账号做引流。									
+10056	10057	0		他的视线落在你的账号名上，眼底漾开了一抹了然。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10057	10058	0		空气安静了几秒，你敛了敛呼吸。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10058	10059	0		毕竟悬殊的粉丝基数摆在那，这场合作究竟是谁给谁引流，彼此都心知肚明。									
+10059	10060	0		倘若他开口婉拒，也完全无可厚非。									
+10060	10061	0		可令你意外的是，他略一颔首，应允得异常痛快：	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10061	10062	0	温叙	当然可以，我的荣幸。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10062	10063	0		达成共识后，紧绷的弦一松，你顺势聊起了自己所面临的困境。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10063	10064	0	主控名	在这个流量内卷的时代，情感赛道早已陷入了要么冷饭热炒、要么过度消费情绪的泥沼……	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10064	10065	0		原本你只打算浅尝辄止，用更多的问询语句引导话题走向。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10065	10066	0		可看着他倾听时专注又包容的神情，心中的戒备渐渐消弭。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙常规.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10066	10067	0		在这场访谈里，他更多时候扮演的是聆听者。									
+10067	10068	0		他总能在你稍作停顿的间隙，用微笑点头，或是一道静静等候下文的目光，引着你继续说下去。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10068	10069	0		那种被理解与接纳的倾听感太过难得，让你不自觉地打开了话匣。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10069	10070	0		关于行业的痛点、对内容深度的焦虑，乃至对个人未来发展的疲惫与迷茫，就这样自然而然地全盘托出。									
+10070	10071	0		聊到深处，气氛不知不觉变得柔软。									
+10071	10072	0		你没忍住，将盘旋在心底许久的疑问抛了出，语气里带着三分好奇，以及几分试探：									
+10072	10073	0	主控名	叙闻老师，其实我一直很好奇，您作为一名男性，究竟是如何做到对女性的处境感同身受的？	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10073	10074	0	主控名	又为什么……会选择写为女性发声的内容？									
+10074	10075	0		他阖眸，指尖轻轻摩挲着悬挂着水珠的杯壁。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10075	10076	0		漫长的静默后，他才缓缓开口，声音比刚才更柔和些，却掺了些化不开的涩意和自嘲：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10076	10077	0	温叙	其实没什么特别的，只是我从小见得比旁人多些。									
+10077	10078	0	温叙	我父亲在我很小的时候就去世了，我的母亲一个人拉扯我长大。孤儿寡母的，难免会受委屈。									
+10078	10079	0	温叙	亲戚的冷眼、邻居的闲话、办事时被人敷衍……									
+10079	10080	0	温叙	那些年里，我也见过不少和我母亲情况类似的女性，大家彼此照应，互相取暖。									
+10080	10081	0	温叙	我是在那些女性的善意里长大的。									
+10081	10082	0		他微微停顿了一瞬，眸光也随之放缓，仿佛隔着遥远的岁月，再次触碰到了那些久违的温度。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10082	10083	0	温叙	包括后来上了高中，因为我是单亲家庭，加上外形和性格不像其他同龄的男生，不够合群。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙常规.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10083	10084	0	温叙	所以也免不了被排挤甚至霸凌。									
+10084	10085	0		说到这里，他摩挲杯壁的手指微微收紧。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10085	10086	0		那些深埋于心底、曾让他喘不过气来的过往，还是在这一刻泄露了半分端倪。									
+10086	10087	0		即便已经熬过了漫长岁月，那些疼痛依然鲜活，以至于只消寥寥数语的触碰，就能让他条件反射地绷紧。									
+10087	10088	0		可他越过往事看向你的目光，却依旧温和得像一汪春水，没有沾染半分岁月的戾气。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10088	10089	0	温叙	不过都过去了，那时候碰巧遇到一个女生，她其实也不认识我，只是路过看到我被围住。									
+10089	10090	0	温叙	她二话不说冲上来，挡在我前面，又去找主任，又说要报警，硬生生把那些人唬住。									
+10090	10091	0		他随之放轻了声线，字里行间，皆是触碰珍贵往事时的缱绻与温柔。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10091	10092	0	温叙	她其实也很害怕，我看得出来。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10092	10093	0	温叙	她的手在抖，声音也在抖。但她就是没有走，一直挡在我前面，直到那些人散了。									
+10093	10094	0	温叙	只可惜她走得太着急，我连她的名字都没来得及问。									
+10094	10095	0		他的尾音放得极缓，裹挟着对往昔的缱绻，却又在消散时，化作了一抹为错失岁月而生的微弱叹息。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10095	10096	0	温叙	或许是见过太多女性的隐忍和不易，也或许是那时被人帮过的瞬间，让我总想着把那些没说出口的情绪，用文字写出来。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10096	10097	0		原来如此。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10097	10098	0		原来他笔下那些足以治愈人心的温柔与通透，竟是在这样支离破碎的过往里淬炼出来的。									
+10098	10099	0		被世俗冷眼相待的孤立无援、在无尽暗夜里被人用力拉出的感激、还有想将这份善意反哺给世人的执念……									
+10099	10100	0		恍然大悟间，你心底那些出于本能的防备全然褪去。									
+10100	10101	0		取而代之的，是一种基于相同底色的理解与悲悯，以及……									
+10101	10211	0		一丝莫名的、说不清的熟悉感。									
+10102	10103	0		他的话语像是一把钥匙，悄无声息地拧开了某段尘封的记忆。									
+10103	10104	0		仔细一想，这段故事你好像真的隐约有些印象，零碎的画面在脑海中拼凑成型 ——								Assets/GameMain/Art/Backgrounds/商场/咖啡店-黑白.png	
+10104	10105	0		那是九年前一个蝉鸣聒噪的午后，阳光白得刺眼，裸露在外的皮肤被烤得发烫。								Assets/GameMain/Art/CG/w2.png	
+10105	10106	0		校外那条逼仄的后巷里，充斥着恶意的嘲弄与粗暴的推搡。									
+10106	10107	0		那天你刚放学，原本只是想抄近道去文具店补充一桶笔芯。									
+10107	10108	0		路过巷口时，却瞥见几个高壮的男生正把一个单薄的身影围堵在满是青苔的墙角。									
+10108	10109	0		那人死气沉沉地低着头，一声不吭，像个破布口袋一样任由他们拉扯着辱骂，没有一丝一毫的反抗。									
+10109	10110	0		那时的你远比现在年轻气盛，骨子里还带着点不切实际的中二，总向往着做个行侠仗义、深藏功名的大侠。									
+10110	10111	0		当然，路见不平前你也不会完全不留后手。									
+10111	10112	0		这破巷子离校门口和派出所都不远，要是这帮混混急眼连你一块儿揍，你就立刻带人往安全的地方跑。									
+10112	10113	0		这条巷子向来是霸凌事件的重灾区，你不是头一回在这儿多管闲事，也算经验娴熟。									
+10113	10114	0		所以在他们抬起手即将升级事态前，你冲进人群，对那几个施暴者拔高音量，劈头盖脸的一顿恐吓。									
+10114	10115	0	主控名	警察两分钟就到，教导主任也快来了，你们想被开除就继续。									
+10115	10116	0		你厉声呵斥着，为了防止被对面看出来你是在虚张声势，你把手揣进了校裤兜里。									
+10116	10117	0		其实你也没来得及提前做任何事，也压根没有手机报警，全凭一股子初生牛犊不怕虎的气势硬撑。									
+10117	10118	0		好在那帮人到底只是些心虚的学生，见你这副难惹的架势，他们交头接耳了几句，最终只能骂骂咧咧地踹一脚地上的易拉罐，作鸟兽散。									
+10118	10119	0		巷子终于重新安静下来，你长舒了一口气，转头瞥了一眼缩在墙角的那个文弱男生。									
+10119	10120	0		逆着光，他始终低垂着头，凌乱的额发遮住了大半张脸，你根本看不清他的模样。									
+10120	10121	0		你也没当回事，只随意地抹掉手中的冷汗，像完成日常任务的NPC一样，随口留下一句：									
+10121	10122	0	主控名	没事了，你赶紧回家吧。									
+10122	10123	0		这样“见义勇为”的举动，在整个高中生涯其实发生过三五回。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}							Assets/GameMain/Art/Backgrounds/商场/咖啡店-黑白.png	
+10123	10124	0		你只当那是被试卷和排名压得喘不过气时，一种莫名其妙的情绪宣泄。									
+10124	10125	0		也是恰巧遇到才会冲上去吼两句，把施暴者吓跑就算完，回想起来，也不是每次都能这么顺利。									
+10125	10126	0		有次你没唬住人，被一帮人追了一条街，最后靠着速度和对地图熟悉程度的优势，趁他们晕头转向，遛着他们一头扎进了派出所。									
+10126	10127	0		也是在那之后，你父母发现了你的危险行为。									
+10127	10128	0		虽然认可了你的正义感，却也把你狠狠骂了一顿，勒令你以后再不许多管闲事。									
+10128	10129	0		你乖乖答应着，后来再遇到类似的事，确实收敛了不少。									
+10129	10130	0		你一直以为，这些不过是你漫长青春里，几个微不足道的小插曲。									
+10130	10131	0		可你万万没有想到，对你来说只是一时兴起的举手之劳，竟然真能把人从泥潭里拉出。									
+10131	10132	0		此刻，看着眼前自己曾帮助过的人，再回想起当年自己那副装腔作势的大侠做派，	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}							Assets/GameMain/Art/Backgrounds/商场/咖啡店.png	
+10132	10212	0		骄傲的同时，心底还泛起了一股无可名状的害臊，有种见不得人的黑历史重见天日的窒息感。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10133	10134	0		你扶着额，并拢的手指半遮住了你的视线，说话都有些气虚：									
+10134	10135	0	主控名	哈哈，你看这事儿闹的。									
+10135	10136	0		他看出了你的窘迫，只是笑着将桌上的书册推回了你手边。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10136	10137	0	温叙	这本未公开的试读本，是我迟到的感谢。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10137	10138	0	温叙	至于账号宣发的事，有需要配合的地方，学妹直接联系我就好，不用客气。									
+10138	10139	0		当“学妹”两个字从他口中说出，这个带着青涩气息的称呼，瞬间冲淡了疏离感，让彼此的距离一下子近了许多。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10139	10140	0	主控名	谢谢叙闻老师。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10140	10141	0		这是你喜欢的作者赠与你的独家谢礼，无论如何你都不可能说出半个拒绝的字眼。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10141	10142	0		既以粉丝身份将孤本亲签收入囊中，又以媒体人身份拿下了独家专访，你看到泼天的流量似乎在朝你招手。									
+10142	10143	0		那点被旧事重提的窘迫瞬间烟消云散，你大大方方地就着他递来的台阶应承了下来。									
+10143	0	0		……									
+10144	10145	0		你犹豫片刻，还是问出了那个在心底盘旋已久的沉重问题。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10145	10146	0	主控名	那次之后……他们还有再为难你吗？	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10146	10147	0		校园霸凌从来不是可以一次性叫停的，你不是他的保护神，不可能分分秒秒都护在他身前。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10147	10148	0		人性的阴暗面，从来都只在黑暗中展露无遗。									
+10148	10149	0		校园霸凌之所以如此可怕，正是因为它大多发生在无人看见的角落。									
+10149	10150	0		一次偶然的干预，或许能暂时阻止一场伤害，却无法根除滋生恶意的土壤。									
+10150	10151	0		那些被打断的恶意，只会在阴影里积蓄更多的力量，然后卷土重来。									
+10151	10152	0		听到这个问题，他深邃悠远的目光落在虚空，像在凝视着某段不见天日的碎片。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙01-02.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10152	10153	0		过了半晌，他的脸上又挂起了温和却带着几分歉然的浅笑：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10153	10154	0	温叙	我自己想了些办法解决，说来话长。									
+10154	10155	0		他说得轻描淡写，一笔带过了那些岁月，可你能听出简短话语里一丝不愿被深挖的疲惫。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10155	10156	0		那些黑暗中踽踽独行的日子，必定浸透了难以言说的代价。你及时止住了话头：									
+10156	10157	0	主控名	能靠自己的力量从绝境里蹚出来，你已经非常厉害了。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10157	10158	0		他端起瓷杯，借着喝咖啡的动作，掩住了嘴角的笑意。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10158	0	0		音乐舒缓地流淌着，所有喧嚣与伤痛都被隔绝，只余下此刻安宁。									
+10159	10160	0		那股莫名的熟悉感萦绕着你，生物本能的直觉在疯狂报警，催促你逃离。									
+10160	10161	0		你不想被拽进那个未知的漩涡里，于是下意识地竖起职业盾牌，试图用客套话在彼此间拉出安全的距离。									
+10161	10162	0	主控名	今天的交流很有价值，谢谢您的配合。试读本我看完了，收获很多，祝您新书顺利。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10162	10163	0		你把书递了过去，他没有伸手接过。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10163	10164	0		他只是朝你缓慢地眨了眨眼，你可以感觉到他在用这个眨眼的时间酝酿情绪。									
+10164	10165	0	温叙	它不是新书，也不会公开出版。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10165	10166	0	温叙	学妹，是我该谢谢那时候的你。									
+10166	10167	0		学妹。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10167	10168	0		迎上你因惊愕而睁大的双眼，他如释重负地笑了，还有一种“终于说出来了”的松快。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10168	10169	0		他将那本书轻轻推回你的怀里：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10169	10170	0	温叙	这是我的第一部作品，赠予你，以示一点微不足道的谢意。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10170	10171	0		直到最后分道扬镳，你还有些发懵。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10171	10172	0		起初你怀疑他认错了人，但顺着“学妹”这个称呼，高中时期那场你几乎已经遗忘的旧事，逐渐浮现出来——									
+10172	10173	0		是的，是有那么一次，你路过校外某条小巷，看到几个男生围着一个人。								Assets/GameMain/Art/CG/w2.png	
+10173	10174	0		然后你冲上去，挡在那个低着头的人前面，用你能想到的最凶的语气吼了几句。									
+10174	10175	0		把霸凌者吓退后，你回头看了他一眼，阴郁清瘦、眼神呆滞，看上去愣愣的，从头到尾默不作声。									
+10175	10176	0		你觉得他可能是被吓傻了，没太在意，你帮人从来不求回报，既然没事，便转身离开了。									
+10176	10177	0		你看着他的眉眼，忽然有那么一秒，整个世界都扭曲成了光怪陆离的模样。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}							Assets/GameMain/Art/Backgrounds/商场/咖啡店.png	
+10177	10178	0		光影流转的瞬间，眼前这个男人的眉眼，和九年前那个阴郁少年，在你眼前缓缓重叠。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10178	10179	0		原来，隔着九年的岁月折叠，你们早已在光阴深处打过照面。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10179	10180	0		但你心头仍有疑问，他也曾遇到过心软的长辈、仗义的同学、友善的邻里……									
+10180	10181	0		他们递出的善意，不乏比你当初随手解围更持久的。									
+10181	10182	0		但他，却好像偏偏缠上了你。									
+10182	0	0		当一份本该随风飘散的感激，被刻意保存多年，它，仍然纯粹吗？									
+10183	10184	0		他的眼神深不见底，藏着太多让人看不懂的情绪，即使不开口，你也隐约能猜到他即将宣之于口的话语。									
+10184	10185	0		在短暂的慌乱后，求生的本能让你下意识地想要筑起高墙。									
+10185	10186	0		你害怕那种深沉的羁绊，更不想让这段突如其来的旧日因果，打乱你如今平静的生活。									
+10186	10187	0	主控名	今天的交流非常愉快，谢谢您的配合，专访初稿我会尽快发给您确认。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10187	10188	0		你用公事公办的语气强行切断了逐渐变味的气氛，同时将书册沿着桌面推了过去，用物理距离划清界限：	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10188	10189	0	主控名	您给试读本我看完了，写得很好，给了我很多启发。现在还给您，祝您一切顺利。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10189	10190	0		你将书递到他面前，但他的手却始终放在膝上，没有任何要接过的意思。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10190	10191	0	温叙	它不是新书，也不会公开出版。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙常规.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10191	10192	0		他的声音缓慢而郑重，说的却是那句你最不想听到的话：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10192	10193	0	温叙	学妹，是我该谢谢那时候的你。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10193	10194	0		靴子终于落了地。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10194	10195	0		行吧，你叹了口气，放弃了逃避，坦然地抬起头直视他的双眼。									
+10195	10196	0	主控名	叙闻老师，就算真的有这件事，也已经过去很久了。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10196	10197	0		你不喜欢被高高供上神坛的感觉。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10197	10198	0		在这场对话里，你更渴望你们是灵魂契合的交流者，而不是背负着旧日恩情的恩人与受害者。									
+10198	10199	0		那样沉重的不对等，只会让你感到窒息。									
+10199	10200	0	主控名	我只不过做了一件微不足道的事，真不值得您把它当成执念，记上这么多年。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10200	10201	0		这番话说得冷静又绝情，肉眼可见的，他眼底流露出一抹涩然的失落。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙常规.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10201	10202	0		他无奈地笑了笑，顺从地伸出手，像要去接过那本书。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10202	10203	0		可就在你心弦一松，准备抽回手的刹那，他却又轻轻将书推了回来。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10203	10204	0	温叙	我看过你写的文章，你也是优秀的创作者，这就当是……	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10204	10205	0		他顿了顿，目光从推回的书册一点点移到你的眼眸：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10205	10206	0	温叙	我对你的欣赏。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10206	10207	0	温叙	希望以后，我们还能以作者和读者，或是商业合作伙伴的身份，继续交流。									
+10207	10208	0		他妥帖地包裹住了你的抗拒，给了你想要的平等。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10208	10209	0		看着他眼底那份小心翼翼的期盼，你不再推脱，反手握住了那本书的边缘。									
+10209	10210	0	主控名	谢谢您，那么希望以后，合作愉快。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
+10210	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
+10211	0	1				{"Choices":[{"ChoiceText":"借着还书，转移话题","NextId":10159,"Conditions":[],"Rewards":[]},{"ChoiceText":"仔细回忆","NextId":10102,"Conditions":[],"Rewards":[]},{"ChoiceText":"拒绝回忆","NextId":10183,"Conditions":[],"Rewards":[]}]}							
+10212	0	1				{"Choices":[{"ChoiceText":"局促装傻","NextId":10133,"Conditions":[],"Rewards":[]},{"ChoiceText":"追问过去","NextId":10144,"Conditions":[],"Rewards":[]}]}							
+10213	10034	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
