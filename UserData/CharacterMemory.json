@@ -1061,6 +1061,195 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_64_刚拜读了您写的部分内"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/长尾期.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_65_正好上期专访的流量还"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/警惕心.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_67_没事没事，警惕心高是"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/说起来这家店.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_68_说起来这家店的蛋糕确"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/做东.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_74_哪能让您请，该由我做"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/不着急的.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_82_不着急的，按照你的节"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/5.惊为天人.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_98_嗷嗷嗷！是我是我是我"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/6.发了笔小财.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_99_最近发了笔小财，必须"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/7.吃了吗吃了吗.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_100_吃了吗吃了吗，是不是"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/8.还没呢.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": -360.0,
+            "Scale": 2.524953603744507,
+            "LastNodeGuid": "对话_104_心满意足时，微信界面"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/联系人发来消息.png",
+            "Position": 1,
+            "OffsetX": -35.185272216796878,
+            "OffsetY": 259.2137756347656,
+            "Scale": 1.3253999948501588,
+            "LastNodeGuid": "对话_104_心满意足时，微信界面"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙：太优秀啦.png",
+            "Position": 0,
+            "OffsetX": 21.56549072265625,
+            "OffsetY": -184.5398406982422,
+            "Scale": 1.498216986656189,
+            "LastNodeGuid": "对话_104_心满意足时，微信界面"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/联系人发来消息.png",
+            "Position": 0,
+            "OffsetX": 430.5455627441406,
+            "OffsetY": 313.23211669921877,
+            "Scale": 1.8799999952316285,
+            "LastNodeGuid": "对话_104_心满意足时，微信界面"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/8.还没呢.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_104_心满意足时，微信界面"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/14.刚刚刷朋友圈.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_108_刚刚刷朋友圈，正好看"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/15.人美心善的闺蜜.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_114_是的，刚刚去问了一圈"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/16.没能及时回复.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_116_抱歉没能及时回复您，"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/17.新书的事不着急.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_117_新书的事不着急，你按"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/18.说起来这家.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_118_说起来这家出品都还不"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/19.季节限定.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_119_不知下次是否机会，请"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/20.下次有机会吧.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_123_等下次有机会吧。"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/21.那便不打扰你了.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_128_好，那便不打扰你了。"
         }
     ]
 }
