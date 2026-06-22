@@ -97,6 +97,9 @@ namespace AVGGame
         private RectTransform[] m_CharacterRects = new RectTransform[3];
         private Vector2[] m_OriginalPositions = new Vector2[3];
 
+        // 对话框区域引用（用于隐藏/显示）
+        private Transform m_TextPlate;
+
         // 选项相关
         private List<Button> m_ChoiceButtons = new List<Button>();
         private GameObject m_ChoiceButtonPrefab;
@@ -112,22 +115,23 @@ namespace AVGGame
             // 挂载组件引用
             m_CharacterNameText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/CharacterName/TextConstCharacterName");
             m_DialogueText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/TextConstDialogue");
+            m_TextPlate = this.GetComponentByPath<Transform>("Canvas/Background/TextPlate");
             m_BackgroundImage = this.GetComponentByPath<Image>("Canvas/Background");
             m_BackgroundImageButton = this.GetComponentByPath<Button>("Canvas/Background");
-            m_ButtonMenu = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonMenu");
-            m_ButtonSpeedUp = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonSpeedUp");
-            m_ButtonHistory = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonHistory");
-            m_ButtonHide = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonHide");
-            m_ButtonInformation = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonInformation");
-            m_ButtonSave = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonSave");
-            m_ButtonAuto= this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonAuto");
-            m_ButtonMenuText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonMenu/TextForTest");
-            m_ButtonSpeedUpText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonSpeedUp/TextForTest");
-            m_ButtonHistoryText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonHistory/TextForTest");
-            m_ButtonHideText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonHide/TextForTest");
-            m_ButtonInformationText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonInformation/TextForTest");
-            m_ButtonSaveText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/DialogueUI/ButtonPlate/ButtonSave/TextForTest");
-            m_ButtonAutoText= this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonAuto/TextForTest");
+            m_ButtonAuto = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonAuto");
+            m_ButtonSpeedUp = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSpeedUp");
+            m_ButtonHistory = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHistory");
+            m_ButtonHide = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHide");
+            m_ButtonInformation = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonInformation");
+            m_ButtonSave = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSave");
+            m_ButtonMenu= this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonMenu");
+            m_ButtonAutoText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonAuto/TextForTest");
+            m_ButtonSpeedUpText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSpeedUp/TextForTest");
+            m_ButtonHistoryText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHistory/TextForTest");
+            m_ButtonHideText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHide/TextForTest");
+            m_ButtonInformationText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonInformation/TextForTest");
+            m_ButtonSaveText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSave/TextForTest");
+            m_ButtonMenuText= this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonMenu/TextForTest");
             m_ChoiceButton1 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button1");
             m_ChoiceButton2 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button2");
             m_ChoiceButton3 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button3");
@@ -149,8 +153,16 @@ namespace AVGGame
                 Debug.Log($"[DialoguePanel] OnInit - SelectPanel path: {m_SelectPanel.name}, ActiveSelf: {m_SelectPanel.gameObject.activeSelf}");
             }
 
-            // 挂载立绘组件引用 (0=Left, 1=Center, 2=Right)
-            for (int i = 0; i < 3; i++)
+            // 挂载立绘组件引用 (0=女主主控立绘, 1=Left, 2=Right)
+            m_CharacterImages[0] = this.GetComponentByPath<Image>("Canvas/Background/CharacterImage0");
+            if (m_CharacterImages[0] != null)
+            {
+                m_CharacterRects[0] = m_CharacterImages[0].rectTransform;
+                m_OriginalPositions[0] = m_CharacterRects[0].anchoredPosition;
+                m_CharacterImages[0].gameObject.SetActive(false);
+            }
+
+            for (int i = 1; i < 3; i++)
             {
                 m_CharacterImages[i] = this.GetComponentByPath<Image>($"Canvas/Background/CharacterPlate/CharacterImage{i}");
                 if (m_CharacterImages[i] != null)
@@ -733,29 +745,6 @@ namespace AVGGame
 
                 switch (condition.Type)
                 {
-                    case ConditionType.PlayerAttribute:
-                        int currentAttr = 0;
-                        switch (condition.AttributeType)
-                        {
-                            case PlayerAttributeType.Charm:
-                                currentAttr = playerData.Charm;
-                                break;
-                            case PlayerAttributeType.Inspiration:
-                                currentAttr = playerData.Inspiration;
-                                break;
-                            case PlayerAttributeType.Sanity:
-                                currentAttr = playerData.Sanity;
-                                break;
-                        }
-                        conditionMet = condition switch
-                        {
-                            { Operator: ConditionOperator.GreaterThanOrEqual } => currentAttr >= condition.Value,
-                            { Operator: ConditionOperator.LessThanOrEqual } => currentAttr <= condition.Value,
-                            { Operator: ConditionOperator.Equal } => currentAttr == condition.Value,
-                            _ => false
-                        };
-                        break;
-
                     case ConditionType.NpcFavorability:
                         if (int.TryParse(condition.NpcId, out int npcId))
                         {
@@ -1050,6 +1039,12 @@ namespace AVGGame
 
             // 应用背景图
             ApplyBackground(data.BackgroundPath);
+
+            // 控制对话框区域显示/隐藏
+            if (m_TextPlate != null)
+            {
+                m_TextPlate.gameObject.SetActive(!data.HideDialoguePanel);
+            }
 
             // 检查是否是选择节点
             if (data.NodeType == 1) // 选择节点

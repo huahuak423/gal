@@ -44,6 +44,7 @@ namespace AVGGame
         public string PerformanceKey;
         public string BackgroundPath;
         public string VoicePath;
+        public bool HideDialoguePanel;
 
         /// <summary>
         /// 【核心魔法】UGF 引擎在加载 txt 数据表时，每读一行都会自动调用这个方法
@@ -54,12 +55,12 @@ namespace AVGGame
             // 1. 按照制表符 (Tab键, '\t') 切割这一行文本
             string[] columnTexts = dataRowString.Split('\t');
 
-            // 2. 防御性编程：检查列数是否对得上我们导出的 5 列
-            if (columnTexts.Length < 14)
+            // 2. 防御性编程：检查列数是否对得上我们导出的 15 列
+            if (columnTexts.Length < 15)
             {
-                Debug.LogWarning($"[StoryRowData] 行文本列数不足14列，当前只有{columnTexts.Length}列，补空列");
+                Debug.LogWarning($"[StoryRowData] 行文本列数不足15列，当前只有{columnTexts.Length}列，补空列");
                 // 补足空列，防止后续访问越界
-                string[] tempArray = new string[14];
+                string[] tempArray = new string[15];
                 for (int i = 0; i < columnTexts.Length; i++)
                 {
                     tempArray[i] = columnTexts[i];
@@ -86,6 +87,7 @@ namespace AVGGame
             PerformanceKey = SafeGetString(columnTexts, index++);  //第12列：动画效果Key
             BackgroundPath = SafeGetString(columnTexts, index++);  //第13列：背景图
             VoicePath = SafeGetString(columnTexts, index++);       //第14列：语音
+            HideDialoguePanel = SafeGetBool(columnTexts, index++); //第15列：隐藏对话框
 
             Debug.Log($"[StoryRowData] 解析成功! Id={m_Id}, NextId={NextId}, NodeType={NodeType}");
             return true;
@@ -121,6 +123,17 @@ namespace AVGGame
             if (int.TryParse(value, out int result))
                 return result;
             return 0;
+        }
+
+        // 安全获取布尔值
+        private bool SafeGetBool(string[] array, int index)
+        {
+            if (index < 0 || index >= array.Length)
+                return false;
+            string value = array[index]?.Trim();
+            if (string.IsNullOrEmpty(value))
+                return false;
+            return value == "1" || value.Equals("true", System.StringComparison.OrdinalIgnoreCase);
         }
     }
 

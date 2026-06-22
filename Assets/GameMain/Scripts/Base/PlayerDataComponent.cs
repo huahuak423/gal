@@ -20,18 +20,7 @@ namespace AVGGame
         #region 玩家属性
 
         [Header("玩家属性")]
-        [SerializeField] private int m_Charm = 3;           // 魅力（上限100）
-        [SerializeField] private int m_Inspiration = 3;     // 灵感（上限80）
-        [SerializeField] private int m_Sanity = 3;          // 理智（上限100）
         [SerializeField] private string m_PlayerName = "";  // 玩家名称
-
-        public const int MaxCharm = 100;
-        public const int MaxInspiration = 80;
-        public const int MaxSanity = 100;
-        
-        public int Charm => m_Charm;
-        public int Inspiration => m_Inspiration;
-        public int Sanity => m_Sanity;
 
         public string PlayerName => m_PlayerName;
 
@@ -70,9 +59,6 @@ namespace AVGGame
 
         // 周目继承加成
         public int BonusActionPoints { get; private set; } = 0;
-        public int BonusCharm { get; private set; } = 0;
-        public int BonusInspiration { get; private set; } = 0;
-        public int BonusSanity { get; private set; } = 0;
 
         #endregion
 
@@ -108,11 +94,6 @@ namespace AVGGame
             // 重置行动点（加上周目继承加成）
             m_CurrentActionPoints = m_MaxActionPoints + BonusActionPoints;
 
-            // 重置属性为0
-            m_Charm = 0;
-            m_Inspiration = 0;
-            m_Sanity = 0;
-
             // 清空好感度和物品
             m_NpcFavorability.Clear();
             m_OwnedItems.Clear();
@@ -126,61 +107,13 @@ namespace AVGGame
         public void ResetGame()
         {
             m_CurrentRound = 1;
-            m_Charm = 0;
-            m_Inspiration = 0;
-            m_Sanity = 0;
             m_PlayerName = "";
             m_CurrentActionPoints = m_MaxActionPoints;
             BonusActionPoints = 0;
-            BonusCharm = 0;
-            BonusInspiration = 0;
-            BonusSanity = 0;
             m_NpcFavorability.Clear();
             m_OwnedItems.Clear();
 
             Debug.Log("[PlayerDataComponent] 游戏已重置！");
-        }
-
-        #endregion
-
-        #region 属性操作
-
-        /// <summary>
-        /// 增加玩家属性（自动限制在上下限范围内）
-        /// </summary>
-        public void AddAttribute(PlayerAttributeType type, int value)
-        {
-            switch (type)
-            {
-                case PlayerAttributeType.Charm:
-                    m_Charm = Mathf.Clamp(m_Charm + value, 0, MaxCharm);
-                    break;
-                case PlayerAttributeType.Inspiration:
-                    m_Inspiration = Mathf.Clamp(m_Inspiration + value, 0, MaxInspiration);
-                    break;
-                case PlayerAttributeType.Sanity:
-                    m_Sanity = Mathf.Clamp(m_Sanity + value, 0, MaxSanity);
-                    break;
-                default:
-                    Debug.LogWarning($"[PlayerDataComponent] 未知的属性类型: {type}");
-                    return;
-            }
-
-            Debug.Log($"[PlayerDataComponent] 属性变化: {type} +{value}");
-        }
-
-        /// <summary>
-        /// 获取玩家属性值
-        /// </summary>
-        public int GetAttribute(PlayerAttributeType type)
-        {
-            return type switch
-            {
-                PlayerAttributeType.Charm => m_Charm,
-                PlayerAttributeType.Inspiration => m_Inspiration,
-                PlayerAttributeType.Sanity => m_Sanity,
-                _ => 0
-            };
         }
 
         #endregion
@@ -373,10 +306,6 @@ namespace AVGGame
         {
             switch (condition.Type)
             {
-                case ConditionType.PlayerAttribute:
-                    int attrValue = GetAttribute(condition.AttributeType);
-                    return CheckValue(attrValue, condition.Value, condition.Operator);
-
                 case ConditionType.NpcFavorability:
                     int favorValue = GetFavorability(int.Parse(condition.NpcId));
                     return CheckValue(favorValue, condition.Value, condition.Operator);
@@ -454,10 +383,6 @@ namespace AVGGame
         {
             switch (reward.Type)
             {
-                case ConditionType.PlayerAttribute:
-                    AddAttribute(reward.AttributeType, reward.Value);
-                    break;
-
                 case ConditionType.NpcFavorability:
                     if (int.TryParse(reward.NpcId, out int npcId))
                     {
@@ -527,12 +452,7 @@ namespace AVGGame
             // 示例：每周目增加1点行动点
             BonusActionPoints += 1;
 
-            // 示例：保留10%的属性作为加成
-            BonusCharm += m_Charm / 10;
-            BonusInspiration += m_Inspiration / 10;
-            BonusSanity += m_Sanity / 10;
-
-            Debug.Log($"[PlayerDataComponent] 周目继承加成: 行动点+{1}, 魅力+{m_Charm/10}, 灵感+{m_Inspiration/10}, 理智+{m_Sanity/10}");
+            Debug.Log($"[PlayerDataComponent] 周目继承加成: 行动点+{BonusActionPoints}");
         }
 
         #endregion
@@ -546,10 +466,7 @@ namespace AVGGame
         {
             return new SaveData
             {
-                // 玩家属性
-                Charm = m_Charm,
-                Inspiration = m_Inspiration,
-                Sanity = m_Sanity,
+                // 玩家信息
                 PlayerName = m_PlayerName,
 
                 // 行动点
@@ -559,9 +476,6 @@ namespace AVGGame
                 // 周目
                 CurrentRound = m_CurrentRound,
                 BonusActionPoints = BonusActionPoints,
-                BonusCharm = BonusCharm,
-                BonusInspiration = BonusInspiration,
-                BonusSanity = BonusSanity,
 
                 // NPC好感度
                 NpcFavorability = new SerializableDictionary<int, int>(m_NpcFavorability),
@@ -604,10 +518,7 @@ namespace AVGGame
             // 安全加载数据
             Debug.Log($"[PlayerDataComponent] 开始加载存档数据，版本: {saveData.Version}");
 
-            // 玩家属性 - 确保在合理范围内
-            m_Charm = Mathf.Max(0, saveData.Charm);
-            m_Inspiration = Mathf.Max(0, saveData.Inspiration);
-            m_Sanity = Mathf.Max(0, saveData.Sanity);
+            // 玩家信息
             m_PlayerName = saveData.PlayerName ?? "";
 
             // 行动点 - 确保合理
@@ -617,9 +528,6 @@ namespace AVGGame
             // 周目 - 确保至少为1
             m_CurrentRound = Mathf.Max(1, saveData.CurrentRound);
             BonusActionPoints = Mathf.Max(0, saveData.BonusActionPoints);
-            BonusCharm = Mathf.Max(0, saveData.BonusCharm);
-            BonusInspiration = Mathf.Max(0, saveData.BonusInspiration);
-            BonusSanity = Mathf.Max(0, saveData.BonusSanity);
 
             // NPC好感度
             m_NpcFavorability = saveData.NpcFavorability?.ToDictionary() ?? new Dictionary<int, int>();
@@ -707,8 +615,7 @@ namespace AVGGame
             Debug.Log($"[PlayerDataComponent] 存档加载完成！");
             Debug.Log($"- 周目: {m_CurrentRound}");
             Debug.Log($"- 行动点: {m_CurrentActionPoints}/{m_MaxActionPoints}");
-            Debug.Log($"- 属性: 魅力={m_Charm}, 灵感={m_Inspiration}, 理智={m_Sanity}");
-            Debug.Log($"- 继承加成: 行动点+{BonusActionPoints}, 魅力+{BonusCharm}, 灵感+{BonusInspiration}, 理智+{BonusSanity}");
+            Debug.Log($"- 继承加成: 行动点+{BonusActionPoints}");
             Debug.Log($"- 已完成事件数: {m_CompletedEvents.Count}");
             Debug.Log($"- 已完成特殊事件数: {m_CompletedSpecialEvents.Count}");
             Debug.Log($"- 拥有物品数: {m_OwnedItems.Count}");
@@ -816,8 +723,7 @@ namespace AVGGame
             Debug.Log("=== PlayerDataComponent Status ===");
             Debug.Log($"周目: {m_CurrentRound}");
             Debug.Log($"行动点: {m_CurrentActionPoints}/{m_MaxActionPoints}");
-            Debug.Log($"属性: 魅力={m_Charm}, 灵感={m_Inspiration}, 理智={m_Sanity}");
-            Debug.Log($"继承加成: 行动点+{BonusActionPoints}, 魅力+{BonusCharm}, 灵感+{BonusInspiration}, 理智+{BonusSanity}");
+            Debug.Log($"继承加成: 行动点+{BonusActionPoints}");
             Debug.Log($"物品数量: {m_OwnedItems.Count}");
             Debug.Log($"NPC好感度数量: {m_NpcFavorability.Count}");
         }

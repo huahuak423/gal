@@ -30,11 +30,15 @@ namespace AVGGame.Editor
         [Tooltip("填入 语音 的资源路径或名称，留空代表无语音")]
         public string VoicePath;
 
-        [Header("动画效果设置")] 
+        [Header("动画效果设置")]
         public string PerformanceKey;
-        
-        [HideInInspector] 
-        public bool NeedsAttention = false; 
+
+        [Header("面板控制")]
+        [Tooltip("勾选后，运行到此节点时隐藏对话框区域（保留背景和立绘）")]
+        public bool HideDialoguePanel = false;
+
+        [HideInInspector]
+        public bool NeedsAttention = false;
         public string EditorNote;
 
         public override object GetValue(NodePort port) { return null; }

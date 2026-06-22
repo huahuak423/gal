@@ -20,9 +20,6 @@ namespace AVGGame
         [Header("数值面板")]
         [SerializeField] private Text m_CharacterAge;
         [SerializeField] private Text m_CharacterWork;
-        [SerializeField] private Text m_Inspiration;
-        [SerializeField] private Text m_Reason;
-        [SerializeField] private Text m_Charm;
 
         [Header("好感度与进度")]
         [SerializeField] private Slider m_LovePlate;
@@ -62,9 +59,6 @@ namespace AVGGame
             // 数值面板
             m_CharacterAge = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/Plate/AgePlate/CharacterName");
             m_CharacterWork = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/Plate/WorkPlate/CharacterName");
-            m_Inspiration = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/PersonalPlate/Inspiration/TextVarInspiration");
-            m_Reason = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/PersonalPlate/Reason/TextVarReason");
-            m_Charm = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/PersonalPlate/Charm/TextVarCharm");
 
             // 进度
             m_LovePlate = this.GetComponentByPath<Slider>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/LovePlate/Slider");
@@ -202,16 +196,7 @@ namespace AVGGame
             PlayerStatsData stats = m_ProcedureGame.GetPlayerStats();
             if (stats == null) return;
 
-            if (m_Inspiration != null)
-                m_Inspiration.text = stats.Inspiration.ToString();
-
-            if (m_Charm != null)
-                m_Charm.text = stats.Charm.ToString();
-
-            if (m_Reason != null)
-                m_Reason.text = stats.Sanity.ToString();
-
-            Log.Info($"[InformationPanel] RefreshStats - 灵感:{stats.Inspiration} 魅力:{stats.Charm} 理智:{stats.Sanity} 行动点:{stats.ActionPoints}/{stats.MaxActionPoints} 周目:{stats.CurrentRound}");
+            Log.Info($"[InformationPanel] RefreshStats - 行动点:{stats.ActionPoints}/{stats.MaxActionPoints} 周目:{stats.CurrentRound}");
         }
 
         private void RefreshEventButtons()
