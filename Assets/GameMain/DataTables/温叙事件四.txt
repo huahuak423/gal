@@ -35,7 +35,7 @@
 10031	10032	0		但理智告诉你，现在绝不是坐以待毙的时候。									
 10032	10033	0		既然做不了急救，那就先抢出最基本的生命通道：									
 10033	10034	0	主控名	大家都散开点！保持空气流通，别围着拍照了！	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
-10034	10035	0	许映月	我已经打120了，救护车马上从市中心医院过来。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/许映月/许映月认真.png","OffsetX":0.0,"OffsetY":-270.0,"Scale":2.5}]}								
+10034	10035	0	许映月	我已经打120了，救护车马上从市中心医院过来。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/许映月/许映月认真.png","OffsetX":0.0,"OffsetY":-270.0,"Scale":2.5}]}								Assets/GameMain/Art/Voice/配音/许映月/我已经打120.mp3
 10035	10036	0		果断的冷喝瞬间起了作用，路人讪讪退后，终于让出了宝贵的呼吸空间。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10036	10037	0		趁着救护车还没到，你半跪下来，小心翼翼地翻找起老人随身的布包，试图寻觅急救药或病历的踪影。									
 10037	10038	0		遗憾的是，包里没有药瓶，但在最里侧的夹层中，你摸出了一张被过塑的联系卡，上面有一串加粗的号码。									
@@ -44,7 +44,7 @@
 10040	10041	0		电话那头先是陷入了死一般的寂静。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10041	10042	0		紧接着，椅子翻倒声与重物坠地声接连传来，显然是对方在惊骇之下猛地站起，慌乱中撞翻了手边的物件。									
 10042	10043	0		短暂的兵荒马乱后，听筒里传来了一道耳熟的男声，声音里透着藏不住的慌乱与颤抖。									
-10043	10044	0	？？？	我，我马上到！求你先别走，帮我看着她……									
+10043	10044	0	？？？	我，我马上到！求你先别走，帮我看着她……									Assets/GameMain/Art/Voice/配音/温叙/18.我马上到.mp3
 10044	10045	0		那声音裹挟着扭曲惊惧，颤抖得几乎语无伦次。									
 10045	10046	0		救护车急促的鸣笛声已在门外盘旋，生死攸关，你来不及细究电话那头是谁，便匆匆挂断通话，跟着狂奔的医护人员一同跨上了救护车。									
 10046	10047	0		一路风驰电掣。								Assets/GameMain/Art/Backgrounds/大地图.png	
@@ -65,7 +65,7 @@
 10061	10062	0		下一秒，他直接上前一步，紧紧地握住了你的手。									
 10062	10063	0		被他抓住的那一刻，刺骨的凉意顺着相贴的肌肤传导过来。									
 10063	10064	0		他的手微微发着抖，似乎想通过握紧你来汲取一丝暖意。									
-10064	10065	0	温叙	谢谢……真的谢谢你……	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙哀伤.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10064	10065	0	温叙	谢谢……真的谢谢你……	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙哀伤.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								Assets/GameMain/Art/Voice/配音/温叙/19.谢谢.mp3
 10065	10066	0		他的嗓音嘶哑得不成样子，余悸未消的庆幸与恐惧交织在一起，在喉间碾作不成句的字节。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10066	10067	0		他低着头，将所有狼狈掩藏在阴影里。									
 10067	10068	0		可即便看不清面容，你也能真切地感受到他在极力控制着自己，控制着那些快要决堤的脆弱。									
@@ -82,7 +82,7 @@
 10078	10079	0		手心里的温度抽离，温叙眼底的光似乎也跟着黯淡了。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙哀伤.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
 10079	10080	0		那一瞬间，他像是被抽走了什么很重要的东西，眼神里闪过一丝不可名状的落寞。									
 10080	10081	0		他接过纸巾，默默捏紧在掌心：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10081	10082	0	温叙	好……你说的对，我必须得撑住。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙哀伤.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10081	10082	0	温叙	好……你说的对，我必须得撑住。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙哀伤.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								Assets/GameMain/Art/Voice/配音/温叙/20.好，你说得对.mp3
 10082	10083	0		他深吸一口气，努力把自己整理成那个你熟悉的、从容不迫的温叙。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10083	10084	0		但他转身走向病房的背影，依然透着一股让人心疼的脆弱。									
 10084	10085	0		你站在冷清的走廊里，看着病房门在眼前轻轻合上，拿出手机准备跟许映月碰头。									
@@ -116,7 +116,7 @@
 10112	10113	0		指骨间传来的痛感昭示着他的恐惧，你非但没有挣开，反而用另一只手覆住了他的手背。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控皱眉.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
 10113	10114	0	主控名	没事了，阿姨已经脱离危险。你先把自己撑住，阿姨醒来第一眼肯定最想看到你。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}								
 10114	10115	0		温叙像被烫到一般在你掌心里又发了一会儿抖，片刻后才找回理智，他偏过头：	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
-10115	10116	0	温叙	是我失态了……抱歉。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙哀伤.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								
+10115	10116	0	温叙	是我失态了……抱歉。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙哀伤.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								Assets/GameMain/Art/Voice/配音/温叙/21.是我失态了.mp3
 10116	10117	0		扔下这句带着点退缩意味的道歉，他匆匆跑去和护士核对信息，径直进了病房。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}								
 10117	10118	0		病房的门合上，阻隔了他所有可能泄露的情绪。									
 10118	10119	0		……									

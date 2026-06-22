@@ -1332,7 +1332,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter text...
+  m_Text: "\u8BF7\u8F93\u5165\u540D\u5B57..."
 --- !u!1 &7970747842047668675
 GameObject:
   m_ObjectHideFlags: 0

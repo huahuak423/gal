@@ -4730,7 +4730,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_52_\u65B9\u4FBF\u7684\uFF0C\u4E00\u4F1A\u89C1\u3002"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 22950, y: 0}
+  position: {x: 22952, y: -8}
   ports:
     keys:
     - Entry
@@ -4742,7 +4742,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Exit
-        node: {fileID: 3567043120994041707}
+        node: {fileID: 6980754478750699806}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -4901,7 +4901,6 @@ MonoBehaviour:
   - {fileID: -6998816747774348454}
   - {fileID: -6604981247619700951}
   - {fileID: 6980754478750699806}
-  - {fileID: 3567043120994041707}
   - {fileID: -119511009416700553}
   - {fileID: -1861839187892918187}
   - {fileID: -8181407810384683932}
@@ -5131,7 +5130,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u6E29\u53D9/22.\u4E5D\u5E74.mp3"
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -5461,7 +5460,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u6E29\u53D9/27.\u6211\u60F3\u8BF7.mp3"
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -6270,7 +6269,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u6E29\u53D9/23.\u5174\u8BB8\u662F\u5DEE\u4E9B\u7F18\u5206.mp3"
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -6547,7 +6546,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u4ED6\u7EC8\u4E8E\u7AD9\u8D77\u8EAB\uFF0C\u770B\u7740\u591C\u7A7A\u4E2D\u4EC5\u5269\u7684\u90A3\u4E00\u5F2F\u5B71\u5F31\u5374\u5014\u5F3A\u7684\u94F6\u8FB9\uFF0C\u5634\u89D2\u626F\u51FA\u4E00\u62B9\u6BD4\u5496\u5561\u8FD8\u8981\u82E6\u6DA9\u7684\u5FAE\u5F27\u3002"
+  DialogText: "\u4ED6\u7EC8\u4E8E\u7AD9\u8D77\u8EAB\uFF0C\u770B\u7740\u591C\u7A7A\u4E2D\u4EC5\u5269\u7684\u90A3\u4E00\u5F2F\u5B71\u5F31\u5374\u5014\u5F3A\u7684\u94F6\u8FB9\uFF0C\u5634\u89D2\u626F\u51FA\u4E00\u62B9\u82E6\u6DA9\u7684\u5FAE\u5F27\u3002"
   CharacterDisplays:
   - CharacterName: 
     ActionType: 0
@@ -7072,61 +7071,6 @@ MonoBehaviour:
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
---- !u!114 &3567043120994041707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_51_\u90A3\u4F60\u4E0D\u4ECB\u610F\u4E3B\u52A8\u8E0F\u5165\u9677"
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 22500, y: 0}
-  ports:
-    keys:
-    - Entry
-    - Exit
-    values:
-    - _fieldName: Entry
-      _node: {fileID: 3567043120994041707}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Exit
-        node: {fileID: 6980754478750699806}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Exit
-      _node: {fileID: 3567043120994041707}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Entry
-        node: {fileID: -119511009416700553}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Entry: 0
-  Exit: 0
-  SpeakerName: 
-  DialogText: "\u90A3\u4F60\u4E0D\u4ECB\u610F\u4E3B\u52A8\u8E0F\u5165\u9677\u9631\uFF0C\u4EB2\u773C\u4F1A\u4E00\u4F1A\u90A3\u4F4D\u85CF\u5728\u6697\u5904\u7684\u7EC7\u7F51\u4EBA\u3002"
-  CharacterDisplays: []
-  BgmPath: 
-  SePath: 
-  BackgroundPath: 
-  VoicePath: 
-  PerformanceKey: 
-  NeedsAttention: 0
-  EditorNote: 
 --- !u!114 &3681934375246434559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7543,7 +7487,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u6E29\u53D9/26.\u4F5C\u4E3A\u4F5C\u8005.mp3"
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -8655,7 +8599,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u6E29\u53D9/29.\u4F60\u62EF\u6551\u4E86\u6211\u7684\u8FC7\u53BB.mp3"
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -8751,7 +8695,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: 3567043120994041707}
+        node: {fileID: -119511009416700553}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -8760,7 +8704,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u5982\u679C\u8FD9\u4E00\u5207\u7684\u80CC\u540E\uFF0C\u771F\u7684\u662F\u7CBE\u5FC3\u7F16\u7EC7\u3001\u7528\u6765\u6355\u83B7\u4F60\u7684\u7F51\uFF0C"
+  DialogText: "\u5982\u679C\u8FD9\u4E00\u5207\u7684\u80CC\u540E\uFF0C\u771F\u7684\u662F\u7CBE\u5FC3\u7F16\u7EC7\u3001\u7528\u6765\u6355\u83B7\u4F60\u7684\u7F51\uFF0C\u90A3\u4F60\u4E0D\u4ECB\u610F\u4E3B\u52A8\u8E0F\u5165\u9677\u9631\uFF0C\u4EB2\u773C\u4F1A\u4E00\u4F1A\u90A3\u4F4D\u85CF\u5728\u6697\u5904\u7684\u7EC7\u7F51\u4EBA\u3002"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -8820,7 +8764,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u6E29\u53D9/25.\u56E0\u4E3A\u6211\u60F3.mp3"
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
@@ -9185,7 +9129,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u6E29\u53D9/24.\u8FD9\u662F\u68F1\u955C\u56DE\u54CD.mp3"
   PerformanceKey: 
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
