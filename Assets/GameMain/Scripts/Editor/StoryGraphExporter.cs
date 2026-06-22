@@ -111,9 +111,9 @@ namespace AVGGame.Editor
             }
 
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("##Id\tNextId\tNodeType\tSpeakerName\tDialogText\tCharacterActionsJson\tChoicesJson\tTargetGraphName\tRewardsJson\tBgmPath\tSePath\tPerformanceKey\tBackgroundPath\tVoicePath");
-            sb.AppendLine("##int\tint\tint\tstring\tstring\tstring\tstring\tstring\tstring\tstring\tstring\tstring\tstring\tstring");
-            sb.AppendLine("##编号\t下一句ID\t类型(0对话1选项2跳转3奖励)\t说话人\t台词\t动作配置\t选项配置\t目标图名称\t奖励配置\t背景音乐\t音效\t动画效果Key\t背景图\t语音");
+            sb.AppendLine("##Id\tNextId\tNodeType\tSpeakerName\tDialogText\tCharacterActionsJson\tChoicesJson\tTargetGraphName\tRewardsJson\tBgmPath\tSePath\tPerformanceKey\tBackgroundPath\tVoicePath\tHideDialoguePanel");
+            sb.AppendLine("##int\tint\tint\tstring\tstring\tstring\tstring\tstring\tstring\tstring\tstring\tstring\tstring\tstring\tbool");
+            sb.AppendLine("##编号\t下一句ID\t类型(0对话1选项2跳转3奖励)\t说话人\t台词\t动作配置\t选项配置\t目标图名称\t奖励配置\t背景音乐\t音效\t动画效果Key\t背景图\t语音\t隐藏对话框");
 
             foreach (Node node in targetGraph.nodes)
             {
@@ -125,7 +125,7 @@ namespace AVGGame.Editor
                     int nextId = GetNextNodeId(node, "Exit", nodeToIdMap);
                     string actionsJson = dNode.CharacterDisplays.Count > 0 ? JsonUtility.ToJson(new RuntimeActionListWrapper { actions = dNode.CharacterDisplays }) : "";
                     string dialogText = dNode.DialogText.Replace("\r", "").Replace("\n", "");
-                    sb.AppendLine($"{myId}\t{nextId}\t0\t{dNode.SpeakerName}\t{dialogText}\t{actionsJson}\t\t\t\t{dNode.BgmPath}\t{dNode.SePath}\t{dNode.PerformanceKey}\t{dNode.BackgroundPath}\t{dNode.VoicePath}");
+                    sb.AppendLine($"{myId}\t{nextId}\t0\t{dNode.SpeakerName}\t{dialogText}\t{actionsJson}\t\t\t\t{dNode.BgmPath}\t{dNode.SePath}\t{dNode.PerformanceKey}\t{dNode.BackgroundPath}\t{dNode.VoicePath}\t{(dNode.HideDialoguePanel ? "1" : "0")}");
                 }
                 else if (node is ChoiceNode cNode)
                 {
@@ -137,19 +137,19 @@ namespace AVGGame.Editor
                         runtimeChoices.Add(new RuntimeChoiceData { ChoiceText = editorChoice.ChoiceText, NextId = targetId, Conditions = editorChoice.Conditions, Rewards = editorChoice.Rewards });
                     }
                     string choicesJson = runtimeChoices.Count > 0 ? JsonUtility.ToJson(new RuntimeChoiceListWrapper { Choices = runtimeChoices }) : "";
-                    sb.AppendLine($"{myId}\t0\t1\t\t\t\t{choicesJson}\t\t\t\t\t\t\t");
+                    sb.AppendLine($"{myId}\t0\t1\t\t\t\t{choicesJson}\t\t\t\t\t\t\t\t");
                 }
                 else if (node is SubGraphNode subNode)
                 {
                     string targetName = subNode.GetTargetGraphName();
                     int nextId = GetNextNodeId(node, "Exit", nodeToIdMap);
-                    sb.AppendLine($"{myId}\t{nextId}\t2\t\t\t\t\t{targetName}\t\t\t\t\t\t");
+                    sb.AppendLine($"{myId}\t{nextId}\t2\t\t\t\t\t{targetName}\t\t\t\t\t\t\t");
                 }
                 else if (node is RewardNode rNode)
                 {
                     string rewardsJson = JsonUtility.ToJson(new RuntimeRewardListWrapper { RewardTitle = rNode.RewardTitle, Rewards = rNode.Rewards });
                     int nextId = GetNextNodeId(node, "Exit", nodeToIdMap);
-                    sb.AppendLine($"{myId}\t{nextId}\t3\t\t\t\t\t\t{rewardsJson}\t\t\t\t\t");
+                    sb.AppendLine($"{myId}\t{nextId}\t3\t\t\t\t\t\t{rewardsJson}\t\t\t\t\t\t");
                 }
             }
 

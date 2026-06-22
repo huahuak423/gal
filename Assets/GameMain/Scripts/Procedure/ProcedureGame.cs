@@ -171,86 +171,13 @@ namespace AVGGame
             }
         }
 
-        /// <summary>
-        /// 检查选项条件是否满足（供外部使用）
-        /// </summary>
-        public bool CheckChoiceConditions(string npcId, ConditionType type, int value, ConditionOperator op = ConditionOperator.GreaterThanOrEqual)
-        {
-            var playerData = CustomEntry.PlayerData;
-            if (playerData == null)
-            {
-                Debug.LogWarning("[ProcedureGame] PlayerData is null");
-                return false;
-            }
-
-            switch (type)
-            {
-                case ConditionType.PlayerAttribute:
-                    switch (op)
-                    {
-                        case ConditionOperator.GreaterThanOrEqual:
-                            return GetPlayerAttribute(npcId) >= value;
-                        case ConditionOperator.LessThanOrEqual:
-                            return GetPlayerAttribute(npcId) <= value;
-                        case ConditionOperator.Equal:
-                            return GetPlayerAttribute(npcId) == value;
-                    }
-                    break;
-
-                case ConditionType.NpcFavorability:
-                    if (int.TryParse(npcId, out int npcIdInt))
-                    {
-                        int favorability = playerData.GetFavorability(npcIdInt);
-                        switch (op)
-                        {
-                            case ConditionOperator.GreaterThanOrEqual:
-                                return favorability >= value;
-                            case ConditionOperator.LessThanOrEqual:
-                                return favorability <= value;
-                            case ConditionOperator.Equal:
-                                return favorability == value;
-                        }
-                    }
-                    break;
-
-                case ConditionType.SpecialItem:
-                    if (int.TryParse(npcId, out int itemId))
-                    {
-                        bool hasItem = playerData.HasItem(itemId);
-                        switch (op)
-                        {
-                            case ConditionOperator.Equal:
-                                return hasItem;
-                        }
-                    }
-                    break;
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// 获取玩家属性值
-        /// </summary>
-        private int GetPlayerAttribute(string attributeType)
-        {
-            switch (attributeType.ToLower())
-            {
-                case "charm":
-                    return CustomEntry.PlayerData?.Charm ?? 0;
-                case "inspiration":
-                    return CustomEntry.PlayerData?.Inspiration ?? 0;
-                case "sanity":
-                    return CustomEntry.PlayerData?.Sanity ?? 0;
-                default:
-                    Debug.LogWarning($"[ProcedureGame] Unknown attribute type: {attributeType}");
-                    return 0;
-            }
-        }
-
         #endregion
 
         #region 公共方法
+
+        /// <summary>
+        /// 获取当前交互的 NPC ID
+        /// </summary>
 
         /// <summary>
         /// 功能1：判断哪些事件应该显示在选项框上 (可见条件筛选)
@@ -342,9 +269,6 @@ namespace AVGGame
 
             return new PlayerStatsData
             {
-                Inspiration = playerData.Inspiration,
-                Charm = playerData.Charm,
-                Sanity = playerData.Sanity,
                 ActionPoints = playerData.CurrentActionPoints,
                 MaxActionPoints = playerData.MaxActionPoints,
                 CurrentRound = playerData.CurrentRound
@@ -614,7 +538,8 @@ namespace AVGGame
                 CharacterActionsJson = row.CharacterActionsJson,
                 BackgroundPath = row.BackgroundPath,
                 VoicePath = row.VoicePath,
-                SePath = row.SePath
+                SePath = row.SePath,
+                HideDialoguePanel = row.HideDialoguePanel
             };
         }
 
@@ -790,7 +715,6 @@ namespace AVGGame
         {
             Debug.Log("[ProcedureGame] ===== 结局判定开始 =====");
             Debug.Log($"[ProcedureGame] 当前周目: {CustomEntry.PlayerData.CurrentRound}");
-            Debug.Log($"[ProcedureGame] 属性 - 魅力: {CustomEntry.PlayerData.Charm}, 灵感: {CustomEntry.PlayerData.Inspiration}, 理智: {CustomEntry.PlayerData.Sanity}");
 
             // TODO: 结局判定逻辑，按优先级检查：
             // 1. 男主单线结局（好感度 + 专属事件完成度）

@@ -85,6 +85,14 @@ namespace AVGGame
             if (m_CreateNameOpening)
                 return;
 
+            // 存档加载：跳过起名，直接进入游戏
+            if (SaveLoadContext.IsLoadingFromSave)
+            {
+                Debug.Log("[ProcedureMainMenu] 存档加载，跳过起名界面");
+                m_StartGame = true;
+                return;
+            }
+
             // 注册回调：CreateName 关闭时才设置 m_StartGame，触发 OnUpdate 跳转到 ProcedureGame
             SaveLoadContext.OnCreateNameComplete = () =>
             {

@@ -62,18 +62,6 @@ namespace AVGGame
                         if (!playerData.HasCompletedNpcEvent(param1, param2)) return false;
                         break;
 
-                    case 2: // 魅力值检测 (2 | 数值 | 比较符: 1为>=, 2为<=, 3为==)
-                        if (!CompareValue(playerData.Charm, param1, param2)) return false;
-                        break;
-
-                    case 3: // 灵感值检测 (3 | 数值 | 比较符)
-                        if (!CompareValue(playerData.Inspiration, param1, param2)) return false;
-                        break;
-
-                    case 4: // 理智值检测 (4 | 数值 | 比较符)
-                        if (!CompareValue(playerData.Sanity, param1, param2)) return false;
-                        break;
-
                     case 5: // 物品检测 (5 | ItemId | 1为必须有, 2为必须没有)
                         bool hasItem = playerData.HasItem(param1);
                         if (param2 == 1 && !hasItem) return false;      // 要求有但没有

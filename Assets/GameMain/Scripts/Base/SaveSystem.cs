@@ -22,10 +22,7 @@ namespace AVGGame
     [Serializable]
     public class SaveData
     {
-        // 玩家属性
-        public int Charm;
-        public int Inspiration;
-        public int Sanity;
+        // 玩家信息
         public string PlayerName;
 
         // 行动点
@@ -35,9 +32,6 @@ namespace AVGGame
         // 周目
         public int CurrentRound;
         public int BonusActionPoints;
-        public int BonusCharm;
-        public int BonusInspiration;
-        public int BonusSanity;
 
         // NPC好感度
         public SerializableDictionary<int, int> NpcFavorability;
@@ -396,16 +390,8 @@ namespace AVGGame
                 saveData.MaxActionPoints = 10;
             }
 
-            // 确保属性值合理
-            saveData.Charm = Mathf.Max(0, saveData.Charm);
-            saveData.Inspiration = Mathf.Max(0, saveData.Inspiration);
-            saveData.Sanity = Mathf.Max(0, saveData.Sanity);
-
             // 确保继承加成合理
             saveData.BonusActionPoints = Mathf.Max(0, saveData.BonusActionPoints);
-            saveData.BonusCharm = Mathf.Max(0, saveData.BonusCharm);
-            saveData.BonusInspiration = Mathf.Max(0, saveData.BonusInspiration);
-            saveData.BonusSanity = Mathf.Max(0, saveData.BonusSanity);
 
             // 确保当前故事名称不为空（如果为空，设置为默认值）
             if (string.IsNullOrEmpty(saveData.CurrentStoryGarphName))
@@ -523,16 +509,10 @@ namespace AVGGame
             Debug.Log("[SaveSystem] 创建默认存档数据");
             return new SaveData
             {
-                Charm = 3,
-                Inspiration = 3,
-                Sanity = 3,
                 CurrentActionPoints = 10,
                 MaxActionPoints = 10,
                 CurrentRound = 1,
                 BonusActionPoints = 0,
-                BonusCharm = 0,
-                BonusInspiration = 0,
-                BonusSanity = 0,
                 NpcFavorability = new SerializableDictionary<int, int>(),
                 OwnedItems = new int[0],
                 CompletedEvents = new int[0],

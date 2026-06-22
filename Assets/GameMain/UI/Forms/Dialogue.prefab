@@ -384,6 +384,7 @@ RectTransform:
   m_Children:
   - {fileID: 8197624567827388541}
   - {fileID: 6197701567039485328}
+  - {fileID: 4187521922047865521}
   - {fileID: 487967913773380984}
   m_Father: {fileID: 7716992732492692461}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -504,7 +505,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8197624567827388541}
+  m_Father: {fileID: 4866854159967182957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1259,7 +1260,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u81EA\u52A8"
+  m_Text: "\u83DC\u5355"
 --- !u!1 &3674176121748860301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1399,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4187521922047865521}
   - {fileID: 7427184339146769155}
   - {fileID: 2115644262846885844}
   m_Father: {fileID: 4866854159967182957}
@@ -1580,7 +1580,7 @@ GameObject:
   - component: {fileID: 8213080169273781980}
   - component: {fileID: 7606750739628798284}
   m_Layer: 0
-  m_Name: ButtonMenu
+  m_Name: ButtonAuto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3026,7 +3026,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u83DC\u5355"
+  m_Text: "\u81EA\u52A8"
 --- !u!1 &7223553348490250757
 GameObject:
   m_ObjectHideFlags: 0
@@ -3115,7 +3115,7 @@ GameObject:
   - component: {fileID: 4453909614246105492}
   - component: {fileID: 3587400158540288770}
   m_Layer: 0
-  m_Name: ButtonAuto
+  m_Name: ButtonMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3136,9 +3136,9 @@ RectTransform:
   - {fileID: 4168805131477170004}
   m_Father: {fileID: 1501999893228568412}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 71.994995, y: -65.66974}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -75, y: -65.66974}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &76099766902987109
