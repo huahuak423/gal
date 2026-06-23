@@ -21,141 +21,140 @@
 10017	10018	0		阅读过不少素材的你，心底那份探究欲也被彻底勾了起来。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10018	10019	0		与其隔岸观火在二手资料里打转，不如亲自下水，在实验中寻找合适的样本。										0
 10019	10020	0		你拿起手机，点开了目前市面上最火的陪玩App。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10020	10021	0		首页算法是根据你的性别、年龄和兴趣爱好推送的，										0
-10021	10022	0		入眼就是一水儿的男性陪玩卡片，从技术流到陪伴型，分类清晰。										0
-10022	10023	0		才创好账号没一会儿，私信栏里就多了几条未读消息，清一色的“姐姐好”、“要不要一起玩”。										0
-10023	10024	0		你浏览着他们的主页，才翻了几个，就对这种千篇一律的套路失了兴趣。										0
-10024	10025	0		正盘算着，一个叫“至尊盲盒单”的反常规选项引起了你的注意。										0
-10025	10026	0		它隐去了陪玩的照片和个人资料，主打纯算法随机匹配。										0
-10026	10027	0		常年调研的本能告诉你，主动挑选会带入个人偏好，进而导致样本失真。										0
-10027	10028	0		反之，这种由算法随机派发的模式，会是更科学客观的社会抽样。										0
-10028	10029	0		于你而言，这既可以不费脑细胞去筛选，又能保证调研结果的纯粹。										0
-10029	10030	0		你不再犹豫，点击下单，并在备注栏敲下几个要求：										0
-10030	10031	0		“话少、情绪稳定、不用刻意讨好、能打逆风局。”										0
-10031	10032	0		订单刚发出，一个纯黑色默认头像就出现在了聊天框里。										0
-10032	10033	0		你戴上降噪耳机，一道温润、干净的青年音在耳边流淌：										0
-10033	10034	0	时安	老板晚上好，我是时安。接下来的时间，我会全力配合您的节奏。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
-10034	10035	0		你随口应了一声，直接进入游戏加载界面。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10035	10036	0		进入游戏后，你刻意选择了考验配合、且容错率低的高爆发输出位。								Assets/GameMain/Art/CG/z1.png		0
-10036	10037	0		你的打法也带着强势的压迫感，开局就肆无忌惮地入侵敌方野区，全程不发信号，考验他临场反应能力。										0
-10037	10038	0		可面对你大开大合的激进打法，他不质疑，也不多问，甚至总能完美契合你每一个意图。										0
-10038	10039	0	时安	左侧草丛安全，对方打野在下半区露头了，老板，您可以直接进场，我留了控制技能掩护你。										0
-10039	10040	0		每当你准备冲锋陷阵，耳机里总会适时传来他冷静又精准的报点。										0
-10040	10041	0		他总能提前为你扫清视野盲区，无需多言便能心意相通。										0
-10041	10042	0		直到对局进行到十五分钟，那是一场较为关键的团战。										0
-10042	10043	0		你为了强切敌方核心，走位失误，角色冲进了三个人的包围圈。										0
-10043	10044	0		屏幕变成了代表死亡的灰白色，己方阵型也随之溃败，高地塔岌岌可危。								Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
-10044	10045	0		这种关键时刻“送人头”的行为，足以让大多数玩家心态爆炸。										0
-10045	10046	0		就如此刻，已经有人忍不住在公屏里鸟语花香了。										0
-10046	10047	0		但耳机那头依然安静，你甚至能听见微弱的气流声。										0
-10047	10048	0		然后，他的声音响起：										0
-10048	10049	0	时安	我的错，刚才给你的护盾慢了，没保住你。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
-10049	10050	0	时安	对面双C为了抓你，已经交了全部关键技能和闪现。										0
-10050	10051	0	时安	老板别急，我去清线守高地，你复活后直接带线拿龙，这局能翻，信我。										0
-10051	10052	0		说话的同时，他还不忘在公屏安抚队友，主动揽下责任。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10052	10053	0		在他的指挥下，你们成功抗住了敌方的强推，并在你复活后完成了一波漂亮的反打。										0
-10053	10054	0		敌方水晶轰然炸裂，金色光芒在屏幕正中央凝成“胜利”徽章。										0
-10054	10055	0		之后你们又开了几局，为了进一步考验他，你选了几个自己不太擅长的角色。										0
-10055	10056	0		但不管你玩什么，都影响不了最终获胜的结果。										0
-10056	10057	0		确实有点意思，无论是游戏，还是时安。										0
-10057	10058	0		但比起复盘对局，或许你对复盘他的表现更感兴趣。										0
-10058	10059	0		技术好坏暂且不论，单论情绪价值，他无可挑剔。										0
-10059	10060	0		与常见的讨好型情绪输出不同，他应该特意进行过情绪控制训练。										0
-10060	10061	0		具体如何，还需要更深入的了解。										0
-10061	10062	0		……										0
-10062	10156	0		时间飞快地流逝，转眼就过了三小时。								Assets/GameMain/Art/Backgrounds/居家/家-夜晚.png		0
-10063	10064	0		系统提示服务结束的瞬间，你顺手挂断了通话。										0
-10064	10065	0		屏幕顶端，支付成功的绿色勾号一闪而逝。										0
-10065	10066	0		你切回后台正在运行的录制软件，将时间轴检查了一遍，全程音画同步，没有断录，波形平稳。										0
-10066	10067	0		还好，目前一切正常。										0
-10067	10068	0		你拖动着进度条，将画面拉到印象里几个高光画面的节点，逐帧回看。										0
-10068	10069	0		再回看与对局时的感觉截然不同。										0
-10069	10070	0		刚才你是参与者，所有注意力都集中在自己的血条和技能冷却上；而现在，你是旁观者，对局中的每一处细节都看得清晰。										0
-10070	10071	0		尤其是自认为发挥亮眼的那几波操作，在反复拉片后，又逐渐显露出另一层轮廓——										0
-10071	10072	0		看似是你抓住了完美时机切入团战，在慢放后才发现，是他先一步预判了对方技能，替你扛下硬控，你才能丝滑地进场收割。										0
-10072	10073	0		还有一次被包夹下的撤退，一帧帧拆开分析，是他在你交位移的前一秒，提前向侧翼打出减速，逼退了那个本可以留下你的人。										0
-10073	10074	0		你在地图上的每一场遭遇战，背后都藏着他早已规划好的接应点。										0
-10074	10075	0		怪不得几局打下来，你始终觉得舒心。										0
-10075	10076	0		哪怕有些队友在公屏对你进行言语压力，那些声音最终也没能真正落到你身上，全被他不动声色地挡回过去。										0
-10076	10077	0		他用三言两语就将矛盾软化，把指责转为提醒，方方面面都凸显着对你的维护。										0
-10077	10078	0		其实游玩过程中你根本没注意到这些，毕竟只是娱乐局，也就全凭着自己的心意去操作。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10078	10079	0		因为想减少对样本的干扰，游玩全程你讲话的次数屈指可数，但即便同时沉默，也并不会尴尬。										0
-10079	10080	0		这种感觉着实奇妙，你和一个连长相、名字都不知道的陌生人相处了三小时。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10080	10081	0		虽然大部分时间里只有击打声和技能音效，你却觉得前所未有的松弛。										0
-10081	10082	0		之前很多二手资料里提及：游戏里的社交更舒服，你一直把这种舒服归结于不用见面，或是不用负责。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10082	10083	0		直到此刻，你有些明白了。										0
-10083	10084	0		真正让人上瘾的，是可以摘下社交假面，无需为了顾全某种局面而处处顾忌。										0
-10084	10085	0		现实生活中，存在着太多社交枷锁。										0
-10085	10086	0		人们总是要扮演好亲人、友人、爱人等角色，释放情绪是奢侈的、是需要挑选合适时间地点的。										0
-10086	10087	0		而时安这样的人，就像是一个“情绪容器”。										0
-10087	10088	0		他所提供的，是当代人在现实中求而不得的“无条件接纳”。										0
-10088	10089	0		但这究竟是整个陪玩行业的普遍素养，还是属于他个人的特例？										0
-10089	10090	0		在没有其他数据支撑前，你无法断言，故而还需更多的参照样本。										0
-10090	10091	0		转念一想，你的调研方向似乎有些偏颇。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10091	10092	0		付费陪玩的本质是花钱买服务，它充其量只能算作是私人定制化的“拟态社交”。										0
-10092	10093	0		在游戏生态里，不掺杂利益的玩家社交，才是最具普适性的情况。										0
-10093	10094	0		可真这样做，无疑要投入高昂的时间成本。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10094	10095	0		眼下既已取巧，用钱换了效率，那不如顺势将选题切口细化，把话题聚焦于“金钱交易下的虚拟情感劳作”。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10095	10096	0		修改完选题方向，你心满意足。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10096	0	0		下一次取材，一定比今天更有收获。										0
-10097	10098	0		你体验到了躺赢的乐趣，一下腰不酸，脖子不痛，觉也不想睡了，只想着再多打几把。										0
-10098	10099	0		肾上腺素，很神奇吧。										0
-10099	10100	0		你不假思索地又续了三个小时，刚刚为了考验他的操作不得不藏拙降水准，而现在……	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10100	10101	0		你关掉了碍事的录制软件，开着着实影响你的发挥，更何况你本就应该好好放松。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10101	10102	0		工作？什么工作。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10102	10103	0		你活动活动手腕，准备大杀四方。										0
-10103	10104	0		进入状态的你在游戏世界里大展拳脚、走位飘渺，连时安都不禁对你突飞猛进的水平称赞连连。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
-10104	10105	0		对此你只是谦虚地不说话，装高手。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}									0
-10105	10106	0		而时安也敏锐地捕捉到了你的状态变化，自觉从技术兜底型切换成了陪伴引导型。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
-10106	10107	0		他不说“老板好厉害”这种毫无指向性的空话，而是会认真捕捉你操作里的每一个闪光点。										0
-10107	10108	0		哪怕只是下意识走位躲掉了敌方的大招，或是歪打正着的补控打断了对方的技能，只要他目睹了，都会细致地指明。										0
-10108	10109	0		他确实有在关注你，努力给你提供更好的游戏体验。										0
-10109	10110	0		所以当时常结算弹出来的时候，你还有些意犹未尽。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10110	10111	0		原本打算再续上一会儿，却被时安以明早有事为由，婉拒了续费申请。										0
-10111	10112	0		你颇为遗憾，但还想保持火热的手感，只好去找其他陪玩。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10112	10113	0		可不知是不是运气耗尽，你接连遇到了索要礼物的、脾气爆的、爱说教的……	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10113	10114	0		和先前的轻松惬意相比，接下来的几个小时如酷刑般难熬。										0
-10114	10115	0		尤其是最后那位陪玩，他的操作尚且不如你，却偏偏长了一张停不下来的嘴。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/NPC/路人1.png","OffsetX":0.0,"OffsetY":-300.0,"Scale":2.0}]}									0
-10115	10116	0		你补刀慢了，他立刻说“这里应该先A兵再放技能”；										0
-10116	10117	0		你走位躲掉了对方的技能，他又说“其实你刚才往左边闪更安全”；										0
-10117	10118	0		就连你随手选了个想练的角色，他都要指手画脚，从技能加点讲到出装顺序。										0
-10118	10119	0		游玩的全程更是喋喋不休，自己操控的角色死亡时还总要各种找理由。										0
-10119	10120	0		不等服务时长走完，你一个没忍住，直接点了结算。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10120	10121	0		耳根子终于清净的同时，你也意识到，并非所有陪玩都像时安那般专业。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10121	10122	0		你重新评估了手上现有素材的价值，那些负面样本虽然覆盖了常见的行业问题，	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10122	10123	0		但本质上都是职业素养的缺失，没有深挖的空间。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10123	10124	0		就算写出来，也不过是一篇不痛不痒的行业吐槽，根本撑不起你想要的深度。										0
-10124	10125	0		于是你很快做出了判断，放弃广撒网式横向调研，转而对时安进行纵向深度追踪。										0
-10125	10126	0		这不仅更有效率，也能让你在接下来的调研过程中，获得舒适的游戏体验。										0
-10126	0	0		毕竟，没有人能拒绝花钱买开心。										0
-10127	10128	0		时长结算界面一弹出，你随手点开打赏栏，刷了一个三位数的虚拟礼物。										0
-10128	10129	0		破空声接二连三响起，紧接着是连环的沉闷声响。										0
-10129	10130	0		五颜六色的烟花一朵接一朵地炸开，金红色的火星如瀑布般倾泻而下。										0
-10130	10131	0		夸张的光效闪得你眯起眼睛，整个屏幕也跟着烟花的节奏闪烁。										0
-10131	10132	0		当最后一缕火光消散，屏幕上只剩下一行烫金大字：赠送[时安]盛世烟花×1。										0
-10132	10133	0		耳机那头陷入短暂沉默，随即传来他窘迫的声音，像在困惑自己何德何能：										0
-10133	10134	0	时安	谢谢老板的打赏，不过您出手这么大方，倒让我觉得……刚才的服务还不够周到，受之有愧了。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
-10134	10135	0		你靠在椅背上，胜利带来的喜悦让你的语气也不自觉地染上几分棋逢对手的欣赏：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10135	10136	0	主控名	打得不错，你的情绪控制很完美，是不可多得的优质样本。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10136	10137	0		耳机那头再度安静，他似乎在消化你话里的深意。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10137	10138	0		沉寂片刻，他的声音重新响起，语调比刚才多了些轻快：										0
-10138	10139	0	时安	原来是这样，很高兴能为老板的事业添砖加瓦。您还需要素材的话，请随时联系我。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
-10139	10140	0		添砖加瓦。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10140	10141	0		他的用词很巧妙，既把自己放在了辅助的位置上，又保持了不卑不亢的态度，谦逊却不卑微。										0
-10141	10142	0		他没有因为被当成工具人心生不满，始终保持着专业的态度。										0
-10142	10143	0		直到你主动挂断通话，他摘下耳机时，眼前还晃着烟花绽开后残留的彩色光斑。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}							Assets/GameMain/Art/Backgrounds/居家/黑色.png		0
-10143	10144	0		他专注地看完了那场炫目的、只为他燃起的烟花，直到眼睛发酸才恍然惊觉自己竟忘了眨眼。										0
-10144	10145	0		他揉了揉眉心，那抹不受控制上扬的嘴角，却泄露了他心底泛起的波澜。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/闭眼微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
-10145	10146	0		由于学业压力和另外几份零碎兼职的拉扯，他无法做到全天候在线。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10146	10147	0		虽然之前也有过几位老板邀请他做固定陪玩，但他深知自己给不了对方想要的稳定，便都婉言拒绝了。										0
-10147	10148	0		但现实远比游戏残酷得多，没了固定单源的他，很快就被蜂拥入行的新人取代。										0
-10148	10157	0		他已经太久没开单，那些昂贵的打赏礼物，他没见过，也不敢奢求。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
-10149	10150	0		然而那抹笑也没能维持太久，随之而来的是后知后觉的自省与懊恼。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/皱眉.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
-10150	10151	0		他越想越觉得泄气，只恨自己刚才表现得太过拘谨，甚至有些冷淡？										0
-10151	10152	0		他拿不准你会不会介意他的态度，更不知道下一次，自己还能不能有幸在你的素材库里占据一席之地。										0
-10152	10153	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10153	10154	0		网络那端的辗转反侧与百转千回，你自然是无从知晓的。								Assets/GameMain/Art/Backgrounds/居家/家-夜晚.png		0
-10154	10155	0		只是当你清晨拿起手机时，屏幕上静静地躺着一条短讯，发送时间是你早已沉入安眠、万籁俱寂的深夜：										0
-10155	0	0	时安	晚安老板，好梦。										0
-10156	0	1				{"Choices":[{"ChoiceText":"正常结算","NextId":10063,"Conditions":[],"Rewards":[]},{"ChoiceText":"打赏礼物","NextId":10127,"Conditions":[],"Rewards":[]},{"ChoiceText":"续费体验","NextId":10097,"Conditions":[],"Rewards":[]}]}								
-10157	10149	0		收到礼物的瞬间，他先怔住了，大脑放空好一会儿，心底才慢慢漾开细细密密的喜悦。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/闭眼微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10020	10021	0		首页算法是根据你的性别、年龄和兴趣爱好推送的，入眼就是一水儿的男性陪玩卡片，从技术流到陪伴型，分类清晰。										0
+10021	10022	0		才创好账号没一会儿，私信栏里就多了几条未读消息，清一色的“姐姐好”、“要不要一起玩”。										0
+10022	10023	0		你浏览着他们的主页，才翻了几个，就对这种千篇一律的套路失了兴趣。										0
+10023	10024	0		正盘算着，一个叫“至尊盲盒单”的反常规选项引起了你的注意。										0
+10024	10025	0		它隐去了陪玩的照片和个人资料，主打纯算法随机匹配。										0
+10025	10026	0		常年调研的本能告诉你，主动挑选会带入个人偏好，进而导致样本失真。										0
+10026	10027	0		反之，这种由算法随机派发的模式，会是更科学客观的社会抽样。										0
+10027	10028	0		于你而言，这既可以不费脑细胞去筛选，又能保证调研结果的纯粹。										0
+10028	10029	0		你不再犹豫，点击下单，并在备注栏敲下几个要求：										0
+10029	10030	0		“话少、情绪稳定、不用刻意讨好、能打逆风局。”										0
+10030	10031	0		订单刚发出，一个纯黑色默认头像就出现在了聊天框里。										0
+10031	10032	0		你戴上降噪耳机，一道温润、干净的青年音在耳边流淌：										0
+10032	10033	0	时安	老板晚上好，我是时安。接下来的时间，我会全力配合您的节奏。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10033	10034	0		你随口应了一声，直接进入游戏加载界面。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10034	10035	0		进入游戏后，你刻意选择了考验配合、且容错率低的高爆发输出位。								Assets/GameMain/Art/CG/z1.png		0
+10035	10036	0		你的打法也带着强势的压迫感，开局就肆无忌惮地入侵敌方野区，全程不发信号，考验他临场反应能力。										0
+10036	10037	0		可面对你大开大合的激进打法，他不质疑，也不多问，甚至总能完美契合你每一个意图。										0
+10037	10038	0	时安	左侧草丛安全，对方打野在下半区露头了，老板，您可以直接进场，我留了控制技能掩护你。										0
+10038	10039	0		每当你准备冲锋陷阵，耳机里总会适时传来他冷静又精准的报点。										0
+10039	10040	0		他总能提前为你扫清视野盲区，无需多言便能心意相通。										0
+10040	10041	0		直到对局进行到十五分钟，那是一场较为关键的团战。										0
+10041	10042	0		你为了强切敌方核心，走位失误，角色冲进了三个人的包围圈。										0
+10042	10043	0		屏幕变成了代表死亡的灰白色，己方阵型也随之溃败，高地塔岌岌可危。								Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
+10043	10044	0		这种关键时刻“送人头”的行为，足以让大多数玩家心态爆炸。										0
+10044	10045	0		就如此刻，已经有人忍不住在公屏里鸟语花香了。										0
+10045	10046	0		但耳机那头依然安静，你甚至能听见微弱的气流声。										0
+10046	10047	0		然后，他的声音响起：										0
+10047	10048	0	时安	我的错，刚才给你的护盾慢了，没保住你。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10048	10049	0	时安	对面双C为了抓你，已经交了全部关键技能和闪现。										0
+10049	10050	0	时安	老板别急，我去清线守高地，你复活后直接带线拿龙，这局能翻，信我。										0
+10050	10051	0		说话的同时，他还不忘在公屏安抚队友，主动揽下责任。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10051	10052	0		在他的指挥下，你们成功抗住了敌方的强推，并在你复活后完成了一波漂亮的反打。										0
+10052	10053	0		敌方水晶轰然炸裂，金色光芒在屏幕正中央凝成“胜利”徽章。										0
+10053	10054	0		之后你们又开了几局，为了进一步考验他，你选了几个自己不太擅长的角色。										0
+10054	10055	0		但不管你玩什么，都影响不了最终获胜的结果。										0
+10055	10056	0		确实有点意思，无论是游戏，还是时安。										0
+10056	10057	0		但比起复盘对局，或许你对复盘他的表现更感兴趣。										0
+10057	10058	0		技术好坏暂且不论，单论情绪价值，他无可挑剔。										0
+10058	10059	0		与常见的讨好型情绪输出不同，他应该特意进行过情绪控制训练。										0
+10059	10060	0		具体如何，还需要更深入的了解。										0
+10060	10061	0		……										0
+10061	10155	0		时间飞快地流逝，转眼就过了三小时。								Assets/GameMain/Art/Backgrounds/居家/家-夜晚.png		0
+10062	10063	0		系统提示服务结束的瞬间，你顺手挂断了通话。										0
+10063	10064	0		屏幕顶端，支付成功的绿色勾号一闪而逝。										0
+10064	10065	0		你切回后台正在运行的录制软件，将时间轴检查了一遍，全程音画同步，没有断录，波形平稳。										0
+10065	10066	0		还好，目前一切正常。										0
+10066	10067	0		你拖动着进度条，将画面拉到印象里几个高光画面的节点，逐帧回看。										0
+10067	10068	0		再回看与对局时的感觉截然不同。										0
+10068	10069	0		刚才你是参与者，所有注意力都集中在自己的血条和技能冷却上；而现在，你是旁观者，对局中的每一处细节都看得清晰。										0
+10069	10070	0		尤其是自认为发挥亮眼的那几波操作，在反复拉片后，又逐渐显露出另一层轮廓——										0
+10070	10071	0		看似是你抓住了完美时机切入团战，在慢放后才发现，是他先一步预判了对方技能，替你扛下硬控，你才能丝滑地进场收割。										0
+10071	10072	0		还有一次被包夹下的撤退，一帧帧拆开分析，是他在你交位移的前一秒，提前向侧翼打出减速，逼退了那个本可以留下你的人。										0
+10072	10073	0		你在地图上的每一场遭遇战，背后都藏着他早已规划好的接应点。										0
+10073	10074	0		怪不得几局打下来，你始终觉得舒心。										0
+10074	10075	0		哪怕有些队友在公屏对你进行言语压力，那些声音最终也没能真正落到你身上，全被他不动声色地挡回过去。										0
+10075	10076	0		他用三言两语就将矛盾软化，把指责转为提醒，方方面面都凸显着对你的维护。										0
+10076	10077	0		其实游玩过程中你根本没注意到这些，毕竟只是娱乐局，也就全凭着自己的心意去操作。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10077	10078	0		因为想减少对样本的干扰，游玩全程你讲话的次数屈指可数，但即便同时沉默，也并不会尴尬。										0
+10078	10079	0		这种感觉着实奇妙，你和一个连长相、名字都不知道的陌生人相处了三小时。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10079	10080	0		虽然大部分时间里只有击打声和技能音效，你却觉得前所未有的松弛。										0
+10080	10081	0		之前很多二手资料里提及：游戏里的社交更舒服，你一直把这种舒服归结于不用见面，或是不用负责。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10081	10082	0		直到此刻，你有些明白了。										0
+10082	10083	0		真正让人上瘾的，是可以摘下社交假面，无需为了顾全某种局面而处处顾忌。										0
+10083	10084	0		现实生活中，存在着太多社交枷锁。										0
+10084	10085	0		人们总是要扮演好亲人、友人、爱人等角色，释放情绪是奢侈的、是需要挑选合适时间地点的。										0
+10085	10086	0		而时安这样的人，就像是一个“情绪容器”。										0
+10086	10087	0		他所提供的，是当代人在现实中求而不得的“无条件接纳”。										0
+10087	10088	0		但这究竟是整个陪玩行业的普遍素养，还是属于他个人的特例？										0
+10088	10089	0		在没有其他数据支撑前，你无法断言，故而还需更多的参照样本。										0
+10089	10090	0		转念一想，你的调研方向似乎有些偏颇。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10090	10091	0		付费陪玩的本质是花钱买服务，它充其量只能算作是私人定制化的“拟态社交”。										0
+10091	10092	0		在游戏生态里，不掺杂利益的玩家社交，才是最具普适性的情况。										0
+10092	10093	0		可真这样做，无疑要投入高昂的时间成本。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10093	10094	0		眼下既已取巧，用钱换了效率，那不如顺势将选题切口细化，把话题聚焦于“金钱交易下的虚拟情感劳作”。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10094	10095	0		修改完选题方向，你心满意足。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10095	0	0		下一次取材，一定比今天更有收获。										0
+10096	10097	0		你体验到了躺赢的乐趣，一下腰不酸，脖子不痛，觉也不想睡了，只想着再多打几把。										0
+10097	10098	0		肾上腺素，很神奇吧。										0
+10098	10099	0		你不假思索地又续了三个小时，刚刚为了考验他的操作不得不藏拙降水准，而现在……	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10099	10100	0		你关掉了碍事的录制软件，开着着实影响你的发挥，更何况你本就应该好好放松。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10100	10101	0		工作？什么工作。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10101	10102	0		你活动活动手腕，准备大杀四方。										0
+10102	10103	0		进入状态的你在游戏世界里大展拳脚、走位飘渺，连时安都不禁对你突飞猛进的水平称赞连连。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10103	10104	0		对此你只是谦虚地不说话，装高手。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}									0
+10104	10105	0		而时安也敏锐地捕捉到了你的状态变化，自觉从技术兜底型切换成了陪伴引导型。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10105	10106	0		他不说“老板好厉害”这种毫无指向性的空话，而是会认真捕捉你操作里的每一个闪光点。										0
+10106	10107	0		哪怕只是下意识走位躲掉了敌方的大招，或是歪打正着的补控打断了对方的技能，只要他目睹了，都会细致地指明。										0
+10107	10108	0		他确实有在关注你，努力给你提供更好的游戏体验。										0
+10108	10109	0		所以当时常结算弹出来的时候，你还有些意犹未尽。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10109	10110	0		原本打算再续上一会儿，却被时安以明早有事为由，婉拒了续费申请。										0
+10110	10111	0		你颇为遗憾，但还想保持火热的手感，只好去找其他陪玩。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10111	10112	0		可不知是不是运气耗尽，你接连遇到了索要礼物的、脾气爆的、爱说教的……	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10112	10113	0		和先前的轻松惬意相比，接下来的几个小时如酷刑般难熬。										0
+10113	10114	0		尤其是最后那位陪玩，他的操作尚且不如你，却偏偏长了一张停不下来的嘴。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/NPC/路人1.png","OffsetX":0.0,"OffsetY":-300.0,"Scale":2.0}]}									0
+10114	10115	0		你补刀慢了，他立刻说“这里应该先A兵再放技能”；										0
+10115	10116	0		你走位躲掉了对方的技能，他又说“其实你刚才往左边闪更安全”；										0
+10116	10117	0		就连你随手选了个想练的角色，他都要指手画脚，从技能加点讲到出装顺序。										0
+10117	10118	0		游玩的全程更是喋喋不休，自己操控的角色死亡时还总要各种找理由。										0
+10118	10119	0		不等服务时长走完，你一个没忍住，直接点了结算。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10119	10120	0		耳根子终于清净的同时，你也意识到，并非所有陪玩都像时安那般专业。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10120	10121	0		你重新评估了手上现有素材的价值，那些负面样本虽然覆盖了常见的行业问题，	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10121	10122	0		但本质上都是职业素养的缺失，没有深挖的空间。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10122	10123	0		就算写出来，也不过是一篇不痛不痒的行业吐槽，根本撑不起你想要的深度。										0
+10123	10124	0		于是你很快做出了判断，放弃广撒网式横向调研，转而对时安进行纵向深度追踪。										0
+10124	10125	0		这不仅更有效率，也能让你在接下来的调研过程中，获得舒适的游戏体验。										0
+10125	0	0		毕竟，没有人能拒绝花钱买开心。										0
+10126	10127	0		时长结算界面一弹出，你随手点开打赏栏，刷了一个三位数的虚拟礼物。										0
+10127	10128	0		破空声接二连三响起，紧接着是连环的沉闷声响。										0
+10128	10129	0		五颜六色的烟花一朵接一朵地炸开，金红色的火星如瀑布般倾泻而下。										0
+10129	10130	0		夸张的光效闪得你眯起眼睛，整个屏幕也跟着烟花的节奏闪烁。										0
+10130	10131	0		当最后一缕火光消散，屏幕上只剩下一行烫金大字：赠送[时安]盛世烟花×1。										0
+10131	10132	0		耳机那头陷入短暂沉默，随即传来他窘迫的声音，像在困惑自己何德何能：										0
+10132	10133	0	时安	谢谢老板的打赏，不过您出手这么大方，倒让我觉得……刚才的服务还不够周到，受之有愧了。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10133	10134	0		你靠在椅背上，胜利带来的喜悦让你的语气也不自觉地染上几分棋逢对手的欣赏：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10134	10135	0	主控名	打得不错，你的情绪控制很完美，是不可多得的优质样本。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10135	10136	0		耳机那头再度安静，他似乎在消化你话里的深意。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10136	10137	0		沉寂片刻，他的声音重新响起，语调比刚才多了些轻快：										0
+10137	10138	0	时安	原来是这样，很高兴能为老板的事业添砖加瓦。您还需要素材的话，请随时联系我。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10138	10139	0		添砖加瓦。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10139	10140	0		他的用词很巧妙，既把自己放在了辅助的位置上，又保持了不卑不亢的态度，谦逊却不卑微。										0
+10140	10141	0		他没有因为被当成工具人心生不满，始终保持着专业的态度。										0
+10141	10142	0		直到你主动挂断通话，他摘下耳机时，眼前还晃着烟花绽开后残留的彩色光斑。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}							Assets/GameMain/Art/Backgrounds/居家/黑色.png		0
+10142	10143	0		他专注地看完了那场炫目的、只为他燃起的烟花，直到眼睛发酸才恍然惊觉自己竟忘了眨眼。										0
+10143	10144	0		他揉了揉眉心，那抹不受控制上扬的嘴角，却泄露了他心底泛起的波澜。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/闭眼微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10144	10145	0		由于学业压力和另外几份零碎兼职的拉扯，他无法做到全天候在线。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10145	10146	0		虽然之前也有过几位老板邀请他做固定陪玩，但他深知自己给不了对方想要的稳定，便都婉言拒绝了。										0
+10146	10147	0		但现实远比游戏残酷得多，没了固定单源的他，很快就被蜂拥入行的新人取代。										0
+10147	10156	0		他已经太久没开单，那些昂贵的打赏礼物，他没见过，也不敢奢求。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/周杉.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10148	10149	0		然而那抹笑也没能维持太久，随之而来的是后知后觉的自省与懊恼。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/皱眉.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10149	10150	0		他越想越觉得泄气，只恨自己刚才表现得太过拘谨，甚至有些冷淡？										0
+10150	10151	0		他拿不准你会不会介意他的态度，更不知道下一次，自己还能不能有幸在你的素材库里占据一席之地。										0
+10151	10152	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10152	10153	0		网络那端的辗转反侧与百转千回，你自然是无从知晓的。								Assets/GameMain/Art/Backgrounds/居家/家-夜晚.png		0
+10153	10154	0		只是当你清晨拿起手机时，屏幕上静静地躺着一条短讯，发送时间是你早已沉入安眠、万籁俱寂的深夜：										0
+10154	0	0	时安	晚安老板，好梦。										0
+10155	0	1				{"Choices":[{"ChoiceText":"正常结算","NextId":10062,"Conditions":[],"Rewards":[]},{"ChoiceText":"打赏礼物","NextId":10126,"Conditions":[],"Rewards":[]},{"ChoiceText":"续费体验","NextId":10096,"Conditions":[],"Rewards":[]}]}								
+10156	10148	0		收到礼物的瞬间，他先怔住了，大脑放空好一会儿，心底才慢慢漾开细细密密的喜悦。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/闭眼微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0

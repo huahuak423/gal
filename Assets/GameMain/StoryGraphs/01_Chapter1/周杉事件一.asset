@@ -3005,7 +3005,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Exit
-        node: {fileID: 834674259197447441}
+        node: {fileID: 7846998703722085880}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -4582,7 +4582,6 @@ MonoBehaviour:
   - {fileID: 9152525107472879430}
   - {fileID: -8869220451354967679}
   - {fileID: 7846998703722085880}
-  - {fileID: 834674259197447441}
   - {fileID: -3390375093987187125}
   - {fileID: -5121914633028642125}
   - {fileID: 1863941505325798460}
@@ -5187,62 +5186,6 @@ MonoBehaviour:
     OffsetX: 0
     OffsetY: 0
     Scale: 0
-  BgmPath: 
-  SePath: 
-  BackgroundPath: 
-  VoicePath: 
-  PerformanceKey: 
-  HideDialoguePanel: 0
-  NeedsAttention: 0
-  EditorNote: 
---- !u!114 &834674259197447441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_23_\u5165\u773C\u5C31\u662F\u4E00\u6C34\u513F\u7684\u7537\u6027"
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 9900, y: 0}
-  ports:
-    keys:
-    - Entry
-    - Exit
-    values:
-    - _fieldName: Entry
-      _node: {fileID: 834674259197447441}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Exit
-        node: {fileID: 7846998703722085880}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Exit
-      _node: {fileID: 834674259197447441}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Entry
-        node: {fileID: -3390375093987187125}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Entry: 0
-  Exit: 0
-  SpeakerName: 
-  DialogText: "\u5165\u773C\u5C31\u662F\u4E00\u6C34\u513F\u7684\u7537\u6027\u966A\u73A9\u5361\u7247\uFF0C\u4ECE\u6280\u672F\u6D41\u5230\u966A\u4F34\u578B\uFF0C\u5206\u7C7B\u6E05\u6670\u3002"
-  CharacterDisplays: []
   BgmPath: 
   SePath: 
   BackgroundPath: 
@@ -8764,7 +8707,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: 834674259197447441}
+        node: {fileID: -3390375093987187125}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -8773,7 +8716,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u9996\u9875\u7B97\u6CD5\u662F\u6839\u636E\u4F60\u7684\u6027\u522B\u3001\u5E74\u9F84\u548C\u5174\u8DA3\u7231\u597D\u63A8\u9001\u7684\uFF0C"
+  DialogText: "\u9996\u9875\u7B97\u6CD5\u662F\u6839\u636E\u4F60\u7684\u6027\u522B\u3001\u5E74\u9F84\u548C\u5174\u8DA3\u7231\u597D\u63A8\u9001\u7684\uFF0C\u5165\u773C\u5C31\u662F\u4E00\u6C34\u513F\u7684\u7537\u6027\u966A\u73A9\u5361\u7247\uFF0C\u4ECE\u6280\u672F\u6D41\u5230\u966A\u4F34\u578B\uFF0C\u5206\u7C7B\u6E05\u6670\u3002"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
