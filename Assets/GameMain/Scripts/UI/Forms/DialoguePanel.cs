@@ -11,6 +11,7 @@ using AVGGame;
 using System.Collections;
 using System.Collections.Generic;
 using GameFramework.Resource;
+using GameFramework.Sound;
 
 namespace AVGGame
 {
@@ -79,6 +80,9 @@ namespace AVGGame
         private string m_CurrentText = "";
         private System.Action m_OnComplete;
         private ProcedureGame m_ProcedureGame;
+
+        // 音频相关
+        private string m_CurrentBgmPath = null;
 
         // 自动播放 & 加速
         private bool m_IsAutoMode = false;
@@ -1039,6 +1043,75 @@ namespace AVGGame
 
         #endregion
 
+        #region 音频播放
+
+        /// <summary>
+        /// 播放对话节点的音频（BGM/SE/Voice）
+        /// </summary>
+        private void PlayDialogueAudio(DialogueDisplayData data)
+        {
+            // BGM：路径非空且与当前不同时切换，留空则继续播放
+            if (!string.IsNullOrEmpty(data.BgmPath) && data.BgmPath != m_CurrentBgmPath)
+            {
+                // BGM组只有1个Agent且Avoid Being Replaced=false，新播自动替换旧BGM
+                m_CurrentBgmPath = data.BgmPath;
+                var bgmParams = new PlaySoundParams
+                {
+                    Loop = true,
+                    Priority = 0,
+                    VolumeInSoundGroup = 1f,
+                    FadeInSeconds = 0.5f,
+                    Pitch = 1f,
+                    PanStereo = 0f,
+                    SpatialBlend = 0f,
+                    MaxDistance = 100f,
+                    DopplerLevel = 0f
+                };
+                GameEntry.Sound.PlaySound(data.BgmPath, "BGM", bgmParams);
+                Debug.Log($"[DialoguePanel] BGM切换: {data.BgmPath}");
+            }
+
+            // SE：路径非空时播放一次
+            if (!string.IsNullOrEmpty(data.SePath))
+            {
+                var seParams = new PlaySoundParams
+                {
+                    Loop = false,
+                    Priority = 0,
+                    VolumeInSoundGroup = 1f,
+                    FadeInSeconds = 0f,
+                    Pitch = 1f,
+                    PanStereo = 0f,
+                    SpatialBlend = 0f,
+                    MaxDistance = 100f,
+                    DopplerLevel = 0f
+                };
+                GameEntry.Sound.PlaySound(data.SePath, "Sound", seParams);
+                Debug.Log($"[DialoguePanel] SE播放: {data.SePath}");
+            }
+
+            // Voice：路径非空时播放一次（同组Avoid Being Replaced会自动打断上一句）
+            if (!string.IsNullOrEmpty(data.VoicePath))
+            {
+                var voiceParams = new PlaySoundParams
+                {
+                    Loop = false,
+                    Priority = 0,
+                    VolumeInSoundGroup = 1f,
+                    FadeInSeconds = 0f,
+                    Pitch = 1f,
+                    PanStereo = 0f,
+                    SpatialBlend = 0f,
+                    MaxDistance = 100f,
+                    DopplerLevel = 0f
+                };
+                GameEntry.Sound.PlaySound(data.VoicePath, "Voice", voiceParams);
+                Debug.Log($"[DialoguePanel] Voice播放: {data.VoicePath}");
+            }
+        }
+
+        #endregion
+
         #region 私有方法
 
         /// <summary>
@@ -1074,6 +1147,9 @@ namespace AVGGame
 
             // 应用背景图
             ApplyBackground(data.BackgroundPath);
+
+            // 播放音频（BGM持续播放，SE和Voice当句播放）
+            PlayDialogueAudio(data);
 
             // 控制对话框区域显示/隐藏
             if (m_TextPlate != null)

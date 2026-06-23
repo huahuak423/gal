@@ -1,11 +1,11 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath	HideDialoguePanel
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string	bool
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音	隐藏对话框
-10000	10001	0		连续六天的高强度工作，让你的大脑像塞满了生锈的齿轮，每转动一下都带着钝重的摩擦声。								Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
-10001	10002	0		选题、逐字改稿、盯后台复盘数据……										0
+10000	10001	0		连续六天的高强度工作，让你的大脑像塞满了生锈的齿轮，每转动一下都带着钝重的摩擦声。					Assets/GameMain/Music/优雅.mp3			Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png	Assets/GameMain/Art/Voice/配音/周杉/4.对面双C.mp3	0
+10001	10002	0		选题、逐字改稿、盯后台复盘数据……						Assets/GameMain/Sounds/心跳声.mp3				0
 10002	10003	0		你的生活被切割成一块块以小时为单位的碎片，每一块都填满了待办清单和工作内容。										0
 10003	10004	0		你急需一个良好的放松方式来释放压力。										0
-10004	10005	0		就在这时，之前搁置了许久的选题突然跳进脑海——										0
+10004	10005	0		就在这时，之前搁置了许久的选题突然跳进脑海——					Assets/GameMain/Music/似水.mp3					0
 10005	10006	0		“当代年轻人的电竞社交与情感代偿”。										0
 10006	10007	0		你失笑地摇了摇头，最近真有些魔怔了，满脑子都是转赛道的事，连放松都忍不住想往选题上靠。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10007	10008	0		但不得不承认，这是一个颇有潜力的方向。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0

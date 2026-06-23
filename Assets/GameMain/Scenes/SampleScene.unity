@@ -153,6 +153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 423756380}
+  - {fileID: 382745896}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &321057820
@@ -172,6 +173,37 @@ MonoBehaviour:
   m_RunInBackground: 1
   m_NeverSleep: 1
   m_EditorResourceMode: 1
+--- !u!1 &382745895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 382745896}
+  m_Layer: 0
+  m_Name: SoundAgent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &382745896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382745895}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 321057819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &423756379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -247,6 +279,62 @@ PrefabInstance:
     - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[3]
       value: AVGGame.ProcedureSplash
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_InstanceRoot
+      value: 
+      objectReference: {fileID: 382745896}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_SoundGroups.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_EnablePlaySoundUpdateEvent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_SoundGroups.Array.data[0].m_Name
+      value: BGM
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_SoundGroups.Array.data[1].m_Name
+      value: Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_SoundGroups.Array.data[2].m_Name
+      value: Voice
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_SoundGroups.Array.data[0].m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_SoundGroups.Array.data[1].m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_SoundGroups.Array.data[2].m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_EnablePlaySoundDependencyAssetEvent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_SoundGroups.Array.data[0].m_AgentHelperCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_SoundGroups.Array.data[1].m_AgentHelperCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_SoundGroups.Array.data[2].m_AgentHelperCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_SoundGroups.Array.data[1].m_AvoidBeingReplacedBySamePriority
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11454530, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
       propertyPath: m_UIGroups.Array.size

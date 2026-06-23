@@ -560,6 +560,7 @@ namespace AVGGame
                 ChoicesJson = row.ChoicesJson,
                 CharacterActionsJson = row.CharacterActionsJson,
                 BackgroundPath = row.BackgroundPath,
+                BgmPath = row.BgmPath,
                 VoicePath = row.VoicePath,
                 SePath = row.SePath,
                 HideDialoguePanel = row.HideDialoguePanel
