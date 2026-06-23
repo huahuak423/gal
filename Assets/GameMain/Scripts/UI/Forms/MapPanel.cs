@@ -2,14 +2,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
+using GameFramework.Resource;
 
 namespace AVGGame
 {
     public class MapPanel : UIFormBase
     {
-        #region 字段 
+        #region 字段
         //游戏主流程引用
         private ProcedureGame m_ProcedureGame;
+
+        [Header("地点选择面板背景图")]
+        [Tooltip("9个地点对应的背景图路径，留空则不切换")]
+        [SerializeField] private string[] m_PlaceBackgroundPaths = new string[9];
         
         [Header("地图按钮")]
         [SerializeField] private Button m_ButtonPlace1;
@@ -25,6 +30,7 @@ namespace AVGGame
         [Header("--- 小地图 UI 引用 ---")]        
         [SerializeField] private Button m_ButtonMenu;
         private List<GameObject> m_Buttonlist = new List<GameObject>();
+        private Image m_SelectPanelBackground;
         private Transform m_SelectPanel;
         private Button m_ButtonInformation;
         private Button m_Button1;
@@ -65,6 +71,7 @@ namespace AVGGame
             m_ButtonMenu =  this.GetComponentByPath<Button>("Canvas/Background/ButtonMenu");
             m_ButtonInformation = this.GetComponentByPath<Button>("Canvas/Background/MessagePlate/ButtonInformation");
             m_SelectPanel = this.GetComponentByPath<Transform>("Canvas/Background/SelectPanel");
+            m_SelectPanelBackground = this.GetComponentByPath<Image>("Canvas/Background/SelectPanel/Background");
             m_Button1 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button1");
             m_Button2 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button2");
             m_Button3 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button3");
@@ -81,6 +88,14 @@ namespace AVGGame
             m_Buttonlist.Add(m_Button3.gameObject);
             m_Buttonlist.Add(m_Button4.gameObject);
             m_Buttonlist.Add(m_Button5.gameObject);
+
+            m_PlaceBackgroundPaths[0] = "Assets/GameMain/Art/Backgrounds/居家/家-白天.png";
+            m_PlaceBackgroundPaths[1] = "Assets/GameMain/Art/Backgrounds/商场/商场.png";
+            m_PlaceBackgroundPaths[2] = "Assets/GameMain/Art/Backgrounds/医院/医院.png";
+            m_PlaceBackgroundPaths[3] = "Assets/GameMain/Art/Backgrounds/公园/公园白天.png";
+            m_PlaceBackgroundPaths[4] = "Assets/GameMain/Art/Backgrounds/书店/书店.png";
+            m_PlaceBackgroundPaths[5] = "Assets/GameMain/Art/Backgrounds/游乐园/游乐园-白天.png";
+            m_PlaceBackgroundPaths[6] = "Assets/GameMain/Art/Backgrounds/电影院/电影院.png";
             
             if(m_SelectPanel != null)
                 m_SelectPanel.gameObject.SetActive(false);
@@ -208,17 +223,18 @@ namespace AVGGame
         private void OnButtonPlace1Click()
         {
             Log.Info("[Place1Click] clicked");
-            //获得该地图中已经解锁的事件列表
+            ApplyPlaceBackground(1);
             List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(1);
             SelectStory(eventList);
         }
-        
+
         /// <summary>
         /// 选择地图2
         /// </summary>
         private void OnButtonPlace2Click()
         {
             Log.Info("[Place2Click] clicked");
+            ApplyPlaceBackground(2);
             //获得该地图中已经解锁的事件列表
             List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(2);
             SelectStory(eventList);
@@ -230,6 +246,7 @@ namespace AVGGame
         private void OnButtonPlace3Click()
         {
             Log.Info("[Place3Click] clicked");
+            ApplyPlaceBackground(3);
             List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(3);
             SelectStory(eventList);
         }
@@ -240,6 +257,7 @@ namespace AVGGame
         private void OnButtonPlace4Click()
         {
             Log.Info("[Place4Click] clicked");
+            ApplyPlaceBackground(4);
             List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(4);
             SelectStory(eventList);
         }
@@ -250,6 +268,7 @@ namespace AVGGame
         private void OnButtonPlace5Click()
         {
             Log.Info("[Place5Click] clicked");
+            ApplyPlaceBackground(5);
             List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(5);
             SelectStory(eventList);
         }
@@ -260,6 +279,7 @@ namespace AVGGame
         private void OnButtonPlace6Click()
         {
             Log.Info("[Place6Click] clicked");
+            ApplyPlaceBackground(6);
             List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(6);
             SelectStory(eventList);
         }
@@ -270,6 +290,7 @@ namespace AVGGame
         private void OnButtonPlace7Click()
         {
             Log.Info("[Place7Click] clicked");
+            ApplyPlaceBackground(7);
             List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(7);
             SelectStory(eventList);
         }
@@ -280,6 +301,7 @@ namespace AVGGame
         private void OnButtonPlace8Click()
         {
             Log.Info("[Place8Click] clicked");
+            ApplyPlaceBackground(8);
             List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(8);
             SelectStory(eventList);
         }
@@ -290,8 +312,41 @@ namespace AVGGame
         private void OnButtonPlace9Click()
         {
             Log.Info("[Place9Click] clicked");
+            ApplyPlaceBackground(9);
             List<EventRowData> eventList = m_ProcedureGame.GetVisibleEventsInMap(9);
             SelectStory(eventList);
+        }
+
+        /// <summary>
+        /// 根据地点ID切换选择面板背景图
+        /// </summary>
+        private void ApplyPlaceBackground(int mapId)
+        {
+            if (m_SelectPanelBackground == null) return;
+
+            int index = mapId - 1;
+            if (index < 0 || index >= m_PlaceBackgroundPaths.Length) return;
+
+            string path = m_PlaceBackgroundPaths[index];
+            if (string.IsNullOrEmpty(path)) return;
+
+            GameEntry.Resource.LoadAsset(
+                path,
+                typeof(Sprite),
+                new LoadAssetCallbacks(
+                    (assetName, asset, duration, userData) =>
+                    {
+                        if (m_SelectPanelBackground != null)
+                        {
+                            m_SelectPanelBackground.sprite = asset as Sprite;
+                        }
+                    },
+                    (assetName, status, errorMessage, userData) =>
+                    {
+                        Debug.LogWarning($"[MapPanel] 地点背景图加载失败: {assetName}, {errorMessage}");
+                    }
+                )
+            );
         }
 
         /// <summary>
