@@ -4241,10 +4241,18 @@ MonoBehaviour:
   Choices:
   - ChoiceText: "\u5C40\u4FC3\u88C5\u50BB"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 3
+      ItemId: 
   - ChoiceText: "\u8FFD\u95EE\u8FC7\u53BB"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 5
+      ItemId: 
 --- !u!114 &-3290657161289818211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8162,13 +8170,25 @@ MonoBehaviour:
   Choices:
   - ChoiceText: "\u501F\u7740\u8FD8\u4E66\uFF0C\u8F6C\u79FB\u8BDD\u9898"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 10
+      ItemId: 
   - ChoiceText: "\u4ED4\u7EC6\u56DE\u5FC6"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 10
+      ItemId: 
   - ChoiceText: "\u62D2\u7EDD\u56DE\u5FC6"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 5
+      ItemId: 
 --- !u!114 &920267548835681265
 MonoBehaviour:
   m_ObjectHideFlags: 0

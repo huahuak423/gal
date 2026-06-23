@@ -168,7 +168,7 @@
 10164	10165	0		却也因此完成了盲测，意外得出了与理论不符的实际结果。										0
 10165	10170	0		他拿起手机，想再说些什么弥补下午的失礼，却怕再次惹你不快，终究还是作罢。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/陈予荣.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
 10166	10045	0		便歇了额外购买的心思，转身前去结账。										0
-10167	0	1				{"Choices":[{"ChoiceText":"和他A钱","NextId":10090,"Conditions":[],"Rewards":[]},{"ChoiceText":"吐司给他，再去买两个","NextId":10128,"Conditions":[],"Rewards":[]},{"ChoiceText":"大方应下","NextId":10055,"Conditions":[],"Rewards":[]}]}								
+10167	0	1				{"Choices":[{"ChoiceText":"和他A钱","NextId":10090,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"05","Value":6,"ItemId":""}]},{"ChoiceText":"吐司给他，再去买两个","NextId":10128,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"05","Value":9,"ItemId":""}]},{"ChoiceText":"大方应下","NextId":10055,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"05","Value":12,"ItemId":""}]}]}								
 10168	0	0		……										0
 10169	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10170	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0

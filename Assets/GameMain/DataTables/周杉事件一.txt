@@ -156,5 +156,5 @@
 10152	10153	0		网络那端的辗转反侧与百转千回，你自然是无从知晓的。								Assets/GameMain/Art/Backgrounds/居家/家-夜晚.png		0
 10153	10154	0		只是当你清晨拿起手机时，屏幕上静静地躺着一条短讯，发送时间是你早已沉入安眠、万籁俱寂的深夜：										0
 10154	0	0	时安	晚安老板，好梦。										0
-10155	0	1				{"Choices":[{"ChoiceText":"正常结算","NextId":10062,"Conditions":[],"Rewards":[]},{"ChoiceText":"打赏礼物","NextId":10126,"Conditions":[],"Rewards":[]},{"ChoiceText":"续费体验","NextId":10096,"Conditions":[],"Rewards":[]}]}								
+10155	0	1				{"Choices":[{"ChoiceText":"正常结算","NextId":10062,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"03","Value":6,"ItemId":""}]},{"ChoiceText":"打赏礼物","NextId":10126,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"03","Value":12,"ItemId":""}]},{"ChoiceText":"续费体验","NextId":10096,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"03","Value":9,"ItemId":""}]}]}								
 10156	10148	0		收到礼物的瞬间，他先怔住了，大脑放空好一会儿，心底才慢慢漾开细细密密的喜悦。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/闭眼微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0

@@ -164,7 +164,7 @@
 10160	10161	0		雪地里一只黑猫蜷成一团，只露出一双翠绿的眼睛。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙加好友.png","OffsetX":0.0,"OffsetY":-180.0,"Scale":1.5}]}									0
 10161	10162	0		他的昵称起的也很简短，仅有一个“叙”字。										0
 10162	10164	0		你把手机放回口袋，又紧了紧怀里的书。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-240.0,"OffsetY":-620.0,"Scale":2.0}]}									0
-10163	0	1				{"Choices":[{"ChoiceText":"让他扫你，留有余地","NextId":10126,"Conditions":[],"Rewards":[]},{"ChoiceText":"事出反常必有妖，保持警惕","NextId":10100,"Conditions":[],"Rewards":[]},{"ChoiceText":"爽快扫码，备注名字","NextId":10071,"Conditions":[],"Rewards":[]}]}								
+10163	0	1				{"Choices":[{"ChoiceText":"让他扫你，留有余地","NextId":10126,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":9,"ItemId":""}]},{"ChoiceText":"事出反常必有妖，保持警惕","NextId":10100,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":6,"ItemId":""}]},{"ChoiceText":"爽快扫码，备注名字","NextId":10071,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":12,"ItemId":""}]}]}								
 10164	10168	0		是真是假，回去验证一番就知道了。										0
 10165	10022	0		那是她第一次鼓起勇气反抗父母权威，只为了打掉烂人的孩子。										0
 10166	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0

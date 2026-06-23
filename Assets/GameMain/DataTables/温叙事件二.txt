@@ -212,6 +212,6 @@
 10208	10209	0		看着他眼底那份小心翼翼的期盼，你不再推脱，反手握住了那本书的边缘。										0
 10209	10210	0	主控名	谢谢您，那么希望以后，合作愉快。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10210	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10211	0	1				{"Choices":[{"ChoiceText":"借着还书，转移话题","NextId":10159,"Conditions":[],"Rewards":[]},{"ChoiceText":"仔细回忆","NextId":10102,"Conditions":[],"Rewards":[]},{"ChoiceText":"拒绝回忆","NextId":10183,"Conditions":[],"Rewards":[]}]}								
-10212	0	1				{"Choices":[{"ChoiceText":"局促装傻","NextId":10133,"Conditions":[],"Rewards":[]},{"ChoiceText":"追问过去","NextId":10144,"Conditions":[],"Rewards":[]}]}								
+10211	0	1				{"Choices":[{"ChoiceText":"借着还书，转移话题","NextId":10159,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":10,"ItemId":""}]},{"ChoiceText":"仔细回忆","NextId":10102,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":10,"ItemId":""}]},{"ChoiceText":"拒绝回忆","NextId":10183,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":5,"ItemId":""}]}]}								
+10212	0	1				{"Choices":[{"ChoiceText":"局促装傻","NextId":10133,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":3,"ItemId":""}]},{"ChoiceText":"追问过去","NextId":10144,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":5,"ItemId":""}]}]}								
 10213	10034	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0

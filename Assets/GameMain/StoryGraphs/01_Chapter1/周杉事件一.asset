@@ -1015,13 +1015,25 @@ MonoBehaviour:
   Choices:
   - ChoiceText: "\u6B63\u5E38\u7ED3\u7B97"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 03
+      Value: 6
+      ItemId: 
   - ChoiceText: "\u6253\u8D4F\u793C\u7269"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 03
+      Value: 12
+      ItemId: 
   - ChoiceText: "\u7EED\u8D39\u4F53\u9A8C"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 03
+      Value: 9
+      ItemId: 
 --- !u!114 &-7630947352891930105
 MonoBehaviour:
   m_ObjectHideFlags: 0
