@@ -31,14 +31,14 @@
 10027	10028	0	陈予荣	也就是说，从热力学和结构力学的综合表现来看，右边这款，呈现出了绝对的数据碾压。									Assets/GameMain/Art/Voice/配音/陈予荣/也就是说.mp3	0
 10028	10029	0		他音量不高，语速不疾不徐。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10029	10030	0		你听得云里雾里的，不太明白他为什么要把吐司选择这种小事，上升到用物理学分析解构，颇有种大炮打蚊子的荒谬感。										0
-10030	10031	0		周围的顾客也忍不住看向他，又看向自己托盘里的吐司，表情复杂。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/NPC/路人3.png","OffsetX":125.0,"OffsetY":-200.0,"Scale":2.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/NPC/路人4.png","OffsetX":0.0,"OffsetY":-250.0,"Scale":2.0},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/NPC/路人2.png","OffsetX":-75.0,"OffsetY":-200.0,"Scale":2.0}]}									0
-10031	10032	0		在充斥着情绪煽动和感性营销的时代，这种用理科思维去暴力拆解消费陷阱的脑回路，实在是别具一格。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10030	10031	0		周围的顾客也忍不住看向他，又看向自己托盘里的吐司，表情复杂。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/NPC/路人4.png","OffsetX":0.0,"OffsetY":-250.0,"Scale":2.0},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/NPC/路人2.png","OffsetX":-75.0,"OffsetY":-200.0,"Scale":2.0}]}									0
+10031	10032	0		在充斥着情绪煽动和感性营销的时代，这种用理科思维去暴力拆解消费陷阱的脑回路，实在是别具一格。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10032	10033	0		你决定用你的专业性，和他那严谨求真的学术态度碰上一碰：										0
 10033	10034	0	主控名	受教了，用热力学和结构力学来买面包，这确实是一个非常新颖的思路。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10034	10035	0		你话锋一转，并没有被他抛出的一堆专业术语绕进去。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10035	10036	0		作为凡事讲求实际证据的内容创作者，你有着不可动摇的逻辑闭环。										0
 10036	10037	0	主控名	但你的推断只是基于宏观结构和视觉观察，真正尝起来是否有明显的风味差异，我认为还是需要实践来佐证。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10037	10038	0	女主名	味蕾的感受比物理数据主观得多，而口味，本就没有标准答案。										0
+10037	10038	0	主控名	味蕾的感受比物理数据主观得多，而口味，本就没有标准答案。										0
 10038	10039	0		他头头是道的理论，反倒促使你下定两个都买的决心。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10039	10040	0		你打开玻璃橱柜，用夹子将两款吐司一并放进了自己的托盘。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10040	10041	0		做完这些，你下意识朝他看了一眼，正巧捕捉到他眼底那抹转瞬即逝的错愕。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/惊讶.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/惊讶.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0

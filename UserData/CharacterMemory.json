@@ -1250,6 +1250,15 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_128_好，那便不打扰你了。"
+        },
+        {
+            "GraphName": "温叙事件三",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/22.是的您也.jpg",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_132_是的，您也知道这家店"
         }
     ]
 }

@@ -53,6 +53,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &-7875160686903623396
@@ -108,6 +109,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &-7074275320077757455
@@ -123,7 +125,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -168, y: -408}
+  position: {x: -168, y: -520}
   ports:
     keys:
     - Entry
@@ -160,9 +162,10 @@ MonoBehaviour:
   CharacterDisplays: []
   BgmPath: 
   SePath: 
-  BackgroundPath: 
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5E8F\u7AE0/\u4E91\u5C42-\u8FD1.jpg"
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 1
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &-5615346800760943337
@@ -225,6 +228,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &-4740842013824729001
@@ -287,6 +291,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &-4231614836462744865
@@ -349,6 +354,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &-1923631863547113799
@@ -418,6 +424,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &-899665650461424559
@@ -470,6 +477,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &-879459696611771907
@@ -485,7 +493,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -584, y: -408}
+  position: {x: -600, y: -520}
   ports:
     keys:
     - Entry
@@ -519,9 +527,10 @@ MonoBehaviour:
   CharacterDisplays: []
   BgmPath: "Assets/GameMain/Music/\u6E29\u67D4\u7684\u61D2\u98CE.mp3"
   SePath: 
-  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5E8F\u7AE0/\u4E91\u5C42.png"
+  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5E8F\u7AE0/\u4E91\u5C42.jpg"
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 1
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &11400000
@@ -618,6 +627,7 @@ MonoBehaviour:
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5E8F\u7AE0/\u4E91\u5C422.png"
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &528292105366915109
@@ -673,6 +683,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &753275018768581290
@@ -688,7 +699,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 248, y: -408}
+  position: {x: 232, y: -504}
   ports:
     keys:
     - Entry
@@ -728,6 +739,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &856391019126154548
@@ -783,6 +795,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &1581909728680316135
@@ -838,6 +851,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &2048970047738053435
@@ -893,6 +907,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &2294381595437323636
@@ -948,6 +963,7 @@ MonoBehaviour:
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u4E91\u5C422.png"
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &2305451746248065678
@@ -1003,6 +1019,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &3556502745473909699
@@ -1058,6 +1075,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &3957749002821983341
@@ -1113,6 +1131,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &5358588973467537566
@@ -1175,6 +1194,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &5496371427672900309
@@ -1230,6 +1250,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &5651480664392303952
@@ -1285,6 +1306,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &5965848121738446455
@@ -1347,6 +1369,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &6980637169021811286
@@ -1402,6 +1425,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &8222259853404654734
@@ -1457,6 +1481,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &8440518931105932372
@@ -1512,6 +1537,7 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &8540066516195687006
@@ -1574,6 +1600,7 @@ MonoBehaviour:
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5C45\u5BB6/\u5367\u5BA4.png"
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &8866915287050313158
@@ -1629,5 +1656,6 @@ MonoBehaviour:
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
+  HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
