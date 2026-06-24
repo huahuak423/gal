@@ -115,6 +115,9 @@ namespace AVGGame
         private List<Button> m_ChoiceButtons = new List<Button>();
         private GameObject m_ChoiceButtonPrefab;
 
+        // 历史对话记录
+        private List<HistoryEntry> m_HistoryEntries = new List<HistoryEntry>();
+
         #endregion
 
         #region 生命周期
@@ -220,6 +223,12 @@ namespace AVGGame
             if (m_ButtonSpeedUp != null)
             {
                 m_ButtonSpeedUp.onClick.AddListener(OnSpeedUpClick);
+            }
+
+            // 绑定历史回顾按钮事件
+            if (m_ButtonHistory != null)
+            {
+                m_ButtonHistory.onClick.AddListener(OnHistoryClick);
             }
 
             // 绑定自动播放按钮事件
@@ -359,6 +368,24 @@ namespace AVGGame
         }
 
         /// <summary>
+        /// 打开历史对话回顾面板
+        /// </summary>
+        private void OnHistoryClick()
+        {
+            Log.Info($"[DialoguePanel] History clicked, 共 {m_HistoryEntries.Count} 条记录");
+
+            // 暂停自动播放
+            m_AutoAdvanceWaiting = false;
+
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.History),
+                UIGroupDefinition.Popup,
+                Constant.AssetPriority.UIAsset,
+                m_HistoryEntries
+            );
+        }
+
+        /// <summary>
         /// 每帧更新：处理自动播放计时器
         /// </summary>
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
@@ -440,6 +467,9 @@ namespace AVGGame
             m_ChoiceButtons.Clear();
 
             m_OnComplete = null;
+
+            // 清空历史记录
+            m_HistoryEntries.Clear();
         }
 
         #endregion
@@ -1242,6 +1272,13 @@ namespace AVGGame
             // 普通对话或非选择节点
             // 隐藏选项面板
             HideChoicesPanel();
+
+            // 记录到历史列表
+            m_HistoryEntries.Add(new HistoryEntry
+            {
+                SpeakerName = data.SpeakerName,
+                DialogText = data.DialogText
+            });
 
             // 显示对话
             SetDialogue(data.SpeakerName, data.DialogText);
