@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath	HideDialoguePanel
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string	bool
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音	隐藏对话框
-10000	10001	0		专访结束后，你几乎天天熬夜加班加点，死磕着稿件里每一个字眼。								Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
+10000	10001	0		专访结束后，你几乎天天熬夜加班加点，死磕着稿件里每一个字眼。					Assets/GameMain/Music/悦耳舒缓的乐曲.mp3			Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
 10001	10196	0		这是你从业以来倾注最多心血的一篇稿件，你不敢有分毫懈怠，生怕落笔太轻辜负了他的坦诚，又怕用力过猛砸了自己七年的热爱。										0
 10002	10003	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/宣发修改稿.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10003	10004	0		那是一份批注得细致入微的文档，原有的文章框架他一字未动，与其说是审稿，不如说是两个灵魂隔着屏幕、跨越时空的无声共鸣。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0

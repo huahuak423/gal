@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath	HideDialoguePanel
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string	bool
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音	隐藏对话框
-10000	10001	0		周六下午，你拉着许映月在商场里闲逛。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/许映月/许映月常规.png","OffsetX":0.0,"OffsetY":-270.0,"Scale":2.5}]}							Assets/GameMain/Art/Backgrounds/商场/商场.png		0
+10000	10001	0		周六下午，你拉着许映月在商场里闲逛。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/许映月/许映月常规.png","OffsetX":0.0,"OffsetY":-270.0,"Scale":2.5}]}				Assets/GameMain/Music/轻音乐.mp3			Assets/GameMain/Art/Backgrounds/商场/商场.png		0
 10001	10002	0		每周例行一次，一路逛逛吃吃，外加吐槽工作和分享新鲜八卦。										0
 10002	10003	0		今天的主要目标是刚发售的全新盲盒系列，你俩蹲在货架前，煞有介事地晃动着盒子，试图掂量哪个手感更沉、更容易抽到隐藏款。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10003	10004	0		就在你举起盲盒准备贴在耳边听摇盒声时，店外突然传来一阵异常的骚动。										0

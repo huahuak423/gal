@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath	HideDialoguePanel
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string	bool
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音	隐藏对话框
-10000	10001	0		不过三天，你就把温叙留下的书册翻到了最后一页。								Assets/GameMain/Art/Backgrounds/居家/家-白天.png		0
+10000	10001	0		不过三天，你就把温叙留下的书册翻到了最后一页。					Assets/GameMain/Music/悦耳舒缓的乐曲.mp3			Assets/GameMain/Art/Backgrounds/居家/家-白天.png		0
 10001	10002	0		放在手边的草稿纸上写满了令你感触较深的句子，那是你阅读叙闻作品多年养成的习惯。										0
 10002	10003	0		字里行间那股熟悉牵引骗不了人，确实是他的笔触。										0
 10003	10004	0		叙闻擅长用细腻平和的口吻，把那些女性说不出口的忧思、深夜独自消化的委屈，一一铺陈：										0
@@ -35,7 +35,7 @@
 10031	10032	0		你松了口气，悬着的心终于落了地。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10032	10033	0		访谈对象既定，接下来就是为这场至关重要的深度对话做准备。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10033	10213	0		你翻出了自己珍藏的所有叙闻的书，把每一本批注都重新整理了一遍，又提前列好了问题清单，从情节设计到人物形象，事无巨细。										0
-10034	10035	0		到了约定的日子，你提前十分钟走进了咖啡店。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}							Assets/GameMain/Art/Backgrounds/商场/咖啡店.png		0
+10034	10035	0		到了约定的日子，你提前十分钟走进了咖啡店。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}				Assets/GameMain/Music/温柔的懒风.mp3			Assets/GameMain/Art/Backgrounds/商场/咖啡店.png		0
 10035	10036	0		刚推开门，就看到了坐在靠窗位置的温叙。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙平和.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
 10036	10037	0		他也似乎心有所感，视线投向你所在之处。										0
 10037	10038	0		目光交汇的刹那，他的嘴角绽开一抹极尽温柔的笑意，周遭的喧嚣都为之寂静。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0

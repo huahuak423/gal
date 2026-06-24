@@ -1954,7 +1954,7 @@ MonoBehaviour:
   BgmPath: "Assets/GameMain/Music/\u4F18\u96C5.mp3"
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5C45\u5BB6/\u5BB6-\u508D\u665A\u5F00\u706F.png"
-  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u5468\u6749/4.\u5BF9\u9762\u53CCC.mp3"
+  VoicePath: 
   PerformanceKey: 
   HideDialoguePanel: 0
   NeedsAttention: 0
@@ -3096,7 +3096,7 @@ MonoBehaviour:
   SpeakerName: 
   DialogText: "\u5C31\u5728\u8FD9\u65F6\uFF0C\u4E4B\u524D\u6401\u7F6E\u4E86\u8BB8\u4E45\u7684\u9009\u9898\u7A81\u7136\u8DF3\u8FDB\u8111\u6D77\u2014\u2014"
   CharacterDisplays: []
-  BgmPath: "Assets/GameMain/Music/\u4F3C\u6C34.mp3"
+  BgmPath: 
   SePath: 
   BackgroundPath: 
   VoicePath: 
@@ -3153,7 +3153,7 @@ MonoBehaviour:
   DialogText: "\u9009\u9898\u3001\u9010\u5B57\u6539\u7A3F\u3001\u76EF\u540E\u53F0\u590D\u76D8\u6570\u636E\u2026\u2026"
   CharacterDisplays: []
   BgmPath: 
-  SePath: "Assets/GameMain/Sounds/\u5FC3\u8DF3\u58F0.mp3"
+  SePath: 
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
@@ -3379,7 +3379,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u5468\u6749/4.1\u5BF9\u9762\u53CCc\uFF08\u7528\u8FD9\u4E2A\uFF09.mp3"
   PerformanceKey: 
   HideDialoguePanel: 0
   NeedsAttention: 0
@@ -6311,7 +6311,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_50_\u6211\u7684\u9519\uFF0C\u521A\u624D\u7ED9\u4F60\u7684\u62A4"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 22050, y: 0}
+  position: {x: 22056, y: -8}
   ports:
     keys:
     - Entry
@@ -6356,7 +6356,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u5468\u6749/\u6211\u7684\u9519.mp3"
   PerformanceKey: 
   HideDialoguePanel: 0
   NeedsAttention: 0
@@ -7028,7 +7028,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u5468\u6749/5.\u8C22\u8C22\u8001\u677F\u7684\u6253\u8D4F.mp3"
   PerformanceKey: 
   HideDialoguePanel: 0
   NeedsAttention: 0
@@ -9020,7 +9020,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u5468\u6749/6.\u539F\u6765\u662F\u8FD9\u6837\uFF0C\u6DFB\u7816\u52A0\u74E6.mp3"
   PerformanceKey: 
   HideDialoguePanel: 0
   NeedsAttention: 0
@@ -9272,7 +9272,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u5468\u6749/\u8001\u677F\u665A\u4E0A\u597D.mp3"
   PerformanceKey: 
   HideDialoguePanel: 0
   NeedsAttention: 0
@@ -9328,7 +9328,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u5468\u6749/4.2\u8001\u677F\u522B\u6025.mp3"
   PerformanceKey: 
   HideDialoguePanel: 0
   NeedsAttention: 0
