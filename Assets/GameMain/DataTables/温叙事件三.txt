@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath	HideDialoguePanel
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string	bool
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音	隐藏对话框
-10000	10001	0		专访结束后，你几乎天天熬夜加班加点，死磕着稿件里每一个字眼。								Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
+10000	10001	0		专访结束后，你几乎天天熬夜加班加点，死磕着稿件里每一个字眼。					Assets/GameMain/Music/悦耳舒缓的乐曲.mp3			Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
 10001	10196	0		这是你从业以来倾注最多心血的一篇稿件，你不敢有分毫懈怠，生怕落笔太轻辜负了他的坦诚，又怕用力过猛砸了自己七年的热爱。										0
 10002	10003	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/宣发修改稿.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10003	10004	0		那是一份批注得细致入微的文档，原有的文章框架他一字未动，与其说是审稿，不如说是两个灵魂隔着屏幕、跨越时空的无声共鸣。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
@@ -123,8 +123,8 @@
 10119	10120	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/21.那便不打扰你了.png","OffsetX":0.0,"OffsetY":280.0,"Scale":2.0}]}									1
 10120	10121	0		对话到此画上句点，你放下手机，将心思重新放回眼前的蛋糕上。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10121	0	0		……										0
-10122	10123	0	主控名	是的，您也知道这家店吗？	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10123	10124	0	温叙	以前住在附近，受过那家店老板的照拂。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10122	10123	0	主控名	是的，您也知道这家店吗？										1
+10123	10124	0	温叙	以前住在附近，受过那家店老板的照拂。										0
 10124	10125	0	温叙	后来作品有了起色，生活安稳，临搬走前便办了储值卡存了些钱款。										0
 10125	10126	0	温叙	我本不常吃甜食，办卡不过是想借着这样的方式，悄悄报答昔日恩情。										0
 10126	10127	0		听完这段过往，再联想到许映月一路奔波探店的趣事，你对这家藏在城郊的小店愈发向往。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
@@ -192,9 +192,9 @@
 10188	10189	0		简短的回应并没有打击到你的热情，你只当是他恢复了往日的疏离，安心地结束对话，投入到工作中。										0
 10189	10190	0		没人知道，那个写文章时字字珠玑的叙闻老师，此刻正对着聊天框束手无策。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙常规.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}							Assets/GameMain/Art/Backgrounds/居家/黑色.png		0
 10190	10195	0		屏幕微弱的光打在他清隽的面容上，他长久地凝视着聊天界面，眼底翻涌的暗色最终化作一声叹息。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
-10191	0	1				{"Choices":[{"ChoiceText":"拍图发给他质问","NextId":10034,"Conditions":[],"Rewards":[]},{"ChoiceText":"埋头苦吃","NextId":10154,"Conditions":[],"Rewards":[]},{"ChoiceText":"发个朋友圈问问","NextId":10084,"Conditions":[],"Rewards":[]}]}								
-10192	0	1				{"Choices":[{"ChoiceText":"随口提起闺蜜","NextId":10105,"Conditions":[],"Rewards":[]},{"ChoiceText":"肯定并反问","NextId":10122,"Conditions":[],"Rewards":[]}]}								
-10193	0	1				{"Choices":[{"ChoiceText":"把去的机会留给别人","NextId":10139,"Conditions":[],"Rewards":[]},{"ChoiceText":"邀请他故地重游","NextId":10129,"Conditions":[],"Rewards":[]}]}								
+10191	0	1				{"Choices":[{"ChoiceText":"拍图发给他质问","NextId":10034,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":5,"ItemId":""}]},{"ChoiceText":"埋头苦吃","NextId":10154,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":7,"ItemId":""}]},{"ChoiceText":"发个朋友圈问问","NextId":10084,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":10,"ItemId":""}]}]}								
+10192	0	1				{"Choices":[{"ChoiceText":"随口提起闺蜜","NextId":10105,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":1,"ItemId":""}]},{"ChoiceText":"肯定并反问","NextId":10122,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":3,"ItemId":""}]}]}								
+10193	0	1				{"Choices":[{"ChoiceText":"把去的机会留给别人","NextId":10139,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":1,"ItemId":""}]},{"ChoiceText":"邀请他故地重游","NextId":10129,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":3,"ItemId":""}]}]}								
 10194	10156	0		于是把消息标为未读，把锁屏的手机随手揣进了口袋，转而研究起了眼前的蛋糕盒。										0
 10195	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10196	10002	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/宣发初稿.png","OffsetX":0.0,"OffsetY":-350.0,"Scale":2.0}]}									1

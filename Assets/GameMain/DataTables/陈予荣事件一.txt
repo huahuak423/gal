@@ -1,7 +1,7 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath	HideDialoguePanel
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string	bool
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音	隐藏对话框
-10000	10001	0		周六，午后。								Assets/GameMain/Art/Backgrounds/大地图.png		0
+10000	10001	0		周六，午后。					Assets/GameMain/Music/夏天.mp3			Assets/GameMain/Art/Backgrounds/大地图.png		0
 10001	10002	0		你刚把手头的资料整合完毕，连日紧绷的神经终于松懈下来。										0
 10002	10003	0		人一累就总想着奖励自己，而美食无疑是最优选。										0
 10003	10004	0		说来也巧，近期有一家烘焙店在各大社交平台上炒得异常火热，你也打算去凑凑热闹。										0
@@ -64,7 +64,7 @@
 10060	10061	0		他回过神，从你手中接过购物袋：	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10061	10062	0	陈予荣	好，期待你的测评数据。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/陈予荣.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								Assets/GameMain/Art/Voice/配音/陈予荣/好，期待你的.mp3	0
 10062	10063	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							Assets/GameMain/Art/Backgrounds/大地图-傍晚.png		0
-10063	10064	0		晚上回到家，已经吃饱喝足的你把吐司塞进冰箱，想着明天早上再拿出来做测评。								Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
+10063	10064	0		晚上回到家，已经吃饱喝足的你把吐司塞进冰箱，想着明天早上再拿出来做测评。					Assets/GameMain/Music/悦耳舒缓的乐曲.mp3			Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
 10064	10065	0		结果才刚坐上旋转椅，你就收到了一条消息。										0
 10065	10066	0		那是一个文档，标题为《两款吐司的对比测评报告》。										0
 10066	10067	0		里面详细列出了两款吐司在口感、湿度、甜度、回味四个维度的评分，每个维度都配有数据表格和文字说明。										0
@@ -106,7 +106,7 @@
 10102	10103	0		伴随“滴”的一声，交易完成，你们之间那点微弱波澜也被抹平。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10103	10104	0		你示意店员将吐司切块分装，拿起其中一袋递给他。										0
 10104	10105	0		……								Assets/GameMain/Art/Backgrounds/大地图-傍晚.png		0
-10105	10106	0		当天晚上，你收到了业主群发来的好友申请：								Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
+10105	10106	0		当天晚上，你收到了业主群发来的好友申请：					Assets/GameMain/Music/悦耳舒缓的乐曲.mp3			Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
 10106	10107	0		“我是陈予荣，测评结果已出。”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣加好友.png","OffsetX":0.0,"OffsetY":-180.0,"Scale":1.5}]}									1
 10107	10108	0		申请刚通过，他马上发来一篇文档，正式得像实验报告，措辞严谨，格式规范。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10108	10109	0		里面详细描述了两款吐司的口感差异，并附上了他的结论。										0
@@ -158,7 +158,7 @@
 10154	10155	0	陈予荣	结果与我先前基于物理结构的理论推导不太一致，人类味觉感官分辨存在阈值，无法精细区分这种量级的差异。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10155	10156	0	陈予荣	最终结论：两款吐司在口感与风味上不存在显著差异，所谓古法工艺确为营销噱头。										0
 10156	10157	0	主控名	结论一致，辛苦了。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10157	10158	0		隔壁。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}							Assets/GameMain/Art/Backgrounds/居家/黑色.png		0
+10157	10158	0		隔壁。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}				Assets/GameMain/Music/花落江南.mp3			Assets/GameMain/Art/Backgrounds/居家/黑色.png		0
 10158	10159	0		陈予荣盯着手机出神，屏幕暗下去的瞬间，下午面包店里的画面不受控制地在他脑海里回放：	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/陈予荣.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
 10159	10160	0		下意识递出付款码的动作、你骤然变冷的神情、还有那句不带温度的话语。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
 10160	10161	0		这些画面搅得他心神不宁，以至于刚才品尝吐司时完全心不在焉。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
@@ -168,7 +168,7 @@
 10164	10165	0		却也因此完成了盲测，意外得出了与理论不符的实际结果。										0
 10165	10170	0		他拿起手机，想再说些什么弥补下午的失礼，却怕再次惹你不快，终究还是作罢。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/陈予荣.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
 10166	10045	0		便歇了额外购买的心思，转身前去结账。										0
-10167	0	1				{"Choices":[{"ChoiceText":"和他A钱","NextId":10090,"Conditions":[],"Rewards":[]},{"ChoiceText":"吐司给他，再去买两个","NextId":10128,"Conditions":[],"Rewards":[]},{"ChoiceText":"大方应下","NextId":10055,"Conditions":[],"Rewards":[]}]}								
+10167	0	1				{"Choices":[{"ChoiceText":"和他A钱","NextId":10090,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"05","Value":6,"ItemId":""}]},{"ChoiceText":"吐司给他，再去买两个","NextId":10128,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"05","Value":9,"ItemId":""}]},{"ChoiceText":"大方应下","NextId":10055,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"05","Value":12,"ItemId":""}]}]}								
 10168	0	0		……										0
 10169	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10170	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0

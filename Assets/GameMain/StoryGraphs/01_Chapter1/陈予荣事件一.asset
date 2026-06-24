@@ -468,7 +468,7 @@ MonoBehaviour:
   SpeakerName: 
   DialogText: "\u665A\u4E0A\u56DE\u5230\u5BB6\uFF0C\u5DF2\u7ECF\u5403\u9971\u559D\u8DB3\u7684\u4F60\u628A\u5410\u53F8\u585E\u8FDB\u51B0\u7BB1\uFF0C\u60F3\u7740\u660E\u5929\u65E9\u4E0A\u518D\u62FF\u51FA\u6765\u505A\u6D4B\u8BC4\u3002"
   CharacterDisplays: []
-  BgmPath: 
+  BgmPath: "Assets/GameMain/Music/\u60A6\u8033\u8212\u7F13\u7684\u4E50\u66F2.mp3"
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5C45\u5BB6/\u5BB6-\u508D\u665A\u5F00\u706F.png"
   VoicePath: 
@@ -4339,7 +4339,7 @@ MonoBehaviour:
     OffsetX: 0
     OffsetY: 0
     Scale: 0
-  BgmPath: 
+  BgmPath: "Assets/GameMain/Music/\u82B1\u843D\u6C5F\u5357.mp3"
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5C45\u5BB6/\u9ED1\u8272.png"
   VoicePath: 
@@ -4822,7 +4822,7 @@ MonoBehaviour:
   SpeakerName: 
   DialogText: "\u5F53\u5929\u665A\u4E0A\uFF0C\u4F60\u6536\u5230\u4E86\u4E1A\u4E3B\u7FA4\u53D1\u6765\u7684\u597D\u53CB\u7533\u8BF7\uFF1A"
   CharacterDisplays: []
-  BgmPath: 
+  BgmPath: "Assets/GameMain/Music/\u60A6\u8033\u8212\u7F13\u7684\u4E50\u66F2.mp3"
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5C45\u5BB6/\u5BB6-\u508D\u665A\u5F00\u706F.png"
   VoicePath: 
@@ -6817,7 +6817,7 @@ MonoBehaviour:
   SpeakerName: 
   DialogText: "\u5468\u516D\uFF0C\u5348\u540E\u3002"
   CharacterDisplays: []
-  BgmPath: 
+  BgmPath: "Assets/GameMain/Music/\u590F\u5929.mp3"
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5927\u5730\u56FE.png"
   VoicePath: 
@@ -8873,13 +8873,25 @@ MonoBehaviour:
   Choices:
   - ChoiceText: "\u548C\u4ED6A\u94B1"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 05
+      Value: 6
+      ItemId: 
   - ChoiceText: "\u5410\u53F8\u7ED9\u4ED6\uFF0C\u518D\u53BB\u4E70\u4E24\u4E2A"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 05
+      Value: 9
+      ItemId: 
   - ChoiceText: "\u5927\u65B9\u5E94\u4E0B"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 05
+      Value: 12
+      ItemId: 
 --- !u!114 &6566278297135635104
 MonoBehaviour:
   m_ObjectHideFlags: 0

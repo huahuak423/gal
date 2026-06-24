@@ -4404,13 +4404,25 @@ MonoBehaviour:
   Choices:
   - ChoiceText: "\u62CD\u56FE\u53D1\u7ED9\u4ED6\u8D28\u95EE"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 5
+      ItemId: 
   - ChoiceText: "\u57CB\u5934\u82E6\u5403"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 7
+      ItemId: 
   - ChoiceText: "\u53D1\u4E2A\u670B\u53CB\u5708\u95EE\u95EE"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 10
+      ItemId: 
 --- !u!114 &-2603631261965674692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5826,10 +5838,18 @@ MonoBehaviour:
   Choices:
   - ChoiceText: "\u628A\u53BB\u7684\u673A\u4F1A\u7559\u7ED9\u522B\u4EBA"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 1
+      ItemId: 
   - ChoiceText: "\u9080\u8BF7\u4ED6\u6545\u5730\u91CD\u6E38"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 3
+      ItemId: 
 --- !u!114 &-214223478995353574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12121,7 +12141,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_91_\u4F60\u770B\u4E86\u770B\u6E29\u53D9\u4FE1\u606F\uFF0C\u53C8"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 17096, y: 568}
+  position: {x: 17096, y: 648}
   ports:
     keys:
     - Entry
@@ -12391,7 +12411,7 @@ MonoBehaviour:
   SpeakerName: 
   DialogText: "\u4E13\u8BBF\u7ED3\u675F\u540E\uFF0C\u4F60\u51E0\u4E4E\u5929\u5929\u71AC\u591C\u52A0\u73ED\u52A0\u70B9\uFF0C\u6B7B\u78D5\u7740\u7A3F\u4EF6\u91CC\u6BCF\u4E00\u4E2A\u5B57\u773C\u3002"
   CharacterDisplays: []
-  BgmPath: 
+  BgmPath: "Assets/GameMain/Music/\u60A6\u8033\u8212\u7F13\u7684\u4E50\u66F2.mp3"
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5C45\u5BB6/\u5BB6-\u508D\u665A\u5F00\u706F.png"
   VoicePath: 
@@ -12589,7 +12609,15 @@ MonoBehaviour:
   Choices:
   - ChoiceText: "\u968F\u53E3\u63D0\u8D77\u95FA\u871C"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 1
+      ItemId: 
   - ChoiceText: "\u80AF\u5B9A\u5E76\u53CD\u95EE"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 3
+      ItemId: 

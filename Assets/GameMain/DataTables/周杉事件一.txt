@@ -1,11 +1,11 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath	HideDialoguePanel
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string	bool
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音	隐藏对话框
-10000	10001	0		连续六天的高强度工作，让你的大脑像塞满了生锈的齿轮，每转动一下都带着钝重的摩擦声。					Assets/GameMain/Music/优雅.mp3			Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png	Assets/GameMain/Art/Voice/配音/周杉/4.对面双C.mp3	0
-10001	10002	0		选题、逐字改稿、盯后台复盘数据……						Assets/GameMain/Sounds/心跳声.mp3				0
+10000	10001	0		连续六天的高强度工作，让你的大脑像塞满了生锈的齿轮，每转动一下都带着钝重的摩擦声。					Assets/GameMain/Music/优雅.mp3			Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
+10001	10002	0		选题、逐字改稿、盯后台复盘数据……										0
 10002	10003	0		你的生活被切割成一块块以小时为单位的碎片，每一块都填满了待办清单和工作内容。										0
 10003	10004	0		你急需一个良好的放松方式来释放压力。										0
-10004	10005	0		就在这时，之前搁置了许久的选题突然跳进脑海——					Assets/GameMain/Music/似水.mp3					0
+10004	10005	0		就在这时，之前搁置了许久的选题突然跳进脑海——										0
 10005	10006	0		“当代年轻人的电竞社交与情感代偿”。										0
 10006	10007	0		你失笑地摇了摇头，最近真有些魔怔了，满脑子都是转赛道的事，连放松都忍不住想往选题上靠。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10007	10008	0		但不得不承认，这是一个颇有潜力的方向。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
@@ -33,7 +33,7 @@
 10029	10030	0		“话少、情绪稳定、不用刻意讨好、能打逆风局。”										0
 10030	10031	0		订单刚发出，一个纯黑色默认头像就出现在了聊天框里。										0
 10031	10032	0		你戴上降噪耳机，一道温润、干净的青年音在耳边流淌：										0
-10032	10033	0	时安	老板晚上好，我是时安。接下来的时间，我会全力配合您的节奏。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10032	10033	0	时安	老板晚上好，我是时安。接下来的时间，我会全力配合您的节奏。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								Assets/GameMain/Art/Voice/配音/周杉/老板晚上好.mp3	0
 10033	10034	0		你随口应了一声，直接进入游戏加载界面。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10034	10035	0		进入游戏后，你刻意选择了考验配合、且容错率低的高爆发输出位。								Assets/GameMain/Art/CG/z1.png		0
 10035	10036	0		你的打法也带着强势的压迫感，开局就肆无忌惮地入侵敌方野区，全程不发信号，考验他临场反应能力。										0
@@ -48,9 +48,9 @@
 10044	10045	0		就如此刻，已经有人忍不住在公屏里鸟语花香了。										0
 10045	10046	0		但耳机那头依然安静，你甚至能听见微弱的气流声。										0
 10046	10047	0		然后，他的声音响起：										0
-10047	10048	0	时安	我的错，刚才给你的护盾慢了，没保住你。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
-10048	10049	0	时安	对面双C为了抓你，已经交了全部关键技能和闪现。										0
-10049	10050	0	时安	老板别急，我去清线守高地，你复活后直接带线拿龙，这局能翻，信我。										0
+10047	10048	0	时安	我的错，刚才给你的护盾慢了，没保住你。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								Assets/GameMain/Art/Voice/配音/周杉/我的错.mp3	0
+10048	10049	0	时安	对面双C为了抓你，已经交了全部关键技能和闪现。									Assets/GameMain/Art/Voice/配音/周杉/4.1对面双c（用这个）.mp3	0
+10049	10050	0	时安	老板别急，我去清线守高地，你复活后直接带线拿龙，这局能翻，信我。									Assets/GameMain/Art/Voice/配音/周杉/4.2老板别急.mp3	0
 10050	10051	0		说话的同时，他还不忘在公屏安抚队友，主动揽下责任。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10051	10052	0		在他的指挥下，你们成功抗住了敌方的强推，并在你复活后完成了一波漂亮的反打。										0
 10052	10053	0		敌方水晶轰然炸裂，金色光芒在屏幕正中央凝成“胜利”徽章。										0
@@ -133,12 +133,12 @@
 10129	10130	0		夸张的光效闪得你眯起眼睛，整个屏幕也跟着烟花的节奏闪烁。										0
 10130	10131	0		当最后一缕火光消散，屏幕上只剩下一行烫金大字：赠送[时安]盛世烟花×1。										0
 10131	10132	0		耳机那头陷入短暂沉默，随即传来他窘迫的声音，像在困惑自己何德何能：										0
-10132	10133	0	时安	谢谢老板的打赏，不过您出手这么大方，倒让我觉得……刚才的服务还不够周到，受之有愧了。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10132	10133	0	时安	谢谢老板的打赏，不过您出手这么大方，倒让我觉得……刚才的服务还不够周到，受之有愧了。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								Assets/GameMain/Art/Voice/配音/周杉/5.谢谢老板的打赏.mp3	0
 10133	10134	0		你靠在椅背上，胜利带来的喜悦让你的语气也不自觉地染上几分棋逢对手的欣赏：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10134	10135	0	主控名	打得不错，你的情绪控制很完美，是不可多得的优质样本。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10135	10136	0		耳机那头再度安静，他似乎在消化你话里的深意。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10136	10137	0		沉寂片刻，他的声音重新响起，语调比刚才多了些轻快：										0
-10137	10138	0	时安	原来是这样，很高兴能为老板的事业添砖加瓦。您还需要素材的话，请随时联系我。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10137	10138	0	时安	原来是这样，很高兴能为老板的事业添砖加瓦。您还需要素材的话，请随时联系我。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/剪影.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								Assets/GameMain/Art/Voice/配音/周杉/6.原来是这样，添砖加瓦.mp3	0
 10138	10139	0		添砖加瓦。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10139	10140	0		他的用词很巧妙，既把自己放在了辅助的位置上，又保持了不卑不亢的态度，谦逊却不卑微。										0
 10140	10141	0		他没有因为被当成工具人心生不满，始终保持着专业的态度。										0
@@ -156,5 +156,5 @@
 10152	10153	0		网络那端的辗转反侧与百转千回，你自然是无从知晓的。								Assets/GameMain/Art/Backgrounds/居家/家-夜晚.png		0
 10153	10154	0		只是当你清晨拿起手机时，屏幕上静静地躺着一条短讯，发送时间是你早已沉入安眠、万籁俱寂的深夜：										0
 10154	0	0	时安	晚安老板，好梦。										0
-10155	0	1				{"Choices":[{"ChoiceText":"正常结算","NextId":10062,"Conditions":[],"Rewards":[]},{"ChoiceText":"打赏礼物","NextId":10126,"Conditions":[],"Rewards":[]},{"ChoiceText":"续费体验","NextId":10096,"Conditions":[],"Rewards":[]}]}								
+10155	0	1				{"Choices":[{"ChoiceText":"正常结算","NextId":10062,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"03","Value":6,"ItemId":""}]},{"ChoiceText":"打赏礼物","NextId":10126,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"03","Value":12,"ItemId":""}]},{"ChoiceText":"续费体验","NextId":10096,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"03","Value":9,"ItemId":""}]}]}								
 10156	10148	0		收到礼物的瞬间，他先怔住了，大脑放空好一会儿，心底才慢慢漾开细细密密的喜悦。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/周杉/闭眼微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0

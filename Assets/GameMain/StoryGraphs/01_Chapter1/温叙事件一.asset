@@ -409,7 +409,7 @@ MonoBehaviour:
   SpeakerName: 
   DialogText: "\u5468\u672B\u7684\u72EC\u7ACB\u4E66\u5E97\u6D78\u5728\u6696\u9EC4\u706F\u5149\u91CC\uFF0C\u7A7A\u6C14\u4E2D\u5F25\u6F2B\u7740\u6CB9\u58A8\u4E0E\u6D45\u6DE1\u7684\u5496\u5561\u9999\u3002"
   CharacterDisplays: []
-  BgmPath: 
+  BgmPath: "Assets/GameMain/Music/\u4F3C\u6C34.mp3"
   SePath: 
   BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u4E66\u5E97/\u4E66\u5E97.png"
   VoicePath: 
@@ -669,13 +669,25 @@ MonoBehaviour:
   Choices:
   - ChoiceText: "\u8BA9\u4ED6\u626B\u4F60\uFF0C\u7559\u6709\u4F59\u5730"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 9
+      ItemId: 
   - ChoiceText: "\u4E8B\u51FA\u53CD\u5E38\u5FC5\u6709\u5996\uFF0C\u4FDD\u6301\u8B66\u60D5"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 6
+      ItemId: 
   - ChoiceText: "\u723D\u5FEB\u626B\u7801\uFF0C\u5907\u6CE8\u540D\u5B57"
     Conditions: []
-    Rewards: []
+    Rewards:
+    - Type: 0
+      NpcId: 06
+      Value: 12
+      ItemId: 
 --- !u!114 &-7476362166259401212
 MonoBehaviour:
   m_ObjectHideFlags: 0
