@@ -739,7 +739,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u8BB8\u6620\u6708/\u86CB\u7CD5\u6536\u5230\u4E86\u5417.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -1096,7 +1096,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u8BB8\u6620\u6708/6.\u53D1\u4E86\u7B14\u5C0F\u8D22.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -3918,7 +3918,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u8BB8\u6620\u6708/10.\u86CB\u7CD5\u9001\u5230\u4E86\u6CA1.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -5785,7 +5785,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u8BB8\u6620\u6708/\u5B9D\u5B9D\uFF01.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -8280,7 +8280,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u8BB8\u6620\u6708/5.\u60CA\u4E3A\u5929\u4EBA.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -10132,7 +10132,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/\u5192\u6627\u5E26\u98DE.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -10621,7 +10621,7 @@ MonoBehaviour:
       _dynamic: 0
   Entry: 0
   Exit: 0
-  SpeakerName: 
+  SpeakerName: "\u4E3B\u63A7\u540D"
   DialogText: "[\u86CB\u7CD5.jpg]"
   CharacterDisplays:
   - CharacterName: 
@@ -12236,7 +12236,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u8BB8\u6620\u6708/11.\u5230\u4E86\u5230\u4E86\uFF0C\u90FD\u5FEB\u5403\u5B8C\u4E86.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 

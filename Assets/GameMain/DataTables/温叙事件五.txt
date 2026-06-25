@@ -5,14 +5,14 @@
 10001	10002	0		你偶尔会问他几句，他都简短地回复“好多了”、“谢谢关心”。										0
 10002	10003	0		至于新书推广的事，他也慢慢有空开始重新着手。										0
 10003	10004	0		傍晚，你刚起草完推广初稿，正准备再问问情况，温叙就先你一步发来消息：								Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
-10004	10005	0	温叙	听说今晚八点有月全食，方便一起去南湖公园吗？	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/72.听说.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10004	10005	0	温叙	听说今晚八点有月全食，方便一起去南湖公园吗？	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/72.听说.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
 10005	10006	0		最近你们的交流一直停留在客气问候和工作交流的层面，这样的私人邀约实属突然。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10006	10007	0		明明是一句看似寻常的询问，可你却能从中察觉他的郑重，仿佛无声地暗示着某种即将越界的宣告。										0
 10007	10158	0		一种莫名的忐忑在心底蔓延，你看着屏幕上的文字，一时竟不知道该如何回复。										0
 10008	10009	0		你始终认为，你们只是合作关系。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10009	10010	0		他对你的态度似乎不同寻常，但你却觉得他还没有了解到真正的你。										0
 10010	10011	0		你想了想，还是决定婉言拒绝。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10011	10012	0	主控名	可能不太方便，祝您赏月愉快。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/74.不太方便.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10011	10012	0	主控名	可能不太方便，祝您赏月愉快。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/74.不太方便.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
 10012	10013	0	温叙	我今天带了《棱镜回响》的手写初稿，想送给它的灵感缪斯。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/75.我今天带了.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10013	10014	0	温叙	如果你改变主意，我会在湖边的长椅等你。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/76.如果改变主意.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10014	10015	0		“灵感缪斯”。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
@@ -47,8 +47,8 @@
 10043	0	0		月亮总会重新圆满。										0
 10044	10045	0		你不是会对着未知退缩的人，越是如此，反而越能激起你一探究竟的好奇心。										0
 10045	10046	0		如果这一切的背后，真的是精心编织、用来捕获你的网，那你不介意主动踏入陷阱，亲眼会一会那位藏在暗处的织网人。										0
-10046	10047	0	主控名	方便的，一会见。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10047	10048	0		夜晚的南湖公园格外静谧，微凉的晚风穿梭在婆娑的树影间，带来阵阵带着水汽的草木清香。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}				Assets/GameMain/Music/春光明媚.mp3			Assets/GameMain/Art/Backgrounds/公园/公园.png		0
+10046	10047	0	主控名	方便的，一会见。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/73.方便的.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
+10047	10048	0		夜晚的南湖公园格外静谧，微凉的晚风穿梭在婆娑的树影间，带来阵阵带着水汽的草木清香。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}				Assets/GameMain/Music/春光明媚.mp3			Assets/GameMain/Art/Backgrounds/公园/公园.png		0
 10048	10049	0		你沿着湖边的木栈道缓步前行，月光穿透树叶的缝隙，投落细碎晃动的光斑。										0
 10049	10050	0		在道路尽头，你停下了脚步。										0
 10050	10051	0		温叙就坐在那张临湖的长椅上，他一改往日的穿搭，裹着一件略显沉郁的深色大衣。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙大衣常规.png","OffsetX":0.0,"OffsetY":-350.0,"Scale":2.0}]}									0

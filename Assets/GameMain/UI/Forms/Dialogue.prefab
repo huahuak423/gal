@@ -1012,6 +1012,7 @@ MonoBehaviour:
   m_ChoiceButton4Text: {fileID: 0}
   m_ChoiceButton5Text: {fileID: 0}
   m_BackgroundImage: {fileID: 2033000749014796811}
+  m_TextImage: {fileID: 0}
   m_BackgroundImageButton: {fileID: 5757320561558578267}
   m_ButtonMenu: {fileID: 7606750739628798284}
   m_ButtonSpeedUp: {fileID: 0}
@@ -2745,7 +2746,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22.0484, y: -319}
+  m_AnchoredPosition: {x: 24, y: -364.83}
   m_SizeDelta: {x: 2445.156, y: 325.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7746290333589726042
@@ -2783,7 +2784,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 3
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

@@ -641,7 +641,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/65.\u4E07\u5206\u611F\u8C22.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -1117,7 +1117,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/51.\u533B\u836F\u8D39\u662F.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -2732,7 +2732,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/50.\u521A\u624D\u592A\u7740\u6025.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -3124,7 +3124,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u8BB8\u6620\u6708/16.\u521A\u624D\u75C5\u4EBA\u5BB6\u5C5E.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -5582,7 +5582,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u8BB8\u6620\u6708/17.okok.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -5953,7 +5953,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/53.\u62B1\u6B49\u521A\u5FD9\u5B8C.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -7198,7 +7198,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/46.\u8F6C\u8D26.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -9285,7 +9285,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_99_\u4F60\u90A3\u8FB9\u641E\u5B9A\u4E86\u5417\uFF0C\u6211\u5728"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 44100, y: 0}
+  position: {x: 44104, y: -8}
   ports:
     keys:
     - Entry
@@ -9332,7 +9332,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u8BB8\u6620\u6708/18.\u4F60\u90A3\u8FB9\u641E\u5B9A.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -10312,7 +10312,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/61.\u62B1\u6B49\u6253\u6270.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -10461,7 +10461,7 @@ MonoBehaviour:
   m_Name: "\u5BF9\u8BDD_129_\u4F60\u628A 827.4 \u5143"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 57600, y: 0}
+  position: {x: 57592, y: -8}
   ports:
     keys:
     - Entry
@@ -10508,7 +10508,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/54.\u533B\u836F\u8D39\u622A\u56FE.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -10753,7 +10753,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/62.\u6CA1\u5173\u7CFB.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -11061,7 +11061,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/47.\u94B1\u6211\u6536\u4E0B\u4E86.png"
     OffsetX: 0
-    OffsetY: -120
+    OffsetY: -240
     Scale: 2
   BgmPath: 
   SePath: 
@@ -11418,7 +11418,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/55.\u8F6C\u8D26.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -120
     Scale: 2
   BgmPath: 
   SePath: 
@@ -11488,7 +11488,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/64.\u62B1\u6B49\u6551\u6211\u5988.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 

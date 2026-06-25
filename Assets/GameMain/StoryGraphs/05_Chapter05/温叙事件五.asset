@@ -3994,7 +3994,7 @@ MonoBehaviour:
   CharacterDisplays:
   - CharacterName: 
     ActionType: 1
-    Position: 0
+    Position: 1
     SpritePath: 
     OffsetX: 0
     OffsetY: 0
@@ -4897,17 +4897,17 @@ MonoBehaviour:
   CharacterDisplays:
   - CharacterName: 
     ActionType: 0
-    Position: 0
-    SpritePath: "Assets/GameMain/Art/New Characters/\u5973\u4E3B/\u4E3B\u63A7\u7761\u8863\u5FAE\u7B11.png"
-    OffsetX: -210
-    OffsetY: -600
+    Position: 1
+    SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/73.\u65B9\u4FBF\u7684.png"
+    OffsetX: 0
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
   BackgroundPath: 
   VoicePath: 
   PerformanceKey: 
-  HideDialoguePanel: 0
+  HideDialoguePanel: 1
   NeedsAttention: 0
   EditorNote: 
 --- !u!114 &-92434936252759764
@@ -5544,7 +5544,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/72.\u542C\u8BF4.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -9794,7 +9794,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/74.\u4E0D\u592A\u65B9\u4FBF.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 

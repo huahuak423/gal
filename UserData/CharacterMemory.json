@@ -1925,6 +1925,249 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_27_…… 我明白了。"
+        },
+        {
+            "GraphName": "序章",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控睡衣非常紧张.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "序章",
+            "SpritePath": "Assets/GameMain/Art/Photo/显示器照片.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "序章",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "序章",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控睡衣无表情.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "序章",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控睡衣皱眉.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "序章",
+            "SpritePath": "Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/1.两款吐司对比文档.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_68_那是一个文档，标题是"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/2.不知你的结论是否与我一致.png",
+            "Position": 0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_74_不知你的结论是否与我"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/3.修改版文档.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/4.我哥.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_86_刚刚隐藏价格让我哥试"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/5.角度新奇.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_87_你的角度很新奇，是我"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/6.客气了.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_88_客气了，这次交流我也"
+        },
+        {
+            "GraphName": "温叙事件五",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/73.方便的.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_52_方便的，一会见。"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/7.测评报告.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_111_申请刚通过，他马上发"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/8.收到.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_114_收到，我的测评结果明"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/9.好的.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_115_好的。"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/10.营销.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/11.原来我们.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_128_……原来我们也成了被"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/12.准确来说.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_129_准确来说，是我们共同"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/13.下次有.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_130_下次有类似的实验，记"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/14.好.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_131_好。"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/15.未经你的同意.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_140_未经你的同意擅自做决"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/16.没事.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_142_毕竟还要当邻居，没必"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/17.测试结果如何.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_158_陈先生的测试结果如何"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/18.实测结果.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_159_实测结果与我先前基于"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/19.最终结论.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_160_最终结论：两款吐司在"
+        },
+        {
+            "GraphName": "陈予荣事件一",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/陈予荣/20.结论一致.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_161_结论一致，辛苦了。"
         }
     ]
 }

@@ -34,9 +34,9 @@
 10030	10031	0		在确认收货地址和联系方式确实是你的后，你向他道了谢，伸手接过纸盒。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10031	10032	0		交接的那一瞬，口袋里的手机发出一阵轻微的蜂鸣。										0
 10032	10197	0		你随手将蛋糕放在玄关的柜子上，掏出手机										0
-10033	10189	0	温叙	学妹现在可是大红人了，叙闻冒昧求带飞。这次新书宣传，还请多多借光。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/冒昧带飞.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10033	10189	0	温叙	学妹现在可是大红人了，叙闻冒昧求带飞。这次新书宣传，还请多多借光。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/冒昧带飞.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
 10034	10035	0		你心头一紧，出于职业本能，你拍了个蛋糕的照片发过去，并敲下了质问：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10035	10198	0		[蛋糕.jpg]	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/蛋糕.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10035	10198	0	主控名	[蛋糕.jpg]	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/蛋糕.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10036	10037	0		因为巧合得有些诡异，你下意识认定这蛋糕是温叙送来的。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10037	10038	0		上一次察觉到那抹精心设计的痕迹还历历在目，你对他并非全无防备。										0
 10038	10039	0		如今个人隐私泄露的情况屡见不鲜，再加上以他如今的社会资源，若是真想弄到你的住址，确实也绝非难事。										0
@@ -45,7 +45,7 @@
 10041	10042	0		足足过了两分钟，温叙的回复才终于跳了出来，隔着屏幕，你甚至能隐约嗅到一抹手足无措的慌乱与委屈：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10042	10043	0	温叙	抱歉……可这蛋糕不是我送的。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/抱歉.png","OffsetX":0.0,"OffsetY":150.0,"Scale":2.0}]}									1
 10043	10044	0		竟然不是吗？还没等你顺着这口气细想，闺蜜许映月的消息便劈里啪啦地炸了进来：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10044	10199	0	许映月	宝宝！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/宝宝！.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10044	10199	0	许映月	宝宝！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/宝宝！.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
 10045	10046	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10046	10047	0		原来是闹了个乌龙，你揉了揉太阳穴，有些哭笑不得。										0
 10047	10048	0		只能说,你沉浸在阶段性胜利，脑子不太清醒。										0
@@ -92,8 +92,8 @@
 10088	10089	0		你无奈失笑，索性拿出手机，找了个合适的角度拍了一张蛋糕特写，随手丢进了朋友圈：	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10089	10090	0		“天降匿名甜蜜，是哪位好心人的精准扶贫，速速认领！[蛋糕特写.jpg]”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/焦糖海盐蛋糕.png","OffsetX":0.0,"OffsetY":90.0,"Scale":1.350000023841858},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/Photo/焦糖海盐蛋糕.png","OffsetX":0.0,"OffsetY":90.0,"Scale":1.350000023841858}]}									0
 10090	10091	0		刚发出去不到两分钟，果不其然，真正的嫌疑人火速自投罗网了。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10091	10092	0	许映月	嗷嗷嗷！是我是我是我！今天探店吃到这款海盐焦糖，惊为天人！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/5.惊为天人.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
-10092	10093	0	许映月	最近发了笔小财，必须安排给我宝尝尝！原本想给你惊喜，结果光顾着跟总监激情对线，完全忘看配送进度了。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/6.发了笔小财.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10091	10092	0	许映月	嗷嗷嗷！是我是我是我！今天探店吃到这款海盐焦糖，惊为天人！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/5.惊为天人.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
+10092	10093	0	许映月	最近发了笔小财，必须安排给我宝尝尝！原本想给你惊喜，结果光顾着跟总监激情对线，完全忘看配送进度了。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/6.发了笔小财.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
 10093	10094	0	许映月	吃了吗吃了吗，是不是超好吃！	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/7.吃了吗吃了吗.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10094	10095	0	主控名	还没呢，我尝尝。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/8.还没呢.png","OffsetX":0.0,"OffsetY":-120.0,"Scale":2.0}]}									1
 10095	10096	0		你隔着屏幕和许映月插科打诨了几句，然后挖了一块蛋糕送进嘴里。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
@@ -167,9 +167,9 @@
 10163	10164	0		此时你再也顾不上其他，埋头苦吃起来，不一会儿，蛋糕就被你消灭了一半。										0
 10164	10165	0		就在这时，口袋里的手机震了震。										0
 10165	10166	0		你伸手摸过手机，是许映月发来的：										0
-10166	10167	0	许映月	蛋糕送到了没？我可是找了半小时的店才买到的！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/10.蛋糕送到了没.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10166	10167	0	许映月	蛋糕送到了没？我可是找了半小时的店才买到的！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/10.蛋糕送到了没.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
 10167	10168	0		你嘴里塞着蛋糕，手指飞快地打字回复。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10168	10169	0	主控名	到了到了，都快吃完了，好吃！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/11.到了到了，都快吃完了.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									0
+10168	10169	0	主控名	到了到了，都快吃完了，好吃！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/11.到了到了，都快吃完了.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									0
 10169	10202	0	许映月	那当然，也不看看是谁选的店～	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/12.那当然.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10170	10171	0	许映月	跟你说，这家堂食比外送好吃一百倍！现烤的焦糖脆壳更绝，下次我带你去店里吃！	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/14.跟你说.png","OffsetX":0.0,"OffsetY":0.0,"Scale":2.0}]}									1
 10171	10172	0	主控名	好啊好啊，到时我们还可以尝尝其他口味。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/15.好啊好啊.png","OffsetX":0.0,"OffsetY":120.0,"Scale":2.0}]}									0
@@ -200,7 +200,7 @@
 10196	10009	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10197	10033	0	温叙	[伤痕化铠.jpg]	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/伤痕化铠.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10198	10036	0	主控名	是有点冒昧，您怎么知道我的私人地址？	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/对方正在输入.png","OffsetX":0.0,"OffsetY":0.0,"Scale":2.0}]}									1
-10199	10200	0	许映月	蛋糕收到了吗？	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/蛋糕收到了吗.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10199	10200	0	许映月	蛋糕收到了吗？	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/蛋糕收到了吗.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
 10200	10201	0	许映月	我今天探店吃到的，惊为天人！	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/惊为天人.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10201	10045	0	许映月	正好今天公司发了项目奖金，第一时间给你点了一个尝尝~	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/项目奖金.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10202	10170	0	许映月	[骄傲.jpg]	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/13.骄傲.png","OffsetX":0.0,"OffsetY":-120.0,"Scale":2.0}]}									1
