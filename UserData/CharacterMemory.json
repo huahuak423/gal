@@ -1520,6 +1520,231 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_200_嗯。"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/16.刚才病人家属.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_97_刚才病人家属问医药费"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/17.okok.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_98_OKOK，对了，那个"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/18.你那边搞定.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_99_你那边搞定了吗，我在"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/19.已经脱离危险.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_100_已经脱离危险了，我这"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/21.我去！他转了一万.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_102_我去！！他转了一万一"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/20.感叹号大军.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_101_你正准备熄屏去找她，"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/22.震惊表情包.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/23.备注写的是.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_103_备注写的是医药费加感"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/24.吓得我.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_104_吓得我赶紧去看了支付"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/46.转账.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_107_一点微末的谢意，请务"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/25.顺手帮忙.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_110_我们就是顺手帮了个忙"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/许映月/26.收下吧.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_112_收下吧，他也给我转了"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/48.收款.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_114_你知道温叙不差钱，而"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/47.钱我收下了.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_115_您也别太累了，现在最"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/49.好.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_116_好。"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/50.刚才太着急.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_92_刚才太着急忘了问，医"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/51.医药费是.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_93_医药费是我朋友先帮忙"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/52.方便的.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_95_方便的，麻烦你了。"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/53.抱歉刚忙完.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_128_抱歉，刚忙完。今天真"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/55.转账.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "Dialogue"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/54.医药费截图.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_129_你把 827.4 元"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/56.转交.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_131_麻烦转交给你的朋友，"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/57.客气了.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_132_叙闻老师客气了，不用"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/58.不要推辞.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_133_我知道对学妹来说是小"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/60.好，那等您.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_135_好，那等您的消息。"
         }
     ]
 }
