@@ -286,7 +286,7 @@
             "OffsetX": 0.0,
             "OffsetY": 0.0,
             "Scale": 1.0,
-            "LastNodeGuid": "对话_219_温叙靠在墙上，屏幕的"
+            "LastNodeGuid": "对话_165_他终究没有找你帮忙。"
         },
         {
             "GraphName": "温叙事件四",
@@ -1745,6 +1745,42 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_135_好，那等您的消息。"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/59.收款.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_134_他的态度很坚决，你推"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/61.抱歉打扰.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_160_抱歉打扰，我的母亲出"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/62.没关系.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_162_没关系的，工作的事不"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/聊天记录/温叙/63.感谢理解.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_164_好，感谢理解。"
         }
     ]
 }
