@@ -1335,7 +1335,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Exit
-        node: {fileID: 585703300271298732}
+        node: {fileID: -4304630514152963389}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -3109,7 +3109,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: Entry
-        node: {fileID: 585703300271298732}
+        node: {fileID: -6868466438673735357}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -3118,7 +3118,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u5979\u4E00\u628A\u5C06\u76F2\u76D2\u62CD\u5728\u8D27\u67B6\u4E0A\uFF0C\u53CD\u624B\u6525\u4F4F\u4F60\u7684\u624B\u8155\uFF0C\u51ED\u501F\u4E00\u80A1\u86EE\u529B\uFF0C"
+  DialogText: "\u5979\u4E00\u628A\u5C06\u76F2\u76D2\u62CD\u5728\u8D27\u67B6\u4E0A\uFF0C\u53CD\u624B\u6525\u4F4F\u4F60\u7684\u624B\u8155\uFF0C\u51ED\u501F\u4E00\u80A1\u86EE\u529B\uFF0C\u786C\u662F\u5E26\u7740\u4F60\u5288\u5F00\u4E86\u90A3\u9053\u8E0C\u8E87\u4E0D\u524D\u7684\u4EBA\u5899\uFF0C\u6324\u8FDB\u4E86\u6700\u5185\u5708\u3002"
   CharacterDisplays: []
   BgmPath: 
   SePath: 
@@ -6723,7 +6723,6 @@ MonoBehaviour:
   - {fileID: 6241344887054071924}
   - {fileID: 4695874249217487516}
   - {fileID: -4304630514152963389}
-  - {fileID: 585703300271298732}
   - {fileID: -6868466438673735357}
   - {fileID: -5461603563932337829}
   - {fileID: 3976236147730053756}
@@ -7247,62 +7246,6 @@ MonoBehaviour:
   HideDialoguePanel: 0
   NeedsAttention: 1
   EditorNote: "\u3010\u7ACB\u7ED8/\u6F14\u51FA\u6807\u8BB0\u3011: 0000"
---- !u!114 &585703300271298732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: "\u5BF9\u8BDD_22_\u786C\u662F\u5E26\u7740\u4F60\u5288\u5F00\u4E86\u90A3\u9053"
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 9450, y: 0}
-  ports:
-    keys:
-    - Entry
-    - Exit
-    values:
-    - _fieldName: Entry
-      _node: {fileID: 585703300271298732}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Exit
-        node: {fileID: -4304630514152963389}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Exit
-      _node: {fileID: 585703300271298732}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Entry
-        node: {fileID: -6868466438673735357}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Entry: 0
-  Exit: 0
-  SpeakerName: 
-  DialogText: "\u786C\u662F\u5E26\u7740\u4F60\u5288\u5F00\u4E86\u90A3\u9053\u8E0C\u8E87\u4E0D\u524D\u7684\u4EBA\u5899\uFF0C\u6324\u8FDB\u4E86\u6700\u5185\u5708\u3002"
-  CharacterDisplays: []
-  BgmPath: 
-  SePath: 
-  BackgroundPath: 
-  VoicePath: 
-  PerformanceKey: 
-  HideDialoguePanel: 0
-  NeedsAttention: 0
-  EditorNote: 
 --- !u!114 &594974582550059860
 MonoBehaviour:
   m_ObjectHideFlags: 0

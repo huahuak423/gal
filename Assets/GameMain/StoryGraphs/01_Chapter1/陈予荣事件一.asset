@@ -4581,14 +4581,14 @@ MonoBehaviour:
     ActionType: 0
     Position: 1
     SpritePath: "Assets/GameMain/Art/NPC/\u8DEF\u4EBA4.png"
-    OffsetX: 0
+    OffsetX: -275
     OffsetY: -250
     Scale: 2
   - CharacterName: 
     ActionType: 0
     Position: 2
     SpritePath: "Assets/GameMain/Art/NPC/\u8DEF\u4EBA2.png"
-    OffsetX: -75
+    OffsetX: -325
     OffsetY: -200
     Scale: 2
   BgmPath: 
