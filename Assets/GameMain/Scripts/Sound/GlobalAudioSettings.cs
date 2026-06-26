@@ -35,6 +35,9 @@ namespace AVGGame
         /// <summary>语音播放时是否减弱BGM</summary>
         public static bool BGMWithSound = true;
 
+        /// <summary>BGM被外部面板（如设置面板）终止，需要DialoguePanel恢复</summary>
+        public static bool BgmInvalidated = false;
+
         // ================================================================
         // 是否已初始化
         // ================================================================

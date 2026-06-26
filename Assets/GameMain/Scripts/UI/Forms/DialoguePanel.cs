@@ -85,6 +85,7 @@ namespace AVGGame
         private string m_CurrentBgmPath = null;
         private Coroutine m_AudioFadeCoroutine;
         private bool m_BgmReducedForVoice = false; // BGM是否因语音播放而减弱
+        private float m_VoiceRemainingTime = 0f;  // 语音剩余时长（秒）
 
         // 自动播放 & 加速
         private bool m_IsAutoMode = false;
@@ -331,16 +332,16 @@ namespace AVGGame
         /// </summary>
         private void OnSpeedUpClick()
         {
-            // 切换快进模式
-            m_IsSpeedUpMode = !m_IsSpeedUpMode;
-
-            // 同时循环速度等级
             m_SpeedIndex = (m_SpeedIndex + 1) % m_SpeedLevels.Length;
+            m_IsSpeedUpMode = m_SpeedIndex > 0;
+
             int speed = m_SpeedLevels[m_SpeedIndex];
+            string label = speed > 1 ? $"快进{speed}X" : "快进";
+            if (m_ButtonSpeedUpText != null)
+                m_ButtonSpeedUpText.text = label;
 
-            Debug.Log($"[DialoguePanel] 快进: {(m_IsSpeedUpMode ? "开启" : "关闭")}，速度: {speed}x");
+            Debug.Log($"[DialoguePanel] 快进: {label}");
 
-            // 如果正在自动播放倒计时，重置计时器以应用新速度
             if (m_IsAutoMode && !m_IsTyping && m_AutoAdvanceWaiting)
             {
                 m_AutoAdvanceTimer = 0f;
@@ -353,6 +354,8 @@ namespace AVGGame
         private void OnAutoClick()
         {
             m_IsAutoMode = !m_IsAutoMode;
+            if (m_ButtonAutoText != null)
+                m_ButtonAutoText.text = m_IsAutoMode ? "自动(开)" : "自动";
             Debug.Log($"[DialoguePanel] 自动播放: {(m_IsAutoMode ? "开启" : "关闭")}, m_IsTyping={m_IsTyping}, m_IsSpeedUpMode={m_IsSpeedUpMode}, speed={m_SpeedLevels[m_SpeedIndex]}x");
 
             if (m_IsAutoMode && !m_IsTyping)
@@ -388,11 +391,23 @@ namespace AVGGame
         }
 
         /// <summary>
+        /// 检查语音是否仍在播放（基于AudioClip时长追踪）
+        /// </summary>
+        private bool IsVoicePlaying()
+        {
+            return m_VoiceRemainingTime > 0f;
+        }
+
+        /// <summary>
         /// 每帧更新：处理自动播放计时器
         /// </summary>
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
+
+            // 递减语音剩余时间
+            if (m_VoiceRemainingTime > 0f)
+                m_VoiceRemainingTime -= elapseSeconds;
 
             if (!m_AutoAdvanceWaiting || !m_IsAutoMode) return;
 
@@ -401,11 +416,53 @@ namespace AVGGame
 
             if (m_AutoAdvanceTimer >= delay)
             {
+                // 计时器到了，但如果语音还在播放，等语音播完
+                if (IsVoicePlaying())
+                {
+                    return;
+                }
+
                 Debug.Log($"[DialoguePanel] 自动播放计时器触发 timer={m_AutoAdvanceTimer:F2}s >= delay={delay:F2}s");
                 m_AutoAdvanceWaiting = false;
                 m_AutoAdvanceTimer = 0f;
-                OnContinueClick();
+                AdvanceToNextDialogue();
             }
+        }
+
+        /// <summary>
+        /// 自动播放推进（不取消自动模式）
+        /// </summary>
+        private void AdvanceToNextDialogue()
+        {
+            m_AutoAdvanceWaiting = false;
+            m_AutoAdvanceTimer = 0f;
+
+            // 快进跳过
+            if (m_IsSpeedUpMode && (m_ReadDialogueIds.Contains(m_CurrentDisplayingDialogueId) || m_IsReplayMode))
+            {
+                SkipToNextDialogue();
+                return;
+            }
+
+            if (m_IsTyping)
+            {
+                SkipTypewriter();
+                return;
+            }
+
+            if (m_SelectPanel != null && m_SelectPanel.gameObject.activeSelf)
+                return;
+
+            if (m_ProcedureGame == null) return;
+
+            DialogueDisplayData nextData = m_ProcedureGame.GoToNextDialogue();
+            if (nextData == null)
+            {
+                Log.Info("[DialoguePanel] 剧情结束（自动）");
+                return;
+            }
+
+            StartCoroutine(FadeOutThenShowNext());
         }
 
         protected override void OnOpen(object userData)
@@ -468,6 +525,12 @@ namespace AVGGame
             m_IsReplayMode = false;
             m_SpeedIndex = 0;
             m_ReadDialogueIds.Clear();
+
+            // 重置按钮文本
+            if (m_ButtonSpeedUpText != null)
+                m_ButtonSpeedUpText.text = "快进";
+            if (m_ButtonAutoText != null)
+                m_ButtonAutoText.text = "自动";
 
             // 清理选项按钮事件（不销毁按钮，因为它们是插件的一部分）
             foreach (var button in m_ChoiceButtons)
@@ -1122,6 +1185,35 @@ namespace AVGGame
             // 如果之前因语音播放减弱了BGM，先恢复
             RestoreBgmVolume();
 
+            // 设置面板关闭后BGM被终止，需要恢复
+            if (GlobalAudioSettings.BgmInvalidated)
+            {
+                GlobalAudioSettings.BgmInvalidated = false;
+                string prevBgm = m_CurrentBgmPath;
+                m_CurrentBgmPath = null;
+
+                // 当前对话没有指定新BGM，但之前有BGM在播放 → 恢复旧BGM
+                // 当前对话指定了新BGM → m_CurrentBgmPath已置null，下方BGM块会正常播放
+                if (string.IsNullOrEmpty(data.BgmPath) && !string.IsNullOrEmpty(prevBgm))
+                {
+                    var bgmParams = new PlaySoundParams
+                    {
+                        Loop = true,
+                        Priority = 0,
+                        VolumeInSoundGroup = 1f,
+                        FadeInSeconds = 0.5f,
+                        Pitch = 1f,
+                        PanStereo = 0f,
+                        SpatialBlend = 0f,
+                        MaxDistance = 100f,
+                        DopplerLevel = 0f
+                    };
+                    GameEntry.Sound.PlaySound(prevBgm, "BGM", bgmParams);
+                    m_CurrentBgmPath = prevBgm;
+                    Debug.Log($"[DialoguePanel] 恢复被中断的BGM: {prevBgm}");
+                }
+            }
+
             // BGM：路径非空且与当前不同时切换，留空则继续播放
             if (!string.IsNullOrEmpty(data.BgmPath) && data.BgmPath != m_CurrentBgmPath)
             {
@@ -1180,6 +1272,25 @@ namespace AVGGame
                 GameEntry.Sound.PlaySound(data.VoicePath, "Voice", voiceParams);
                 Debug.Log($"[DialoguePanel] Voice播放: {data.VoicePath}");
 
+                // 加载AudioClip获取时长，用于自动播放时等待语音播完
+                GameEntry.Resource.LoadAsset(
+                    data.VoicePath,
+                    typeof(AudioClip),
+                    new LoadAssetCallbacks(
+                        (assetName, asset, duration, ud) =>
+                        {
+                            var clip = asset as AudioClip;
+                            if (clip != null)
+                            {
+                                m_VoiceRemainingTime = clip.length;
+                                Debug.Log($"[DialoguePanel] 语音时长: {clip.length:F1}s");
+                            }
+                        },
+                        (assetName, status, errorMessage, ud) =>
+                            Debug.LogWarning($"[DialoguePanel] 语音时长获取失败: {assetName}, {errorMessage}")
+                    )
+                );
+
                 // 语音播放时减弱BGM（设置中开启时）
                 ReduceBgmForVoice();
             }
@@ -1192,6 +1303,7 @@ namespace AVGGame
         {
             GameEntry.Sound.GetSoundGroup("Sound")?.StopAllLoadedSounds();
             GameEntry.Sound.GetSoundGroup("Voice")?.StopAllLoadedSounds();
+            m_VoiceRemainingTime = 0f;
             RestoreBgmVolume();
         }
 
@@ -1429,7 +1541,15 @@ namespace AVGGame
         /// </summary>
         public void OnContinueClick()
         {
-            // 用户手动操作，取消自动播放倒计时
+            // 手动点击取消自动播放模式
+            if (m_IsAutoMode)
+            {
+                m_IsAutoMode = false;
+                if (m_ButtonAutoText != null)
+                    m_ButtonAutoText.text = "自动";
+                Debug.Log("[DialoguePanel] 手动点击，取消自动播放");
+            }
+
             m_AutoAdvanceWaiting = false;
             m_AutoAdvanceTimer = 0f;
 

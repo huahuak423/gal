@@ -584,6 +584,8 @@ namespace AVGGame
             {
                 GameEntry.Sound.GetSoundGroup("BGM")?.StopAllLoadedSounds();
                 m_TestBgmPlaying = false;
+                // 通知 DialoguePanel：BGM 已被终止，需要恢复
+                GlobalAudioSettings.BgmInvalidated = true;
             }
             GameEntry.Sound.GetSoundGroup("Voice")?.StopAllLoadedSounds();
         }
