@@ -2924,7 +2924,7 @@ MonoBehaviour:
   BgmPath: 
   SePath: 
   BackgroundPath: 
-  VoicePath: 
+  VoicePath: "Assets/GameMain/Art/Voice/\u914D\u97F3/\u5468\u6749/\u5DE6\u4FA7\u8349\u4E1B.mp3"
   PerformanceKey: 
   HideDialoguePanel: 0
   NeedsAttention: 0
