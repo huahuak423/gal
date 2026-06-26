@@ -84,6 +84,64 @@ namespace AVGGame
 
         #endregion
 
+        #region 收藏对话
+
+        // 收藏的对话列表
+        private List<HistoryEntry> m_FavoriteDialogues = new List<HistoryEntry>();
+
+        /// <summary>
+        /// 获取所有收藏的对话
+        /// </summary>
+        public IReadOnlyList<HistoryEntry> FavoriteDialogues => m_FavoriteDialogues;
+
+        /// <summary>
+        /// 收藏一条对话
+        /// </summary>
+        public void AddFavorite(HistoryEntry entry)
+        {
+            if (entry == null) return;
+            m_FavoriteDialogues.Add(entry);
+            Debug.Log($"[PlayerDataComponent] 收藏对话: {entry.SpeakerName} - {entry.DialogText}");
+        }
+
+        /// <summary>
+        /// 取消收藏（按内容匹配）
+        /// </summary>
+        public bool RemoveFavorite(HistoryEntry entry)
+        {
+            if (entry == null) return false;
+            for (int i = 0; i < m_FavoriteDialogues.Count; i++)
+            {
+                if (m_FavoriteDialogues[i].DialogText == entry.DialogText &&
+                    m_FavoriteDialogues[i].SpeakerName == entry.SpeakerName)
+                {
+                    m_FavoriteDialogues.RemoveAt(i);
+                    Debug.Log($"[PlayerDataComponent] 取消收藏: {entry.SpeakerName} - {entry.DialogText}");
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 检查是否已收藏
+        /// </summary>
+        public bool IsFavorite(HistoryEntry entry)
+        {
+            if (entry == null) return false;
+            foreach (var fav in m_FavoriteDialogues)
+            {
+                if (fav.DialogText == entry.DialogText &&
+                    fav.SpeakerName == entry.SpeakerName)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        #endregion
+
         #region 初始化
 
         /// <summary>

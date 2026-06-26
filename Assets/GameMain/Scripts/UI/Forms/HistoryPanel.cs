@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
 using GameFramework.Resource;
+using GameFramework.Sound;
 
 namespace AVGGame
 {
@@ -215,9 +216,127 @@ namespace AVGGame
                 // 填充文本（子物体名：TextConstSpeaker / TextConstDialogue）
                 SetText(entryObj.transform, "TextConstSpeaker", entry.SpeakerName);
                 SetText(entryObj.transform, "TextConstDialogue", entry.DialogText);
+
+                // 绑定播放语音按钮
+                BindAudioButton(entryObj, entry);
+
+                // 绑定收藏按钮
+                BindLoveButton(entryObj, entry);
             }
 
             Log.Info($"[HistoryPanel] 填充了 {entries.Count} 条历史记录");
+        }
+
+        /// <summary>
+        /// 绑定播放语音按钮
+        /// </summary>
+        private void BindAudioButton(GameObject entryObj, HistoryEntry entry)
+        {
+            var audioBtnTrans = entryObj.transform.Find("ButtonAudio");
+            if (audioBtnTrans == null) return;
+
+            var audioBtn = audioBtnTrans.GetComponent<Button>();
+            if (audioBtn == null) return;
+
+            // 没有语音路径时禁用按钮
+            if (string.IsNullOrEmpty(entry.VoicePath))
+            {
+                audioBtn.gameObject.SetActive(false);
+                return;
+            }
+
+            // 捕获路径到局部变量，避免闭包引用 entry 对象
+            string voicePath = entry.VoicePath;
+            audioBtn.onClick.AddListener(() => OnAudioButtonClick(voicePath));
+        }
+
+        /// <summary>
+        /// 绑定收藏按钮
+        /// </summary>
+        private void BindLoveButton(GameObject entryObj, HistoryEntry entry)
+        {
+            var loveBtnTrans = entryObj.transform.Find("ButtonLove");
+            if (loveBtnTrans == null) return;
+
+            var loveBtn = loveBtnTrans.GetComponent<Button>();
+            if (loveBtn == null) return;
+
+            var playerData = CustomEntry.PlayerData;
+            bool isFavorited = playerData != null && playerData.IsFavorite(entry);
+
+            // 初始状态
+            UpdateLoveButtonVisual(loveBtn, isFavorited);
+
+            // 捕获必要数据，避免闭包问题
+            string speaker = entry.SpeakerName;
+            string text = entry.DialogText;
+            string voice = entry.VoicePath;
+            loveBtn.onClick.AddListener(() => OnLoveButtonClick(loveBtn, speaker, text, voice));
+        }
+
+        /// <summary>
+        /// 播放语音按钮回调
+        /// </summary>
+        private void OnAudioButtonClick(string voicePath)
+        {
+            if (string.IsNullOrEmpty(voicePath)) return;
+
+            var voiceParams = new PlaySoundParams
+            {
+                Loop = false,
+                Priority = 0,
+                VolumeInSoundGroup = 1f,
+                FadeInSeconds = 0f,
+                Pitch = 1f,
+                PanStereo = 0f,
+                SpatialBlend = 0f,
+                MaxDistance = 100f,
+                DopplerLevel = 0f
+            };
+            GameEntry.Sound.PlaySound(voicePath, "Voice", voiceParams);
+            Debug.Log($"[HistoryPanel] 回顾播放语音: {voicePath}");
+        }
+
+        /// <summary>
+        /// 收藏按钮回调（切换收藏状态）
+        /// </summary>
+        private void OnLoveButtonClick(Button btn, string speaker, string text, string voice)
+        {
+            var playerData = CustomEntry.PlayerData;
+            if (playerData == null) return;
+
+            // 构造临时条目用于匹配
+            var entry = new HistoryEntry
+            {
+                SpeakerName = speaker,
+                DialogText = text,
+                VoicePath = voice
+            };
+
+            if (playerData.IsFavorite(entry))
+            {
+                playerData.RemoveFavorite(entry);
+                UpdateLoveButtonVisual(btn, false);
+            }
+            else
+            {
+                playerData.AddFavorite(entry);
+                UpdateLoveButtonVisual(btn, true);
+            }
+        }
+
+        /// <summary>
+        /// 更新收藏按钮视觉状态
+        /// </summary>
+        private void UpdateLoveButtonVisual(Button btn, bool isFavorited)
+        {
+            if (btn == null) return;
+
+            // 通过按钮下子物体名区分状态（如果有不同图片的话）
+            // 这里仅切换颜色作为简单视觉反馈，可按需替换
+            var colors = btn.colors;
+            colors.normalColor = isFavorited ? Color.yellow : Color.white;
+            btn.colors = colors;
         }
 
         /// <summary>

@@ -146,8 +146,14 @@ namespace AVGGame
         private void OnSettingClick()
         {
             Log.Info("[MainMenuPanel] Settings clicked");
-            CloseSelf();
-            
+
+            // 不关闭主菜单，设置作为Popup覆盖在上层，关闭后自然返回
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.Settings),
+                UIGroupDefinition.Popup,
+                Constant.AssetPriority.UIAsset,
+                null
+            );
         }
 
         /// <summary>
