@@ -63,6 +63,13 @@ namespace AVGGame
 
             if (m_ButtonExit != null)
                 m_ButtonExit.onClick.AddListener(OnExitClick);
+
+            // ====== 图片文件挂载 ======
+            // m_ButtonNewGame.image  — Canvas/Background/ButtonPlate/ButtonNewGame
+            // m_ButtonContinue.image — Canvas/Background/ButtonPlate/ButtonContine
+            // m_ButtonCgShows.image  — Canvas/Background/ButtonPlate/ButtonCgShows
+            // m_ButtonSetting.image  — Canvas/Background/ButtonPlate/ButtonSetting
+            // m_ButtonExit.image     — Canvas/Background/ButtonPlate/ButtonExit
         }
 
         protected override void OnOpen(object userData)

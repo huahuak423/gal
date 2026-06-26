@@ -3,6 +3,7 @@
 // AVG Game Project
 //------------------------------------------------------------
 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -47,6 +48,21 @@ namespace AVGGame
         private const string c_DialogueTemplatePath = "Assets/GameMain/UI/Forms/Component/HistoryDialogue.prefab";
         private const string c_NarrationTemplatePath = "Assets/GameMain/UI/Forms/Component/HistoryNarration.prefab";
 
+        // 按钮图标路径
+        private const string c_LoveOnPath  = "Assets/GameMain/Art/UI_Common/UI/历史回顾/收藏-亮.png";
+        private const string c_LoveOffPath = "Assets/GameMain/Art/UI_Common/UI/历史回顾/收藏-暗.png";
+        private const string c_AudioOnPath = "Assets/GameMain/Art/UI_Common/UI/历史回顾/播放语音-亮.png";
+        private const string c_AudioOffPath= "Assets/GameMain/Art/UI_Common/UI/历史回顾/播放语音-暗.png";
+
+        // 缓存的按钮图标
+        private Sprite m_LoveOnSprite;
+        private Sprite m_LoveOffSprite;
+        private Sprite m_AudioOnSprite;
+        private Sprite m_AudioOffSprite;
+
+        // 当前正在播放语音的按钮（用于播完时复位）
+        private Button m_CurrentAudioBtn = null;
+
         // 缓存的数据，等模板加载完后再填充
         private List<HistoryEntry> m_PendingEntries;
 
@@ -67,6 +83,9 @@ namespace AVGGame
             if (m_ButtonClose != null)
             {
                 m_ButtonClose.onClick.AddListener(OnButtonCloseClick);
+
+                // ====== 图片文件挂载 ======
+                // m_ButtonClose.image — Canvas/Background/ButtonBack
             }
 
             // 加载两种条目模板
@@ -102,6 +121,10 @@ namespace AVGGame
             base.OnClose(isShutdown, userData);
             ClearEntries();
             m_PendingEntries = null;
+            m_CurrentAudioBtn = null;
+
+            // 停止语音播放
+            GameEntry.Sound.GetSoundGroup("Voice")?.StopAllLoadedSounds();
         }
 
         #endregion
@@ -137,6 +160,29 @@ namespace AVGGame
                     },
                     (assetName, status, errorMessage, ud) =>
                         Debug.LogWarning($"[HistoryPanel] 旁白模板加载失败: {assetName}, {errorMessage}")
+                )
+            );
+
+            // 加载4个按钮图标
+            LoadButtonSprite(c_LoveOnPath,  sprite => m_LoveOnSprite = sprite);
+            LoadButtonSprite(c_LoveOffPath, sprite => m_LoveOffSprite = sprite);
+            LoadButtonSprite(c_AudioOnPath, sprite => m_AudioOnSprite = sprite);
+            LoadButtonSprite(c_AudioOffPath,sprite => m_AudioOffSprite = sprite);
+        }
+
+        private void LoadButtonSprite(string path, System.Action<Sprite> onLoaded)
+        {
+            GameEntry.Resource.LoadAsset(
+                path,
+                typeof(Sprite),
+                new LoadAssetCallbacks(
+                    (assetName, asset, duration, ud) =>
+                    {
+                        Sprite sprite = asset as Sprite;
+                        if (sprite != null) onLoaded(sprite);
+                    },
+                    (assetName, status, errorMessage, ud) =>
+                        Debug.LogWarning($"[HistoryPanel] 按钮图标加载失败: {assetName}, {errorMessage}")
                 )
             );
         }
@@ -245,9 +291,12 @@ namespace AVGGame
                 return;
             }
 
+            // 初始设为暗色图标
+            SetAudioButtonSprite(audioBtn, false);
+
             // 捕获路径到局部变量，避免闭包引用 entry 对象
             string voicePath = entry.VoicePath;
-            audioBtn.onClick.AddListener(() => OnAudioButtonClick(voicePath));
+            audioBtn.onClick.AddListener(() => OnAudioButtonClick(voicePath, audioBtn));
         }
 
         /// <summary>
@@ -261,10 +310,17 @@ namespace AVGGame
             var loveBtn = loveBtnTrans.GetComponent<Button>();
             if (loveBtn == null) return;
 
+            // 初始设为暗色图标
+            var loveImage = loveBtn.GetComponent<Image>();
+            if (loveImage != null && m_LoveOffSprite != null)
+            {
+                loveImage.sprite = m_LoveOffSprite;
+            }
+
             var playerData = CustomEntry.PlayerData;
             bool isFavorited = playerData != null && playerData.IsFavorite(entry);
 
-            // 初始状态
+            // 已收藏的设为亮色
             UpdateLoveButtonVisual(loveBtn, isFavorited);
 
             // 捕获必要数据，避免闭包问题
@@ -277,10 +333,21 @@ namespace AVGGame
         /// <summary>
         /// 播放语音按钮回调
         /// </summary>
-        private void OnAudioButtonClick(string voicePath)
+        private void OnAudioButtonClick(string voicePath, Button btn)
         {
             if (string.IsNullOrEmpty(voicePath)) return;
 
+            // 复位上一个正在播放的按钮
+            if (m_CurrentAudioBtn != null && m_CurrentAudioBtn != btn)
+            {
+                SetAudioButtonSprite(m_CurrentAudioBtn, false);
+            }
+            m_CurrentAudioBtn = btn;
+
+            // 切换为亮色
+            SetAudioButtonSprite(btn, true);
+
+            // 播放语音
             var voiceParams = new PlaySoundParams
             {
                 Loop = false,
@@ -295,6 +362,42 @@ namespace AVGGame
             };
             GameEntry.Sound.PlaySound(voicePath, "Voice", voiceParams);
             Debug.Log($"[HistoryPanel] 回顾播放语音: {voicePath}");
+
+            // 异步加载AudioClip获取时长，播完后切回暗色
+            StartCoroutine(ResetAudioButtonAfterPlay(voicePath, btn));
+        }
+
+        /// <summary>
+        /// 语音播完后将按钮切回暗色
+        /// </summary>
+        private IEnumerator ResetAudioButtonAfterPlay(string voicePath, Button btn)
+        {
+            float clipDuration = 3f; // 默认3秒兜底
+            bool loaded = false;
+
+            GameEntry.Resource.LoadAsset(
+                voicePath,
+                typeof(AudioClip),
+                new LoadAssetCallbacks(
+                    (assetName, asset, duration, ud) =>
+                    {
+                        AudioClip clip = asset as AudioClip;
+                        if (clip != null) clipDuration = clip.length;
+                        loaded = true;
+                    },
+                    (assetName, status, errorMessage, ud) => { loaded = true; }
+                )
+            );
+
+            yield return new WaitUntil(() => loaded);
+            yield return new WaitForSeconds(clipDuration);
+
+            // 切回暗色
+            SetAudioButtonSprite(btn, false);
+            if (m_CurrentAudioBtn == btn)
+            {
+                m_CurrentAudioBtn = null;
+            }
         }
 
         /// <summary>
@@ -326,17 +429,37 @@ namespace AVGGame
         }
 
         /// <summary>
-        /// 更新收藏按钮视觉状态
+        /// 更新收藏按钮视觉状态（替换图标）
         /// </summary>
         private void UpdateLoveButtonVisual(Button btn, bool isFavorited)
         {
             if (btn == null) return;
 
-            // 通过按钮下子物体名区分状态（如果有不同图片的话）
-            // 这里仅切换颜色作为简单视觉反馈，可按需替换
-            var colors = btn.colors;
-            colors.normalColor = isFavorited ? Color.yellow : Color.white;
-            btn.colors = colors;
+            var image = btn.GetComponent<Image>();
+            if (image == null) return;
+
+            Sprite target = isFavorited ? m_LoveOnSprite : m_LoveOffSprite;
+            if (target != null)
+            {
+                image.sprite = target;
+            }
+        }
+
+        /// <summary>
+        /// 设置语音按钮图标（亮/暗）
+        /// </summary>
+        private void SetAudioButtonSprite(Button btn, bool isPlaying)
+        {
+            if (btn == null) return;
+
+            var image = btn.GetComponent<Image>();
+            if (image == null) return;
+
+            Sprite target = isPlaying ? m_AudioOnSprite : m_AudioOffSprite;
+            if (target != null)
+            {
+                image.sprite = target;
+            }
         }
 
         /// <summary>

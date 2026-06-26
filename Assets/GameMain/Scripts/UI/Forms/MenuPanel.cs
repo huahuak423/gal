@@ -91,6 +91,15 @@ namespace AVGGame
             // 透明背景点击也关闭菜单
             if (m_TransparentBgButton != null)
                 m_TransparentBgButton.onClick.AddListener(OnResumeClick);
+
+            // ====== 图片文件挂载 ======
+            // ButtonContinue.image        — Canvas/Background/MenuPlate/ButtonContinue
+            // m_ButtonSave.image          — Canvas/Background/MenuPlate/ButtonSave
+            // m_ButtonLoad.image          — Canvas/Background/MenuPlate/ButtonLoad
+            // m_ButtonSettings.image      — Canvas/Background/MenuPlate/ButtonSetting
+            // ButtonMainMenu.image        — Canvas/Background/MenuPlate/ButtonMainMenu
+            // m_ButtonExit.image          — Canvas/Background/MenuPlate/ButtonExitGame
+            // m_TransparentBgButton.image — Canvas/Background
         }
 
         protected override void OnOpen(object userData)

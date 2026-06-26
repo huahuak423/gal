@@ -72,6 +72,9 @@ namespace AVGGame
             {
                 m_SkipButton.onClick.AddListener(OnSkipClick);
             }
+
+            // ====== 图片文件挂载 ======
+            // m_SkipButton.image — Canvas/ButtonSkip
         }
 
         protected override void OnOpen(object userData)

@@ -123,6 +123,12 @@ namespace AVGGame
                 CorrectMessage.onClick.AddListener(OnSureClick);
                 Debug.Log("[CreateName] OnInit - CorrectMessage 事件绑定成功");
             }
+
+            // ====== 图片文件挂载 ======
+            // CorrectName.image      — Canvas/Background/CreatePlate/ButtonCorrectName
+            // CorrectNameTrue.image  — Canvas/Background/CorrectPlate/ButtonCorrect
+            // CancelName.image        — Canvas/Background/CorrectPlate/ButtonCancel
+            // CorrectMessage.image    — Canvas/Background/MessagePlate/ButtonCorrect
         }
 
         protected override void OnOpen(object userData)

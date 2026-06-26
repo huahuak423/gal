@@ -171,6 +171,15 @@ namespace AVGGame
             {
                 m_ButtonBack.onClick.AddListener(OnBackClick);
             }
+
+            // ====== 图片文件挂载 ======
+            // m_SaveSlot1.image  — Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb1/ButtonNowSave
+            // m_SaveSlot2.image  — Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb2/ButtonNowSave
+            // m_SaveSlot3.image  — Canvas/Background/SavePlate/ScrollView/Viewport/Content/SavePrefeb3/ButtonNowSave
+            // m_SaveSlot4~12.image — 同上，SavePrefeb{N}/ButtonNowSave
+            // m_ConfirmButton.image — Canvas/Background/ConfirmPlate/ButtonConfirm
+            // m_CancelButton.image  — Canvas/Background/ConfirmPlate/ButtonCancel
+            // m_ButtonBack.image    — Canvas/Background/ButtonBack
         }
 
         protected override void OnOpen(object userData)

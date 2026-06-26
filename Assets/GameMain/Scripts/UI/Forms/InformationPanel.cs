@@ -100,6 +100,14 @@ namespace AVGGame
 
             // 默认显示个人面板
             ShowPersonalTab();
+
+            // ====== 图片文件挂载 ======
+            // m_ButtonClose.image      — Canvas/Background/InformationPlate/ButtonClose
+            // m_ButtonPersonal.image   — Canvas/Background/InformationPlate/ButtonPersonal
+            // m_ButtonCharacter.image  — Canvas/Background/InformationPlate/ButtonCharacter
+            // m_ButtonInventory.image  — Canvas/Background/InformationPlate/PersonalPlate/InventoryPlate/ButtonInventory
+            // m_ButtonEvent1.image     — Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/EventPanel/Viewport/Content/Event1
+            // m_ButtonEvent2~5.image   — 同上，Event{N}
         }
 
         protected override void OnOpen(object userData)

@@ -282,6 +282,21 @@ namespace AVGGame
 
             
             m_ProcedureGame = (ProcedureGame)userData;
+
+            // ====== 图片文件挂载 ======
+            // m_ButtonMenu.image          — Canvas/Background/ButtonMenu
+            // m_BackgroundImageButton.image — Canvas/Background
+            // m_ButtonSpeedUp.image       — Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSpeedUp
+            // m_ButtonHistory.image       — Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHistory
+            // m_ButtonHide.image          — Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHide
+            // m_ButtonInformation.image   — Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonInformation
+            // m_ButtonSave.image          — Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSave
+            // m_ButtonAuto.image          — Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonAuto
+            // m_ChoiceButton1.image       — Canvas/Background/SelectPanel/Background/Button1
+            // m_ChoiceButton2.image       — Canvas/Background/SelectPanel/Background/Button2
+            // m_ChoiceButton3.image       — Canvas/Background/SelectPanel/Background/Button3
+            // m_ChoiceButton4.image       — Canvas/Background/SelectPanel/Background/Button4
+            // m_ChoiceButton5.image       — Canvas/Background/SelectPanel/Background/Button5
         }
 
         /// <summary>

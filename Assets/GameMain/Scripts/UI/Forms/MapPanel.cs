@@ -160,6 +160,14 @@ namespace AVGGame
                 m_ButtonInformation.onClick.AddListener(OnButtonInformationClick);
             }
 
+            // ====== 图片文件挂载 ======
+            // m_ButtonPlace1.image     — Canvas/Background/MapPlate/ButtonPlace1
+            // m_ButtonPlace2~9.image   — 同上，ButtonPlace{N}
+            // m_ButtonMenu.image       — Canvas/Background/ButtonMenu
+            // m_ButtonInformation.image — Canvas/Background/MessagePlate/ButtonInformation
+            // m_Button1.image          — Canvas/Background/SelectPanel/Background/Button1
+            // m_Button2~5.image        — 同上，Button{N}
+            // m_ButtonExit.image       — Canvas/Background/SelectPanel/ButtonExit
         }
 
         protected override void OnOpen(object userData)

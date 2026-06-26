@@ -303,6 +303,12 @@ namespace AVGGame
                 m_DropdownFrameRate.onValueChanged.AddListener(OnFrameRateChanged);
             if (m_DropdownQuality != null)
                 m_DropdownQuality.onValueChanged.AddListener(OnQualityChanged);
+
+            // ====== 图片文件挂载 ======
+            // m_ButtonSoundSettingPanel.image     — Canvas/Background/SettingPlate/SettingLinePanel/ButtonSound
+            // m_ButtonOperationSettingPanel.image — Canvas/Background/SettingPlate/SettingLinePanel/ButtonOperation
+            // m_ButtonSceneSettingPanel.image     — Canvas/Background/SettingPlate/SettingLinePanel/ButtonScene
+            // m_ButtonClose.image                 — Canvas/Background/ButtonClose
         }
 
         // ================================================================

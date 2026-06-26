@@ -56,6 +56,10 @@ namespace AVGGame
             {
                 m_ButtonClose.onClick.AddListener(OnButtonCloseClick);
             }
+
+            // ====== 图片文件挂载 ======
+            // m_ButtonClose.image — Canvas/Background/PromisePlate/ButtonClose
+            // m_ButtonExit.image  — Canvas/Background/ButtonExit
         }
 
         protected override void OnOpen(object userData)
