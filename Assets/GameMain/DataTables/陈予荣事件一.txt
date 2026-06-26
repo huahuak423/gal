@@ -45,7 +45,7 @@
 10041	10042	0		他的嘴唇张了张，很快又紧紧抿起，像有一句“数据已经足够充分”到了嘴边，却被你用行动堵了回去。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
 10042	10043	0		他被噎得说不出话，你的目的便已达成。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10043	10044	0		你收回视线，在店里随意地兜了两圈。										0
-10044	10165	0		橱柜里不乏其他令人食指大动的种类，但一想到两块吐司足够你吃上好一段时间，										0
+10044	10045	0		橱柜里不乏其他令人食指大动的种类，但一想到两块吐司足够你吃上好一段时间，便歇了额外购买的心思，转身前去结账。										0
 10045	10046	0		队伍排得很长，好不容易轮到了你，付款界面还没来得及点开，收款机就抢先“滴”了一声。										0
 10046	10047	0		那人动作飞快，付款码直接掠过感应区，利落地截胡了你的账单。										0
 10047	10048	0		未等你惊诧的疑问脱口，他像早有预判，又像想扳回一城，先一步堵住了你的话头：	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服惊讶.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
@@ -55,7 +55,7 @@
 10051	10052	0	陈予荣	你大可以放心收下，就当是我为获得新视角支付的受教成本。									Assets/GameMain/Art/Voice/配音/陈予荣/大可放心收下（这版）.mp3	0
 10052	10053	0	陈予荣	如果这依然让你感到负担，你也可以把它看作是一场建立在数据重合概率上的……邻里互助。									Assets/GameMain/Art/Voice/配音/陈予荣/如果这依然.mp3	0
 10053	10054	0		他似乎在试图找到你能接受的、不带任何暧昧色彩的说法。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10054	10166	0		两块完整的吐司对你而言确实有些多，虽然出于实践目的，但放太久难免影响口感……										0
+10054	10165	0		两块完整的吐司对你而言确实有些多，虽然出于实践目的，但放太久难免影响口感……										0
 10055	10056	0		既然对方把话说到这个份上，也不必再与他做无谓的推拉。										0
 10056	10057	0		你爽快地让店员把两块吐司一分为二，将其中一份递给了他。										0
 10057	10058	0	主控名	那就谢谢您的受教成本了，陈予荣先生。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
@@ -83,14 +83,14 @@
 10079	10080	0		大众口中“鲜明的”口味差异，未必是食材与工艺造成的区别。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10080	10081	0		心理期待与主观印象，往往会无形中放大感受上的不同。										0
 10081	10082	0		那么陈予荣得出常规款风味更佳，是否也是出于他原先的心理预期？										0
-10082	10170	0		你灵机一动，基于先入为主的心理学效应和自己的实测体验，回敬了一篇《两款吐司对比测评报告（修改版）》。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10082	10169	0		你灵机一动，基于先入为主的心理学效应和自己的实测体验，回敬了一篇《两款吐司对比测评报告（修改版）》。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10083	10084	0	陈予荣	刚刚隐藏价格让我哥试了，他也说吃起来并没有区别。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/4.我哥.png","OffsetX":0.0,"OffsetY":-120.0,"Scale":2.0}]}									1
 10084	10085	0	陈予荣	你的角度很新奇，是我结论有误，感谢指正。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/5.角度新奇.png","OffsetX":0.0,"OffsetY":0.0,"Scale":2.0}]}									1
 10085	10086	0	主控名	客气了，这次交流我也受益匪浅。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/6.客气了.png","OffsetX":0.0,"OffsetY":120.0,"Scale":2.0}]}									1
 10086	10087	0		他做出的分析逻辑严密，确实有一定的参考价值。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10087	10088	0		可惜那些理论上的微小差异，并不能转化成普通人能明确感知的风味区别。										0
 10088	10089	0		但这场意外交流，恰好补上了偏重感性体验的调研短板。										0
-10089	10167	0		整合完所有素材后，你顺利将这篇结构完整、视角新颖的对比测评发布上线。										0
+10089	10166	0		整合完所有素材后，你顺利将这篇结构完整、视角新颖的对比测评发布上线。										0
 10090	10091	0		你点点头，认可了他关于共同验证的提议。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10091	10092	0		但你向来不喜欢欠人情，更不喜欢在一段并不熟悉的邻里关系中掺杂金钱上的拉扯。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10092	10093	0		这是一种自我保护，一杯奶茶、一顿饭，都可能让关系变得微妙。										0
@@ -124,11 +124,11 @@
 10120	10121	0		次日早晨，你刻意将两块面包弄混，果然如消失的热评所说，它们从外观到口味都别无二致。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/海盐吐司-观察版.png","OffsetX":0.0,"OffsetY":90.0,"Scale":1.350000023841858}]}							Assets/GameMain/Art/Backgrounds/居家/家-白天.png		0
 10121	10122	0		这让你意识到，单纯的对比测评恐怕根本掀不起什么风浪。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10122	10123	0		你索性转换思路，从成功营销的角度重新攥写文案。										0
-10123	10171	0		发布之前，你顺手把稿子发给你那较真的邻居。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10123	10170	0		发布之前，你顺手把稿子发给你那较真的邻居。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10124	10125	0	陈予荣	……原来我们也成了被营销的对象。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/11.原来我们.png","OffsetX":0.0,"OffsetY":0.0,"Scale":2.0}]}									1
 10125	10126	0	主控名	准确来说，是我们共同验证了这个消费陷阱的有效性。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/12.准确来说.png","OffsetX":0.0,"OffsetY":120.0,"Scale":2.0}]}									1
 10126	10127	0	陈予荣	下次有类似的实验，记得叫我。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/13.下次有.png","OffsetX":0.0,"OffsetY":240.0,"Scale":2.0}]}									1
-10127	10168	0	主控名	好。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/14.好.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10127	10167	0	主控名	好。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/14.好.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
 10128	10129	0		转念一想，实在吃不完也可以分给其他朋友，还能多收集些样本数据。										0
 10129	10130	0		你实在不喜欢他擅自付款的行为，所以无论他是什么说法，你都不打算接受。										0
 10130	10131	0		你接过店员递来的袋子，转身塞进他的怀里：										0
@@ -165,11 +165,10 @@
 10161	10162	0		等反应过来时，已经不记得自己做了什么了。										0
 10162	10163	0		他将错就错地品尝，又通过观察气孔结构和发酵纹理将二者重新区分。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/陈予荣.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
 10163	10164	0		却也因此完成了盲测，意外得出了与理论不符的实际结果。										0
-10164	10169	0		他拿起手机，想再说些什么弥补下午的失礼，却怕再次惹你不快，终究还是作罢。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/陈予荣.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
-10165	10045	0		便歇了额外购买的心思，转身前去结账。										0
-10166	0	1				{"Choices":[{"ChoiceText":"和他A钱","NextId":10090,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"05","Value":6,"ItemId":""}]},{"ChoiceText":"吐司给他，再去买两个","NextId":10128,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"05","Value":9,"ItemId":""}]},{"ChoiceText":"大方应下","NextId":10055,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"05","Value":12,"ItemId":""}]}]}								
-10167	0	0		……										0
+10164	10168	0		他拿起手机，想再说些什么弥补下午的失礼，却怕再次惹你不快，终究还是作罢。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/陈予荣.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/陈予荣/闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10165	0	1				{"Choices":[{"ChoiceText":"和他A钱","NextId":10090,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"05","Value":6,"ItemId":""}]},{"ChoiceText":"吐司给他，再去买两个","NextId":10128,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"05","Value":9,"ItemId":""}]},{"ChoiceText":"大方应下","NextId":10055,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"05","Value":12,"ItemId":""}]}]}								
+10166	0	0		……										0
+10167	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10168	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10169	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10170	10083	0	主控名	[《两款吐司对比测评报告（修改版）》.docx]	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/3.修改版文档.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/3.修改版文档.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
-10171	10124	0	主控名	[海盐吐司营销手段分析.jpg]	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/10.营销.png","OffsetX":0.0,"OffsetY":-120.0,"Scale":2.0}]}									1
+10169	10083	0	主控名	[《两款吐司对比测评报告（修改版）》.docx]	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/3.修改版文档.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/3.修改版文档.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10170	10124	0	主控名	[海盐吐司营销手段分析.jpg]	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/陈予荣/10.营销.png","OffsetX":0.0,"OffsetY":-120.0,"Scale":2.0}]}									1

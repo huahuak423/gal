@@ -11375,7 +11375,7 @@ MonoBehaviour:
     Position: 1
     SpritePath: "Assets/GameMain/Art/Photo/\u804A\u5929\u8BB0\u5F55/\u6E29\u53D9/\u4F24\u75D5\u5316\u94E0.png"
     OffsetX: 0
-    OffsetY: -240
+    OffsetY: -360
     Scale: 2
   BgmPath: 
   SePath: 
@@ -12355,7 +12355,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: "\u6E29\u53D9"
-  DialogText: "\u5BA3\u53D1\u521D\u7A3F\uFF08\u4FEE\u6539\u5EFA\u8BAE.docx\uFF09]"
+  DialogText: "[\u5BA3\u53D1\u521D\u7A3F\uFF08\u4FEE\u6539\u5EFA\u8BAE.docx\uFF09]"
   CharacterDisplays:
   - CharacterName: 
     ActionType: 1

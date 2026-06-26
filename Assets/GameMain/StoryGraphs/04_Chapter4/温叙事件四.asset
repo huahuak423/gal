@@ -5151,7 +5151,7 @@ MonoBehaviour:
   Entry: 0
   Exit: 0
   SpeakerName: 
-  DialogText: "\u591A\u51FA\u6765\u7684\u96F6\u5934\uFF0C\u662F\u4ED6\u7EF4\u6301\u793E\u4EA4\u793C\u4EEA\u7684\u5206\u5BF8\u3002"
+  DialogText: "\u591A\u51FA\u6765\u7684\u96F6\u5934\uFF0C\u5927\u6982\u662F\u4ED6\u7EF4\u6301\u793E\u4EA4\u793C\u4EEA\u7684\u5206\u5BF8\u3002"
   CharacterDisplays:
   - CharacterName: 
     ActionType: 1
