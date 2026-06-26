@@ -3,6 +3,8 @@
 // AVG Game Project
 //------------------------------------------------------------
 
+using System.Collections;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
@@ -19,12 +21,17 @@ namespace AVGGame
         #region 序列化字段 - 按钮
 
         [Header("菜单按钮")]
-        [SerializeField] private Button m_ButtonResume;
+        [SerializeField] private Button ButtonContinue;
         [SerializeField] private Button m_ButtonSave;
-        [SerializeField] private Button m_ButtonLoad;
+        [SerializeField] private Button m_ButtonLoad;        
+        [SerializeField] private Button ButtonTimeLine;
+        [SerializeField] private Button ButtonHistory;
+        [SerializeField] private Button ButtonMainMenu;        
         [SerializeField] private Button m_ButtonSettings;
-        [SerializeField] private Button m_ButtonBack;
         [SerializeField] private Button m_ButtonExit;
+        [SerializeField] private Button ButtonNPC;
+        [SerializeField] private Button ButtonGallery;
+        [SerializeField] private Button ButtonManual;
 
         [Header("透明背景 - 用于隔绝用户其他操作")]
         [SerializeField] private Button m_TransparentBgButton;
@@ -54,17 +61,17 @@ namespace AVGGame
             base.OnInit(userData);
 
             // 挂载组件引用
-            m_ButtonResume = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonContinue");
-            m_ButtonSave = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonTimeLine");
+            ButtonContinue = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonContinue");
+            m_ButtonSave = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonSave");
             m_ButtonLoad = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonLoad");
             m_ButtonSettings = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonSetting");
-            m_ButtonBack = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonMainMenu");
+            ButtonMainMenu = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonMainMenu");
             m_ButtonExit = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonExitGame");
             m_TransparentBgButton = this.GetComponentByPath<Button>("Canvas/Background");
 
             // 绑定按钮事件
-            if (m_ButtonResume != null)
-                m_ButtonResume.onClick.AddListener(OnResumeClick);
+            if (ButtonContinue != null)
+                ButtonContinue.onClick.AddListener(OnResumeClick);
 
             if (m_ButtonSave != null)
                 m_ButtonSave.onClick.AddListener(OnSaveClick);
@@ -75,8 +82,8 @@ namespace AVGGame
             if (m_ButtonSettings != null)
                 m_ButtonSettings.onClick.AddListener(OnSettingClick);
 
-            if (m_ButtonBack != null)
-                m_ButtonBack.onClick.AddListener(OnBackClick);
+            if (ButtonMainMenu != null)
+                ButtonMainMenu.onClick.AddListener(OnBackClick);
 
             if (m_ButtonExit != null)
                 m_ButtonExit.onClick.AddListener(OnExitClick);
@@ -121,22 +128,12 @@ namespace AVGGame
         }
 
         /// <summary>
-        /// 保存游戏 - 打开存档选择界面（保存模式）
+        /// 保存游戏 - 截图后打开存档选择界面（保存模式）
         /// </summary>
         private void OnSaveClick()
         {
             Log.Info("[MenuPanel] Save game clicked");
-
-            // 关闭当前菜单
-            CloseSelf();
-
-            // 打开存档选择界面（保存模式）
-            GameEntry.UI.OpenUIForm(
-                AssetUtility.GetUIFormAsset(UIFormId.Archive),
-                UIGroupDefinition.Popup,
-                Constant.AssetPriority.UIAsset,
-                ArchivePanel.ArchiveMode.Save
-            );
+            StartCoroutine(CaptureScreenThenOpenArchive(ArchivePanel.ArchiveMode.Save));
         }
 
         /// <summary>
@@ -145,9 +142,7 @@ namespace AVGGame
         private void OnLoadClick()
         {
             Log.Info("[MenuPanel] Load game clicked");
-
             CloseSelf();
-
             GameEntry.UI.OpenUIForm(
                 AssetUtility.GetUIFormAsset(UIFormId.Archive),
                 UIGroupDefinition.Popup,
@@ -171,38 +166,118 @@ namespace AVGGame
         }
 
         /// <summary>
-        /// 返回主菜单 - 打开存档页面提醒玩家保存，保存后自动返回主菜单
+        /// 返回主菜单 - 自动留档到第一个空位（无空位则跳过），然后直接返回
         /// </summary>
         private void OnBackClick()
         {
             Log.Info("[MenuPanel] Back to main menu clicked");
+            StartCoroutine(CaptureAndAutoSaveThenReturnToMain());
+        }
 
-            // 设置标记：存档完成后返回主菜单
-            ArchivePanel.ReturnToMainMenuFlag = true;
+        /// <summary>
+        /// 退出游戏
+        /// </summary>
+        private void OnExitClick()
+        {
+            if (m_ProcedureGame != null)
+            {
+                m_ProcedureGame.QuitGame();
+            }
+        }
+        #endregion
 
-            // 关闭当前菜单
+        #region 截图与自动留档
+
+        /// <summary>
+        /// 截取当前游戏画面（隐藏菜单UI），然后打开存档面板
+        /// </summary>
+        private IEnumerator CaptureScreenThenOpenArchive(ArchivePanel.ArchiveMode mode)
+        {
+            // 临时隐藏菜单Canvas，确保截图是纯净的游戏画面
+            Canvas menuCanvas = GetMenuCanvas();
+            bool wasEnabled = menuCanvas?.enabled ?? true;
+            if (menuCanvas != null) menuCanvas.enabled = false;
+
+            yield return new WaitForEndOfFrame();
+
+            // 截图 + 缩小为缩略图
+            Texture2D thumbnail = CaptureThumbnail();
+
+            // 恢复菜单Canvas
+            if (menuCanvas != null) menuCanvas.enabled = wasEnabled;
+
+            // 存入上下文
+            if (thumbnail != null)
+            {
+                SaveLoadContext.PendingScreenshot = thumbnail;
+            }
+
+            // 关闭菜单并打开存档面板
             CloseSelf();
-
-            // 打开存档选择界面（保存模式）
             GameEntry.UI.OpenUIForm(
                 AssetUtility.GetUIFormAsset(UIFormId.Archive),
                 UIGroupDefinition.Popup,
                 Constant.AssetPriority.UIAsset,
-                ArchivePanel.ArchiveMode.Save
+                mode
             );
         }
 
         /// <summary>
-        /// 返回主菜单流程
+        /// 截图 → 自动留档到第一个空位 → 返回主菜单
         /// </summary>
-        private void ReturnToMainMenu()
+        private IEnumerator CaptureAndAutoSaveThenReturnToMain()
         {
+            // 临时隐藏菜单Canvas
+            Canvas menuCanvas = GetMenuCanvas();
+            bool wasEnabled = menuCanvas?.enabled ?? true;
+            if (menuCanvas != null) menuCanvas.enabled = false;
+
+            yield return new WaitForEndOfFrame();
+
+            // 截图
+            Texture2D thumbnail = CaptureThumbnail();
+
+            // 恢复菜单Canvas（虽然马上要关闭，但防止其他逻辑需要）
+            if (menuCanvas != null) menuCanvas.enabled = wasEnabled;
+
+            // 自动留档到第一个空位
+            int emptySlot = FindFirstEmptySlot();
+            if (emptySlot > 0)
+            {
+                // 保存截图文件
+                if (thumbnail != null)
+                {
+                    try
+                    {
+                        string dir = Path.Combine(UnityEngine.Application.persistentDataPath, "Saves");
+                        if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+                        string screenshotPath = Path.Combine(dir, $"thumb_{emptySlot}.png");
+                        File.WriteAllBytes(screenshotPath, thumbnail.EncodeToPNG());
+                    }
+                    catch (System.Exception e)
+                    {
+                        Log.Warning($"[MenuPanel] 自动留档截图保存失败: {e.Message}");
+                    }
+                }
+
+                // 保存游戏数据
+                CustomEntry.PlayerData?.SaveGame(emptySlot);
+                Log.Info($"[MenuPanel] 自动留档到槽位 {emptySlot}");
+            }
+            else
+            {
+                Log.Info("[MenuPanel] 无空余槽位，跳过自动留档");
+            }
+
+            // 清理截图纹理
+            if (thumbnail != null)
+            {
+                Destroy(thumbnail);
+            }
+
+            // 返回主菜单
             if (m_ProcedureGame != null)
             {
-                // 保存当前游戏状态
-                CustomEntry.PlayerData.SaveOnExit();
-
-                // 切换到主菜单流程
                 m_ProcedureGame.ReturnToMainMenu();
             }
             else
@@ -212,17 +287,63 @@ namespace AVGGame
         }
 
         /// <summary>
-        /// 退出游戏
+        /// 截取全屏并缩小为480px宽的缩略图
         /// </summary>
-        private void OnExitClick()
+        private Texture2D CaptureThumbnail()
         {
-            
-            if (m_ProcedureGame != null)
-            {
-                m_ProcedureGame.QuitGame(); 
-            }
-            
+            int captureWidth = Screen.width;
+            int captureHeight = Screen.height;
+
+            Texture2D fullScreen = new Texture2D(captureWidth, captureHeight, TextureFormat.RGB24, false);
+            fullScreen.ReadPixels(new Rect(0, 0, captureWidth, captureHeight), 0, 0);
+            fullScreen.Apply();
+
+            // 缩小
+            int thumbWidth = 480;
+            float ratio = (float)captureHeight / captureWidth;
+            int thumbHeight = Mathf.RoundToInt(thumbWidth * ratio);
+
+            RenderTexture rt = RenderTexture.GetTemporary(thumbWidth, thumbHeight, 0);
+            rt.filterMode = FilterMode.Bilinear;
+            RenderTexture.active = rt;
+            Graphics.Blit(fullScreen, rt);
+
+            Texture2D thumbnail = new Texture2D(thumbWidth, thumbHeight, TextureFormat.RGB24, false);
+            thumbnail.ReadPixels(new Rect(0, 0, thumbWidth, thumbHeight), 0, 0);
+            thumbnail.Apply();
+
+            RenderTexture.active = null;
+            RenderTexture.ReleaseTemporary(rt);
+            Destroy(fullScreen);
+
+            return thumbnail;
         }
+
+        /// <summary>
+        /// 获取菜单上的Canvas组件
+        /// </summary>
+        private Canvas GetMenuCanvas()
+        {
+            Transform canvasTrans = transform.Find("Canvas");
+            return canvasTrans?.GetComponent<Canvas>();
+        }
+
+        /// <summary>
+        /// 找到第一个空存档槽位（1~12），没有返回-1
+        /// </summary>
+        private int FindFirstEmptySlot()
+        {
+            var saveSystem = CustomEntry.SaveSystem;
+            if (saveSystem == null) return -1;
+
+            for (int i = 1; i <= 12; i++)
+            {
+                if (!saveSystem.HasSave(i))
+                    return i;
+            }
+            return -1;
+        }
+
         #endregion
 
         #region 公共方法

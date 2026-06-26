@@ -417,6 +417,10 @@ namespace AVGGame
         private int m_CurrentEventId = 0;
         public int CurrentEventId => m_CurrentEventId;
 
+        // 当前背景图路径（用于存档缩略图 + 断点续传恢复）
+        private string m_CurrentBackgroundPath = "";
+        public string CurrentBackgroundPath => m_CurrentBackgroundPath;
+
         public void SetCurrentStoryGarphName(string storyGarphName)
         {
             currentStoryGarphName = storyGarphName;
@@ -430,6 +434,17 @@ namespace AVGGame
         public void SetCurrentEventId(int eventId)
         {
             m_CurrentEventId = eventId;
+        }
+
+        /// <summary>
+        /// 更新当前背景路径（仅在path非空时更新，空路径保留上一次的背景）
+        /// </summary>
+        public void SetCurrentBackgroundPath(string path)
+        {
+            if (!string.IsNullOrEmpty(path))
+            {
+                m_CurrentBackgroundPath = path;
+            }
         }
 
         #region 奖励应用
@@ -558,7 +573,10 @@ namespace AVGGame
 
                 // 对话进度和事件ID
                 CurrentDialogueId = m_CurrentDialogueId,
-                CurrentEventId = m_CurrentEventId
+                CurrentEventId = m_CurrentEventId,
+
+                // 当前背景路径
+                CurrentBackgroundPath = m_CurrentBackgroundPath
             };
         }
 
@@ -668,6 +686,9 @@ namespace AVGGame
             // 恢复对话进度和事件ID
             m_CurrentDialogueId = Mathf.Max(0, saveData.CurrentDialogueId);
             m_CurrentEventId = Mathf.Max(0, saveData.CurrentEventId);
+
+            // 恢复当前背景路径
+            m_CurrentBackgroundPath = saveData.CurrentBackgroundPath ?? "";
 
             // 记录加载详情
             Debug.Log($"[PlayerDataComponent] 存档加载完成！");

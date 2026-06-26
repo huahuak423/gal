@@ -165,12 +165,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cb48ae63cfbb14582e479a27831b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ButtonResume: {fileID: 5786012887222636836}
+  ButtonContinue: {fileID: 0}
   m_ButtonSave: {fileID: 1267511183454531973}
   m_ButtonLoad: {fileID: 0}
+  ButtonTimeLine: {fileID: 0}
   m_ButtonSettings: {fileID: 5069240677417010678}
   m_ButtonBack: {fileID: 8448226685988268309}
   m_ButtonExit: {fileID: 1205489757370479136}
+  ButtonNPC: {fileID: 0}
+  ButtonGallery: {fileID: 0}
+  ButtonManual: {fileID: 0}
   m_TransparentBgButton: {fileID: 0}
 --- !u!1 &1939261357849247332
 GameObject:
@@ -512,7 +516,7 @@ GameObject:
   - component: {fileID: 8111377912370016451}
   - component: {fileID: 6961978577186255611}
   m_Layer: 0
-  m_Name: ButtonBack
+  m_Name: ButtonHistory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

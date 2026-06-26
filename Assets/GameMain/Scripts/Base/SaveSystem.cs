@@ -60,8 +60,11 @@ namespace AVGGame
         // 当前进行中的事件ID（0 = 无进行中事件）
         public int CurrentEventId;
 
+        // 当前背景图路径（用于存档槽位显示 + 断点续传恢复背景）
+        public string CurrentBackgroundPath;
+
         // 存档版本（用于未来兼容性）
-        public int Version = 3;
+        public int Version = 4;
     }
 
     /// <summary>
@@ -244,9 +247,23 @@ namespace AVGGame
             try
             {
                 string filePath = GetSaveFilePath(slotId);
+                bool deleted = false;
+
                 if (File.Exists(filePath))
                 {
                     File.Delete(filePath);
+                    deleted = true;
+                }
+
+                // 同时删除截图文件
+                string screenshotPath = Path.Combine(SaveDirectory, $"thumb_{slotId}.png");
+                if (File.Exists(screenshotPath))
+                {
+                    File.Delete(screenshotPath);
+                }
+
+                if (deleted)
+                {
                     Debug.Log($"[SaveSystem] 存档已删除: 槽位 {slotId}");
                     return true;
                 }
@@ -283,7 +300,8 @@ namespace AVGGame
                     SlotId = slotId,
                     HasSave = true,
                     SaveTime = saveData.SaveTime,
-                    CurrentRound = saveData.CurrentRound
+                    CurrentRound = saveData.CurrentRound,
+                    BackgroundPath = saveData.CurrentBackgroundPath
                 };
             }
             catch (Exception e)
@@ -628,5 +646,6 @@ namespace AVGGame
         public int CurrentRound { get; set; }
         public int PlayTimeSeconds { get; set; }  // 游戏时长（秒）
         public string CurrentLocation { get; set; }  // 当前位置名称
+        public string BackgroundPath { get; set; }  // 当前背景图路径（用于槽位缩略图）
     }
 }

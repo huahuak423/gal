@@ -142,14 +142,14 @@ namespace AVGGame
             m_ButtonHide = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHide");
             m_ButtonInformation = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonInformation");
             m_ButtonSave = this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSave");
-            m_ButtonMenu= this.GetComponentByPath<Button>("Canvas/Background/TextPlate/DialoguePlate/ButtonMenu");
+            m_ButtonMenu= this.GetComponentByPath<Button>("Canvas/Background/ButtonMenu");
             m_ButtonAutoText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonAuto/TextForTest");
             m_ButtonSpeedUpText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSpeedUp/TextForTest");
             m_ButtonHistoryText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHistory/TextForTest");
             m_ButtonHideText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonHide/TextForTest");
             m_ButtonInformationText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonInformation/TextForTest");
             m_ButtonSaveText = this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonPlate/ButtonSave/TextForTest");
-            m_ButtonMenuText= this.GetComponentByPath<Text>("Canvas/Background/TextPlate/DialoguePlate/ButtonMenu/TextForTest");
+            m_ButtonMenuText= this.GetComponentByPath<Text>("Canvas/Background/ButtonMenu/TextForTest");
             m_ChoiceButton1 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button1");
             m_ChoiceButton2 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button2");
             m_ChoiceButton3 = this.GetComponentByPath<Button>("Canvas/Background/SelectPanel/Background/Button3");
@@ -313,11 +313,53 @@ namespace AVGGame
         }
 
         /// <summary>
-        /// 打开存档界面（保存模式）
+        /// 打开存档界面（保存模式）— 先截屏再打开
         /// </summary>
         private void OnSaveClick()
         {
             Log.Info("[DialoguePanel] Save clicked");
+            StartCoroutine(CaptureScreenThenOpenArchive());
+        }
+
+        /// <summary>
+        /// 截取当前游戏画面，存入 SaveLoadContext.PendingScreenshot，
+        /// 然后打开存档面板（此时画面中还没有存档UI，截图是纯净的游戏场景）
+        /// </summary>
+        private IEnumerator CaptureScreenThenOpenArchive()
+        {
+            // 等待当前帧渲染完毕
+            yield return new WaitForEndOfFrame();
+
+            // 截取全屏
+            int captureWidth = Screen.width;
+            int captureHeight = Screen.height;
+
+            Texture2D fullScreen = new Texture2D(captureWidth, captureHeight, TextureFormat.RGB24, false);
+            fullScreen.ReadPixels(new Rect(0, 0, captureWidth, captureHeight), 0, 0);
+            fullScreen.Apply();
+
+            // 缩小为缩略图（节省磁盘和内存）
+            int thumbWidth = 480;
+            float ratio = (float)captureHeight / captureWidth;
+            int thumbHeight = Mathf.RoundToInt(thumbWidth * ratio);
+
+            RenderTexture rt = RenderTexture.GetTemporary(thumbWidth, thumbHeight, 0);
+            rt.filterMode = FilterMode.Bilinear;
+            RenderTexture.active = rt;
+            Graphics.Blit(fullScreen, rt);
+
+            Texture2D thumbnail = new Texture2D(thumbWidth, thumbHeight, TextureFormat.RGB24, false);
+            thumbnail.ReadPixels(new Rect(0, 0, thumbWidth, thumbHeight), 0, 0);
+            thumbnail.Apply();
+
+            RenderTexture.active = null;
+            RenderTexture.ReleaseTemporary(rt);
+            Destroy(fullScreen);
+
+            // 存入上下文，ArchivePanel 保存时使用
+            SaveLoadContext.PendingScreenshot = thumbnail;
+
+            // 打开存档面板
             GameEntry.UI.OpenUIForm(
                 AssetUtility.GetUIFormAsset(UIFormId.Archive),
                 UIGroupDefinition.Popup,
@@ -1120,10 +1162,24 @@ namespace AVGGame
         /// </summary>
         private void ApplyBackground(string backgroundPath)
         {
-            if (string.IsNullOrEmpty(backgroundPath) || m_BackgroundImage == null)
+            // 空路径时尝试从存档恢复上一次的背景
+            if (string.IsNullOrEmpty(backgroundPath))
             {
-                return;
+                string savedBg = CustomEntry.PlayerData?.CurrentBackgroundPath;
+                if (!string.IsNullOrEmpty(savedBg))
+                {
+                    backgroundPath = savedBg;
+                }
+                else
+                {
+                    return;
+                }
             }
+
+            if (m_BackgroundImage == null) return;
+
+            // 同步到 PlayerData（供存档使用）
+            CustomEntry.PlayerData?.SetCurrentBackgroundPath(backgroundPath);
 
             GameEntry.Resource.LoadAsset(
                 backgroundPath,
@@ -1417,6 +1473,13 @@ namespace AVGGame
 
             Log.Info($"[DialoguePanel] 显示对话 - 说话人: {data.SpeakerName}, 文本: {data.DialogText}, 类型: {data.NodeType}");
 
+            // CG视频节点：播放视频，播完后自动进入下一条
+            if (data.NodeType == 4)
+            {
+                PlayCGVideo(data);
+                return;
+            }
+
             // 应用立绘
             ApplyCharacterDisplay(data.CharacterActionsJson);
 
@@ -1591,6 +1654,47 @@ namespace AVGGame
 
             // 淡出旧音频后显示下一句
             StartCoroutine(FadeOutThenShowNext());
+        }
+
+        /// <summary>
+        /// 播放CG视频节点
+        /// </summary>
+        private void PlayCGVideo(DialogueDisplayData data)
+        {
+            Log.Info($"[DialoguePanel] 播放CG视频: {data.VideoPath}");
+
+            // 隐藏对话框区域
+            if (m_TextPlate != null)
+            {
+                m_TextPlate.gameObject.SetActive(false);
+            }
+
+            // 停止当前语音和音效
+            StopDialogueAudioImmediate();
+
+            // 构建播放参数
+            var cgData = new CGPlayData
+            {
+                VideoFileName = data.VideoPath,
+                CanSkip = true,
+                OnComplete = () =>
+                {
+                    // 视频播完 → 进入下一条
+                    DialogueDisplayData nextData = m_ProcedureGame.GoToNextDialogue();
+                    if (nextData != null)
+                    {
+                        ShowCurrentDialogue();
+                    }
+                }
+            };
+
+            // 以 Popup 层级打开 CGPanel（覆盖在对话面板之上）
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.CG),
+                UIGroupDefinition.Popup,
+                Constant.AssetPriority.UIAsset,
+                cgData
+            );
         }
 
         /// <summary>

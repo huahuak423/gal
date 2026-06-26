@@ -7,6 +7,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 using UnityGameFramework.Runtime;
 using AVGGame;
 
@@ -62,13 +64,9 @@ namespace AVGGame
         private string m_CurrentStoryToLoad = string.Empty; // 要加载的故事名称
         private int m_CurrentLoadSlot = -1;              // 当前加载的存档槽位
 
-        /// <summary>
-        /// 静态标记：存档完成后是否返回主菜单
-        /// 由调用方在 OpenUIForm 前设置，ArchivePanel.OnOpen 中读取后重置
-        /// </summary>
-        public static bool ReturnToMainMenuFlag = false;
-
-        private bool m_ReturnToMainMenuAfterSave = false; // 实例标记，由 OnOpen 从静态标记读取
+        // 已加载的截图 Sprite 和 Texture（OnClose 时统一释放）
+        private List<Sprite> m_LoadedSprites = new List<Sprite>();
+        private List<Texture2D> m_LoadedTextures = new List<Texture2D>();
 
         #endregion
 
@@ -184,10 +182,6 @@ namespace AVGGame
             // 隐藏确认面板
             HideConfirmPlate();
 
-            // 读取并重置静态标记
-            bool returnToMainMenu = ReturnToMainMenuFlag;
-            ReturnToMainMenuFlag = false;
-
             // 检查是否从游戏菜单进入
             m_IsFromGameMenu = userData is ProcedureGame;
             m_ProcedureGame = userData as ProcedureGame;
@@ -196,22 +190,16 @@ namespace AVGGame
             if (userData is ArchiveMode mode)
             {
                 m_Mode = mode;
-                // Debug.Log($"[ArchivePanel] Mode set to: {mode}");
             }
             else if (userData is bool isNewGame)
             {
                 // 兼容旧的 bool 参数（true=新游戏，false=继续游戏）
                 m_Mode = isNewGame ? ArchiveMode.Save : ArchiveMode.Load;
-                // Debug.Log($"[ArchivePanel] Mode set from bool: {m_Mode}");
             }
             else
             {
                 m_Mode = ArchiveMode.Save; // 默认保存模式
-                // Debug.Log("[ArchivePanel] Default mode set to: Save");
             }
-
-            // 应用静态标记（由 MenuPanel 的主菜单按钮在打开前设置）
-            m_ReturnToMainMenuAfterSave = returnToMainMenu;
 
             // 更新标题
             UpdateTitle();
@@ -225,6 +213,25 @@ namespace AVGGame
 
         protected override void OnClose(bool isShutdown, object userData)
         {
+            // 清理截图纹理和精灵
+            foreach (var sprite in m_LoadedSprites)
+            {
+                if (sprite != null) Destroy(sprite);
+            }
+            foreach (var tex in m_LoadedTextures)
+            {
+                if (tex != null) Destroy(tex);
+            }
+            m_LoadedSprites.Clear();
+            m_LoadedTextures.Clear();
+
+            // 清理待保存的截图
+            if (SaveLoadContext.PendingScreenshot != null)
+            {
+                Destroy(SaveLoadContext.PendingScreenshot);
+                SaveLoadContext.PendingScreenshot = null;
+            }
+
             base.OnClose(isShutdown, userData);
             HideConfirmPlate();
             m_SelectedSlotIndex = -1;
@@ -327,6 +334,27 @@ namespace AVGGame
         /// </summary>
         private System.Collections.IEnumerator SaveWithRetry(int slotId, int maxRetries = 2)
         {
+            // 先保存截图文件（如果有待保存的截图）
+            if (SaveLoadContext.PendingScreenshot != null)
+            {
+                try
+                {
+                    string screenshotPath = GetScreenshotPath(slotId);
+                    string dir = Path.GetDirectoryName(screenshotPath);
+                    if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+                    File.WriteAllBytes(screenshotPath, SaveLoadContext.PendingScreenshot.EncodeToPNG());
+                    Debug.Log($"[ArchivePanel] 截图已保存: {screenshotPath}");
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogWarning($"[ArchivePanel] 截图保存失败: {e.Message}");
+                }
+
+                // 释放临时截图
+                Destroy(SaveLoadContext.PendingScreenshot);
+                SaveLoadContext.PendingScreenshot = null;
+            }
+
             bool success = false;
             int retryCount = 0;
 
@@ -344,19 +372,8 @@ namespace AVGGame
 
             if (success)
             {
-                // Debug.Log($"[ArchivePanel] 保存成功：槽位 {slotId}");
                 ShowMessage("保存成功！");
-
-                if (m_ReturnToMainMenuAfterSave)
-                {
-                    // 由"主菜单"按钮触发：存档后返回主菜单
-                    DelayAndReturnToMainMenu();
-                }
-                else
-                {
-                    // 普通存档：关闭存档界面，回到游戏
-                    CloseSelf();
-                }
+                CloseSelf();
             }
             else
             {
@@ -495,33 +512,72 @@ namespace AVGGame
                 if (m_SaveSlots[i] == null || m_SaveSlotImages[i] == null)
                     continue;
 
-                int slotId = i + 1; // 槽位ID从1开始
+                int slotId = i + 1;
                 bool hasSave = HasSaveData(slotId);
 
                 // 根据模式设置按钮可点击状态
                 if (m_Mode == ArchiveMode.Load)
                 {
-                    // 加载模式：只有有存档的按钮可点击
                     m_SaveSlots[i].interactable = hasSave;
                 }
                 else
                 {
-                    // 保存模式：所有按钮都可点击
                     m_SaveSlots[i].interactable = true;
                 }
 
-                // 设置按钮图片颜色（空存档为灰色）
+                // 重置sprite和颜色
+                m_SaveSlotImages[i].sprite = null;
+                m_SaveSlotImages[i].color = hasSave ? Color.white : new Color(0.5f, 0.5f, 0.5f, 0.5f);
+
+                // 有存档且有截图 → 加载截图缩略图
                 if (hasSave)
                 {
-                    // 有存档：正常显示
-                    m_SaveSlotImages[i].color = Color.white;
+                    string screenshotPath = GetScreenshotPath(slotId);
+                    if (File.Exists(screenshotPath))
+                    {
+                        LoadSlotScreenshot(i, screenshotPath);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 从文件加载存档截图并显示在槽位上
+        /// </summary>
+        private void LoadSlotScreenshot(int slotIndex, string filePath)
+        {
+            if (slotIndex < 0 || slotIndex >= m_SaveSlotImages.Length) return;
+            if (m_SaveSlotImages[slotIndex] == null) return;
+
+            try
+            {
+                byte[] bytes = File.ReadAllBytes(filePath);
+                Texture2D tex = new Texture2D(2, 2, TextureFormat.RGB24, false);
+                if (tex.LoadImage(bytes))
+                {
+                    Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.one * 0.5f);
+                    m_SaveSlotImages[slotIndex].sprite = sprite;
+                    m_SaveSlotImages[slotIndex].type = Image.Type.Simple;
+                    m_LoadedSprites.Add(sprite);
+                    m_LoadedTextures.Add(tex);
                 }
                 else
                 {
-                    // 无存档：灰色显示
-                    m_SaveSlotImages[i].color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+                    Destroy(tex);
                 }
             }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"[ArchivePanel] 截图加载失败: {filePath}, {e.Message}");
+            }
+        }
+
+        /// <summary>
+        /// 获取存档截图文件路径
+        /// </summary>
+        private string GetScreenshotPath(int slotId)
+        {
+            return Path.Combine(Application.persistentDataPath, "Saves", $"thumb_{slotId}.png");
         }
 
         /// <summary>
@@ -530,32 +586,6 @@ namespace AVGGame
         private bool HasSaveData(int slotId)
         {
             return CustomEntry.SaveSystem?.HasSave(slotId) ?? false;
-        }
-
-        /// <summary>
-        /// 存档完成后返回主菜单（由"主菜单"按钮触发的存档流程使用）
-        /// </summary>
-        private void DelayAndReturnToMainMenu()
-        {
-            // 先获取流程引用
-            var procedure = m_ProcedureGame;
-            if (procedure == null)
-            {
-                procedure = GameEntry.Procedure?.CurrentProcedure as ProcedureGame;
-            }
-
-            // 先触发返回主菜单（内部会 SaveOnExit，状态切换由框架在下一帧处理）
-            if (procedure != null)
-            {
-                procedure.ReturnToMainMenu();
-            }
-            else
-            {
-                Debug.LogWarning("[ArchivePanel] ProcedureGame is null, cannot return to main menu");
-            }
-
-            // 最后关闭自己（此时 ReturnToMainMenu 已经触发，不会被中断）
-            CloseSelf();
         }
 
         /// <summary>

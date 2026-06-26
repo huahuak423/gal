@@ -563,7 +563,8 @@ namespace AVGGame
                 BgmPath = row.BgmPath,
                 VoicePath = row.VoicePath,
                 SePath = row.SePath,
-                HideDialoguePanel = row.HideDialoguePanel
+                HideDialoguePanel = row.HideDialoguePanel,
+                VideoPath = row.VideoPath
             };
         }
 
@@ -962,14 +963,11 @@ namespace AVGGame
         }
 
         /// <summary>
-        /// 返回主菜单
+        /// 返回主菜单（不自动存档，由调用方负责存档逻辑）
         /// </summary>
         public void ReturnToMainMenu()
         {
             Debug.Log("[ProcedureGame] Returning to main menu");
-
-            // 保存当前游戏状态
-            CustomEntry.PlayerData.SaveOnExit();
 
             // 切换到主菜单流程
             ChangeState<ProcedureMainMenu>(m_ProcedureOwner);

@@ -92,5 +92,16 @@ namespace AVGGame
         public string VoicePath;            // 语音资源路径
         public string SePath;               // 音效资源路径
         public bool HideDialoguePanel;      // 是否隐藏对话框区域
+        public string VideoPath;            // CG视频文件名（NodeType=4时使用）
+    }
+
+    /// <summary>
+    /// CG视频播放参数（传递给 CGPanel）
+    /// </summary>
+    public class CGPlayData
+    {
+        public string VideoFileName;       // 视频文件名（如 "intro.mp4"），放在 StreamingAssets/CG/ 下
+        public bool CanSkip = true;        // 是否允许跳过
+        public System.Action OnComplete;   // 视频播放完成或跳过时的回调
     }
 }

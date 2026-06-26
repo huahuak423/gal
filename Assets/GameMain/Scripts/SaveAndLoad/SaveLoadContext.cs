@@ -37,6 +37,11 @@ namespace AVGGame
         /// </summary>
         public static System.Action OnCreateNameComplete;
 
+        /// <summary>
+        /// 存档时的临时截图（由 DialoguePanel 在打开存档面板前捕获，ArchivePanel 保存时写入文件）
+        /// </summary>
+        public static Texture2D PendingScreenshot;
+
         #endregion
 
         #region 属性

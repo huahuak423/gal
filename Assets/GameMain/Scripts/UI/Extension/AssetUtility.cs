@@ -47,6 +47,7 @@ namespace AVGGame
                 case UIFormId.Information: return "Information";
                 case UIFormId.Inventory: return "Inventory";
                 case UIFormId.History: return "History";
+                case UIFormId.CG: return "CG";
 
                 default:
                     UnityEngine.Debug.LogWarning($"[AssetUtility] Unknown UIFormId: {uiFormId}");
