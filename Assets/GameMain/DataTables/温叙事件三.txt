@@ -2,17 +2,17 @@
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string	bool
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音	隐藏对话框
 10000	10001	0		专访结束后，你几乎天天熬夜加班加点，死磕着稿件里每一个字眼。					Assets/GameMain/Music/悦耳舒缓的乐曲.mp3			Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
-10001	10196	0		这是你从业以来倾注最多心血的一篇稿件，你不敢有分毫懈怠，生怕落笔太轻辜负了他的坦诚，又怕用力过猛砸了自己七年的热爱。										0
-10002	10003	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/宣发修改稿.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10001	10194	0		这是你从业以来倾注最多心血的一篇稿件，你不敢有分毫懈怠，生怕落笔太轻辜负了他的坦诚，又怕用力过猛砸了自己七年的热爱。										0
+10002	10003	0	温叙	宣发初稿（修改建议.docx）]	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/宣发修改稿.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10003	10004	0		那是一份批注得细致入微的文档，原有的文章框架他一字未动，与其说是审稿，不如说是两个灵魂隔着屏幕、跨越时空的无声共鸣。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10004	10005	0		他的批注里没有任何对苦难的自我感动，他不想被塑造成完美的受害者，更无意被神化为拯救者。										0
 10005	10006	0		他只是平静地剥开过往，证明自己只是个普通人：也曾在泥泞中迷失，也曾在黑夜里彷徨。										0
 10006	10007	0		文档的最后，他留下一行字：“内容详实，无需修改，谢谢。”										0
-10007	10197	0		你捧着这份批注反复琢磨了两天，灵光乍现间，将文中几处过于煽情的段落全数推翻。								Assets/GameMain/Art/Backgrounds/居家/家-白天.png		0
-10008	10198	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙：太优秀啦.png","OffsetX":0.0,"OffsetY":0.0,"Scale":1.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙：太优秀啦.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10007	10195	0		你捧着这份批注反复琢磨了两天，灵光乍现间，将文中几处过于煽情的段落全数推翻。								Assets/GameMain/Art/Backgrounds/居家/家-白天.png		0
+10008	10196	0	温叙	[太优秀啦.jpg]	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙：太优秀啦.png","OffsetX":0.0,"OffsetY":0.0,"Scale":1.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙：太优秀啦.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10009	10010	0		发布那天，你将全网的账号都预约了定时发送，时间是晚上八点，情感类内容流量最鼎沸的黄金时段。								Assets/GameMain/Art/Backgrounds/居家/家-傍晚开灯.png		0
 10010	10011	0		同时你也没忘记@那个坐拥百万粉丝、却常年长草的账号。										0
-10011	10012	0		不过五分钟，页面刷新的瞬间，全网都轰动了。										0
+10011	10012	0		不过五分钟，页面刷新的瞬间，全网轰动。										0
 10012	10013	0		那个拥有百万粉丝却几乎从不更新、连采访都拒绝了无数次的神秘作者叙闻，第一次主动转发了别人的文章。										0
 10013	10014	0		这个看似平淡无奇的举动，却比任何热搜都更有冲击力，评论区瞬间就涌入了上千条留言。										0
 10014	10015	0		后台数据如同坐上了火箭，以一种匪夷所思的陡峭弧度疯狂攀升，评论区更是热闹的像过年。										0
@@ -33,25 +33,25 @@
 10029	10030	0	外卖员	女士，您的外卖，请签收。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/NPC/外卖员.png","OffsetX":0.0,"OffsetY":-300.0,"Scale":2.5},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/NPC/外卖员.png","OffsetX":0.0,"OffsetY":-300.0,"Scale":2.5}]}									0
 10030	10031	0		在确认收货地址和联系方式确实是你的后，你向他道了谢，伸手接过纸盒。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10031	10032	0		交接的那一瞬，口袋里的手机发出一阵轻微的蜂鸣。										0
-10032	10199	0		你随手将蛋糕放在玄关的柜子上，掏出手机										0
-10033	10191	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/冒昧带飞.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10032	10197	0		你随手将蛋糕放在玄关的柜子上，掏出手机										0
+10033	10189	0	温叙	学妹现在可是大红人了，叙闻冒昧求带飞。这次新书宣传，还请多多借光。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/冒昧带飞.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
 10034	10035	0		你心头一紧，出于职业本能，你拍了个蛋糕的照片发过去，并敲下了质问：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10035	10200	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/蛋糕.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10035	10198	0	主控名	[蛋糕.jpg]	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/蛋糕.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10036	10037	0		因为巧合得有些诡异，你下意识认定这蛋糕是温叙送来的。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10037	10038	0		上一次察觉到那抹精心设计的痕迹还历历在目，你对他并非全无防备。										0
 10038	10039	0		如今个人隐私泄露的情况屡见不鲜，再加上以他如今的社会资源，若是真想弄到你的住址，确实也绝非难事。										0
 10039	10040	0		这种隐私可能被窥探的惊悚感，瞬间盖过了刚才的松弛感。										0
 10040	10041	0		屏幕顶端“对方正在输入……”的提示反复闪烁、跳动，却迟迟没有等来一句解释。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/对方正在输入.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									0
 10041	10042	0		足足过了两分钟，温叙的回复才终于跳了出来，隔着屏幕，你甚至能隐约嗅到一抹手足无措的慌乱与委屈：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10042	10043	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/抱歉.png","OffsetX":0.0,"OffsetY":150.0,"Scale":2.0}]}									1
+10042	10043	0	温叙	抱歉……可这蛋糕不是我送的。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/抱歉.png","OffsetX":0.0,"OffsetY":150.0,"Scale":2.0}]}									1
 10043	10044	0		竟然不是吗？还没等你顺着这口气细想，闺蜜许映月的消息便劈里啪啦地炸了进来：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10044	10201	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/宝宝！.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10044	10199	0	许映月	宝宝！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/宝宝！.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
 10045	10046	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10046	10047	0		原来是闹了个乌龙，你揉了揉太阳穴，有些哭笑不得。										0
 10047	10048	0		只能说,你沉浸在阶段性胜利，脑子不太清醒。										0
 10048	10049	0		加上事情来得太巧，这才不分青红皂白地跑去质问了人家。										0
 10049	10050	0		你暗骂了自己一句“草木皆兵”，连忙切换回温叙的聊天框，指尖飞快地在键盘上敲字，语气里满是歉意：	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10050	10051	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/女主抱歉.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/女主抱歉.png","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									1
+10050	10051	0	主控名	不好意思叙闻老师，您的文档发过来的时机实在是太巧了，是我误会了您，真的抱歉！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/女主抱歉.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/女主抱歉.png","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									1
 10051	10052	0		为了终止这场令人脚趾抓地的尴尬，你赶紧将话题转移，点开了那份名为《伤痕化铠》的电子文档。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10052	10053	0		当下载缓冲的绿环闭合，屏幕一闪，文档扉页上的第一行题记撞入眼帘——										0
 10053	10054	0		“风雪褫夺了玫瑰的艳骨，却让它在溃烂的断枝处，生出足以自御的荆棘。”										0
@@ -59,17 +59,17 @@
 10055	10056	0		里面对心理创伤的剖析真实得近乎残忍，渴望被世界看见、却又对外界的关注感到恐惧的极端矛盾，还有在每一个无眠深夜里将自我怀疑反复咀嚼的痛苦……										0
 10056	10057	0		每一个字，都带着灼人的温度。										0
 10057	10058	0		你怔愣片刻，再次切回和温叙的聊天框：										0
-10058	10059	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/拜读.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
-10059	10060	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/长尾期.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10058	10059	0	主控名	刚拜读了您写的部分内容，立意和深度都非常惊艳。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/拜读.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10059	10060	0	主控名	正好上期专访的流量还在长尾期，趁着热度，我会好好为您规划新书宣发。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/长尾期.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
 10060	10061	0		消息发出去没一会儿，温叙便回了，瞧不出半点被无端冤枉的气恼，反而处处透着纵容：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10061	10062	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/警惕心.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
-10062	10063	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/说起来这家店.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10061	10062	0	温叙	没事没事，警惕心高是对的，换作任何人遇到这种巧合，都免不了多想。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/警惕心.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10062	10063	0	温叙	说起来这家店的蛋糕确实值得一试，我正好有他们家的会员。等宣发的事忙完，我请你。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/说起来这家店.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
 10063	10064	0		你心里一阵发烫，说到底是你得了便宜，借着他的专访一战成名，结果还平白无故误会了他。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10064	10065	0		所谓“帮他宣传”其实也不尽然。										0
 10065	10066	0		以他的名气，哪怕你账号数据已经做起来了，于他而言也只是一点微不足道的助力。										0
 10066	10067	0		正绞尽脑汁想着还能怎么赔罪，他却体贴地给了你一个台阶。										0
 10067	10068	0		既然他有这家店的会员，想必是常去的。										0
-10068	10069	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/做东.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10068	10069	0	主控名	哪能让您请，该由我做东才对。宣发稿这周就能出初稿，到时候给到您。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/做东.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
 10069	10070	0		回完消息，你才又彻底放松下来。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10070	10071	0		你将蛋糕盒端上餐桌，解开深红色丝绒缎带，掀开盒盖的瞬间，浓郁的焦糖甜香混着淡淡的海盐咸鲜扑面而来。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/焦糖海盐蛋糕.png","OffsetX":0.0,"OffsetY":90.0,"Scale":1.350000023841858}]}									0
 10071	10072	0		琥珀色的焦糖淋面泛着柔光，表面撒着细碎的海盐晶，在灯下星星点点的闪烁。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
@@ -77,7 +77,7 @@
 10073	10074	0		先是薄薄的焦糖层在舌尖融化，紧接着是像云朵般的奶油在口腔里绽放，咸甜交织的层次恰到好处。										0
 10074	10075	0		这蛋糕确实惊艳，你放下勺子切去许映月的聊天框，打了一长串夸张的彩虹屁，把她逗得哈哈大笑。										0
 10075	10076	0		而就在这时，温叙的消息再次弹了出来。										0
-10076	10077	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/不着急的.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10076	10077	0	温叙	不着急的，按照你的节奏来就好。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/不着急的.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
 10077	10078	0		看着屏幕上那行温吞的文字，你舒展的眉头微微蹙起。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣皱眉.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣皱眉.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10078	10079	0		在你们屈指可数的交锋里，似乎都是他交出主动权，心甘情愿地把自己钉在退让的下风向。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10079	10080	0		是因为当年的遭遇让他习惯了以退为进，用卑微来索取？	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
@@ -92,116 +92,115 @@
 10088	10089	0		你无奈失笑，索性拿出手机，找了个合适的角度拍了一张蛋糕特写，随手丢进了朋友圈：	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10089	10090	0		“天降匿名甜蜜，是哪位好心人的精准扶贫，速速认领！[蛋糕特写.jpg]”	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/焦糖海盐蛋糕.png","OffsetX":0.0,"OffsetY":90.0,"Scale":1.350000023841858},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"Assets/GameMain/Art/Photo/焦糖海盐蛋糕.png","OffsetX":0.0,"OffsetY":90.0,"Scale":1.350000023841858}]}									0
 10090	10091	0		刚发出去不到两分钟，果不其然，真正的嫌疑人火速自投罗网了。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10091	10092	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/5.惊为天人.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
-10092	10093	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/6.发了笔小财.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
-10093	10094	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/7.吃了吗吃了吗.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
-10094	10095	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/8.还没呢.png","OffsetX":0.0,"OffsetY":-120.0,"Scale":2.0}]}									1
+10091	10092	0	许映月	嗷嗷嗷！是我是我是我！今天探店吃到这款海盐焦糖，惊为天人！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/5.惊为天人.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
+10092	10093	0	许映月	最近发了笔小财，必须安排给我宝尝尝！原本想给你惊喜，结果光顾着跟总监激情对线，完全忘看配送进度了。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/6.发了笔小财.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
+10093	10094	0	许映月	吃了吗吃了吗，是不是超好吃！	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/7.吃了吗吃了吗.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10094	10095	0	主控名	还没呢，我尝尝。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/8.还没呢.png","OffsetX":0.0,"OffsetY":-120.0,"Scale":2.0}]}									1
 10095	10096	0		你隔着屏幕和许映月插科打诨了几句，然后挖了一块蛋糕送进嘴里。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10096	10097	0		细碎的海盐颗粒混着浓郁醇厚的焦糖，在绵密的奶油中层层化开，咸甜交织的绝妙口感确实好吃得让人想流泪。										0
-10097	10098	0		心满意足时，微信界面顶端突然滑出了一条新的私信提醒。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/联系人发来消息.png","OffsetX":-35.185272216796878,"OffsetY":255.0,"Scale":1.3250000476837159},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/8.还没呢.png","OffsetX":-525.0,"OffsetY":-360.0,"Scale":2.0}]}									0
-10098	10099	0		是温叙，你这才想起，刚才忙着发朋友圈，竟把回他消息的事忘得一干二净，甚至没来得及回个“收到”。	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10097	10098	0		心满意足时，微信界面顶端突然滑出了一条新的私信提醒。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/联系人发来消息.png","OffsetX":597.6510620117188,"OffsetY":368.1990661621094,"Scale":1.5780961513519288},{"CharacterName":"","ActionType":0,"Position":2,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/8.还没呢.png","OffsetX":-525.0,"OffsetY":-360.0,"Scale":2.0}]}									0
+10098	10099	0		是温叙，你这才想起，刚才忙着发朋友圈，竟把回他消息的事忘得一干二净，甚至没来得及回个“收到”。	{"actions":[{"CharacterName":"","ActionType":1,"Position":2,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10099	10100	0		心里揣着几分怠慢了合作对象的歉疚，你点开聊天框。										0
 10100	10101	0		本以为他是来委婉提醒，不曾想字里行间满是偶遇同好的欣喜：										0
-10101	10102	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/14.刚刚刷朋友圈.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10101	10102	0	温叙	刚刚刷朋友圈，正好看到了学妹发的照片。如果我没认错的话，这应该是L家的招牌海盐焦糖蛋糕？	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/14.刚刚刷朋友圈.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
 10102	10103	0		据许映月说，这家宝藏店选址偏的邪门，掩藏在城郊的一片握手楼里。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10103	10104	0		她对着路线攻略找了半天，直呼若不是“犟种”精神发作，只怕中途就要打道回府了。										0
-10104	10192	0		而且这家门店无法提供外送，所以这份蛋糕，是她探店时买下，通过闪送才辗转到你手里的。										0
-10105	10106	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/15.人美心善的闺蜜.png","OffsetX":0.0,"OffsetY":-120.0,"Scale":2.0}]}									1
+10104	10190	0		而且这家门店无法提供外送，所以这份蛋糕，是她探店时买下，通过闪送才辗转到你手里的。										0
+10105	10106	0	主控名	是的，刚刚去问了一圈，是我那人美心善的闺蜜给我买的。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/15.人美心善的闺蜜.png","OffsetX":0.0,"OffsetY":-120.0,"Scale":2.0}]}									1
 10106	10107	0		你飞快地回复着，顺带超绝不经意地秀了一把自家天下第一好的闺蜜，然后你引用了他发的文档：	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10107	10108	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/16.没能及时回复.png","OffsetX":0.0,"OffsetY":0.0,"Scale":2.0}]}									1
-10108	10109	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/17.新书的事不着急.png","OffsetX":0.0,"OffsetY":120.0,"Scale":2.0}]}									1
-10109	10110	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/18.说起来这家.png","OffsetX":0.0,"OffsetY":280.0,"Scale":2.0}]}									1
-10110	10111	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/19.季节限定.png","OffsetX":0.0,"OffsetY":280.0,"Scale":2.0}]}									1
+10107	10108	0	主控名	抱歉没能及时回复您，我吃完蛋糕马上拜读！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/16.没能及时回复.png","OffsetX":0.0,"OffsetY":0.0,"Scale":2.0}]}									1
+10108	10109	0	温叙	新书的事不着急，你按自己节奏来就好。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/17.新书的事不着急.png","OffsetX":0.0,"OffsetY":120.0,"Scale":2.0}]}									1
+10109	10110	0	温叙	说起来这家出品都还不错，恰巧我有会员卡，办了好多年一直没怎么用，里面或许还有些余额。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/18.说起来这家.png","OffsetX":0.0,"OffsetY":280.0,"Scale":2.0}]}									1
+10110	10111	0	温叙	不知下次是否机会，请你尝尝他们家的季节限定？	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/19.季节限定.png","OffsetX":0.0,"OffsetY":280.0,"Scale":2.0}]}									1
 10111	10112	0		季节限定？你心里微微一动，看来他是这家店实打实的老主顾了。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10112	10113	0		只是这份邀约来得猝不及防，你一时有些迟疑，拿不定主意该不该应下。										0
 10113	10114	0		反复斟酌后，你终究选择婉言谢绝，顺势再客套几句：										0
-10114	10115	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/20.下次有机会吧.png","OffsetX":0.0,"OffsetY":280.0,"Scale":2.0}]}									1
+10114	10115	0	主控名	等下次有机会吧。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/20.下次有机会吧.png","OffsetX":0.0,"OffsetY":280.0,"Scale":2.0}]}									1
 10115	10116	0		一来心中始终有顾虑，此前已经借着专访收获了不少热度。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10116	10117	0		如今再平白接受对方的请客，难免落得吃人嘴短的境地，于情于理都不太妥当。										0
 10117	10118	0		另一方面则是想守住彼此之间的分寸，如今你们只是合作关系，私下频繁相约，容易模糊了边界。										0
 10118	10119	0		温叙似乎听出了你委婉的推脱，也并未强求：	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10119	10120	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/21.那便不打扰你了.png","OffsetX":0.0,"OffsetY":280.0,"Scale":2.0}]}									1
+10119	10120	0	温叙	好，那便不打扰你了。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/21.那便不打扰你了.png","OffsetX":0.0,"OffsetY":280.0,"Scale":2.0}]}									1
 10120	10121	0		对话到此画上句点，你放下手机，将心思重新放回眼前的蛋糕上。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10121	0	0		……										0
-10122	10123	0	主控名	是的，您也知道这家店吗？										1
-10123	10124	0	温叙	以前住在附近，受过那家店老板的照拂。										0
-10124	10125	0	温叙	后来作品有了起色，生活安稳，临搬走前便办了储值卡存了些钱款。										0
-10125	10126	0	温叙	我本不常吃甜食，办卡不过是想借着这样的方式，悄悄报答昔日恩情。										0
-10126	10127	0		听完这段过往，再联想到许映月一路奔波探店的趣事，你对这家藏在城郊的小店愈发向往。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10127	10128	0		但若是单独前去，难免少了几分意趣，喊上许映月作伴，她必欣然应允。										0
-10128	10193	0		可转念一想，这何尝不是一个能走近温叙、多了解他的契机。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10129	10130	0	主控名	原来如此，说起来，上次多亏了您，我才能借着专访的热度做出爆款，一直想找机会好好道谢。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10130	10131	0	主控名	既然您和这家店渊源颇深，不如让我做东，请您回去尝尝蛋糕，就当陪您故地重游一番？										0
-10131	10132	0		发送键刚按下，你心头猛地一跳，瞬间意识到自己用词的不妥。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10132	10133	0		他曾在那片逼仄的握手楼里熬过最困顿、灰暗的岁月，所谓旧地，大概沾满了辛酸与泥泞。										0
-10133	10134	0		有谁会愿意主动去忆苦思甜、重温伤疤呢？										0
-10134	10135	0		你下意识地长按消息想要撤回，但转念一想，这反而更像是在掩耳盗铃。										0
-10135	10136	0		想了想，你补了一句：										0
-10136	10137	0	主控名	叙闻老师现在回去，也算是荣归故里。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10137	10138	0	温叙	既然是学妹的一番心意，那我却之不恭了。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10138	0	0		……										0
-10139	10140	0		你收回思绪，不再琢磨借机相处的事，比起私下赴约，和闺蜜结伴探店显然更轻松。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10140	10141	0		于是你抛开杂念，诚恳地询问起推荐款式。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10141	10142	0	主控名	原来如此，那叙闻老师有什么口味推荐吗？我想回请朋友。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10142	10143	0	温叙	方便问一下，和你一起去的朋友是男生还是女生么？	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10143	10144	0	温叙	若同行的是男生，不妨试试薄荷生巧冰淇淋蛋糕，口感清凉不厚重，甜度也很低。										0
-10144	10145	0		薄荷生巧冰淇淋蛋糕？你有点没反应过来，这难道有什么特别的说法吗？										0
-10145	10146	0		你曾见猎心喜的品尝过其他家的这个口味，那直冲脑门的清凉感，简直和薄荷牙膏一模一样，实在算不上讨喜。										0
-10146	10147	0		还没来得及接话，你的思绪也还停留在疑惑里，他已然话锋一转，自顾自地继续说道：										0
-10147	10148	0	温叙	不过这么多年过去，菜单应该更新了不少。										0
-10148	10149	0	温叙	除了招牌海盐焦糖，当年的乌龙奶冻和伯爵红茶慕斯也很受欢迎。										0
-10149	10150	0	温叙	如果到店没有，或者更喜欢惊喜的话，可以问问老板。										0
-10150	10151	0	温叙	她人很好，偶尔会做些不对外的隐藏款。										0
-10151	10152	0	主控名	好的，多谢您的建议。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10152	10153	0	温叙	不客气。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10153	0	0		……										0
-10154	10155	0		工作，又是工作。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10155	10194	0		你现在只想放空大脑，好好休息一会儿，	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10156	10157	0		盒盖上印着陌生的蛋糕品牌logo，透过透明盒身，能清楚看到蛋糕的样子：	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/焦糖海盐蛋糕.png","OffsetX":0.0,"OffsetY":90.0,"Scale":1.350000023841858}]}									0
-10157	10158	0		大半表面覆着亮泽的焦糖淋面，细碎的盐晶点缀其上，隐约透着几分夏日沙滩的清爽，卖相精致得让人眼前一亮。										0
-10158	10159	0		你屏住呼吸，轻轻托着蛋糕底托，小心翼翼地将它从盒子里取出来，生怕碰坏了那层完美的焦糖淋面。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10159	10160	0		刚一凑近，浓郁醇厚的焦糖香气便扑面而来，混着一丝若有若无的海盐咸香，勾得人舌尖生津，食指大动。										0
-10160	10161	0		管他是谁送的呢，美食当前，哪有纠结来历的道理？先吃为敬！										0
-10161	10162	0		你拿起勺子，轻轻划开琥珀色的焦糖脆壳，挖下带着奶油和蛋糕胚的一角送进嘴里，										0
-10162	10163	0		绵密轻盈的动物奶油先在舌尖化开，带着恰到好处的海盐咸味，瞬间中和了焦糖的甜腻。										0
-10163	10164	0		底下的蛋糕胚吸饱了朗姆酒，湿润又绵密。										0
-10164	10165	0		脆、绵、软三重口感交织，每一层口感都清晰可辨。										0
-10165	10166	0		此时你再也顾不上其他，埋头苦吃起来，不一会儿，蛋糕就被你消灭了一半。										0
-10166	10167	0		就在这时，口袋里的手机震了震。										0
-10167	10168	0		你伸手摸过手机，是许映月发来的：										0
-10168	10169	0	许映月	蛋糕送到了没？我可是找了半小时的店才买到的！										0
-10169	10170	0		你嘴里塞着蛋糕，手指飞快地打字回复。										0
-10170	10171	0	主控名	到了到了，都快吃完了，好吃！	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10171	10172	0	许映月	那当然，也不看看是谁选的店～[骄傲.jpg]	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10172	10173	0	许映月	跟你说，这家堂食比外送好吃一百倍！现烤的焦糖脆壳更绝，下次我带你去店里吃！										0
-10173	10174	0	主控名	好啊，到时我们还可以尝尝其他口味。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10174	10175	0		聊了两句，你把手机往旁边一放，继续专心致志地解决剩下的蛋糕。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10175	10176	0		直到蛋糕被完全消灭，你才突然想起温叙的消息还没回。										0
-10176	10177	0	主控名	抱歉，刚刚去吃朋友送的蛋糕了，您不着急吧。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10177	10178	0	主控名	正好上期专访还有不错的长尾流量，我会借着这波热度，为您的新书制定一套完整的宣发方案。										0
-10178	10179	0	主控名	通过预热、爆发、长尾三个阶段推进，实现现有粉丝转化的最大化。										0
-10179	10180	0	主控名	我会在写宣发前先通读全书，把握您的文字风格和创作内核，所有方案都会先发给您过目确认。										0
-10180	10181	0	温叙	啊……	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10181	10182	0	温叙	会不会太麻烦你了。										0
-10182	10183	0		你暗自思忖，有些摸不准他是不是在客套。										0
-10183	10184	0		这些本就是宣发分内该做的事，不过是尽你本分而已，何来麻烦一说？										0
-10184	10185	0		保险起见，你决定顺着他的话回应几句。										0
-10185	10186	0	主控名	有叙闻老师的配合，这次宣发只会事半功倍。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
-10186	10187	0	主控名	我不过是做了分内的执行工作，真正能打动读者、撑起流量的，从来都是您的文字。										0
-10187	10188	0	温叙	嗯。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10188	10189	0		简短的回应并没有打击到你的热情，你只当是他恢复了往日的疏离，安心地结束对话，投入到工作中。										0
-10189	10190	0		没人知道，那个写文章时字字珠玑的叙闻老师，此刻正对着聊天框束手无策。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙常规.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}							Assets/GameMain/Art/Backgrounds/居家/黑色.png		0
-10190	10195	0		屏幕微弱的光打在他清隽的面容上，他长久地凝视着聊天界面，眼底翻涌的暗色最终化作一声叹息。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
-10191	0	1				{"Choices":[{"ChoiceText":"拍图发给他质问","NextId":10034,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":5,"ItemId":""}]},{"ChoiceText":"埋头苦吃","NextId":10154,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":7,"ItemId":""}]},{"ChoiceText":"发个朋友圈问问","NextId":10084,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":10,"ItemId":""}]}]}								
-10192	0	1				{"Choices":[{"ChoiceText":"随口提起闺蜜","NextId":10105,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":1,"ItemId":""}]},{"ChoiceText":"肯定并反问","NextId":10122,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":3,"ItemId":""}]}]}								
-10193	0	1				{"Choices":[{"ChoiceText":"把去的机会留给别人","NextId":10139,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":1,"ItemId":""}]},{"ChoiceText":"邀请他故地重游","NextId":10129,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":3,"ItemId":""}]}]}								
-10194	10156	0		于是把消息标为未读，把锁屏的手机随手揣进了口袋，转而研究起了眼前的蛋糕盒。										0
-10195	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10196	10002	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/宣发初稿.png","OffsetX":0.0,"OffsetY":-350.0,"Scale":2.0}]}									1
-10197	10008	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/宣发终稿.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
-10198	10009	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10199	10033	0			{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/伤痕化铠.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
-10200	10036	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/对方正在输入.png","OffsetX":0.0,"OffsetY":0.0,"Scale":2.0}]}									1
-10201	10202	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/蛋糕收到了吗.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
-10202	10203	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/惊为天人.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
-10203	10045	0			{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/项目奖金.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									0
+10122	10123	0	主控名	是的，您也知道这家店吗？	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/22.是的您也.jpg","OffsetX":0.0,"OffsetY":-120.0,"Scale":2.0}]}									1
+10123	10124	0	温叙	以前住在附近，受过那家店老板的照拂。后来作品有了起色，生活安稳，临搬走前便办了储值卡存了些钱款。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/23.以前住在附近.png","OffsetX":0.0,"OffsetY":0.0,"Scale":2.0}]}									1
+10124	10125	0	温叙	我本不常吃甜食，办卡不过是想借着这样的方式，悄悄报答昔日恩情。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/24.我本不常吃.png","OffsetX":0.0,"OffsetY":120.0,"Scale":2.0}]}									1
+10125	10126	0		听完这段过往，再联想到许映月一路奔波探店的趣事，你对这家藏在城郊的小店愈发向往。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10126	10127	0		但若是单独前去，难免少了几分意趣，喊上许映月作伴，她必欣然应允。										0
+10127	10191	0		可转念一想，这何尝不是一个能走近温叙、多了解他的契机。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼微笑.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10128	10129	0	主控名	原来如此，说起来，上次多亏了您，我才能借着专访的热度做出爆款，一直想找机会好好道谢。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/25.原来如此，说起来.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10129	10130	0	主控名	既然您和这家店渊源颇深，不如让我做东，请您回去尝尝蛋糕，就当陪您故地重游一番？	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/26.既然您和.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10130	10131	0		发送键刚按下，你心头猛地一跳，瞬间意识到自己用词的不妥。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10131	10132	0		他曾在那片逼仄的握手楼里熬过最困顿、灰暗的岁月，所谓旧地，大概沾满了辛酸与泥泞。										0
+10132	10133	0		有谁会愿意主动去忆苦思甜、重温伤疤呢？										0
+10133	10134	0		你下意识地长按消息想要撤回，但转念一想，这反而更像是在掩耳盗铃。										0
+10134	10135	0		想了想，你补了一句：										0
+10135	10136	0	主控名	叙闻老师现在回去，也算是荣归故里了。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/27.荣归故里.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10136	10137	0	温叙	既然是学妹的一番心意，那我却之不恭了。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/28.却之不恭.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10137	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10138	10139	0		你收回思绪，不再琢磨借机相处的事，比起私下赴约，和闺蜜结伴探店显然更轻松。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10139	10140	0		于是你抛开杂念，诚恳地询问起推荐款式。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10140	10141	0	主控名	原来如此，那叙闻老师有什么口味推荐吗？我想回请朋友。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/29.原来如此口味推荐.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10141	10142	0	温叙	方便问一下，和你一起去的朋友是男生还是女生么？	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/30.方便问.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10142	10143	0	温叙	若同行的是男生，不妨试试薄荷生巧冰淇淋蛋糕，口感清凉不厚重，甜度也很低。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/31.薄荷生巧.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10143	10144	0		薄荷生巧冰淇淋蛋糕？你有点没反应过来，这难道有什么特别的说法吗？	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10144	10145	0		你曾见猎心喜的品尝过其他家的这个口味，那直冲脑门的清凉感，简直和薄荷牙膏一模一样，实在算不上讨喜。										0
+10145	10146	0		还没来得及接话，你的思绪也还停留在疑惑里，他已然话锋一转，自顾自地继续说道：										0
+10146	10147	0	温叙	不过这么多年过去，菜单应该更新了不少。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/32.不过这么多年.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10147	10148	0	温叙	除了招牌海盐焦糖，当年的乌龙奶冻和伯爵红茶慕斯也很受欢迎。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/33.除了招牌海盐.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10148	10149	0	温叙	如果到店没有，或者更喜欢惊喜的话，可以问问老板。她人很好，偶尔会做些不对外的隐藏款。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/34.如果到店没有.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10149	10150	0	主控名	好的，多谢您的建议。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/35.好的多谢.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10150	10151	0	温叙	不客气。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/36.不客气.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10151	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10152	10153	0		工作，又是工作。	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0},{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣闭眼无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10153	10192	0		你现在只想放空大脑，好好休息一会儿，	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控睡衣无表情.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
+10154	10155	0		盒盖上印着陌生的蛋糕品牌logo，透过透明盒身，能清楚看到蛋糕的样子：	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/焦糖海盐蛋糕.png","OffsetX":0.0,"OffsetY":90.0,"Scale":1.350000023841858}]}									0
+10155	10156	0		大半表面覆着亮泽的焦糖淋面，细碎的盐晶点缀其上，隐约透着几分夏日沙滩的清爽，卖相精致得让人眼前一亮。										0
+10156	10157	0		你屏住呼吸，轻轻托着蛋糕底托，小心翼翼地将它从盒子里取出来，生怕碰坏了那层完美的焦糖淋面。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10157	10158	0		刚一凑近，浓郁醇厚的焦糖香气便扑面而来，混着一丝若有若无的海盐咸香，勾得人舌尖生津，食指大动。										0
+10158	10159	0		管他是谁送的呢，美食当前，哪有纠结来历的道理？先吃为敬！										0
+10159	10160	0		你拿起勺子，轻轻划开琥珀色的焦糖脆壳，挖下带着奶油和蛋糕胚的一角送进嘴里，										0
+10160	10161	0		绵密轻盈的动物奶油先在舌尖化开，带着恰到好处的海盐咸味，瞬间中和了焦糖的甜腻。										0
+10161	10162	0		底下的蛋糕胚吸饱了朗姆酒，湿润又绵密。										0
+10162	10163	0		脆、绵、软三重口感交织，每一层口感都清晰可辨。										0
+10163	10164	0		此时你再也顾不上其他，埋头苦吃起来，不一会儿，蛋糕就被你消灭了一半。										0
+10164	10165	0		就在这时，口袋里的手机震了震。										0
+10165	10166	0		你伸手摸过手机，是许映月发来的：										0
+10166	10167	0	许映月	蛋糕送到了没？我可是找了半小时的店才买到的！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/10.蛋糕送到了没.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
+10167	10168	0		你嘴里塞着蛋糕，手指飞快地打字回复。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10168	10169	0	主控名	到了到了，都快吃完了，好吃！	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/11.到了到了，都快吃完了.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									0
+10169	10202	0	许映月	那当然，也不看看是谁选的店～	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/12.那当然.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10170	10171	0	许映月	跟你说，这家堂食比外送好吃一百倍！现烤的焦糖脆壳更绝，下次我带你去店里吃！	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/14.跟你说.png","OffsetX":0.0,"OffsetY":0.0,"Scale":2.0}]}									1
+10171	10172	0	主控名	好啊好啊，到时我们还可以尝尝其他口味。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/15.好啊好啊.png","OffsetX":0.0,"OffsetY":120.0,"Scale":2.0}]}									0
+10172	10173	0		聊了两句，你把手机往旁边一放，继续专心致志地解决剩下的蛋糕。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10173	10174	0		直到蛋糕被完全消灭，你才突然想起温叙的消息还没回。										0
+10174	10175	0	主控名	抱歉，刚刚去吃朋友送的蛋糕了，您不着急吧。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/37.抱歉，刚刚去吃.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10175	10176	0	主控名	正好上期专访还有不错的长尾流量，我会借着这波热度，为您的新书制定一套完整的宣发方案。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/38.正好上期.png","OffsetX":0.0,"OffsetY":-120.0,"Scale":2.0}]}									1
+10176	10177	0	主控名	通过预热、爆发、长尾三个阶段推进，实现现有粉丝转化的最大化。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/39.通过预热.png","OffsetX":0.0,"OffsetY":0.0,"Scale":2.0}]}									1
+10177	10178	0	主控名	我会在写宣发前先通读全书，把握您的文字风格和创作内核，所有方案都会先发给您过目确认。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/40.我会通过.png","OffsetX":0.0,"OffsetY":120.0,"Scale":2.0}]}									1
+10178	10179	0	温叙	啊……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/41.啊.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10179	10180	0	温叙	会不会太麻烦你了。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/42.会不会.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10180	10181	0		你暗自思忖，有些摸不准他是不是在客套。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10181	10182	0		这些本就是宣发分内该做的事，不过是尽你本分而已，何来麻烦一说？										0
+10182	10183	0		保险起见，你决定顺着他的话回应几句。										0
+10183	10184	0	主控名	有叙闻老师的配合，这次宣发只会事半功倍。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/43.有叙闻老师.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10184	10185	0	主控名	我不过是做了分内的执行工作，真正能打动读者、撑起流量的，从来都是您的文字。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/44.我不过是.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10185	10186	0	温叙	嗯。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/45.嗯.png","OffsetX":0.0,"OffsetY":360.0,"Scale":2.0}]}									1
+10186	10187	0		简短的回应并没有打击到你的热情，你只当是他恢复了往日的疏离，安心地结束对话，投入到工作中。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10187	10188	0		没人知道，那个写文章时字字珠玑的叙闻老师，此刻正对着聊天框束手无策。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙常规.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}							Assets/GameMain/Art/Backgrounds/居家/黑色.png		0
+10188	10193	0		屏幕微弱的光打在他清隽的面容上，他长久地凝视着聊天界面，眼底翻涌的暗色最终化作一声叹息。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙闭眼.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
+10189	0	1				{"Choices":[{"ChoiceText":"拍图发给他质问","NextId":10034,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":5,"ItemId":""}]},{"ChoiceText":"埋头苦吃","NextId":10152,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":7,"ItemId":""}]},{"ChoiceText":"发个朋友圈问问","NextId":10084,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":10,"ItemId":""}]}]}								
+10190	0	1				{"Choices":[{"ChoiceText":"随口提起闺蜜","NextId":10105,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":1,"ItemId":""}]},{"ChoiceText":"肯定并反问","NextId":10122,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":3,"ItemId":""}]}]}								
+10191	0	1				{"Choices":[{"ChoiceText":"把去的机会留给别人","NextId":10138,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":1,"ItemId":""}]},{"ChoiceText":"邀请他故地重游","NextId":10128,"Conditions":[],"Rewards":[{"Type":0,"NpcId":"06","Value":3,"ItemId":""}]}]}								
+10192	10154	0		于是把消息标为未读，把锁屏的手机随手揣进了口袋，转而研究起了眼前的蛋糕盒。										0
+10193	0	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10194	10002	0	主控名	[宣发初稿.docx]	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/宣发初稿.png","OffsetX":0.0,"OffsetY":-350.0,"Scale":2.0}]}									1
+10195	10008	0	主控名	[宣发最终版.docx]	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/宣发终稿.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10196	10009	0		……	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10197	10033	0	温叙	[伤痕化铠.jpg]	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/伤痕化铠.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10198	10036	0	主控名	是有点冒昧，您怎么知道我的私人地址？	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/对方正在输入.png","OffsetX":0.0,"OffsetY":0.0,"Scale":2.0}]}									1
+10199	10200	0	许映月	蛋糕收到了吗？	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/蛋糕收到了吗.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
+10200	10201	0	许映月	我今天探店吃到的，惊为天人！	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/惊为天人.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10201	10045	0	许映月	正好今天公司发了项目奖金，第一时间给你点了一个尝尝~	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/项目奖金.png","OffsetX":0.0,"OffsetY":-240.0,"Scale":2.0}]}									1
+10202	10170	0	许映月	[骄傲.jpg]	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/许映月/13.骄傲.png","OffsetX":0.0,"OffsetY":-120.0,"Scale":2.0}]}									1
