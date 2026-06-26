@@ -83,6 +83,8 @@ namespace AVGGame
 
         // 音频相关
         private string m_CurrentBgmPath = null;
+        private Coroutine m_AudioFadeCoroutine;
+        private bool m_BgmReducedForVoice = false; // BGM是否因语音播放而减弱
 
         // 自动播放 & 加速
         private bool m_IsAutoMode = false;
@@ -395,11 +397,11 @@ namespace AVGGame
             if (!m_AutoAdvanceWaiting || !m_IsAutoMode) return;
 
             m_AutoAdvanceTimer += elapseSeconds;
-            float delay = 1.0f / m_SpeedLevels[m_SpeedIndex];
+            float delay = GetAutoAdvanceDelay();
 
             if (m_AutoAdvanceTimer >= delay)
             {
-                Debug.Log($"[DialoguePanel] 自动播放计时器触发 timer={m_AutoAdvanceTimer:F2}s >= delay={delay:F2}s, speed={m_SpeedLevels[m_SpeedIndex]}x");
+                Debug.Log($"[DialoguePanel] 自动播放计时器触发 timer={m_AutoAdvanceTimer:F2}s >= delay={delay:F2}s");
                 m_AutoAdvanceWaiting = false;
                 m_AutoAdvanceTimer = 0f;
                 OnContinueClick();
@@ -431,6 +433,13 @@ namespace AVGGame
                 Debug.Log($"[DialoguePanel] OnOpen - 重玩状态: {m_IsReplayMode}");
             }
 
+            // 读取设置中的"跳过已读"：开启时自动启用快进模式
+            if (PlayerPrefs.GetInt(GameSettingPanel.PREF_SKIP_ALL, 0) == 1)
+            {
+                m_IsSpeedUpMode = true;
+                Debug.Log("[DialoguePanel] 设置中开启了跳过已读，自动启用快进");
+            }
+
             // 从流程层获取当前对话数据并显示
             ShowCurrentDialogue();
         }
@@ -449,6 +458,10 @@ namespace AVGGame
             // 重置自动播放计时器
             m_AutoAdvanceWaiting = false;
             m_AutoAdvanceTimer = 0f;
+
+            // 停止所有SE和Voice
+            StopDialogueAudioImmediate();
+            m_CurrentBgmPath = null;
 
             m_IsAutoMode = false;
             m_IsSpeedUpMode = false;
@@ -567,6 +580,9 @@ namespace AVGGame
         {
             if (m_ProcedureGame == null) return;
 
+            // 快进模式：硬切断SE和Voice，不做淡出
+            StopDialogueAudioImmediate();
+
             // 先标记当前为已读（以防万一还没标记）
             m_ReadDialogueIds.Add(m_CurrentDisplayingDialogueId);
 
@@ -647,7 +663,8 @@ namespace AVGGame
                 m_DialogueText.text = "";
             }
 
-            // 显示下一句对话
+            // 淡出旧音频后显示下一句
+            yield return FadeOutDialogueAudio(0.15f);
             ShowCurrentDialogue();
         }
 
@@ -1073,6 +1090,28 @@ namespace AVGGame
 
         #endregion
 
+        #region 设置读取辅助
+
+        /// <summary>
+        /// 从PlayerPrefs读取文字打字速度基础值
+        /// </summary>
+        private float GetSettingsBaseTypeSpeed()
+        {
+            float wordsSpeed = PlayerPrefs.GetFloat(GameSettingPanel.PREF_WORDS_SPEED, 0.5f);
+            return Mathf.Lerp(0.1f, 0.005f, wordsSpeed); // 0=慢(0.1s), 1=快(0.005s)
+        }
+
+        /// <summary>
+        /// 从PlayerPrefs读取自动播放间隔时间
+        /// </summary>
+        private float GetAutoAdvanceDelay()
+        {
+            float actSpeed = PlayerPrefs.GetFloat(GameSettingPanel.PREF_ACT_SPEED, 0.5f);
+            return Mathf.Lerp(2f, 0.1f, actSpeed); // 0=慢(2s), 1=快(0.1s)
+        }
+
+        #endregion
+
         #region 音频播放
 
         /// <summary>
@@ -1080,6 +1119,9 @@ namespace AVGGame
         /// </summary>
         private void PlayDialogueAudio(DialogueDisplayData data)
         {
+            // 如果之前因语音播放减弱了BGM，先恢复
+            RestoreBgmVolume();
+
             // BGM：路径非空且与当前不同时切换，留空则继续播放
             if (!string.IsNullOrEmpty(data.BgmPath) && data.BgmPath != m_CurrentBgmPath)
             {
@@ -1137,7 +1179,98 @@ namespace AVGGame
                 };
                 GameEntry.Sound.PlaySound(data.VoicePath, "Voice", voiceParams);
                 Debug.Log($"[DialoguePanel] Voice播放: {data.VoicePath}");
+
+                // 语音播放时减弱BGM（设置中开启时）
+                ReduceBgmForVoice();
             }
+        }
+
+        /// <summary>
+        /// 立即停止SE和Voice（硬切断，用于快进模式）
+        /// </summary>
+        private void StopDialogueAudioImmediate()
+        {
+            GameEntry.Sound.GetSoundGroup("Sound")?.StopAllLoadedSounds();
+            GameEntry.Sound.GetSoundGroup("Voice")?.StopAllLoadedSounds();
+            RestoreBgmVolume();
+        }
+
+        /// <summary>
+        /// 语音播放时减弱BGM音量（若设置中开启了"BGMWithSound"）
+        /// </summary>
+        private void ReduceBgmForVoice()
+        {
+            if (m_BgmReducedForVoice) return;
+            if (PlayerPrefs.GetInt(GameSettingPanel.PREF_BGM_WITH_SOUND, 1) != 1) return;
+            if (string.IsNullOrEmpty(m_CurrentBgmPath)) return;
+
+            var bgmGroup = GameEntry.Sound.GetSoundGroup("BGM");
+            if (bgmGroup != null)
+            {
+                bgmGroup.Volume *= 0.3f; // 减弱到30%
+                m_BgmReducedForVoice = true;
+                Debug.Log("[DialoguePanel] BGM已减弱（语音播放中）");
+            }
+        }
+
+        /// <summary>
+        /// 恢复BGM音量到设置值
+        /// </summary>
+        private void RestoreBgmVolume()
+        {
+            if (!m_BgmReducedForVoice) return;
+
+            float masterVol = PlayerPrefs.GetFloat(GameSettingPanel.PREF_ALL_AUDIO, 1f);
+            float bgmVol = PlayerPrefs.GetFloat(GameSettingPanel.PREF_BGM, 1f);
+            var bgmGroup = GameEntry.Sound.GetSoundGroup("BGM");
+            if (bgmGroup != null)
+            {
+                bgmGroup.Volume = bgmVol * masterVol;
+                Debug.Log("[DialoguePanel] BGM音量已恢复");
+            }
+            m_BgmReducedForVoice = false;
+        }
+
+        /// <summary>
+        /// 淡出并停止SE和Voice（协程），BGM不受影响
+        /// </summary>
+        private IEnumerator FadeOutDialogueAudio(float duration = 0.15f)
+        {
+            var soundGroup = GameEntry.Sound.GetSoundGroup("Sound");
+            var voiceGroup = GameEntry.Sound.GetSoundGroup("Voice");
+
+            float soundVol = soundGroup?.Volume ?? 0f;
+            float voiceVol = voiceGroup?.Volume ?? 0f;
+
+            // 两组都没有声音在播放，跳过淡出
+            if (soundVol <= 0f && voiceVol <= 0f) yield break;
+
+            float timer = 0f;
+            while (timer < duration)
+            {
+                timer += Time.deltaTime;
+                float ratio = Mathf.Clamp01(1f - timer / duration);
+                if (soundGroup != null) soundGroup.Volume = soundVol * ratio;
+                if (voiceGroup != null) voiceGroup.Volume = voiceVol * ratio;
+                yield return null;
+            }
+
+            // 停止所有声音
+            soundGroup?.StopAllLoadedSounds();
+            voiceGroup?.StopAllLoadedSounds();
+
+            // 恢复音量，供下一句音频正常使用
+            if (soundGroup != null) soundGroup.Volume = soundVol;
+            if (voiceGroup != null) voiceGroup.Volume = voiceVol;
+        }
+
+        /// <summary>
+        /// 淡出旧音频后显示下一句对话（用于普通推进）
+        /// </summary>
+        private IEnumerator FadeOutThenShowNext()
+        {
+            yield return FadeOutDialogueAudio(0.15f);
+            ShowCurrentDialogue();
         }
 
         #endregion
@@ -1277,7 +1410,8 @@ namespace AVGGame
             m_HistoryEntries.Add(new HistoryEntry
             {
                 SpeakerName = data.SpeakerName,
-                DialogText = data.DialogText
+                DialogText = data.DialogText,
+                VoicePath = data.VoicePath
             });
 
             // 显示对话
@@ -1335,8 +1469,8 @@ namespace AVGGame
 
             Debug.Log($"[DialoguePanel] OnContinueClick - 获取到下一条对话: NodeType={nextData.NodeType}");
 
-            // 使用 ShowCurrentDialogue 来正确处理选项节点
-            ShowCurrentDialogue();
+            // 淡出旧音频后显示下一句
+            StartCoroutine(FadeOutThenShowNext());
         }
 
         /// <summary>
@@ -1395,7 +1529,9 @@ namespace AVGGame
                 }
                 else
                 {
-                    float typeSpeed = 0.03f / speed; // 基础0.03s，速度越快间隔越短
+                    // 从设置读取基础打字速度 (slider: 0=慢0.1s, 1=快0.005s)
+                    float baseTypeSpeed = GetSettingsBaseTypeSpeed();
+                    float typeSpeed = baseTypeSpeed / speed;
 
                     for (int i = 0; i < text.Length; i++)
                     {
@@ -1408,7 +1544,7 @@ namespace AVGGame
                             break;
                         }
 
-                        typeSpeed = 0.03f / speed;
+                        typeSpeed = baseTypeSpeed / speed;
 
                         if (m_DialogueText != null)
                         {

@@ -147,7 +147,13 @@ namespace AVGGame
         {
             Log.Info("[MainMenuPanel] Settings clicked");
             CloseSelf();
-            
+
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.Settings),
+                UIGroupDefinition.Popup,
+                Constant.AssetPriority.UIAsset,
+                null
+            );
         }
 
         /// <summary>

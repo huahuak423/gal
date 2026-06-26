@@ -1012,6 +1012,7 @@ MonoBehaviour:
   m_ChoiceButton4Text: {fileID: 0}
   m_ChoiceButton5Text: {fileID: 0}
   m_BackgroundImage: {fileID: 2033000749014796811}
+  m_TextImage: {fileID: 0}
   m_BackgroundImageButton: {fileID: 5757320561558578267}
   m_ButtonMenu: {fileID: 7606750739628798284}
   m_ButtonSpeedUp: {fileID: 0}

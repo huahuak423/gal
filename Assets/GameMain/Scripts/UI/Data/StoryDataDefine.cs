@@ -69,6 +69,7 @@ namespace AVGGame
     {
         public string SpeakerName;
         public string DialogText;
+        public string VoicePath;
     }
 
     // ==========================================
