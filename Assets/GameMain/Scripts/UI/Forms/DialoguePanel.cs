@@ -121,6 +121,10 @@ namespace AVGGame
         // 历史对话记录
         private List<HistoryEntry> m_HistoryEntries = new List<HistoryEntry>();
 
+        // 静态访问器（供 MenuPanel 等外部获取历史记录）
+        private static DialoguePanel s_Instance;
+        public static List<HistoryEntry> GetHistoryEntries() => s_Instance?.m_HistoryEntries;
+
         #endregion
 
         #region 生命周期
@@ -300,11 +304,29 @@ namespace AVGGame
         }
 
         /// <summary>
+        /// 关闭自动模式（打开菜单/存档/历史等弹窗前调用）
+        /// </summary>
+        private void StopAutoMode()
+        {
+            if (m_IsAutoMode)
+            {
+                m_IsAutoMode = false;
+                if (m_ButtonAutoText != null)
+                    m_ButtonAutoText.text = "自动";
+                Debug.Log("[DialoguePanel] 打开弹窗，自动关闭自动模式");
+            }
+            m_AutoAdvanceWaiting = false;
+            m_AutoAdvanceTimer = 0f;
+        }
+
+        /// <summary>
         /// 打开游戏内菜单
         /// </summary>
         private void OnMenuClick()
         {
             Log.Info("[DialoguePanel] Menu clicked");
+            StopAutoMode();
+
             GameEntry.UI.OpenUIForm(
                 AssetUtility.GetUIFormAsset(UIFormId.Menu),
                 UIGroupDefinition.Popup,
@@ -319,6 +341,7 @@ namespace AVGGame
         private void OnButtonInformationClick()
         {
             Log.Info("[DialoguePanel] ButtonInformation clicked");
+            StopAutoMode();
             GameEntry.UI.OpenUIForm(
                 AssetUtility.GetUIFormAsset(UIFormId.Information),
                 UIGroupDefinition.Popup,
@@ -333,6 +356,7 @@ namespace AVGGame
         private void OnSaveClick()
         {
             Log.Info("[DialoguePanel] Save clicked");
+            StopAutoMode();
             StartCoroutine(CaptureScreenThenOpenArchive());
         }
 
@@ -436,8 +460,7 @@ namespace AVGGame
         {
             Log.Info($"[DialoguePanel] History clicked, 共 {m_HistoryEntries.Count} 条记录");
 
-            // 暂停自动播放
-            m_AutoAdvanceWaiting = false;
+            StopAutoMode();
 
             GameEntry.UI.OpenUIForm(
                 AssetUtility.GetUIFormAsset(UIFormId.History),
@@ -525,6 +548,7 @@ namespace AVGGame
         protected override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+            s_Instance = this;
 
             // 清空文本
             if (m_DialogueText != null)

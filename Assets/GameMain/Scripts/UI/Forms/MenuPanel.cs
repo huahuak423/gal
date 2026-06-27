@@ -18,20 +18,29 @@ namespace AVGGame
     /// </summary>
     public class MenuPanel : UIFormBase
     {
+        /// <summary>
+        /// 菜单是否处于打开状态（供 DialoguePanel 切换按钮文字用）
+        /// </summary>
+        public static bool IsMenuOpen = false;
+
+        /// <summary>
+        /// 菜单关闭回调（DialoguePanel 订阅，用于重置按钮文字）
+        /// </summary>
+        public static event System.Action OnMenuClosed;
         #region 序列化字段 - 按钮
 
         [Header("菜单按钮")]
-        [SerializeField] private Button ButtonContinue;
+        [SerializeField] private Button m_ButtonContinue;
         [SerializeField] private Button m_ButtonSave;
         [SerializeField] private Button m_ButtonLoad;        
-        [SerializeField] private Button ButtonTimeLine;
-        [SerializeField] private Button ButtonHistory;
-        [SerializeField] private Button ButtonMainMenu;        
+        [SerializeField] private Button m_ButtonTimeLine;
+        [SerializeField] private Button m_ButtonHistory;
+        [SerializeField] private Button m_ButtonMainMenu;        
         [SerializeField] private Button m_ButtonSettings;
         [SerializeField] private Button m_ButtonExit;
-        [SerializeField] private Button ButtonNPC;
-        [SerializeField] private Button ButtonGallery;
-        [SerializeField] private Button ButtonManual;
+        [SerializeField] private Button m_ButtonNPC;
+        [SerializeField] private Button m_ButtonGallery;
+        [SerializeField] private Button m_ButtonManual;
 
         [Header("透明背景 - 用于隔绝用户其他操作")]
         [SerializeField] private Button m_TransparentBgButton;
@@ -61,17 +70,22 @@ namespace AVGGame
             base.OnInit(userData);
 
             // 挂载组件引用
-            ButtonContinue = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonContinue");
+            m_ButtonContinue = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonContinue");
             m_ButtonSave = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonSave");
             m_ButtonLoad = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonLoad");
+            m_ButtonTimeLine = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonTimeLine");
+            m_ButtonHistory = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonHistory");
             m_ButtonSettings = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonSetting");
-            ButtonMainMenu = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonMainMenu");
+            m_ButtonMainMenu = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonMainMenu");
             m_ButtonExit = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonExitGame");
+            m_ButtonNPC = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonNPC");
+            m_ButtonGallery = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonGallery");
+            m_ButtonManual = this.GetComponentByPath<Button>("Canvas/Background/MenuPlate/ButtonManual");
             m_TransparentBgButton = this.GetComponentByPath<Button>("Canvas/Background");
 
             // 绑定按钮事件
-            if (ButtonContinue != null)
-                ButtonContinue.onClick.AddListener(OnResumeClick);
+            if (m_ButtonContinue != null)
+                m_ButtonContinue.onClick.AddListener(OnResumeClick);
 
             if (m_ButtonSave != null)
                 m_ButtonSave.onClick.AddListener(OnSaveClick);
@@ -79,32 +93,47 @@ namespace AVGGame
             if (m_ButtonLoad != null)
                 m_ButtonLoad.onClick.AddListener(OnLoadClick);
 
+            if (m_ButtonHistory != null)
+                m_ButtonHistory.onClick.AddListener(OnHistoryClick);
+
             if (m_ButtonSettings != null)
                 m_ButtonSettings.onClick.AddListener(OnSettingClick);
 
-            if (ButtonMainMenu != null)
-                ButtonMainMenu.onClick.AddListener(OnBackClick);
+            if (m_ButtonMainMenu != null)
+                m_ButtonMainMenu.onClick.AddListener(OnBackClick);
 
             if (m_ButtonExit != null)
                 m_ButtonExit.onClick.AddListener(OnExitClick);
+
+            if (m_ButtonNPC != null)
+                m_ButtonNPC.onClick.AddListener(OnNPCClick);
+
+            if (m_ButtonManual != null)
+                m_ButtonManual.onClick.AddListener(OnManualClick);
 
             // 透明背景点击也关闭菜单
             if (m_TransparentBgButton != null)
                 m_TransparentBgButton.onClick.AddListener(OnResumeClick);
 
             // ====== 图片文件挂载 ======
-            // ButtonContinue.image        — Canvas/Background/MenuPlate/ButtonContinue
+            // m_ButtonContinue.image      — Canvas/Background/MenuPlate/ButtonContinue
             // m_ButtonSave.image          — Canvas/Background/MenuPlate/ButtonSave
             // m_ButtonLoad.image          — Canvas/Background/MenuPlate/ButtonLoad
+            // m_ButtonTimeLine.image      — Canvas/Background/MenuPlate/ButtonTimeLine（暂未实现）
+            // m_ButtonHistory.image       — Canvas/Background/MenuPlate/ButtonHistory
             // m_ButtonSettings.image      — Canvas/Background/MenuPlate/ButtonSetting
-            // ButtonMainMenu.image        — Canvas/Background/MenuPlate/ButtonMainMenu
+            // m_ButtonMainMenu.image      — Canvas/Background/MenuPlate/ButtonMainMenu
             // m_ButtonExit.image          — Canvas/Background/MenuPlate/ButtonExitGame
+            // m_ButtonNPC.image           — Canvas/Background/MenuPlate/ButtonNPC
+            // m_ButtonGallery.image       — Canvas/Background/MenuPlate/ButtonGallery（暂未实现）
+            // m_ButtonManual.image        — Canvas/Background/MenuPlate/ButtonManual
             // m_TransparentBgButton.image — Canvas/Background
         }
 
         protected override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+            IsMenuOpen = true;
 
             if (userData is ProcedureGame procedureGame)
             {
@@ -117,6 +146,8 @@ namespace AVGGame
 
         protected override void OnClose(bool isShutdown, object userData)
         {
+            IsMenuOpen = false;
+            OnMenuClosed?.Invoke();
             base.OnClose(isShutdown, userData);
 
             // 恢复游戏
@@ -191,6 +222,72 @@ namespace AVGGame
             if (m_ProcedureGame != null)
             {
                 m_ProcedureGame.QuitGame();
+            }
+        }
+
+        /// <summary>
+        /// 历史回顾 - 从 DialoguePanel 获取历史记录并打开
+        /// </summary>
+        private void OnHistoryClick()
+        {
+            Log.Info("[MenuPanel] History clicked");
+            CloseSelf();
+
+            var history = DialoguePanel.GetHistoryEntries();
+            GameEntry.UI.OpenUIForm(
+                AssetUtility.GetUIFormAsset(UIFormId.History),
+                UIGroupDefinition.Popup,
+                Constant.AssetPriority.UIAsset,
+                history
+            );
+        }
+
+        /// <summary>
+        /// NPC情报 - 打开 Information 面板并直接显示角色(NPC)页
+        /// </summary>
+        private void OnNPCClick()
+        {
+            Log.Info("[MenuPanel] NPC clicked");
+            CloseSelf();
+
+            // 标记 Information 打开时直接进入角色面板
+            InformationPanel.OpenInCharacterTab = true;
+
+            if (m_ProcedureGame != null)
+            {
+                m_ProcedureGame.OpenInformation();
+            }
+            else
+            {
+                GameEntry.UI.OpenUIForm(
+                    AssetUtility.GetUIFormAsset(UIFormId.Information),
+                    UIGroupDefinition.Popup,
+                    Constant.AssetPriority.UIAsset,
+                    null
+                );
+            }
+        }
+
+        /// <summary>
+        /// 背包/手册 - 打开 Inventory 面板
+        /// </summary>
+        private void OnManualClick()
+        {
+            Log.Info("[MenuPanel] Manual clicked");
+            CloseSelf();
+
+            if (m_ProcedureGame != null)
+            {
+                m_ProcedureGame.OpenInventory();
+            }
+            else
+            {
+                GameEntry.UI.OpenUIForm(
+                    AssetUtility.GetUIFormAsset(UIFormId.Inventory),
+                    UIGroupDefinition.Popup,
+                    Constant.AssetPriority.UIAsset,
+                    null
+                );
             }
         }
         #endregion
@@ -284,7 +381,9 @@ namespace AVGGame
                 Destroy(thumbnail);
             }
 
-            // 返回主菜单
+            // 返回主菜单（先关闭菜单自身）
+            CloseSelf();
+
             if (m_ProcedureGame != null)
             {
                 m_ProcedureGame.ReturnToMainMenu();

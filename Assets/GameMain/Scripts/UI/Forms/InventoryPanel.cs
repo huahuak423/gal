@@ -6,6 +6,8 @@ namespace AVGGame
 {
     public class InventoryPanel : UIFormBase
     {
+        public override int SortingOrder => 250;
+
         [Header("主要面板")]
         [SerializeField] private Image m_Background;
         [SerializeField] private Transform m_InventoryPlate;
