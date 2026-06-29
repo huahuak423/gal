@@ -37,8 +37,8 @@
 10033	10034	0	许映月	我已经打120了，救护车马上从市中心医院过来。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/许映月/许映月认真.png","OffsetX":0.0,"OffsetY":-270.0,"Scale":2.5}]}								Assets/GameMain/Art/Voice/配音/许映月/我已经打120.mp3	0
 10034	10035	0		果断的冷喝瞬间起了作用，路人讪讪退后，终于让出了宝贵的呼吸空间。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10035	10036	0		趁着救护车还没到，你半跪下来，小心翼翼地翻找起老人随身的布包，试图寻觅急救药或病历的踪影。										0
-10036	10037	0		遗憾的是，包里没有药瓶，但在最里侧的夹层中，你摸出了一张被过塑的联系卡，上面有一串加粗的号码。										0
-10037	10038	0		你毫不犹豫地照着号码拨了过去，电话响了一会儿才被接起。										0
+10036	10037	0		遗憾的是，包里没有药瓶，但在最里侧的夹层中，你摸出了一张被过塑的联系卡，上面有一串加粗的号码。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/电话卡.png","OffsetX":0.0,"OffsetY":90.0,"Scale":1.0}]}									0
+10037	10038	0		你毫不犹豫地照着号码拨了过去，电话响了一会儿才被接起。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10038	10039	0	主控名	喂？请问是机主家属吗？她在天环商场晕倒了，救护车马上把她送到市中心医院急诊科，请您尽快过来一趟！	{"actions":[{"CharacterName":"","ActionType":0,"Position":0,"SpritePath":"Assets/GameMain/Art/New Characters/女主/主控常服严肃.png","OffsetX":-210.0,"OffsetY":-600.0,"Scale":2.0}]}									0
 10039	10040	0		电话那头先是陷入了死一般的寂静。	{"actions":[{"CharacterName":"","ActionType":1,"Position":0,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10040	10041	0		紧接着，椅子翻倒声与重物坠地声接连传来，显然是对方在惊骇之下猛地站起，慌乱中撞翻了手边的物件。										0
@@ -121,7 +121,7 @@
 10117	10118	0		隔着屏幕，他又恢复了往日那副进退有度、挑不出错处的体面。										0
 10118	10119	0	温叙	抱歉，刚忙完。今天真的多亏了你和你朋友，医药费是她垫付的吧？麻烦把账单发给我。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/53.抱歉刚忙完.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
 10119	10223	0		你把827.4元的账单发过去，他立刻转来了一千元整。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/54.医药费截图.png","OffsetX":0.0,"OffsetY":-360.0,"Scale":2.0}]}									1
-10120	10121	0		多出来的零头，是他维持社交礼仪的分寸。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10120	10121	0		多出来的零头，大概是他维持社交礼仪的分寸。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10121	10122	0	温叙	麻烦转交给你的朋友，另外，这周末有空吗？我想请你们吃顿饭，当面致谢。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/56.转交.png","OffsetX":0.0,"OffsetY":0.0,"Scale":2.0}]}									1
 10122	10123	0	主控名	叙闻老师客气了，不用这么破费。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/57.客气了.png","OffsetX":0.0,"OffsetY":120.0,"Scale":2.0}]}									1
 10123	10124	0	温叙	我知道对学妹来说是小事，但于我而言确实意义非凡，还望学妹不要推辞。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0},{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/聊天记录/温叙/58.不要推辞.png","OffsetX":0.0,"OffsetY":240.0,"Scale":2.0}]}									1

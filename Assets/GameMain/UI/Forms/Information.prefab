@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 1097210334306332315}
   - component: {fileID: 1279500836905432885}
   m_Layer: 0
-  m_Name: "CharacterButton\uFF085\uFF09"
+  m_Name: CharacterButton5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1842,7 +1842,7 @@ GameObject:
   - component: {fileID: 7425227791468015157}
   - component: {fileID: 3391051056437172650}
   m_Layer: 0
-  m_Name: "CharacterButton\uFF083\uFF09"
+  m_Name: CharacterButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4154,7 +4154,7 @@ GameObject:
   - component: {fileID: 6943126414903684995}
   - component: {fileID: 7248694255366370888}
   m_Layer: 0
-  m_Name: "CharacterButton\uFF081\uFF09"
+  m_Name: CharacterButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5124,7 +5124,7 @@ GameObject:
   - component: {fileID: 1782000820786731803}
   - component: {fileID: 5139550681598203573}
   m_Layer: 0
-  m_Name: "CharacterButton\uFF084\uFF09 "
+  m_Name: 'CharacterButton4 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6123,7 +6123,7 @@ GameObject:
   - component: {fileID: 5424361709814353137}
   - component: {fileID: 4545113359017831227}
   m_Layer: 0
-  m_Name: "CharacterButton\uFF082\uFF09"
+  m_Name: CharacterButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

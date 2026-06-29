@@ -2168,6 +2168,24 @@
             "OffsetY": 0.0,
             "Scale": 1.0,
             "LastNodeGuid": "对话_161_结论一致，辛苦了。"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/电话卡.jpg",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.548519253730774,
+            "LastNodeGuid": "对话_41_遗憾的是，包里没有药"
+        },
+        {
+            "GraphName": "温叙事件四",
+            "SpritePath": "Assets/GameMain/Art/Photo/电话卡.png",
+            "Position": 1,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0,
+            "Scale": 1.0,
+            "LastNodeGuid": "对话_41_遗憾的是，包里没有药"
         }
     ]
 }
