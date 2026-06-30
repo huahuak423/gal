@@ -91,7 +91,7 @@
 10087	10088	0		可他越过往事看向你的目光，却依旧温和得像一汪春水，没有沾染半分岁月的戾气。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}									0
 10088	10089	0	温叙	不过都过去了，那时候碰巧遇到一个女生，她其实也不认识我，只是路过看到我被围住。									Assets/GameMain/Art/Voice/配音/温叙/10.不过都过去了.mp3	0
 10089	10090	0	温叙	她二话不说冲上来，挡在我前面，又去找主任，又说要报警，硬生生把那些人唬住。									Assets/GameMain/Art/Voice/配音/温叙/11.她二话不说.mp3	0
-10090	10091	0		他随之放轻了声线，字里行间，皆是触碰珍贵往事时的缱绻与温柔。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10090	10091	0		他随之放轻了声线，字里行间，皆是触碰珍贵往事时的温柔。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
 10091	10092	0	温叙	她其实也很害怕，我看得出来。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/New Characters/温叙/温叙微笑.png","OffsetX":0.0,"OffsetY":-450.0,"Scale":2.5}]}								Assets/GameMain/Art/Voice/配音/温叙/12.1她其实也很害怕.mp3	0
 10092	10093	0	温叙	她的手在抖，声音也在抖。但她就是没有走，一直挡在我前面，直到那些人散了。									Assets/GameMain/Art/Voice/配音/温叙/12.2但她就是没有走.mp3	0
 10093	10094	0	温叙	只可惜她走得太着急，我连她的名字都没来得及问。									Assets/GameMain/Art/Voice/配音/温叙/13.只可惜她走的太着急.mp3	0
