@@ -17,6 +17,7 @@ namespace AVGGame
         public string Age;
         public string Work;
         public string PortraitPath;
+        public string QutePath;
     }
 
     public class InformationPanel : UIFormBase
@@ -35,9 +36,6 @@ namespace AVGGame
         [Header("数值面板")]
         [SerializeField] private Text m_CharacterAge;
         [SerializeField] private Text m_CharacterWork;
-        [SerializeField] private Text m_MineAge;
-        [SerializeField] private Text m_MineWork;
-
         
         [Header("好感度与进度")]
         [SerializeField] private Slider m_LovePlate;
@@ -74,9 +72,11 @@ namespace AVGGame
         // 角色数据（后续可改为从配置表读取）
         private CharacterData[] m_Characters = new CharacterData[]
         {
-            new CharacterData { NpcId = 1, Name = "温叙",   Age = "", Work = "", PortraitPath = "Assets/GameMain/Art/New Characters/温叙/温叙常规.png" },
-            new CharacterData { NpcId = 2, Name = "周杉",   Age = "", Work = "", PortraitPath = "Assets/GameMain/Art/New Characters/周杉/周杉.png" },
-            new CharacterData { NpcId = 3, Name = "陈予荣", Age = "", Work = "", PortraitPath = "Assets/GameMain/Art/New Characters/陈予荣/陈予荣.png" },
+            new CharacterData { NpcId = 1, Name = "周杉",   Age = "11", Work = "a", PortraitPath = "Assets/GameMain/Art/New Characters/周杉/周杉.png", QutePath="Assets/GameMain/Art/UI_Common/Button/周杉.png"},
+            new CharacterData { NpcId = 2, Name = "陈予荣", Age = "111", Work = "b", PortraitPath = "Assets/GameMain/Art/New Characters/陈予荣/陈予荣.png" ,QutePath="Assets/GameMain/Art/UI_Common/Button/陈予荣.png"},
+            new CharacterData { NpcId = 3, Name = "温叙",   Age = "1111", Work = "c", PortraitPath = "Assets/GameMain/Art/New Characters/温叙/温叙常规.png" ,QutePath="Assets/GameMain/Art/UI_Common/Button/温叙.png"},
+            new CharacterData { NpcId = 4, Name = "陈予宁",   Age = "11111", Work = "d", PortraitPath = "Assets/GameMain/Art/New Characters/温叙/温叙常规.png" ,QutePath="Assets/GameMain/Art/UI_Common/Button/陈予荣.png"},
+            new CharacterData { NpcId = 5, Name = "何行舟",   Age = "111111", Work = "e", PortraitPath = "Assets/GameMain/Art/New Characters/温叙/温叙常规.png" ,QutePath="Assets/GameMain/Art/UI_Common/Button/陈予荣.png"},
         };
 
         #region 生命周期
@@ -91,16 +91,14 @@ namespace AVGGame
             m_CharacterPlate = this.GetComponentByPath<Transform>("Canvas/Background/InformationPlate/CharacterPlate");
 
             // 角色信息
-            m_CharacterName = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/NamePlate/CharacterName");
-            m_Character = this.GetComponentByPath<Image>("Canvas/Background/InformationPlate/CharacterPlate/Character");
+            m_CharacterName = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/PersonalPlate/NamePlate/CharacterName");
+            m_Character = this.GetComponentByPath<Image>("Canvas/Background/InformationPlate/PersonalPlate/NamePlate/Image/QImage");
             m_MyPortrait = this.GetComponentByPath<Image>("Canvas/Background/InformationPlate/PersonalPlate/MyPortrait");
             m_MineName = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/PersonalPlate/NamePlate/CharacterName");
 
             // 数值面板
-            m_CharacterAge = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/Plate/AgePlate/CharacterName");
-            m_CharacterWork = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/Plate/WorkPlate/CharacterName");
-            m_MineAge = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/PersonalPlate/NamePlate/AgePlate/Age");
-            m_MineWork = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/PersonalPlate/NamePlate/WorkPlate/Work");
+            m_CharacterAge = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/PersonalPlate/NamePlate/AgePlate/Age");
+            m_CharacterWork = this.GetComponentByPath<Text>("Canvas/Background/InformationPlate/PersonalPlate/NamePlate/WorkPlate/Work");
 
             // 进度
             m_LovePlate = this.GetComponentByPath<Slider>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/LovePlate/Slider");
@@ -108,21 +106,21 @@ namespace AVGGame
 
             // 按钮
             m_ButtonClose = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/ButtonClose");
-            m_ButtonPersonal = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/ButtonPersonal");
-            m_ButtonCharacter = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/ButtonCharacter");
+            //m_ButtonPersonal = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/ButtonPersonal");
+            //m_ButtonCharacter = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/ButtonCharacter");
             m_ButtonInventory = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/PersonalPlate/InventoryPlate/ButtonInventory");
-            m_ButtonEvent1 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/EventPanel/Viewport/Content/Event1");
-            m_ButtonEvent2 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/EventPanel/Viewport/Content/Event2");
-            m_ButtonEvent3 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/EventPanel/Viewport/Content/Event3");
-            m_ButtonEvent4 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/EventPanel/Viewport/Content/Event4");
-            m_ButtonEvent5 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/EventPanel/Viewport/Content/Event5");
-            m_ButtonCharacter1 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/CharacterChangePlate/ButtonCharacter1");
-            m_ButtonCharacter2 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/CharacterChangePlate/ButtonCharacter2");
-            m_ButtonCharacter3 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/CharacterChangePlate/ButtonCharacter3");
-            m_ButtonCharacter4 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/CharacterChangePlate/ButtonCharacter4");
-            m_ButtonCharacter5 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/CharacterChangePlate/ButtonCharacter5");
+            //m_ButtonEvent1 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/EventPanel/Viewport/Content/Event1");
+            //m_ButtonEvent2 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/EventPanel/Viewport/Content/Event2");
+            //m_ButtonEvent3 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/EventPanel/Viewport/Content/Event3");
+            //m_ButtonEvent4 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/EventPanel/Viewport/Content/Event4");
+            //m_ButtonEvent5 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharacterPlate/InformationPlate/EventPanel/Viewport/Content/Event5");
+            m_ButtonCharacter1 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharactersPanel/CharacterButton1");
+            m_ButtonCharacter2 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharactersPanel/CharacterButton2");
+            m_ButtonCharacter3 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharactersPanel/CharacterButton3");
+            m_ButtonCharacter4 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharactersPanel/CharacterButton4");
+            m_ButtonCharacter5 = this.GetComponentByPath<Button>("Canvas/Background/InformationPlate/CharactersPanel/CharacterButton5");
 
-            m_EventButtons = new Button[] { m_ButtonEvent1, m_ButtonEvent2, m_ButtonEvent3, m_ButtonEvent4, m_ButtonEvent5 };
+            //m_EventButtons = new Button[] { m_ButtonEvent1, m_ButtonEvent2, m_ButtonEvent3, m_ButtonEvent4, m_ButtonEvent5 };
 
             // 角色切换按钮
             m_CharacterButtons = new Button[] { m_ButtonCharacter1, m_ButtonCharacter2, m_ButtonCharacter3, m_ButtonCharacter4, m_ButtonCharacter5 };
@@ -141,8 +139,6 @@ namespace AVGGame
             if (m_ButtonClose != null)
                 m_ButtonClose.onClick.AddListener(OnButtonCloseClick);
 
-            if (m_ButtonPersonal != null)
-                m_ButtonPersonal.onClick.AddListener(OnPersonalTabClick);
 
             if (m_ButtonCharacter != null)
                 m_ButtonCharacter.onClick.AddListener(OnCharacterTabClick);
@@ -157,10 +153,7 @@ namespace AVGGame
                 if (m_EventButtons[index] != null)
                     m_EventButtons[index].onClick.AddListener(() => OnEventButtonClicked(index));
             }
-
-            // 默认显示个人面板
-            ShowPersonalTab();
-
+            
             // ====== 图片文件挂载 ======
             // m_ButtonClose.image      — Canvas/Background/InformationPlate/ButtonClose
             // m_ButtonPersonal.image   — Canvas/Background/InformationPlate/ButtonPersonal
@@ -188,15 +181,7 @@ namespace AVGGame
             }
 
             // 根据标记决定初始面板
-            if (OpenInCharacterTab)
-            {
-                OpenInCharacterTab = false; // 读后重置
-                ShowCharacterTab();
-            }
-            else
-            {
-                ShowPersonalTab();
-            }
+            ShowCharacterTab();
             RefreshMineInfo();
             RefreshStats();
             Log.Info("[InformationPanel] OnOpen");
@@ -211,35 +196,19 @@ namespace AVGGame
         #endregion
 
         #region 面板切换（仅控制显示隐藏）
-
-        private void ShowPersonalTab()
-        {
-            if (m_PersonalPlate != null)
-                m_PersonalPlate.gameObject.SetActive(true);
-            if (m_CharacterPlate != null)
-                m_CharacterPlate.gameObject.SetActive(false);
-            Log.Info("[InformationPanel] ShowPersonalTab");
-        }
-
+        
         private void ShowCharacterTab()
         {
             if (m_PersonalPlate != null)
-                m_PersonalPlate.gameObject.SetActive(false);
-            if (m_CharacterPlate != null)
-                m_CharacterPlate.gameObject.SetActive(true);
-            RefreshCharacterInfo();
+                m_PersonalPlate.gameObject.SetActive(true);
+            LoadMinePortrait();
             Log.Info("[InformationPanel] ShowCharacterTab");
         }
 
         #endregion
 
         #region 按钮事件
-
-        private void OnPersonalTabClick()
-        {
-            ShowPersonalTab();
-        }
-
+        
         private void OnCharacterTabClick()
         {
             ShowCharacterTab();
@@ -275,12 +244,12 @@ namespace AVGGame
 
         #endregion
 
-        #region 女主信息
+        #region 好感信息
 
-        private const string c_MinePortraitPath = "Assets/GameMain/Art/New Characters/女主/主控常服微笑.png";
+        private const string c_MinePortraitPath = "Assets/GameMain/Art/New Characters/周杉/周杉.png";
 
         /// <summary>
-        /// 加载女主立绘
+        /// 加载男主1立绘
         /// </summary>
         private void LoadMinePortrait()
         {
@@ -306,8 +275,13 @@ namespace AVGGame
         /// </summary>
         private void RefreshMineInfo()
         {
-            string playerName = CustomEntry.PlayerData?.PlayerName ?? "";
+            var charData = m_Characters[0];
+            string playerName = m_Characters[0].Name;
             if (m_MineName != null) m_MineName.text = playerName;
+            if (m_CharacterName != null) m_CharacterName.text = charData.Name;
+            if (m_CharacterAge != null) m_CharacterAge.text = "年龄:"+charData.Age;
+            if (m_CharacterWork != null) m_CharacterWork.text = "职业:"+charData.Work;
+
         }
 
         #endregion
@@ -335,12 +309,12 @@ namespace AVGGame
 
             // 文本
             if (m_CharacterName != null) m_CharacterName.text = charData.Name;
-            if (m_CharacterAge != null) m_CharacterAge.text = charData.Age;
-            if (m_CharacterWork != null) m_CharacterWork.text = charData.Work;
+            if (m_CharacterAge != null) m_CharacterAge.text = "年龄:"+charData.Age;
+            if (m_CharacterWork != null) m_CharacterWork.text = "职业:"+charData.Work;
 
             // 角色立绘
             LoadCharacterPortrait(charData.PortraitPath);
-
+            LoadQCharacterPortrait(charData.QutePath);
             // 好感度
             if (CustomEntry.PlayerData != null)
             {
@@ -356,13 +330,37 @@ namespace AVGGame
             }
 
             // 事件按钮
-            RefreshEventButtonsForNpc(charData.NpcId);
+            //RefreshEventButtonsForNpc(charData.NpcId);
         }
 
         /// <summary>
         /// 异步加载角色立绘
         /// </summary>
         private void LoadCharacterPortrait(string portraitPath)
+        {
+            if (string.IsNullOrEmpty(portraitPath) || m_MyPortrait == null) return;
+
+            GameEntry.Resource.LoadAsset(
+                portraitPath,
+                typeof(Sprite),
+                new LoadAssetCallbacks(
+                    (assetName, asset, duration, userData) =>
+                    {
+                        Sprite sprite = asset as Sprite;
+                        if (sprite != null && m_MyPortrait != null)
+                        {
+                            m_MyPortrait.sprite = sprite;
+                        }
+                    },
+                    (assetName, status, errorMessage, userData) =>
+                        Log.Warning($"[InformationPanel] 角色立绘加载失败: {assetName}, {errorMessage}")
+                )
+            );
+        }
+        /// <summary>
+        /// 异步加载Q版角色立绘
+        /// </summary>
+        private void LoadQCharacterPortrait(string portraitPath)
         {
             if (string.IsNullOrEmpty(portraitPath) || m_Character == null) return;
 

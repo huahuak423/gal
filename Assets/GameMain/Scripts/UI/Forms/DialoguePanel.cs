@@ -112,7 +112,7 @@ namespace AVGGame
         private Sprite m_DialogBoxWithSpeaker;
         private Sprite m_DialogBoxWithoutSpeaker;
         private const string c_DialogBoxWithSpeakerPath = "Assets/GameMain/Art/UI_Common/UI/对话框.png";
-        private const string c_DialogBoxWithoutSpeakerPath = "Assets/GameMain/Art/UI_Common/UI/对话框（无名字）.png";
+        private const string c_DialogBoxWithoutSpeakerPath = "Assets/GameMain/Art/UI_Common/UI/对话框2.png";
 
         // 选项相关
         private List<Button> m_ChoiceButtons = new List<Button>();
