@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2238c5a168081d54aa5e5a4c857573da, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1510acb8d54dcc47ae1f102d25a5783, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -165,16 +165,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cb48ae63cfbb14582e479a27831b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonContinue: {fileID: 0}
+  m_ButtonContinue: {fileID: 0}
   m_ButtonSave: {fileID: 1267511183454531973}
   m_ButtonLoad: {fileID: 0}
-  ButtonTimeLine: {fileID: 0}
+  m_ButtonTimeLine: {fileID: 0}
+  m_ButtonHistory: {fileID: 0}
+  m_ButtonMainMenu: {fileID: 0}
   m_ButtonSettings: {fileID: 5069240677417010678}
-  m_ButtonBack: {fileID: 8448226685988268309}
   m_ButtonExit: {fileID: 1205489757370479136}
-  ButtonNPC: {fileID: 0}
-  ButtonGallery: {fileID: 0}
-  ButtonManual: {fileID: 0}
+  m_ButtonNPC: {fileID: 0}
+  m_ButtonGallery: {fileID: 0}
+  m_ButtonManual: {fileID: 0}
   m_TransparentBgButton: {fileID: 0}
 --- !u!1 &1939261357849247332
 GameObject:
