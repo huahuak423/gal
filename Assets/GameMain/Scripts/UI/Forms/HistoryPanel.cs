@@ -79,6 +79,13 @@ namespace AVGGame
             m_ContentContainer = this.GetComponentByPath<Transform>("Canvas/Background/HistoryDialoguePanel/Viewport/Content");
             m_ButtonClose = this.GetComponentByPath<Button>("Canvas/Background/ButtonBack");
 
+            // 修正：历史对话只允许上下滚动，禁止左右横移
+            if (m_ScrollRect != null)
+            {
+                m_ScrollRect.horizontal = false;
+                m_ScrollRect.vertical = true;
+            }
+
             // 绑定关闭按钮
             if (m_ButtonClose != null)
             {
@@ -95,6 +102,9 @@ namespace AVGGame
         protected override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+
+            // 进入无UI状态：隐藏对话框区域，只保留右上角主菜单快捷键
+            DialoguePanel.Instance?.SetDialogueUIForceHidden(true);
 
             // 接收历史记录数据
             if (userData is List<HistoryEntry> entries)
@@ -119,6 +129,10 @@ namespace AVGGame
         protected override void OnClose(bool isShutdown, object userData)
         {
             base.OnClose(isShutdown, userData);
+
+            // 恢复对话 UI 显示
+            DialoguePanel.Instance?.SetDialogueUIForceHidden(false);
+
             ClearEntries();
             m_PendingEntries = null;
             m_CurrentAudioBtn = null;

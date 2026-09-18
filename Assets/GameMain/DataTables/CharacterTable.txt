@@ -1,0 +1,8 @@
+﻿##Id	Name	Age	Work	PortraitPath	QutePath
+##int	string	string	string	string	string
+##编号	姓名	年龄	职业	立绘路径	Q版立绘路径
+	1	周杉	11	a	Assets/GameMain/Art/New Characters/周杉/周杉.png	Assets/GameMain/UI_Common/Button/周杉.png
+	2	陈予荣	111	b	Assets/GameMain/Art/New Characters/陈予荣/陈予荣.png	Assets/GameMain/UI_Common/Button/陈予荣.png
+	3	温叙	1111	c	Assets/GameMain/Art/New Characters/温叙/温叙常规.png	Assets/GameMain/UI_Common/Button/温叙.png
+	4	陈予宁	11111	d	Assets/GameMain/Art/New Characters/温叙/温叙常规.png	Assets/GameMain/UI_Common/Button/陈予荣.png
+	5	何行舟	111111	e	Assets/GameMain/Art/New Characters/温叙/温叙常规.png	Assets/GameMain/UI_Common/Button/陈予荣.png

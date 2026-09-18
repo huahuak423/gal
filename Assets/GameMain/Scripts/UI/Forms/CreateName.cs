@@ -46,7 +46,8 @@ namespace AVGGame
 
         #region 私有字段
 
-        private const int MaxNameLength = 8;
+        // 取名长度上限：与输入框 characterLimit 保持一致
+        private const int MaxNameLength = 4;
 
         #endregion
 
@@ -83,6 +84,25 @@ namespace AVGGame
             // 绑定 InputField 输入变化事件，同步到 PlayerName
             if (m_InputField != null)
             {
+                // 修正1：输入过程实时限制长度上限（原先只在点确认时校验）
+                m_InputField.characterLimit = MaxNameLength;
+
+                // 修正2：关闭输入框上层 Text 的射线遮挡，否则点击输入框时光标无法出现
+                if (PlayerName != null)
+                {
+                    PlayerName.raycastTarget = false;
+                }
+
+                // Placeholder（"请输入名字"提示）同样不能挡住点击
+                if (m_InputField.placeholder is TMP_Text placeholderText)
+                {
+                    placeholderText.raycastTarget = false;
+                }
+
+                // 确保光标可见并闪烁
+                m_InputField.caretBlinkRate = 0.85f;
+                m_InputField.caretWidth = 2;
+
                 m_InputField.onValueChanged.AddListener((value) =>
                 {
                     if (PlayerName != null)
@@ -157,6 +177,9 @@ namespace AVGGame
             {
                 m_InputField.text = "";
                 m_InputField.Select();
+                // 激活输入框，打开界面即显示闪烁光标
+                m_InputField.ActivateInputField();
+                m_InputField.ForceLabelUpdate();
             }
         }
 

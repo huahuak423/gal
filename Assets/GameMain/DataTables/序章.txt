@@ -1,14 +1,13 @@
 ﻿##Id	NextId	NodeType	SpeakerName	DialogText	CharacterActionsJson	ChoicesJson	TargetGraphName	RewardsJson	BgmPath	SePath	PerformanceKey	BackgroundPath	VoicePath	HideDialoguePanel
 ##int	int	int	string	string	string	string	string	string	string	string	string	string	string	bool
 ##编号	下一句ID	类型(0对话1选项2跳转3奖励)	说话人	台词	动作配置	选项配置	目标图名称	奖励配置	背景音乐	音效	动画效果Key	背景图	语音	隐藏对话框
-10000	10001	0										Assets/GameMain/Art/Backgrounds/序章/云层.jpg		1
-10001	10002	0	主控名	“呃……！”								Assets/GameMain/Art/Backgrounds/居家/家-夜晚.png		0
-10002	10003	0		你猛地从电脑桌前惊醒，汗水已经浸透了后背，心脏还在胸腔里疯狂地撞击着。						Assets/GameMain/Sounds/心跳声.mp3				0
-10003	10009	0		面前的显示器发着幽幽的冷光，现在是凌晨3:15。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/显示器照片.png","OffsetX":0.0,"OffsetY":90.0,"Scale":2.0}]}									0
-10004	10005	0		你用力揉了揉发胀的太阳穴，端起桌上早已冷透的咖啡灌了一大口。										0
-10005	10006	0		苦涩的液体顺着喉咙滑下，试图将那个光怪陆离的血腥噩梦强行压下去。										0
-10006	10008	0	主控名	“只是个梦而已，肯定是最近悬疑片看太多导致的。”										0
-10007	10010	0		你重新将手放回鼠标上，目光专注地盯住屏幕。										0
-10008	10007	0		你还有几条视频没剪，可来不及为虚无缥缈的梦境伤春悲秋。										0
-10009	10004	0		昏暗的卧室静悄悄，只有电脑主机运作的低鸣，夹杂着窗外零星驶过的夜行车声。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
-10010	0	0		此时的你并未察觉，命运的齿轮，已经以这个美丽却惊悚的“梦”为起点，开始悄然转动……										0
+10000	10001	0	主控名	“呃……！”								Assets/GameMain/Art/Backgrounds/居家/家-夜晚.png		0
+10001	10002	0		你猛地从电脑桌前惊醒，汗水已经浸透了后背，心脏还在胸腔里疯狂地撞击着。						Assets/GameMain/Sounds/心跳声.mp3				0
+10002	10008	0		面前的显示器发着幽幽的冷光，现在是凌晨3:15。	{"actions":[{"CharacterName":"","ActionType":0,"Position":1,"SpritePath":"Assets/GameMain/Art/Photo/显示器照片.png","OffsetX":0.0,"OffsetY":90.0,"Scale":2.0}]}									0
+10003	10004	0		你用力揉了揉发胀的太阳穴，端起桌上早已冷透的咖啡灌了一大口。										0
+10004	10005	0		苦涩的液体顺着喉咙滑下，试图将那个光怪陆离的血腥噩梦强行压下去。										0
+10005	10007	0	主控名	“只是个梦而已，肯定是最近悬疑片看太多导致的。”										0
+10006	10009	0		你重新将手放回鼠标上，目光专注地盯住屏幕。										0
+10007	10006	0		你还有几条视频没剪，可来不及为虚无缥缈的梦境伤春悲秋。										0
+10008	10003	0		昏暗的卧室静悄悄，只有电脑主机运作的低鸣，夹杂着窗外零星驶过的夜行车声。	{"actions":[{"CharacterName":"","ActionType":1,"Position":1,"SpritePath":"","OffsetX":0.0,"OffsetY":0.0,"Scale":0.0}]}									0
+10009	0	0		此时的你并未察觉，命运的齿轮，已经以这个美丽却惊悚的“梦”为起点，开始悄然转动……										0

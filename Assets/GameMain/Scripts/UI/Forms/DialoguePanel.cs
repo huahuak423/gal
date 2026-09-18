@@ -125,6 +125,41 @@ namespace AVGGame
         private static DialoguePanel s_Instance;
         public static List<HistoryEntry> GetHistoryEntries() => s_Instance?.m_HistoryEntries;
 
+        /// <summary>
+        /// 全局面板访问入口（供历史/信物留影等界面打开时隐藏对话 UI）
+        /// </summary>
+        public static DialoguePanel Instance => s_Instance;
+
+        // 外部界面（历史回顾/信物留影）打开时强制隐藏对话框区域，只保留右上角主菜单快捷键
+        private bool m_UIForceHidden = false;
+
+        /// <summary>
+        /// 打开全屏界面（历史/信物留影）时调用：隐藏对话框区域，进入"无UI状态"
+        /// 关闭时传 false 恢复
+        /// </summary>
+        public void SetDialogueUIForceHidden(bool hidden)
+        {
+            m_UIForceHidden = hidden;
+            UpdateTextPlateVisibility();
+        }
+
+        /// <summary>
+        /// 统一计算对话框区域显隐：外部强制隐藏 或 当前节点配置了 HideDialoguePanel 时隐藏
+        /// </summary>
+        private void UpdateTextPlateVisibility()
+        {
+            if (m_TextPlate == null) return;
+
+            bool hideByNode = false;
+            DialogueDisplayData current = m_ProcedureGame != null ? m_ProcedureGame.GetCurrentDialogue() : null;
+            if (current != null)
+            {
+                hideByNode = current.HideDialoguePanel;
+            }
+
+            m_TextPlate.gameObject.SetActive(!m_UIForceHidden && !hideByNode);
+        }
+
         #endregion
 
         #region 生命周期
@@ -895,6 +930,9 @@ namespace AVGGame
             Debug.Log($"[DialoguePanel] 设置选项面板 active = true");
             Debug.Log($"[DialoguePanel] 选项面板当前状态 - ActiveSelf: {m_SelectPanel.gameObject.activeSelf}, ActiveInHierarchy: {m_SelectPanel.gameObject.activeInHierarchy}");
 
+            // 根据可见选项数量重新布局：选项越少行间距越大，整体垂直居中
+            RelayoutChoiceButtons();
+
             // 检查 Canvas Group
             var canvasGroup = m_SelectPanel.GetComponent<CanvasGroup>();
             if (canvasGroup != null)
@@ -906,11 +944,46 @@ namespace AVGGame
         }
 
         /// <summary>
+        /// 根据可见选项数量重新布局选项按钮：
+        /// 在父容器（SelectPanel/Background）垂直方向上等距分布、整体居中，
+        /// 选项数量越少，行间距越大，避免选项挤在固定位置显得空洞。
+        /// </summary>
+        private void RelayoutChoiceButtons()
+        {
+            var visible = m_ChoiceButtons.FindAll(b => b != null);
+            int n = visible.Count;
+            if (n == 0) return;
+
+            RectTransform area = visible[0].transform.parent as RectTransform;
+            if (area == null) return;
+
+            float areaHeight = area.rect.height > 0 ? area.rect.height : 800f;
+            float usableHeight = areaHeight * 0.8f; // 上下各留 10% 边距
+
+            float buttonHeight = ((RectTransform)visible[0].transform).rect.height;
+            if (buttonHeight <= 0f) buttonHeight = 100f;
+
+            // 相邻按钮中心的间距：至少按钮高度+20，选项少时自动拉大
+            float step = n > 1
+                ? Mathf.Max(buttonHeight + 20f, (usableHeight - buttonHeight) / (n - 1))
+                : 0f;
+
+            for (int i = 0; i < n; i++)
+            {
+                if (!(visible[i].transform is RectTransform rt)) continue;
+                // 第 0 个在最上方，向下排布；保持原 X 位置不变
+                float y = ((n - 1) * 0.5f - i) * step;
+                rt.anchoredPosition = new Vector2(rt.anchoredPosition.x, y);
+            }
+
+            Log.Info($"[DialoguePanel] 选项重布局: {n} 个选项, 行距 {step:F0}");
+        }
+
+        /// <summary>
         /// 隐藏选项面板
         /// </summary>
         private void HideChoicesPanel()
-        {
-            if (m_SelectPanel != null)
+        {            if (m_SelectPanel != null)
             {
                 m_SelectPanel.gameObject.SetActive(false);
             }
@@ -1528,10 +1601,10 @@ namespace AVGGame
             // 播放音频（BGM持续播放，SE和Voice当句播放）
             PlayDialogueAudio(data);
 
-            // 控制对话框区域显示/隐藏
+            // 控制对话框区域显示/隐藏（叠加外部界面的强制隐藏标记）
             if (m_TextPlate != null)
             {
-                m_TextPlate.gameObject.SetActive(!data.HideDialoguePanel);
+                m_TextPlate.gameObject.SetActive(!data.HideDialoguePanel && !m_UIForceHidden);
             }
 
             // 根据有无说话人切换对话框背景

@@ -59,6 +59,12 @@ namespace AVGGame
                 m_ButtonClose.onClick.AddListener(OnButtonCloseClick);
             }
 
+            // 修正：退出键原先取到了引用但从未绑定事件，导致点击无效
+            if (m_ButtonExit != null)
+            {
+                m_ButtonExit.onClick.AddListener(OnButtonExitClick);
+            }
+
             // ====== 图片文件挂载 ======
             // m_ButtonClose.image — Canvas/Background/PromisePlate/ButtonClose
             // m_ButtonExit.image  — Canvas/Background/ButtonExit
@@ -67,6 +73,9 @@ namespace AVGGame
         protected override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+
+            // 进入无UI状态：隐藏对话框区域，只保留右上角主菜单快捷键
+            DialoguePanel.Instance?.SetDialogueUIForceHidden(true);
 
             if (userData is ProcedureGame procedureGame)
             {
@@ -80,10 +89,19 @@ namespace AVGGame
         protected override void OnClose(bool isShutdown, object userData)
         {
             base.OnClose(isShutdown, userData);
+
+            // 恢复对话 UI 显示
+            DialoguePanel.Instance?.SetDialogueUIForceHidden(false);
+
             Log.Info("[InventoryPanel] OnClose");
         }
 
         private void OnButtonCloseClick()
+        {
+            CloseSelf();
+        }
+
+        private void OnButtonExitClick()
         {
             CloseSelf();
         }

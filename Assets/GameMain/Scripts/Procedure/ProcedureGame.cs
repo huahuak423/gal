@@ -74,7 +74,7 @@ namespace AVGGame
                 CustomEntry.PlayerData.ResetGame();
                 CustomEntry.PlayerData.SetPlayerName(savedName);
                 Debug.Log($"[ProcedureGame] 保留玩家取名: '{savedName}'");
-                m_PlayPrologue = false; // 序章已暂时剔除，直接进大地图
+                m_PlayPrologue = true; // 新游戏先播序章（序章动画 + 序章剧情），再进大地图
                 m_PendingOpenMap = false;
             }
 
@@ -101,6 +101,16 @@ namespace AVGGame
             DataTableBase tableBase = (DataTableBase)emptyTable;
             string realPath = "Assets/GameMain/DataTables/EventPool.txt";
             tableBase.ReadData(realPath, 0, this);
+
+            // 加载男主（角色）信息配置表，供好感度/角色界面（InformationPanel）读取
+            // 注意：OnLoadDataTableSuccess 里按表名包含 "EventPool" 过滤，此表加载完成不会触发序章/地图流程
+            if (GameEntry.DataTable.HasDataTable<CharacterRowData>())
+            {
+                GameEntry.DataTable.DestroyDataTable<CharacterRowData>();
+            }
+            IDataTable<CharacterRowData> emptyCharTable = GameEntry.DataTable.CreateDataTable<CharacterRowData>();
+            DataTableBase charTableBase = (DataTableBase)emptyCharTable;
+            charTableBase.ReadData("Assets/GameMain/DataTables/CharacterTable.txt", 0, this);
         }
 
         protected override void OnLeave(IFsm<IProcedureManager> procedureOwner, bool isShutdown)
@@ -923,7 +933,34 @@ namespace AVGGame
             {
                 m_PlayPrologue = false;
                 Debug.Log("[ProcedureGame] 新游戏流程，开始播放序章");
-                m_StoryGraphLoader.LoadGraph("序章");
+
+                // 先播序章动画（StreamingAssets/CG/序章动画.mp4），播完/跳过后进入序章剧情
+                const string prologueVideo = "序章动画.mp4";
+                string videoFullPath = System.IO.Path.Combine(Application.streamingAssetsPath, "CG", prologueVideo);
+                if (System.IO.File.Exists(videoFullPath))
+                {
+                    var cgData = new CGPlayData
+                    {
+                        VideoFileName = prologueVideo,
+                        CanSkip = true,
+                        OnComplete = () =>
+                        {
+                            Debug.Log("[ProcedureGame] 序章动画播放完毕，进入序章剧情");
+                            m_StoryGraphLoader.LoadGraph("序章");
+                        }
+                    };
+                    GameEntry.UI.OpenUIForm(
+                        AssetUtility.GetUIFormAsset(UIFormId.CG),
+                        UIGroupDefinition.Popup,
+                        Constant.AssetPriority.UIAsset,
+                        cgData
+                    );
+                }
+                else
+                {
+                    Debug.LogWarning($"[ProcedureGame] 未找到序章动画视频（{videoFullPath}），跳过动画直接进入序章剧情");
+                    m_StoryGraphLoader.LoadGraph("序章");
+                }
             }
             else
             {

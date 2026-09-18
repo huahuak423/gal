@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityGameFramework.Runtime;
 using GameFramework.Resource;
+using GameFramework.DataTable;
 
 namespace AVGGame
 {
@@ -69,7 +70,8 @@ namespace AVGGame
         private Button[] m_CharacterButtons;
         private int m_CurrentCharacterIndex = 0;
 
-        // 角色数据（后续可改为从配置表读取）
+        // 角色数据：由 CharacterTable.txt 配置表填充（LoadCharactersFromTable）
+        // 表缺失或为空时回退到下面的占位数据，保证界面不空
         private CharacterData[] m_Characters = new CharacterData[]
         {
             new CharacterData { NpcId = 1, Name = "周杉",   Age = "11", Work = "a", PortraitPath = "Assets/GameMain/Art/New Characters/周杉/周杉.png", QutePath="Assets/GameMain/Art/UI_Common/Button/周杉.png"},
@@ -78,6 +80,45 @@ namespace AVGGame
             new CharacterData { NpcId = 4, Name = "陈予宁",   Age = "11111", Work = "d", PortraitPath = "Assets/GameMain/Art/New Characters/温叙/温叙常规.png" ,QutePath="Assets/GameMain/Art/UI_Common/Button/陈予荣.png"},
             new CharacterData { NpcId = 5, Name = "何行舟",   Age = "111111", Work = "e", PortraitPath = "Assets/GameMain/Art/New Characters/温叙/温叙常规.png" ,QutePath="Assets/GameMain/Art/UI_Common/Button/陈予荣.png"},
         };
+
+        /// <summary>
+        /// 从 CharacterTable.txt 配置表读取角色数据，替代代码内硬编码
+        /// 在 OnOpen 时调用，保证表已由 ProcedureGame 加载完成
+        /// </summary>
+        private void LoadCharactersFromTable()
+        {
+            if (GameEntry.DataTable == null || !GameEntry.DataTable.HasDataTable<CharacterRowData>())
+            {
+                Log.Warning("[InformationPanel] CharacterTable 未加载，使用占位数据");
+                return;
+            }
+
+            var list = new List<CharacterData>();
+            IDataTable<CharacterRowData> table = GameEntry.DataTable.GetDataTable<CharacterRowData>();
+            foreach (CharacterRowData row in table)
+            {
+                list.Add(new CharacterData
+                {
+                    NpcId = row.Id,
+                    Name = row.Name,
+                    Age = row.Age,
+                    Work = row.Work,
+                    PortraitPath = row.PortraitPath,
+                    QutePath = row.QutePath
+                });
+            }
+
+            if (list.Count > 0)
+            {
+                m_Characters = list.ToArray();
+                m_CurrentCharacterIndex = 0;
+                Log.Info($"[InformationPanel] 从 CharacterTable 读取到 {m_Characters.Length} 个角色");
+            }
+            else
+            {
+                Log.Warning("[InformationPanel] CharacterTable 为空，使用占位数据");
+            }
+        }
 
         #region 生命周期
 
@@ -146,12 +187,15 @@ namespace AVGGame
             if (m_ButtonInventory != null)
                 m_ButtonInventory.onClick.AddListener(OnInventoryTabClick);
 
-            // 事件按钮统一绑定
-            for (int i = 0; i < m_EventButtons.Length; i++)
+            // 事件按钮统一绑定（m_EventButtons 目前未启用，需判空避免 NRE）
+            if (m_EventButtons != null)
             {
-                int index = i;
-                if (m_EventButtons[index] != null)
-                    m_EventButtons[index].onClick.AddListener(() => OnEventButtonClicked(index));
+                for (int i = 0; i < m_EventButtons.Length; i++)
+                {
+                    int index = i;
+                    if (m_EventButtons[index] != null)
+                        m_EventButtons[index].onClick.AddListener(() => OnEventButtonClicked(index));
+                }
             }
             
             // ====== 图片文件挂载 ======
@@ -181,6 +225,7 @@ namespace AVGGame
             }
 
             // 根据标记决定初始面板
+            LoadCharactersFromTable();
             ShowCharacterTab();
             RefreshMineInfo();
             RefreshStats();

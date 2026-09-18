@@ -162,13 +162,31 @@ namespace AVGGame
             m_RawImage.texture = m_RenderTexture;
 
             // 配置 VideoPlayer
+            // 显式指定渲染模式为 RenderTexture：若停留在默认渲染模式，会出现"只出声、画面不渲染"的情况
+            m_VideoPlayer.renderMode = VideoRenderMode.RenderTexture;
             m_VideoPlayer.targetTexture = m_RenderTexture;
             m_VideoPlayer.url = fullPath;
             m_VideoPlayer.loopPointReached += OnVideoFinished;
 
+            // 诊断：准备完成后输出实际分辨率；宽高为 0 说明视频解码失败
+            m_VideoPlayer.prepareCompleted += OnVideoPrepared;
+
             // 开始播放
             m_VideoPlayer.Prepare();
             m_VideoPlayer.Play();
+        }
+
+        /// <summary>
+        /// 视频准备完成（诊断用）
+        /// </summary>
+        private void OnVideoPrepared(VideoPlayer vp)
+        {
+            m_VideoPlayer.prepareCompleted -= OnVideoPrepared;
+            Log.Info($"[CGPanel] 视频准备完成: {vp.width}x{vp.height}, 帧率 {vp.frameRate}, 渲染模式 {vp.renderMode}, 音频输出 {vp.audioOutputMode}");
+            if (vp.width == 0 || vp.height == 0)
+            {
+                Log.Error("[CGPanel] 视频解码失败（宽高为 0），请将视频转码为 H.264 Main/Baseline Profile、8-bit、YUV420P 的 mp4");
+            }
         }
 
         /// <summary>

@@ -228,59 +228,6 @@ MonoBehaviour:
   HideDialoguePanel: 0
   NeedsAttention: 0
   EditorNote: 
---- !u!114 &-879459696611771907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aa49dc13f1428dbcb603b4fc395ec1, type: 3}
-  m_Name: Dialogue
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -152, y: 744}
-  ports:
-    keys:
-    - Entry
-    - Exit
-    values:
-    - _fieldName: Entry
-      _node: {fileID: -879459696611771907}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Exit
-      _node: {fileID: -879459696611771907}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Entry
-        node: {fileID: 8540066516195687006}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Entry: 0
-  Exit: 0
-  SpeakerName: 
-  DialogText: 
-  CharacterDisplays: []
-  BgmPath: 
-  SePath: 
-  BackgroundPath: "Assets/GameMain/Art/Backgrounds/\u5E8F\u7AE0/\u4E91\u5C42.jpg"
-  VoicePath: 
-  PerformanceKey: 
-  HideDialoguePanel: 1
-  NeedsAttention: 0
-  EditorNote: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,7 +241,6 @@ MonoBehaviour:
   m_Name: "\u5E8F\u7AE0"
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: -879459696611771907}
   - {fileID: 8540066516195687006}
   - {fileID: 5358588973467537566}
   - {fileID: 3957749002821983341}
@@ -559,10 +505,7 @@ MonoBehaviour:
       _node: {fileID: 8540066516195687006}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Exit
-        node: {fileID: -879459696611771907}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0

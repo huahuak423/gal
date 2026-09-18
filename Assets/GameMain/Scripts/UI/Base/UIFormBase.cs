@@ -4,6 +4,7 @@
 //------------------------------------------------------------
 
 using UnityEngine;
+using UnityEngine.UI;
 using UnityGameFramework.Runtime;
 
 namespace AVGGame
@@ -86,6 +87,31 @@ namespace AVGGame
         {
             base.OnInit(userData);
             Log.Info($"[UI] {GetType().Name} OnInit");
+
+            ApplyButtonTransitions();
+        }
+
+        /// <summary>
+        /// 批量为本界面所有按钮设置颜色过渡，实现亮暗变化反馈：
+        /// 常态稍暗 → 悬停变亮 → 按下变暗；仅对未配置过渡的按钮生效，不覆盖美术已有的 Sprite Swap。
+        /// </summary>
+        private void ApplyButtonTransitions()
+        {
+            var buttons = GetComponentsInChildren<Button>(true);
+            foreach (var btn in buttons)
+            {
+                if (btn == null || btn.transition != Button.Transition.None) continue;
+
+                btn.transition = Button.Transition.ColorTint;
+                var colors = btn.colors;
+                colors.fadeDuration = 0.1f;
+                colors.normalColor = new Color(0.82f, 0.82f, 0.82f, 1f);   // 常态：稍暗
+                colors.highlightedColor = new Color(1f, 1f, 1f, 1f);       // 悬停：变亮
+                colors.pressedColor = new Color(0.6f, 0.6f, 0.6f, 1f);     // 按下：变暗
+                colors.selectedColor = new Color(1f, 1f, 1f, 1f);          // 选中：亮
+                colors.disabledColor = new Color(0.55f, 0.55f, 0.55f, 0.5f); // 禁用：灰暗
+                btn.colors = colors;
+            }
         }
 
         protected override void OnOpen(object userData)
@@ -158,6 +184,14 @@ namespace AVGGame
         /// </summary>
         protected virtual void CloseSelf()
         {
+            // 防重复关闭保护：UGF 在界面回收时会把 SerialId 重置为 0，
+            // 若对已关闭的界面再次调用 CloseUIForm，框架会抛出
+            // "Can not find UI form info for serial id '0'" 异常，这里先行拦截。
+            if (UIForm == null || UIForm.SerialId == 0)
+            {
+                Log.Warning($"[UI] {GetType().Name} CloseSelf 被重复调用，界面已关闭，忽略本次请求");
+                return;
+            }
             // 使用框架的 GameEntry 关闭 UI
             UnityGameFramework.Runtime.GameEntry.GetComponent<UIComponent>().CloseUIForm(this.UIForm);
         }
